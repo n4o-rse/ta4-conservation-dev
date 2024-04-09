@@ -238,6 +238,9 @@ var tree={
               "instancecount": 3,
               "http://www.w3.org/2002/07/owl#Class": 1
             },
+            "http://www.w3.org/2000/01/rdf-schema#comment": {
+              "instancecount": 1
+            },
             "http://www.w3.org/2000/01/rdf-schema#label": {
               "instancecount": 1
             },
@@ -246,12 +249,15 @@ var tree={
               "http://www.w3.org/2002/07/owl#Class": 1,
               "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
               "http://skosplus.net/skos-light/Label": 1
-            },
-            "http://www.w3.org/2004/02/skos/core#closeMatch": {
-              "instancecount": 1
             }
           },
           "from": {
+            "http://skosplus.net/skos-light/hasSubLabel": {
+              "instancecount": 0,
+              "http://www.w3.org/2002/07/owl#Class": 1,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
+              "http://skosplus.net/skos-light/Label": 1
+            },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "instancecount": 0,
               "http://www.w3.org/2004/02/skos/core#Collection": 3
