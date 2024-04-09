@@ -86,8 +86,7 @@ owl:Thing rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://purl.org/dc/terms/creator
-terms:creator rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf owl:topObjectProperty ;
+terms:creator rdf:type owl:AnnotationProperty ;
               rdfs:range owl:Thing ;
               :skosLightMainEntity "true"^^xsd:boolean ;
               rdfs:comment "An entity responsible for making the resource. Recommended practice is to identify the creator with a URI. If this is not possible or feasible, a literal value that identifies the creator may be provided."@en ;
@@ -95,8 +94,7 @@ terms:creator rdf:type owl:ObjectProperty ;
 
 
 ###  http://skosplus.net/skos-light/hasRelatedLabel
-:hasRelatedLabel rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf owl:topObjectProperty ;
+:hasRelatedLabel rdf:type owl:AnnotationProperty ;
                  rdf:type owl:SymmetricProperty ;
                  :skosLightMainEntity "hat related Bezeichner"@de ,
                                       "true"@de ;
@@ -104,8 +102,7 @@ terms:creator rdf:type owl:ObjectProperty ;
 
 
 ###  http://skosplus.net/skos-light/hasSubLabel
-:hasSubLabel rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf owl:topObjectProperty ;
+:hasSubLabel rdf:type owl:AnnotationProperty ;
              rdf:type owl:TransitiveProperty ;
              :skosLightMainEntity "hat Tochter-Bezeichner"@de ,
                                   "true"@de ;
@@ -113,8 +110,7 @@ terms:creator rdf:type owl:ObjectProperty ;
 
 
 ###  http://skosplus.net/skos-light/hasSuperLabel
-:hasSuperLabel rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf owl:topObjectProperty ;
+:hasSuperLabel rdf:type owl:AnnotationProperty ;
                rdf:type owl:TransitiveProperty ;
                :skosLightMainEntity "true"^^xsd:boolean ;
                rdfs:label "has super label"@en ,
@@ -122,45 +118,39 @@ terms:creator rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#seeAlso
-rdfs:seeAlso rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf owl:topObjectProperty ;
+rdfs:seeAlso rdf:type owl:AnnotationProperty ;
              rdf:type owl:SymmetricProperty ;
              rdfs:comment "Further information about the subject resource."@en ;
              rdfs:label "seeAlso"@en .
 
 
 ###  http://www.w3.org/2004/02/skos/core#broadMatch
-skos:broadMatch rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty ;
+skos:broadMatch rdf:type owl:AnnotationProperty ;
                 rdf:type owl:TransitiveProperty ;
                 rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
 
 ###  http://www.w3.org/2004/02/skos/core#closeMatch
-skos:closeMatch rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty ;
+skos:closeMatch rdf:type owl:AnnotationProperty ;
                 rdf:type owl:SymmetricProperty ;
                 rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
 
 ###  http://www.w3.org/2004/02/skos/core#exactMatch
-skos:exactMatch rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty ;
+skos:exactMatch rdf:type owl:AnnotationProperty ;
                 rdf:type owl:SymmetricProperty ,
                          owl:TransitiveProperty ;
                 rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
 
 ###  http://www.w3.org/2004/02/skos/core#narrowMatch
-skos:narrowMatch rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf owl:topObjectProperty ;
+skos:narrowMatch rdf:type owl:AnnotationProperty ;
                  rdf:type owl:TransitiveProperty ;
                  rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
 
 ###  http://www.w3.org/2004/02/skos/core#relatedMatch
-skos:relatedMatch rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf owl:topObjectProperty ;
+skos:relatedMatch rdf:type owl:AnnotationProperty ;
                   rdf:type owl:SymmetricProperty ;
                   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
@@ -170,21 +160,18 @@ skos:relatedMatch rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  http://purl.org/dc/elements/1.1/creator
-<http://purl.org/dc/elements/1.1/creator> rdf:type owl:DatatypeProperty ;
-                                          rdfs:subPropertyOf owl:topDataProperty .
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty.
 
 
 ###  http://skosplus.net/skos-light/alternativeLabel
-:alternativeLabel rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf owl:topDataProperty ;
+:alternativeLabel rdf:type owl:AnnotationProperty ;
                   :skosLightMainEntity "true"^^xsd:boolean ;
                   rdfs:label "alternative label"@en ,
                              "alternativer Bezeichner"@de .
 
 
 ###  http://skosplus.net/skos-light/description
-:description rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf owl:topDataProperty ;
+:description rdf:type owl:AnnotationProperty ;
              rdfs:domain :Label ;
              rdfs:range xsd:string ;
              :skosLightMainEntity "true"^^xsd:boolean ;
@@ -193,8 +180,7 @@ skos:relatedMatch rdf:type owl:ObjectProperty ;
 
 
 ###  http://skosplus.net/skos-light/identifier
-:identifier rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf owl:topDataProperty ;
+:identifier rdf:type owl:AnnotationProperty ;
             rdfs:domain :Label ;
             rdfs:range xsd:string ;
             :skosLightMainEntity "true"^^xsd:boolean ;
@@ -202,8 +188,7 @@ skos:relatedMatch rdf:type owl:ObjectProperty ;
 
 
 ###  http://skosplus.net/skos-light/identifierLabel
-:identifierLabel rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf owl:topDataProperty ;
+:identifierLabel rdf:type owl:AnnotationProperty ;
                  rdfs:domain :Label ;
                  rdfs:range xsd:string ;
                  :skosLightMainEntity "true"^^xsd:boolean ;
@@ -212,8 +197,7 @@ skos:relatedMatch rdf:type owl:ObjectProperty ;
 
 
 ###  http://skosplus.net/skos-light/translation
-:translation rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf owl:topDataProperty ;
+:translation rdf:type owl:AnnotationProperty ;
              rdfs:domain :Label ;
              rdfs:range xsd:string ;
              :skosLightMainEntity "true"^^xsd:boolean ;
@@ -222,8 +206,7 @@ skos:relatedMatch rdf:type owl:ObjectProperty ;
 
 
 ###  http://skosplus.net/skos-light/vocabularyCreatorString
-:vocabularyCreatorString rdf:type owl:DatatypeProperty ;
-                         rdfs:subPropertyOf owl:topDataProperty ;
+:vocabularyCreatorString rdf:type owl:AnnotationProperty ;
                          rdfs:domain :Vocabulary ;
                          rdfs:range xsd:string ;
                          :skosLightMainEntity "true"^^xsd:boolean ;
@@ -231,8 +214,7 @@ skos:relatedMatch rdf:type owl:ObjectProperty ;
 
 
 ###  http://skosplus.net/skos-light/vocabularyDescription
-:vocabularyDescription rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf owl:topDataProperty ;
+:vocabularyDescription rdf:type owl:AnnotationProperty ;
                        rdfs:domain :Vocabulary ;
                        rdfs:range xsd:string ;
                        :skosLightMainEntity "true"^^xsd:boolean ;
@@ -241,8 +223,7 @@ skos:relatedMatch rdf:type owl:ObjectProperty ;
 
 
 ###  http://skosplus.net/skos-light/vocabularyIdentifier
-:vocabularyIdentifier rdf:type owl:DatatypeProperty ;
-                      rdfs:subPropertyOf owl:topDataProperty ;
+:vocabularyIdentifier rdf:type owl:AnnotationProperty ;
                       rdfs:domain :Vocabulary ;
                       rdfs:range xsd:string ;
                       :skosLightMainEntity "true"^^xsd:boolean ;
@@ -251,8 +232,7 @@ skos:relatedMatch rdf:type owl:ObjectProperty ;
 
 
 ###  http://skosplus.net/skos-light/vocabularyLanguage
-:vocabularyLanguage rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf owl:topDataProperty ;
+:vocabularyLanguage rdf:type owl:AnnotationProperty ;
                     rdfs:domain :Vocabulary ;
                     rdfs:range xsd:string ;
                     :skosLightMainEntity "true"^^xsd:boolean ;
@@ -261,8 +241,7 @@ skos:relatedMatch rdf:type owl:ObjectProperty ;
 
 
 ###  http://skosplus.net/skos-light/vocabularyLicenseLink
-:vocabularyLicenseLink rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf owl:topDataProperty ;
+:vocabularyLicenseLink rdf:type owl:AnnotationProperty ;
                        rdfs:domain :Vocabulary ;
                        rdfs:range xsd:anyURI ;
                        :skosLightMainEntity "true"^^xsd:boolean ;
@@ -270,8 +249,7 @@ skos:relatedMatch rdf:type owl:ObjectProperty ;
 
 
 ###  http://skosplus.net/skos-light/vocabularyLicenseString
-:vocabularyLicenseString rdf:type owl:DatatypeProperty ;
-                         rdfs:subPropertyOf owl:topDataProperty ;
+:vocabularyLicenseString rdf:type owl:AnnotationProperty ;
                          rdfs:domain :Vocabulary ;
                          rdfs:range xsd:string ;
                          :skosLightMainEntity "true"^^xsd:boolean ;
@@ -279,8 +257,7 @@ skos:relatedMatch rdf:type owl:ObjectProperty ;
 
 
 ###  http://skosplus.net/skos-light/vocabularyTitle
-:vocabularyTitle rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf owl:topDataProperty ;
+:vocabularyTitle rdf:type owl:AnnotationProperty ;
                  rdfs:domain :Vocabulary ;
                  rdfs:range xsd:string ;
                  :skosLightMainEntity "true"^^xsd:boolean ;
