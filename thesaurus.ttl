@@ -159,12 +159,17 @@ sl:vocabularyTitle rdf:type owl:AnnotationProperty ;
 rdf:type rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdfs:seeAlso "label"@en .
+
+
 ###  http://www.w3.org/2000/01/rdf-schema#seeAlso
 rdfs:seeAlso rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#subClassOf
-rdfs:subClassOf rdf:type owl:AnnotationProperty .
+rdfs:subClassOf rdf:type owl:AnnotationProperty ;
+                rdfs:seeAlso "sub class of"@en .
 
 
 ###  http://www.w3.org/2004/02/skos/core#broadMatch
@@ -321,6 +326,17 @@ sl:Vocabulary rdf:type owl:Class ;
                                  sl:Label .
 
 
+###  https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE
+:eq7GtLWHJesucfazgADPZE rdf:type owl:NamedIndividual ,
+                                 sl:Label ;
+                        sl:alternativeLabel "Zustandserhebung"@de ;
+                        sl:hasSuperLabel :LEIZA_Conservation_Thesaurus ;
+                        sl:identifier "eq7GtLWHJesucfazgADPZE" ;
+                        sl:identifierLabel "Zustandserfassung"@de ;
+                        rdfs:label "Zustandserfassung"@de ;
+                        rdfs:subClassOf :LEIZA_Conservation_Thesaurus .
+
+
 ###  https://archaeolink.github.io/n4o-ta4-conservation/sSygVCh1KaCSrkS5Ku3Aak
 :sSygVCh1KaCSrkS5Ku3Aak rdf:type owl:NamedIndividual ,
                                  sl:Label .
@@ -406,12 +422,10 @@ sl:Vocabulary rdf:type owl:Class ;
                         sl:hasSuperLabel :dYxXkaqsnBqVYA1THAxjgE ;
                         rdfs:label "Methode und Technik"@de ;
                         sl:identifierLabel "Methode und Technik"@de ;
-                        sl:identifier "tmjVdStfYu6PQuQeq7Sua7" ;
-                        rdfs:subClassOf :dYxXkaqsnBqVYA1THAxjgE .
+                        sl:identifier "tmjVdStfYu6PQuQeq7Sua7" .
 
 
 :wsbDppTfr2BSxsmhSuEbG4 sl:identifierLabel "Material"@de ;
-                        rdfs:subClassOf :dYxXkaqsnBqVYA1THAxjgE ;
                         skos:closeMatch <http://www.wikidata.org/entity/Q214609> ;
                         sl:identifier "wsbDppTfr2BSxsmhSuEbG4" ;
                         sl:hasSuperLabel :dYxXkaqsnBqVYA1THAxjgE ;
@@ -439,8 +453,7 @@ sl:Vocabulary rdf:type owl:Class ;
                                                                             skos:closeMatch <http://www.wikidata.org/entity/Q39546> ;
                                                                             rdfs:label "Werkzeug"@de ;
                                                                             sl:identifier "3EE7pLjByXiT4nHWxyqKuB" ;
-                                                                            sl:hasSuperLabel :dYxXkaqsnBqVYA1THAxjgE ;
-                                                                            rdfs:subClassOf :dYxXkaqsnBqVYA1THAxjgE .
+                                                                            sl:hasSuperLabel :dYxXkaqsnBqVYA1THAxjgE .
 
 
 <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> rdfs:label "[Objekt-Werkstoff (Material)]"@de ;
