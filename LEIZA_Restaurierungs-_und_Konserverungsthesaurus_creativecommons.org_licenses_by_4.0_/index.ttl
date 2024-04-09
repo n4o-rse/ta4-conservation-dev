@@ -7,6 +7,7 @@
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Linkset: LEIZA_Restaurierungs-_und_Konserverungsthesaurus - 4.0"@en ;
+    dc:license <http://creativecommons.org/licenses/by/4.0> ;
     void:linkPredicate dc:licence,
         <http://skosplus.net/skos-light/LicenseLink> ;
     void:objectsTarget <http://creativecommons.org/licenses/by/4.0/>,

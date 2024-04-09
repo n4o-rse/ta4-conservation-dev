@@ -7,6 +7,7 @@
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Property Partition: description"@en ;
+    dc:license <http://creativecommons.org/licenses/by/4.0> ;
     void:property dc:description,
         <http://skosplus.net/skos-light/description> ;
     void:triples 1,

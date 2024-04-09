@@ -9,6 +9,7 @@
     dc:creator "Kristina Fella (LEIZA), Lasse Mempel-Länger (LEIZA), Florian Thiery (LEIZA)" ;
     dc:description "Thesaurus für Konservierungs- und Restaurierungsproesse, bzw. Erhaltungsprozesse"@de ;
     dc:licence <http://creativecommons.org/licenses/by/4.0/> ;
+    dc:license <http://creativecommons.org/licenses/by/4.0> ;
     dc:title "LEIZA Restaurierungs- und Konserverungsthesaurus"@de ;
     void:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
     owl:versionIRI <https://archaeolink.github.io/n4o-ta4-conservation/> ;

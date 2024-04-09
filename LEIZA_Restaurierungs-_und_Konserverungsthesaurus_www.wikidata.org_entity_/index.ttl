@@ -1,3 +1,4 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix void: <http://rdfs.org/ns/void#> .
@@ -7,6 +8,7 @@
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Linkset: LEIZA_Restaurierungs-_und_Konserverungsthesaurus - Wikidata Entities (wde:)"@en ;
+    dc:license <http://creativecommons.org/licenses/by/4.0> ;
     void:linkPredicate <http://skosplus.net/skos-light/vocabularyCreatorResource>,
         skos:closeMatch,
         <https://archaeolink.github.io/n4o-ta4-conservation/hasSource> ;

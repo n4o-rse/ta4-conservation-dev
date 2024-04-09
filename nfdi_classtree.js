@@ -72,8 +72,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://skosplus.net/skos-light/alternativeLabel": {
               "instancecount": 1
@@ -142,8 +142,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://skosplus.net/skos-light/LicenseLink": {
               "instancecount": 1
@@ -214,8 +214,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://skosplus.net/skos-light/hasSuperLabel": {
               "instancecount": 1,
@@ -233,6 +233,9 @@ var tree={
               "instancecount": 3,
               "http://www.w3.org/2002/07/owl#Class": 1
             },
+            "http://www.w3.org/2000/01/rdf-schema#comment": {
+              "instancecount": 1
+            },
             "http://www.w3.org/2000/01/rdf-schema#label": {
               "instancecount": 1
             },
@@ -241,12 +244,15 @@ var tree={
               "http://www.w3.org/2002/07/owl#Class": 1,
               "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
               "http://skosplus.net/skos-light/Label": 1
-            },
-            "http://www.w3.org/2004/02/skos/core#closeMatch": {
-              "instancecount": 1
             }
           },
           "from": {
+            "http://skosplus.net/skos-light/hasSubLabel": {
+              "instancecount": 0,
+              "http://www.w3.org/2002/07/owl#Class": 1,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
+              "http://skosplus.net/skos-light/Label": 1
+            },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "instancecount": 0,
               "http://www.w3.org/2004/02/skos/core#Collection": 3
@@ -264,8 +270,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://skosplus.net/skos-light/description": {
               "instancecount": 1
@@ -382,8 +388,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://skosplus.net/skos-light/hasSuperLabel": {
               "instancecount": 1,
@@ -446,8 +452,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://skosplus.net/skos-light/description": {
               "instancecount": 1
@@ -508,8 +514,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://skosplus.net/skos-light/hasSuperLabel": {
               "instancecount": 1,
@@ -535,16 +541,31 @@ var tree={
               "http://www.w3.org/2002/07/owl#Class": 1,
               "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
               "http://skosplus.net/skos-light/Label": 1
+            },
+            "http://www.w3.org/2004/02/skos/core#closeMatch": {
+              "instancecount": 1
             }
           },
           "from": {
+            "http://skosplus.net/skos-light/hasSuperLabel": {
+              "instancecount": 0,
+              "http://www.w3.org/2002/07/owl#Class": 1,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
+              "http://skosplus.net/skos-light/Label": 1
+            },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "instancecount": 0,
               "http://www.w3.org/2004/02/skos/core#Collection": 3
+            },
+            "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+              "instancecount": 0,
+              "http://www.w3.org/2002/07/owl#Class": 1,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
+              "http://skosplus.net/skos-light/Label": 1
             }
           }
         },
-        "instancecount": 9
+        "instancecount": 10
       },
       {
         "id": "http://skosplus.net/skos-light/Label",
@@ -555,11 +576,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
-            },
-            "http://skosplus.net/skos-light/alternativeLabel": {
-              "instancecount": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://skosplus.net/skos-light/description": {
               "instancecount": 1
@@ -584,19 +602,13 @@ var tree={
             }
           },
           "from": {
-            "http://skosplus.net/skos-light/hasRelatedLabel": {
-              "instancecount": 0,
-              "http://www.w3.org/2002/07/owl#Class": 1,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
-              "http://skosplus.net/skos-light/Label": 1
-            },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "instancecount": 0,
               "http://www.w3.org/2004/02/skos/core#Collection": 2
             }
           }
         },
-        "instancecount": 9
+        "instancecount": 8
       },
       {
         "id": "https://archaeolink.github.io/n4o-ta4-conservation/Ontology_collection",
@@ -649,8 +661,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 1
@@ -659,16 +671,15 @@ var tree={
               "instancecount": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
-              "instancecount": 18,
-              "http://www.w3.org/2002/07/owl#Class": 18,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 17,
-              "http://skosplus.net/skos-light/Label": 16,
+              "instancecount": 1,
+              "http://www.w3.org/2002/07/owl#Class": 1,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
               "http://skosplus.net/skos-light/Vocabulary": 1
             }
           },
           "from": {}
         },
-        "instancecount": 22
+        "instancecount": 5
       },
       {
         "id": "http://skosplus.net/skos-light/Actor",

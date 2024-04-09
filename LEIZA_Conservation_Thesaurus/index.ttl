@@ -1,3 +1,4 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix ns1: <http://skosplus.net/skos-light/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -9,6 +10,7 @@
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "LEIZA Restaurierungs- und Konservierungsthesaurus"@de ;
+    dc:license <http://creativecommons.org/licenses/by/4.0> ;
     void:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
     ns1:LicenseLink <https://creativecommons.org/licenses/by/4.0/> ;
     ns1:vocabularyCreatorResource <http://www.wikidata.org/entity/Q125400666>,

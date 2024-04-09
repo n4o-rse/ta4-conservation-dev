@@ -1,3 +1,4 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix ns1: <http://skosplus.net/skos-light/> .
 @prefix ns2: <https://archaeolink.github.io/n4o-ta4-conservation/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -10,6 +11,7 @@ ns2:stStRVHTWT8PXV2Lj19GGL a ns1:Label,
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "[Objektuntersuchung]"@de ;
+    dc:license <http://creativecommons.org/licenses/by/4.0> ;
     void:inDataset ns2:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
     ns1:description "Beschaffung und Sammlung von Informationen über den Zustand eines Objektes, die für einen Entscheidungsprozess bei der Konservierung notwendig sind (vgl. DIN EN 15898:2020-02)"@de ;
     ns1:hasSuperLabel ns2:eq7GtLWHJesucfazgADPZE ;
