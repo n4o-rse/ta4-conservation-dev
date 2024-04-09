@@ -266,6 +266,11 @@ sl:Vocabulary rdf:type owl:Class ;
                         rdfs:subClassOf :LEIZA_Conservation_Thesaurus .
 
 
+###  https://archaeolink.github.io/n4o-ta4-conservation/sSygVCh1KaCSrkS5Ku3Aak
+:sSygVCh1KaCSrkS5Ku3Aak rdf:type owl:Class ;
+                        rdfs:subClassOf <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> .
+
+
 ###  https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7
 :tmjVdStfYu6PQuQeq7Sua7 rdf:type owl:Class ;
                         rdfs:subClassOf :dYxXkaqsnBqVYA1THAxjgE .
@@ -274,6 +279,11 @@ sl:Vocabulary rdf:type owl:Class ;
 ###  https://archaeolink.github.io/n4o-ta4-conservation/wsbDppTfr2BSxsmhSuEbG4
 :wsbDppTfr2BSxsmhSuEbG4 rdf:type owl:Class ;
                         rdfs:subClassOf :dYxXkaqsnBqVYA1THAxjgE .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq
+<https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> .
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1
@@ -311,6 +321,11 @@ sl:Vocabulary rdf:type owl:Class ;
                                  sl:Label .
 
 
+###  https://archaeolink.github.io/n4o-ta4-conservation/sSygVCh1KaCSrkS5Ku3Aak
+:sSygVCh1KaCSrkS5Ku3Aak rdf:type owl:NamedIndividual ,
+                                 sl:Label .
+
+
 ###  https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7
 :tmjVdStfYu6PQuQeq7Sua7 rdf:type owl:NamedIndividual ,
                                  sl:Label .
@@ -330,6 +345,11 @@ sl:Vocabulary rdf:type owl:Class ;
 ###  https://archaeolink.github.io/n4o-ta4-conservation/wsbDppTfr2BSxsmhSuEbG4
 :wsbDppTfr2BSxsmhSuEbG4 rdf:type owl:NamedIndividual ,
                                  sl:Label .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq
+<https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq> rdf:type owl:NamedIndividual ,
+                                                                                     sl:Label .
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1
@@ -376,18 +396,32 @@ sl:Vocabulary rdf:type owl:Class ;
                         sl:alternativeLabel "Behandlung"@de .
 
 
+:sSygVCh1KaCSrkS5Ku3Aak sl:identifierLabel "Organik"@de ;
+                        sl:hasSuperLabel <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> ;
+                        rdfs:label "Organik"@de ;
+                        sl:identifier "sSygVCh1KaCSrkS5Ku3Aak" .
+
+
 :tmjVdStfYu6PQuQeq7Sua7 rdfs:comment "Die zur Erreichung des Restaurierungs.- und/oder Konservierungsziel angewendeten Vorgehensweisen während des Objekteingriffs."@de ;
                         sl:hasSuperLabel :dYxXkaqsnBqVYA1THAxjgE ;
                         rdfs:label "Methode und Technik"@de ;
                         sl:identifierLabel "Methode und Technik"@de ;
-                        sl:identifier "tmjVdStfYu6PQuQeq7Sua7" .
+                        sl:identifier "tmjVdStfYu6PQuQeq7Sua7" ;
+                        rdfs:subClassOf :dYxXkaqsnBqVYA1THAxjgE .
 
 
 :wsbDppTfr2BSxsmhSuEbG4 sl:identifierLabel "Material"@de ;
+                        rdfs:subClassOf :dYxXkaqsnBqVYA1THAxjgE ;
                         skos:closeMatch <http://www.wikidata.org/entity/Q214609> ;
                         sl:identifier "wsbDppTfr2BSxsmhSuEbG4" ;
                         sl:hasSuperLabel :dYxXkaqsnBqVYA1THAxjgE ;
                         rdfs:label "Material"@de .
+
+
+<https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq> sl:hasSuperLabel <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> ;
+                                                                            sl:identifier "1eo1EwnxCPF6yukEJo1Wdq" ;
+                                                                            sl:identifierLabel "Silikat"@de ;
+                                                                            rdfs:label "Silikat"@de .
 
 
 <https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1> sl:identifierLabel "Metall"@de ;
@@ -405,7 +439,8 @@ sl:Vocabulary rdf:type owl:Class ;
                                                                             skos:closeMatch <http://www.wikidata.org/entity/Q39546> ;
                                                                             rdfs:label "Werkzeug"@de ;
                                                                             sl:identifier "3EE7pLjByXiT4nHWxyqKuB" ;
-                                                                            sl:hasSuperLabel :dYxXkaqsnBqVYA1THAxjgE .
+                                                                            sl:hasSuperLabel :dYxXkaqsnBqVYA1THAxjgE ;
+                                                                            rdfs:subClassOf :dYxXkaqsnBqVYA1THAxjgE .
 
 
 <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> rdfs:label "[Objekt-Werkstoff (Material)]"@de ;
