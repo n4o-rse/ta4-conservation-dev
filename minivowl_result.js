@@ -34,7 +34,97 @@ var minivowlresult={
    "name": "Vocabulary",
    "type": "class",
    "uri": "http://skosplus.net/skos-light/Vocabulary"
+  },
+  {
+   "name": "Label",
+   "type": "class",
+   "uri": "http://skosplus.net/skos-light/Label"
   }
  ],
- "links": []
+ "links": [
+  {
+   "source": 6,
+   "target": 6,
+   "valueTo": "subClassOf",
+   "propertyTo": "class",
+   "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+  },
+  {
+   "source": 6,
+   "target": 5,
+   "valueTo": "subClassOf",
+   "propertyTo": "class",
+   "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+  },
+  {
+   "source": 4,
+   "target": 6,
+   "valueTo": "subClassOf",
+   "propertyTo": "class",
+   "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+  },
+  {
+   "source": 4,
+   "target": 5,
+   "valueTo": "subClassOf",
+   "propertyTo": "class",
+   "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+  },
+  {
+   "source": 3,
+   "target": 6,
+   "valueTo": "subClassOf",
+   "propertyTo": "class",
+   "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+  },
+  {
+   "source": 3,
+   "target": 5,
+   "valueTo": "subClassOf",
+   "propertyTo": "class",
+   "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+  },
+  {
+   "source": 6,
+   "target": 6,
+   "valueTo": "hasSuperLabel",
+   "propertyTo": "class",
+   "uriTo": "http://skosplus.net/skos-light/hasSuperLabel"
+  },
+  {
+   "source": 4,
+   "target": 6,
+   "valueTo": "hasSuperLabel",
+   "propertyTo": "class",
+   "uriTo": "http://skosplus.net/skos-light/hasSuperLabel"
+  },
+  {
+   "source": 3,
+   "target": 6,
+   "valueTo": "hasSuperLabel",
+   "propertyTo": "class",
+   "uriTo": "http://skosplus.net/skos-light/hasSuperLabel"
+  },
+  {
+   "source": 6,
+   "target": 6,
+   "valueTo": "hasSubLabel",
+   "propertyTo": "class",
+   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
+  },
+  {
+   "source": 4,
+   "target": 6,
+   "valueTo": "hasSubLabel",
+   "propertyTo": "class",
+   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
+  },
+  {
+   "source": 3,
+   "target": 6,
+   "valueTo": "hasSubLabel",
+   "propertyTo": "class",
+   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
+  }
+ ]
 }

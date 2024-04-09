@@ -34,19 +34,19 @@
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "LEIZA_Restaurierungs-_und_Konserverungsthesaurus"@en ;
-    ns1:averageLiteralLength 39 ;
-    ns1:averageObjectIRILength 65 ;
-    ns1:averagePropertyIRILength 41 ;
-    ns1:averageSubjectIRILength 67 ;
+    ns1:averageLiteralLength 28 ;
+    ns1:averageObjectIRILength 64 ;
+    ns1:averagePropertyIRILength 42 ;
+    ns1:averageSubjectIRILength 68 ;
     ns1:datatypes 0 ;
     ns1:distinctBlankNodes 0 ;
-    ns1:distinctIRIReferences 114 ;
-    ns1:distinctLiterals 12 ;
-    ns1:distinctRDFNodes 126 ;
-    ns1:languages 2 ;
+    ns1:distinctIRIReferences 138 ;
+    ns1:distinctLiterals 21 ;
+    ns1:distinctRDFNodes 159 ;
+    ns1:languages 3 ;
     ns1:propertyClasses 1 ;
     dc:language <http://www.lexvo.org/page/iso639-1/en> ;
-    dcterms:modified "2024-04-09T12:43:51"^^xsd:dateTime ;
+    dcterms:modified "2024-04-09T13:01:54"^^xsd:dateTime ;
     dcterms:subject <http://dbpedia.org/resource/Location>,
         <http://dbpedia.org/resource/OGC_GeoSPARQL>,
         <http://dbpedia.org/resource/Time>,
@@ -62,28 +62,35 @@
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_Source>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_StructualConcept>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_Vocabulary> ;
-    void:classes 8 ;
+    void:classes 10 ;
     void:dataDump <https://archaeolink.github.io/n4o-ta4-conservation/index.ttl> ;
-    void:distinctObjects 57 ;
-    void:distinctSubjects 44 ;
-    void:entities 8 ;
+    void:distinctObjects 70 ;
+    void:distinctSubjects 47 ;
+    void:entities 11 ;
     void:feature <http://www.w3.org/ns/formats/RDFa>,
         <http://www.w3.org/ns/formats/Turtle> ;
-    void:properties 13 ;
-    void:propertyPartition <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_comment>,
+    void:properties 21 ;
+    void:propertyPartition <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_alternativeLabel>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_closeMatch>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_comment>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_created>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_creator>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_description>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_domain>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_hasSubLabel>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_hasSuperLabel>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_identifier>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_identifierLabel>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_label>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_licence>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_range>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_subClassOf>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_title>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_translation>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_type>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_versionIRI>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_versionInfo> ;
-    void:triples 135 ;
+    void:triples 166 ;
     void:uriSpace "https://archaeolink.github.io/n4o-ta4-conservation/"^^xsd:string ;
     void:vocabulary ns1:,
         dcam:,

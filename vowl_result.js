@@ -118,11 +118,19 @@ var vowlresult={
    "type": "http://www.w3.org/2002/07/owl#Class"
   },
   {
-   "id": 42,
+   "id": 40,
+   "type": "http://www.w3.org/2002/07/owl#Class"
+  },
+  {
+   "id": 41,
+   "type": "http://www.w3.org/2002/07/owl#Class"
+  },
+  {
+   "id": 48,
    "type": "http://www.w3.org/2000/01/rdf-schema#Datatype"
   },
   {
-   "id": 43,
+   "id": 49,
    "type": "http://www.w3.org/2000/01/rdf-schema#Datatype"
   }
  ],
@@ -253,7 +261,9 @@ var vowlresult={
      }
     ]
    },
-   "subClasses": [],
+   "subClasses": [
+    "41"
+   ],
    "superClasses": []
   },
   {
@@ -261,15 +271,115 @@ var vowlresult={
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
+   "label": "Metall",
+   "annotations": {
+    "http://skosplus.net/skos-light/identifierLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifierLabel",
+      "language": "undefined",
+      "value": "Metall",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/translation": [
+     {
+      "identifier": "http://skosplus.net/skos-light/translation",
+      "language": "undefined",
+      "value": "metal",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/hasSuperLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/hasSuperLabel",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/description": [
+     {
+      "identifier": "http://skosplus.net/skos-light/description",
+      "language": "undefined",
+      "value": "Gruppe chemischer Elemente",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifier": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifier",
+      "language": "undefined",
+      "value": "2dmdnWjmWJURKh9PLaJuH1",
+      "type": "label"
+     }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+     {
+      "identifier": "http://www.w3.org/2004/02/skos/core#closeMatch",
+      "language": "undefined",
+      "value": "http://www.wikidata.org/entity/Q11426",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/alternativeLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/alternativeLabel",
+      "language": "undefined",
+      "value": "Metalle",
+      "type": "label"
+     }
+    ]
+   },
+   "subClasses": [],
+   "superClasses": [
+    "41"
+   ]
+  },
+  {
+   "id": 40,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": "[Objekt-Werkstoff (Material)]",
+   "annotations": {
+    "http://skosplus.net/skos-light/identifierLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifierLabel",
+      "language": "undefined",
+      "value": "[<Objekt-Werkstoff (Material)]",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/hasSubLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/hasSubLabel",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1",
+      "type": "iri"
+     }
+    ]
+   },
+   "subClasses": [
+    "40"
+   ],
+   "superClasses": [
+    "39"
+   ]
+  },
+  {
+   "id": 41,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
    "label": {
-    "IRI-based": "LEIZA_Conservation_Thesaurus"
+    "IRI-based": "8kKtpbqpnY2T2k7EixxdoP"
    },
    "annotations": {},
    "subClasses": [],
    "superClasses": []
   },
   {
-   "id": 42,
+   "id": 48,
    "iri": "http://www.w3.org/2001/XMLSchema#anyURI",
    "baseIRI": "(rdflib.term.URIRef('http://skosplus.net/skos-light/LicenseLink'), rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema",
    "instances": 0,
@@ -281,7 +391,7 @@ var vowlresult={
    "superClasses": []
   },
   {
-   "id": 43,
+   "id": 49,
    "iri": "http://www.w3.org/2001/XMLSchema#string",
    "baseIRI": "(rdflib.term.URIRef('http://skosplus.net/skos-light/description'), rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema",
    "instances": 0,
@@ -411,11 +521,27 @@ var vowlresult={
    "type": "owl:AnnotationProperty"
   },
   {
-   "id": 40,
+   "id": 42,
    "type": "owl:Class"
   },
   {
-   "id": 41,
+   "id": 43,
+   "type": "owl:Class"
+  },
+  {
+   "id": 44,
+   "type": "owl:Class"
+  },
+  {
+   "id": 45,
+   "type": "owl:Class"
+  },
+  {
+   "id": 46,
+   "type": "owl:Class"
+  },
+  {
+   "id": 47,
    "type": "owl:Class"
   }
  ],
@@ -984,8 +1110,36 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 40,
+   "id": 42,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": {
+    "IRI-based": "LEIZA_Conservation_Thesaurus"
+   },
+   "annotations": {},
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 43,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": {
+    "IRI-based": "2dmdnWjmWJURKh9PLaJuH1"
+   },
+   "annotations": {},
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 44,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
    "label": "LEIZA Restaurierungs- und Konservierungsthesaurus",
@@ -1005,12 +1159,126 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 41,
+   "id": 45,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
+   "label": "Metall",
+   "annotations": {
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+     {
+      "identifier": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifierLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifierLabel",
+      "language": "undefined",
+      "value": "Metall",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/translation": [
+     {
+      "identifier": "http://skosplus.net/skos-light/translation",
+      "language": "undefined",
+      "value": "metal",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/hasSuperLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/hasSuperLabel",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/description": [
+     {
+      "identifier": "http://skosplus.net/skos-light/description",
+      "language": "undefined",
+      "value": "Gruppe chemischer Elemente",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifier": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifier",
+      "language": "undefined",
+      "value": "2dmdnWjmWJURKh9PLaJuH1",
+      "type": "label"
+     }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+     {
+      "identifier": "http://www.w3.org/2004/02/skos/core#closeMatch",
+      "language": "undefined",
+      "value": "http://www.wikidata.org/entity/Q11426",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/alternativeLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/alternativeLabel",
+      "language": "undefined",
+      "value": "Metalle",
+      "type": "label"
+     }
+    ]
+   },
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 46,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": "[Objekt-Werkstoff (Material)]",
+   "annotations": {
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+     {
+      "identifier": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifierLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifierLabel",
+      "language": "undefined",
+      "value": "[<Objekt-Werkstoff (Material)]",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/hasSubLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/hasSubLabel",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1",
+      "type": "iri"
+     }
+    ]
+   },
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 47,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
    "label": {
-    "IRI-based": "LEIZA_Conservation_Thesaurus"
+    "IRI-based": "8kKtpbqpnY2T2k7EixxdoP"
    },
    "annotations": {
     "http://www.w3.org/2002/07/owl#versionIRI": [
