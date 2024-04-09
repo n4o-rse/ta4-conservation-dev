@@ -1,0 +1,357 @@
+@prefix : <http://skosplus.net/skos-light/> .
+@prefix ls: <http://labeling.link/docs/ls/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@base <http://skosplus.net/skos-light/> .
+
+<http://skosplus.net/skos-light/> rdf:type owl:Ontology ;
+                                   owl:versionIRI <http://skosplus.net/skos-light/> ;
+                                   <http://purl.org/dc/elements/1.1/created> "2024-04-09" ;
+                                   <http://purl.org/dc/elements/1.1/creator> "Florian Thiery (LEIZA), Lasse Mempel-Länger (LEIZA)"@en ;
+                                   <http://purl.org/dc/elements/1.1/description> "A lighweight SKOS ontology for non SKOS experts."@en ;
+                                   <http://purl.org/dc/elements/1.1/licence> <http://creativecommons.org/licenses/by/4.0/> ;
+                                   <http://purl.org/dc/elements/1.1/title> "SKOSlight Ontology"@en ;
+                                   owl:versionInfo "v0.1" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/created
+<http://purl.org/dc/elements/1.1/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty ;
+                                          rdfs:range rdfs:Literal ;
+                                          rdfs:domain owl:Thing .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/licence
+<http://purl.org/dc/elements/1.1/licence> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://skosplus.net/skos-light/hasType
+:hasType rdf:type owl:AnnotationProperty ;
+         rdfs:comment "type annotation property to type e.g. structural property, class"@en ;
+         rdfs:label "has type"@en .
+
+
+###  http://skosplus.net/skos-light/skosLightMainEntity
+:skosLightMainEntity rdf:type owl:AnnotationProperty ;
+                     rdfs:label "skosLight main entity"@en ;
+                     rdfs:range xsd:boolean ;
+                     rdfs:domain owl:Thing .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+rdf:type rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://purl.org/dc/terms/LicenseDocument
+terms:LicenseDocument rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/LinguisticSystem
+terms:LinguisticSystem rdf:type rdfs:Datatype .
+
+
+###  http://skosplus.net/skos-light/structuralProperty
+:structuralProperty rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:range owl:Thing ;
+              :skosLightMainEntity "true"^^xsd:boolean ;
+              rdfs:comment "An entity responsible for making the resource. Recommended practice is to identify the creator with a URI. If this is not possible or feasible, a literal value that identifies the creator may be provided."@en ;
+              rdfs:label "Creator"@en .
+
+
+###  http://skosplus.net/skos-light/hasRelatedLabel
+:hasRelatedLabel rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:SymmetricProperty ;
+                 :skosLightMainEntity "hat related Bezeichner"@de ,
+                                      "true"@de ;
+                 rdfs:label "has related label"@en .
+
+
+###  http://skosplus.net/skos-light/hasSubLabel
+:hasSubLabel rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:TransitiveProperty ;
+             :skosLightMainEntity "hat Tochter-Bezeichner"@de ,
+                                  "true"@de ;
+             rdfs:label "has sub label"@en .
+
+
+###  http://skosplus.net/skos-light/hasSuperLabel
+:hasSuperLabel rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:TransitiveProperty ;
+               :skosLightMainEntity "true"^^xsd:boolean ;
+               rdfs:label "has super label"@en ,
+                          "hat Mutter-Bezeichner"@de .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#seeAlso
+rdfs:seeAlso rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:SymmetricProperty ;
+             rdfs:comment "Further information about the subject resource."@en ;
+             rdfs:label "seeAlso"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#broadMatch
+skos:broadMatch rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:TransitiveProperty ;
+                rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
+
+
+###  http://www.w3.org/2004/02/skos/core#closeMatch
+skos:closeMatch rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:SymmetricProperty ;
+                rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
+
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+skos:exactMatch rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:SymmetricProperty ,
+                         owl:TransitiveProperty ;
+                rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
+
+
+###  http://www.w3.org/2004/02/skos/core#narrowMatch
+skos:narrowMatch rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:TransitiveProperty ;
+                 rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
+
+
+###  http://www.w3.org/2004/02/skos/core#relatedMatch
+skos:relatedMatch rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdf:type owl:SymmetricProperty ;
+                  rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:DatatypeProperty ;
+                                          rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://skosplus.net/skos-light/alternativeLabel
+:alternativeLabel rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  :skosLightMainEntity "true"^^xsd:boolean ;
+                  rdfs:label "alternative label"@en ,
+                             "alternativer Bezeichner"@de .
+
+
+###  http://skosplus.net/skos-light/description
+:description rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Label ;
+             rdfs:range xsd:string ;
+             :skosLightMainEntity "true"^^xsd:boolean ;
+             rdfs:label "Beschreibung"@de ,
+                        "description"@en .
+
+
+###  http://skosplus.net/skos-light/identifier
+:identifier rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :Label ;
+            rdfs:range xsd:string ;
+            :skosLightMainEntity "true"^^xsd:boolean ;
+            rdfs:label "identifier"@en .
+
+
+###  http://skosplus.net/skos-light/identifierLabel
+:identifierLabel rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Label ;
+                 rdfs:range xsd:string ;
+                 :skosLightMainEntity "true"^^xsd:boolean ;
+                 rdfs:label "identifier label"@en ,
+                            "präferierter Bezeichner"@de .
+
+
+###  http://skosplus.net/skos-light/translation
+:translation rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Label ;
+             rdfs:range xsd:string ;
+             :skosLightMainEntity "true"^^xsd:boolean ;
+             rdfs:label "translation"@en ,
+                        "Übersetzung"@de .
+
+
+###  http://skosplus.net/skos-light/vocabularyCreatorString
+:vocabularyCreatorString rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf owl:topDataProperty ;
+                         rdfs:domain :Vocabulary ;
+                         rdfs:range xsd:string ;
+                         :skosLightMainEntity "true"^^xsd:boolean ;
+                         rdfs:label "vocabulary creator string"@en .
+
+
+###  http://skosplus.net/skos-light/vocabularyDescription
+:vocabularyDescription rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain :Vocabulary ;
+                       rdfs:range xsd:string ;
+                       :skosLightMainEntity "true"^^xsd:boolean ;
+                       rdfs:label "Vokabular Beschreibung"@de ,
+                                  "vocabulary description"@en .
+
+
+###  http://skosplus.net/skos-light/vocabularyIdentifier
+:vocabularyIdentifier rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      rdfs:domain :Vocabulary ;
+                      rdfs:range xsd:string ;
+                      :skosLightMainEntity "true"^^xsd:boolean ;
+                      rdfs:label "Vokabular Identifier"@de ,
+                                 "vocabulary identifier"@en .
+
+
+###  http://skosplus.net/skos-light/vocabularyLanguage
+:vocabularyLanguage rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :Vocabulary ;
+                    rdfs:range xsd:string ;
+                    :skosLightMainEntity "true"^^xsd:boolean ;
+                    rdfs:label "Vokabular Sprache"@de ,
+                               "vocabulary language"@en .
+
+
+###  http://skosplus.net/skos-light/vocabularyLicenseLink
+:vocabularyLicenseLink rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain :Vocabulary ;
+                       rdfs:range xsd:anyURI ;
+                       :skosLightMainEntity "true"^^xsd:boolean ;
+                       rdfs:label "vocabulary license link"@en .
+
+
+###  http://skosplus.net/skos-light/vocabularyLicenseString
+:vocabularyLicenseString rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf owl:topDataProperty ;
+                         rdfs:domain :Vocabulary ;
+                         rdfs:range xsd:string ;
+                         :skosLightMainEntity "true"^^xsd:boolean ;
+                         rdfs:label "vocabulary license string"@en .
+
+
+###  http://skosplus.net/skos-light/vocabularyTitle
+:vocabularyTitle rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Vocabulary ;
+                 rdfs:range xsd:string ;
+                 :skosLightMainEntity "true"^^xsd:boolean ;
+                 rdfs:label "Vokabular Titlel"@de ,
+                            "vocabulary title"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://skosplus.net/skos-light/Actor
+:Actor rdf:type owl:Class ;
+       rdfs:subClassOf :Generic ;
+       :skosLightMainEntity "true"^^xsd:boolean ;
+       rdfs:label "Actor"@en ,
+                  "Akteur"@de .
+
+
+###  http://skosplus.net/skos-light/Generic
+:Generic rdf:type owl:Class ;
+         rdfs:label "<Generic Classes>"@en .
+
+
+###  http://skosplus.net/skos-light/LEIZA_Conservation_Thesaurus
+:LEIZA_Conservation_Thesaurus rdf:type owl:Class ,
+                                       :Vocabulary ;
+                              rdfs:comment "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse"@de ;
+                              rdfs:label "LEIZA Restaurierungs- und Konserverungsthesaurus"@de .
+
+
+###  http://skosplus.net/skos-light/Label
+:Label rdf:type owl:Class ;
+       rdfs:subClassOf :Generic ;
+       :skosLightMainEntity "true"^^xsd:boolean ;
+       rdfs:label "Begriff"@de ,
+                  "Label"@en .
+
+
+###  http://skosplus.net/skos-light/Source
+:Source rdf:type owl:Class ;
+        rdfs:subClassOf :Generic ;
+        :skosLightMainEntity "true"^^xsd:boolean ;
+        rdfs:label "Quelle"@de ,
+                   "Source"@en .
+
+
+###  http://skosplus.net/skos-light/StructualConcept
+:StructualConcept rdf:type owl:Class ;
+                  rdfs:subClassOf :Generic ;
+                  :skosLightMainEntity "true"^^xsd:boolean ;
+                  rdfs:label "Structural Concept"@en .
+
+
+###  http://skosplus.net/skos-light/Vocabulary
+:Vocabulary rdf:type owl:Class ;
+            rdfs:subClassOf :Generic ;
+            :skosLightMainEntity "true"^^xsd:boolean ;
+            rdfs:label "Vocabulary"@en ,
+                       "Vokabular"@de .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://purl.org/dc/elements/1.1/creator> rdfs:label "Creator"@en ;
+                                          rdfs:comment "An entity primarily responsible for making the resource. Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity."@en .
+
+
+owl:Thing rdfs:label "Thing"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
