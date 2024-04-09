@@ -3,7 +3,4 @@
 @prefix ns2: <http://www.w3.org/ns/pim/space#> .
 
 <docs//profile/card> a foaf:PersonalProfileDocument ;
-    foaf:primaryTopic <https://archaeolink.github.io/n4o-ta4-conservation/profile/card#> .
-
-<https://archaeolink.github.io/n4o-ta4-conservation/profile/card#> a foaf:Person ;
-    ns2:storage 
+    foaf:primaryTopic 

@@ -73,6 +73,9 @@ var tree={
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1
             },
+            "http://skosplus.net/skos-light/alternativeLabel": {
+              "instancecount": 1
+            },
             "http://skosplus.net/skos-light/description": {
               "instancecount": 1
             },
@@ -108,13 +111,25 @@ var tree={
             }
           },
           "from": {
+            "http://skosplus.net/skos-light/hasSuperLabel": {
+              "instancecount": 0,
+              "http://www.w3.org/2002/07/owl#Class": 2,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 2,
+              "http://skosplus.net/skos-light/Label": 2
+            },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "instancecount": 0,
               "http://www.w3.org/2004/02/skos/core#Collection": 3
+            },
+            "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+              "instancecount": 0,
+              "http://www.w3.org/2002/07/owl#Class": 2,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 2,
+              "http://skosplus.net/skos-light/Label": 2
             }
           }
         },
-        "instancecount": 11
+        "instancecount": 12
       },
       {
         "id": "http://skosplus.net/skos-light/Vocabulary",
