@@ -32,6 +32,7 @@
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#dYxXkaqsnBqVYA1THAxjgE>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#eq7GtLWHJesucfazgADPZE>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#fBAv2FHRc3aDVk9ve1JThd>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#gmcvXMjo1E4ZLBMC5DRBWf>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#ievmu1QUgrpeYSiU1DeYfm>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#qfYhqzHDc8FTxu1A6T6ycW>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#sSygVCh1KaCSrkS5Ku3Aak>,
@@ -114,6 +115,9 @@
 
 <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#fBAv2FHRc3aDVk9ve1JThd> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> ;
     ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/fBAv2FHRc3aDVk9ve1JThd> .
+
+<https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#gmcvXMjo1E4ZLBMC5DRBWf> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq> ;
+    ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/gmcvXMjo1E4ZLBMC5DRBWf> .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#ievmu1QUgrpeYSiU1DeYfm> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> ;
     ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/ievmu1QUgrpeYSiU1DeYfm> .

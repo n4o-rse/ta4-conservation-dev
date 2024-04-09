@@ -3,6 +3,7 @@ var search={
   "AnnotationProperty Instances Collection": "https://archaeolink.github.io/n4o-ta4-conservation/AnnotationProperty_collection",
   "Class Instances Collection": "https://archaeolink.github.io/n4o-ta4-conservation/Class_collection",
   "Eingriff": "https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE",
+  "Keramik": "https://archaeolink.github.io/n4o-ta4-conservation/gmcvXMjo1E4ZLBMC5DRBWf",
   "LEIZA Restaurierungs- und Konserverungsthesaurus": "https://archaeolink.github.io/n4o-ta4-conservation/",
   "LEIZA Restaurierungs- und Konservierungsthesaurus": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
   "Label Instances Collection": "https://archaeolink.github.io/n4o-ta4-conservation/Label_collection",

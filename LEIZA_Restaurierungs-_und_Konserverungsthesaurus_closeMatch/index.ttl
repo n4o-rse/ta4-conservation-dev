@@ -8,5 +8,5 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Property Partition: closeMatch"@en ;
     void:property skos:closeMatch ;
-    void:triples 3 .
+    void:triples 6 .
 
