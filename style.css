@@ -170,15 +170,15 @@ h2 {
 }
 #title {
   font-size: 36px;
-  font-family: "Cairo", sans-serif !important;
-  color: #058b8c !important;
+  font-family: "PT Sans", sans-serif !important;
+  color: #072454 !important;
   font-weight: 600;
   margin-left: 10px;
 }
 #titletwo {
   font-size: 20px;
-  font-family: "Cairo", sans-serif !important;
-  color: #058b8c !important;
+  font-family: "PT Sans", sans-serif !important;
+  color: #072454 !important;
   font-weight: 300;
   text-decoration: underline;
   margin-left: 10px;
@@ -187,14 +187,14 @@ body {
   background: #ffffff;
 }
 table.description .container > td {
-  background: #058b8c !important;
+  background: #072454 !important;
   padding: 0.2em 0.8em;
 }
 table.description .even td {
   background: #ffffff;
 }
 table.description .odd td {
-  background: #dcebeb;
+  background: #a6aaac;
 }
 .image {
   background: white;
@@ -226,7 +226,7 @@ a.expander {
   padding: 3px;
 }
 body {
-  font-family: "Cairo", sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 
 .sidenav {
@@ -276,6 +276,6 @@ body {
 }
 
 .ui-widget {
-  font-family: "Cairo", sans-serif !important;
+  font-family: "PT Sans", sans-serif !important;
   padding-bottom: 10px;
 }
