@@ -1,0 +1,16 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<https://archaeolink.github.io/n4o-ta4-conservation/> a owl:Ontology,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    dc:created "2024-04-09" ;
+    dc:creator "Florian Thiery (LEIZA), Lasse Mempel-Länger (LEIZA)"@en ;
+    dc:description "A lighweight SKOS ontology for non SKOS experts."@en ;
+    dc:licence <http://creativecommons.org/licenses/by/4.0/> ;
+    dc:title "LEIZA Restaurierungs- und Konserverungsthesaurus"@de ;
+    void:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
+    owl:versionIRI <https://archaeolink.github.io/n4o-ta4-conservation/> ;
+    owl:versionInfo "v0.1" .
+

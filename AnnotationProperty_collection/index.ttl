@@ -1,0 +1,24 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<https://archaeolink.github.io/n4o-ta4-conservation/AnnotationProperty_collection> a skos:Collection,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "AnnotationProperty Instances Collection"@en ;
+    void:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
+    rdfs:member <https://archaeolink.github.io/n4o-ta4-conservation/alternativeLabel>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/description>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/hasRelatedLabel>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/hasSubLabel>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/hasSuperLabel>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/identifier>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/identifierLabel>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/translation>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/vocabularyCreatorString>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/vocabularyDescription>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/vocabularyIdentifier>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/vocabularyLanguage>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/vocabularyLicenseString>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/vocabularyTitle> .
+
