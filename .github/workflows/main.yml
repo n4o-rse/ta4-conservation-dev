@@ -1,0 +1,37 @@
+name: SPARQL Unicorn Ontology Documentation CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    uses: sparqlunicorn/sparqlunicornGoesGIS-ontdoc/.github/workflows/udoc.yml@main
+    with:
+      version: v016
+      rdffilepath: thesaurus.ttl
+      docpath: docs
+      prefixns: https://archaeolink.github.io/n4o-ta4-conservation/
+      prefixnsshort: no
+      indexpages: true
+      createcollections: true
+      createVOWL: true
+      preferredlang: en
+      ghpages: true
+      metadatatable: true
+      createnonNSPages: true
+      logourl: https://raw.githubusercontent.com/archaeolink-lod/unicorn-ontdoc-template-nmt/main/icons/al_circle_icon.png
+      ogcapifeatures: true
+      datasettitle: LEIZA Restaurierungs- und Konserverungsthesaurus
+      templatedir: https://github.com/archaeolink-lod/unicorn-ontdoc-template-archaeolink/archive/refs/tags/v0.5.zip
+      iiif: false
