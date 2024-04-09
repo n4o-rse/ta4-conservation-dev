@@ -620,7 +620,7 @@ skos: a voaf:Vocabulary ;
     vext:propertyClasses 1 ;
     dc:language <http://www.lexvo.org/page/iso639-1/en> ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0> ;
-    dcterms:modified "2024-04-09T19:25:06"^^xsd:dateTime ;
+    dcterms:modified "2024-04-09T19:29:39"^^xsd:dateTime ;
     dcterms:subject <http://dbpedia.org/resource/Location>,
         <http://dbpedia.org/resource/OGC_GeoSPARQL>,
         <http://dbpedia.org/resource/Time>,
