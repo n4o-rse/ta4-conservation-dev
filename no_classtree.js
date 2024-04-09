@@ -44,16 +44,16 @@ var tree={
     "data": [
       {
         "id": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
-        "parent": "https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary",
+        "parent": "http://skosplus.net/skos-light/Vocabulary",
         "type": "instance",
-        "text": "LEIZA Restaurierungs- und Konserverungsthesaurus (:LEIZA_Conservation_Thesaurus)",
+        "text": "LEIZA Restaurierungs- und Konservierungsthesaurus (:LEIZA_Conservation_Thesaurus)",
         "data": {}
       },
       {
-        "id": "https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary",
+        "id": "http://skosplus.net/skos-light/Vocabulary",
         "parent": "https://archaeolink.github.io/n4o-ta4-conservation/Generic",
         "type": "class",
-        "text": "Vocabulary (:Vocabulary) [1]",
+        "text": "Vocabulary (sl:Vocabulary) [1]",
         "data": {
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
@@ -62,7 +62,7 @@ var tree={
               "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
-              "instancecount": 3,
+              "instancecount": 2,
               "http://www.w3.org/2002/07/owl#Class": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#comment": {
@@ -75,47 +75,18 @@ var tree={
           "from": {
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "instancecount": 0,
-              "http://www.w3.org/2004/02/skos/core#Collection": 3
+              "http://www.w3.org/2004/02/skos/core#Collection": 2
             }
           }
         },
-        "instancecount": 6
+        "instancecount": 5
       },
       {
         "id": "https://archaeolink.github.io/n4o-ta4-conservation/Generic",
         "parent": "#",
         "type": "class",
         "text": "Generic (:Generic)",
-        "data": {
-          "to": {
-            "http://rdfs.org/ns/void#inDataset": {
-              "instancecount": 1,
-              "http://rdfs.org/ns/void#Dataset": 1,
-              "http://www.w3.org/ns/adms#Asset": 1
-            },
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
-              "instancecount": 1
-            },
-            "http://www.w3.org/2000/01/rdf-schema#label": {
-              "instancecount": 2
-            },
-            "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-              "instancecount": 1,
-              "http://www.w3.org/2002/07/owl#Class": 1
-            }
-          },
-          "from": {
-            "http://rdfs.org/ns/void#class": {
-              "instancecount": 0,
-              "http://rdfs.org/ns/void#Dataset": 1
-            },
-            "http://www.w3.org/2000/01/rdf-schema#member": {
-              "instancecount": 0,
-              "http://www.w3.org/2004/02/skos/core#Collection": 1
-            }
-          }
-        },
-        "instancecount": 5
+        "data": {}
       },
       {
         "id": "https://archaeolink.github.io/n4o-ta4-conservation/Ontology_collection",
@@ -125,31 +96,10 @@ var tree={
         "data": {}
       },
       {
-        "id": "https://archaeolink.github.io/n4o-ta4-conservation/AnnotationProperty_collection",
-        "parent": "http://www.w3.org/2004/02/skos/core#Collection",
-        "type": "instance",
-        "text": "AnnotationProperty Instances Collection (:AnnotationProperty_collection)",
-        "data": {}
-      },
-      {
-        "id": "https://archaeolink.github.io/n4o-ta4-conservation/Datatype_collection",
-        "parent": "http://www.w3.org/2004/02/skos/core#Collection",
-        "type": "instance",
-        "text": "Datatype Instances Collection (:Datatype_collection)",
-        "data": {}
-      },
-      {
         "id": "https://archaeolink.github.io/n4o-ta4-conservation/Class_collection",
         "parent": "http://www.w3.org/2004/02/skos/core#Collection",
         "type": "instance",
         "text": "Class Instances Collection (:Class_collection)",
-        "data": {}
-      },
-      {
-        "id": "https://archaeolink.github.io/n4o-ta4-conservation/NamedIndividual_collection",
-        "parent": "http://www.w3.org/2004/02/skos/core#Collection",
-        "type": "instance",
-        "text": "NamedIndividual Instances Collection (:NamedIndividual_collection)",
         "data": {}
       },
       {
@@ -163,7 +113,7 @@ var tree={
         "id": "http://www.w3.org/2004/02/skos/core#Collection",
         "parent": "#",
         "type": "collectionclass",
-        "text": "Collection (skos:Collection) [6]",
+        "text": "Collection (skos:Collection) [3]",
         "data": {
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
@@ -178,40 +128,41 @@ var tree={
               "instancecount": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
-              "instancecount": 1,
-              "http://www.w3.org/2002/07/owl#Ontology": 1
+              "instancecount": 2,
+              "http://www.w3.org/2002/07/owl#Class": 2,
+              "http://skosplus.net/skos-light/Vocabulary": 1
             }
           },
           "from": {}
         },
-        "instancecount": 5
+        "instancecount": 6
       },
       {
-        "id": "https://archaeolink.github.io/n4o-ta4-conservation/Actor",
+        "id": "http://skosplus.net/skos-light/Actor",
         "parent": "https://archaeolink.github.io/n4o-ta4-conservation/Generic",
         "type": "class",
-        "text": "Actor (:Actor)",
+        "text": "Actor (sl:Actor)",
         "data": {}
       },
       {
-        "id": "https://archaeolink.github.io/n4o-ta4-conservation/Label",
+        "id": "http://skosplus.net/skos-light/Label",
         "parent": "https://archaeolink.github.io/n4o-ta4-conservation/Generic",
         "type": "class",
-        "text": "Label (:Label)",
+        "text": "Label (sl:Label)",
         "data": {}
       },
       {
-        "id": "https://archaeolink.github.io/n4o-ta4-conservation/Source",
+        "id": "http://skosplus.net/skos-light/Source",
         "parent": "https://archaeolink.github.io/n4o-ta4-conservation/Generic",
         "type": "class",
-        "text": "Source (:Source)",
+        "text": "Source (sl:Source)",
         "data": {}
       },
       {
-        "id": "https://archaeolink.github.io/n4o-ta4-conservation/StructualConcept",
+        "id": "http://skosplus.net/skos-light/StructualConcept",
         "parent": "https://archaeolink.github.io/n4o-ta4-conservation/Generic",
         "type": "class",
-        "text": "StructualConcept (:StructualConcept)",
+        "text": "StructualConcept (sl:StructualConcept)",
         "data": {}
       }
     ]

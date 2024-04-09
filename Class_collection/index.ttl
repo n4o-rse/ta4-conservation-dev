@@ -7,11 +7,6 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Class Instances Collection"@en ;
     void:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
-    rdfs:member <https://archaeolink.github.io/n4o-ta4-conservation/Actor>,
-        <https://archaeolink.github.io/n4o-ta4-conservation/Generic>,
-        <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus>,
-        <https://archaeolink.github.io/n4o-ta4-conservation/Label>,
-        <https://archaeolink.github.io/n4o-ta4-conservation/Source>,
-        <https://archaeolink.github.io/n4o-ta4-conservation/StructualConcept>,
-        <https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary> .
+    rdfs:member <https://archaeolink.github.io/n4o-ta4-conservation/Generic>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus> .
 

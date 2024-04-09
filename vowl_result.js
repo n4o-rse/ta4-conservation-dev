@@ -118,11 +118,11 @@ var vowlresult={
    "type": "http://www.w3.org/2002/07/owl#Class"
   },
   {
-   "id": 42,
+   "id": 41,
    "type": "http://www.w3.org/2000/01/rdf-schema#Datatype"
   },
   {
-   "id": 43,
+   "id": 42,
    "type": "http://www.w3.org/2000/01/rdf-schema#Datatype"
   }
  ],
@@ -144,57 +144,105 @@ var vowlresult={
    "iri": "http://purl.org/dc/terms/LinguisticSystem",
    "baseIRI": "http://purl.org/dc/terms",
    "instances": 0,
-   "label": "Thing",
-   "annotations": {},
-   "subClasses": [],
-   "superClasses": []
-  },
-  {
-   "id": 31,
-   "iri": "http://www.w3.org/2002/07/owl#Thing",
-   "baseIRI": "http://www.w3.org/2002/07/owl",
-   "instances": 0,
    "label": {
-    "IRI-based": "Thing"
+    "IRI-based": "LinguisticSystem"
    },
    "annotations": {},
    "subClasses": [],
    "superClasses": []
   },
   {
+   "id": 31,
+   "iri": "http://skosplus.net/skos-light/structuralProperty",
+   "baseIRI": "http://skosplus.net/skos-light",
+   "instances": 0,
+   "label": "Thing",
+   "annotations": {},
+   "subClasses": [],
+   "superClasses": []
+  },
+  {
    "id": 32,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/structuralProperty",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "iri": "http://www.w3.org/2002/07/owl#Thing",
+   "baseIRI": "http://www.w3.org/2002/07/owl",
    "instances": 0,
    "label": "Akteur",
    "annotations": {},
    "subClasses": [],
    "superClasses": [
-    "34"
+    "38"
    ]
   },
   {
    "id": 33,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/Actor",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "iri": "http://skosplus.net/skos-light/Actor",
+   "baseIRI": "http://skosplus.net/skos-light",
+   "instances": 0,
+   "label": "Label",
+   "annotations": {},
+   "subClasses": [],
+   "superClasses": [
+    "38"
+   ]
+  },
+  {
+   "id": 34,
+   "iri": "http://skosplus.net/skos-light/Label",
+   "baseIRI": "http://skosplus.net/skos-light",
+   "instances": 0,
+   "label": "Source",
+   "annotations": {},
+   "subClasses": [],
+   "superClasses": [
+    "38"
+   ]
+  },
+  {
+   "id": 35,
+   "iri": "http://skosplus.net/skos-light/Source",
+   "baseIRI": "http://skosplus.net/skos-light",
+   "instances": 0,
+   "label": "Structural Concept",
+   "annotations": {},
+   "subClasses": [],
+   "superClasses": [
+    "38"
+   ]
+  },
+  {
+   "id": 36,
+   "iri": "http://skosplus.net/skos-light/StructualConcept",
+   "baseIRI": "http://skosplus.net/skos-light",
+   "instances": 0,
+   "label": "Vokabular",
+   "annotations": {},
+   "subClasses": [],
+   "superClasses": [
+    "38"
+   ]
+  },
+  {
+   "id": 37,
+   "iri": "http://skosplus.net/skos-light/Vocabulary",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "<Generic Classes>",
    "annotations": {},
    "subClasses": [
     "33",
+    "34",
+    "35",
     "36",
-    "37",
-    "38",
-    "39"
+    "37"
    ],
    "superClasses": []
   },
   {
-   "id": 34,
+   "id": 38,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/Generic",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
-   "label": "LEIZA Restaurierungs- und Konserverungsthesaurus",
+   "label": "LEIZA Restaurierungs- und Konservierungsthesaurus",
    "annotations": {
     "http://www.w3.org/2000/01/rdf-schema#comment": [
      {
@@ -209,60 +257,24 @@ var vowlresult={
    "superClasses": []
   },
   {
-   "id": 35,
+   "id": 39,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
-   "label": "Label",
+   "label": {
+    "IRI-based": "LEIZA_Conservation_Thesaurus"
+   },
    "annotations": {},
    "subClasses": [],
-   "superClasses": [
-    "34"
-   ]
+   "superClasses": []
   },
   {
-   "id": 36,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/Label",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
-   "instances": 0,
-   "label": "Source",
-   "annotations": {},
-   "subClasses": [],
-   "superClasses": [
-    "34"
-   ]
-  },
-  {
-   "id": 37,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/Source",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
-   "instances": 0,
-   "label": "Structural Concept",
-   "annotations": {},
-   "subClasses": [],
-   "superClasses": [
-    "34"
-   ]
-  },
-  {
-   "id": 38,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/StructualConcept",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
-   "instances": 0,
-   "label": "Vokabular",
-   "annotations": {},
-   "subClasses": [],
-   "superClasses": [
-    "34"
-   ]
-  },
-  {
-   "id": 39,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 41,
+   "iri": "http://www.w3.org/2001/XMLSchema#anyURI",
+   "baseIRI": "(rdflib.term.URIRef('http://skosplus.net/skos-light/LicenseLink'), rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema",
    "instances": 0,
    "label": {
-    "IRI-based": "Vocabulary"
+    "IRI-based": "anyURI"
    },
    "annotations": {},
    "subClasses": [],
@@ -271,22 +283,10 @@ var vowlresult={
   {
    "id": 42,
    "iri": "http://www.w3.org/2001/XMLSchema#string",
-   "baseIRI": "(rdflib.term.URIRef('https://archaeolink.github.io/n4o-ta4-conservation/description'), rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema",
+   "baseIRI": "(rdflib.term.URIRef('http://skosplus.net/skos-light/description'), rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema",
    "instances": 0,
    "label": {
     "IRI-based": "string"
-   },
-   "annotations": {},
-   "subClasses": [],
-   "superClasses": []
-  },
-  {
-   "id": 43,
-   "iri": "http://www.w3.org/2001/XMLSchema#anyURI",
-   "baseIRI": "(rdflib.term.URIRef('sl:LicenseLink'), rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema",
-   "instances": 0,
-   "label": {
-    "IRI-based": "anyURI"
    },
    "annotations": {},
    "subClasses": [],
@@ -413,10 +413,6 @@ var vowlresult={
   {
    "id": 40,
    "type": "owl:Class"
-  },
-  {
-   "id": 41,
-   "type": "owl:Class"
   }
  ],
  "propertyAttribute": [
@@ -509,10 +505,25 @@ var vowlresult={
    "iri": "http://purl.org/dc/terms/creator",
    "baseIRI": "http://purl.org/dc/terms",
    "instances": 0,
-   "label": {
-    "IRI-based": "creator"
+   "label": "vocabulary license link",
+   "annotations": {
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+     {
+      "identifier": "http://www.w3.org/2000/01/rdf-schema#range",
+      "language": "undefined",
+      "value": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "type": "iri"
+     }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+     {
+      "identifier": "http://www.w3.org/2000/01/rdf-schema#domain",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary",
+      "type": "iri"
+     }
+    ]
    },
-   "annotations": {},
    "range": [],
    "domain": [],
    "subProperties": [],
@@ -520,92 +531,8 @@ var vowlresult={
   },
   {
    "id": 7,
-   "iri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-   "baseIRI": "http://www.w3.org/1999/02/22-rdf-syntax-ns",
-   "instances": 0,
-   "label": {
-    "IRI-based": "type"
-   },
-   "annotations": {},
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
-   "id": 8,
-   "iri": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
-   "baseIRI": "http://www.w3.org/2000/01/rdf-schema",
-   "instances": 0,
-   "label": {
-    "IRI-based": "seeAlso"
-   },
-   "annotations": {},
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
-   "id": 9,
-   "iri": "http://www.w3.org/2004/02/skos/core#broadMatch",
-   "baseIRI": "http://www.w3.org/2004/02/skos/core",
-   "instances": 0,
-   "label": {
-    "IRI-based": "broadMatch"
-   },
-   "annotations": {},
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
-   "id": 10,
-   "iri": "http://www.w3.org/2004/02/skos/core#closeMatch",
-   "baseIRI": "http://www.w3.org/2004/02/skos/core",
-   "instances": 0,
-   "label": {
-    "IRI-based": "closeMatch"
-   },
-   "annotations": {},
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
-   "id": 11,
-   "iri": "http://www.w3.org/2004/02/skos/core#exactMatch",
-   "baseIRI": "http://www.w3.org/2004/02/skos/core",
-   "instances": 0,
-   "label": {
-    "IRI-based": "exactMatch"
-   },
-   "annotations": {},
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
-   "id": 12,
-   "iri": "http://www.w3.org/2004/02/skos/core#narrowMatch",
-   "baseIRI": "http://www.w3.org/2004/02/skos/core",
-   "instances": 0,
-   "label": {
-    "IRI-based": "narrowMatch"
-   },
-   "annotations": {},
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
-   "id": 13,
-   "iri": "http://www.w3.org/2004/02/skos/core#relatedMatch",
-   "baseIRI": "http://www.w3.org/2004/02/skos/core",
+   "iri": "http://skosplus.net/skos-light/LicenseLink",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "alternativer Bezeichner",
    "annotations": {},
@@ -615,9 +542,9 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 14,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/alternativeLabel",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 8,
+   "iri": "http://skosplus.net/skos-light/alternativeLabel",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "description",
    "annotations": {
@@ -644,9 +571,9 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 15,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/description",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 9,
+   "iri": "http://skosplus.net/skos-light/description",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "hat related Bezeichner",
    "annotations": {},
@@ -656,9 +583,9 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 16,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/hasRelatedLabel",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 10,
+   "iri": "http://skosplus.net/skos-light/hasRelatedLabel",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "hat Tochter-Bezeichner",
    "annotations": {},
@@ -668,9 +595,9 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 17,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/hasSubLabel",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 11,
+   "iri": "http://skosplus.net/skos-light/hasSubLabel",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "hat Mutter-Bezeichner",
    "annotations": {},
@@ -680,9 +607,9 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 18,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/hasSuperLabel",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 12,
+   "iri": "http://skosplus.net/skos-light/hasSuperLabel",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "identifier",
    "annotations": {
@@ -709,9 +636,9 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 19,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/identifier",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 13,
+   "iri": "http://skosplus.net/skos-light/identifier",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "pr\u00e4ferierter Bezeichner",
    "annotations": {
@@ -738,9 +665,9 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 20,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/identifierLabel",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 14,
+   "iri": "http://skosplus.net/skos-light/identifierLabel",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "\u00dcbersetzung",
    "annotations": {
@@ -767,9 +694,9 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 21,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/translation",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 15,
+   "iri": "http://skosplus.net/skos-light/translation",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "vocabulary creator string",
    "annotations": {
@@ -796,9 +723,9 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 22,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/vocabularyCreatorString",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 16,
+   "iri": "http://skosplus.net/skos-light/vocabularyCreatorString",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "vocabulary description",
    "annotations": {
@@ -825,9 +752,9 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 23,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/vocabularyDescription",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 17,
+   "iri": "http://skosplus.net/skos-light/vocabularyDescription",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "vocabulary identifier",
    "annotations": {
@@ -854,9 +781,9 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 24,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/vocabularyIdentifier",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 18,
+   "iri": "http://skosplus.net/skos-light/vocabularyIdentifier",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "vocabulary language",
    "annotations": {
@@ -883,9 +810,9 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 25,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/vocabularyLanguage",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 19,
+   "iri": "http://skosplus.net/skos-light/vocabularyLanguage",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "vocabulary license string",
    "annotations": {
@@ -912,9 +839,9 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 26,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/vocabularyLicenseString",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 20,
+   "iri": "http://skosplus.net/skos-light/vocabularyLicenseString",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": "vocabulary title",
    "annotations": {
@@ -941,41 +868,12 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 27,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/vocabularyTitle",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
-   "instances": 0,
-   "label": "vocabulary license link",
-   "annotations": {
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-     {
-      "identifier": "http://www.w3.org/2000/01/rdf-schema#range",
-      "language": "undefined",
-      "value": "http://www.w3.org/2001/XMLSchema#anyURI",
-      "type": "iri"
-     }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-     {
-      "identifier": "http://www.w3.org/2000/01/rdf-schema#domain",
-      "language": "undefined",
-      "value": "https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary",
-      "type": "iri"
-     }
-    ]
-   },
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
-   "id": 28,
-   "iri": "sl:LicenseLink",
-   "baseIRI": "sl:LicenseLin",
+   "id": 21,
+   "iri": "http://skosplus.net/skos-light/vocabularyTitle",
+   "baseIRI": "http://skosplus.net/skos-light",
    "instances": 0,
    "label": {
-    "IRI-based": "sl:LicenseLink"
+    "IRI-based": "vocabularyTitle"
    },
    "annotations": {},
    "range": [],
@@ -984,11 +882,95 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 40,
-   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
-   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "id": 22,
+   "iri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+   "baseIRI": "http://www.w3.org/1999/02/22-rdf-syntax-ns",
    "instances": 0,
-   "label": "LEIZA Restaurierungs- und Konserverungsthesaurus",
+   "label": {
+    "IRI-based": "type"
+   },
+   "annotations": {},
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 23,
+   "iri": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+   "baseIRI": "http://www.w3.org/2000/01/rdf-schema",
+   "instances": 0,
+   "label": {
+    "IRI-based": "seeAlso"
+   },
+   "annotations": {},
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 24,
+   "iri": "http://www.w3.org/2004/02/skos/core#broadMatch",
+   "baseIRI": "http://www.w3.org/2004/02/skos/core",
+   "instances": 0,
+   "label": {
+    "IRI-based": "broadMatch"
+   },
+   "annotations": {},
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 25,
+   "iri": "http://www.w3.org/2004/02/skos/core#closeMatch",
+   "baseIRI": "http://www.w3.org/2004/02/skos/core",
+   "instances": 0,
+   "label": {
+    "IRI-based": "closeMatch"
+   },
+   "annotations": {},
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 26,
+   "iri": "http://www.w3.org/2004/02/skos/core#exactMatch",
+   "baseIRI": "http://www.w3.org/2004/02/skos/core",
+   "instances": 0,
+   "label": {
+    "IRI-based": "exactMatch"
+   },
+   "annotations": {},
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 27,
+   "iri": "http://www.w3.org/2004/02/skos/core#narrowMatch",
+   "baseIRI": "http://www.w3.org/2004/02/skos/core",
+   "instances": 0,
+   "label": {
+    "IRI-based": "narrowMatch"
+   },
+   "annotations": {},
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 28,
+   "iri": "http://www.w3.org/2004/02/skos/core#relatedMatch",
+   "baseIRI": "http://www.w3.org/2004/02/skos/core",
+   "instances": 0,
+   "label": "LEIZA Restaurierungs- und Konservierungsthesaurus",
    "annotations": {
     "http://www.w3.org/2000/01/rdf-schema#comment": [
      {
@@ -1005,7 +987,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 41,
+   "id": 40,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,

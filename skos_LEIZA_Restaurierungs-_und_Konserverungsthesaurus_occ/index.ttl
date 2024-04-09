@@ -7,5 +7,5 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Occurrences of vocabulary http://www.w3.org/2004/02/skos/core# in LEIZA_Restaurierungs-_und_Konserverungsthesaurus" ;
     ns1:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
-    ns1:occurrences 12 .
+    ns1:occurrences 6 .
 

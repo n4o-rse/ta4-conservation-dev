@@ -38,33 +38,26 @@
     void:subjectsTarget <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
     void:triples 1 .
 
-<https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_www.w3.org_2000_01_rdf-schema_> a void:Linkset ;
-    rdfs:label "Linkset: LEIZA_Restaurierungs-_und_Konserverungsthesaurus - The RDF Schema vocabulary (RDFS) (rdfs:)"@en ;
+<https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_skosplus.net_skos-light_> a void:Linkset ;
+    rdfs:label "Linkset: LEIZA_Restaurierungs-_und_Konserverungsthesaurus - sl:"@en ;
     void:linkPredicate rdf:type ;
-    void:objectsTarget rdfs: ;
+    void:objectsTarget <http://skosplus.net/skos-light/> ;
     void:subjectsTarget <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
     void:triples 1 .
-
-<https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_www.w3.org_2001_XMLSchema_> a void:Linkset ;
-    rdfs:label "Linkset: LEIZA_Restaurierungs-_und_Konserverungsthesaurus - XML Schema (xmls:)"@en ;
-    void:linkPredicate rdfs:range ;
-    void:objectsTarget xsd: ;
-    void:subjectsTarget <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
-    void:triples 10 .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_www.w3.org_2002_07_owl_> a void:Linkset ;
     rdfs:label "Linkset: LEIZA_Restaurierungs-_und_Konserverungsthesaurus - Web Ontology Language 2 Vocabulary (owl:)"@en ;
     void:linkPredicate rdf:type ;
     void:objectsTarget owl: ;
     void:subjectsTarget <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
-    void:triples 23 .
+    void:triples 3 .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_www.w3.org_2004_02_skos_core_> a void:Linkset ;
     rdfs:label "Linkset: LEIZA_Restaurierungs-_und_Konserverungsthesaurus - skos:"@en ;
     void:linkPredicate rdf:type ;
     void:objectsTarget skos: ;
     void:subjectsTarget <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
-    void:triples 6 .
+    void:triples 3 .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/adms_LEIZA_Restaurierungs-_und_Konserverungsthesaurus_occ> a voaf:DatasetOccurrence ;
     rdfs:label "Occurrences of vocabulary http://www.w3.org/ns/adms# in LEIZA_Restaurierungs-_und_Konserverungsthesaurus" ;
@@ -121,7 +114,7 @@
 <https://archaeolink.github.io/n4o-ta4-conservation/owl_LEIZA_Restaurierungs-_und_Konserverungsthesaurus_occ> a voaf:DatasetOccurrence ;
     rdfs:label "Occurrences of vocabulary http://www.w3.org/2002/07/owl# in LEIZA_Restaurierungs-_und_Konserverungsthesaurus" ;
     voaf:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
-    voaf:occurrences 46 .
+    voaf:occurrences 6 .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/prof_LEIZA_Restaurierungs-_und_Konserverungsthesaurus_occ> a voaf:DatasetOccurrence ;
     rdfs:label "Occurrences of vocabulary http://www.w3.org/ns/dx/prof/ in LEIZA_Restaurierungs-_und_Konserverungsthesaurus" ;
@@ -141,8 +134,7 @@
 
 <https://archaeolink.github.io/n4o-ta4-conservation/rdfs_LEIZA_Restaurierungs-_und_Konserverungsthesaurus_occ> a voaf:DatasetOccurrence ;
     rdfs:label "Occurrences of vocabulary http://www.w3.org/2000/01/rdf-schema# in LEIZA_Restaurierungs-_und_Konserverungsthesaurus" ;
-    voaf:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
-    voaf:occurrences 2 .
+    voaf:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/schema_LEIZA_Restaurierungs-_und_Konserverungsthesaurus_occ> a voaf:DatasetOccurrence ;
     rdfs:label "Occurrences of vocabulary https://schema.org/ in LEIZA_Restaurierungs-_und_Konserverungsthesaurus" ;
@@ -155,7 +147,7 @@
 <https://archaeolink.github.io/n4o-ta4-conservation/skos_LEIZA_Restaurierungs-_und_Konserverungsthesaurus_occ> a voaf:DatasetOccurrence ;
     rdfs:label "Occurrences of vocabulary http://www.w3.org/2004/02/skos/core# in LEIZA_Restaurierungs-_und_Konserverungsthesaurus" ;
     voaf:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
-    voaf:occurrences 12 .
+    voaf:occurrences 6 .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/sosa_LEIZA_Restaurierungs-_und_Konserverungsthesaurus_occ> a voaf:DatasetOccurrence ;
     rdfs:label "Occurrences of vocabulary http://www.w3.org/ns/sosa/ in LEIZA_Restaurierungs-_und_Konserverungsthesaurus" ;
@@ -195,8 +187,7 @@
 
 <https://archaeolink.github.io/n4o-ta4-conservation/xsd_LEIZA_Restaurierungs-_und_Konserverungsthesaurus_occ> a voaf:DatasetOccurrence ;
     rdfs:label "Occurrences of vocabulary http://www.w3.org/2001/XMLSchema# in LEIZA_Restaurierungs-_und_Konserverungsthesaurus" ;
-    voaf:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
-    voaf:occurrences 20 .
+    voaf:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> .
 
 <https://github.com/archaeolink/n4o-ta4-conservation> a adms:AssetRepository ;
     rdfs:label "Repository for LEIZA_Restaurierungs-_und_Konserverungsthesaurus"@en ;
@@ -280,6 +271,18 @@ rdf: a voaf:Vocabulary ;
     vann:preferredNamespacePrefix "rdf"^^xsd:string ;
     vann:preferredNamespaceUri "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
     voaf:usageInDataset rdf:_LEIZA_Restaurierungs-_und_Konserverungsthesaurus_occ .
+
+rdfs: a voaf:Vocabulary ;
+    rdfs:label "The RDF Schema vocabulary (RDFS)"@en ;
+    vann:preferredNamespacePrefix "rdfs"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ;
+    voaf:usageInDataset rdfs:_LEIZA_Restaurierungs-_und_Konserverungsthesaurus_occ .
+
+xsd: a voaf:Vocabulary ;
+    rdfs:label "XML Schema"@en ;
+    vann:preferredNamespacePrefix "xsd"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI ;
+    voaf:usageInDataset xsd:_LEIZA_Restaurierungs-_und_Konserverungsthesaurus_occ .
 
 time: a voaf:Vocabulary ;
     rdfs:label "time Vocabulary"@en ;
@@ -365,12 +368,12 @@ foaf:Person rdfs:label "Person"@en .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_Actor> a void:Dataset ;
     rdfs:label "Class Partition: Actor"@en ;
-    void:class <https://archaeolink.github.io/n4o-ta4-conservation/Actor> .
+    void:class <http://skosplus.net/skos-light/Actor> .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_Collection> a void:Dataset ;
     rdfs:label "Class Partition: Collection"@en ;
     void:class skos:Collection ;
-    void:entities 6 .
+    void:entities 3 .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_Generic> a void:Dataset ;
     rdfs:label "Class Partition: Generic"@en ;
@@ -378,19 +381,19 @@ foaf:Person rdfs:label "Person"@en .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_Label> a void:Dataset ;
     rdfs:label "Class Partition: Label"@en ;
-    void:class <https://archaeolink.github.io/n4o-ta4-conservation/Label> .
+    void:class <http://skosplus.net/skos-light/Label> .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_Source> a void:Dataset ;
     rdfs:label "Class Partition: Source"@en ;
-    void:class <https://archaeolink.github.io/n4o-ta4-conservation/Source> .
+    void:class <http://skosplus.net/skos-light/Source> .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_StructualConcept> a void:Dataset ;
     rdfs:label "Class Partition: StructualConcept"@en ;
-    void:class <https://archaeolink.github.io/n4o-ta4-conservation/StructualConcept> .
+    void:class <http://skosplus.net/skos-light/StructualConcept> .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_Vocabulary> a void:Dataset ;
     rdfs:label "Class Partition: Vocabulary"@en ;
-    void:class <https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary> ;
+    void:class <http://skosplus.net/skos-light/Vocabulary> ;
     void:entities 1 .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_comment> a void:Dataset ;
@@ -451,7 +454,7 @@ foaf:Person rdfs:label "Person"@en .
 <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_type> a void:Dataset ;
     rdfs:label "Property Partition: type"@en ;
     void:property rdf:type ;
-    void:triples 42 .
+    void:triples 41 .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_versionIRI> a void:Dataset ;
     rdfs:label "Property Partition: versionIRI"@en ;
@@ -481,18 +484,6 @@ wgs: a voaf:Vocabulary ;
     vann:preferredNamespaceUri "https://www.w3.org/2003/01/geo/wgs84_pos#"^^xsd:anyURI ;
     voaf:usageInDataset wgs:_LEIZA_Restaurierungs-_und_Konserverungsthesaurus_occ .
 
-rdfs: a voaf:Vocabulary ;
-    rdfs:label "The RDF Schema vocabulary (RDFS)"@en ;
-    vann:preferredNamespacePrefix "rdfs"^^xsd:string ;
-    vann:preferredNamespaceUri "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ;
-    voaf:usageInDataset rdfs:_LEIZA_Restaurierungs-_und_Konserverungsthesaurus_occ .
-
-xsd: a voaf:Vocabulary ;
-    rdfs:label "XML Schema"@en ;
-    vann:preferredNamespacePrefix "xsd"^^xsd:string ;
-    vann:preferredNamespaceUri "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI ;
-    voaf:usageInDataset xsd:_LEIZA_Restaurierungs-_und_Konserverungsthesaurus_occ .
-
 owl: a voaf:Vocabulary ;
     rdfs:label "Web Ontology Language 2 Vocabulary"@en ;
     vann:preferredNamespacePrefix "owl"^^xsd:string ;
@@ -508,19 +499,19 @@ skos: a voaf:Vocabulary ;
 <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> a void:Dataset,
         adms:Asset ;
     rdfs:label "LEIZA_Restaurierungs-_und_Konserverungsthesaurus"@en ;
-    vext:averageLiteralLength 20 ;
-    vext:averageObjectIRILength 64 ;
+    vext:averageLiteralLength 34 ;
+    vext:averageObjectIRILength 65 ;
     vext:averagePropertyIRILength 41 ;
     vext:averageSubjectIRILength 66 ;
     vext:datatypes 0 ;
     vext:distinctBlankNodes 0 ;
-    vext:distinctIRIReferences 114 ;
-    vext:distinctLiterals 47 ;
-    vext:distinctRDFNodes 161 ;
+    vext:distinctIRIReferences 112 ;
+    vext:distinctLiterals 11 ;
+    vext:distinctRDFNodes 123 ;
     vext:languages 2 ;
     vext:propertyClasses 1 ;
     dc:language <http://www.lexvo.org/page/iso639-1/en> ;
-    dcterms:modified "2024-04-09T12:32:00"^^xsd:dateTime ;
+    dcterms:modified "2024-04-09T12:40:02"^^xsd:dateTime ;
     dcterms:subject <http://dbpedia.org/resource/Location>,
         <http://dbpedia.org/resource/OGC_GeoSPARQL>,
         <http://dbpedia.org/resource/Time>,
@@ -538,9 +529,9 @@ skos: a voaf:Vocabulary ;
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_Vocabulary> ;
     void:classes 8 ;
     void:dataDump <https://archaeolink.github.io/n4o-ta4-conservation/index.ttl> ;
-    void:distinctObjects 55 ;
-    void:distinctSubjects 46 ;
-    void:entities 30 ;
+    void:distinctObjects 56 ;
+    void:distinctSubjects 43 ;
+    void:entities 7 ;
     void:feature <http://www.w3.org/ns/formats/RDFa>,
         <http://www.w3.org/ns/formats/Turtle> ;
     void:properties 13 ;
@@ -557,7 +548,7 @@ skos: a voaf:Vocabulary ;
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_type>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_versionIRI>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_versionInfo> ;
-    void:triples 181 ;
+    void:triples 130 ;
     void:uriSpace "https://archaeolink.github.io/n4o-ta4-conservation/"^^xsd:string ;
     void:vocabulary vext:,
         dcam:,

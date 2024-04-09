@@ -26,14 +26,9 @@ var minivowlresult={
    "uri": "http://www.w3.org/2002/07/owl#Class"
   },
   {
-   "name": "NamedIndividual",
-   "type": "class",
-   "uri": "http://www.w3.org/2002/07/owl#NamedIndividual"
-  },
-  {
    "name": "Vocabulary",
    "type": "class",
-   "uri": "https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary"
+   "uri": "http://skosplus.net/skos-light/Vocabulary"
   }
  ],
  "links": []
