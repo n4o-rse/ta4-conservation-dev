@@ -266,6 +266,11 @@ sl:Vocabulary rdf:type owl:Class ;
 :LEIZA_Conservation_Thesaurus rdf:type owl:Class .
 
 
+###  https://archaeolink.github.io/n4o-ta4-conservation/cpT73gbyUgA22vohdo4rUa
+:cpT73gbyUgA22vohdo4rUa rdf:type owl:Class ;
+                        rdfs:subClassOf :LEIZA_Conservation_Thesaurus .
+
+
 ###  https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE
 :dYxXkaqsnBqVYA1THAxjgE rdf:type owl:Class ;
                         rdfs:subClassOf :LEIZA_Conservation_Thesaurus .
@@ -274,6 +279,11 @@ sl:Vocabulary rdf:type owl:Class ;
 ###  https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE
 :eq7GtLWHJesucfazgADPZE rdf:type owl:Class ;
                         rdfs:subClassOf :LEIZA_Conservation_Thesaurus .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/ievmu1QUgrpeYSiU1DeYfm
+:ievmu1QUgrpeYSiU1DeYfm rdf:type owl:Class ;
+                        rdfs:subClassOf <https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> .
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/qfYhqzHDc8FTxu1A6T6ycW
@@ -316,6 +326,11 @@ sl:Vocabulary rdf:type owl:Class ;
                                                                             rdfs:subClassOf :dYxXkaqsnBqVYA1THAxjgE .
 
 
+###  https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur
+<https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf :LEIZA_Conservation_Thesaurus .
+
+
 ###  https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP
 <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> rdf:type owl:Class ;
                                                                             rdfs:subClassOf :LEIZA_Conservation_Thesaurus .
@@ -338,15 +353,7 @@ sl:Vocabulary rdf:type owl:Class ;
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/cpT73gbyUgA22vohdo4rUa
 :cpT73gbyUgA22vohdo4rUa rdf:type owl:NamedIndividual ,
-                                 sl:Label ;
-                        sl:description """Dem eigentlichen Eingriff am Objekt vorausgehende Überlegungen, Entwicklung und Koordinierung aller Vorkehrungen und Maßnahmen zur Erreichung des gewünschten Restaurierungs-/ Konservierungsziels.
-(vgl. DIN EN 15898:2020-02)"""@de ;
-                        sl:hasSuperLabel :LEIZA_Conservation_Thesaurus ;
-                        sl:identifier "cpT73gbyUgA22vohdo4rUa" ;
-                        sl:identifierLabel "[Restaurierungs-/ Konservierungsplanung]"@de ;
-                        rdfs:label "[Restaurierungs-/ Konservierungsplanung]"@de ;
-                        rdfs:subClassOf :LEIZA_Conservation_Thesaurus ;
-                        :hasSource <http://www.wikidata.org/entity/Q125400047> .
+                                 sl:Label .
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE
@@ -356,6 +363,23 @@ sl:Vocabulary rdf:type owl:Class ;
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE
 :eq7GtLWHJesucfazgADPZE rdf:type owl:NamedIndividual ,
+                                 sl:Label .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/fBAv2FHRc3aDVk9ve1JThd
+:fBAv2FHRc3aDVk9ve1JThd rdf:type owl:NamedIndividual ,
+                                 sl:Label ;
+                        sl:description "DIN EN 15898:2020-02: Kontrolle eines oder mehrer Einflussfaktoren der Umwelt"@de ;
+                        sl:hasSuperLabel <https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> ;
+                        sl:identifier "fBAv2FHRc3aDVk9ve1JThd" ;
+                        sl:identifierLabel "Umgebungskontrolle"@de ;
+                        rdfs:label "Umgebungskontrolle"@de ;
+                        rdfs:subClassOf <https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> ;
+                        :hasSource <http://www.wikidata.org/entity/Q125400047> .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/ievmu1QUgrpeYSiU1DeYfm
+:ievmu1QUgrpeYSiU1DeYfm rdf:type owl:NamedIndividual ,
                                  sl:Label .
 
 
@@ -410,6 +434,11 @@ sl:Vocabulary rdf:type owl:Class ;
                                                                                      sl:Label .
 
 
+###  https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur
+<https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> rdf:type owl:NamedIndividual ,
+                                                                                     sl:Label .
+
+
 ###  https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT
 <https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT> rdf:type owl:NamedIndividual ,
                                                                                      sl:Label ;
@@ -433,6 +462,15 @@ sl:Vocabulary rdf:type owl:Class ;
                               rdfs:comment "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse. DIN EN 15898:2020-02: Prozess des Entscheidens, Planens und Umsetzens."@de .
 
 
+:cpT73gbyUgA22vohdo4rUa rdfs:label "[Restaurierungs-/ Konservierungsplanung]"@de ;
+                        sl:identifier "cpT73gbyUgA22vohdo4rUa" ;
+                        sl:hasSuperLabel :LEIZA_Conservation_Thesaurus ;
+                        sl:description """Dem eigentlichen Eingriff am Objekt vorausgehende Überlegungen, Entwicklung und Koordinierung aller Vorkehrungen und Maßnahmen zur Erreichung des gewünschten Restaurierungs-/ Konservierungsziels.
+(vgl. DIN EN 15898:2020-02)"""@de ;
+                        :hasSource <http://www.wikidata.org/entity/Q125400047> ;
+                        sl:identifierLabel "[Restaurierungs-/ Konservierungsplanung]"@de .
+
+
 :dYxXkaqsnBqVYA1THAxjgE sl:hasRelatedLabel :wF7jn2tBfcnE3drqjzwi8D ;
                         sl:identifierLabel "Eingriff"@de ;
                         sl:hasSubLabel :wsbDppTfr2BSxsmhSuEbG4 ;
@@ -451,6 +489,14 @@ sl:Vocabulary rdf:type owl:Class ;
                         sl:hasSuperLabel :LEIZA_Conservation_Thesaurus ;
                         sl:identifierLabel "Zustandserfassung"@de ;
                         :hasSource <http://www.wikidata.org/entity/Q125400047> .
+
+
+:ievmu1QUgrpeYSiU1DeYfm sl:identifier "ievmu1QUgrpeYSiU1DeYfm" ;
+                        sl:identifierLabel "Sammlungspflege"@de ;
+                        sl:hasSuperLabel <https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> ;
+                        rdfs:label "Sammlungspflege"@de ;
+                        :hasSource <http://www.wikidata.org/entity/Q125400047> ;
+                        sl:description "DIN EN 15898:2020-02: präventive Konservierung einer Sammlung"@de .
 
 
 :qfYhqzHDc8FTxu1A6T6ycW sl:identifier "qfYhqzHDc8FTxu1A6T6ycW" ;
@@ -511,6 +557,14 @@ sl:Vocabulary rdf:type owl:Class ;
                                                                             rdfs:label "Werkzeug"@de ;
                                                                             sl:identifier "3EE7pLjByXiT4nHWxyqKuB" ;
                                                                             sl:hasSuperLabel :dYxXkaqsnBqVYA1THAxjgE .
+
+
+<https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> rdfs:label "präventive Konservierung"@de ;
+                                                                            sl:identifier "59RpvNLTucB9wVbWVHTRur" ;
+                                                                            sl:description "DIN EN 15898:2020-02: Vorkehrungen und Maßnahmen zur Vermeidung oder Minimierung von künftigen Schaden, Abbau, Verlust und folglich invasivem Eingriff"@de ;
+                                                                            sl:identifierLabel "präventive Konservierung"@de ;
+                                                                            sl:hasSuperLabel :LEIZA_Conservation_Thesaurus ;
+                                                                            :hasSource <http://www.wikidata.org/entity/Q125400047> .
 
 
 <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> sl:identifierLabel "[Objekt-Werkstoff]"@de ;
