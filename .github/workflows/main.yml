@@ -31,6 +31,6 @@ jobs:
       ghpages: true
       logourl: https://raw.githubusercontent.com/archaeolink-lod/unicorn-ontdoc-template-nmt/main/icons/al_circle_icon.png
       ogcapifeatures: false
-      datasettitle: LEIZA Restaurierungs- und Konserverungsthesaurus
+      datasettitle: "LEIZA Restaurierungs- und Konserverungsthesaurus"
       templatedir: https://github.com/archaeolink/unicorn-ontdoc-template-archaeolink-samianresearch/archive/refs/tags/v0.5.zip
       iiif: false
