@@ -18,7 +18,7 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     uses: sparqlunicorn/sparqlunicornGoesGIS-ontdoc/.github/workflows/udoc.yml@main
     with:
-      version: v016
+      version: v017
       rdffilepath: thesaurus.ttl
       docpath: docs
       prefixns: https://archaeolink.github.io/n4o-ta4-conservation/
