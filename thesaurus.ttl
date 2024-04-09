@@ -47,6 +47,114 @@
 terms:creator rdf:type owl:AnnotationProperty .
 
 
+###  http://skosplus.net/skos-light/LicenseLink
+sl:LicenseLink rdf:type owl:AnnotationProperty ;
+               rdfs:label "vocabulary license link"@en ;
+               rdfs:range xsd:anyURI ;
+               rdfs:domain :Vocabulary .
+
+
+###  http://skosplus.net/skos-light/alternativeLabel
+sl:alternativeLabel rdf:type owl:AnnotationProperty ;
+                    rdfs:label "alternative label"@en ,
+                               "alternativer Bezeichner"@de .
+
+
+###  http://skosplus.net/skos-light/description
+sl:description rdf:type owl:AnnotationProperty ;
+               rdfs:label "Beschreibung"@de ,
+                          "description"@en ;
+               rdfs:range xsd:string ;
+               rdfs:domain :Label .
+
+
+###  http://skosplus.net/skos-light/hasRelatedLabel
+sl:hasRelatedLabel rdf:type owl:AnnotationProperty ;
+                   rdfs:label "has related label"@en ,
+                              "hat related Bezeichner"@de .
+
+
+###  http://skosplus.net/skos-light/hasSubLabel
+sl:hasSubLabel rdf:type owl:AnnotationProperty ;
+               rdfs:label "has sub label"@en ,
+                          "hat Tochter-Bezeichner"@de .
+
+
+###  http://skosplus.net/skos-light/hasSuperLabel
+sl:hasSuperLabel rdf:type owl:AnnotationProperty ;
+                 rdfs:label "has super label"@en ,
+                            "hat Mutter-Bezeichner"@de .
+
+
+###  http://skosplus.net/skos-light/identifier
+sl:identifier rdf:type owl:AnnotationProperty ;
+              rdfs:label "identifier"@en ;
+              rdfs:range xsd:string ;
+              rdfs:domain :Label .
+
+
+###  http://skosplus.net/skos-light/identifierLabel
+sl:identifierLabel rdf:type owl:AnnotationProperty ;
+                   rdfs:label "identifier label"@en ,
+                              "präferierter Bezeichner"@de ;
+                   rdfs:range xsd:string ;
+                   rdfs:domain :Label .
+
+
+###  http://skosplus.net/skos-light/translation
+sl:translation rdf:type owl:AnnotationProperty ;
+               rdfs:label "translation"@en ,
+                          "Übersetzung"@de ;
+               rdfs:range xsd:string ;
+               rdfs:domain :Label .
+
+
+###  http://skosplus.net/skos-light/vocabularyCreatorString
+sl:vocabularyCreatorString rdf:type owl:AnnotationProperty ;
+                           rdfs:label "vocabulary creator string"@en ;
+                           rdfs:range xsd:string ;
+                           rdfs:domain :Vocabulary .
+
+
+###  http://skosplus.net/skos-light/vocabularyDescription
+sl:vocabularyDescription rdf:type owl:AnnotationProperty ;
+                         rdfs:label "Vokabular Beschreibung"@de ,
+                                    "vocabulary description"@en ;
+                         rdfs:range xsd:string ;
+                         rdfs:domain :Vocabulary .
+
+
+###  http://skosplus.net/skos-light/vocabularyIdentifier
+sl:vocabularyIdentifier rdf:type owl:AnnotationProperty ;
+                        rdfs:label "Vokabular Identifier"@de ,
+                                   "vocabulary identifier"@en ;
+                        rdfs:range xsd:string ;
+                        rdfs:domain :Vocabulary .
+
+
+###  http://skosplus.net/skos-light/vocabularyLanguage
+sl:vocabularyLanguage rdf:type owl:AnnotationProperty ;
+                      rdfs:label "Vokabular Sprache"@de ,
+                                 "vocabulary language"@en ;
+                      rdfs:range xsd:string ;
+                      rdfs:domain :Vocabulary .
+
+
+###  http://skosplus.net/skos-light/vocabularyLicenseString
+sl:vocabularyLicenseString rdf:type owl:AnnotationProperty ;
+                           rdfs:label "vocabulary license string"@en ;
+                           rdfs:range xsd:string ;
+                           rdfs:domain :Vocabulary .
+
+
+###  http://skosplus.net/skos-light/vocabularyTitle
+sl:vocabularyTitle rdf:type owl:AnnotationProperty ;
+                   rdfs:label "Vokabular Titlel"@de ,
+                              "vocabulary title"@en ;
+                   rdfs:range xsd:string ;
+                   rdfs:domain :Vocabulary .
+
+
 ###  http://www.w3.org/1999/02/22-rdf-syntax-ns#type
 rdf:type rdf:type owl:AnnotationProperty .
 
@@ -75,114 +183,6 @@ skos:narrowMatch rdf:type owl:AnnotationProperty .
 skos:relatedMatch rdf:type owl:AnnotationProperty .
 
 
-###  https://archaeolink.github.io/n4o-ta4-conservation/alternativeLabel
-:alternativeLabel rdf:type owl:AnnotationProperty ;
-                  rdfs:label "alternative label"@en ,
-                             "alternativer Bezeichner"@de .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/description
-:description rdf:type owl:AnnotationProperty ;
-             rdfs:label "Beschreibung"@de ,
-                        "description"@en ;
-             rdfs:range xsd:string ;
-             rdfs:domain :Label .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/hasRelatedLabel
-:hasRelatedLabel rdf:type owl:AnnotationProperty ;
-                 rdfs:label "has related label"@en ,
-                            "hat related Bezeichner"@de .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/hasSubLabel
-:hasSubLabel rdf:type owl:AnnotationProperty ;
-             rdfs:label "has sub label"@en ,
-                        "hat Tochter-Bezeichner"@de .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/hasSuperLabel
-:hasSuperLabel rdf:type owl:AnnotationProperty ;
-               rdfs:label "has super label"@en ,
-                          "hat Mutter-Bezeichner"@de .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/identifier
-:identifier rdf:type owl:AnnotationProperty ;
-            rdfs:label "identifier"@en ;
-            rdfs:range xsd:string ;
-            rdfs:domain :Label .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/identifierLabel
-:identifierLabel rdf:type owl:AnnotationProperty ;
-                 rdfs:label "identifier label"@en ,
-                            "präferierter Bezeichner"@de ;
-                 rdfs:range xsd:string ;
-                 rdfs:domain :Label .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/translation
-:translation rdf:type owl:AnnotationProperty ;
-             rdfs:label "translation"@en ,
-                        "Übersetzung"@de ;
-             rdfs:range xsd:string ;
-             rdfs:domain :Label .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/vocabularyCreatorString
-:vocabularyCreatorString rdf:type owl:AnnotationProperty ;
-                         rdfs:label "vocabulary creator string"@en ;
-                         rdfs:range xsd:string ;
-                         rdfs:domain :Vocabulary .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/vocabularyDescription
-:vocabularyDescription rdf:type owl:AnnotationProperty ;
-                       rdfs:label "Vokabular Beschreibung"@de ,
-                                  "vocabulary description"@en ;
-                       rdfs:range xsd:string ;
-                       rdfs:domain :Vocabulary .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/vocabularyIdentifier
-:vocabularyIdentifier rdf:type owl:AnnotationProperty ;
-                      rdfs:label "Vokabular Identifier"@de ,
-                                 "vocabulary identifier"@en ;
-                      rdfs:range xsd:string ;
-                      rdfs:domain :Vocabulary .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/vocabularyLanguage
-:vocabularyLanguage rdf:type owl:AnnotationProperty ;
-                    rdfs:label "Vokabular Sprache"@de ,
-                               "vocabulary language"@en ;
-                    rdfs:range xsd:string ;
-                    rdfs:domain :Vocabulary .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/vocabularyLicenseString
-:vocabularyLicenseString rdf:type owl:AnnotationProperty ;
-                         rdfs:label "vocabulary license string"@en ;
-                         rdfs:range xsd:string ;
-                         rdfs:domain :Vocabulary .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/vocabularyTitle
-:vocabularyTitle rdf:type owl:AnnotationProperty ;
-                 rdfs:label "Vokabular Titlel"@de ,
-                            "vocabulary title"@en ;
-                 rdfs:range xsd:string ;
-                 rdfs:domain :Vocabulary .
-
-
-###  sl:LicenseLink
-<sl:LicenseLink> rdf:type owl:AnnotationProperty ;
-                 rdfs:label "vocabulary license link"@en ;
-                 rdfs:range xsd:anyURI ;
-                 rdfs:domain :Vocabulary .
-
-
 #################################################################
 #    Datatypes
 #################################################################
@@ -195,24 +195,51 @@ terms:LicenseDocument rdf:type rdfs:Datatype .
 terms:LinguisticSystem rdf:type rdfs:Datatype .
 
 
+###  http://skosplus.net/skos-light/structuralProperty
+sl:structuralProperty rdf:type rdfs:Datatype .
+
+
 ###  http://www.w3.org/2002/07/owl#Thing
 owl:Thing rdf:type rdfs:Datatype ;
           rdfs:label "Thing"@en .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/structuralProperty
-:structuralProperty rdf:type rdfs:Datatype .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  https://archaeolink.github.io/n4o-ta4-conservation/Actor
-:Actor rdf:type owl:Class ;
-       rdfs:subClassOf :Generic ;
-       rdfs:label "Actor"@en ,
-                  "Akteur"@de .
+###  http://skosplus.net/skos-light/Actor
+sl:Actor rdf:type owl:Class ;
+         rdfs:subClassOf :Generic ;
+         rdfs:label "Actor"@en ,
+                    "Akteur"@de .
+
+
+###  http://skosplus.net/skos-light/Label
+sl:Label rdf:type owl:Class ;
+         rdfs:subClassOf :Generic ;
+         rdfs:label "Begriff"@de ,
+                    "Label"@en .
+
+
+###  http://skosplus.net/skos-light/Source
+sl:Source rdf:type owl:Class ;
+          rdfs:subClassOf :Generic ;
+          rdfs:label "Quelle"@de ,
+                     "Source"@en .
+
+
+###  http://skosplus.net/skos-light/StructualConcept
+sl:StructualConcept rdf:type owl:Class ;
+                    rdfs:subClassOf :Generic ;
+                    rdfs:label "Structural Concept"@en .
+
+
+###  http://skosplus.net/skos-light/Vocabulary
+sl:Vocabulary rdf:type owl:Class ;
+              rdfs:subClassOf :Generic ;
+              rdfs:label "Vocabulary"@en ,
+                         "Vokabular"@de .
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/Generic
@@ -221,51 +248,10 @@ owl:Thing rdf:type rdfs:Datatype ;
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus
-:LEIZA_Conservation_Thesaurus rdf:type owl:Class .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/Label
-:Label rdf:type owl:Class ;
-       rdfs:subClassOf :Generic ;
-       rdfs:label "Begriff"@de ,
-                  "Label"@en .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/Source
-:Source rdf:type owl:Class ;
-        rdfs:subClassOf :Generic ;
-        rdfs:label "Quelle"@de ,
-                   "Source"@en .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/StructualConcept
-:StructualConcept rdf:type owl:Class ;
-                  rdfs:subClassOf :Generic ;
-                  rdfs:label "Structural Concept"@en .
-
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary
-:Vocabulary rdf:type owl:Class ;
-            rdfs:subClassOf :Generic ;
-            rdfs:label "Vocabulary"@en ,
-                       "Vokabular"@de .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus
-:LEIZA_Conservation_Thesaurus rdf:type owl:NamedIndividual ,
-                                       :Vocabulary .
-
-
-#################################################################
-#    Annotations
-#################################################################
-
-:LEIZA_Conservation_Thesaurus rdfs:comment "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse"@de ;
-                              rdfs:label "LEIZA Restaurierungs- und Konserverungsthesaurus"@de .
+:LEIZA_Conservation_Thesaurus rdf:type owl:Class ,
+                                       sl:Vocabulary ;
+                              rdfs:comment "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse"@de ;
+                              rdfs:label "LEIZA Restaurierungs- und Konservierungsthesaurus"@de .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
