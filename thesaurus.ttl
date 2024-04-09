@@ -336,6 +336,19 @@ sl:Vocabulary rdf:type owl:Class ;
                                        sl:Vocabulary .
 
 
+###  https://archaeolink.github.io/n4o-ta4-conservation/cpT73gbyUgA22vohdo4rUa
+:cpT73gbyUgA22vohdo4rUa rdf:type owl:NamedIndividual ,
+                                 sl:Label ;
+                        sl:description """Dem eigentlichen Eingriff am Objekt vorausgehende Überlegungen, Entwicklung und Koordinierung aller Vorkehrungen und Maßnahmen zur Erreichung des gewünschten Restaurierungs-/ Konservierungsziels.
+(vgl. DIN EN 15898:2020-02)"""@de ;
+                        sl:hasSuperLabel :LEIZA_Conservation_Thesaurus ;
+                        sl:identifier "cpT73gbyUgA22vohdo4rUa" ;
+                        sl:identifierLabel "[Restaurierungs-/ Konservierungsplanung]"@de ;
+                        rdfs:label "[Restaurierungs-/ Konservierungsplanung]"@de ;
+                        rdfs:subClassOf :LEIZA_Conservation_Thesaurus ;
+                        :hasSource <http://www.wikidata.org/entity/Q125400047> .
+
+
 ###  https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE
 :dYxXkaqsnBqVYA1THAxjgE rdf:type owl:NamedIndividual ,
                                  sl:Label .
