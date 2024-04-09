@@ -8,8 +8,12 @@
     rdfs:label "NamedIndividual Instances Collection"@en ;
     void:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
     rdfs:member <https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT>,
         <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus>,
         <https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE>,
-        <https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7> .
+        <https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/wF7jn2tBfcnE3drqjzwi8D>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/wsbDppTfr2BSxsmhSuEbG4> .
 

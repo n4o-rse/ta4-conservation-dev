@@ -48,14 +48,35 @@ var minivowlresult={
  ],
  "links": [
   {
+   "source": 3,
+   "target": 7,
+   "valueTo": "hasSubLabel",
+   "propertyTo": "class",
+   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
+  },
+  {
+   "source": 4,
+   "target": 7,
+   "valueTo": "hasSubLabel",
+   "propertyTo": "class",
+   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
+  },
+  {
    "source": 7,
+   "target": 7,
+   "valueTo": "hasSubLabel",
+   "propertyTo": "class",
+   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
+  },
+  {
+   "source": 3,
    "target": 7,
    "valueTo": "subClassOf",
    "propertyTo": "class",
    "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
   },
   {
-   "source": 7,
+   "source": 3,
    "target": 6,
    "valueTo": "subClassOf",
    "propertyTo": "class",
@@ -76,63 +97,42 @@ var minivowlresult={
    "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
   },
   {
-   "source": 3,
+   "source": 7,
    "target": 7,
    "valueTo": "subClassOf",
    "propertyTo": "class",
    "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
   },
   {
-   "source": 3,
+   "source": 7,
    "target": 6,
    "valueTo": "subClassOf",
    "propertyTo": "class",
    "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
   },
   {
-   "source": 7,
+   "source": 3,
    "target": 7,
-   "valueTo": "hasSubLabel",
+   "valueTo": "hasRelatedLabel",
    "propertyTo": "class",
-   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
+   "uriTo": "http://skosplus.net/skos-light/hasRelatedLabel"
   },
   {
    "source": 4,
    "target": 7,
-   "valueTo": "hasSubLabel",
+   "valueTo": "hasRelatedLabel",
    "propertyTo": "class",
-   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
-  },
-  {
-   "source": 3,
-   "target": 7,
-   "valueTo": "hasSubLabel",
-   "propertyTo": "class",
-   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
+   "uriTo": "http://skosplus.net/skos-light/hasRelatedLabel"
   },
   {
    "source": 7,
    "target": 7,
-   "valueTo": "hasSuperLabel",
+   "valueTo": "hasRelatedLabel",
    "propertyTo": "class",
-   "uriTo": "http://skosplus.net/skos-light/hasSuperLabel"
-  },
-  {
-   "source": 4,
-   "target": 7,
-   "valueTo": "hasSuperLabel",
-   "propertyTo": "class",
-   "uriTo": "http://skosplus.net/skos-light/hasSuperLabel"
+   "uriTo": "http://skosplus.net/skos-light/hasRelatedLabel"
   },
   {
    "source": 3,
-   "target": 7,
-   "valueTo": "hasSuperLabel",
-   "propertyTo": "class",
-   "uriTo": "http://skosplus.net/skos-light/hasSuperLabel"
-  },
-  {
-   "source": 7,
    "target": 5,
    "valueTo": "hasSource",
    "propertyTo": "class",
@@ -146,11 +146,32 @@ var minivowlresult={
    "uriTo": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource"
   },
   {
-   "source": 3,
+   "source": 7,
    "target": 5,
    "valueTo": "hasSource",
    "propertyTo": "class",
    "uriTo": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource"
+  },
+  {
+   "source": 3,
+   "target": 7,
+   "valueTo": "hasSuperLabel",
+   "propertyTo": "class",
+   "uriTo": "http://skosplus.net/skos-light/hasSuperLabel"
+  },
+  {
+   "source": 4,
+   "target": 7,
+   "valueTo": "hasSuperLabel",
+   "propertyTo": "class",
+   "uriTo": "http://skosplus.net/skos-light/hasSuperLabel"
+  },
+  {
+   "source": 7,
+   "target": 7,
+   "valueTo": "hasSuperLabel",
+   "propertyTo": "class",
+   "uriTo": "http://skosplus.net/skos-light/hasSuperLabel"
   }
  ]
 }

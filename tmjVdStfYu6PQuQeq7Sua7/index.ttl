@@ -4,11 +4,13 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7> a ns1:Label,
+        owl:Class,
         owl:NamedIndividual,
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Methode und Technik"@de ;
     void:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
+    ns1:hasSuperLabel <https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE> ;
     ns1:identifier "tmjVdStfYu6PQuQeq7Sua7" ;
     ns1:identifierLabel "Methode und Technik"@de ;
     rdfs:comment "Die zur Erreichung des Restaurierungs.- und/oder Konservierungsziel angewendeten Vorgehensweisen während des Objekteingriffs."@de ;
