@@ -271,9 +271,24 @@ sl:Vocabulary rdf:type owl:Class ;
                         rdfs:subClassOf :LEIZA_Conservation_Thesaurus .
 
 
+###  https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE
+:eq7GtLWHJesucfazgADPZE rdf:type owl:Class ;
+                        rdfs:subClassOf :LEIZA_Conservation_Thesaurus .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/qfYhqzHDc8FTxu1A6T6ycW
+:qfYhqzHDc8FTxu1A6T6ycW rdf:type owl:Class ;
+                        rdfs:subClassOf :eq7GtLWHJesucfazgADPZE .
+
+
 ###  https://archaeolink.github.io/n4o-ta4-conservation/sSygVCh1KaCSrkS5Ku3Aak
 :sSygVCh1KaCSrkS5Ku3Aak rdf:type owl:Class ;
                         rdfs:subClassOf <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/stStRVHTWT8PXV2Lj19GGL
+:stStRVHTWT8PXV2Lj19GGL rdf:type owl:Class ;
+                        rdfs:subClassOf :eq7GtLWHJesucfazgADPZE .
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7
@@ -328,17 +343,21 @@ sl:Vocabulary rdf:type owl:Class ;
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE
 :eq7GtLWHJesucfazgADPZE rdf:type owl:NamedIndividual ,
-                                 sl:Label ;
-                        sl:alternativeLabel "Zustandserhebung"@de ;
-                        sl:hasSuperLabel :LEIZA_Conservation_Thesaurus ;
-                        sl:identifier "eq7GtLWHJesucfazgADPZE" ;
-                        sl:identifierLabel "Zustandserfassung"@de ;
-                        rdfs:label "Zustandserfassung"@de ;
-                        rdfs:subClassOf :LEIZA_Conservation_Thesaurus .
+                                 sl:Label .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/qfYhqzHDc8FTxu1A6T6ycW
+:qfYhqzHDc8FTxu1A6T6ycW rdf:type owl:NamedIndividual ,
+                                 sl:Label .
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/sSygVCh1KaCSrkS5Ku3Aak
 :sSygVCh1KaCSrkS5Ku3Aak rdf:type owl:NamedIndividual ,
+                                 sl:Label .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/stStRVHTWT8PXV2Lj19GGL
+:stStRVHTWT8PXV2Lj19GGL rdf:type owl:NamedIndividual ,
                                  sl:Label .
 
 
@@ -412,10 +431,35 @@ sl:Vocabulary rdf:type owl:Class ;
                         sl:alternativeLabel "Behandlung"@de .
 
 
+:eq7GtLWHJesucfazgADPZE rdfs:label "Zustandserfassung"@de ;
+                        sl:description "DIN EN 15898:2020-02: geplante und methodische Beurteilung des Erhaltungszustandes eines Objektes oder Sammlung"@de ;
+                        sl:identifier "eq7GtLWHJesucfazgADPZE" ;
+                        sl:alternativeLabel "Zustandserhebung"@de ;
+                        sl:hasSuperLabel :LEIZA_Conservation_Thesaurus ;
+                        sl:identifierLabel "Zustandserfassung"@de ;
+                        :hasSource <http://www.wikidata.org/entity/Q125400047> .
+
+
+:qfYhqzHDc8FTxu1A6T6ycW sl:identifier "qfYhqzHDc8FTxu1A6T6ycW" ;
+                        sl:identifierLabel "[Diagnose]"@de ;
+                        sl:hasSuperLabel :eq7GtLWHJesucfazgADPZE ;
+                        sl:description "DIN EN 15898:2020-02: Feststellung des gegenwärtigen Erhaltungszustandes eines Objektes und Bestimmung von Art und Ursache jeglicher Änderungen, sowie der möglichen Konsequenzen."@de ;
+                        :hasSource <http://www.wikidata.org/entity/Q125400047> ;
+                        rdfs:label "[Diagnose]"@de .
+
+
 :sSygVCh1KaCSrkS5Ku3Aak sl:identifierLabel "Organik"@de ;
                         sl:hasSuperLabel <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> ;
                         rdfs:label "Organik"@de ;
                         sl:identifier "sSygVCh1KaCSrkS5Ku3Aak" .
+
+
+:stStRVHTWT8PXV2Lj19GGL sl:identifier "stStRVHTWT8PXV2Lj19GGL" ;
+                        sl:description "Beschaffung und Sammlung von Informationen über den Zustand eines Objektes, die für einen Entscheidungsprozess bei der Konservierung notwendig sind (vgl. DIN EN 15898:2020-02)"@de ;
+                        :hasSource <http://www.wikidata.org/entity/Q125400047> ;
+                        sl:identifierLabel "[Objektuntersuchung]"@de ;
+                        rdfs:label "[Objektuntersuchung]"@de ;
+                        sl:hasSuperLabel :eq7GtLWHJesucfazgADPZE .
 
 
 :tmjVdStfYu6PQuQeq7Sua7 rdfs:comment "Die zur Erreichung des Restaurierungs.- und/oder Konservierungsziel angewendeten Vorgehensweisen während des Objekteingriffs."@de ;
@@ -456,10 +500,11 @@ sl:Vocabulary rdf:type owl:Class ;
                                                                             sl:hasSuperLabel :dYxXkaqsnBqVYA1THAxjgE .
 
 
-<https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> rdfs:label "[Objekt-Werkstoff (Material)]"@de ;
+<https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> sl:identifierLabel "[Objekt-Werkstoff]"@de ;
                                                                             rdfs:comment "Material aus dem das Objekt besteht."@de ;
-                                                                            sl:identifierLabel "[<Objekt-Werkstoff (Material)]"@de ;
-                                                                            sl:hasSubLabel <https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1> .
+                                                                            sl:hasSubLabel <https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1> ;
+                                                                            sl:alternativeLabel "[Objekt-Material]"@de ;
+                                                                            rdfs:label "[Objekt-Werkstoff]"@de .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
