@@ -50,6 +50,7 @@ terms:creator rdf:type owl:AnnotationProperty .
 ###  http://skosplus.net/skos-light/LicenseLink
 sl:LicenseLink rdf:type owl:AnnotationProperty ;
                rdfs:label "vocabulary license link"@en ;
+               rdfs:subPropertyOf :struct-vocabulary ;
                rdfs:range xsd:anyURI ;
                rdfs:domain :Vocabulary .
 
@@ -57,13 +58,15 @@ sl:LicenseLink rdf:type owl:AnnotationProperty ;
 ###  http://skosplus.net/skos-light/alternativeLabel
 sl:alternativeLabel rdf:type owl:AnnotationProperty ;
                     rdfs:label "alternative label"@en ,
-                               "alternativer Bezeichner"@de .
+                               "alternativer Bezeichner"@de ;
+                    rdfs:subPropertyOf :struct-label .
 
 
 ###  http://skosplus.net/skos-light/description
 sl:description rdf:type owl:AnnotationProperty ;
                rdfs:label "Beschreibung"@de ,
                           "description"@en ;
+               rdfs:subPropertyOf :struct-label ;
                rdfs:range xsd:string ;
                rdfs:domain :Label .
 
@@ -71,24 +74,28 @@ sl:description rdf:type owl:AnnotationProperty ;
 ###  http://skosplus.net/skos-light/hasRelatedLabel
 sl:hasRelatedLabel rdf:type owl:AnnotationProperty ;
                    rdfs:label "has related label"@en ,
-                              "hat related Bezeichner"@de .
+                              "hat related Bezeichner"@de ;
+                   rdfs:subPropertyOf :struct-label .
 
 
 ###  http://skosplus.net/skos-light/hasSubLabel
 sl:hasSubLabel rdf:type owl:AnnotationProperty ;
                rdfs:label "has sub label"@en ,
-                          "hat Tochter-Bezeichner"@de .
+                          "hat Tochter-Bezeichner"@de ;
+               rdfs:subPropertyOf :struct-label .
 
 
 ###  http://skosplus.net/skos-light/hasSuperLabel
 sl:hasSuperLabel rdf:type owl:AnnotationProperty ;
                  rdfs:label "has super label"@en ,
-                            "hat Mutter-Bezeichner"@de .
+                            "hat Mutter-Bezeichner"@de ;
+                 rdfs:subPropertyOf :struct-label .
 
 
 ###  http://skosplus.net/skos-light/identifier
 sl:identifier rdf:type owl:AnnotationProperty ;
               rdfs:label "identifier"@en ;
+              rdfs:subPropertyOf :struct-label ;
               rdfs:range xsd:string ;
               rdfs:domain :Label .
 
@@ -97,6 +104,7 @@ sl:identifier rdf:type owl:AnnotationProperty ;
 sl:identifierLabel rdf:type owl:AnnotationProperty ;
                    rdfs:label "identifier label"@en ,
                               "präferierter Bezeichner"@de ;
+                   rdfs:subPropertyOf :struct-label ;
                    rdfs:range xsd:string ;
                    rdfs:domain :Label .
 
@@ -105,6 +113,7 @@ sl:identifierLabel rdf:type owl:AnnotationProperty ;
 sl:translation rdf:type owl:AnnotationProperty ;
                rdfs:label "translation"@en ,
                           "Übersetzung"@de ;
+               rdfs:subPropertyOf :struct-label ;
                rdfs:range xsd:string ;
                rdfs:domain :Label .
 
@@ -112,6 +121,7 @@ sl:translation rdf:type owl:AnnotationProperty ;
 ###  http://skosplus.net/skos-light/vocabularyCreatorString
 sl:vocabularyCreatorString rdf:type owl:AnnotationProperty ;
                            rdfs:label "vocabulary creator string"@en ;
+                           rdfs:subPropertyOf :struct-vocabulary ;
                            rdfs:range xsd:string ;
                            rdfs:domain :Vocabulary .
 
@@ -120,6 +130,7 @@ sl:vocabularyCreatorString rdf:type owl:AnnotationProperty ;
 sl:vocabularyDescription rdf:type owl:AnnotationProperty ;
                          rdfs:label "Vokabular Beschreibung"@de ,
                                     "vocabulary description"@en ;
+                         rdfs:subPropertyOf :struct-vocabulary ;
                          rdfs:range xsd:string ;
                          rdfs:domain :Vocabulary .
 
@@ -128,6 +139,7 @@ sl:vocabularyDescription rdf:type owl:AnnotationProperty ;
 sl:vocabularyIdentifier rdf:type owl:AnnotationProperty ;
                         rdfs:label "Vokabular Identifier"@de ,
                                    "vocabulary identifier"@en ;
+                        rdfs:subPropertyOf :struct-vocabulary ;
                         rdfs:range xsd:string ;
                         rdfs:domain :Vocabulary .
 
@@ -136,6 +148,7 @@ sl:vocabularyIdentifier rdf:type owl:AnnotationProperty ;
 sl:vocabularyLanguage rdf:type owl:AnnotationProperty ;
                       rdfs:label "Vokabular Sprache"@de ,
                                  "vocabulary language"@en ;
+                      rdfs:subPropertyOf :struct-vocabulary ;
                       rdfs:range xsd:string ;
                       rdfs:domain :Vocabulary .
 
@@ -143,6 +156,7 @@ sl:vocabularyLanguage rdf:type owl:AnnotationProperty ;
 ###  http://skosplus.net/skos-light/vocabularyLicenseString
 sl:vocabularyLicenseString rdf:type owl:AnnotationProperty ;
                            rdfs:label "vocabulary license string"@en ;
+                           rdfs:subPropertyOf :struct-vocabulary ;
                            rdfs:range xsd:string ;
                            rdfs:domain :Vocabulary .
 
@@ -151,6 +165,7 @@ sl:vocabularyLicenseString rdf:type owl:AnnotationProperty ;
 sl:vocabularyTitle rdf:type owl:AnnotationProperty ;
                    rdfs:label "Vokabular Titlel"@de ,
                               "vocabulary title"@en ;
+                   rdfs:subPropertyOf :struct-vocabulary ;
                    rdfs:range xsd:string ;
                    rdfs:domain :Vocabulary .
 
@@ -169,7 +184,8 @@ rdfs:seeAlso rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3.org/2000/01/rdf-schema#subClassOf
 rdfs:subClassOf rdf:type owl:AnnotationProperty ;
-                rdfs:seeAlso "sub class of"@en .
+                rdfs:label "sub class of"@en ;
+                rdfs:subPropertyOf :struct-label .
 
 
 ###  http://www.w3.org/2004/02/skos/core#broadMatch
@@ -195,7 +211,18 @@ skos:relatedMatch rdf:type owl:AnnotationProperty .
 ###  https://archaeolink.github.io/n4o-ta4-conservation/hasSource
 :hasSource rdf:type owl:AnnotationProperty ;
            rdfs:label "has source"@en ,
-                      "hat Quelle"@de .
+                      "hat Quelle"@de ;
+           rdfs:subPropertyOf :struct-label .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/struct-label
+:struct-label rdf:type owl:AnnotationProperty ;
+              rdfs:label "label"@en .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/struct-vocabulary
+:struct-vocabulary rdf:type owl:AnnotationProperty ;
+                   rdfs:label "vocabulary"@en .
 
 
 #################################################################
@@ -279,6 +306,11 @@ sl:Vocabulary rdf:type owl:Class ;
 ###  https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE
 :eq7GtLWHJesucfazgADPZE rdf:type owl:Class ;
                         rdfs:subClassOf :LEIZA_Conservation_Thesaurus .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/fBAv2FHRc3aDVk9ve1JThd
+:fBAv2FHRc3aDVk9ve1JThd rdf:type owl:Class ;
+                        rdfs:subClassOf <https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> .
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/ievmu1QUgrpeYSiU1DeYfm
@@ -368,14 +400,7 @@ sl:Vocabulary rdf:type owl:Class ;
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/fBAv2FHRc3aDVk9ve1JThd
 :fBAv2FHRc3aDVk9ve1JThd rdf:type owl:NamedIndividual ,
-                                 sl:Label ;
-                        sl:description "DIN EN 15898:2020-02: Kontrolle eines oder mehrer Einflussfaktoren der Umwelt"@de ;
-                        sl:hasSuperLabel <https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> ;
-                        sl:identifier "fBAv2FHRc3aDVk9ve1JThd" ;
-                        sl:identifierLabel "Umgebungskontrolle"@de ;
-                        rdfs:label "Umgebungskontrolle"@de ;
-                        rdfs:subClassOf <https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> ;
-                        :hasSource <http://www.wikidata.org/entity/Q125400047> .
+                                 sl:Label .
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/ievmu1QUgrpeYSiU1DeYfm
@@ -488,6 +513,14 @@ sl:Vocabulary rdf:type owl:Class ;
                         sl:alternativeLabel "Zustandserhebung"@de ;
                         sl:hasSuperLabel :LEIZA_Conservation_Thesaurus ;
                         sl:identifierLabel "Zustandserfassung"@de ;
+                        :hasSource <http://www.wikidata.org/entity/Q125400047> .
+
+
+:fBAv2FHRc3aDVk9ve1JThd sl:description "DIN EN 15898:2020-02: Kontrolle eines oder mehrer Einflussfaktoren der Umwelt"@de ;
+                        sl:identifier "fBAv2FHRc3aDVk9ve1JThd" ;
+                        sl:identifierLabel "Umgebungskontrolle"@de ;
+                        sl:hasSuperLabel <https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> ;
+                        rdfs:label "Umgebungskontrolle"@de ;
                         :hasSource <http://www.wikidata.org/entity/Q125400047> .
 
 
