@@ -124,6 +124,14 @@ sl:translation rdf:type owl:AnnotationProperty ;
                rdfs:domain :Label .
 
 
+###  http://skosplus.net/skos-light/vocabularyCreatorResource
+sl:vocabularyCreatorResource rdf:type owl:AnnotationProperty ;
+                             sl:vocabularyCreatorResource "vocabulary creator resoirce"@en ;
+                             rdfs:subPropertyOf :struct-vocabulary ;
+                             rdfs:range owl:Thing ;
+                             rdfs:domain sl:Vocabulary .
+
+
 ###  http://skosplus.net/skos-light/vocabularyCreatorString
 sl:vocabularyCreatorString rdf:type owl:AnnotationProperty ;
                            rdfs:label "vocabulary creator string"@en ;
@@ -508,10 +516,13 @@ sl:Vocabulary rdf:type owl:Class ;
 :LEIZA_Conservation_Thesaurus rdfs:label "LEIZA Restaurierungs- und Konservierungsthesaurus"@de ;
                               sl:vocabularyLanguage "de"@de ;
                               sl:LicenseLink <https://creativecommons.org/licenses/by/4.0/> ;
+                              sl:vocabularyCreatorResource <http://www.wikidata.org/entity/Q66606154> ;
                               sl:vocabularyDescription "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse. DIN EN 15898:2020-02: Prozess des Entscheidens, Planens und Umsetzens."@de ;
                               sl:vocabularyTitle "LEIZA Restaurierungs- und Konservierungsthesaurus"@de ;
                               rdfs:comment "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse. DIN EN 15898:2020-02: Prozess des Entscheidens, Planens und Umsetzens."@de ;
-                              sl:vocabularyCreatorString "Kristina Fella (LEIZA)"@de ;
+                              sl:vocabularyCreatorResource <http://www.wikidata.org/entity/Q125400678> ;
+                              sl:vocabularyCreatorString "Kristina Fella (LEIZA), Lasse Mempel-Länger (LEIZA), Florian Thiery (LEIZA)"@de ;
+                              sl:vocabularyCreatorResource <http://www.wikidata.org/entity/Q125400666> ;
                               sl:vocabularyLicenseString "CC BY 4.0"@de .
 
 
