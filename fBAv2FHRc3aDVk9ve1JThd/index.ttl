@@ -5,6 +5,7 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 
 ns2:fBAv2FHRc3aDVk9ve1JThd a ns1:Label,
+        owl:Class,
         owl:NamedIndividual,
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;

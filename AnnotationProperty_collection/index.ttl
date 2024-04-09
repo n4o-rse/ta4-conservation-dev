@@ -7,5 +7,7 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "AnnotationProperty Instances Collection"@en ;
     void:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
-    rdfs:member <https://archaeolink.github.io/n4o-ta4-conservation/hasSource> .
+    rdfs:member <https://archaeolink.github.io/n4o-ta4-conservation/hasSource>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/struct-label>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/struct-vocabulary> .
 

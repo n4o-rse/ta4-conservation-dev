@@ -7,5 +7,5 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Property Partition: seeAlso"@en ;
     void:property rdfs:seeAlso ;
-    void:triples 2 .
+    void:triples 1 .
 

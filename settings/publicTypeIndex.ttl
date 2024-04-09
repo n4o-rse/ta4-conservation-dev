@@ -112,7 +112,7 @@
 <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#eq7GtLWHJesucfazgADPZE> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus> ;
     ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE> .
 
-<https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#fBAv2FHRc3aDVk9ve1JThd> ns1:forClass <http://skosplus.net/skos-light/Label> ;
+<https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#fBAv2FHRc3aDVk9ve1JThd> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> ;
     ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/fBAv2FHRc3aDVk9ve1JThd> .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#ievmu1QUgrpeYSiU1DeYfm> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> ;
