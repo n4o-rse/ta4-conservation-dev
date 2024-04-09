@@ -2,10 +2,10 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_identifier> a void:Dataset,
+<https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_seeAlso> a void:Dataset,
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
-    rdfs:label "Property Partition: identifier"@en ;
-    void:property <http://skosplus.net/skos-light/identifier> ;
-    void:triples 10 .
+    rdfs:label "Property Partition: seeAlso"@en ;
+    void:property rdfs:seeAlso ;
+    void:triples 2 .
 

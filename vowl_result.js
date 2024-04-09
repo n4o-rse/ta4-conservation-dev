@@ -150,11 +150,11 @@ var vowlresult={
    "type": "http://www.w3.org/2002/07/owl#Class"
   },
   {
-   "id": 74,
+   "id": 76,
    "type": "http://www.w3.org/2000/01/rdf-schema#Datatype"
   },
   {
-   "id": 75,
+   "id": 77,
    "type": "http://www.w3.org/2000/01/rdf-schema#Datatype"
   }
  ],
@@ -696,7 +696,7 @@ var vowlresult={
    "superClasses": []
   },
   {
-   "id": 74,
+   "id": 76,
    "iri": "http://www.w3.org/2001/XMLSchema#anyURI",
    "baseIRI": "(rdflib.term.URIRef('http://skosplus.net/skos-light/LicenseLink'), rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema",
    "instances": 0,
@@ -708,7 +708,7 @@ var vowlresult={
    "superClasses": []
   },
   {
-   "id": 75,
+   "id": 77,
    "iri": "http://www.w3.org/2001/XMLSchema#string",
    "baseIRI": "(rdflib.term.URIRef('http://skosplus.net/skos-light/description'), rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema",
    "instances": 0,
@@ -859,7 +859,7 @@ var vowlresult={
   },
   {
    "id": 53,
-   "type": "owl:Class"
+   "type": "owl:NamedIndividual"
   },
   {
    "id": 54,
@@ -867,11 +867,11 @@ var vowlresult={
   },
   {
    "id": 55,
-   "type": "owl:NamedIndividual"
+   "type": "owl:Class"
   },
   {
    "id": 56,
-   "type": "owl:Class"
+   "type": "owl:NamedIndividual"
   },
   {
    "id": 57,
@@ -887,19 +887,19 @@ var vowlresult={
   },
   {
    "id": 60,
-   "type": "owl:NamedIndividual"
+   "type": "owl:Class"
   },
   {
    "id": 61,
-   "type": "owl:Class"
-  },
-  {
-   "id": 62,
    "type": "owl:NamedIndividual"
   },
   {
-   "id": 63,
+   "id": 62,
    "type": "owl:Class"
+  },
+  {
+   "id": 63,
+   "type": "owl:NamedIndividual"
   },
   {
    "id": 64,
@@ -911,11 +911,11 @@ var vowlresult={
   },
   {
    "id": 66,
-   "type": "owl:Class"
+   "type": "owl:NamedIndividual"
   },
   {
    "id": 67,
-   "type": "owl:NamedIndividual"
+   "type": "owl:Class"
   },
   {
    "id": 68,
@@ -923,7 +923,7 @@ var vowlresult={
   },
   {
    "id": 69,
-   "type": "owl:Class"
+   "type": "owl:NamedIndividual"
   },
   {
    "id": 70,
@@ -935,10 +935,18 @@ var vowlresult={
   },
   {
    "id": 72,
-   "type": "owl:NamedIndividual"
+   "type": "owl:Class"
   },
   {
    "id": 73,
+   "type": "owl:Class"
+  },
+  {
+   "id": 74,
+   "type": "owl:NamedIndividual"
+  },
+  {
+   "id": 75,
    "type": "owl:Class"
   }
  ],
@@ -1430,7 +1438,16 @@ var vowlresult={
    "label": {
     "IRI-based": "seeAlso"
    },
-   "annotations": {},
+   "annotations": {
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+     {
+      "identifier": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "language": "undefined",
+      "value": "sub class of",
+      "type": "label"
+     }
+    ]
+   },
    "range": [],
    "domain": [],
    "subProperties": [],
@@ -1576,6 +1593,20 @@ var vowlresult={
   },
   {
    "id": 53,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": {
+    "IRI-based": "eq7GtLWHJesucfazgADPZE"
+   },
+   "annotations": {},
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 54,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/sSygVCh1KaCSrkS5Ku3Aak",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1589,7 +1620,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 54,
+   "id": 55,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1603,7 +1634,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 55,
+   "id": 56,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/wF7jn2tBfcnE3drqjzwi8D",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1617,7 +1648,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 56,
+   "id": 57,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/wsbDppTfr2BSxsmhSuEbG4",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1631,7 +1662,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 57,
+   "id": 58,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1645,7 +1676,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 58,
+   "id": 59,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1659,7 +1690,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 59,
+   "id": 60,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1673,7 +1704,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 60,
+   "id": 61,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1687,7 +1718,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 61,
+   "id": 62,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1699,7 +1730,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 62,
+   "id": 63,
    "iri": "http://www.wikidata.org/entity/Q125400047",
    "baseIRI": "http://www.wikidata.org/entity",
    "instances": 0,
@@ -1720,7 +1751,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 63,
+   "id": 64,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1797,8 +1828,61 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 64,
+   "id": 65,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": "Zustandserfassung",
+   "annotations": {
+    "http://skosplus.net/skos-light/alternativeLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/alternativeLabel",
+      "language": "undefined",
+      "value": "Zustandserhebung",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/hasSuperLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/hasSuperLabel",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifier": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifier",
+      "language": "undefined",
+      "value": "eq7GtLWHJesucfazgADPZE",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifierLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifierLabel",
+      "language": "undefined",
+      "value": "Zustandserfassung",
+      "type": "label"
+     }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+     {
+      "identifier": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
+      "type": "iri"
+     }
+    ]
+   },
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 66,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
    "label": "Organik",
@@ -1842,7 +1926,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 65,
+   "id": 67,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/sSygVCh1KaCSrkS5Ku3Aak",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1895,7 +1979,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 66,
+   "id": 68,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1948,7 +2032,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 67,
+   "id": 69,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/wF7jn2tBfcnE3drqjzwi8D",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2001,7 +2085,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 68,
+   "id": 70,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/wsbDppTfr2BSxsmhSuEbG4",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2046,7 +2130,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 69,
+   "id": 71,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2123,7 +2207,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 70,
+   "id": 72,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2176,7 +2260,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 71,
+   "id": 73,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2221,7 +2305,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 72,
+   "id": 74,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2266,7 +2350,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 73,
+   "id": 75,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,

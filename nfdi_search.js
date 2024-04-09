@@ -16,6 +16,7 @@ var search={
   "Silikat": "https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq",
   "Vocabulary Instances Collection": "https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary_collection",
   "Werkzeug": "https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB",
+  "Zustandserfassung": "https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE",
   "[Objekt-Werkstoff (Material)]": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
   "has source": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource",
   "hat Quelle": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource",
