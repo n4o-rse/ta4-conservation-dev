@@ -175,11 +175,12 @@ rdf:type rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#label
-rdfs:label rdfs:seeAlso "label"@en .
+rdfs:label rdfs:label "label"@en .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#seeAlso
-rdfs:seeAlso rdf:type owl:AnnotationProperty .
+rdfs:seeAlso rdf:type owl:AnnotationProperty ;
+             rdfs:subPropertyOf :struct-vocabulary-match .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#subClassOf
@@ -189,23 +190,28 @@ rdfs:subClassOf rdf:type owl:AnnotationProperty ;
 
 
 ###  http://www.w3.org/2004/02/skos/core#broadMatch
-skos:broadMatch rdf:type owl:AnnotationProperty .
+skos:broadMatch rdf:type owl:AnnotationProperty ;
+                rdfs:subPropertyOf :struct-vocabulary-match .
 
 
 ###  http://www.w3.org/2004/02/skos/core#closeMatch
-skos:closeMatch rdf:type owl:AnnotationProperty .
+skos:closeMatch rdf:type owl:AnnotationProperty ;
+                rdfs:subPropertyOf :struct-vocabulary-match .
 
 
 ###  http://www.w3.org/2004/02/skos/core#exactMatch
-skos:exactMatch rdf:type owl:AnnotationProperty .
+skos:exactMatch rdf:type owl:AnnotationProperty ;
+                rdfs:subPropertyOf :struct-vocabulary-match .
 
 
 ###  http://www.w3.org/2004/02/skos/core#narrowMatch
-skos:narrowMatch rdf:type owl:AnnotationProperty .
+skos:narrowMatch rdf:type owl:AnnotationProperty ;
+                 rdfs:subPropertyOf :struct-vocabulary-match .
 
 
 ###  http://www.w3.org/2004/02/skos/core#relatedMatch
-skos:relatedMatch rdf:type owl:AnnotationProperty .
+skos:relatedMatch rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf :struct-vocabulary-match .
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/hasSource
@@ -223,6 +229,11 @@ skos:relatedMatch rdf:type owl:AnnotationProperty .
 ###  https://archaeolink.github.io/n4o-ta4-conservation/struct-vocabulary
 :struct-vocabulary rdf:type owl:AnnotationProperty ;
                    rdfs:label "vocabulary"@en .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/struct-vocabulary-match
+:struct-vocabulary-match rdf:type owl:AnnotationProperty ;
+                         rdfs:label "vocabulary match"@en .
 
 
 #################################################################
