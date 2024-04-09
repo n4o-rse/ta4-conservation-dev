@@ -266,9 +266,24 @@ sl:Vocabulary rdf:type owl:Class ;
                         rdfs:subClassOf :LEIZA_Conservation_Thesaurus .
 
 
+###  https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7
+:tmjVdStfYu6PQuQeq7Sua7 rdf:type owl:Class ;
+                        rdfs:subClassOf :dYxXkaqsnBqVYA1THAxjgE .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/wsbDppTfr2BSxsmhSuEbG4
+:wsbDppTfr2BSxsmhSuEbG4 rdf:type owl:Class ;
+                        rdfs:subClassOf :dYxXkaqsnBqVYA1THAxjgE .
+
+
 ###  https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1
 <https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1> rdf:type owl:Class ;
                                                                             rdfs:subClassOf <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB
+<https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf :dYxXkaqsnBqVYA1THAxjgE .
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP
@@ -298,17 +313,43 @@ sl:Vocabulary rdf:type owl:Class ;
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7
 :tmjVdStfYu6PQuQeq7Sua7 rdf:type owl:NamedIndividual ,
+                                 sl:Label .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/wF7jn2tBfcnE3drqjzwi8D
+:wF7jn2tBfcnE3drqjzwi8D rdf:type owl:NamedIndividual ,
                                  sl:Label ;
-                        sl:identifier "tmjVdStfYu6PQuQeq7Sua7" ;
-                        sl:identifierLabel "Methode und Technik"@de ;
-                        rdfs:comment "Die zur Erreichung des Restaurierungs.- und/oder Konservierungsziel angewendeten Vorgehensweisen während des Objekteingriffs."@de ;
-                        rdfs:label "Methode und Technik"@de ;
-                        rdfs:subClassOf :dYxXkaqsnBqVYA1THAxjgE .
+                        sl:alternativeLabel "stabilisierende Konservierung"@de ;
+                        sl:description "DIN EN 15898:2020-02: Maßnahmen, die direkt an einem Objekt vorgenommen werden, um weiteren Abbau zu verhindern oder zu verzögern und/oder Schaden zu begrenzen"@de ;
+                        sl:identifier "wF7jn2tBfcnE3drqjzwi8D" ;
+                        sl:identifierLabel "stabilisierende Konservierung"@de ;
+                        rdfs:label "stabilisierende Konservierung"@de ;
+                        :hasSource <http://www.wikidata.org/entity/Q125400047> .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/wsbDppTfr2BSxsmhSuEbG4
+:wsbDppTfr2BSxsmhSuEbG4 rdf:type owl:NamedIndividual ,
+                                 sl:Label .
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1
 <https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1> rdf:type owl:NamedIndividual ,
                                                                                      sl:Label .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB
+<https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB> rdf:type owl:NamedIndividual ,
+                                                                                     sl:Label .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT
+<https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT> rdf:type owl:NamedIndividual ,
+                                                                                     sl:Label ;
+                                                                            sl:description "DIN EN 15898:2020-02: Maßnahmen an einem stabilen oder stabilisierten Objekt, die darauf abzielen, dessen Wertschätzung, dessen Verständnis und/oder dessen Benutzung zu erleichtern, wobei dessen Bedeutung sowie die vorgefundenen Techniken und Materialien respektiert werden"@de ;
+                                                                            sl:identifier "6jF9fBDq7W2tyRHLj554AT" ;
+                                                                            sl:identifierLabel "Restaurierung"@de ;
+                                                                            rdfs:label "Restaurierung"@de ;
+                                                                            :hasSource <http://www.wikidata.org/entity/Q125400047> .
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP
@@ -324,12 +365,29 @@ sl:Vocabulary rdf:type owl:Class ;
                               rdfs:comment "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse. DIN EN 15898:2020-02: Prozess des Entscheidens, Planens und Umsetzens."@de .
 
 
-:dYxXkaqsnBqVYA1THAxjgE sl:identifierLabel "Eingriff"@de ;
+:dYxXkaqsnBqVYA1THAxjgE sl:hasRelatedLabel :wF7jn2tBfcnE3drqjzwi8D ;
+                        sl:identifierLabel "Eingriff"@de ;
+                        sl:hasSubLabel :wsbDppTfr2BSxsmhSuEbG4 ;
                         :hasSource <http://www.wikidata.org/entity/Q125400047> ;
                         sl:description "DIN EN 15898:2020-02: direkte Einwirkung zur Erreichung der festgesetzten Konservierungsziele"@de ;
+                        sl:hasSubLabel :tmjVdStfYu6PQuQeq7Sua7 ;
                         rdfs:label "Eingriff"@de ;
                         sl:identifier "dYxXkaqsnBqVYA1THAxjgE" ;
                         sl:alternativeLabel "Behandlung"@de .
+
+
+:tmjVdStfYu6PQuQeq7Sua7 rdfs:comment "Die zur Erreichung des Restaurierungs.- und/oder Konservierungsziel angewendeten Vorgehensweisen während des Objekteingriffs."@de ;
+                        sl:hasSuperLabel :dYxXkaqsnBqVYA1THAxjgE ;
+                        rdfs:label "Methode und Technik"@de ;
+                        sl:identifierLabel "Methode und Technik"@de ;
+                        sl:identifier "tmjVdStfYu6PQuQeq7Sua7" .
+
+
+:wsbDppTfr2BSxsmhSuEbG4 sl:identifierLabel "Material"@de ;
+                        skos:closeMatch <http://www.wikidata.org/entity/Q214609> ;
+                        sl:identifier "wsbDppTfr2BSxsmhSuEbG4" ;
+                        sl:hasSuperLabel :dYxXkaqsnBqVYA1THAxjgE ;
+                        rdfs:label "Material"@de .
 
 
 <https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1> sl:identifierLabel "Metall"@de ;
@@ -341,6 +399,13 @@ sl:Vocabulary rdf:type owl:Class ;
                                                                             sl:translation "metal"@en ;
                                                                             skos:closeMatch <http://www.wikidata.org/entity/Q11426> ;
                                                                             sl:alternativeLabel "Metalle"@de .
+
+
+<https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB> sl:identifierLabel "Werkzeug"@de ;
+                                                                            skos:closeMatch <http://www.wikidata.org/entity/Q39546> ;
+                                                                            rdfs:label "Werkzeug"@de ;
+                                                                            sl:identifier "3EE7pLjByXiT4nHWxyqKuB" ;
+                                                                            sl:hasSuperLabel :dYxXkaqsnBqVYA1THAxjgE .
 
 
 <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> rdfs:label "[Objekt-Werkstoff (Material)]"@de ;
