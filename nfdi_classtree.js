@@ -43,6 +43,27 @@ var tree={
     "check_callback": true,
     "data": [
       {
+        "id": "http://www.wikidata.org/entity/Q125400047",
+        "parent": "http://skosplus.net/skos-light/Source",
+        "type": "instance",
+        "text": "Q125400047 (wde:Q125400047)",
+        "data": {}
+      },
+      {
+        "id": "http://skosplus.net/skos-light/Source",
+        "parent": "https://archaeolink.github.io/n4o-ta4-conservation/Generic",
+        "type": "class",
+        "text": "Source (sl:Source) [1]",
+        "data": {}
+      },
+      {
+        "id": "https://archaeolink.github.io/n4o-ta4-conservation/Generic",
+        "parent": "#",
+        "type": "class",
+        "text": "Generic (:Generic)",
+        "data": {}
+      },
+      {
         "id": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
         "parent": "http://skosplus.net/skos-light/Vocabulary",
         "type": "instance",
@@ -51,8 +72,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://skosplus.net/skos-light/hasSubLabel": {
               "instancecount": 1,
@@ -66,6 +87,9 @@ var tree={
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 3,
               "http://www.w3.org/2002/07/owl#Class": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#comment": {
+              "instancecount": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#label": {
               "instancecount": 1
@@ -96,7 +120,7 @@ var tree={
             }
           }
         },
-        "instancecount": 8
+        "instancecount": 9
       },
       {
         "id": "http://skosplus.net/skos-light/Vocabulary",
@@ -107,8 +131,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 3,
@@ -128,19 +152,26 @@ var tree={
             },
             "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
               "instancecount": 0,
-              "http://www.w3.org/2002/07/owl#Class": 1,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
-              "http://skosplus.net/skos-light/Label": 1
+              "http://www.w3.org/2002/07/owl#Class": 2,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 2,
+              "http://skosplus.net/skos-light/Label": 2
             }
           }
         },
         "instancecount": 6
       },
       {
-        "id": "https://archaeolink.github.io/n4o-ta4-conservation/Generic",
-        "parent": "#",
-        "type": "class",
-        "text": "Generic (:Generic)",
+        "id": "https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE",
+        "parent": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
+        "type": "instance",
+        "text": "Eingriff (:dYxXkaqsnBqVYA1THAxjgE)",
+        "data": {}
+      },
+      {
+        "id": "https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7",
+        "parent": "http://skosplus.net/skos-light/Label",
+        "type": "instance",
+        "text": "Methode und Technik (:tmjVdStfYu6PQuQeq7Sua7)",
         "data": {}
       },
       {
@@ -159,8 +190,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://skosplus.net/skos-light/alternativeLabel": {
               "instancecount": 1
@@ -219,14 +250,58 @@ var tree={
         "id": "http://skosplus.net/skos-light/Label",
         "parent": "https://archaeolink.github.io/n4o-ta4-conservation/Generic",
         "type": "class",
-        "text": "Label (sl:Label)",
-        "data": {}
+        "text": "Label (sl:Label) [1]",
+        "data": {
+          "to": {
+            "http://rdfs.org/ns/void#inDataset": {
+              "instancecount": 1,
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
+            },
+            "http://skosplus.net/skos-light/identifier": {
+              "instancecount": 1
+            },
+            "http://skosplus.net/skos-light/identifierLabel": {
+              "instancecount": 1
+            },
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+              "instancecount": 2,
+              "http://www.w3.org/2002/07/owl#Class": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#comment": {
+              "instancecount": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#label": {
+              "instancecount": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+              "instancecount": 1,
+              "http://www.w3.org/2002/07/owl#Class": 1,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
+              "http://skosplus.net/skos-light/Label": 1
+            }
+          },
+          "from": {
+            "http://www.w3.org/2000/01/rdf-schema#member": {
+              "instancecount": 0,
+              "http://www.w3.org/2004/02/skos/core#Collection": 2
+            }
+          }
+        },
+        "instancecount": 8
       },
       {
         "id": "https://archaeolink.github.io/n4o-ta4-conservation/Ontology_collection",
         "parent": "http://www.w3.org/2004/02/skos/core#Collection",
         "type": "instance",
         "text": "Ontology Instances Collection (:Ontology_collection)",
+        "data": {}
+      },
+      {
+        "id": "https://archaeolink.github.io/n4o-ta4-conservation/AnnotationProperty_collection",
+        "parent": "http://www.w3.org/2004/02/skos/core#Collection",
+        "type": "instance",
+        "text": "AnnotationProperty Instances Collection (:AnnotationProperty_collection)",
         "data": {}
       },
       {
@@ -261,13 +336,13 @@ var tree={
         "id": "http://www.w3.org/2004/02/skos/core#Collection",
         "parent": "#",
         "type": "collectionclass",
-        "text": "Collection (skos:Collection) [5]",
+        "text": "Collection (skos:Collection) [6]",
         "data": {
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 1
@@ -276,29 +351,19 @@ var tree={
               "instancecount": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
-              "instancecount": 3,
-              "http://www.w3.org/2002/07/owl#Class": 3,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 3,
-              "http://skosplus.net/skos-light/Label": 2,
-              "http://skosplus.net/skos-light/Vocabulary": 1
+              "instancecount": 1,
+              "http://www.w3.org/2002/07/owl#Ontology": 1
             }
           },
           "from": {}
         },
-        "instancecount": 7
+        "instancecount": 5
       },
       {
         "id": "http://skosplus.net/skos-light/Actor",
         "parent": "https://archaeolink.github.io/n4o-ta4-conservation/Generic",
         "type": "class",
         "text": "Actor (sl:Actor)",
-        "data": {}
-      },
-      {
-        "id": "http://skosplus.net/skos-light/Source",
-        "parent": "https://archaeolink.github.io/n4o-ta4-conservation/Generic",
-        "type": "class",
-        "text": "Source (sl:Source)",
         "data": {}
       },
       {

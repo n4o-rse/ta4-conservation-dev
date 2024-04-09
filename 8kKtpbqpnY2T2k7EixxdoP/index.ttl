@@ -12,5 +12,6 @@
     void:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
     ns1:hasSubLabel <https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1> ;
     ns1:identifierLabel "[<Objekt-Werkstoff (Material)]"@de ;
+    rdfs:comment "Material aus dem das Objekt besteht."@de ;
     rdfs:subClassOf <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus> .
 

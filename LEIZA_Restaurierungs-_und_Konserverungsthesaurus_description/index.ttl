@@ -9,5 +9,6 @@
     rdfs:label "Property Partition: description"@en ;
     void:property dc:description,
         <http://skosplus.net/skos-light/description> ;
-    void:triples 1 .
+    void:triples 1,
+        2 .
 

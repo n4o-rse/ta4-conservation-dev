@@ -7,5 +7,5 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Property Partition: alternativeLabel"@en ;
     void:property <http://skosplus.net/skos-light/alternativeLabel> ;
-    void:triples 1 .
+    void:triples 2 .
 
