@@ -20,18 +20,17 @@ jobs:
     with:
       version: v017
       rdffilepath: thesaurus.ttl
-      docpath: docs
+      docpath: docs/
       prefixns: https://archaeolink.github.io/n4o-ta4-conservation/
-      prefixnsshort: no
+      prefixnsshort: nfdi
       indexpages: true
+      metadatatable: false
       createcollections: true
       createVOWL: true
       preferredlang: en
       ghpages: true
-      metadatatable: true
-      createnonNSPages: true
       logourl: https://raw.githubusercontent.com/archaeolink-lod/unicorn-ontdoc-template-nmt/main/icons/al_circle_icon.png
-      ogcapifeatures: true
+      ogcapifeatures: false
       datasettitle: LEIZA Restaurierungs- und Konserverungsthesaurus
-      templatedir: https://github.com/archaeolink-lod/unicorn-ontdoc-template-archaeolink/archive/refs/tags/v0.5.zip
+      templatedir: https://github.com/archaeolink/unicorn-ontdoc-template-archaeolink-samianresearch/archive/refs/tags/v0.5.zip
       iiif: false
