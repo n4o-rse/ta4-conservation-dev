@@ -1,18 +1,18 @@
-@prefix ns1: <https://archaeolink.github.io/n4o-ta4-conservation/> .
-@prefix ns2: <http://skosplus.net/skos-light/> .
+@prefix ns1: <http://skosplus.net/skos-light/> .
+@prefix ns2: <https://archaeolink.github.io/n4o-ta4-conservation/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 
-ns1:wF7jn2tBfcnE3drqjzwi8D a ns2:Label,
+ns2:wF7jn2tBfcnE3drqjzwi8D a ns1:Label,
         owl:NamedIndividual,
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "stabilisierende Konservierung"@de ;
-    void:inDataset ns1:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
-    ns2:alternativeLabel "stabilisierende Konservierung"@de ;
-    ns2:description "DIN EN 15898:2020-02: Maßnahmen, die direkt an einem Objekt vorgenommen werden, um weiteren Abbau zu verhindern oder zu verzögern und/oder Schaden zu begrenzen"@de ;
-    ns2:identifier "wF7jn2tBfcnE3drqjzwi8D" ;
-    ns2:identifierLabel "stabilisierende Konservierung"@de ;
-    ns1:hasSource <http://www.wikidata.org/entity/Q125400047> .
+    void:inDataset ns2:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
+    ns1:alternativeLabel "stabilisierende Konservierung"@de ;
+    ns1:description "DIN EN 15898:2020-02: Maßnahmen, die direkt an einem Objekt vorgenommen werden, um weiteren Abbau zu verhindern oder zu verzögern und/oder Schaden zu begrenzen"@de ;
+    ns1:identifier "wF7jn2tBfcnE3drqjzwi8D" ;
+    ns1:identifierLabel "stabilisierende Konservierung"@de ;
+    ns2:hasSource <http://www.wikidata.org/entity/Q125400047> .
 
