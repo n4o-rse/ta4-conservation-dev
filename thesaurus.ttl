@@ -25,32 +25,32 @@
 
 ###  http://purl.org/dc/elements/1.1/created
 <http://purl.org/dc/elements/1.1/created> rdf:type owl:AnnotationProperty ;
-rdfs:subPropertyOf :struct-more .
+                                          rdfs:subPropertyOf :struct-more .
 
 
 ###  http://purl.org/dc/elements/1.1/creator
 <http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty ;
-rdfs:subPropertyOf :struct-more .
+                                          rdfs:subPropertyOf :struct-more .
 
 
 ###  http://purl.org/dc/elements/1.1/description
 <http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty ;
-rdfs:subPropertyOf :struct-more .
+                                              rdfs:subPropertyOf :struct-more .
 
 
 ###  http://purl.org/dc/elements/1.1/licence
 <http://purl.org/dc/elements/1.1/licence> rdf:type owl:AnnotationProperty ;
-rdfs:subPropertyOf :struct-more .
+                                          rdfs:subPropertyOf :struct-more .
 
 
 ###  http://purl.org/dc/elements/1.1/title
 <http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty ;
-rdfs:subPropertyOf :struct-more .
+                                        rdfs:subPropertyOf :struct-more .
 
 
 ###  http://purl.org/dc/terms/creator
 terms:creator rdf:type owl:AnnotationProperty ;
-rdfs:subPropertyOf :struct-more .
+              rdfs:subPropertyOf :struct-more .
 
 
 ###  http://skosplus.net/skos-light/LicenseLink
@@ -506,7 +506,13 @@ sl:Vocabulary rdf:type owl:Class ;
 #################################################################
 
 :LEIZA_Conservation_Thesaurus rdfs:label "LEIZA Restaurierungs- und Konservierungsthesaurus"@de ;
-                              rdfs:comment "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse. DIN EN 15898:2020-02: Prozess des Entscheidens, Planens und Umsetzens."@de .
+                              sl:vocabularyLanguage "de"@de ;
+                              sl:LicenseLink <https://creativecommons.org/licenses/by/4.0/> ;
+                              sl:vocabularyDescription "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse. DIN EN 15898:2020-02: Prozess des Entscheidens, Planens und Umsetzens."@de ;
+                              sl:vocabularyTitle "LEIZA Restaurierungs- und Konservierungsthesaurus"@de ;
+                              rdfs:comment "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse. DIN EN 15898:2020-02: Prozess des Entscheidens, Planens und Umsetzens."@de ;
+                              sl:vocabularyCreatorString "Kristina Fella (LEIZA)"@de ;
+                              sl:vocabularyLicenseString "CC BY 4.0"@de .
 
 
 :cpT73gbyUgA22vohdo4rUa rdfs:label "[Restaurierungs-/ Konservierungsplanung]"@de ;
