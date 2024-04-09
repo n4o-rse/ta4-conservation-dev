@@ -13,7 +13,9 @@ var search={
   "Ontology Instances Collection": "https://archaeolink.github.io/n4o-ta4-conservation/Ontology_collection",
   "Organik": "https://archaeolink.github.io/n4o-ta4-conservation/sSygVCh1KaCSrkS5Ku3Aak",
   "Restaurierung": "https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT",
+  "Sammlungspflege": "https://archaeolink.github.io/n4o-ta4-conservation/ievmu1QUgrpeYSiU1DeYfm",
   "Silikat": "https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq",
+  "Umgebungskontrolle": "https://archaeolink.github.io/n4o-ta4-conservation/fBAv2FHRc3aDVk9ve1JThd",
   "Vocabulary Instances Collection": "https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary_collection",
   "Werkzeug": "https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB",
   "Zustandserfassung": "https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE",
@@ -23,5 +25,6 @@ var search={
   "[Restaurierungs-/ Konservierungsplanung]": "https://archaeolink.github.io/n4o-ta4-conservation/cpT73gbyUgA22vohdo4rUa",
   "has source": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource",
   "hat Quelle": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource",
+  "pr\u00e4ventive Konservierung": "https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur",
   "stabilisierende Konservierung": "https://archaeolink.github.io/n4o-ta4-conservation/wF7jn2tBfcnE3drqjzwi8D"
 }

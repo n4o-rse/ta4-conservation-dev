@@ -10,6 +10,7 @@
     rdfs:member <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#1eo1EwnxCPF6yukEJo1Wdq>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#2dmdnWjmWJURKh9PLaJuH1>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#3EE7pLjByXiT4nHWxyqKuB>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#59RpvNLTucB9wVbWVHTRur>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#6jF9fBDq7W2tyRHLj554AT>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#8kKtpbqpnY2T2k7EixxdoP>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#Actor>,
@@ -30,6 +31,8 @@
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#cpT73gbyUgA22vohdo4rUa>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#dYxXkaqsnBqVYA1THAxjgE>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#eq7GtLWHJesucfazgADPZE>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#fBAv2FHRc3aDVk9ve1JThd>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#ievmu1QUgrpeYSiU1DeYfm>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#qfYhqzHDc8FTxu1A6T6ycW>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#sSygVCh1KaCSrkS5Ku3Aak>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#stStRVHTWT8PXV2Lj19GGL>,
@@ -45,6 +48,9 @@
 
 <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#3EE7pLjByXiT4nHWxyqKuB> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE> ;
     ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB> .
+
+<https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#59RpvNLTucB9wVbWVHTRur> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus> ;
+    ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#6jF9fBDq7W2tyRHLj554AT> ns1:forClass <http://skosplus.net/skos-light/Label> ;
     ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT> .
@@ -97,7 +103,7 @@
 <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#Vocabulary_collection> ns1:forClass skos:Collection ;
     ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary_collection> .
 
-<https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#cpT73gbyUgA22vohdo4rUa> ns1:forClass <http://skosplus.net/skos-light/Label> ;
+<https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#cpT73gbyUgA22vohdo4rUa> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus> ;
     ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/cpT73gbyUgA22vohdo4rUa> .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#dYxXkaqsnBqVYA1THAxjgE> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus> ;
@@ -105,6 +111,12 @@
 
 <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#eq7GtLWHJesucfazgADPZE> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus> ;
     ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE> .
+
+<https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#fBAv2FHRc3aDVk9ve1JThd> ns1:forClass <http://skosplus.net/skos-light/Label> ;
+    ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/fBAv2FHRc3aDVk9ve1JThd> .
+
+<https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#ievmu1QUgrpeYSiU1DeYfm> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur> ;
+    ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/ievmu1QUgrpeYSiU1DeYfm> .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#qfYhqzHDc8FTxu1A6T6ycW> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE> ;
     ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/qfYhqzHDc8FTxu1A6T6ycW> .

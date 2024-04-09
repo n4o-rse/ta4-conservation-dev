@@ -162,11 +162,23 @@ var vowlresult={
    "type": "http://www.w3.org/2002/07/owl#Class"
   },
   {
-   "id": 85,
+   "id": 53,
+   "type": "http://www.w3.org/2002/07/owl#Class"
+  },
+  {
+   "id": 54,
+   "type": "http://www.w3.org/2002/07/owl#Class"
+  },
+  {
+   "id": 55,
+   "type": "http://www.w3.org/2002/07/owl#Class"
+  },
+  {
+   "id": 94,
    "type": "http://www.w3.org/2000/01/rdf-schema#Datatype"
   },
   {
-   "id": 86,
+   "id": 95,
    "type": "http://www.w3.org/2000/01/rdf-schema#Datatype"
   }
  ],
@@ -300,13 +312,68 @@ var vowlresult={
    "subClasses": [
     "42",
     "43",
-    "52"
+    "44",
+    "54",
+    "55"
    ],
    "superClasses": []
   },
   {
    "id": 41,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": "[Restaurierungs-/ Konservierungsplanung]",
+   "annotations": {
+    "http://skosplus.net/skos-light/identifier": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifier",
+      "language": "undefined",
+      "value": "cpT73gbyUgA22vohdo4rUa",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/hasSuperLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/hasSuperLabel",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/description": [
+     {
+      "identifier": "http://skosplus.net/skos-light/description",
+      "language": "undefined",
+      "value": "Dem eigentlichen Eingriff am Objekt vorausgehende \u00dcberlegungen, Entwicklung und Koordinierung aller Vorkehrungen und Ma\u00dfnahmen zur Erreichung des gew\u00fcnschten Restaurierungs-/ Konservierungsziels.\n(vgl.\u00a0DIN EN 15898:2020-02)",
+      "type": "label"
+     }
+    ],
+    "https://archaeolink.github.io/n4o-ta4-conservation/hasSource": [
+     {
+      "identifier": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource",
+      "language": "undefined",
+      "value": "http://www.wikidata.org/entity/Q125400047",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifierLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifierLabel",
+      "language": "undefined",
+      "value": "[Restaurierungs-/ Konservierungsplanung]",
+      "type": "label"
+     }
+    ]
+   },
+   "subClasses": [],
+   "superClasses": [
+    "41"
+   ]
+  },
+  {
+   "id": 42,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/cpT73gbyUgA22vohdo4rUa",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
    "label": "Eingriff",
@@ -369,16 +436,16 @@ var vowlresult={
     ]
    },
    "subClasses": [
-    "47",
-    "48",
-    "51"
+    "49",
+    "50",
+    "53"
    ],
    "superClasses": [
     "41"
    ]
   },
   {
-   "id": 42,
+   "id": 43,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -434,16 +501,69 @@ var vowlresult={
     ]
    },
    "subClasses": [
-    "44",
-    "46"
+    "46",
+    "48"
    ],
    "superClasses": [
     "41"
    ]
   },
   {
-   "id": 43,
+   "id": 44,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": "Sammlungspflege",
+   "annotations": {
+    "http://skosplus.net/skos-light/identifier": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifier",
+      "language": "undefined",
+      "value": "ievmu1QUgrpeYSiU1DeYfm",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifierLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifierLabel",
+      "language": "undefined",
+      "value": "Sammlungspflege",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/hasSuperLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/hasSuperLabel",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur",
+      "type": "iri"
+     }
+    ],
+    "https://archaeolink.github.io/n4o-ta4-conservation/hasSource": [
+     {
+      "identifier": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource",
+      "language": "undefined",
+      "value": "http://www.wikidata.org/entity/Q125400047",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/description": [
+     {
+      "identifier": "http://skosplus.net/skos-light/description",
+      "language": "undefined",
+      "value": "DIN EN 15898:2020-02: pr\u00e4ventive Konservierung einer Sammlung",
+      "type": "label"
+     }
+    ]
+   },
+   "subClasses": [],
+   "superClasses": [
+    "54"
+   ]
+  },
+  {
+   "id": 45,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/ievmu1QUgrpeYSiU1DeYfm",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
    "label": "[Diagnose]",
@@ -491,11 +611,11 @@ var vowlresult={
    },
    "subClasses": [],
    "superClasses": [
-    "43"
+    "44"
    ]
   },
   {
-   "id": 44,
+   "id": 46,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/qfYhqzHDc8FTxu1A6T6ycW",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -528,11 +648,11 @@ var vowlresult={
    },
    "subClasses": [],
    "superClasses": [
-    "52"
+    "55"
    ]
   },
   {
-   "id": 45,
+   "id": 47,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/sSygVCh1KaCSrkS5Ku3Aak",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -581,11 +701,11 @@ var vowlresult={
    },
    "subClasses": [],
    "superClasses": [
-    "43"
+    "44"
    ]
   },
   {
-   "id": 46,
+   "id": 48,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/stStRVHTWT8PXV2Lj19GGL",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -626,11 +746,11 @@ var vowlresult={
    },
    "subClasses": [],
    "superClasses": [
-    "42"
+    "43"
    ]
   },
   {
-   "id": 47,
+   "id": 49,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -671,11 +791,11 @@ var vowlresult={
    },
    "subClasses": [],
    "superClasses": [
-    "42"
+    "43"
    ]
   },
   {
-   "id": 48,
+   "id": 50,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/wsbDppTfr2BSxsmhSuEbG4",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -708,11 +828,11 @@ var vowlresult={
    },
    "subClasses": [],
    "superClasses": [
-    "52"
+    "55"
    ]
   },
   {
-   "id": 49,
+   "id": 51,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -777,11 +897,11 @@ var vowlresult={
    },
    "subClasses": [],
    "superClasses": [
-    "52"
+    "55"
    ]
   },
   {
-   "id": 50,
+   "id": 52,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -822,12 +942,67 @@ var vowlresult={
    },
    "subClasses": [],
    "superClasses": [
-    "42"
+    "43"
    ]
   },
   {
-   "id": 51,
+   "id": 53,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": "pr\u00e4ventive Konservierung",
+   "annotations": {
+    "http://skosplus.net/skos-light/identifier": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifier",
+      "language": "undefined",
+      "value": "59RpvNLTucB9wVbWVHTRur",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/description": [
+     {
+      "identifier": "http://skosplus.net/skos-light/description",
+      "language": "undefined",
+      "value": "DIN EN 15898:2020-02: Vorkehrungen und Ma\u00dfnahmen zur Vermeidung oder Minimierung von k\u00fcnftigen Schaden, Abbau, Verlust und folglich invasivem Eingriff",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifierLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifierLabel",
+      "language": "undefined",
+      "value": "pr\u00e4ventive Konservierung",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/hasSuperLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/hasSuperLabel",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
+      "type": "iri"
+     }
+    ],
+    "https://archaeolink.github.io/n4o-ta4-conservation/hasSource": [
+     {
+      "identifier": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource",
+      "language": "undefined",
+      "value": "http://www.wikidata.org/entity/Q125400047",
+      "type": "iri"
+     }
+    ]
+   },
+   "subClasses": [
+    "45"
+   ],
+   "superClasses": [
+    "41"
+   ]
+  },
+  {
+   "id": 54,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
    "label": "[Objekt-Werkstoff]",
@@ -866,16 +1041,16 @@ var vowlresult={
     ]
    },
    "subClasses": [
-    "45",
-    "49",
-    "50"
+    "47",
+    "51",
+    "52"
    ],
    "superClasses": [
     "41"
    ]
   },
   {
-   "id": 52,
+   "id": 55,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -887,7 +1062,7 @@ var vowlresult={
    "superClasses": []
   },
   {
-   "id": 85,
+   "id": 94,
    "iri": "http://www.w3.org/2001/XMLSchema#anyURI",
    "baseIRI": "(rdflib.term.URIRef('http://skosplus.net/skos-light/LicenseLink'), rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema",
    "instances": 0,
@@ -899,7 +1074,7 @@ var vowlresult={
    "superClasses": []
   },
   {
-   "id": 86,
+   "id": 95,
    "iri": "http://www.w3.org/2001/XMLSchema#string",
    "baseIRI": "(rdflib.term.URIRef('http://skosplus.net/skos-light/description'), rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema",
    "instances": 0,
@@ -1037,20 +1212,8 @@ var vowlresult={
    "type": "owl:AnnotationProperty"
   },
   {
-   "id": 53,
-   "type": "owl:NamedIndividual"
-  },
-  {
-   "id": 54,
-   "type": "owl:Class"
-  },
-  {
-   "id": 55,
-   "type": "owl:NamedIndividual"
-  },
-  {
    "id": 56,
-   "type": "owl:Class"
+   "type": "owl:NamedIndividual"
   },
   {
    "id": 57,
@@ -1070,11 +1233,11 @@ var vowlresult={
   },
   {
    "id": 61,
-   "type": "owl:Class"
+   "type": "owl:NamedIndividual"
   },
   {
    "id": 62,
-   "type": "owl:NamedIndividual"
+   "type": "owl:Class"
   },
   {
    "id": 63,
@@ -1102,7 +1265,7 @@ var vowlresult={
   },
   {
    "id": 69,
-   "type": "owl:NamedIndividual"
+   "type": "owl:Class"
   },
   {
    "id": 70,
@@ -1110,7 +1273,7 @@ var vowlresult={
   },
   {
    "id": 71,
-   "type": "owl:NamedIndividual"
+   "type": "owl:Class"
   },
   {
    "id": 72,
@@ -1118,7 +1281,7 @@ var vowlresult={
   },
   {
    "id": 73,
-   "type": "owl:Class"
+   "type": "owl:NamedIndividual"
   },
   {
    "id": 74,
@@ -1126,7 +1289,7 @@ var vowlresult={
   },
   {
    "id": 75,
-   "type": "owl:Class"
+   "type": "owl:NamedIndividual"
   },
   {
    "id": 76,
@@ -1138,7 +1301,7 @@ var vowlresult={
   },
   {
    "id": 78,
-   "type": "owl:NamedIndividual"
+   "type": "owl:Class"
   },
   {
    "id": 79,
@@ -1146,7 +1309,7 @@ var vowlresult={
   },
   {
    "id": 80,
-   "type": "owl:Class"
+   "type": "owl:NamedIndividual"
   },
   {
    "id": 81,
@@ -1158,10 +1321,46 @@ var vowlresult={
   },
   {
    "id": 83,
-   "type": "owl:NamedIndividual"
+   "type": "owl:Class"
   },
   {
    "id": 84,
+   "type": "owl:Class"
+  },
+  {
+   "id": 85,
+   "type": "owl:Class"
+  },
+  {
+   "id": 86,
+   "type": "owl:NamedIndividual"
+  },
+  {
+   "id": 87,
+   "type": "owl:Class"
+  },
+  {
+   "id": 88,
+   "type": "owl:Class"
+  },
+  {
+   "id": 89,
+   "type": "owl:Class"
+  },
+  {
+   "id": 90,
+   "type": "owl:Class"
+  },
+  {
+   "id": 91,
+   "type": "owl:Class"
+  },
+  {
+   "id": 92,
+   "type": "owl:NamedIndividual"
+  },
+  {
+   "id": 93,
    "type": "owl:Class"
   }
  ],
@@ -1765,7 +1964,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 53,
+   "id": 56,
    "iri": "http://www.wikidata.org/entity/Q125400047",
    "baseIRI": "http://www.wikidata.org/entity",
    "instances": 0,
@@ -1779,7 +1978,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 54,
+   "id": 57,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1793,7 +1992,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 55,
+   "id": 58,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/cpT73gbyUgA22vohdo4rUa",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1807,7 +2006,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 56,
+   "id": 59,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1821,7 +2020,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 57,
+   "id": 60,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1835,7 +2034,35 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 58,
+   "id": 61,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/fBAv2FHRc3aDVk9ve1JThd",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": {
+    "IRI-based": "fBAv2FHRc3aDVk9ve1JThd"
+   },
+   "annotations": {},
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 62,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/ievmu1QUgrpeYSiU1DeYfm",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": {
+    "IRI-based": "ievmu1QUgrpeYSiU1DeYfm"
+   },
+   "annotations": {},
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 63,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/qfYhqzHDc8FTxu1A6T6ycW",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1849,7 +2076,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 59,
+   "id": 64,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/sSygVCh1KaCSrkS5Ku3Aak",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1863,7 +2090,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 60,
+   "id": 65,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/stStRVHTWT8PXV2Lj19GGL",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1877,7 +2104,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 61,
+   "id": 66,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1891,7 +2118,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 62,
+   "id": 67,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/wF7jn2tBfcnE3drqjzwi8D",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1905,7 +2132,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 63,
+   "id": 68,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/wsbDppTfr2BSxsmhSuEbG4",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1919,7 +2146,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 64,
+   "id": 69,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1933,7 +2160,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 65,
+   "id": 70,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1947,7 +2174,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 66,
+   "id": 71,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1961,7 +2188,21 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 67,
+   "id": 72,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": {
+    "IRI-based": "59RpvNLTucB9wVbWVHTRur"
+   },
+   "annotations": {},
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 73,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1975,7 +2216,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 68,
+   "id": 74,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1987,7 +2228,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 69,
+   "id": 75,
    "iri": "http://www.wikidata.org/entity/Q125400047",
    "baseIRI": "http://www.wikidata.org/entity",
    "instances": 0,
@@ -2008,23 +2249,15 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 70,
+   "id": 76,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
    "label": "[Restaurierungs-/ Konservierungsplanung]",
    "annotations": {
-    "http://skosplus.net/skos-light/description": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
      {
-      "identifier": "http://skosplus.net/skos-light/description",
-      "language": "undefined",
-      "value": "Dem eigentlichen Eingriff am Objekt vorausgehende \u00dcberlegungen, Entwicklung und Koordinierung aller Vorkehrungen und Ma\u00dfnahmen zur Erreichung des gew\u00fcnschten Restaurierungs-/ Konservierungsziels.\n(vgl.\u00a0DIN EN 15898:2020-02)",
-      "type": "label"
-     }
-    ],
-    "http://skosplus.net/skos-light/hasSuperLabel": [
-     {
-      "identifier": "http://skosplus.net/skos-light/hasSuperLabel",
+      "identifier": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "language": "undefined",
       "value": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
       "type": "iri"
@@ -2038,20 +2271,20 @@ var vowlresult={
       "type": "label"
      }
     ],
-    "http://skosplus.net/skos-light/identifierLabel": [
+    "http://skosplus.net/skos-light/hasSuperLabel": [
      {
-      "identifier": "http://skosplus.net/skos-light/identifierLabel",
-      "language": "undefined",
-      "value": "[Restaurierungs-/ Konservierungsplanung]",
-      "type": "label"
-     }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-     {
-      "identifier": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "identifier": "http://skosplus.net/skos-light/hasSuperLabel",
       "language": "undefined",
       "value": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
       "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/description": [
+     {
+      "identifier": "http://skosplus.net/skos-light/description",
+      "language": "undefined",
+      "value": "Dem eigentlichen Eingriff am Objekt vorausgehende \u00dcberlegungen, Entwicklung und Koordinierung aller Vorkehrungen und Ma\u00dfnahmen zur Erreichung des gew\u00fcnschten Restaurierungs-/ Konservierungsziels.\n(vgl.\u00a0DIN EN 15898:2020-02)",
+      "type": "label"
      }
     ],
     "https://archaeolink.github.io/n4o-ta4-conservation/hasSource": [
@@ -2061,6 +2294,14 @@ var vowlresult={
       "value": "http://www.wikidata.org/entity/Q125400047",
       "type": "iri"
      }
+    ],
+    "http://skosplus.net/skos-light/identifierLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifierLabel",
+      "language": "undefined",
+      "value": "[Restaurierungs-/ Konservierungsplanung]",
+      "type": "label"
+     }
     ]
    },
    "range": [],
@@ -2069,7 +2310,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 71,
+   "id": 77,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/cpT73gbyUgA22vohdo4rUa",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2146,7 +2387,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 72,
+   "id": 78,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2215,8 +2456,130 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 73,
+   "id": 79,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": "Umgebungskontrolle",
+   "annotations": {
+    "http://skosplus.net/skos-light/description": [
+     {
+      "identifier": "http://skosplus.net/skos-light/description",
+      "language": "undefined",
+      "value": "DIN EN 15898:2020-02: Kontrolle eines oder mehrer Einflussfaktoren der Umwelt",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/hasSuperLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/hasSuperLabel",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifier": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifier",
+      "language": "undefined",
+      "value": "fBAv2FHRc3aDVk9ve1JThd",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifierLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifierLabel",
+      "language": "undefined",
+      "value": "Umgebungskontrolle",
+      "type": "label"
+     }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+     {
+      "identifier": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur",
+      "type": "iri"
+     }
+    ],
+    "https://archaeolink.github.io/n4o-ta4-conservation/hasSource": [
+     {
+      "identifier": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource",
+      "language": "undefined",
+      "value": "http://www.wikidata.org/entity/Q125400047",
+      "type": "iri"
+     }
+    ]
+   },
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 80,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/fBAv2FHRc3aDVk9ve1JThd",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": "Sammlungspflege",
+   "annotations": {
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+     {
+      "identifier": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifier": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifier",
+      "language": "undefined",
+      "value": "ievmu1QUgrpeYSiU1DeYfm",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifierLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifierLabel",
+      "language": "undefined",
+      "value": "Sammlungspflege",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/hasSuperLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/hasSuperLabel",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur",
+      "type": "iri"
+     }
+    ],
+    "https://archaeolink.github.io/n4o-ta4-conservation/hasSource": [
+     {
+      "identifier": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource",
+      "language": "undefined",
+      "value": "http://www.wikidata.org/entity/Q125400047",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/description": [
+     {
+      "identifier": "http://skosplus.net/skos-light/description",
+      "language": "undefined",
+      "value": "DIN EN 15898:2020-02: pr\u00e4ventive Konservierung einer Sammlung",
+      "type": "label"
+     }
+    ]
+   },
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 81,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/ievmu1QUgrpeYSiU1DeYfm",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
    "label": "[Diagnose]",
@@ -2276,7 +2639,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 74,
+   "id": 82,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/qfYhqzHDc8FTxu1A6T6ycW",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2321,7 +2684,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 75,
+   "id": 83,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/sSygVCh1KaCSrkS5Ku3Aak",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2382,7 +2745,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 76,
+   "id": 84,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/stStRVHTWT8PXV2Lj19GGL",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2435,7 +2798,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 77,
+   "id": 85,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2488,7 +2851,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 78,
+   "id": 86,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/wF7jn2tBfcnE3drqjzwi8D",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2541,7 +2904,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 79,
+   "id": 87,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/wsbDppTfr2BSxsmhSuEbG4",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2586,7 +2949,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 80,
+   "id": 88,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2663,7 +3026,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 81,
+   "id": 89,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2716,8 +3079,69 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 82,
+   "id": 90,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
+   "label": "pr\u00e4ventive Konservierung",
+   "annotations": {
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+     {
+      "identifier": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifier": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifier",
+      "language": "undefined",
+      "value": "59RpvNLTucB9wVbWVHTRur",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/description": [
+     {
+      "identifier": "http://skosplus.net/skos-light/description",
+      "language": "undefined",
+      "value": "DIN EN 15898:2020-02: Vorkehrungen und Ma\u00dfnahmen zur Vermeidung oder Minimierung von k\u00fcnftigen Schaden, Abbau, Verlust und folglich invasivem Eingriff",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/identifierLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/identifierLabel",
+      "language": "undefined",
+      "value": "pr\u00e4ventive Konservierung",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/hasSuperLabel": [
+     {
+      "identifier": "http://skosplus.net/skos-light/hasSuperLabel",
+      "language": "undefined",
+      "value": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
+      "type": "iri"
+     }
+    ],
+    "https://archaeolink.github.io/n4o-ta4-conservation/hasSource": [
+     {
+      "identifier": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource",
+      "language": "undefined",
+      "value": "http://www.wikidata.org/entity/Q125400047",
+      "type": "iri"
+     }
+    ]
+   },
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 91,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
    "label": "Restaurierung",
@@ -2761,7 +3185,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 83,
+   "id": 92,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -2814,7 +3238,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 84,
+   "id": 93,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,

@@ -49,20 +49,13 @@ var minivowlresult={
  "links": [
   {
    "source": 7,
-   "target": 7,
+   "target": 6,
    "valueTo": "subClassOf",
    "propertyTo": "class",
    "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
   },
   {
    "source": 7,
-   "target": 6,
-   "valueTo": "subClassOf",
-   "propertyTo": "class",
-   "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
-  },
-  {
-   "source": 4,
    "target": 7,
    "valueTo": "subClassOf",
    "propertyTo": "class",
@@ -76,7 +69,7 @@ var minivowlresult={
    "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
   },
   {
-   "source": 3,
+   "source": 4,
    "target": 7,
    "valueTo": "subClassOf",
    "propertyTo": "class",
@@ -85,6 +78,13 @@ var minivowlresult={
   {
    "source": 3,
    "target": 6,
+   "valueTo": "subClassOf",
+   "propertyTo": "class",
+   "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+  },
+  {
+   "source": 3,
+   "target": 7,
    "valueTo": "subClassOf",
    "propertyTo": "class",
    "uriTo": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
@@ -155,44 +155,44 @@ var minivowlresult={
   {
    "source": 7,
    "target": 7,
-   "valueTo": "hasRelatedLabel",
+   "valueTo": "hasSubLabel",
    "propertyTo": "class",
-   "uriTo": "http://skosplus.net/skos-light/hasRelatedLabel"
+   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
   },
   {
    "source": 4,
    "target": 7,
-   "valueTo": "hasRelatedLabel",
+   "valueTo": "hasSubLabel",
    "propertyTo": "class",
-   "uriTo": "http://skosplus.net/skos-light/hasRelatedLabel"
+   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
   },
   {
    "source": 3,
    "target": 7,
-   "valueTo": "hasRelatedLabel",
+   "valueTo": "hasSubLabel",
    "propertyTo": "class",
-   "uriTo": "http://skosplus.net/skos-light/hasRelatedLabel"
+   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
   },
   {
    "source": 7,
    "target": 7,
-   "valueTo": "hasSubLabel",
+   "valueTo": "hasRelatedLabel",
    "propertyTo": "class",
-   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
+   "uriTo": "http://skosplus.net/skos-light/hasRelatedLabel"
   },
   {
    "source": 4,
    "target": 7,
-   "valueTo": "hasSubLabel",
+   "valueTo": "hasRelatedLabel",
    "propertyTo": "class",
-   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
+   "uriTo": "http://skosplus.net/skos-light/hasRelatedLabel"
   },
   {
    "source": 3,
    "target": 7,
-   "valueTo": "hasSubLabel",
+   "valueTo": "hasRelatedLabel",
    "propertyTo": "class",
-   "uriTo": "http://skosplus.net/skos-light/hasSubLabel"
+   "uriTo": "http://skosplus.net/skos-light/hasRelatedLabel"
   }
  ]
 }

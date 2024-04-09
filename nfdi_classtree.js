@@ -72,23 +72,17 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://skosplus.net/skos-light/alternativeLabel": {
               "instancecount": 1
             },
-            "http://skosplus.net/skos-light/description": {
-              "instancecount": 1
-            },
-            "http://skosplus.net/skos-light/hasSuperLabel": {
+            "http://skosplus.net/skos-light/hasSubLabel": {
               "instancecount": 1,
               "http://www.w3.org/2002/07/owl#Class": 1,
               "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
-              "http://skosplus.net/skos-light/Vocabulary": 1
-            },
-            "http://skosplus.net/skos-light/identifier": {
-              "instancecount": 1
+              "http://skosplus.net/skos-light/Label": 1
             },
             "http://skosplus.net/skos-light/identifierLabel": {
               "instancecount": 1
@@ -96,6 +90,9 @@ var tree={
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 3,
               "http://www.w3.org/2002/07/owl#Class": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#comment": {
+              "instancecount": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#label": {
               "instancecount": 1
@@ -105,19 +102,14 @@ var tree={
               "http://www.w3.org/2002/07/owl#Class": 1,
               "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
               "http://skosplus.net/skos-light/Vocabulary": 1
-            },
-            "https://archaeolink.github.io/n4o-ta4-conservation/hasSource": {
-              "instancecount": 1,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
-              "http://skosplus.net/skos-light/Source": 1
             }
           },
           "from": {
             "http://skosplus.net/skos-light/hasSuperLabel": {
               "instancecount": 0,
-              "http://www.w3.org/2002/07/owl#Class": 2,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 2,
-              "http://skosplus.net/skos-light/Label": 2
+              "http://www.w3.org/2002/07/owl#Class": 3,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 3,
+              "http://skosplus.net/skos-light/Label": 3
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "instancecount": 0,
@@ -125,13 +117,13 @@ var tree={
             },
             "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
               "instancecount": 0,
-              "http://www.w3.org/2002/07/owl#Class": 2,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 2,
-              "http://skosplus.net/skos-light/Label": 2
+              "http://www.w3.org/2002/07/owl#Class": 3,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 3,
+              "http://skosplus.net/skos-light/Label": 3
             }
           }
         },
-        "instancecount": 12
+        "instancecount": 10
       },
       {
         "id": "http://skosplus.net/skos-light/Vocabulary",
@@ -142,8 +134,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 3,
@@ -159,9 +151,9 @@ var tree={
           "from": {
             "http://skosplus.net/skos-light/hasSuperLabel": {
               "instancecount": 0,
-              "http://www.w3.org/2002/07/owl#Class": 1,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 2,
-              "http://skosplus.net/skos-light/Label": 2
+              "http://www.w3.org/2002/07/owl#Class": 3,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 3,
+              "http://skosplus.net/skos-light/Label": 3
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "instancecount": 0,
@@ -169,9 +161,9 @@ var tree={
             },
             "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
               "instancecount": 0,
-              "http://www.w3.org/2002/07/owl#Class": 3,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 4,
-              "http://skosplus.net/skos-light/Label": 4
+              "http://www.w3.org/2002/07/owl#Class": 5,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 5,
+              "http://skosplus.net/skos-light/Label": 5
             }
           }
         },
@@ -179,7 +171,7 @@ var tree={
       },
       {
         "id": "https://archaeolink.github.io/n4o-ta4-conservation/cpT73gbyUgA22vohdo4rUa",
-        "parent": "http://skosplus.net/skos-light/Label",
+        "parent": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
         "type": "instance",
         "text": "[Restaurierungs-/ Konservierungsplanung] (:cpT73gbyUgA22vohdo4rUa)",
         "data": {}
@@ -193,8 +185,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://skosplus.net/skos-light/hasSuperLabel": {
               "instancecount": 1,
@@ -249,8 +241,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://skosplus.net/skos-light/description": {
               "instancecount": 1
@@ -294,6 +286,20 @@ var tree={
           }
         },
         "instancecount": 11
+      },
+      {
+        "id": "https://archaeolink.github.io/n4o-ta4-conservation/fBAv2FHRc3aDVk9ve1JThd",
+        "parent": "http://skosplus.net/skos-light/Label",
+        "type": "instance",
+        "text": "Umgebungskontrolle (:fBAv2FHRc3aDVk9ve1JThd)",
+        "data": {}
+      },
+      {
+        "id": "https://archaeolink.github.io/n4o-ta4-conservation/ievmu1QUgrpeYSiU1DeYfm",
+        "parent": "https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur",
+        "type": "instance",
+        "text": "Sammlungspflege (:ievmu1QUgrpeYSiU1DeYfm)",
+        "data": {}
       },
       {
         "id": "https://archaeolink.github.io/n4o-ta4-conservation/qfYhqzHDc8FTxu1A6T6ycW",
@@ -359,23 +365,19 @@ var tree={
         "data": {}
       },
       {
-        "id": "https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT",
-        "parent": "http://skosplus.net/skos-light/Label",
-        "type": "instance",
-        "text": "Restaurierung (:6jF9fBDq7W2tyRHLj554AT)",
-        "data": {}
-      },
-      {
-        "id": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
+        "id": "https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur",
         "parent": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
         "type": "instance",
-        "text": "[Objekt-Werkstoff] (:8kKtpbqpnY2T2k7EixxdoP)",
+        "text": "pr\u00e4ventive Konservierung (:59RpvNLTucB9wVbWVHTRur)",
         "data": {
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
+            },
+            "http://skosplus.net/skos-light/description": {
+              "instancecount": 1
             },
             "http://skosplus.net/skos-light/hasSuperLabel": {
               "instancecount": 1,
@@ -401,6 +403,11 @@ var tree={
               "http://www.w3.org/2002/07/owl#Class": 1,
               "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
               "http://skosplus.net/skos-light/Label": 1
+            },
+            "https://archaeolink.github.io/n4o-ta4-conservation/hasSource": {
+              "instancecount": 1,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
+              "http://skosplus.net/skos-light/Source": 1
             }
           },
           "from": {
@@ -410,7 +417,79 @@ var tree={
             }
           }
         },
-        "instancecount": 9
+        "instancecount": 11
+      },
+      {
+        "id": "https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT",
+        "parent": "http://skosplus.net/skos-light/Label",
+        "type": "instance",
+        "text": "Restaurierung (:6jF9fBDq7W2tyRHLj554AT)",
+        "data": {}
+      },
+      {
+        "id": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
+        "parent": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
+        "type": "instance",
+        "text": "[Objekt-Werkstoff] (:8kKtpbqpnY2T2k7EixxdoP)",
+        "data": {
+          "to": {
+            "http://rdfs.org/ns/void#inDataset": {
+              "instancecount": 1,
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
+            },
+            "http://skosplus.net/skos-light/alternativeLabel": {
+              "instancecount": 1
+            },
+            "http://skosplus.net/skos-light/description": {
+              "instancecount": 1
+            },
+            "http://skosplus.net/skos-light/hasSuperLabel": {
+              "instancecount": 1,
+              "http://www.w3.org/2002/07/owl#Class": 1,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
+              "http://skosplus.net/skos-light/Label": 1
+            },
+            "http://skosplus.net/skos-light/identifier": {
+              "instancecount": 1
+            },
+            "http://skosplus.net/skos-light/identifierLabel": {
+              "instancecount": 1
+            },
+            "http://skosplus.net/skos-light/translation": {
+              "instancecount": 2
+            },
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+              "instancecount": 3,
+              "http://www.w3.org/2002/07/owl#Class": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#label": {
+              "instancecount": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+              "instancecount": 1,
+              "http://www.w3.org/2002/07/owl#Class": 1,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
+              "http://skosplus.net/skos-light/Label": 1
+            },
+            "http://www.w3.org/2004/02/skos/core#closeMatch": {
+              "instancecount": 1
+            }
+          },
+          "from": {
+            "http://skosplus.net/skos-light/hasSubLabel": {
+              "instancecount": 0,
+              "http://www.w3.org/2002/07/owl#Class": 1,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
+              "http://skosplus.net/skos-light/Label": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#member": {
+              "instancecount": 0,
+              "http://www.w3.org/2004/02/skos/core#Collection": 3
+            }
+          }
+        },
+        "instancecount": 14
       },
       {
         "id": "http://skosplus.net/skos-light/Label",
@@ -421,8 +500,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://skosplus.net/skos-light/alternativeLabel": {
               "instancecount": 1
@@ -515,8 +594,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 1
@@ -525,13 +604,16 @@ var tree={
               "instancecount": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
-              "instancecount": 1,
-              "http://www.w3.org/2002/07/owl#AnnotationProperty": 1
+              "instancecount": 18,
+              "http://www.w3.org/2002/07/owl#Class": 15,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 18,
+              "http://skosplus.net/skos-light/Label": 17,
+              "http://skosplus.net/skos-light/Vocabulary": 1
             }
           },
           "from": {}
         },
-        "instancecount": 5
+        "instancecount": 22
       },
       {
         "id": "http://skosplus.net/skos-light/Actor",
