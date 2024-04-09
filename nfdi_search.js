@@ -26,6 +26,7 @@ var search={
   "has source": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource",
   "hat Quelle": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource",
   "label": "https://archaeolink.github.io/n4o-ta4-conservation/struct-label",
+  "more": "https://archaeolink.github.io/n4o-ta4-conservation/struct-more",
   "pr\u00e4ventive Konservierung": "https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur",
   "stabilisierende Konservierung": "https://archaeolink.github.io/n4o-ta4-conservation/wF7jn2tBfcnE3drqjzwi8D",
   "vocabulary": "https://archaeolink.github.io/n4o-ta4-conservation/struct-vocabulary",
