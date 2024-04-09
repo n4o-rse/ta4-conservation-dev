@@ -27,6 +27,7 @@
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#StructualConcept>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#Vocabulary>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#Vocabulary_collection>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#cpT73gbyUgA22vohdo4rUa>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#dYxXkaqsnBqVYA1THAxjgE>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#eq7GtLWHJesucfazgADPZE>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#qfYhqzHDc8FTxu1A6T6ycW>,
@@ -95,6 +96,9 @@
 
 <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#Vocabulary_collection> ns1:forClass skos:Collection ;
     ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary_collection> .
+
+<https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#cpT73gbyUgA22vohdo4rUa> ns1:forClass <http://skosplus.net/skos-light/Label> ;
+    ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/cpT73gbyUgA22vohdo4rUa> .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#dYxXkaqsnBqVYA1THAxjgE> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus> ;
     ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE> .

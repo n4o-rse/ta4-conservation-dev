@@ -1,0 +1,20 @@
+@prefix ns1: <http://skosplus.net/skos-light/> .
+@prefix ns2: <https://archaeolink.github.io/n4o-ta4-conservation/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+ns2:cpT73gbyUgA22vohdo4rUa a ns1:Label,
+        owl:NamedIndividual,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "[Restaurierungs-/ Konservierungsplanung]"@de ;
+    void:inDataset ns2:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
+    ns1:description """Dem eigentlichen Eingriff am Objekt vorausgehende Überlegungen, Entwicklung und Koordinierung aller Vorkehrungen und Maßnahmen zur Erreichung des gewünschten Restaurierungs-/ Konservierungsziels.
+(vgl. DIN EN 15898:2020-02)"""@de ;
+    ns1:hasSuperLabel ns2:LEIZA_Conservation_Thesaurus ;
+    ns1:identifier "cpT73gbyUgA22vohdo4rUa" ;
+    ns1:identifierLabel "[Restaurierungs-/ Konservierungsplanung]"@de ;
+    rdfs:subClassOf ns2:LEIZA_Conservation_Thesaurus ;
+    ns2:hasSource <http://www.wikidata.org/entity/Q125400047> .
+

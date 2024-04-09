@@ -10,5 +10,5 @@
     void:property dc:description,
         <http://skosplus.net/skos-light/description> ;
     void:triples 1,
-        7 .
+        8 .
 
