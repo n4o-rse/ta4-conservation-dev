@@ -4,6 +4,7 @@
 
 <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus> a <http://skosplus.net/skos-light/Vocabulary>,
         owl:Class,
+        owl:NamedIndividual,
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "LEIZA Restaurierungs- und Konservierungsthesaurus"@de ;

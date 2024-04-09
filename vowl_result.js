@@ -118,11 +118,11 @@ var vowlresult={
    "type": "http://www.w3.org/2002/07/owl#Class"
   },
   {
-   "id": 41,
+   "id": 42,
    "type": "http://www.w3.org/2000/01/rdf-schema#Datatype"
   },
   {
-   "id": 42,
+   "id": 43,
    "type": "http://www.w3.org/2000/01/rdf-schema#Datatype"
   }
  ],
@@ -269,7 +269,7 @@ var vowlresult={
    "superClasses": []
   },
   {
-   "id": 41,
+   "id": 42,
    "iri": "http://www.w3.org/2001/XMLSchema#anyURI",
    "baseIRI": "(rdflib.term.URIRef('http://skosplus.net/skos-light/LicenseLink'), rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema",
    "instances": 0,
@@ -281,7 +281,7 @@ var vowlresult={
    "superClasses": []
   },
   {
-   "id": 42,
+   "id": 43,
    "iri": "http://www.w3.org/2001/XMLSchema#string",
    "baseIRI": "(rdflib.term.URIRef('http://skosplus.net/skos-light/description'), rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema",
    "instances": 0,
@@ -412,6 +412,10 @@ var vowlresult={
   },
   {
    "id": 40,
+   "type": "owl:Class"
+  },
+  {
+   "id": 41,
    "type": "owl:Class"
   }
  ],
@@ -970,6 +974,20 @@ var vowlresult={
    "iri": "http://www.w3.org/2004/02/skos/core#relatedMatch",
    "baseIRI": "http://www.w3.org/2004/02/skos/core",
    "instances": 0,
+   "label": {
+    "IRI-based": "relatedMatch"
+   },
+   "annotations": {},
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 40,
+   "iri": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
+   "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
+   "instances": 0,
    "label": "LEIZA Restaurierungs- und Konservierungsthesaurus",
    "annotations": {
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -987,7 +1005,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 40,
+   "id": 41,
    "iri": "https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus",
    "baseIRI": "https://archaeolink.github.io/n4o-ta4-conservation",
    "instances": 0,
@@ -1015,7 +1033,7 @@ var vowlresult={
      {
       "identifier": "http://purl.org/dc/elements/1.1/creator",
       "language": "undefined",
-      "value": "Florian Thiery (LEIZA), Lasse Mempel-L\u00e4nger (LEIZA)",
+      "value": "Kristina Fella (LEIZA), Lasse Mempel-L\u00e4nger (LEIZA), Florian Thiery (LEIZA)",
       "type": "label"
      }
     ],
@@ -1023,7 +1041,7 @@ var vowlresult={
      {
       "identifier": "http://purl.org/dc/elements/1.1/description",
       "language": "undefined",
-      "value": "A lighweight SKOS ontology for non SKOS experts.",
+      "value": "Thesaurus f\u00fcr Konservierungs- und Restaurierungsproesse, bzw. Erhaltungsprozesse",
       "type": "label"
      }
     ],

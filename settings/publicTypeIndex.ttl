@@ -13,6 +13,7 @@
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#Generic>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#LEIZA_Conservation_Thesaurus>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#Label>,
+        <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#NamedIndividual_collection>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#Ontology_collection>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#Source>,
         <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#StructualConcept>,
@@ -36,6 +37,9 @@
 
 <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#Label> ns1:forClass <https://archaeolink.github.io/n4o-ta4-conservation/Generic> ;
     ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/Label> .
+
+<https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#NamedIndividual_collection> ns1:forClass skos:Collection ;
+    ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/NamedIndividual_collection> .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl#Ontology_collection> ns1:forClass skos:Collection ;
     ns1:instance <https://archaeolink.github.io/n4o-ta4-conservation/Ontology_collection> .

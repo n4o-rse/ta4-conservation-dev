@@ -11,5 +11,5 @@
     void:linkPredicate rdf:type ;
     void:objectsTarget owl: ;
     void:subjectsTarget <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
-    void:triples 3 .
+    void:triples 4 .
 

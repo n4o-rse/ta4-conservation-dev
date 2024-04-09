@@ -62,7 +62,7 @@ var tree={
               "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
-              "instancecount": 2,
+              "instancecount": 3,
               "http://www.w3.org/2002/07/owl#Class": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#comment": {
@@ -75,11 +75,11 @@ var tree={
           "from": {
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "instancecount": 0,
-              "http://www.w3.org/2004/02/skos/core#Collection": 2
+              "http://www.w3.org/2004/02/skos/core#Collection": 3
             }
           }
         },
-        "instancecount": 5
+        "instancecount": 6
       },
       {
         "id": "https://archaeolink.github.io/n4o-ta4-conservation/Generic",
@@ -103,6 +103,13 @@ var tree={
         "data": {}
       },
       {
+        "id": "https://archaeolink.github.io/n4o-ta4-conservation/NamedIndividual_collection",
+        "parent": "http://www.w3.org/2004/02/skos/core#Collection",
+        "type": "instance",
+        "text": "NamedIndividual Instances Collection (:NamedIndividual_collection)",
+        "data": {}
+      },
+      {
         "id": "https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary_collection",
         "parent": "http://www.w3.org/2004/02/skos/core#Collection",
         "type": "instance",
@@ -113,7 +120,7 @@ var tree={
         "id": "http://www.w3.org/2004/02/skos/core#Collection",
         "parent": "#",
         "type": "collectionclass",
-        "text": "Collection (skos:Collection) [3]",
+        "text": "Collection (skos:Collection) [4]",
         "data": {
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
@@ -128,14 +135,15 @@ var tree={
               "instancecount": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
-              "instancecount": 2,
-              "http://www.w3.org/2002/07/owl#Class": 2,
+              "instancecount": 1,
+              "http://www.w3.org/2002/07/owl#Class": 1,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
               "http://skosplus.net/skos-light/Vocabulary": 1
             }
           },
           "from": {}
         },
-        "instancecount": 6
+        "instancecount": 5
       },
       {
         "id": "http://skosplus.net/skos-light/Actor",
