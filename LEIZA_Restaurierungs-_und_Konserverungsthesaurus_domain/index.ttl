@@ -7,5 +7,5 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Property Partition: domain"@en ;
     void:property rdfs:domain ;
-    void:triples 11 .
+    void:triples 12 .
 

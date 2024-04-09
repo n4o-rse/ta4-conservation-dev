@@ -7,5 +7,5 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Property Partition: subPropertyOf"@en ;
     void:property rdfs:subPropertyOf ;
-    void:triples 29 .
+    void:triples 30 .
 

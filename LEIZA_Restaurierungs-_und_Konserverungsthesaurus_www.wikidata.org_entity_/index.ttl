@@ -7,7 +7,8 @@
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Linkset: LEIZA_Restaurierungs-_und_Konserverungsthesaurus - Wikidata Entities (wde:)"@en ;
-    void:linkPredicate skos:closeMatch,
+    void:linkPredicate <http://skosplus.net/skos-light/vocabularyCreatorResource>,
+        skos:closeMatch,
         <https://archaeolink.github.io/n4o-ta4-conservation/hasSource> ;
     void:objectsTarget <http://www.wikidata.org/entity/> ;
     void:subjectsTarget <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;

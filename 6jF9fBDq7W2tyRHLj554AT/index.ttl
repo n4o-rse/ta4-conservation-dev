@@ -1,17 +1,17 @@
-@prefix ns1: <https://archaeolink.github.io/n4o-ta4-conservation/> .
-@prefix ns2: <http://skosplus.net/skos-light/> .
+@prefix ns1: <http://skosplus.net/skos-light/> .
+@prefix ns2: <https://archaeolink.github.io/n4o-ta4-conservation/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 
-ns1:6jF9fBDq7W2tyRHLj554AT a ns2:Label,
+ns2:6jF9fBDq7W2tyRHLj554AT a ns1:Label,
         owl:NamedIndividual,
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Restaurierung"@de ;
-    void:inDataset ns1:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
-    ns2:description "DIN EN 15898:2020-02: Maßnahmen an einem stabilen oder stabilisierten Objekt, die darauf abzielen, dessen Wertschätzung, dessen Verständnis und/oder dessen Benutzung zu erleichtern, wobei dessen Bedeutung sowie die vorgefundenen Techniken und Materialien respektiert werden"@de ;
-    ns2:identifier "6jF9fBDq7W2tyRHLj554AT" ;
-    ns2:identifierLabel "Restaurierung"@de ;
-    ns1:hasSource <http://www.wikidata.org/entity/Q125400047> .
+    void:inDataset ns2:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
+    ns1:description "DIN EN 15898:2020-02: Maßnahmen an einem stabilen oder stabilisierten Objekt, die darauf abzielen, dessen Wertschätzung, dessen Verständnis und/oder dessen Benutzung zu erleichtern, wobei dessen Bedeutung sowie die vorgefundenen Techniken und Materialien respektiert werden"@de ;
+    ns1:identifier "6jF9fBDq7W2tyRHLj554AT" ;
+    ns1:identifierLabel "Restaurierung"@de ;
+    ns2:hasSource <http://www.wikidata.org/entity/Q125400047> .
 
