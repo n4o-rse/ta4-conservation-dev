@@ -11,10 +11,4 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "[Objekt-Werkstoff]"@de ;
     dc:license <http://creativecommons.org/licenses/by/4.0> ;
-    void:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
-    ns1:alternativeLabel "[Objekt-Material]"@de ;
-    ns1:hasSubLabel <https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1> ;
-    ns1:identifierLabel "[Objekt-Werkstoff]"@de ;
-    rdfs:comment "Material aus dem das Objekt besteht."@de ;
-    rdfs:subClassOf <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus> .
-
+    void:inDataset 

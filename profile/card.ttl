@@ -6,7 +6,4 @@
     foaf:primaryTopic <https://archaeolink.github.io/n4o-ta4-conservation/profile/card#> .
 
 <https://archaeolink.github.io/n4o-ta4-conservation/profile/card#> a foaf:Person ;
-    ns2:storage <https://archaeolink.github.io/n4o-ta4-conservationLEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
-    ns1:privateTypeIndex <https://archaeolink.github.io/n4o-ta4-conservation/settings/privateTypeIndex.ttl> ;
-    ns1:publicTypeIndex <https://archaeolink.github.io/n4o-ta4-conservation/settings/publicTypeIndex.ttl> .
-
+    ns2:storage 

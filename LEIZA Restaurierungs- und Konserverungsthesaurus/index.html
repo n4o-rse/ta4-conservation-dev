@@ -1,0 +1,178 @@
+<html about="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus">
+  <head>
+    <script>
+      if (window.location.href.includes("index.html")) {
+        document.write("<title>LEIZA Restaurierungs- und Konserverungsthesaurus | LEIZA Restaurierungs- und Konserverungsthesaurus</title>");
+      } else {
+        document.write(
+          "<title>Index Page for LEIZA Restaurierungs- und Konserverungsthesaurus on archaeology.link</title>"
+        );
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/situx/mini-vowl@master/docs/css/vowl.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.1.1/themes/default/style.min.css" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.1/proj4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/situx/mini-vowl@master/docs/js/webVOWLGraphh.js"></script>
+    <script src="../epsgdefs.js"></script>
+    <script src="../vowl_result.js"></script>
+    <script src="../nfdi_search.js"></script>
+    <script src="../nfdi_classtree.js"></script>
+    <script src="../proprelations.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.14/jstree.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/rdflib@2.2.19/dist/rdflib.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../startscripts.js"></script>
+  </head>
+
+  <div id="mySidenav" class="sidenav" style="overflow: auto">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+      >&times;</a
+    >
+    GeoClasses: <input type="checkbox" id="geoclasses" /><br />
+    Search:<input type="text" id="classsearch" /><br />
+    <div id="jstree"></div>
+  </div>
+  <script>
+    var indexpage=false;
+    var relativedepth=1;
+    var baseurl="https://archaeolink.github.io/n4o-ta4-conservation/";
+    var iconprefixx="";
+  </script>
+
+  <body>
+    <div id="headertop">
+      <span class="header_pt1">
+        <b>Task Area 4 @ NFDI4Objects</b>&nbsp;&nbsp;<img
+          src="https://raw.githubusercontent.com/archaeolink/unicorn-ontdoc-template-n4o-ta4/main/icons/nfdi4objects_logo_bildmarke_digital_rund.png"
+          style="
+            height: 40px !important;
+            margin-right: 10px;
+          " />LEIZA Restaurierungs- und Konserverungsthesaurus&nbsp;|&nbsp;
+        <i
+          >powered by Leibniz-Zentrum für Archäologie (LEIZA), Department of
+          Scientific IT</i
+        >
+      </span>
+    </div>
+    <div id="header">
+      <script>
+        if (window.location.href.includes("index.html")) {
+          document.write(
+            '<h1 id="title"><img src="https://raw.githubusercontent.com/archaeolink/unicorn-ontdoc-template-n4o-ta4/main/icons/nfdi4objects_logo_bildmarke_digital_rund.png" width="25" height="25"/>LEIZA Restaurierungs- und Konserverungsthesaurus<span style="font-size: 16px;font-weight: 300;font-style: italic;">EN</span></h1>'
+          );
+        } else {
+          document.write(
+            '<h1 id="title">Index Page for LEIZA Restaurierungs- und Konserverungsthesaurus @ NFDI4Objects</h1>'
+          );
+        }
+        if (window.location.href.includes("index.html")) {
+          document.write('<br><span id="titletwo">https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus</span>');
+        } else {
+          console.log(window.location.href);
+        }
+      </script>
+    </div>
+    <div class="page-resource-uri">
+      <script>
+        if (window.location.href.includes("index.html")) {
+          document.write(
+            '<b>The LEIZA Restaurierungs- und Konserverungsthesaurus</b> resource is powered by Static <a style="color:#007bff;" target="_blank" href="https://github.com/i3mainz/geopubby">GeoPubby</a> generated using the <a style="color:#007bff;" target="_blank" href="https://github.com/sparqlunicorn/sparqlunicornGoesGIS">SPARQLing Unicorn QGIS Plugin</a></div>'
+          );
+        } else {
+          document.write(
+            'Powered by Static <a style="color:#007bff;" target="_blank" href="https://github.com/i3mainz/geopubby">GeoPubby</a> generated using the <a style="color:#007bff;" target="_blank" href="https://github.com/sparqlunicorn/sparqlunicornGoesGIS">SPARQLing Unicorn QGIS Plugin</a></div>'
+          );
+        }
+      </script>
+    </div>
+    <div id="rdficon">
+      <span style="font-size: 30px; cursor: pointer" onclick="openNav()"
+        >&#9776;</span
+      >
+    </div>
+    <div class="search">
+      <div class="ui-widget">
+        Search: <input id="search" size="50" />
+        <button id="gotosearch" onclick="followLink()">Go</button>
+        <b>Download Options:</b>&nbsp;Format:<select
+          id="format"
+          onchange="changeDefLink()">
+          <option value="csv">Comma Separated Values (CSV)</option>
+<option value="geojson">(Geo)JSON</option>
+<option value="gdf">Graph Definition Format (GDF)</option>
+<option value="graphml">Graph Markup Language (GraphML)</option>
+<option value="json">JSON-LD</option>
+<option value="tgf">Trivial Graph Format (TGF)</option>
+<option value="tsv">Tab Separated Values (TSV)</option>
+<option value="ttl" selected>Turtle (TTL)</option>
+
+        </select>
+        <a id="formatlink" href="#" target="_blank">
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 16 16"
+            class="bi bi-info-circle-fill"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill-rule="evenodd"
+              d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+          </svg> </a
+        >&nbsp;
+        <button id="downloadButton" onclick="download()">Download</button>
+        <br />
+      </div>
+    </div>
+    <dialog
+      id="classrelationdialog"
+      width="500"
+      height="500"
+      modal="true"></dialog>
+    <dialog
+      id="dataschemadialog"
+      width="500"
+      height="500"
+      modal="true"></dialog>
+    <div class="container-fluid">
+      <div class="row-fluid" id="main-wrapper"></div>
+    </div>
+  </body>
+</html>
+<div style="overflow-x:auto;"><table border=1 width=100% class=description><thead><tr><th>Property</th><th>Value</th></tr></thead><tbody><tr class="odd"><td class="property">Is <span class="property-name"><a class="uri" target="_blank" href="http://rdfs.org/ns/void#inDataset">inDataset <span style="color: #666;">(void:inDataset)</span></a> </span> of</td><td class="wrapword"><details><summary>32 values</summary><ul><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/Generic" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/Generic" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../Generic/index.html"><Generic Classes> <span style="color: #666;">(nfdi:Generic)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/AnnotationProperty_collection" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/AnnotationProperty_collection" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../AnnotationProperty_collection/index.html">AnnotationProperty Instances Collection <span style="color: #666;">(nfdi:AnnotationProperty_collection)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/Class_collection" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/Class_collection" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../Class_collection/index.html">Class Instances Collection <span style="color: #666;">(nfdi:Class_collection)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../dYxXkaqsnBqVYA1THAxjgE/index.html">Eingriff <span style="color: #666;">(nfdi:dYxXkaqsnBqVYA1THAxjgE)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/gmcvXMjo1E4ZLBMC5DRBWf" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/gmcvXMjo1E4ZLBMC5DRBWf" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../gmcvXMjo1E4ZLBMC5DRBWf/index.html">Keramik <span style="color: #666;">(nfdi:gmcvXMjo1E4ZLBMC5DRBWf)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="..//index.html">LEIZA Restaurierungs- und Konserverungsthesaurus <span style="color: #666;">(nfdi:n4o-ta4-conservation)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../LEIZA_Conservation_Thesaurus/index.html">LEIZA Restaurierungs- und Konservierungsthesaurus <span style="color: #666;">(nfdi:LEIZA_Conservation_Thesaurus)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/Label_collection" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/Label_collection" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../Label_collection/index.html">Label Instances Collection <span style="color: #666;">(nfdi:Label_collection)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/wsbDppTfr2BSxsmhSuEbG4" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/wsbDppTfr2BSxsmhSuEbG4" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../wsbDppTfr2BSxsmhSuEbG4/index.html">Material <span style="color: #666;">(nfdi:wsbDppTfr2BSxsmhSuEbG4)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../2dmdnWjmWJURKh9PLaJuH1/index.html">Metall <span style="color: #666;">(nfdi:2dmdnWjmWJURKh9PLaJuH1)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../tmjVdStfYu6PQuQeq7Sua7/index.html">Methode und Technik <span style="color: #666;">(nfdi:tmjVdStfYu6PQuQeq7Sua7)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/NamedIndividual_collection" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/NamedIndividual_collection" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../NamedIndividual_collection/index.html">NamedIndividual Instances Collection <span style="color: #666;">(nfdi:NamedIndividual_collection)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/Ontology_collection" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/Ontology_collection" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../Ontology_collection/index.html">Ontology Instances Collection <span style="color: #666;">(nfdi:Ontology_collection)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/sSygVCh1KaCSrkS5Ku3Aak" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/sSygVCh1KaCSrkS5Ku3Aak" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../sSygVCh1KaCSrkS5Ku3Aak/index.html">Organik <span style="color: #666;">(nfdi:sSygVCh1KaCSrkS5Ku3Aak)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/6jF9fBDq7W2tyRHLj554AT" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../6jF9fBDq7W2tyRHLj554AT/index.html">Restaurierung <span style="color: #666;">(nfdi:6jF9fBDq7W2tyRHLj554AT)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/ievmu1QUgrpeYSiU1DeYfm" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/ievmu1QUgrpeYSiU1DeYfm" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../ievmu1QUgrpeYSiU1DeYfm/index.html">Sammlungspflege <span style="color: #666;">(nfdi:ievmu1QUgrpeYSiU1DeYfm)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/1eo1EwnxCPF6yukEJo1Wdq" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../1eo1EwnxCPF6yukEJo1Wdq/index.html">Silikat <span style="color: #666;">(nfdi:1eo1EwnxCPF6yukEJo1Wdq)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/fBAv2FHRc3aDVk9ve1JThd" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/fBAv2FHRc3aDVk9ve1JThd" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../fBAv2FHRc3aDVk9ve1JThd/index.html">Umgebungskontrolle <span style="color: #666;">(nfdi:fBAv2FHRc3aDVk9ve1JThd)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary_collection" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary_collection" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../Vocabulary_collection/index.html">Vocabulary Instances Collection <span style="color: #666;">(nfdi:Vocabulary_collection)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../3EE7pLjByXiT4nHWxyqKuB/index.html">Werkzeug <span style="color: #666;">(nfdi:3EE7pLjByXiT4nHWxyqKuB)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../eq7GtLWHJesucfazgADPZE/index.html">Zustandserfassung <span style="color: #666;">(nfdi:eq7GtLWHJesucfazgADPZE)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/qfYhqzHDc8FTxu1A6T6ycW" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/qfYhqzHDc8FTxu1A6T6ycW" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../qfYhqzHDc8FTxu1A6T6ycW/index.html">[Diagnose] <span style="color: #666;">(nfdi:qfYhqzHDc8FTxu1A6T6ycW)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../8kKtpbqpnY2T2k7EixxdoP/index.html">[Objekt-Werkstoff] <span style="color: #666;">(nfdi:8kKtpbqpnY2T2k7EixxdoP)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/stStRVHTWT8PXV2Lj19GGL" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/stStRVHTWT8PXV2Lj19GGL" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../stStRVHTWT8PXV2Lj19GGL/index.html">[Objektuntersuchung] <span style="color: #666;">(nfdi:stStRVHTWT8PXV2Lj19GGL)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/cpT73gbyUgA22vohdo4rUa" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/cpT73gbyUgA22vohdo4rUa" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../cpT73gbyUgA22vohdo4rUa/index.html">[Restaurierungs-/ Konservierungsplanung] <span style="color: #666;">(nfdi:cpT73gbyUgA22vohdo4rUa)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/hasSource" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/hasSource" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../hasSource/index.html">has source <span style="color: #666;">(nfdi:hasSource)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/struct-label" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/struct-label" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../struct-label/index.html">label <span style="color: #666;">(nfdi:struct-label)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/struct-more" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/struct-more" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../struct-more/index.html">more <span style="color: #666;">(nfdi:struct-more)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/59RpvNLTucB9wVbWVHTRur" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../59RpvNLTucB9wVbWVHTRur/index.html">präventive Konservierung <span style="color: #666;">(nfdi:59RpvNLTucB9wVbWVHTRur)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/wF7jn2tBfcnE3drqjzwi8D" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/wF7jn2tBfcnE3drqjzwi8D" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../wF7jn2tBfcnE3drqjzwi8D/index.html">stabilisierende Konservierung <span style="color: #666;">(nfdi:wF7jn2tBfcnE3drqjzwi8D)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/struct-vocabulary" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/struct-vocabulary" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../struct-vocabulary/index.html">vocabulary <span style="color: #666;">(nfdi:struct-vocabulary)</span></a></span></li><li><span><a itemprop="http://rdfs.org/ns/void#inDataset" itemref="https://archaeolink.github.io/n4o-ta4-conservation/struct-vocabulary-match" property="http://rdfs.org/ns/void#inDataset"  about="https://archaeolink.github.io/n4o-ta4-conservation/struct-vocabulary-match" resource="https://archaeolink.github.io/n4o-ta4-conservation/LEIZA Restaurierungs- und Konserverungsthesaurus" href="../struct-vocabulary-match/index.html">vocabulary match <span style="color: #666;">(nfdi:struct-vocabulary-match)</span></a></span></li></ul></details></td></tr></tbody></table></div><div id="footer">
+    <center style="padding-top:30px;font-size:11px;"><b>published under <span><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png"></a></span> by 
+            | </b><br><a href="https://www.leiza.de/impressum">Impressum</a>
+        | <a href="https://www.leiza.de/datenschutz">Datenschutz</a></center>
+</div>
+
+<script>$(document).ready(function(){setSVGDimensions()})</script>
+
+</body></html>
