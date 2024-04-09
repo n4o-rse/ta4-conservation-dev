@@ -304,11 +304,59 @@ var vowlresult={
    "instances": 0,
    "label": "LEIZA Restaurierungs- und Konservierungsthesaurus",
    "annotations": {
+    "http://skosplus.net/skos-light/vocabularyLanguage": [
+     {
+      "identifier": "http://skosplus.net/skos-light/vocabularyLanguage",
+      "language": "undefined",
+      "value": "de",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/LicenseLink": [
+     {
+      "identifier": "http://skosplus.net/skos-light/LicenseLink",
+      "language": "undefined",
+      "value": "https://creativecommons.org/licenses/by/4.0/",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/vocabularyDescription": [
+     {
+      "identifier": "http://skosplus.net/skos-light/vocabularyDescription",
+      "language": "undefined",
+      "value": "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse. DIN EN 15898:2020-02: Prozess des Entscheidens, Planens und Umsetzens.",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/vocabularyTitle": [
+     {
+      "identifier": "http://skosplus.net/skos-light/vocabularyTitle",
+      "language": "undefined",
+      "value": "LEIZA Restaurierungs- und Konservierungsthesaurus",
+      "type": "label"
+     }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
      {
       "identifier": "http://www.w3.org/2000/01/rdf-schema#comment",
       "language": "undefined",
       "value": "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse. DIN EN 15898:2020-02: Prozess des Entscheidens, Planens und Umsetzens.",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/vocabularyCreatorString": [
+     {
+      "identifier": "http://skosplus.net/skos-light/vocabularyCreatorString",
+      "language": "undefined",
+      "value": "Kristina Fella (LEIZA)",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/vocabularyLicenseString": [
+     {
+      "identifier": "http://skosplus.net/skos-light/vocabularyLicenseString",
+      "language": "undefined",
+      "value": "CC BY 4.0",
       "type": "label"
      }
     ]
@@ -2436,11 +2484,59 @@ var vowlresult={
    "instances": 0,
    "label": "LEIZA Restaurierungs- und Konservierungsthesaurus",
    "annotations": {
+    "http://skosplus.net/skos-light/vocabularyLanguage": [
+     {
+      "identifier": "http://skosplus.net/skos-light/vocabularyLanguage",
+      "language": "undefined",
+      "value": "de",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/LicenseLink": [
+     {
+      "identifier": "http://skosplus.net/skos-light/LicenseLink",
+      "language": "undefined",
+      "value": "https://creativecommons.org/licenses/by/4.0/",
+      "type": "iri"
+     }
+    ],
+    "http://skosplus.net/skos-light/vocabularyDescription": [
+     {
+      "identifier": "http://skosplus.net/skos-light/vocabularyDescription",
+      "language": "undefined",
+      "value": "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse. DIN EN 15898:2020-02: Prozess des Entscheidens, Planens und Umsetzens.",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/vocabularyTitle": [
+     {
+      "identifier": "http://skosplus.net/skos-light/vocabularyTitle",
+      "language": "undefined",
+      "value": "LEIZA Restaurierungs- und Konservierungsthesaurus",
+      "type": "label"
+     }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
      {
       "identifier": "http://www.w3.org/2000/01/rdf-schema#comment",
       "language": "undefined",
       "value": "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse. DIN EN 15898:2020-02: Prozess des Entscheidens, Planens und Umsetzens.",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/vocabularyCreatorString": [
+     {
+      "identifier": "http://skosplus.net/skos-light/vocabularyCreatorString",
+      "language": "undefined",
+      "value": "Kristina Fella (LEIZA)",
+      "type": "label"
+     }
+    ],
+    "http://skosplus.net/skos-light/vocabularyLicenseString": [
+     {
+      "identifier": "http://skosplus.net/skos-light/vocabularyLicenseString",
+      "language": "undefined",
+      "value": "CC BY 4.0",
       "type": "label"
      }
     ]
