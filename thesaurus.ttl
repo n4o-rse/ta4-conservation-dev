@@ -163,6 +163,10 @@ rdf:type rdf:type owl:AnnotationProperty .
 rdfs:seeAlso rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2000/01/rdf-schema#subClassOf
+rdfs:subClassOf rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#broadMatch
 skos:broadMatch rdf:type owl:AnnotationProperty .
 
@@ -181,6 +185,12 @@ skos:narrowMatch rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3.org/2004/02/skos/core#relatedMatch
 skos:relatedMatch rdf:type owl:AnnotationProperty .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/hasSource
+:hasSource rdf:type owl:AnnotationProperty ;
+           rdfs:label "has source"@en ,
+                      "hat Quelle"@de .
 
 
 #################################################################
@@ -251,6 +261,11 @@ sl:Vocabulary rdf:type owl:Class ;
 :LEIZA_Conservation_Thesaurus rdf:type owl:Class .
 
 
+###  https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE
+:dYxXkaqsnBqVYA1THAxjgE rdf:type owl:Class ;
+                        rdfs:subClassOf :LEIZA_Conservation_Thesaurus .
+
+
 ###  https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1
 <https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1> rdf:type owl:Class ;
                                                                             rdfs:subClassOf <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> .
@@ -265,9 +280,30 @@ sl:Vocabulary rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
+###  http://www.wikidata.org/entity/Q125400047
+<http://www.wikidata.org/entity/Q125400047> rdf:type owl:NamedIndividual ,
+                                                     sl:Source ;
+                                            rdfs:label "DIN EN 15898"@de .
+
+
 ###  https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Conservation_Thesaurus
 :LEIZA_Conservation_Thesaurus rdf:type owl:NamedIndividual ,
                                        sl:Vocabulary .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE
+:dYxXkaqsnBqVYA1THAxjgE rdf:type owl:NamedIndividual ,
+                                 sl:Label .
+
+
+###  https://archaeolink.github.io/n4o-ta4-conservation/tmjVdStfYu6PQuQeq7Sua7
+:tmjVdStfYu6PQuQeq7Sua7 rdf:type owl:NamedIndividual ,
+                                 sl:Label ;
+                        sl:identifier "tmjVdStfYu6PQuQeq7Sua7" ;
+                        sl:identifierLabel "Methode und Technik"@de ;
+                        rdfs:comment "Die zur Erreichung des Restaurierungs.- und/oder Konservierungsziel angewendeten Vorgehensweisen während des Objekteingriffs."@de ;
+                        rdfs:label "Methode und Technik"@de ;
+                        rdfs:subClassOf :dYxXkaqsnBqVYA1THAxjgE .
 
 
 ###  https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1
@@ -285,7 +321,15 @@ sl:Vocabulary rdf:type owl:Class ;
 #################################################################
 
 :LEIZA_Conservation_Thesaurus rdfs:label "LEIZA Restaurierungs- und Konservierungsthesaurus"@de ;
-                              rdfs:comment "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse"@de .
+                              rdfs:comment "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse. DIN EN 15898:2020-02: Prozess des Entscheidens, Planens und Umsetzens."@de .
+
+
+:dYxXkaqsnBqVYA1THAxjgE sl:identifierLabel "Eingriff"@de ;
+                        :hasSource <http://www.wikidata.org/entity/Q125400047> ;
+                        sl:description "DIN EN 15898:2020-02: direkte Einwirkung zur Erreichung der festgesetzten Konservierungsziele"@de ;
+                        rdfs:label "Eingriff"@de ;
+                        sl:identifier "dYxXkaqsnBqVYA1THAxjgE" ;
+                        sl:alternativeLabel "Behandlung"@de .
 
 
 <https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1> sl:identifierLabel "Metall"@de ;
@@ -300,6 +344,7 @@ sl:Vocabulary rdf:type owl:Class ;
 
 
 <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> rdfs:label "[Objekt-Werkstoff (Material)]"@de ;
+                                                                            rdfs:comment "Material aus dem das Objekt besteht."@de ;
                                                                             sl:identifierLabel "[<Objekt-Werkstoff (Material)]"@de ;
                                                                             sl:hasSubLabel <https://archaeolink.github.io/n4o-ta4-conservation/2dmdnWjmWJURKh9PLaJuH1> .
 
