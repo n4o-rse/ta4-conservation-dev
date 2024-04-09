@@ -17,7 +17,9 @@ var search={
   "Vocabulary Instances Collection": "https://archaeolink.github.io/n4o-ta4-conservation/Vocabulary_collection",
   "Werkzeug": "https://archaeolink.github.io/n4o-ta4-conservation/3EE7pLjByXiT4nHWxyqKuB",
   "Zustandserfassung": "https://archaeolink.github.io/n4o-ta4-conservation/eq7GtLWHJesucfazgADPZE",
-  "[Objekt-Werkstoff (Material)]": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
+  "[Diagnose]": "https://archaeolink.github.io/n4o-ta4-conservation/qfYhqzHDc8FTxu1A6T6ycW",
+  "[Objekt-Werkstoff]": "https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP",
+  "[Objektuntersuchung]": "https://archaeolink.github.io/n4o-ta4-conservation/stStRVHTWT8PXV2Lj19GGL",
   "has source": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource",
   "hat Quelle": "https://archaeolink.github.io/n4o-ta4-conservation/hasSource",
   "stabilisierende Konservierung": "https://archaeolink.github.io/n4o-ta4-conservation/wF7jn2tBfcnE3drqjzwi8D"

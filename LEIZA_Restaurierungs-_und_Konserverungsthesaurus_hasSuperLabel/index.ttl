@@ -7,5 +7,5 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Property Partition: hasSuperLabel"@en ;
     void:property <http://skosplus.net/skos-light/hasSuperLabel> ;
-    void:triples 7 .
+    void:triples 9 .
 

@@ -7,5 +7,5 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Property Partition: hasSource"@en ;
     void:property <https://archaeolink.github.io/n4o-ta4-conservation/hasSource> ;
-    void:triples 3 .
+    void:triples 6 .
 

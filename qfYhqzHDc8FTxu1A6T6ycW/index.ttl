@@ -1,0 +1,20 @@
+@prefix ns1: <http://skosplus.net/skos-light/> .
+@prefix ns2: <https://archaeolink.github.io/n4o-ta4-conservation/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+ns2:qfYhqzHDc8FTxu1A6T6ycW a ns1:Label,
+        owl:Class,
+        owl:NamedIndividual,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "[Diagnose]"@de ;
+    void:inDataset ns2:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
+    ns1:description "DIN EN 15898:2020-02: Feststellung des gegenwärtigen Erhaltungszustandes eines Objektes und Bestimmung von Art und Ursache jeglicher Änderungen, sowie der möglichen Konsequenzen."@de ;
+    ns1:hasSuperLabel ns2:eq7GtLWHJesucfazgADPZE ;
+    ns1:identifier "qfYhqzHDc8FTxu1A6T6ycW" ;
+    ns1:identifierLabel "[Diagnose]"@de ;
+    rdfs:subClassOf ns2:eq7GtLWHJesucfazgADPZE ;
+    ns2:hasSource <http://www.wikidata.org/entity/Q125400047> .
+
