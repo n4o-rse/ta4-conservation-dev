@@ -33,7 +33,7 @@ jobs:
       iiif: false
       logourl: https://raw.githubusercontent.com/archaeolink/unicorn-ontdoc-template-n4o-ta4/main/icons/nfdi4objects_logo_bildmarke_digital_rund.png
       datasettitle: LEIZA Restaurierungs- und Konserverungsthesaurus
-      templatedir: https://github.com/archaeolink/unicorn-ontdoc-template-n4o-ta4/archive/refs/tags/v0.9.zip
+      templatedir: https://github.com/archaeolink/unicorn-ontdoc-template-n4o-ta4/archive/refs/tags/v0.10.zip
       publishingorg: <a href="http://leiza.de">Leibniz-Zentrum für Archäologie</a>
       publisher: Kristina Fella, Lasse Mempel-Länger, Florian Thiery
       license: CC BY 4.0
