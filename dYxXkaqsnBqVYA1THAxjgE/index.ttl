@@ -12,4 +12,14 @@ ns2:dYxXkaqsnBqVYA1THAxjgE a ns1:Label,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Eingriff"@de ;
     dc:license <http://creativecommons.org/licenses/by/4.0> ;
-    void:inDataset 
+    void:inDataset ns2:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
+    ns1:alternativeLabel "Behandlung"@de ;
+    ns1:description "DIN EN 15898:2020-02: direkte Einwirkung zur Erreichung der festgesetzten Konservierungsziele"@de ;
+    ns1:hasRelatedLabel ns2:wF7jn2tBfcnE3drqjzwi8D ;
+    ns1:hasSubLabel ns2:tmjVdStfYu6PQuQeq7Sua7,
+        ns2:wsbDppTfr2BSxsmhSuEbG4 ;
+    ns1:identifier "dYxXkaqsnBqVYA1THAxjgE" ;
+    ns1:identifierLabel "Eingriff"@de ;
+    rdfs:subClassOf ns2:LEIZA_Conservation_Thesaurus ;
+    ns2:hasSource <http://www.wikidata.org/entity/Q125400047> .
+

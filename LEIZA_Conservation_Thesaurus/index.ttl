@@ -11,4 +11,15 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "LEIZA Restaurierungs- und Konservierungsthesaurus"@de ;
     dc:license <http://creativecommons.org/licenses/by/4.0> ;
-    void:inDataset 
+    void:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
+    ns1:LicenseLink <https://creativecommons.org/licenses/by/4.0/> ;
+    ns1:vocabularyCreatorResource <http://www.wikidata.org/entity/Q125400666>,
+        <http://www.wikidata.org/entity/Q125400678>,
+        <http://www.wikidata.org/entity/Q66606154> ;
+    ns1:vocabularyCreatorString "Kristina Fella (LEIZA), Lasse Mempel-Länger (LEIZA), Florian Thiery (LEIZA)"@de ;
+    ns1:vocabularyDescription "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse. DIN EN 15898:2020-02: Prozess des Entscheidens, Planens und Umsetzens."@de ;
+    ns1:vocabularyLanguage "de"@de ;
+    ns1:vocabularyLicenseString "CC BY 4.0"@de ;
+    ns1:vocabularyTitle "LEIZA Restaurierungs- und Konservierungsthesaurus"@de ;
+    rdfs:comment "Konservierungs- und Restaurierungsprozesse, bzw. Erhaltungsprozesse. DIN EN 15898:2020-02: Prozess des Entscheidens, Planens und Umsetzens."@de .
+

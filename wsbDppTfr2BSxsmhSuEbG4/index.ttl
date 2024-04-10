@@ -12,4 +12,10 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Material"@de ;
     dc:license <http://creativecommons.org/licenses/by/4.0> ;
-    void:inDataset 
+    void:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
+    ns1:hasSuperLabel <https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE> ;
+    ns1:identifier "wsbDppTfr2BSxsmhSuEbG4" ;
+    ns1:identifierLabel "Material"@de ;
+    rdfs:subClassOf <https://archaeolink.github.io/n4o-ta4-conservation/dYxXkaqsnBqVYA1THAxjgE> ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q214609> .
+

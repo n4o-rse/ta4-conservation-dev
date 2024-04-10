@@ -12,4 +12,11 @@ ns2:59RpvNLTucB9wVbWVHTRur a ns1:Label,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "präventive Konservierung"@de ;
     dc:license <http://creativecommons.org/licenses/by/4.0> ;
-    void:inDataset 
+    void:inDataset ns2:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
+    ns1:description "DIN EN 15898:2020-02: Vorkehrungen und Maßnahmen zur Vermeidung oder Minimierung von künftigen Schaden, Abbau, Verlust und folglich invasivem Eingriff"@de ;
+    ns1:hasSuperLabel ns2:LEIZA_Conservation_Thesaurus ;
+    ns1:identifier "59RpvNLTucB9wVbWVHTRur" ;
+    ns1:identifierLabel "präventive Konservierung"@de ;
+    rdfs:subClassOf ns2:LEIZA_Conservation_Thesaurus ;
+    ns2:hasSource <http://www.wikidata.org/entity/Q125400047> .
+

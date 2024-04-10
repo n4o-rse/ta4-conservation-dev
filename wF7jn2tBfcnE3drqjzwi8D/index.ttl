@@ -11,4 +11,10 @@ ns2:wF7jn2tBfcnE3drqjzwi8D a ns1:Label,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "stabilisierende Konservierung"@de ;
     dc:license <http://creativecommons.org/licenses/by/4.0> ;
-    void:inDataset 
+    void:inDataset ns2:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
+    ns1:alternativeLabel "stabilisierende Konservierung"@de ;
+    ns1:description "DIN EN 15898:2020-02: Maßnahmen, die direkt an einem Objekt vorgenommen werden, um weiteren Abbau zu verhindern oder zu verzögern und/oder Schaden zu begrenzen"@de ;
+    ns1:identifier "wF7jn2tBfcnE3drqjzwi8D" ;
+    ns1:identifierLabel "stabilisierende Konservierung"@de ;
+    ns2:hasSource <http://www.wikidata.org/entity/Q125400047> .
+

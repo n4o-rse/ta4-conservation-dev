@@ -12,4 +12,11 @@ ns2:ievmu1QUgrpeYSiU1DeYfm a ns1:Label,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Sammlungspflege"@de ;
     dc:license <http://creativecommons.org/licenses/by/4.0> ;
-    void:inDataset 
+    void:inDataset ns2:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
+    ns1:description "DIN EN 15898:2020-02: präventive Konservierung einer Sammlung"@de ;
+    ns1:hasSuperLabel ns2:59RpvNLTucB9wVbWVHTRur ;
+    ns1:identifier "ievmu1QUgrpeYSiU1DeYfm" ;
+    ns1:identifierLabel "Sammlungspflege"@de ;
+    rdfs:subClassOf ns2:59RpvNLTucB9wVbWVHTRur ;
+    ns2:hasSource <http://www.wikidata.org/entity/Q125400047> .
+

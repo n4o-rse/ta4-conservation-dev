@@ -12,4 +12,14 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Metall"@de ;
     dc:license <http://creativecommons.org/licenses/by/4.0> ;
-    void:inDataset 
+    void:inDataset <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus> ;
+    ns1:alternativeLabel "Metalle"@de ;
+    ns1:description "Gruppe chemischer Elemente"@de ;
+    ns1:hasSuperLabel <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> ;
+    ns1:identifier "2dmdnWjmWJURKh9PLaJuH1" ;
+    ns1:identifierLabel "Metall"@de ;
+    ns1:translation "metal"@en,
+        "métal"@fr ;
+    rdfs:subClassOf <https://archaeolink.github.io/n4o-ta4-conservation/8kKtpbqpnY2T2k7EixxdoP> ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q11426> .
+

@@ -12,4 +12,11 @@ ns2:fBAv2FHRc3aDVk9ve1JThd a ns1:Label,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Umgebungskontrolle"@de ;
     dc:license <http://creativecommons.org/licenses/by/4.0> ;
-    void:inDataset 
+    void:inDataset ns2:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
+    ns1:description "DIN EN 15898:2020-02: Kontrolle eines oder mehrer Einflussfaktoren der Umwelt"@de ;
+    ns1:hasSuperLabel ns2:59RpvNLTucB9wVbWVHTRur ;
+    ns1:identifier "fBAv2FHRc3aDVk9ve1JThd" ;
+    ns1:identifierLabel "Umgebungskontrolle"@de ;
+    rdfs:subClassOf ns2:59RpvNLTucB9wVbWVHTRur ;
+    ns2:hasSource <http://www.wikidata.org/entity/Q125400047> .
+

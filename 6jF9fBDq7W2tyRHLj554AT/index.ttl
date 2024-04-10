@@ -11,4 +11,9 @@ ns2:6jF9fBDq7W2tyRHLj554AT a ns1:Label,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Restaurierung"@de ;
     dc:license <http://creativecommons.org/licenses/by/4.0> ;
-    void:inDataset 
+    void:inDataset ns2:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
+    ns1:description "DIN EN 15898:2020-02: Maßnahmen an einem stabilen oder stabilisierten Objekt, die darauf abzielen, dessen Wertschätzung, dessen Verständnis und/oder dessen Benutzung zu erleichtern, wobei dessen Bedeutung sowie die vorgefundenen Techniken und Materialien respektiert werden"@de ;
+    ns1:identifier "6jF9fBDq7W2tyRHLj554AT" ;
+    ns1:identifierLabel "Restaurierung"@de ;
+    ns2:hasSource <http://www.wikidata.org/entity/Q125400047> .
+
