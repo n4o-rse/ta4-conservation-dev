@@ -9,7 +9,7 @@ def createNewId(checkList):
     x = idGenerator()
     hasLetters = any(c.isalpha() for c in x)
     hasNumbers = any(c.isdigit() for c in x)
-    while x in checkList or not hasLetters or not hasNumbers:
+    while x in checkList or not hasLetters or not hasNumbers or not x[0].isalpha():
         x = idGenerator()
         hasLetters = any(c.isalpha() for c in x)
         hasNumbers = any(c.isdigit() for c in x)
