@@ -1,22 +1,22 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix ns1: <http://skosplus.net/skos-light/> .
-@prefix ns2: <https://archaeolink.github.io/n4o-ta4-conservation/> .
+@prefix ns1: <https://archaeolink.github.io/n4o-ta4-conservation/> .
+@prefix ns2: <http://skosplus.net/skos-light/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 
-ns2:stStRVHTWT8PXV2Lj19GGL a ns1:Label,
+ns1:stStRVHTWT8PXV2Lj19GGL a ns2:Label,
         owl:Class,
         owl:NamedIndividual,
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "[Objektuntersuchung]"@de ;
     dc:license <http://creativecommons.org/licenses/by/4.0> ;
-    void:inDataset ns2:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
-    ns1:description "Beschaffung und Sammlung von Informationen über den Zustand eines Objektes, die für einen Entscheidungsprozess bei der Konservierung notwendig sind (vgl. DIN EN 15898:2020-02)"@de ;
-    ns1:hasSuperLabel ns2:eq7GtLWHJesucfazgADPZE ;
-    ns1:identifier "stStRVHTWT8PXV2Lj19GGL" ;
-    ns1:identifierLabel "[Objektuntersuchung]"@de ;
-    rdfs:subClassOf ns2:eq7GtLWHJesucfazgADPZE ;
-    ns2:hasSource <http://www.wikidata.org/entity/Q125400047> .
+    void:inDataset ns1:LEIZA_Restaurierungs-_und_Konserverungsthesaurus ;
+    ns2:description "Beschaffung und Sammlung von Informationen über den Zustand eines Objektes, die für einen Entscheidungsprozess bei der Konservierung notwendig sind (vgl. DIN EN 15898:2020-02)"@de ;
+    ns2:hasSuperLabel ns1:eq7GtLWHJesucfazgADPZE ;
+    ns2:identifier "stStRVHTWT8PXV2Lj19GGL" ;
+    ns2:identifierLabel "[Objektuntersuchung]"@de ;
+    rdfs:subClassOf ns1:eq7GtLWHJesucfazgADPZE ;
+    ns1:hasSource <http://www.wikidata.org/entity/Q125400047> .
 
