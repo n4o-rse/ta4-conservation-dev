@@ -2,14 +2,17 @@ import string
 import random
 import csv
 
-def idGenerator(size=6, chars= "ABCDEF123456789"):
+def idGenerator(size=6, chars= "ABCDFG123456789"):
     return "".join(random.choice(chars) for _ in range(size))
 
 def createNewId(checkList):
     x = idGenerator()
-    while x in checkList:
-        print("combination already in use...")
+    hasLetters = any(c.isalpha() for c in x)
+    hasNumbers = any(c.isdigit() for c in x)
+    while x in checkList or not hasLetters or not hasNumbers:
         x = idGenerator()
+        hasLetters = any(c.isalpha() for c in x)
+        hasNumbers = any(c.isdigit() for c in x)
     return x
         
 
