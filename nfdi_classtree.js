@@ -78,17 +78,11 @@ var tree={
             "http://skosplus.net/skos-light/alternativeLabel": {
               "instancecount": 1
             },
-            "http://skosplus.net/skos-light/description": {
-              "instancecount": 1
-            },
-            "http://skosplus.net/skos-light/hasSuperLabel": {
+            "http://skosplus.net/skos-light/hasSubLabel": {
               "instancecount": 1,
               "http://www.w3.org/2002/07/owl#Class": 1,
               "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
-              "http://skosplus.net/skos-light/Vocabulary": 1
-            },
-            "http://skosplus.net/skos-light/identifier": {
-              "instancecount": 1
+              "http://skosplus.net/skos-light/Label": 1
             },
             "http://skosplus.net/skos-light/identifierLabel": {
               "instancecount": 1
@@ -96,6 +90,9 @@ var tree={
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 3,
               "http://www.w3.org/2002/07/owl#Class": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#comment": {
+              "instancecount": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#label": {
               "instancecount": 1
@@ -105,19 +102,14 @@ var tree={
               "http://www.w3.org/2002/07/owl#Class": 1,
               "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
               "http://skosplus.net/skos-light/Vocabulary": 1
-            },
-            "https://archaeolink.github.io/n4o-ta4-conservation/hasSource": {
-              "instancecount": 1,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
-              "http://skosplus.net/skos-light/Source": 1
             }
           },
           "from": {
             "http://skosplus.net/skos-light/hasSuperLabel": {
               "instancecount": 0,
-              "http://www.w3.org/2002/07/owl#Class": 2,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 2,
-              "http://skosplus.net/skos-light/Label": 2
+              "http://www.w3.org/2002/07/owl#Class": 3,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 3,
+              "http://skosplus.net/skos-light/Label": 3
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "instancecount": 0,
@@ -125,13 +117,13 @@ var tree={
             },
             "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
               "instancecount": 0,
-              "http://www.w3.org/2002/07/owl#Class": 2,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 2,
-              "http://skosplus.net/skos-light/Label": 2
+              "http://www.w3.org/2002/07/owl#Class": 3,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 3,
+              "http://skosplus.net/skos-light/Label": 3
             }
           }
         },
-        "instancecount": 12
+        "instancecount": 10
       },
       {
         "id": "http://skosplus.net/skos-light/Vocabulary",
@@ -233,6 +225,9 @@ var tree={
               "instancecount": 3,
               "http://www.w3.org/2002/07/owl#Class": 1
             },
+            "http://www.w3.org/2000/01/rdf-schema#comment": {
+              "instancecount": 1
+            },
             "http://www.w3.org/2000/01/rdf-schema#label": {
               "instancecount": 1
             },
@@ -241,9 +236,6 @@ var tree={
               "http://www.w3.org/2002/07/owl#Class": 1,
               "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
               "http://skosplus.net/skos-light/Label": 1
-            },
-            "http://www.w3.org/2004/02/skos/core#closeMatch": {
-              "instancecount": 1
             }
           },
           "from": {
@@ -541,16 +533,31 @@ var tree={
               "http://www.w3.org/2002/07/owl#Class": 1,
               "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
               "http://skosplus.net/skos-light/Label": 1
+            },
+            "http://www.w3.org/2004/02/skos/core#closeMatch": {
+              "instancecount": 1
             }
           },
           "from": {
+            "http://skosplus.net/skos-light/hasSuperLabel": {
+              "instancecount": 0,
+              "http://www.w3.org/2002/07/owl#Class": 1,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
+              "http://skosplus.net/skos-light/Label": 1
+            },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "instancecount": 0,
               "http://www.w3.org/2004/02/skos/core#Collection": 3
+            },
+            "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+              "instancecount": 0,
+              "http://www.w3.org/2002/07/owl#Class": 1,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
+              "http://skosplus.net/skos-light/Label": 1
             }
           }
         },
-        "instancecount": 9
+        "instancecount": 10
       },
       {
         "id": "http://skosplus.net/skos-light/Label",
@@ -656,16 +663,16 @@ var tree={
               "instancecount": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
-              "instancecount": 19,
-              "http://www.w3.org/2002/07/owl#Class": 17,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 19,
-              "http://skosplus.net/skos-light/Label": 18,
+              "instancecount": 18,
+              "http://www.w3.org/2002/07/owl#Class": 18,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 17,
+              "http://skosplus.net/skos-light/Label": 16,
               "http://skosplus.net/skos-light/Vocabulary": 1
             }
           },
           "from": {}
         },
-        "instancecount": 23
+        "instancecount": 22
       },
       {
         "id": "http://skosplus.net/skos-light/Actor",
