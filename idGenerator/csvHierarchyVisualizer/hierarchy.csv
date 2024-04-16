@@ -1,0 +1,8 @@
+concept,hasMother,hasDaughter
+Ding,None,Mensch
+Mensch,Ding,Frau;Mann
+Frau,Mensch,Kind
+Mann,Mensch,Kind
+Kind,Frau;Mann,Junge;Mädchen
+Junge,Kind,None
+Mädchen,Kind,None
