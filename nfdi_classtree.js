@@ -252,12 +252,6 @@ var tree={
             }
           },
           "from": {
-            "http://skosplus.net/skos-light/hasSubLabel": {
-              "instancecount": 0,
-              "http://www.w3.org/2002/07/owl#Class": 1,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
-              "http://skosplus.net/skos-light/Label": 1
-            },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "instancecount": 0,
               "http://www.w3.org/2004/02/skos/core#Collection": 3
@@ -685,15 +679,13 @@ var tree={
               "instancecount": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
-              "instancecount": 18,
-              "http://www.w3.org/2002/07/owl#Class": 16,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 18,
-              "http://skosplus.net/skos-light/Label": 18
+              "instancecount": 5,
+              "http://www.w3.org/2002/07/owl#AnnotationProperty": 5
             }
           },
           "from": {}
         },
-        "instancecount": 22
+        "instancecount": 9
       },
       {
         "id": "http://skosplus.net/skos-light/Actor",
