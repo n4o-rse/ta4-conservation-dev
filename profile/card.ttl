@@ -1,6 +1,6 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ns1: <http://www.w3.org/ns/solid/terms#> .
-@prefix ns2: <http://www.w3.org/ns/pim/space#> .
+@prefix ns1: <http://www.w3.org/ns/pim/space#> .
+@prefix ns2: <http://www.w3.org/ns/solid/terms#> .
 
 <docs//profile/card> a foaf:PersonalProfileDocument ;
     foaf:primaryTopic 

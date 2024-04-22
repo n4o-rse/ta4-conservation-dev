@@ -48,7 +48,7 @@
     dc:language <http://www.lexvo.org/page/iso639-1/en> ;
     dc:license <http://creativecommons.org/licenses/by/4.0> ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0> ;
-    dcterms:modified "2024-04-17T08:57:08"^^xsd:dateTime ;
+    dcterms:modified "2024-04-22T09:23:24"^^xsd:dateTime ;
     dcterms:subject <http://dbpedia.org/resource/Location>,
         <http://dbpedia.org/resource/OGC_GeoSPARQL>,
         <http://dbpedia.org/resource/Time>,
@@ -65,7 +65,7 @@
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_StructualConcept>,
         <https://archaeolink.github.io/n4o-ta4-conservation/LEIZA_Restaurierungs-_und_Konserverungsthesaurus_Vocabulary> ;
     void:classes 24 ;
-    void:dataDump <https://archaeolink.github.io/n4o-ta4-conservation/index.ttl> ;
+    void:dataDump <https://archaeolink.github.io/n4o-ta4-conservation//index.ttl> ;
     void:distinctObjects 150 ;
     void:distinctSubjects 73 ;
     void:entities 33 ;
@@ -142,7 +142,7 @@
         "Person"@en,
         "Q121810372"@en,
         "Time"@en ;
-    dcat:landingPage <https://archaeolink.github.io/n4o-ta4-conservation> ;
-    foaf:homepage <https://archaeolink.github.io/n4o-ta4-conservation> ;
-    foaf:page <https://archaeolink.github.io/n4o-ta4-conservation/index.html> .
+    dcat:landingPage <https://archaeolink.github.io/n4o-ta4-conservation/> ;
+    foaf:homepage <https://archaeolink.github.io/n4o-ta4-conservation/> ;
+    foaf:page <https://archaeolink.github.io/n4o-ta4-conservation//index.html> .
 
