@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--
     <title>CSV Hierarchy Visualizer</title>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   </head>
   <body>
+    <!--
     <h1>CSV Hierarchy Visualizer</h1>
     <p>Accessing Google sheet table</p>
-    <input type="file" id="fileInput" accept=".csv">
-    <button onclick = readSheet() > Read Sheet </button>
+    -->
+    <input type="text" id="httpInput" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=tsv">
+    <button onclick = readSheet() > Visualise CSV </button>
     <div id="output">
       <p id="outputText"> </p>
       <svg id="outputSVG"> </svg>
@@ -21,12 +25,10 @@
     </div>
     <script>
       function readSheet() {
-        /*
-        https://docs.google.com/spreadsheets/d/e/2PACX-1vRUwEkMkH3Tsllx32stLHYmmLubG8gmkGYgxPrlqQo4Hz939ajwvKJawDxXRzKwQ_h5wvMP4TblUdC4/pub?output=tsv"
-        const text = await getText(target);
+        const target = document.getElementById("htmlInput").value;
+        const tsvData = d3.tsv(target)
         //remove all "\r" from text
-        const cleanedText = text.replace(/\r/g, "");
-        */
+        //const cleanedText = text.replace(/\r/g, "");
         var data = {
           "name": "Asia",
           "children": [
@@ -50,8 +52,7 @@
               }
           ]
       }
-      const target = document.getElementById("fileInput").files[0];
-      const tableObject = d3.csv(target);
+      const tableObject = d3.csvParse(target);
       try {
         /*
         const stratifiedData = d3.stratify()
@@ -61,13 +62,12 @@
         */
 
         //data = parentToChildren(tableObject);
-        document.getElementById("outputText").innerHTML = JSON.stringify(tableObject);
+        document.getElementById("outputText").innerHTML = JSON.stringify(tsvData);
         createTree(data);
       } catch (error) {
           document.getElementById("outputText").innerHTML = error;
       }
     }
-
       function createTree(data) {
         var treeLayout = d3.tree().size([400, 200]);
         var root = d3.hierarchy(data); //stratifiedData
@@ -103,42 +103,6 @@
               return d.data.name;
           });
       }
-
-      function parentToChildren(array) {
-
-      }
-
-      /*
-      async function getText(url) {
-          try {
-          const proxyUrl = "https://corsproxy.io/?";
-          const response = await fetch(proxyUrl + encodeURIComponent(url));
-          const data = await response.text();
-          return data;
-          } catch (error) {
-            return error;
-          }
-        }
-      */
-
-      /*
-      function createTableObject(text) {
-        const rows = text.split("\n");
-        tableObject = {};
-        const attributes = rows[0].split("\t");
-        for (let i = 1; i < rows.length; i++) {
-            const columns = rows[i].split("\t");
-            if (columns[1].length > 0) {
-              tableObject[columns[0]] = {}
-              for (let j = 1; j < columns.length; j++) {
-                tableObject[columns[0]][attributes[j]] = columns[j];
-              }
-            }
-          }
-        return tableObject;
-      }
-      */
-
     </script>
   </body>
 </html>
