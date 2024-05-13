@@ -26,7 +26,7 @@
     <script>
       function readSheet() {
         const target = document.getElementById("httpInput").value;
-        const tsvData = d3.tsv(target)
+        const tsvData = await d3.tsv(target)
         //remove all "\r" from text
         //const cleanedText = text.replace(/\r/g, "");
         var data = {
