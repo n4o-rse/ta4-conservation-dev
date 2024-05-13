@@ -9,8 +9,12 @@
     <label for="httpInput"> URL eingeben: </label>
     <input type="text" id="httpInput" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=tsv" style="width: 1200px;">
     <br>
+    <button onclick = readSheet(0) > Sheet visualisieren </button>
     <br>
-    <button onclick = readSheet() > Tabelle visualisieren </button>
+    <input type ="file" id = "fileInput" accept = ".tsv">
+    <br>
+    <button onclick = readSheet(1) > Datei visualisieren </button>
+    <br>
     <div id="output">
       <p id="outputText"> </p>
       <svg id="outputSVG"> </svg>
@@ -22,11 +26,15 @@
       </svg>
     </div>
     <script>
-      function readSheet() {
-        const tsvData = getTableData();
+      async function readSheet(method) {
+        if (method == 0) {
+          const tsvData = readSheetFromUrl();
+        } else {
+          const tsvData = readSheetFromFile();
+        }
         //const cleanedTsvData = cleanTableData(tsvData);
 
-        var data = {
+        const data = {
           "name": "Asia",
           "children": [
               {
@@ -49,6 +57,19 @@
               }
           ]
         }
+
+        const table = `identifier,concept,parent
+          B51DAF,Ding,top
+          A18D95,Mensch,B51DAF
+          CD5C3F,Frau,A18D95
+          F5G576,Mann,A18D95
+          C4BCF8,Kind,A18D95
+          B5DD1A,Junge,C4BCF8
+          CD3341,Mädchen,C4BCF8
+          A11ACA,Essen,B51DAF
+          GB6DF3,Gemüse,A11ACA
+          C364G1,Obst,A11ACA`;
+
         try {
           document.getElementById("outputText").innerHTML = JSON.stringify(tsvData);
           createTree(data);
@@ -57,11 +78,17 @@
         }
       }
 
-      async function getTableData() {
+      async function readSheetFromUrl() {
         const target = document.getElementById("httpInput").value;
         const tsvData = await d3.tsv(target)
         return tsvData;
       } 
+
+      async function readSheetFromFile() {
+        const file = document.getElementById("fileInput").files[0];
+        const tsvData = await d3.tsv(file)
+        return tsvData;
+      }
 
       function cleanTableData(data) {
         // iterate over all rows and remove all columns from array, where prefLabel is empty
