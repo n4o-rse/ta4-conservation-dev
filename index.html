@@ -11,6 +11,7 @@
     <br>
     <button onclick = readSheet(0) > Sheet visualisieren </button>
     <br>
+    <br>
     <input type ="file" id = "fileInput" accept = ".tsv">
     <br>
     <button onclick = readSheet(1) > Datei visualisieren </button>
@@ -80,14 +81,14 @@
 
       async function readSheetFromUrl() {
         const target = document.getElementById("httpInput").value;
-        const tsvData = await d3.tsv(target)
-        return tsvData;
+        let data = await d3.tsv(target)
+        return data;
       } 
 
       async function readSheetFromFile() {
         const file = document.getElementById("fileInput").files[0];
-        const tsvData = await d3.tsv(file)
-        return tsvData;
+        let data = await d3.tsv(file)
+        return data;
       }
 
       function cleanTableData(data) {
