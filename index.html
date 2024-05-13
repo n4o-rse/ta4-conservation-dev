@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--
     <title>CSV Hierarchy Visualizer</title>
-    -->
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   </head>
   <body>
-    <!--
     <h1>CSV Hierarchy Visualizer</h1>
-    <p>Accessing Google sheet table</p>
-    -->
-    <input type="text" id="httpInput" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=tsv">
-    <button onclick = readSheet() > Visualise CSV </button>
+    <label for="httpInput"> URL eingeben: </label>
+    <input type="text" id="httpInput" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=tsv" style="width: 1200px;">
+    <br>
+    <br>
+    <button onclick = readSheet() > Tabelle visualisieren </button>
     <div id="output">
       <p id="outputText"> </p>
       <svg id="outputSVG"> </svg>
@@ -24,11 +22,10 @@
       </svg>
     </div>
     <script>
-      async function readSheet() {
-        const target = document.getElementById("httpInput").value;
-        const tsvData = await d3.tsv(target)
-        //remove all "\r" from text
-        //const cleanedText = text.replace(/\r/g, "");
+      function readSheet() {
+        const tsvData = getTableData();
+        const cleanedTsvData = cleanTableData(tsvData);
+
         var data = {
           "name": "Asia",
           "children": [
@@ -51,14 +48,29 @@
                   
               }
           ]
+        }
+        try {
+          document.getElementById("outputText").innerHTML = JSON.stringify(cleanedTsvData);
+          createTree(data);
+        } catch (error) {
+            document.getElementById("outputText").innerHTML = error;
+        }
       }
-      try {
-        document.getElementById("outputText").innerHTML = JSON.stringify(tsvData);
-        createTree(data);
-      } catch (error) {
-          document.getElementById("outputText").innerHTML = error;
+
+      async function getTableData() {
+        const target = document.getElementById("httpInput").value;
+        const tsvData = await d3.tsv(target)
+        return tsvData;
+      } 
+
+      function cleanTableData(data) {
+        // delete objects from array where "prefLabel" is empty
+        const cleanedData = data.filter(d => d.prefLabel !== "");
+        //remove all "\r" from text
+        //const cleanedText = text.replace(/\r/g, "");
+        return cleanedData;
       }
-    }
+
       function createTree(data) {
         var treeLayout = d3.tree().size([400, 200]);
         var root = d3.hierarchy(data); //stratifiedData
