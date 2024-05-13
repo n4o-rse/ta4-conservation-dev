@@ -25,7 +25,7 @@
     </div>
     <script>
       function readSheet() {
-        const target = document.getElementById("htmlInput").value;
+        const target = document.getElementById("httpInput").value;
         const tsvData = d3.tsv(target)
         //remove all "\r" from text
         //const cleanedText = text.replace(/\r/g, "");
@@ -52,16 +52,7 @@
               }
           ]
       }
-      const tableObject = d3.csvParse(target);
       try {
-        /*
-        const stratifiedData = d3.stratify()
-        .id((d) => d.name)
-        .parentId((d) => d.parent)
-        (tableObject);
-        */
-
-        //data = parentToChildren(tableObject);
         document.getElementById("outputText").innerHTML = JSON.stringify(tsvData);
         createTree(data);
       } catch (error) {
