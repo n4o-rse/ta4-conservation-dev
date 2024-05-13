@@ -12,6 +12,7 @@
   <body>
     <h1>CSV Hierarchy Visualizer</h1>
     <p>Accessing Google sheet table</p>
+    <input type="file" id="fileInput" accept=".csv">
     <button onclick = readSheet() > Read Sheet </button>
     <div id="output">
       <p id="outputText"> </p>
@@ -30,17 +31,7 @@
         const text = await getText(target);
         //remove all "\r" from text
         const cleanedText = text.replace(/\r/g, "");
-        const tableObject = d3.csv(target);
         */
-        const tableObject = [{id: 1, parent: null, title: 'Home Office'},
-          {id: 2, parent: 1, title: 'Regional Office 2'},
-          {id: 3, parent: 1, title: 'Regional Office 1'},
-          {id: 4, parent: 3, title: 'Branch 1'},
-          {id: 5, parent: 3, title: 'Branch 2'},
-          {id: 6, parent: 2, title: 'Branch 3'},
-          {id: 7, parent: 2, title: 'Branch 4'}
-        ];
-
         var data = {
           "name": "Asia",
           "children": [
@@ -64,21 +55,23 @@
               }
           ]
       }
-        try {
-          /*
-          const stratifiedData = d3.stratify()
-          .id((d) => d.name)
-          .parentId((d) => d.parent)
-          (tableObject);
-          */
+      const target = document.getElementById("fileInput");
+      const tableObject = d3.csv(target);
+      try {
+        /*
+        const stratifiedData = d3.stratify()
+        .id((d) => d.name)
+        .parentId((d) => d.parent)
+        (tableObject);
+        */
 
-          //data = parentToChildren(tableObject);
-          //document.getElementById("outputText").innerHTML = JSON.stringify(data);
-          createTree(data);
-        } catch (error) {
-            document.getElementById("outputText").innerHTML = error;
-        }
+        //data = parentToChildren(tableObject);
+        //document.getElementById("outputText").innerHTML = JSON.stringify(data);
+        createTree(data);
+      } catch (error) {
+          document.getElementById("outputText").innerHTML = error;
       }
+    }
 
       function createTree(data) {
         var treeLayout = d3.tree().size([400, 200]);
@@ -104,44 +97,20 @@
           .attr('x2', function(d) {return d.target.x;})
           .attr('y2', function(d) {return d.target.y;});
 
-          d3.select("svg g.nodes")
-            .selectAll("text.label")
-            .data(root.descendants())
-            .join("text")
-            .classed("label", true)
-            .attr("x", function(d) { return d.x + 15;})
-            .attr("y", function(d) { return d.y + 10;})
-            .text(d => {
-                return d.data.name;
-            });
+        d3.select("svg g.nodes")
+          .selectAll("text.label")
+          .data(root.descendants())
+          .join("text")
+          .classed("label", true)
+          .attr("x", function(d) { return d.x + 15;})
+          .attr("y", function(d) { return d.y + 10;})
+          .text(d => {
+              return d.data.name;
+          });
       }
 
       function parentToChildren(array) {
-        let tree = [], arrayDictionary = {};
-        array.forEach((cat) => {
-        arrayDictionary[cat.id] = cat;
-        arrayDictionary[cat.id]["children"] = [];
-        });
-        // for each entry in the dictionary
-        for (var entry in arrayDictionary) {
 
-          // get all the data for this entry in the dictionary
-          const mappedElem = arrayDictionary[entry];
-
-          // if the element has a parent, add it
-          if (
-            mappedElem.parentid && // the dictionary has a parent
-            arrayDictionary[mappedElem["parent"]] // and that parent exists
-            ) {
-
-            arrayDictionary[mappedElem["parent"]]["children"].push(mappedElem);
-          }
-          // else is at the root level (parentid = null or 0)
-          else {
-            tree.push(mappedElem);
-          }
-        }
-        return tree;
       }
 
       /*
