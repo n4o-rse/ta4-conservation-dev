@@ -2,19 +2,20 @@
 <html>
   <head>
     <title>CSV Hierarchy Visualizer</title>
-    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/d3@7"></script> -->
+    <script src = "d3.v7.js"></script>
   </head>
   <body>
     <h1>CSV Hierarchy Visualizer</h1>
     <label for="httpInput"> URL eingeben: </label>
     <input type="text" id="httpInput" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=tsv" style="width: 1200px;">
     <br>
-    <button onclick = readSheet(0) > Sheet visualisieren </button>
+    <button onclick = readSheet(0) id="sheetButton" > Sheet visualisieren </button>
     <br>
     <br>
-    <input type ="file" id = "fileInput" accept = ".tsv">
+    <input type ="file" id = "fileInput" accept = ".csv">
     <br>
-    <button onclick = readSheet(1) > Datei visualisieren </button>
+    <button onclick = readSheet(1) id = "fileButton" > Datei visualisieren </button>
     <br>
     <div id="output">
       <p id="outputText"> </p>
@@ -29,11 +30,14 @@
     <script>
       async function readSheet(method) {
         if (method == 0) {
-          const tsvData = readSheetFromUrl();
+          let tsvData = await readSheetFromUrl();
+          
         } else {
-          const tsvData = readSheetFromFile();
+          let tsvData = readSheetFromFile();
         }
         //const cleanedTsvData = cleanTableData(tsvData);
+        document.getElementById("sheetButton").innerHTML = tsvData
+        document.getElementById("fileButton").innerHTML = tsvData
 
         const data = {
           "name": "Asia",
@@ -75,7 +79,7 @@
           document.getElementById("outputText").innerHTML = JSON.stringify(tsvData);
           createTree(data);
         } catch (error) {
-            document.getElementById("outputText").innerHTML = error;
+            document.getElementById("outputText").innerHTML = method;
         }
       }
 
@@ -85,9 +89,9 @@
         return data;
       } 
 
-      async function readSheetFromFile() {
+      function readSheetFromFile() {
         const file = document.getElementById("fileInput").files[0];
-        let data = await d3.tsv(file)
+        let data = d3.csv(file)
         return data;
       }
 
