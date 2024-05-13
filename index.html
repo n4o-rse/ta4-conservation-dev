@@ -24,7 +24,7 @@
       </svg>
     </div>
     <script>
-      function await readSheet() {
+      async function readSheet() {
         const target = document.getElementById("httpInput").value;
         const tsvData = await d3.tsv(target)
         //remove all "\r" from text
