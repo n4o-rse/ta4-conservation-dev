@@ -24,7 +24,7 @@
     <script>
       function readSheet() {
         const tsvData = getTableData();
-        const cleanedTsvData = cleanTableData(tsvData);
+        //const cleanedTsvData = cleanTableData(tsvData);
 
         var data = {
           "name": "Asia",
@@ -50,7 +50,7 @@
           ]
         }
         try {
-          document.getElementById("outputText").innerHTML = JSON.stringify(cleanedTsvData);
+          document.getElementById("outputText").innerHTML = JSON.stringify(tsvData);
           createTree(data);
         } catch (error) {
             document.getElementById("outputText").innerHTML = error;
@@ -64,8 +64,8 @@
       } 
 
       function cleanTableData(data) {
-        // delete objects from array where "prefLabel" is empty
-        const cleanedData = data.filter(d => d.prefLabel !== "");
+        // iterate over all rows and remove all columns from array, where prefLabel is empty
+        const cleanedData = data.filter(row => row.prefLabel !== "");
         //remove all "\r" from text
         //const cleanedText = text.replace(/\r/g, "");
         return cleanedData;
