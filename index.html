@@ -4,6 +4,7 @@
     <title>CSV Hierarchy Visualizer</title>
     <!-- <script src="https://cdn.jsdelivr.net/npm/d3@7"></script> -->
     <script src = "d3.v7.js"></script>
+    <script src = "hierarchyVisualizer.js"></script>
   </head>
   <body>
     <h1>CSV Hierarchy Visualizer</h1>
@@ -18,6 +19,8 @@
     <button onclick = readSheet(1) id = "fileButton" > Datei visualisieren </button>
     <br>
     <div id="output">
+      <p id="ignored"> </p>
+      <p id="orphans"> </p>
       <p id="outputText"> </p>
       <p id="errorText"> </p>
       <svg id="outputSVG"> </svg>
@@ -218,17 +221,17 @@ G76B7G		0	Q2	Handlungsempfehlung			Durch einen fachlich qualifizierten Restaurat
 
         let helpText = ""
         if (ignored.length > 0) {
-          helpText = "The following rows were ignored: " + "\n" + JSON.stringify(ignored) + "\n + \n"
+          helpText += "The following rows were ignored: " + "\n" + JSON.stringify(ignored) + "\n\n"
         }
         if (topPosition.length > 0) {
-          helpText = "The following concepts are on top: " + "\n" + JSON.stringify(topPosition) + "\n + \n"
+          helpText += "The following concepts are on top: " + "\n" + JSON.stringify(topPosition) + "\n\n"
         }
 
         if (orphans.length > 0) {
-          helpText = "The following concepts are orphans: " + "\n" + JSON.stringify(orphans) + "\n + \n"
+          helpText += "The following concepts are orphans: " + "\n" + JSON.stringify(orphans) + "\n\n"
         }
 
-        helpText += "The resulting Concept-Array is: " + "\n" + JSON.stringify(toppedData) + "\n+ \n"
+        helpText += "The resulting Concept-Array is: " + "\n" + JSON.stringify(toppedData) + "\n\n"
 
         document.getElementById("outputText").innerHTML = helpText;
 
