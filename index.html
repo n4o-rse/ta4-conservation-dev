@@ -8,15 +8,18 @@
   </head>
   <body>
     <h1>CSV Hierarchy Visualizer</h1>
-    <label for="httpInput"> URL eingeben: </label>
-    <input type="text" id="httpInput" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=tsv" style="width: 1200px;">
+    <!--
+      <label for="httpInput"> URL eingeben: </label>
+      <input type="text" id="httpInput" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=tsv" style="width: 1200px;">
+      <br>
+      <button onclick = readSheet(0) id="sheetButton" > Sheet visualisieren </button>
+      <br>
+      <br>
+    -->
+
+    <input type ="file" id = "fileInput" accept = ".tsv">
+    <button onclick = readSheet() id = "fileButton" > Datei validieren und visualisieren </button>
     <br>
-    <button onclick = readSheet(0) id="sheetButton" > Sheet visualisieren </button>
-    <br>
-    <br>
-    <input type ="file" id = "fileInput" accept = ".csv">
-    <br>
-    <button onclick = readSheet(1) id = "fileButton" > Datei visualisieren </button>
     <br>
     <div id="output">
       <p id="ignored"> </p>
