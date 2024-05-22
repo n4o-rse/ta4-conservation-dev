@@ -1,30 +1,10 @@
-function readSheet() {
-  /*
-  if (method == 0) {
-    let data = await readSheetFromUrl();
-    const tsvData = d3.tsvParse(data) //thesaurus
-  */
-  
-  const data = readSheetFromFile();
-  const tsvData = d3.tsvParse(data)
+async function readSheet() {
 
-  const table = `identifier,concept,parent
-                B51DAF,Ding,top
-                A18D95,Mensch,B51DAF
-                CD5C3F,Frau,A18D95
-                F5G576,Mann,A18D95
-                C4BCF8,Kind,A18D95
-                B5DD1A,Junge,C4BCF8
-                CD3341,Mädchen,C4BCF8
-                A11ACA,Essen,B51DAF
-                GB6DF3,Gemüse,A11ACA
-                C364G1,Obst,A11ACA
-                EB6DF3,Konzept1,ignore
-                E364G1,Konzept2,ignore
-                EB6DF3,,
-                E364G1,,
-                EB6DF4,Aubergine,
-                E364G2,Zuchini,`;
+  const [fileHandle] = await window.showOpenFilePicker();
+  const file = await fileHandle.getFile();
+  const text = await file.text();
+ 
+  const tsvData = d3.tsvParse(text);
 
   const cleanedArray= cleanTableData(tsvData);
   const cleanedTableData = cleanedArray[0];
@@ -45,7 +25,7 @@ function readSheet() {
     }
   } 
 
-  const identifierConcepts = idToName(toppedData)
+  //const identifierConcepts = idToName(toppedData)
 
   document.getElementById("outputText").innerHTML = "The resulting Concept-Array is: " + "\n" + JSON.stringify(identifierConcepts) + "\n" //toppedData
 
@@ -58,19 +38,20 @@ function readSheet() {
   }
 }
 
+/*
 async function readSheetFromUrl() {
   let target = document.getElementById("httpInput").value;
   let data = await d3.tsv(target)
   return data;
 } 
+*/
 
-/*
-async function readSheetFromFile() {
+
+function readSheetFromFile() {
   let file = document.getElementById("fileInput").files[0];
   let data = d3.tsv(file)
   return data;
 }
-*/
 
 function cleanTableData(data) {
   const cleanArray = []
@@ -126,6 +107,7 @@ function topData(data) {
   return [rootArray, topPosition, orphans];
 }
 
+/*
 function idToName(data) {
   const transformationObject = {}
   for (let i = 0; i < data.length; i++) {
@@ -134,6 +116,7 @@ function idToName(data) {
   }
   return transformationObject
 }
+*/
 
 function stratifyData(data) {
   let stratifiedData = d3.stratify()
@@ -175,6 +158,6 @@ function createTree(data) {
     .attr("x", function(d) { return d.x + 15;})
     .attr("y", function(d) { return d.y + 10;})
     .text(d => {
-        return d.data.concept;
+        return d.data.name;
     });
 }
