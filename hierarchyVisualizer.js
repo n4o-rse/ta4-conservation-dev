@@ -26,31 +26,15 @@ async function readSheet() {
   } 
 
   //const identifierConcepts = idToName(toppedData)
-
-  document.getElementById("outputText").innerHTML = "The resulting Concept-Array is: " + "\n" + JSON.stringify(identifierConcepts) + "\n" //toppedData
+  const idObject = idToName(toppedData)
+  //document.getElementById("outputText").innerHTML = "The resulting Concept-Array is: " + "\n" + JSON.stringify(identifierConcepts) + "\n" //toppedData
 
   try {
     const stratifiedData = stratifyData(toppedData)
-    //document.getElementById("outputText").innerHTML = JSON.stringify(stratifiedData);
-    createTree(stratifiedData);
+    createTree(stratifiedData, idObject);
   } catch (error) {
       document.getElementById("errorText").innerHTML = error;
   }
-}
-
-/*
-async function readSheetFromUrl() {
-  let target = document.getElementById("httpInput").value;
-  let data = await d3.tsv(target)
-  return data;
-} 
-*/
-
-
-function readSheetFromFile() {
-  let file = document.getElementById("fileInput").files[0];
-  let data = d3.tsv(file)
-  return data;
 }
 
 function cleanTableData(data) {
@@ -60,10 +44,9 @@ function cleanTableData(data) {
     let row = data[i];
     if (row.parent != "ignore") {
       if (row.prefLabel != "") {
-        //remove whitespace from row.identifier and row.parent
         row.identifier = row.identifier.replace(/\s/g, "");
         row.parent = row.parent.replace(/\s/g, "");
-        row = {"identifier":row.identifier,"concept":row.concept,"parent":row.parent}
+        row = {"identifier":row.identifier,"concept":row.prefLabel,"parent":row.parent}
         cleanArray.push(row);
       }
     }
@@ -89,8 +72,8 @@ function topData(data) {
       topPosition.push(row)
     }
     else if (row.parent == "") {
-      orphans.push(row)
       row.parent = "orphanage"
+      orphans.push(row)
       rootArray.push(row)
     }
     else {
@@ -107,16 +90,21 @@ function topData(data) {
   return [rootArray, topPosition, orphans];
 }
 
-/*
 function idToName(data) {
   const transformationObject = {}
   for (let i = 0; i < data.length; i++) {
     row = data[i];
-    transformationObject.row.identifier = row.concept;
+    transformationObject[row.identifier] = row.concept;
   }
+  /*
+  for (let i = 0; i < data.length; i++) {
+    row = data[i];
+    row.parent = transformationObject[row.parent];
+    row.identifier = transformationObject[row.identifier];
+  }
+  */
   return transformationObject
 }
-*/
 
 function stratifyData(data) {
   let stratifiedData = d3.stratify()
@@ -126,8 +114,10 @@ function stratifyData(data) {
   return stratifiedData;
 }
 
-function createTree(data) {
-  var treeLayout = d3.tree().size([1200, 600]);
+function createTree(data, idObject) {
+  var treeLayout = d3.tree()
+    .size([2000, 1000]) // 1000,500
+    .nodeSize([150, 150]);
   var root = d3.hierarchy(data); //stratifiedData
   treeLayout(root)
   d3.select("svg g.nodes") 
@@ -137,7 +127,7 @@ function createTree(data) {
     .classed("node", true)
     .attr("cx", function(d) { return d.x; })
     .attr("cy", function(d) { return d.y; })
-    .attr("r", 10)
+    .attr("r", 7) //10
 
   d3.select("svg g.links") 
     .selectAll("line.link")
@@ -155,9 +145,9 @@ function createTree(data) {
     .data(root.descendants())
     .join("text")
     .classed("label", true)
-    .attr("x", function(d) { return d.x + 15;})
-    .attr("y", function(d) { return d.y + 10;})
+    .attr("x", function(d) { return d.x - 30;}) // +15
+    .attr("y", function(d) { return d.y - 10;}) // +10
     .text(d => {
-        return d.data.name;
+        return idObject[d.data.id];
     });
 }

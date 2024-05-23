@@ -17,8 +17,11 @@
       <br>
     -->
 
+    <!--
     <input type ="file" id = "fileInput" accept = ".tsv"/>
-    <button onclick = readSheet() id = "fileButton" > Datei validieren und visualisieren </button>
+    -->
+
+    <button onclick = readSheet() id = "fileButton" > Thesaurus-Datei validieren und visualisieren </button>
     <br>
     <br>
     <div id="output">
@@ -28,9 +31,9 @@
       <p id="outputText"> </p>
       <p id="errorText"> </p>
       <br>
-      <svg id="outputSVG"> </svg>
-      <svg width="1000px" height="1000px">
-        <g transform="translate(5, 50)">
+      <!-- <svg id="outputSVG"> </svg> -->
+      <svg width="3000px" height="3000px" preserveAspectRatio="xMidYMid meet"> <!-- width="5000px" height="5000px" -->
+        <g transform="translate(5, 50)"> <!-- 5, 50 -->
             <g class="links"></g>
             <g class="nodes"></g>
         </g>
