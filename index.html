@@ -2,42 +2,48 @@
 <html>
   <head>
     <title>CSV Hierarchy Visualizer</title>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/d3@7"></script> -->
     <script src = "d3.v7.js"></script>
     <script src = "hierarchyVisualizer.js"></script>
   </head>
   <body>
-    <h1>CSV Hierarchy Visualizer</h1>
-    <!--
-      <label for="httpInput"> URL eingeben: </label>
-      <input type="text" id="httpInput" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=tsv" style="width: 1200px;">
-      <br>
-      <button onclick = readSheet(0) id="sheetButton" > Sheet visualisieren </button>
-      <br>
-      <br>
-    -->
-
-    <!--
-    <input type ="file" id = "fileInput" accept = ".tsv"/>
-    -->
-
-    <button onclick = readSheet() id = "fileButton" > Thesaurus-Datei validieren und visualisieren </button>
-    <br>
-    <br>
-    <div id="output">
-      <p id="ignored"> </p>
-      <p id="topped"> </p>
-      <p id="orphans"> </p>
-      <p id="outputText"> </p>
-      <p id="errorText"> </p>
-      <br>
-      <!-- <svg id="outputSVG"> </svg> -->
-      <svg width="3000px" height="3000px" preserveAspectRatio="xMidYMid meet"> <!-- width="5000px" height="5000px" -->
-        <g transform="translate(5, 50)"> <!-- 5, 50 -->
-            <g class="links"></g>
-            <g class="nodes"></g>
-        </g>
-      </svg>
-    </div>
+    <header>
+      <h1>CSV Hierarchy Visualizer</h1>
+      <hr>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="semantics.html">Introduction</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+    </nav>
+    <main>
+      <article> 
+        <section>
+          <br>
+          <button onclick = readSheet() id = "fileButton" > Thesaurus-Datei validieren und visualisieren </button>
+          <br>
+          <br>
+          <div id="output">
+            <p id="ignored"> </p>
+            <p id="topped"> </p>
+            <p id="orphans"> </p>
+            <p id="outputText"> </p>
+            <p id="errorText"> </p>
+            <br>
+            <!--
+            <svg width="3000px" height="3000px" preserveAspectRatio="xMidYMid meet">
+              <g transform="translate(5, 50)">
+                  <g class="links"></g>
+                  <g class="nodes"></g>
+              </g>
+            </svg>
+            -->
+            <chart id="chart"> </chart>
+          </div>
+        </section>
+        <aside> </aside>
+      </article>
+    </main>
+    <footer> </footer>
   </body>
 </html>
