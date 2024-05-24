@@ -111,9 +111,10 @@ function idToName(data) {
       transformationObject[row.identifier] = [row.concept];
     }
   }
-  for (const [key, value] of Object.entries(transformationObject)) {
-    if (value.length > 1) {
-      doublettes.push([key, value]);
+  for (let i = 0; i < transformationObject.length; i++) {
+    let entry = transformationObject[i];
+    if (entry[1].length > 1) {
+      doublettes.push([entry]);
     }
   }
   /*
