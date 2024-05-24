@@ -1,9 +1,12 @@
 async function readSheet() {
 
+  const ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chart"];
+  for (let i = 0; i < ids.length; i++) {
+    document.getElementById(ids[i]).innerHTML = "";
+  }
   const [fileHandle] = await window.showOpenFilePicker();
   const file = await fileHandle.getFile();
   const text = await file.text();
- 
   const tsvData = d3.tsvParse(text);
 
   const cleanedArray= cleanTableData(tsvData);
@@ -117,13 +120,6 @@ function idToName(data) {
       doublettes.push([entry]);
     }
   }
-  /*
-  for (let i = 0; i < data.length; i++) {
-    row = data[i];
-    row.parent = transformationObject[row.parent];
-    row.identifier = transformationObject[row.identifier];
-  }
-  */
   return [transformationObject, doublettes];
 }
 
@@ -135,51 +131,13 @@ function stratifyData(data) {
   return stratifiedData;
 }
 
-function createTree(data, idObject) {
-  var treeLayout = d3.tree()
-    .size([2000, 1000]) // 1000,500 wird ignoriert, wenn .nodeSize verwendet wird...
-    .nodeSize([150, 150]);
-  var root = d3.hierarchy(data); //stratifiedData
-  treeLayout(root)
-  d3.select("svg g.nodes") 
-    .selectAll("circle.node")
-    .data(root.descendants())
-    .join("circle")
-    .classed("node", true)
-    .attr("cx", function(d) { return d.x; })
-    .attr("cy", function(d) { return d.y; })
-    .attr("r", 7) //10
-
-  d3.select("svg g.links") 
-    .selectAll("line.link")
-    .data(root.links())
-    .join("line")
-    .classed("link", true)
-    .style("stroke", "black")
-    .attr('x1', function(d) {return d.source.x;})
-    .attr('y1', function(d) {return d.source.y;})
-    .attr('x2', function(d) {return d.target.x;})
-    .attr('y2', function(d) {return d.target.y;});
-
-  d3.select("svg g.nodes")
-    .selectAll("text.label")
-    .data(root.descendants())
-    .join("text")
-    .classed("label", true)
-    .attr("x", function(d) { return d.x - 30;}) // +15
-    .attr("y", function(d) { return d.y - 10;}) // +10
-    .text(d => {
-        return idObject[d.data.id[0]];
-    });
-}
-
 function createTidyTree(data, idObject) {
-  const width = 1000; //928
+  const width = 2000; //928
 
   // Compute the tree height; this approach will allow the height of the
   // SVG to scale according to the breadth (width) of the tree layout.
   const root = d3.hierarchy(data);
-  const dx = 10;
+  const dx = 25; // 10
   const dy = width / (root.height+1);
 
   // Create a tree layout.
