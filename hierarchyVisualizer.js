@@ -16,7 +16,7 @@ async function readSheet() {
   const orphans = toppedArray[2];
 
   const hints = [{variable:ignored, id:"ignored"}, {variable:topPosition, id:"topped"}, {variable:orphans, id:"orphans"}];
-  const strings = ["rows were ignored: ", "concepts are on top: ","concepts are orphans: "];
+  const strings = ["concepts were ignored: ", "concepts are on top: ","concepts are orphans: "];
 
   for (let i = 0; i < hints.length; i++) {
     hintObject = hints[i]
@@ -26,16 +26,22 @@ async function readSheet() {
   } 
 
   //const identifierConcepts = idToName(toppedData)
-  const idObject = idToName(toppedData)
+  const idArray = idToName(toppedData)
+  const idObject = idArray[0]
+  const doublettes = idArray[1]
   //document.getElementById("outputText").innerHTML = "The resulting Concept-Array is: " + "\n" + JSON.stringify(identifierConcepts) + "\n" //toppedData
-
-  try {
-    const stratifiedData = stratifyData(toppedData)
-    //createTree(stratifiedData, idObject);
-    const svg = createTidyTree(stratifiedData, idObject);
-    document.getElementById("chart").innerHTML = svg.outerHTML;
-  } catch (error) {
-      document.getElementById("errorText").innerHTML = error;
+  if (doublettes.length < 1) {
+    try {
+      const stratifiedData = stratifyData(toppedData)
+      //createTree(stratifiedData, idObject);
+      const svg = createTidyTree(stratifiedData, idObject);
+      document.getElementById("chart").innerHTML = svg.outerHTML;
+    } catch (error) {
+        document.getElementById("errorText").innerHTML = error;
+    }
+  }
+  else {
+    document.getElementById("errorText").innerHTML = "There are doublettes in the identifiers: " + JSON.stringify(doublettes);
   }
 }
 
@@ -94,9 +100,21 @@ function topData(data) {
 
 function idToName(data) {
   const transformationObject = {}
+  const doublettes = []
   for (let i = 0; i < data.length; i++) {
     row = data[i];
-    transformationObject[row.identifier] = row.concept;
+    if (row.identifier in transformationObject) {
+      transformationObject[row.identifier].push(row.concept);
+
+    }
+    else {
+      transformationObject[row.identifier] = [row.concept];
+    }
+  }
+  for (const [key, value] of Object.entries(transformationObject)) {
+    if (value.length > 1) {
+      doublettes.push([key, value]);
+    }
   }
   /*
   for (let i = 0; i < data.length; i++) {
@@ -105,7 +123,7 @@ function idToName(data) {
     row.identifier = transformationObject[row.identifier];
   }
   */
-  return transformationObject
+  return transformationObject, doublettes;
 }
 
 function stratifyData(data) {
@@ -150,18 +168,18 @@ function createTree(data, idObject) {
     .attr("x", function(d) { return d.x - 30;}) // +15
     .attr("y", function(d) { return d.y - 10;}) // +10
     .text(d => {
-        return idObject[d.data.id];
+        return idObject[d.data.id[0]];
     });
 }
 
 function createTidyTree(data, idObject) {
-  const width = 928;
+  const width = 1000; //928
 
   // Compute the tree height; this approach will allow the height of the
   // SVG to scale according to the breadth (width) of the tree layout.
   const root = d3.hierarchy(data);
   const dx = 10;
-  const dy = width / (root.height + 1);
+  const dy = width / (root.height+1);
 
   // Create a tree layout.
   const tree = d3.tree().nodeSize([dx, dy]);
