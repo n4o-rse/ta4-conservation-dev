@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thesaurus TSV Validation and Visualization</title>
+    <script src = "d3.v7.js"></script>
+    <script src = "hierarchyVisualizer.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>CSV Hierarchy Visualizer</h1>
+      <hr>
+    </header>
+    <nav>
+      <a href="index.html">Introduction</a>
+      <a href="Thesaurus.html">Thesaurus</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <main>
+      <article> 
+        <section>
+          <br>
+          <button onclick = readSheet() id = "fileButton" > Thesaurus-Datei validieren und visualisieren </button>
+          <br>
+          <br>
+          <div id="output">
+            <p id="ignored"> </p>
+            <p id="topped"> </p>
+            <p id="orphans"> </p>
+            <p id="outputText"> </p>
+            <p id="errorText"> </p>
+            <br>
+            <chart id="chart" style="width: 100%"> </chart> <!-- ; height: 100%;" -->
+            
+          </div>
+        </section>
+        <aside> </aside>
+      </article>
+    </main>
+    <footer> </footer>
+  </body>
+</html>
