@@ -41,7 +41,7 @@ async function readSheet() {
     }
   }
   else {
-    document.getElementById("errorText").innerHTML = "There are doublettes in the identifiers: " + JSON.stringify(doublettes);
+    document.getElementById("errorText").innerHTML = "ERROR! There are doublettes in the identifiers: " + JSON.stringify(doublettes);
   }
 }
 
@@ -123,7 +123,7 @@ function idToName(data) {
     row.identifier = transformationObject[row.identifier];
   }
   */
-  return transformationObject, doublettes;
+  return [transformationObject, doublettes];
 }
 
 function stratifyData(data) {
