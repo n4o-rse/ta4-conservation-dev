@@ -1,9 +1,5 @@
 async function readSheet() {
-
-  const ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chart", "doublettes", "missingParents"];
-  for (let i = 0; i < ids.length; i++) {
-    document.getElementById(ids[i]).innerHTML = "";
-  }
+  resetOutput();
   const [fileHandle] = await window.showOpenFilePicker();
   const file = await fileHandle.getFile();
   const text = await file.text();
@@ -18,8 +14,8 @@ async function readSheet() {
   const topPosition = toppedArray[1];
   const orphans = toppedArray[2];
 
-  const hints = [{variable:ignored, id:"ignored"}, {variable:topPosition, id:"topped"}, {variable:orphans, id:"orphans"}];
-  const strings = ["concepts were ignored: ", "concepts are on top: ","concepts are orphans: "];
+  const hints = [{variable:ignored, id:"ignored"}, {variable:orphans, id:"orphans"}]; //{variable:topPosition, id:"topped"},
+  const strings = ["concepts were ignored: ","concepts are orphans: "]; //, "concepts are on top: "
 
   for (let i = 0; i < hints.length; i++) {
     hintObject = hints[i]
@@ -38,15 +34,102 @@ async function readSheet() {
   if (missingParents.length > 0) {
     document.getElementById("missingParents").innerHTML = "ERROR! The parents of the following concepts are missing : " + JSON.stringify(missingParents);
   }
-  //document.getElementById("outputText").innerHTML = "idObject : " + JSON.stringify(idObject);
   if ((doublettes.length < 1) && (missingParents.length < 1)) {
     try {
-      const stratifiedData = stratifyData(toppedData)
-      const svg = createTidyTree(stratifiedData, idObject);
-      document.getElementById("chart").innerHTML = svg.outerHTML;
+      document.getElementById("fileButton").innerHTML = "Neue Tabelle validieren";
+      const stratifiedData = stratifyData(toppedData);
+      document.getElementById("outputText").innerHTML = "Data successfully validated. \n";
+      //create radio element to select visualization type
+      const radioDiv = document.createElement("div");
+      radioDiv.id = "radioDiv";
+      radioDiv.innerHTML = "Select visualization type: ";
+      const radioTypes = ["Tidy tree", "Cluster tree"];
+      for (let i = 0; i < radioTypes.length; i++) {
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "visualizationType";
+        radio.value = radioTypes[i];
+        radio.id = radioTypes[i];
+        radioDiv.appendChild(radio);
+        const label = document.createElement("label");
+        label.htmlFor = radioTypes[i];
+        label.innerHTML = radioTypes[i];
+        radioDiv.appendChild(label);
+      }
+      const button = document.createElement("button");
+      button.id = "visualizeButton";
+      button.innerHTML = "Tabelle visualisieren";
+      button.onclick = function() {visualizeData([stratifiedData, idObject])};
+      document.getElementById("chart").before(button);
+      const lineBreak = document.createElement("br");
+      document.getElementById("visualizeButton").before(radioDiv);
+      document.getElementById("Tidy tree").checked = true;
+      document.getElementById("visualizeButton").before(lineBreak);
+
+      return [stratifiedData, idObject];
     } 
     catch (error) {
       document.getElementById("errorText").innerHTML = error;
+    }
+  }
+
+}
+
+function visualizeData([stratifiedData, idObject]) {
+  const visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
+  let svg;
+  try {
+    // check if visualization type has value "Tidy tree" or "Cluster tree"
+    if (visualizationType == "Tidy tree" || visualizationType == "Cluster tree") {
+      svg = createTidyTree(stratifiedData, idObject, visualizationType);
+      document.getElementById("chart").innerHTML = svg.outerHTML;
+      // create button to download svg file if no element with id "downloadButton" exists
+      if (!document.getElementById("downloadButton")) {
+        const button = document.createElement("button");
+        button.id = "downloadButton";
+        button.innerHTML = "Download Visualization";
+        button.onclick = function() {downloadSvg(svg)};
+        document.getElementById("chart").after(button);
+      }
+    }
+  } 
+  catch (error) {
+    document.getElementById("errorText").innerHTML = error;
+  }
+
+}
+
+function downloadSvg(svg) {
+  const visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
+  const svgString = new XMLSerializer().serializeToString(svg);
+  const blob = new Blob([svgString], {type: "image/svg+xml"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = visualizationType + ".svg";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+function resetOutput() {
+  const ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chart", "doublettes", "missingParents"]; //
+  for (let i = 0; i < ids.length; i++) {
+    try {
+      document.getElementById(ids[i]).innerHTML = "";
+    }
+    catch (error) {
+      //ignore console.log(error);
+    }
+  }
+  document.getElementById("fileButton").innerHTML = "Tabelle validieren";
+  let elements = ["visualizeButton", "radioDiv", "lineBreak", "downloadButton"]
+  for (let i = 0; i < elements.length; i++) {
+    try {
+      document.getElementById(elements[i]).remove();
+    }
+    catch (error) {
+      // ignore console.log(error);
     }
   }
 }
@@ -141,8 +224,9 @@ function stratifyData(data) {
   return stratifiedData;
 }
 
-function createTidyTree(data, idObject) {
+function createTidyTree(data, idObject, visualizationType) {
   const width = 2000; //928
+  let tree = d3.tree();
 
   // Compute the tree height; this approach will allow the height of the
   // SVG to scale according to the breadth (width) of the tree layout.
@@ -151,7 +235,13 @@ function createTidyTree(data, idObject) {
   const dy = width / (root.height+1);
 
   // Create a tree layout.
-  const tree = d3.tree().nodeSize([dx, dy]);
+  if (visualizationType == "Tidy tree") {
+    tree = d3.tree().nodeSize([dx, dy]);
+  }
+  if (visualizationType == "Cluster tree") {
+    tree = d3.cluster().nodeSize([dx, dy]);
+  }
+  //const tree = d3.tree().nodeSize([dx, dy]);
 
   // Sort the tree and apply the layout.
   root.sort((a, b) => d3.ascending(a.data.id, b.data.id));

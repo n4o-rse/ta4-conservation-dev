@@ -19,11 +19,8 @@
       <article> 
         <section>
           <h2>Thesaurus validation and visualization</h2>
-          <br>
-          <button onclick = readSheet() id = "fileButton" > Thesaurus-Datei validieren und visualisieren </button>
-          <br>
-          <br>
           <div id="output">
+            <button onclick = readSheet() id = "fileButton" >Tabelle validieren</button>
             <p id="ignored"> </p>
             <p id="topped"> </p>
             <p id="orphans"> </p>
@@ -31,9 +28,7 @@
             <p id="doublettes"> </p>
             <p id="missingParents"> </p>
             <p id="errorText"> </p>
-            <br>
-            <chart id="chart" style="width: 100%"> </chart> <!-- ; height: 100%;" -->
-            
+            <chart id="chart" style="width: 100%"> </chart>
           </div>
         </section>
         <aside> </aside>
@@ -41,4 +36,5 @@
     </main>
     <footer> </footer>
   </body>
+  <!-- <button onclick = function() {visualizeData([stratifiedData, idObject])} id = "visualizeButton" > Tabelle visualisieren </button> -->
 </html>
