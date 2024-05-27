@@ -1,6 +1,6 @@
 async function readSheet() {
 
-  const ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chart"];
+  const ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chart", "doublettes", "missingParents"];
   for (let i = 0; i < ids.length; i++) {
     document.getElementById(ids[i]).innerHTML = "";
   }
@@ -28,23 +28,26 @@ async function readSheet() {
     }
   } 
 
-  //const identifierConcepts = idToName(toppedData)
   const idArray = idToName(toppedData)
   const idObject = idArray[0]
   const doublettes = idArray[1]
-  //document.getElementById("outputText").innerHTML = "The resulting Concept-Array is: " + "\n" + JSON.stringify(identifierConcepts) + "\n" //toppedData
-  if (doublettes.length < 1) {
+  const missingParents = idArray[2]
+  if (doublettes.length > 0) {
+    document.getElementById("doublettes").innerHTML = "ERROR! There are doublettes in the identifiers: " + JSON.stringify(doublettes);
+  }
+  if (missingParents.length > 0) {
+    document.getElementById("missingParents").innerHTML = "ERROR! The parents of the following concepts are missing : " + JSON.stringify(missingParents);
+  }
+  //document.getElementById("outputText").innerHTML = "idObject : " + JSON.stringify(idObject);
+  if ((doublettes.length < 1) && (missingParents.length < 1)) {
     try {
       const stratifiedData = stratifyData(toppedData)
-      //createTree(stratifiedData, idObject);
       const svg = createTidyTree(stratifiedData, idObject);
       document.getElementById("chart").innerHTML = svg.outerHTML;
-    } catch (error) {
-        document.getElementById("errorText").innerHTML = error;
+    } 
+    catch (error) {
+      document.getElementById("errorText").innerHTML = error;
     }
-  }
-  else {
-    document.getElementById("errorText").innerHTML = "ERROR! There are doublettes in the identifiers: " + JSON.stringify(doublettes);
   }
 }
 
@@ -57,6 +60,7 @@ function cleanTableData(data) {
       if (row.prefLabel != "") {
         row.identifier = row.identifier.replace(/\s/g, "");
         row.parent = row.parent.replace(/\s/g, "");
+        row.prefLabel = row.prefLabel.replace(/\s/g, "");
         row = {"identifier":row.identifier,"concept":row.prefLabel,"parent":row.parent}
         cleanArray.push(row);
       }
@@ -104,8 +108,9 @@ function topData(data) {
 function idToName(data) {
   const transformationObject = {}
   const doublettes = []
+  const missingParents = []
   for (let i = 0; i < data.length; i++) {
-    row = data[i];
+    let row = data[i];
     if (row.identifier in transformationObject) {
       transformationObject[row.identifier].push(row.concept);
 
@@ -114,13 +119,18 @@ function idToName(data) {
       transformationObject[row.identifier] = [row.concept];
     }
   }
-  for (let i = 0; i < transformationObject.length; i++) {
-    let entry = transformationObject[i];
-    if (entry[1].length > 1) {
-      doublettes.push([entry]);
+  for (let key in transformationObject) {
+    if (transformationObject[key].length > 1) {
+      doublettes.push([key, transformationObject[key]]);
     }
   }
-  return [transformationObject, doublettes];
+  for (let i = 0; i < data.length; i++) {
+    row = data[i];
+    if (!(row.parent in transformationObject) && !(row.parent == "")) {
+      missingParents.push(row);
+    }
+  }
+  return [transformationObject, doublettes, missingParents];
 }
 
 function stratifyData(data) {
