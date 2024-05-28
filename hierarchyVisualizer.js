@@ -43,7 +43,7 @@ async function readSheet() {
       const radioDiv = document.createElement("div");
       radioDiv.id = "radioDiv";
       radioDiv.innerHTML = "Select visualization type: ";
-      const radioTypes = ["Tidy tree", "Cluster tree"];
+      const radioTypes = ["Tidy tree", "Cluster tree", "Radial tidy tree", "Radial cluster tree"]; //, "Sunburst"
       for (let i = 0; i < radioTypes.length; i++) {
         const radio = document.createElement("input");
         radio.type = "radio";
@@ -65,14 +65,12 @@ async function readSheet() {
       document.getElementById("visualizeButton").before(radioDiv);
       document.getElementById("Tidy tree").checked = true;
       document.getElementById("visualizeButton").before(lineBreak);
-
       return [stratifiedData, idObject];
     } 
     catch (error) {
       document.getElementById("errorText").innerHTML = error;
     }
   }
-
 }
 
 function visualizeData([stratifiedData, idObject]) {
@@ -83,20 +81,31 @@ function visualizeData([stratifiedData, idObject]) {
     if (visualizationType == "Tidy tree" || visualizationType == "Cluster tree") {
       svg = createTidyTree(stratifiedData, idObject, visualizationType);
       document.getElementById("chart").innerHTML = svg.outerHTML;
-      // create button to download svg file if no element with id "downloadButton" exists
-      if (!document.getElementById("downloadButton")) {
-        const button = document.createElement("button");
-        button.id = "downloadButton";
-        button.innerHTML = "Download Visualization";
-        button.onclick = function() {downloadSvg(svg)};
-        document.getElementById("chart").after(button);
-      }
+    }
+    if (visualizationType == "Radial tidy tree") {
+      svg = generateRadialTidyTree(stratifiedData, idObject);
+      document.getElementById("chart").innerHTML = svg.outerHTML;
+    }
+    if (visualizationType == "Radial cluster tree") {
+      svg = generateRadialClusterTree(stratifiedData, idObject);
+      document.getElementById("chart").innerHTML = svg.outerHTML;
+    }
+    if (visualizationType == "Sunburst") {
+      svg = generateSunburst(stratifiedData, idObject);
+      document.getElementById("chart").innerHTML = svg.outerHTML;
+    }
+    // create button to download svg file if no element with id "downloadButton" exists
+    if (!document.getElementById("downloadButton")) {
+      const button = document.createElement("button");
+      button.id = "downloadButton";
+      button.innerHTML = "Download Visualization";
+      button.onclick = function() {downloadSvg(svg)};
+      document.getElementById("chart").after(button);
     }
   } 
   catch (error) {
     document.getElementById("errorText").innerHTML = error;
   }
-
 }
 
 function downloadSvg(svg) {
@@ -222,81 +231,4 @@ function stratifyData(data) {
     .parentId((d) => d.parent)
   (data);
   return stratifiedData;
-}
-
-function createTidyTree(data, idObject, visualizationType) {
-  const width = 2000; //928
-  let tree = d3.tree();
-
-  // Compute the tree height; this approach will allow the height of the
-  // SVG to scale according to the breadth (width) of the tree layout.
-  const root = d3.hierarchy(data);
-  const dx = 25; // 10
-  const dy = width / (root.height+1);
-
-  // Create a tree layout.
-  if (visualizationType == "Tidy tree") {
-    tree = d3.tree().nodeSize([dx, dy]);
-  }
-  if (visualizationType == "Cluster tree") {
-    tree = d3.cluster().nodeSize([dx, dy]);
-  }
-  //const tree = d3.tree().nodeSize([dx, dy]);
-
-  // Sort the tree and apply the layout.
-  root.sort((a, b) => d3.ascending(a.data.id, b.data.id));
-  tree(root);
-
-  // Compute the extent of the tree. Note that x and y are swapped here
-  // because in the tree layout, x is the breadth, but when displayed, the
-  // tree extends right rather than down.
-  let x0 = Infinity;
-  let x1 = -x0;
-  root.each(d => {
-    if (d.x > x1) x1 = d.x;
-    if (d.x < x0) x0 = d.x;
-  });
-
-  // Compute the adjusted height of the tree.
-  const height = x1 - x0 + dx * 2;
-
-  const svg = d3.create("svg")
-      .attr("width", width)
-      .attr("height", height)
-      .attr("viewBox", [-dy / 3, x0 - dx, width, height])
-      .attr("style", "max-width: 100%; height: auto; font: 10px sans-serif;");
-
-  const link = svg.append("g")
-      .attr("fill", "none")
-      .attr("stroke", "#555")
-      .attr("stroke-opacity", 0.4)
-      .attr("stroke-width", 1.5)
-    .selectAll()
-      .data(root.links())
-      .join("path")
-        .attr("d", d3.linkHorizontal()
-            .x(d => d.y)
-            .y(d => d.x));
-  
-  const node = svg.append("g")
-      .attr("stroke-linejoin", "round")
-      .attr("stroke-width", 3)
-    .selectAll()
-    .data(root.descendants())
-    .join("g")
-      .attr("transform", d => `translate(${d.y},${d.x})`);
-
-  node.append("circle")
-      .attr("fill", d => d.children ? "#555" : "#999")
-      .attr("r", 2.5);
-
-  node.append("text")
-      .attr("dy", "0.31em")
-      .attr("x", d => d.children ? -6 : 6)
-      .attr("text-anchor", d => d.children ? "end" : "start")
-      .text(d => idObject[d.data.id])
-      .attr("stroke", "white")
-      .attr("paint-order", "stroke");
-  
-  return svg.node();
 }
