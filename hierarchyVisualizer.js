@@ -1,33 +1,70 @@
 async function readSheet() {
   resetOutput();
-  const [fileHandle] = await window.showOpenFilePicker();
-  const file = await fileHandle.getFile();
-  const text = await file.text();
-  const tsvData = d3.tsvParse(text);
+  let [fileHandle] = await window.showOpenFilePicker();
+  let file = await fileHandle.getFile();
+  let text = await file.text();
+  let Data 
+  if (file.name.endsWith(".csv")) {
+    Data = d3.csvParse(text);
+  }
+  if (file.name.endsWith(".tsv")) {
+    Data = d3.tsvParse(text);
+  }
+  let cleanedArray= cleanTableData(Data);
+  let cleanedTableData = cleanedArray[0];
+  let ignored = cleanedArray[1];
 
-  const cleanedArray= cleanTableData(tsvData);
-  const cleanedTableData = cleanedArray[0];
-  const ignored = cleanedArray[1];
+  let toppedArray = topData(cleanedTableData);
+  let toppedData = toppedArray[0];
+  //const topPosition = toppedArray[1];
+  let orphans = toppedArray[2];
 
-  const toppedArray = topData(cleanedTableData);
-  const toppedData = toppedArray[0];
-  const topPosition = toppedArray[1];
-  const orphans = toppedArray[2];
+  let idArray = idToName(toppedData)
+  let idObject = idArray[0]
+  let doublettes = idArray[1]
+  let missingParents = idArray[2]
+  validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]);
+}
 
+function readExample() {
+  resetOutput();
+  let bibleCSV = `identifier,prefLabel,parent
+  Eve,Eve,top
+  Cain,Cain,Eve
+  Seth,Seth,Eve
+  Enos,Enos,Seth
+  Noam,Noam,Seth
+  Abel,Abel,Eve
+  Awan,Awan,Eve
+  Enoch,Enoch,Awan
+  Azura,Azura,Eve`;
+  let csvData = d3.csvParse(bibleCSV);
+  let exampleData = csvData
+  let cleanedArray= cleanTableData(exampleData);
+  let cleanedTableData = cleanedArray[0];
+  let ignored = cleanedArray[1];
+
+  let toppedArray = topData(cleanedTableData);
+  let toppedData = toppedArray[0];
+  //const topPosition = toppedArray[1];
+  let orphans = toppedArray[2];
+
+  let idArray = idToName(toppedData)
+  let idObject = idArray[0]
+  let doublettes = idArray[1]
+  let missingParents = idArray[2]
+  validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]);
+}
+
+function validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]) {
   const hints = [{variable:ignored, id:"ignored"}, {variable:orphans, id:"orphans"}]; //{variable:topPosition, id:"topped"},
   const strings = ["concepts were ignored: ","concepts are orphans: "]; //, "concepts are on top: "
-
   for (let i = 0; i < hints.length; i++) {
     hintObject = hints[i]
     if (hintObject.variable.length > 0) {
       document.getElementById(hintObject.id).innerHTML = "The following " + strings[i] + "\n" + JSON.stringify(hintObject.variable) + "\n";
     }
   } 
-
-  const idArray = idToName(toppedData)
-  const idObject = idArray[0]
-  const doublettes = idArray[1]
-  const missingParents = idArray[2]
   if (doublettes.length > 0) {
     document.getElementById("doublettes").innerHTML = "ERROR! There are doublettes in the identifiers: " + JSON.stringify(doublettes);
   }
@@ -61,7 +98,14 @@ async function readSheet() {
       button.innerHTML = "Tabelle visualisieren";
       button.onclick = function() {visualizeData([stratifiedData, idObject])};
       document.getElementById("chart").before(button);
+      try {
+        document.getElementById("lineBreak").remove();
+      }
+      catch (error) {
+        // ignore console.log(error);
+      }
       const lineBreak = document.createElement("br");
+      lineBreak.id = "lineBreak";
       document.getElementById("visualizeButton").before(radioDiv);
       document.getElementById("Tidy tree").checked = true;
       document.getElementById("visualizeButton").before(lineBreak);
@@ -70,6 +114,9 @@ async function readSheet() {
     catch (error) {
       document.getElementById("errorText").innerHTML = error;
     }
+  }
+  else {
+    document.getElementById("outputText").innerHTML = "Data invalid. \n";
   }
 }
 

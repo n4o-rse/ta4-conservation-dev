@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Knowledge management FAIRification tool for conservation and restoration processes</title>
+  </head>
+  <body>
+    <header>
+      <h1>Knowledge management FAIRification tool for conservation and restoration processes</h1>
+      <hr>
+    </header>
+    <nav>
+      <a href="index.html">Introduction</a>
+      <a href="thesaurus.html">Thesaurus</a>
+      <a href="contact.html">Contact</a>
+      <br>
+      <center>
+        <img src="CSV-Image.svg" alt="RRZEicons  CC BY-SA 3.0 Deed" height="150" title="RRZEicons  CC BY-SA 3.0 Deed" img>
+      </center>
+    </nav>
+    <main>
+      <article> 
+        <section>
+          <h2>Tabellen Schema</h2>
+          <p>Folgendes Tabellenschema muss verwendet werden, damit Dateien validiert und visualisiert werden können.</p>
+            <table>
+                <tr>
+                <th>identifier</th>
+                <th>prefLabel</th>
+                <th>parent</th>
+                </tr>
+                <tr>
+                <td>X85C</td>
+                <td>food</td>
+                <td>top</td>
+                </tr>
+                <tr>
+                <td>437D</td>
+                <td>vegetables</td>
+                <td>X85C</td>
+                </tr>
+            </table>
+            <br>
+            <p>
+                Die Begriffe, die am höchsten in der Hierarchie sind, müssen in der Spalte "parent" den Wert "top" haben. 
+                Begriffe niedriger in der Hierarchie müssen in der Spalte "parent" den identifier des übergeordneten Begriffs aufweisen.
+                Der in der Visualisierung verwendete Name des Begriffs wird in der Spalte "prefLabel" bestimmt.
+                Damit die Validierung erfolgreich ist und die Tabelle anschließend hierarchisch visualisiert werden kann, müssen identifier eindeutig sein, also nicht häufiger als einmal vorkommen.
+                Außerdem müssen alle in der Spalte "parent" referenzierten identifier in der Spalte "identifier" vorkommen.
+            </p>
+        </section>
+        <aside> </aside>
+      </article>
+    </main>
+    <footer> </footer>
+  </body>
+</html>

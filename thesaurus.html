@@ -17,15 +17,18 @@
       <a href="contact.html">Contact</a>
       <br>
       <center>
-        <img src="CSV-Image.svg" alt="RRZEicons  CC BY-SA 3.0 Deed" height="300" title="RRZEicons  CC BY-SA 3.0 Deed" img>
+        <img src="CSV-Image.svg" alt="RRZEicons  CC BY-SA 3.0 Deed" height="150" title="RRZEicons  CC BY-SA 3.0 Deed" img>
       </center>
     </nav>
     <main>
       <article> 
         <section>
-          <h2>Thesaurus validation and visualization</h2>
+          <h2>Hierarchical Vocabulary validation and visualization</h2>
+          <p>CSV/TSV-Datei validieren oder Beispieldatensatz verwenden.</p>
+          <p>Eigene Dateien müssen folgendem<a href="schema.html"> Tabellenschema </a>entsprechen.</p>
           <div id="output">
             <button onclick = readSheet() id = "fileButton" >Tabelle validieren</button>
+            <button onclick = readExample() id = "exampleButton" >Beispiel laden</button>
             <p id="ignored"> </p>
             <p id="topped"> </p>
             <p id="orphans"> </p>
@@ -41,5 +44,4 @@
     </main>
     <footer> </footer>
   </body>
-  <!-- <button onclick = function() {visualizeData([stratifiedData, idObject])} id = "visualizeButton" > Tabelle visualisieren </button> -->
 </html>
