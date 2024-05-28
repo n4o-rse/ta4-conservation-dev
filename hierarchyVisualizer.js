@@ -76,6 +76,8 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       document.getElementById("fileButton").innerHTML = "Neue Tabelle validieren";
       const stratifiedData = stratifyData(toppedData);
       document.getElementById("outputText").innerHTML = "Data successfully validated. \n";
+      //make outputText green
+      document.getElementById("outputText").style.color = "green";
       //create radio element to select visualization type
       const radioDiv = document.createElement("div");
       radioDiv.id = "radioDiv";
@@ -117,6 +119,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
   }
   else {
     document.getElementById("outputText").innerHTML = "Data invalid. \n";
+    document.getElementById("outputText").style.color = "red";
   }
 }
 
@@ -188,6 +191,8 @@ function resetOutput() {
       // ignore console.log(error);
     }
   }
+  //return to default color
+  document.getElementById("outputText").style.color = "black";
 }
 
 function cleanTableData(data) {
