@@ -10,7 +10,7 @@
     </header>
     <nav>
       <a href="index.html">Introduction</a>
-      <a href="thesaurus.html">Thesaurus</a>
+      <a href="vocabulary.html">Vocabulary</a>
       <a href="contact.html">Contact</a>
       <br>
       <center>
@@ -40,13 +40,28 @@
                 </tr>
             </table>
             <br>
-            <p>
-                Die Begriffe, die am höchsten in der Hierarchie sind, müssen in der Spalte "parent" den Wert "top" haben. 
-                Begriffe niedriger in der Hierarchie müssen in der Spalte "parent" den identifier des übergeordneten Begriffs aufweisen.
-                Der in der Visualisierung verwendete Name des Begriffs wird in der Spalte "prefLabel" bestimmt.
-                Damit die Validierung erfolgreich ist und die Tabelle anschließend hierarchisch visualisiert werden kann, müssen identifier eindeutig sein, also nicht häufiger als einmal vorkommen.
-                Außerdem müssen alle in der Spalte "parent" referenzierten identifier in der Spalte "identifier" vorkommen.
-            </p>
+                <!-- make a list -->
+              <ul>
+                <li>Die Begriffe, die am höchsten in der Hierarchie sind, müssen in der Spalte "parent" den Wert "top" haben.</li> 
+                <li>Begriffe niedriger in der Hierarchie müssen in der Spalte "parent" den identifier des übergeordneten Begriffs aufweisen.</li>
+                <li>Der in der Visualisierung verwendete Name des Begriffs wird in der Spalte "prefLabel" bestimmt.</li>
+                <li>Damit die Validierung erfolgreich ist und die Tabelle anschließend hierarchisch visualisiert werden kann, müssen identifier eindeutig sein, also nicht häufiger als einmal vorkommen.</li>
+                <li>Außerdem müssen alle in der Spalte "parent" referenzierten identifier in der Spalte "identifier" vorkommen.</li>
+              </ul>
+              <p> Das Schema dient zunächst der Entwicklung einer Begriffshierarchie. Dieses wird zukünftig dem Simple Knowledge Organization System (SKOS) Standard entsprechen.</p>
+              <br>
+              <button onclick="downloadExample()">CSV-Datei des Schemas</button>
+              <script>
+                function downloadExample() {
+                  var csv = 'identifier,prefLabel,parent\nX85C,food,top\n437D,vegetables,X85C';
+                  var blob = new Blob([csv], { type: 'text/csv' });
+                  var url = window.URL.createObjectURL(blob);
+                  var a = document.createElement('a');
+                  a.href = url;
+                  a.download = 'schema.csv';
+                  a.click();
+                }
+              </script>
         </section>
         <aside> </aside>
       </article>
