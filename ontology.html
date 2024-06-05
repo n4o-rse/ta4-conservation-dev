@@ -2,9 +2,30 @@
 <html>
   <head>
     <title>Knowledge management FAIRification tool for conservation and restoration processes</title>
-    <script src = "d3.v7.js"></script>
-    <script src = "hierarchyVisualizer.js"></script>
-    <script src = "visualizationMethods.js"></script>
+    <script src = "js/vis.min.js"></script>
+    <script>
+      function readOntology() {
+        var ontologyString = '{"nodes": [{"id": "http://www.conservationontology.com/conservationontology.owl#Materialanalyse", "label": "Materialanalyse"}, {"id": "http://www.conservationontology.com/conservationontology.owl#Objektuntersuchung", "label": "Objektuntersuchung"}, {"id": "http://www.conservationontology.com/conservationontology.owl#Schadensursache", "label": "Schadensursache"}, {"id": "http://www.conservationontology.com/conservationontology.owl#technischesGer\u00c3\u00a4t", "label": "technischesGer\u00c3\u00a4t"}, {"id": "http://www.conservationontology.com/conservationontology.owl#Ergebnis", "label": "Ergebnis"}, {"id": "http://www.conservationontology.com/conservationontology.owl#Restaurierungskonzept", "label": "Restaurierungskonzept"}, {"id": "http://www.conservationontology.com/conservationontology.owl#manuellesWerkzeug", "label": "manuellesWerkzeug"}, {"id": "http://www.conservationontology.com/conservationontology.owl#RestauratorIn", "label": "RestauratorIn"}, {"id": "http://www.conservationontology.com/conservationontology.owl#Methode", "label": "Methode"}, {"id": "http://www.conservationontology.com/conservationontology.owl#Schadensph\u00c3\u00a4nomen", "label": "Schadensph\u00c3\u00a4nomen"}, {"id": "http://www.conservationontology.com/conservationontology.owl#Objekt", "label": "Objekt"}, {"id": "http://www.conservationontology.com/conservationontology.owl#Werkzeug", "label": "Werkzeug"}, {"id": "http://www.conservationontology.com/conservationontology.owl#praktischeMa\u00c3\u0178nahme", "label": "praktischeMa\u00c3\u0178nahme"}, {"id": "http://www.conservationontology.com/conservationontology.owl#Material", "label": "Material"}, {"id": "http://www.conservationontology.com/conservationontology.owl#Herstellungstechnik", "label": "Herstellungstechnik"}, {"id": "http://www.conservationontology.com/conservationontology.owl#technologischeAuswertung", "label": "technologischeAuswertung"}, {"id": "http://www.conservationontology.com/conservationontology.owl#Zustand", "label": "Zustand"}], "links": [{"from": "http://www.conservationontology.com/conservationontology.owl#Objektuntersuchung", "to": "http://www.conservationontology.com/conservationontology.owl#Zustand"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Restaurierungskonzept", "to": "http://www.conservationontology.com/conservationontology.owl#Zustand"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Objekt", "to": "http://www.conservationontology.com/conservationontology.owl#Herstellungstechnik"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Objektuntersuchung", "to": "http://www.conservationontology.com/conservationontology.owl#Ergebnis"}, {"from": "http://www.conservationontology.com/conservationontology.owl#RestauratorIn", "to": "http://www.conservationontology.com/conservationontology.owl#technologischeAuswertung"}, {"from": "http://www.conservationontology.com/conservationontology.owl#RestauratorIn", "to": "http://www.conservationontology.com/conservationontology.owl#Objektuntersuchung"}, {"from": "http://www.conservationontology.com/conservationontology.owl#RestauratorIn", "to": "http://www.conservationontology.com/conservationontology.owl#Werkzeug"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Zustand", "to": "http://www.conservationontology.com/conservationontology.owl#Objektuntersuchung"}, {"from": "http://www.conservationontology.com/conservationontology.owl#praktischeMa\u00c3\u0178nahme", "to": "http://www.conservationontology.com/conservationontology.owl#Methode"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Materialanalyse", "to": "http://www.conservationontology.com/conservationontology.owl#Methode"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Zustand", "to": "http://www.conservationontology.com/conservationontology.owl#Restaurierungskonzept"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Materialanalyse", "to": "http://www.conservationontology.com/conservationontology.owl#Werkzeug"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Herstellungstechnik", "to": "http://www.conservationontology.com/conservationontology.owl#Objekt"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Werkzeug", "to": "http://www.conservationontology.com/conservationontology.owl#praktischeMa\u00c3\u0178nahme"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Material", "to": "http://www.conservationontology.com/conservationontology.owl#praktischeMa\u00c3\u0178nahme"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Ergebnis", "to": "http://www.conservationontology.com/conservationontology.owl#Objektuntersuchung"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Schadensph\u00c3\u00a4nomen", "to": "http://www.conservationontology.com/conservationontology.owl#Schadensursache"}, {"from": "http://www.conservationontology.com/conservationontology.owl#technologischeAuswertung", "to": "http://www.conservationontology.com/conservationontology.owl#RestauratorIn"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Objektuntersuchung", "to": "http://www.conservationontology.com/conservationontology.owl#RestauratorIn"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Werkzeug", "to": "http://www.conservationontology.com/conservationontology.owl#Materialanalyse"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Objekt", "to": "http://www.conservationontology.com/conservationontology.owl#RestauratorIn"}, {"from": "http://www.conservationontology.com/conservationontology.owl#RestauratorIn", "to": "http://www.conservationontology.com/conservationontology.owl#Restaurierungskonzept"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Ergebnis", "to": "http://www.conservationontology.com/conservationontology.owl#Material"}, {"from": "http://www.conservationontology.com/conservationontology.owl#praktischeMa\u00c3\u0178nahme", "to": "http://www.conservationontology.com/conservationontology.owl#Werkzeug"}, {"from": "http://www.conservationontology.com/conservationontology.owl#praktischeMa\u00c3\u0178nahme", "to": "http://www.conservationontology.com/conservationontology.owl#Material"}, {"from": "http://www.conservationontology.com/conservationontology.owl#RestauratorIn", "to": "http://www.conservationontology.com/conservationontology.owl#Objekt"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Objekt", "to": "http://www.conservationontology.com/conservationontology.owl#Material"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Zustand", "to": "http://www.conservationontology.com/conservationontology.owl#Schadensph\u00c3\u00a4nomen"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Zustand", "to": "http://www.conservationontology.com/conservationontology.owl#Zustand"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Schadensph\u00c3\u00a4nomen", "to": "http://www.conservationontology.com/conservationontology.owl#Schadensph\u00c3\u00a4nomen"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Schadensph\u00c3\u00a4nomen", "to": "http://www.conservationontology.com/conservationontology.owl#Zustand"}, {"from": "http://www.conservationontology.com/conservationontology.owl#Restaurierungskonzept", "to": "http://www.conservationontology.com/conservationontology.owl#RestauratorIn"}]}'
+        var ontology = JSON.parse(ontologyString)
+        var nodes = new vis.DataSet(ontology.nodes)
+        var edges = new vis.DataSet(ontology.links)
+        var container = document.getElementById('chart')
+        var data = {
+          nodes: nodes,
+          edges: edges
+        }
+        var options = {
+          layout: {
+            hierarchical: {
+              direction: 'UD',
+              sortMethod: 'directed'
+            }
+          }
+        }
+        var network = new vis.Network(container, data, options)
+        //container.style.height = '1000px'
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -27,8 +48,10 @@
           <h2>Ontology validation and visualization</h2>
           <p>RDF/OWL-Datei validieren oder Beispieldatensatz verwenden.</p>
           <div id="output">
+            <!-- 
             <button onclick = readSheet() id = "fileButton" >Graph validieren</button>
-            <button onclick = readExample() id = "exampleButton" >Beispiel laden</button>
+            -->
+            <button onclick = readOntology() id = "exampleButton" >Beispiel Ontologie laden</button>
             <p id="ignored"> </p>
             <p id="topped"> </p>
             <p id="orphans"> </p>
@@ -36,7 +59,7 @@
             <p id="doublettes"> </p>
             <p id="missingParents"> </p>
             <p id="errorText"> </p>
-            <chart id="chart" style="width: 100%"> </chart>
+            <chart id="chart"> </chart>
           </div>
         </section>
         <aside> </aside>

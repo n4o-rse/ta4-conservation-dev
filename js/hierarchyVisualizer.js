@@ -82,7 +82,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       const radioDiv = document.createElement("div");
       radioDiv.id = "radioDiv";
       radioDiv.innerHTML = "Select visualization type: ";
-      const radioTypes = ["Tidy tree", "Cluster tree", "Radial tidy tree", "Radial cluster tree"]; //, "Sunburst"
+      const radioTypes = ["Tidy tree", "Cluster tree", "Radial tidy tree", "Radial cluster tree","Force directed tree"]; //, "Sunburst"
       for (let i = 0; i < radioTypes.length; i++) {
         const radio = document.createElement("input");
         radio.type = "radio";
@@ -129,7 +129,7 @@ function visualizeData([stratifiedData, idObject]) {
   try {
     // check if visualization type has value "Tidy tree" or "Cluster tree"
     if (visualizationType == "Tidy tree" || visualizationType == "Cluster tree") {
-      svg = createTidyTree(stratifiedData, idObject, visualizationType);
+      svg = generateTidyTree(stratifiedData, idObject, visualizationType);
       document.getElementById("chart").innerHTML = svg.outerHTML;
     }
     if (visualizationType == "Radial tidy tree") {
@@ -142,6 +142,10 @@ function visualizeData([stratifiedData, idObject]) {
     }
     if (visualizationType == "Sunburst") {
       svg = generateSunburst(stratifiedData, idObject);
+      document.getElementById("chart").innerHTML = svg.outerHTML;
+    }
+    if (visualizationType == "Force directed tree") {
+      svg = generateForceDirectedTree(stratifiedData, idObject);
       document.getElementById("chart").innerHTML = svg.outerHTML;
     }
     // create button to download svg file if no element with id "downloadButton" exists
