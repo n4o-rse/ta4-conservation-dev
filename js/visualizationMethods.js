@@ -208,18 +208,24 @@ function generateTidyTree(data, idObject, visualizationType) {
   return svg.node();
   }
 
-  //returning empty svg
   function generateSunburst(data, idObject) {
+  // used for sunburst
+  function autoBox() {
+    document.body.appendChild(this);
+    const {x, y, width, height} = this.getBBox();
+    document.body.removeChild(this);
+    return [x, y, width, height];
+  }
   // Specify the chart’s colors and approximate radius (it will be adjusted at the end).
   const color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1));
-  const radius = 928 / 2;
+  const radius = 2000 / 2;
 
   // Prepare the layout.
   const partition = data => d3.partition()
     .size([2 * Math.PI, radius])
   (d3.hierarchy(data)
-    .sum(d => d.value)
-    .sort((a, b) => b.value - a.value));
+    .sum(d => 1)
+    .sort((a, b) => b.value - a.value)); //
 
   const arc = d3.arc()
     .startAngle(d => d.x0)
@@ -264,86 +270,41 @@ function generateTidyTree(data, idObject, visualizationType) {
       .text(d => idObject[d.data.id]);
 
   // The autoBox function adjusts the SVG’s viewBox to the dimensions of its contents.
-  return svg.node(); //attr("viewBox", autoBox).
-  }
-
-  // used for sunburst
-  function autoBox() {
-    document.body.appendChild(this);
-    const {x, y, width, height} = this.getBBox();
-    document.body.removeChild(this);
-    return [x, y, width, height];
-  }
-  
-  // problem with DOM is not defined
-  function generateTreemap(data, idObject) {
-    const width = 1154;
-    const height = 1154;
-  
-    // Specify the color scale.
-    const color = d3.scaleOrdinal(data.children.map(d => idObject[d.data.id]), d3.schemeTableau10);
-  
-    // Compute the layout.
-    const root = d3.treemap()
-      .tile(d3.treemapSquarify) // e.g., d3.treemapSquarify
-      .size([width, height])
-      .padding(1)
-      .round(true)
-    (d3.hierarchy(data)
-        .sum(d => d.value)
-        .sort((a, b) => b.value - a.value));
-  
-    // Create the SVG container.
-    const svg = d3.create("svg")
-        .attr("viewBox", [0, 0, width, height])
-        .attr("width", width)
-        .attr("height", height)
-        .attr("style", "max-width: 100%; height: auto; font: 10px sans-serif;");
-  
-    // Add a cell for each leaf of the hierarchy.
-    const leaf = svg.selectAll("g")
-      .data(root.leaves())
-      .join("g")
-        .attr("transform", d => `translate(${d.x0},${d.y0})`);
-  
-    // Append a tooltip.
-    const format = d3.format(",d");
-    leaf.append("title")
-        .text(d => `${d.ancestors().reverse().map(d => idObject[d.data.id]).join(".")}\n${format(d.value)}`);
-  
-    // Append a color rectangle. 
-    leaf.append("rect")
-        .attr("id", d => (d.leafUid = DOM.uid("leaf")).id)
-        .attr("fill", d => { while (d.depth > 1) d = d.parent; return color(idObject[d.data.id]); })
-        .attr("fill-opacity", 0.6)
-        .attr("width", d => d.x1 - d.x0)
-        .attr("height", d => d.y1 - d.y0);
-  
-    // Append a clipPath to ensure text does not overflow.
-    leaf.append("clipPath")
-        .attr("id", d => (d.clipUid = DOM.uid("clip")).id)
-      .append("use")
-        .attr("xlink:href", d => d.leafUid.href);
-  
-    // Append multiline text. The last line shows the value and has a specific formatting.
-    leaf.append("text")
-        .attr("clip-path", d => d.clipUid)
-      .selectAll("tspan")
-      .data(d => idObject[d.data.id].split(/(?=[A-Z][a-z])|\s+/g).concat(format(d.value)))
-      .join("tspan")
-        .attr("x", 3)
-        .attr("y", (d, i, nodes) => `${(i === nodes.length - 1) * 0.3 + 1.1 + i * 0.9}em`)
-        .attr("fill-opacity", (d, i, nodes) => i === nodes.length - 1 ? 0.7 : null)
-        .text(d => d);
-  
-    return Object.assign(svg.node(), {scales: {color}});
+  return svg.attr("viewBox", autoBox).node(); //
   }
 
 // Validation Method from observable missing
 function generateForceDirectedTree(data, idObject) {
+
+  // for force directed tree
+  drag = simulation => {
+  
+    function dragstarted(event, d) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+    
+    function dragged(event, d) {
+      d.fx = event.x;
+      d.fy = event.y;
+    }
+    
+    function dragended(event, d) {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+    
+    return d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended);
+  }
+
     // Specify the chart’s dimensions.
-    const width = 928;
-    const height = 600;
+    const width = 2000;
+    const height = 1000;
   
     // Compute the graph and start the force simulation.
     const root = d3.hierarchy(data);
@@ -399,33 +360,152 @@ function generateForceDirectedTree(data, idObject) {
           .attr("cy", d => d.y);
     });
   
-    invalidation.then(() => simulation.stop());
+    //invalidation.then(() => simulation.stop());
   
     return svg.node();
   }
 
-  // for force directed tree
-  drag = simulation => {
+  function generateCollapsibleTree(data, idObject) {
+
+    // Specify the charts’ dimensions. The height is variable, depending on the layout.
+    const width = 2000;
+    const marginTop = 10;
+    const marginRight = 10;
+    const marginBottom = 10;
+    const marginLeft = 40;
   
-    function dragstarted(event, d) {
-      if (!event.active) simulation.alphaTarget(0.3).restart();
-      d.fx = d.x;
-      d.fy = d.y;
+    // Rows are separated by dx pixels, columns by dy pixels. These names can be counter-intuitive
+    // (dx is a height, and dy a width). This because the tree must be viewed with the root at the
+    // “bottom”, in the data domain. The width of a column is based on the tree’s height.
+    const root = d3.hierarchy(data);
+    const dx = 30;
+    const dy = (width - marginRight - marginLeft) / (1 + root.height);
+  
+    // Define the tree layout and the shape for links.
+    const tree = d3.tree().nodeSize([dx, dy]);
+    const diagonal = d3.linkHorizontal().x(d => d.y).y(d => d.x);
+  
+    // Create the SVG container, a layer for the links and a layer for the nodes.
+    const svg = d3.create("svg")
+        .attr("width", width)
+        .attr("height", dx)
+        .attr("viewBox", [-marginLeft, -marginTop, width, dx])
+        .attr("style", "max-width: 100%; height: auto; font: 10px sans-serif; user-select: none;");
+  
+    const gLink = svg.append("g")
+        .attr("fill", "none")
+        .attr("stroke", "#555")
+        .attr("stroke-opacity", 0.4)
+        .attr("stroke-width", 1.5);
+  
+    const gNode = svg.append("g")
+        .attr("cursor", "pointer")
+        .attr("pointer-events", "all");
+  
+    function update(event, source) {
+      const duration = event?.altKey ? 2500 : 250; // hold the alt key to slow down the transition
+      const nodes = root.descendants().reverse();
+      const links = root.links();
+  
+      // Compute the new tree layout.
+      tree(root);
+  
+      let left = root;
+      let right = root;
+      root.eachBefore(node => {
+        if (node.x < left.x) left = node;
+        if (node.x > right.x) right = node;
+      });
+  
+      const height = right.x - left.x + marginTop + marginBottom;
+  
+      const transition = svg.transition()
+          .duration(duration)
+          .attr("height", height)
+          .attr("viewBox", [-marginLeft, left.x - marginTop, width, height])
+          .tween("resize", window.ResizeObserver ? null : () => () => svg.dispatch("toggle"));
+  
+      // Update the nodes…
+      const node = gNode.selectAll("g")
+        .data(nodes, d => d.id);
+  
+      // Enter any new nodes at the parent's previous position.
+      const nodeEnter = node.enter().append("g")
+          .attr("transform", d => `translate(${source.y0},${source.x0})`)
+          .attr("fill-opacity", 0)
+          .attr("stroke-opacity", 0)
+          .on("click", (event, d) => {
+            d.children = d.children ? null : d._children;
+            update(event, d);
+          });
+  
+      nodeEnter.append("circle")
+          .attr("r", 2.5)
+          .attr("fill", d => d._children ? "#555" : "#999")
+          .attr("stroke-width", 10);
+  
+      nodeEnter.append("text")
+          .attr("dy", "0.31em")
+          .attr("x", d => d._children ? -6 : 6)
+          .attr("text-anchor", d => d._children ? "end" : "start")
+          .text(d => idObject[d.data.id])
+          .attr("stroke-linejoin", "round")
+          .attr("stroke-width", 3)
+          .attr("stroke", "white")
+          .attr("paint-order", "stroke");
+  
+      // Transition nodes to their new position.
+      const nodeUpdate = node.merge(nodeEnter).transition(transition)
+          .attr("transform", d => `translate(${d.y},${d.x})`)
+          .attr("fill-opacity", 1)
+          .attr("stroke-opacity", 1);
+  
+      // Transition exiting nodes to the parent's new position.
+      const nodeExit = node.exit().transition(transition).remove()
+          .attr("transform", d => `translate(${source.y},${source.x})`)
+          .attr("fill-opacity", 0)
+          .attr("stroke-opacity", 0);
+  
+      // Update the links…
+      const link = gLink.selectAll("path")
+        .data(links, d => d.target.id);
+  
+      // Enter any new links at the parent's previous position.
+      const linkEnter = link.enter().append("path")
+          .attr("d", d => {
+            const o = {x: source.x0, y: source.y0};
+            return diagonal({source: o, target: o});
+          });
+  
+      // Transition links to their new position.
+      link.merge(linkEnter).transition(transition)
+          .attr("d", diagonal);
+  
+      // Transition exiting nodes to the parent's new position.
+      link.exit().transition(transition).remove()
+          .attr("d", d => {
+            const o = {x: source.x, y: source.y};
+            return diagonal({source: o, target: o});
+          });
+  
+      // Stash the old positions for transition.
+      root.eachBefore(d => {
+        d.x0 = d.x;
+        d.y0 = d.y;
+      });
     }
-    
-    function dragged(event, d) {
-      d.fx = event.x;
-      d.fy = event.y;
-    }
-    
-    function dragended(event, d) {
-      if (!event.active) simulation.alphaTarget(0);
-      d.fx = null;
-      d.fy = null;
-    }
-    
-    return d3.drag()
-        .on("start", dragstarted)
-        .on("drag", dragged)
-        .on("end", dragended);
+  
+    // Do the first update to the initial configuration of the tree — where a number of nodes
+    // are open (arbitrarily selected as the root, plus nodes with 7 letters).
+    root.x0 = dy / 2;
+    root.y0 = 0;
+    root.descendants().forEach((d, i) => {
+      d.id = i;
+      d._children = d.children;
+      if (d.depth && idObject[d.data.id].length !== 7) d.children = null;
+    });
+  
+    update(null, root);
+  
+    return svg.node();
   }

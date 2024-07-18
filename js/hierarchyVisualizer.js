@@ -82,7 +82,9 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       const radioDiv = document.createElement("div");
       radioDiv.id = "radioDiv";
       radioDiv.innerHTML = "Select visualization type: ";
-      const radioTypes = ["Tidy tree", "Cluster tree", "Radial tidy tree", "Radial cluster tree","Force directed tree"]; //, "Sunburst"
+      const radioTypes = ["Tidy tree", "Cluster tree", "Radial tidy tree", "Radial cluster tree", "Collapsible Tree", "Force directed tree", "Sunburst"];
+      let lineBreakStarter = document.createElement("br");
+      radioDiv.appendChild(lineBreakStarter);
       for (let i = 0; i < radioTypes.length; i++) {
         const radio = document.createElement("input");
         radio.type = "radio";
@@ -94,12 +96,15 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
         label.htmlFor = radioTypes[i];
         label.innerHTML = radioTypes[i];
         radioDiv.appendChild(label);
+        // add line break after each radio button
+        let lineBreak = document.createElement("br");
+        radioDiv.appendChild(lineBreak);
       }
       const button = document.createElement("button");
       button.id = "visualizeButton";
       button.innerHTML = "Tabelle visualisieren";
       button.onclick = function() {visualizeData([stratifiedData, idObject])};
-      document.getElementById("chart").before(button);
+      document.getElementById("chartDiv").before(button);
       try {
         document.getElementById("lineBreak").remove();
       }
@@ -130,40 +135,43 @@ function visualizeData([stratifiedData, idObject]) {
     // check if visualization type has value "Tidy tree" or "Cluster tree"
     if (visualizationType == "Tidy tree" || visualizationType == "Cluster tree") {
       svg = generateTidyTree(stratifiedData, idObject, visualizationType);
-      document.getElementById("chart").innerHTML = svg.outerHTML;
     }
     if (visualizationType == "Radial tidy tree") {
       svg = generateRadialTidyTree(stratifiedData, idObject);
-      document.getElementById("chart").innerHTML = svg.outerHTML;
     }
     if (visualizationType == "Radial cluster tree") {
       svg = generateRadialClusterTree(stratifiedData, idObject);
-      document.getElementById("chart").innerHTML = svg.outerHTML;
     }
     if (visualizationType == "Sunburst") {
       svg = generateSunburst(stratifiedData, idObject);
-      document.getElementById("chart").innerHTML = svg.outerHTML;
     }
     if (visualizationType == "Force directed tree") {
       svg = generateForceDirectedTree(stratifiedData, idObject);
-      document.getElementById("chart").innerHTML = svg.outerHTML;
     }
+    if (visualizationType == "Collapsible Tree") {
+      svg = generateCollapsibleTree(stratifiedData, idObject);
+    }
+    //document.getElementById("chartDiv").innerHTML = svg.outerHTML;
+    document.getElementById("errorText").innerHTML = "";
+    document.getElementById("errorText").style.color = "black";
+    document.getElementById("chartDiv").innerHTML = "";
+    document.getElementById("chartDiv").append(svg);
     // create button to download svg file if no element with id "downloadButton" exists
     if (!document.getElementById("downloadButton")) {
       const button = document.createElement("button");
       button.id = "downloadButton";
       button.innerHTML = "Download Visualization";
-      button.onclick = function() {downloadSvg(svg)};
-      document.getElementById("chart").after(button);
+      button.onclick = function() {downloadSvg(svg, visualizationType)};
+      document.getElementById("chartDiv").after(button);
     }
   } 
   catch (error) {
     document.getElementById("errorText").innerHTML = error;
+    document.getElementById("errorText").style.color = "red";
   }
 }
 
-function downloadSvg(svg) {
-  const visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
+function downloadSvg(svg, visualizationType) {
   const svgString = new XMLSerializer().serializeToString(svg);
   const blob = new Blob([svgString], {type: "image/svg+xml"});
   const url = URL.createObjectURL(blob);
@@ -176,7 +184,7 @@ function downloadSvg(svg) {
 }
 
 function resetOutput() {
-  const ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chart", "doublettes", "missingParents"]; //
+  const ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chartDiv", "doublettes", "missingParents"]; //
   for (let i = 0; i < ids.length; i++) {
     try {
       document.getElementById(ids[i]).innerHTML = "";
@@ -205,7 +213,7 @@ function cleanTableData(data) {
   for (let i = 0; i < data.length; i++) {
     let row = data[i];
     if (row.parent != "ignore") {
-      if (row.prefLabel != "") {
+      if (row.prefLabel != "" && row.identifier != "") {
         row.identifier = row.identifier.replace(/\s/g, "");
         row.parent = row.parent.replace(/\s/g, "");
         row.prefLabel = row.prefLabel.replace(/\s/g, "");
