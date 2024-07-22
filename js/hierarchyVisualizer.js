@@ -1,8 +1,8 @@
-function readData(data, type) {
+function readData(data, inputType) {
   resetOutput();
-  
+  const testingText = document.getElementById("testingText").innerHTML=data;
   let Data
-  if (type == "file") {
+  if (inputType == "file") {
     const file = document.getElementById("fileInput").files[0];
     if (file.name.endsWith(".tsv")) {
       Data = d3.tsvParse(data);
