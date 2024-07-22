@@ -1,12 +1,24 @@
-function readData(data) {
+function readData(data, type) {
   resetOutput();
-  const file = document.getElementById("fileInput").files[0];
+  
   let Data
-  if (file.name.endsWith(".tsv")) {
-    Data = d3.tsvParse(data);
+  if (type == "file") {
+    const file = document.getElementById("fileInput").files[0];
+    if (file.name.endsWith(".tsv")) {
+      Data = d3.tsvParse(data);
+    }
+    else { //(file.name.endsWith(".tsv")) 
+      Data = d3.csvParse(data);
+    }
   }
-  else { //(file.name.endsWith(".tsv")) 
-    Data = d3.csvParse(data);
+  else {
+    const textInput = document.getElementById("textInput").value;
+    if (textInput.endsWith("tsv")) {
+      Data = d3.tsvParse(data);
+    }
+    else {
+      Data = d3.csvParse(data);
+    }
   }
   let cleanedArray= cleanTableData(Data);
   let cleanedTableData = cleanedArray[0];

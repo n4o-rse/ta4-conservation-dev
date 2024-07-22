@@ -58,16 +58,22 @@
         const textForm = document.getElementById('textForm');
         textForm.addEventListener('submit', inputUrl);
         
-        function inputFile() {
+        async function inputFile() {
             event.preventDefault();
             const input = document.getElementById('fileInput');
             const file = input.files[0];
+            const response = await fetch(file, {
+                headers: { "content-type": "text/csv;charset=UTF-8" },
+            });
+            const text = await response.text();
+            /*
             const reader = new FileReader();
             reader.onload = function(e) {
                 const text = e.target.result;
             };
             const text = reader.readAsText(file);
-            readData(text)
+            */
+            readData(text, "file")
         }
 
         async function inputUrl() {
@@ -77,7 +83,7 @@
                 headers: { "content-type": "text/csv;charset=UTF-8" },
             });
             const text = await response.text();
-            readData(text)
+            readData(text, "url")
         }
       </script>
     </main>
