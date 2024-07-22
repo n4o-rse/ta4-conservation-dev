@@ -64,10 +64,9 @@
             const inputFile = document.getElementById('fileInput');
             const file = inputFile.files[0];
             const reader = new FileReader();
-            reader.onload = function() {
-              const contents = reader.result;
-            };
-            const text = reader.readAsText(file);
+            //reader.onload = function() {};
+            reader.readAsText(file);
+            text = reader.result;
             readData(text, "file")
         }
 
