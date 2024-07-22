@@ -1,14 +1,11 @@
-async function readSheet() {
-  resetOutput();
-  let [fileHandle] = await window.showOpenFilePicker();
-  let file = await fileHandle.getFile();
-  let text = await file.text();
-  let Data 
+function readData(data) {
+  const file = document.getElementById("fileInput").files[0];
+  let Data
   if (file.name.endsWith(".csv")) {
-    Data = d3.csvParse(text);
+    Data = d3.csvParse(data);
   }
   if (file.name.endsWith(".tsv")) {
-    Data = d3.tsvParse(text);
+    Data = d3.tsvParse(data);
   }
   let cleanedArray= cleanTableData(Data);
   let cleanedTableData = cleanedArray[0];
@@ -73,7 +70,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
   }
   if ((doublettes.length < 1) && (missingParents.length < 1)) {
     try {
-      document.getElementById("fileButton").innerHTML = "Neue Tabelle validieren";
+      document.getElementById("submitButton").innerHTML = "Neue Datei validieren";
       const stratifiedData = stratifyData(toppedData);
       document.getElementById("outputText").innerHTML = "Data successfully validated. \n";
       //make outputText green
@@ -184,7 +181,7 @@ function downloadSvg(svg, visualizationType) {
 }
 
 function resetOutput() {
-  const ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chartDiv", "doublettes", "missingParents"]; //
+  const ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chartDiv", "doublettes", "missingParents", "radioDiv", "visualizeButton"]; //
   for (let i = 0; i < ids.length; i++) {
     try {
       document.getElementById(ids[i]).innerHTML = "";

@@ -29,7 +29,12 @@
           <p>CSV/TSV-Datei validieren oder Beispieldatensatz verwenden.</p>
           <p>Eigene Dateien müssen folgendem<a href="schema.html"> Tabellenschema </a>entsprechen.</p>
           <div id="output">
-            <button onclick = readSheet() id = "fileButton" >Tabelle validieren</button>
+            <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data", id="submitForm">
+              <input name="file" type="file" multiple id="fileInput" accept=".csv, .tsv">
+              <button id="submitButton" type="submit">Validieren</button>
+          </form>
+            <br>
+            <!-- <button onclick = readSheet() id = "fileButton" >Tabelle validieren</button> -->
             <button onclick = readExample() id = "exampleButton" >Beispiel laden</button>
             <p id="ignored"> </p>
             <p id="topped"> </p>
@@ -43,6 +48,28 @@
         </section>
         <aside> </aside>
       </article>
+      <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', handleSubmit);
+        function handleSubmit(event) {
+            event.preventDefault();
+            uploadFiles();
+        }
+        async function uploadFiles() {
+            const url = 'https://httpbin.org/post';
+            const formData = new FormData(form);
+            const fetchOptions = {
+                method: 'post',
+                body: formData
+            };
+            const response = await fetch(url, fetchOptions);
+            const data = await response.json();
+            //console.log(data);
+            //const resultDiv = document.getElementById('result');
+            //resultDiv.innerHTML = data.files.file
+            readData(data.files.file)
+        }
+      </script>
     </main>
     <footer> </footer>
   </body>
