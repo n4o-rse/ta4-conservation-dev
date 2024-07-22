@@ -29,12 +29,15 @@
           <p>CSV/TSV-Datei validieren oder Beispieldatensatz verwenden.</p>
           <p>Eigene Dateien müssen folgendem<a href="schema.html"> Tabellenschema </a>entsprechen.</p>
           <div id="output">
-            <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data", id="submitForm">
-              <input name="file" type="file" multiple id="fileInput" accept=".csv, .tsv">
-              <button id="submitButton" type="submit">Validieren</button>
+            <form id="fileForm">
+              <input type="file" id="fileInput">
+              <button type="submit">Datei laden</button>
+          </form>
+          <form id="textForm">
+              <input type="text" id="textInput" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=csv">
+              <button type="submit">URL laden</button>
           </form>
             <br>
-            <!-- <button onclick = readSheet() id = "fileButton" >Tabelle validieren</button> -->
             <button onclick = readExample() id = "exampleButton" >Beispiel laden</button>
             <p id="ignored"> </p>
             <p id="topped"> </p>
@@ -49,25 +52,33 @@
         <aside> </aside>
       </article>
       <script>
-        const form = document.querySelector('form');
-        form.addEventListener('submit', handleSubmit);
-        function handleSubmit(event) {
+        const fileForm = document.getElementById('fileForm');
+        fileForm.addEventListener('submit', inputFile);
+
+        const textForm = document.getElementById('textForm');
+        textForm.addEventListener('submit', inputUrl);
+        
+        function inputFile() {
             event.preventDefault();
-            uploadFiles();
-        }
-        async function uploadFiles() {
-            const url = 'https://httpbin.org/post';
-            const formData = new FormData(form);
-            const fetchOptions = {
-                method: 'post',
-                body: formData
+            const input = document.getElementById('fileInput');
+            const file = input.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const text = e.target.result;
+                writeFile(text);
             };
-            const response = await fetch(url, fetchOptions);
-            const data = await response.json();
-            //console.log(data);
-            //const resultDiv = document.getElementById('result');
-            //resultDiv.innerHTML = data.files.file
-            readData(data.files.file)
+            const text = reader.readAsText(file);
+            readData(text)
+        }
+
+        async function inputUrl() {
+            event.preventDefault();
+            const inputURL = document.getElementById('textInput').value;
+            const response = await fetch(inputURL, {
+                headers: { "content-type": "text/csv;charset=UTF-8" },
+            });
+            const text = await response.text();
+            readData(text)
         }
       </script>
     </main>

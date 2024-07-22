@@ -2,11 +2,11 @@ function readData(data) {
   resetOutput();
   const file = document.getElementById("fileInput").files[0];
   let Data
-  if (file.name.endsWith(".csv")) {
-    Data = d3.csvParse(data);
-  }
   if (file.name.endsWith(".tsv")) {
     Data = d3.tsvParse(data);
+  }
+  else { //(file.name.endsWith(".tsv")) 
+    Data = d3.csvParse(data);
   }
   let cleanedArray= cleanTableData(Data);
   let cleanedTableData = cleanedArray[0];
