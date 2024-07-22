@@ -71,7 +71,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
   }
   if ((doublettes.length < 1) && (missingParents.length < 1)) {
     try {
-      document.getElementById("submitButton").innerHTML = "Neue Datei validieren";
+      //document.getElementById("submitButton").innerHTML = "Neue Datei validieren";
       const stratifiedData = stratifyData(toppedData);
       document.getElementById("outputText").innerHTML = "Data successfully validated. \n";
       //make outputText green
