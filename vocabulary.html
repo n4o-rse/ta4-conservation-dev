@@ -65,7 +65,6 @@
             const reader = new FileReader();
             reader.onload = function(e) {
                 const text = e.target.result;
-                writeFile(text);
             };
             const text = reader.readAsText(file);
             readData(text)
