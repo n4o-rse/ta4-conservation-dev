@@ -30,7 +30,7 @@
           <p>Eigene Dateien müssen folgendem<a href="schema.html"> Tabellenschema </a>entsprechen.</p>
           <div id="output">
             <form id="fileForm">
-              <input type="file" id="fileInput">
+              <input type="file" id="fileInput" accept=".tsv, .csv">
               <button type="submit">Datei laden</button>
           </form>
           <form id="textForm">
@@ -64,8 +64,8 @@
             const inputFile = document.getElementById('fileInput');
             const file = inputFile.files[0];
             const reader = new FileReader();
-            reader.onload = function(e) {
-                return e.target.result;
+            reader.onload = function() {
+              const contents = reader.result;
             };
             const text = reader.readAsText(file);
             readData(text, "file")
