@@ -1,4 +1,5 @@
 function readData(data) {
+  resetOutput();
   const file = document.getElementById("fileInput").files[0];
   let Data
   if (file.name.endsWith(".csv")) {
