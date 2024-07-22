@@ -65,11 +65,10 @@
             const file = inputFile.files[0];
             let reader = new FileReader();
             reader.onload = function(e) {
-              // e.target.result should contain the text
+              result = e.target.result;
+              readData(result, "file")
             };
             reader.readAsText(file);
-            text = reader.result;
-            readData(text, "file")
         }
 
         async function inputUrl() {
