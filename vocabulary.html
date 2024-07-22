@@ -59,21 +59,15 @@
         const textForm = document.getElementById('textForm');
         textForm.addEventListener('submit', inputUrl);
         
-        async function inputFile() {
+        function inputFile() {
             event.preventDefault();
-            const input = document.getElementById('fileInput');
-            const file = input.files[0];
-            const response = await fetch(file, {
-                headers: { "content-type": "text/csv;charset=UTF-8" },
-            });
-            const text = await response.text();
-            /*
+            const inputFile = document.getElementById('fileInput');
+            const file = inputFile.files[0];
             const reader = new FileReader();
             reader.onload = function(e) {
-                const text = e.target.result;
+                return e.target.result;
             };
             const text = reader.readAsText(file);
-            */
             readData(text, "file")
         }
 
