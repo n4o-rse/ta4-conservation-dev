@@ -11,7 +11,7 @@ function readData(data, inputType) {
       Data = d3.csvParse(data);
     }
   }
-  else {
+  else if (inputType == "url") {
     const textInput = document.getElementById("textInput").value;
     if (textInput.endsWith("tsv")) {
       Data = d3.tsvParse(data);
