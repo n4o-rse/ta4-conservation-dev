@@ -191,7 +191,7 @@ function resetOutput() {
       //ignore console.log(error);
     }
   }
-  document.getElementById("fileButton").innerHTML = "Tabelle validieren";
+  //document.getElementById("fileButton").innerHTML = "Tabelle validieren";
   let elements = ["visualizeButton", "radioDiv", "lineBreak", "downloadButton"]
   for (let i = 0; i < elements.length; i++) {
     try {
