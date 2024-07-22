@@ -1,7 +1,5 @@
 function readData(data, inputType) {
   resetOutput();
-  const testingText = document.getElementById("testingText")
-  testingText.innerHTML = data;
   let Data
   if (inputType == "file") {
     const file = document.getElementById("fileInput").files[0];
