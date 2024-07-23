@@ -91,7 +91,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       const radioDiv = document.createElement("div");
       radioDiv.id = "radioDiv";
       radioDiv.innerHTML = "Select visualization type: ";
-      const radioTypes = ["Tidy tree", "Cluster tree", "Radial tidy tree", "Radial cluster tree", "Collapsible Tree", "Force directed tree", "Sunburst", "Intended Tree"];
+      const radioTypes = ["Tidy tree", "Cluster tree", "Radial tidy tree", "Radial cluster tree", "Collapsible Tree", "Force directed tree", "Sunburst", "Icicle", "Intended Tree"];
       let lineBreakStarter = document.createElement("br");
       radioDiv.appendChild(lineBreakStarter);
       for (let i = 0; i < radioTypes.length; i++) {
@@ -162,6 +162,9 @@ function visualizeData([stratifiedData, idObject]) {
     }
     if (visualizationType == "Intended Tree") {
       svg = generateIntendedTree(stratifiedData, idObject);
+    }
+    if (visualizationType == "Icicle") {
+      svg = generateIcicle(stratifiedData, idObject);
     }
     //document.getElementById("chartDiv").innerHTML = svg.outerHTML;
     document.getElementById("errorText").innerHTML = "";
