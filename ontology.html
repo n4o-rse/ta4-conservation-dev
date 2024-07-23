@@ -3,32 +3,8 @@
   <head>
     <title>Knowledge management FAIRification tool for conservation and restoration processes</title>
     <link rel="icon" type="image/x-icon" href="pictures/CoffeeAndConservationLogo.png">
-    <script src = "js/vis.min.js"></script>
-    <script>
-      const form = document.querySelector('form');
-      form.addEventListener('submit', handleSubmit);
-      function handleSubmit(event) {
-          event.preventDefault();
-          uploadFiles();
-      }
-      async function uploadFiles() {
-          const url = 'https://httpbin.org/post';
-          const formData = new FormData(form);
-          const fetchOptions = {
-              method: 'post',
-              body: formData
-          };
-          const response = await fetch(url, fetchOptions);
-          const data = await response.json();
-          //console.log(data);
-          //const resultDiv = document.getElementById('result');
-          //resultDiv.innerHTML = data.files.file
-          readData(data.files.file)
-      }
-      function readData(data) {
-        
-      }
-    </script>
+    <script src = "js/ontologyVisualizer.js"></script>
+    <script src = "js/d3.v7.min.js"></script>
   </head>
   <body>
     <header>
@@ -50,14 +26,13 @@
         <section>
           <h2>Ontology validation and visualization</h2>
           <p>RDF/OWL-Datei validieren oder Beispieldatensatz verwenden.</p>
-          <div id="output" style="height:1000px;width:100%;">
-            <!-- 
-            <button onclick = readSheet() id = "fileButton" >Graph validieren</button>
-            -->
-            <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data", id="submitForm">
-              <input name="file" type="file" multiple id="fileInput" accept=".csv, .tsv">
-              <button id="submitButton" type="submit">Load Ontology</button>
+          <div id="input">
+            <form id="fileForm">
+              <input type="file" id="fileInput" accept=".owl">
+              <button type="submit">Ontologie laden</button>
             </form>
+          </div>
+          <div id="output" style="height:1000px;width:100%;">
             <p id="ignored"> </p>
             <p id="topped"> </p>
             <p id="orphans"> </p>
@@ -71,6 +46,21 @@
         <aside> </aside>
       </article>
     </main>
+    <script>
+        const fileForm = document.getElementById('fileForm');
+        fileForm.addEventListener('submit', inputFile);
+        function inputFile() {
+            event.preventDefault();
+            const inputFile = document.getElementById('fileInput');
+            const file = inputFile.files[0];
+            let reader = new FileReader();
+            reader.onload = function(e) {
+              result = e.target.result;
+              readOntology(result)
+            };
+            reader.readAsText(file);
+        }
+    </script>
     <footer> </footer>
   </body>
 </html>
