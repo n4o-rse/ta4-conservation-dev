@@ -81,7 +81,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
     document.getElementById("missingParents").innerHTML = "ERROR! The parents of the following concepts are missing : " + JSON.stringify(missingParents);
   }
   if ((doublettes.length < 1) && (missingParents.length < 1)) {
-    try {
+    //try {
       //document.getElementById("submitButton").innerHTML = "Neue Datei validieren";
       const stratifiedData = stratifyData(toppedData);
       document.getElementById("outputText").innerHTML = "Data successfully validated. \n";
@@ -126,10 +126,10 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       document.getElementById("Tidy tree").checked = true;
       document.getElementById("visualizeButton").before(lineBreak);
       return [stratifiedData, idObject];
-    } 
-    catch (error) {
-      document.getElementById("errorText").innerHTML = error;
-    }
+    //} 
+    //catch (error) {
+    //  document.getElementById("errorText").innerHTML = error;
+    //}
   }
   else {
     document.getElementById("outputText").innerHTML = "Data invalid. \n";
