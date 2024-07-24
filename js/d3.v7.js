@@ -13767,7 +13767,7 @@ function stratify() {
     root.parent = preroot;
     root.eachBefore(function(node) { node.depth = node.parent.depth + 1; --n; }).eachBefore(computeHeight);
     root.parent = null;
-    if (n > 0) throw new Error("cycle " + preroot);
+    if (n > 0) throw new Error("cycle " + JSON.stringify(preroot));
 
     return root;
   }
