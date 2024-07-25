@@ -81,13 +81,11 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
     document.getElementById("missingParents").innerHTML = "ERROR! The parents of the following concepts are missing : " + JSON.stringify(missingParents);
   }
   if ((doublettes.length < 1) && (missingParents.length < 1)) {
-    //try {
+    try {
       //document.getElementById("submitButton").innerHTML = "Neue Datei validieren";
       const stratifiedData = stratifyData(toppedData);
       document.getElementById("outputText").innerHTML = "Data successfully validated. \n";
-      //make outputText green
       document.getElementById("outputText").style.color = "green";
-      //create radio element to select visualization type
       const radioDiv = document.createElement("div");
       radioDiv.id = "radioDiv";
       radioDiv.innerHTML = "Select visualization type: ";
@@ -105,7 +103,6 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
         label.htmlFor = radioTypes[i];
         label.innerHTML = radioTypes[i];
         radioDiv.appendChild(label);
-        // add line break after each radio button
         let lineBreak = document.createElement("br");
         radioDiv.appendChild(lineBreak);
       }
@@ -126,10 +123,11 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       document.getElementById("Tidy tree").checked = true;
       document.getElementById("visualizeButton").before(lineBreak);
       return [stratifiedData, idObject];
-    //} 
-    //catch (error) {
-    //  document.getElementById("errorText").innerHTML = error;
-    //}
+    } 
+    catch (error) {
+      document.getElementById("errorText").innerHTML = error;
+      document.getElementById("errorText").style.color = "red";  
+    }
   }
   else {
     document.getElementById("outputText").innerHTML = "Data invalid. \n";
