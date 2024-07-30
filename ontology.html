@@ -3,8 +3,9 @@
   <head>
     <title>Knowledge management FAIRification tool for conservation and restoration processes</title>
     <link rel="icon" type="image/x-icon" href="pictures/CoffeeAndConservationLogo.png">
-    <script src = "js/ontologyVisualizer.js"></script>
-    <script src = "js/d3.v7.min.js"></script>
+    <script src="js/d3.v7.min.js"></script>
+    <script src="js/visualizationMethods.js"></script>
+    <script src="js/visualizeOntology.js"></script>
   </head>
   <body>
     <header>
@@ -28,9 +29,11 @@
           <p>RDF/OWL-Datei validieren oder Beispieldatensatz verwenden.</p>
           <div id="input">
             <form id="fileForm">
-              <input type="file" id="fileInput" accept=".owl">
+              <input type="file" id="fileInput" accept=".owl, .json-ld">
               <button type="submit">Ontologie laden</button>
             </form>
+            <br>
+            <button onclick = readExampleOntology() id = "exampleButton" >Beispiel laden</button>
           </div>
           <div id="output" style="height:1000px;width:100%;">
             <p id="ignored"> </p>
@@ -56,7 +59,7 @@
             let reader = new FileReader();
             reader.onload = function(e) {
               result = e.target.result;
-              readOntology(result)
+              parseJsonld(result)
             };
             reader.readAsText(file);
         }
