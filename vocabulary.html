@@ -3,9 +3,13 @@
   <head>
     <title>Knowledge management FAIRification tool for conservation and restoration processes</title>
     <link rel="icon" type="image/x-icon" href="pictures/CoffeeAndConservationLogo.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src = "js/d3.v7.js"></script>
     <script src = "js/hierarchyVisualizer.js"></script>
     <script src = "js/visualizationMethods.js"></script>
+    <script src = "js/podReadAndWrite.js"></script>
+    <script src = "js/commentify.js"></script>
+    <script src="js/rdflib/rdflib.min.js"> </script>
   </head>
   <body>
     <header>
@@ -17,6 +21,15 @@
       <a href="vocabulary.html">Vocabulary</a>
       <a href="ontology.html">Ontology</a>
       <a href="contact.html">Contact</a>
+      <!-- create a form aligning to the right of the screen-->
+      <div style="float: right;">
+        <form id="userNameForm">
+          <label id="userName" style="color: grey;">Anonymus</label>
+          <br>
+          <input id="userNameText" type="text">
+          <button id="userNameButton" onclick=saveUserName()>Benutzer anmelden</button>
+        </form>
+      </div>
       <br>
       <center>
         <img src="pictures/CSV-Image.svg" alt="RRZEicons  CC BY-SA 3.0 Deed" height="150" title="RRZEicons  CC BY-SA 3.0 Deed" img>
@@ -80,6 +93,14 @@
             });
             const text = await response.text();
             readData(text, "url")
+        }
+
+        function saveUserName() {
+          event.preventDefault();
+          var userNameText = document.getElementById("userNameText").value;
+          document.getElementById("userName").innerHTML = userNameText;
+          document.getElementById("userNameText").value = "";
+
         }
       </script>
     </main>
