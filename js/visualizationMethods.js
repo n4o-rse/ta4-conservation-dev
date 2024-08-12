@@ -884,12 +884,18 @@ function generateIndentedComments(data, idObject) {
   node.append("circle")
       .attr("cx", d => d.depth * nodeSize)
       .attr("r", 2.5)
-      .attr("fill", d => d.children ? null : "#999");
+      .attr("fill", d => d.children ? null : "#999")
+      .on("click", (e, d) => {
+        console.log(d.data.id);
+      });
 
   node.append("text")
       .attr("dy", "0.32em")
       .attr("x", d => d.depth * nodeSize + 6)
-      .text(d => idObject[d.data.id]["prefLabel"]);
+      .text(d => idObject[d.data.id]["prefLabel"])
+      .on("click", (e, d) => {
+        console.log(d.data.id);
+      });
 
   node.append("title")
       .text(d => d.ancestors().reverse().map(d => idObject[d.data.id]["prefLabel"]).join("/"));
@@ -913,9 +919,6 @@ function generateIndentedComments(data, idObject) {
   }
 
   // add a on-click functionality for all nodes, displaying their id
-  node.on("click", function(e, d) {
-    alert(d.data.id);
-  });
 
   return svg.node();
 }
