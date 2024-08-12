@@ -230,12 +230,24 @@ function cleanTableData(data) {
         row.identifier = row.identifier.replace(/\s/g, "");
         row.parent = row.parent.replace(/\s/g, "");
         row.prefLabel = row.prefLabel.replace(/\s/g, "");
-        row = {"identifier":row.identifier,"concept":row.prefLabel,"parent":row.parent}
+        row = {"identifier":row.identifier,
+        "concept":row.prefLabel,
+        "parent":row.parent,
+        "description":row.description,
+        "altLabel":row.altLabel,
+        "related":row.related,
+        "source":row.source,
+        "creator":row.creator,
+        "closeMatch":row.closeMatch,
+        "relatedMatch":row.relatedMatch,
+        "seeAlso":row.seeAlso,
+        "example":row.example
+      }
         cleanArray.push(row);
       }
     }
     else {
-      row = {"identifier":row.identifier,"concept":row.concept,"parent":row.parent}
+      row = {"identifier":row.identifier,"concept":row.prefLabel,"parent":row.parent}
       ignored.push(row);
     }
   }
@@ -265,11 +277,35 @@ function topData(data) {
     }
   }
   if (topCount > 0) {
-    rootArray.push({"identifier":"top","concept":"Thesaurus","parent":""})
+    rootArray.push({"identifier":"top",
+    "concept":"Thesaurus",
+    "parent":"",
+    "description":"This is the synthetic top concept of the thesaurus.",
+    "altLabel":"",
+    "related":"",
+    "source":"",
+    "creator":"",
+    "closeMatch":"",
+    "relatedMatch":"",
+    "seeAlso":"",
+    "example":""
+  })
   }
 
   if (orphans.length > 0) {
-    rootArray.push({"identifier":"orphanage","concept":"orphanage","parent":"top"})
+    rootArray.push({"identifier":"orphanage",
+    "concept":"orphanage",
+    "parent":"top",
+    "description":"This is the synthetic top concept of the orphan-terms.",
+    "altLabel":"",
+    "related":"",
+    "source":"",
+    "creator":"",
+    "closeMatch":"",
+    "relatedMatch":"",
+    "seeAlso":"",
+    "example":""
+  })
   }
   return [rootArray, topPosition, orphans];
 }
@@ -280,17 +316,30 @@ function idToName(data) {
   const missingParents = []
   for (let i = 0; i < data.length; i++) {
     let row = data[i];
-    if (row.identifier in transformationObject) {
-      transformationObject[row.identifier].push(row.concept);
+    if (!(row.identifier in transformationObject)) {
+      transformationObject[row.identifier] = {};
+    }
+    if ("concept" in transformationObject[row.identifier]) {
+      transformationObject[row.identifier]["concept"].push(row.concept);
 
     }
     else {
-      transformationObject[row.identifier] = [row.concept];
+      transformationObject[row.identifier]["concept"] = [row.concept];
     }
+    transformationObject[row.identifier]["description"] = row.description;
+    transformationObject[row.identifier]["altLabel"] = row.altLabel;
+    transformationObject[row.identifier]["related"] = row.related;
+    transformationObject[row.identifier]["source"] = row.source;
+    transformationObject[row.identifier]["creator"] = row.creator;
+    transformationObject[row.identifier]["closeMatch"] = row.closeMatch;
+    transformationObject[row.identifier]["relatedMatch"] = row.relatedMatch;
+    transformationObject[row.identifier]["seeAlso"] = row.seeAlso;
+    transformationObject[row.identifier]["example"] = row.example;
+
   }
   for (let key in transformationObject) {
-    if (transformationObject[key].length > 1) {
-      doublettes.push([key, transformationObject[key]]);
+    if (transformationObject[key]["concept"].length > 1) {
+      doublettes.push([key, transformationObject[key]["concept"]]);
     }
   }
   for (let i = 0; i < data.length; i++) {
