@@ -1,4 +1,4 @@
-function openDetails(e, d) {
+function openDetails(e, d, idObject) {
   console.log(idObject[d.data.id]["description"]);
 }
 
@@ -924,7 +924,7 @@ function generateIndentedComments(data, idObject) {
         .text(d => format(d.value, d));
   }
 
-  node.on("click", openDetails());
+  node.on("click", openDetails(e, d, idObject));
   
   return svg.node();
 }
