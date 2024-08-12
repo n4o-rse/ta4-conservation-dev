@@ -879,16 +879,15 @@ function generateIndentedComments(data, idObject) {
     .selectAll()
     .data(nodes)
     .join("g")
-    .attr("transform", d => `translate(0,${d.index * nodeSize})`);
+    .attr("transform", d => `translate(0,${d.index * nodeSize})`)
+    .on("click", function(d) {
+      alert("Node ID: " + d.data.id + "\n" + "PrefLabel: " + idObject[d.data.id]["prefLabel"]);
+    });
 
   node.append("circle")
       .attr("cx", d => d.depth * nodeSize)
       .attr("r", 2.5)
-      .attr("fill", d => d.children ? null : "#999")
-      // create alert when clicking circle
-      .on("click", function(d) {
-        alert("Node ID: " + d.data.id + "\n" + "PrefLabel: " + idObject[d.data.id]["prefLabel"]);
-      });
+      .attr("fill", d => d.children ? null : "#999");
 
   node.append("text")
       .attr("dy", "0.32em")
