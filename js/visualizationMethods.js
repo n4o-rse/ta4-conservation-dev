@@ -914,7 +914,7 @@ function generateIndentedComments(data, idObject) {
 
   // add a on-click functionality for all nodes, displaying their id
   node.on("click", function(d) {
-    alert(d.id);
+    alert(JSON.stringify(d));
   });
 
   return svg.node();
