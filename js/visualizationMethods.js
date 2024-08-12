@@ -884,18 +884,20 @@ function generateIndentedComments(data, idObject) {
   node.append("circle")
       .attr("cx", d => d.depth * nodeSize)
       .attr("r", 2.5)
-      .attr("fill", d => d.children ? null : "#999")
-      .on("click", (e, d) => {
-        console.log(idObject[d.data.id]["description"]);
-      });
+      .attr("fill", d => d.children ? null : "#999");
+      
+      //.on("click", (e, d) => {
+      //  console.log(idObject[d.data.id]["description"]);
+      //});
 
   node.append("text")
       .attr("dy", "0.32em")
       .attr("x", d => d.depth * nodeSize + 6)
-      .text(d => idObject[d.data.id]["prefLabel"])
-      .on("click", (e, d) => {
-        console.log(idObject[d.data.id]["description"]);
-      });
+      .text(d => idObject[d.data.id]["prefLabel"]);
+
+      //.on("click", (e, d) => {
+      //  console.log(idObject[d.data.id]["description"]);
+      //});
 
   node.append("title")
       .text(d => d.ancestors().reverse().map(d => idObject[d.data.id]["prefLabel"]).join("/"));
@@ -917,6 +919,10 @@ function generateIndentedComments(data, idObject) {
       .data(root.copy().sum(value).descendants())
         .text(d => format(d.value, d));
   }
+
+  node.on("click", (e, d) => {
+    console.log(idObject[d.data.id]["description"]);
+  });
 
   // add a on-click functionality for all nodes, displaying their id
 
