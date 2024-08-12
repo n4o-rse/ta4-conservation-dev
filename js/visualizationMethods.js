@@ -879,10 +879,7 @@ function generateIndentedComments(data, idObject) {
     .selectAll()
     .data(nodes)
     .join("g")
-    .attr("transform", d => `translate(0,${d.index * nodeSize})`)
-    .on("click", function(d) {
-      alert("Node ID: " + d.id + "\n" + "PrefLabel: " + idObject[d.id]["prefLabel"]);
-    });
+    .attr("transform", d => `translate(0,${d.index * nodeSize})`);
 
   node.append("circle")
       .attr("cx", d => d.depth * nodeSize)
@@ -914,6 +911,11 @@ function generateIndentedComments(data, idObject) {
       .data(root.copy().sum(value).descendants())
         .text(d => format(d.value, d));
   }
+
+  // add a on-click functionality for all nodes, displaying their id
+  node.on("click", function(d) {
+    alert(d);
+  });
 
   return svg.node();
 }
