@@ -886,7 +886,7 @@ function generateIndentedComments(data, idObject) {
       .attr("r", 2.5)
       .attr("fill", d => d.children ? null : "#999")
       .on("click", (e, d) => {
-        console.log(d.data.id);
+        console.log(idObject[d.data.id]["description"]);
       });
 
   node.append("text")
@@ -894,7 +894,7 @@ function generateIndentedComments(data, idObject) {
       .attr("x", d => d.depth * nodeSize + 6)
       .text(d => idObject[d.data.id]["prefLabel"])
       .on("click", (e, d) => {
-        console.log(d.data.id);
+        console.log(idObject[d.data.id]["description"]);
       });
 
   node.append("title")
