@@ -89,7 +89,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       const radioDiv = document.createElement("div");
       radioDiv.id = "radioDiv";
       radioDiv.innerHTML = "Select visualization type: ";
-      const radioTypes = ["Tidy tree", "Cluster tree", "Radial tidy tree", "Radial cluster tree", "Collapsible Tree", "Force directed tree", "Sunburst", "Icicle", "Indented Tree", "Indented Comments"];
+      const radioTypes = ["Tidy tree(Kommentare)", "Cluster tree(Kommentare)", "Radial tidy tree", "Radial cluster tree", "Collapsible Tree", "Force directed tree", "Sunburst", "Icicle", "Indented Tree(Kommentare)"];
       let lineBreakStarter = document.createElement("br");
       radioDiv.appendChild(lineBreakStarter);
       for (let i = 0; i < radioTypes.length; i++) {
@@ -139,7 +139,7 @@ function visualizeData([stratifiedData, idObject]) {
   const visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
   let svg;
   //try {
-    if (visualizationType == "Tidy tree" || visualizationType == "Cluster tree") {
+    if (visualizationType == "Tidy tree(Kommentare)" || visualizationType == "Cluster tree(Kommentare)") {
       svg = generateTidyTree(stratifiedData, idObject, visualizationType);
     }
     if (visualizationType == "Radial tidy tree") {
@@ -157,14 +157,11 @@ function visualizeData([stratifiedData, idObject]) {
     if (visualizationType == "Collapsible Tree") {
       svg = generateCollapsibleTree(stratifiedData, idObject);
     }
-    if (visualizationType == "Indented Tree") {
+    if (visualizationType == "Indented Tree(Kommentare)") {
       svg = generateIndentedTree(stratifiedData, idObject);
     }
     if (visualizationType == "Icicle") {
       svg = generateIcicle(stratifiedData, idObject);
-    }
-    if (visualizationType == "Indented Comments") {
-      svg = generateIndentedComments(stratifiedData, idObject);
     }
     //document.getElementById("chartDiv").innerHTML = svg.outerHTML;
     document.getElementById("errorText").innerHTML = "";
