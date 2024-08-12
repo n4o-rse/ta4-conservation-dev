@@ -159,10 +159,13 @@ function visualizeData([stratifiedData, idObject]) {
       svg = generateCollapsibleTree(stratifiedData, idObject);
     }
     if (visualizationType == "Indented Tree") {
-      svg = generateIntendedTree(stratifiedData, idObject);
+      svg = generateIndentedTree(stratifiedData, idObject);
     }
     if (visualizationType == "Icicle") {
       svg = generateIcicle(stratifiedData, idObject);
+    }
+    if (visualizationType == "Indented Comments") {
+      svg = generateIndentedComments(stratifiedData, idObject);
     }
     //document.getElementById("chartDiv").innerHTML = svg.outerHTML;
     document.getElementById("errorText").innerHTML = "";
