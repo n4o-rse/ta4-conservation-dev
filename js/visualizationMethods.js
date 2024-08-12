@@ -69,7 +69,7 @@ function generateTidyTree(data, idObject, visualizationType) {
         .attr("dy", "0.31em")
         .attr("x", d => d.children ? -6 : 6)
         .attr("text-anchor", d => d.children ? "end" : "start")
-        .text(d => idObject[d.data.id])
+        .text(d => idObject[d.data.id]["prefLabel"])
         .attr("stroke", "white")
         .attr("paint-order", "stroke");
     
@@ -137,7 +137,7 @@ function generateTidyTree(data, idObject, visualizationType) {
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
       .attr("fill", "currentColor")
-      .text(d => idObject[d.data.id]);
+      .text(d => idObject[d.data.id]["prefLabel"]);
 
   return svg.node();
   }
@@ -203,7 +203,7 @@ function generateTidyTree(data, idObject, visualizationType) {
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
       .attr("fill", "currentColor")
-      .text(d => idObject[d.data.id]);
+      .text(d => idObject[d.data.id]["prefLabel"]);
 
   return svg.node();
   }
@@ -247,10 +247,10 @@ function generateTidyTree(data, idObject, visualizationType) {
     .selectAll("path")
     .data(root.descendants().filter(d => d.depth))
     .join("path")
-      .attr("fill", d => { while (d.depth > 1) d = d.parent; return color(idObject[d.data.id]); })
+      .attr("fill", d => { while (d.depth > 1) d = d.parent; return color(idObject[d.data.id]["prefLabel"]); })
       .attr("d", arc)
     .append("title")
-      .text(d => `${d.ancestors().map(d => idObject[d.data.id]).reverse().join("/")}\n${format(d.value)}`);
+      .text(d => `${d.ancestors().map(d => idObject[d.data.id]["prefLabel"]).reverse().join("/")}\n${format(d.value)}`);
 
   // Add a label for each element.
   svg.append("g")
@@ -267,7 +267,7 @@ function generateTidyTree(data, idObject, visualizationType) {
         return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
       })
       .attr("dy", "0.35em")
-      .text(d => idObject[d.data.id]);
+      .text(d => idObject[d.data.id]["prefLabel"]);
 
   // The autoBox function adjusts the SVG’s viewBox to the dimensions of its contents.
   return svg.attr("viewBox", autoBox).node(); //
@@ -346,7 +346,7 @@ function generateForceDirectedTree(data, idObject) {
         .call(drag(simulation));
   
     node.append("title")
-        .text(d => idObject[d.data.id]);
+        .text(d => idObject[d.data.id]["prefLabel"]);
   
     simulation.on("tick", () => {
       link
@@ -448,7 +448,7 @@ function generateForceDirectedTree(data, idObject) {
           .attr("dy", "0.31em")
           .attr("x", d => d._children ? -6 : 6)
           .attr("text-anchor", d => d._children ? "end" : "start")
-          .text(d => idObject[d.data.id])
+          .text(d => idObject[d.data.id]["prefLabel"])
           .attr("stroke-linejoin", "round")
           .attr("stroke-width", 3)
           .attr("stroke", "white")
@@ -502,7 +502,7 @@ function generateForceDirectedTree(data, idObject) {
     root.descendants().forEach((d, i) => {
       d.id = i;
       d._children = d.children;
-      if (d.depth && idObject[d.data.id].length !== 7) d.children = null;
+      if (d.depth && idObject[d.data.id]["prefLabel"].length !== 7) d.children = null;
     });
   
     update(null, root);
@@ -567,10 +567,10 @@ function generateForceDirectedTree(data, idObject) {
     node.append("text")
         .attr("dy", "0.32em")
         .attr("x", d => d.depth * nodeSize + 6)
-        .text(d => idObject[d.data.id]);
+        .text(d => idObject[d.data.id]["prefLabel"]);
   
     node.append("title")
-        .text(d => d.ancestors().reverse().map(d => idObject[d.data.id]).join("/"));
+        .text(d => d.ancestors().reverse().map(d => idObject[d.data.id]["prefLabel"]).join("/"));
   
     for (const {label, value, format, x} of columns) {
       svg.append("text")
@@ -627,7 +627,7 @@ function generateIcicle(data, idObject) {
         .attr("transform", d => `translate(${d.y0},${d.x0})`);
   
     cell.append("title")
-        .text(d => `${d.ancestors().map(d => idObject[d.data.id]).reverse().join("/")}\n${format(d.value)}`);
+        .text(d => `${d.ancestors().map(d => idObject[d.data.id]["prefLabel"]).reverse().join("/")}\n${format(d.value)}`);
   
     // Color the cell with respect to which child of root it belongs to. 
     cell.append("rect")
@@ -637,7 +637,7 @@ function generateIcicle(data, idObject) {
         .attr("fill", d => {
           if (!d.depth) return "#ccc";
           while (d.depth > 1) d = d.parent;
-          return color(idObject[d.data.id]);
+          return color(idObject[d.data.id]["prefLabel"]);
         });
   
     // Add labels and a title.
@@ -646,7 +646,7 @@ function generateIcicle(data, idObject) {
         .attr("y", 13);
   
     text.append("tspan")
-        .text(d => idObject[d.data.id]);
+        .text(d => idObject[d.data.id]["prefLabel"]);
   
     text.append("tspan")
         .attr("fill-opacity", 0.7)

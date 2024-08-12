@@ -319,12 +319,12 @@ function idToName(data) {
     if (!(row.identifier in transformationObject)) {
       transformationObject[row.identifier] = {};
     }
-    if ("concept" in transformationObject[row.identifier]) {
-      transformationObject[row.identifier]["concept"].push(row.concept);
+    if ("prefLabel" in transformationObject[row.identifier]) {
+      transformationObject[row.identifier]["prefLabel"].push(row.concept);
 
     }
     else {
-      transformationObject[row.identifier]["concept"] = [row.concept];
+      transformationObject[row.identifier]["prefLabel"] = [row.concept];
     }
     transformationObject[row.identifier]["description"] = row.description;
     transformationObject[row.identifier]["altLabel"] = row.altLabel;
@@ -338,8 +338,8 @@ function idToName(data) {
 
   }
   for (let key in transformationObject) {
-    if (transformationObject[key]["concept"].length > 1) {
-      doublettes.push([key, transformationObject[key]["concept"]]);
+    if (transformationObject[key]["prefLabel"].length > 1) {
+      doublettes.push([key, transformationObject[key]["prefLabel"]]);
     }
   }
   for (let i = 0; i < data.length; i++) {
