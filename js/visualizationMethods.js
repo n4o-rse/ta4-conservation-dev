@@ -1,3 +1,7 @@
+function openDetails(e, d) {
+  console.log(idObject[d.data.id]["description"]);
+}
+
 //TidyTree and ClusterTree
 function generateTidyTree(data, idObject, visualizationType) {
     const width = 2000; //928
@@ -920,11 +924,7 @@ function generateIndentedComments(data, idObject) {
         .text(d => format(d.value, d));
   }
 
-  node.on("click", (e, d) => {
-    console.log(idObject[d.data.id]["description"]);
-  });
-
-  // add a on-click functionality for all nodes, displaying their id
-
+  node.on("click", openDetails());
+  
   return svg.node();
 }
