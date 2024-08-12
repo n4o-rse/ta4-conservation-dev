@@ -881,7 +881,7 @@ function generateIndentedComments(data, idObject) {
     .join("g")
     .attr("transform", d => `translate(0,${d.index * nodeSize})`)
     .on("click", function(d) {
-      alert("Node ID: " + d + "\n" + "PrefLabel: " + idObject[d.data.id]["prefLabel"]);
+      alert("Node ID: " + d.id + "\n" + "PrefLabel: " + idObject[d.id]["prefLabel"]);
     });
 
   node.append("circle")
