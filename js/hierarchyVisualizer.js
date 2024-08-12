@@ -138,8 +138,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
 function visualizeData([stratifiedData, idObject]) {
   const visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
   let svg;
-  try {
-    // check if visualization type has value "Tidy tree" or "Cluster tree"
+  //try {
     if (visualizationType == "Tidy tree" || visualizationType == "Cluster tree") {
       svg = generateTidyTree(stratifiedData, idObject, visualizationType);
     }
@@ -180,11 +179,11 @@ function visualizeData([stratifiedData, idObject]) {
       button.onclick = function() {downloadSvg(svg, visualizationType)};
       document.getElementById("chartDiv").after(button);
     }
-  } 
-  catch (error) {
-    document.getElementById("errorText").innerHTML = error;
-    document.getElementById("errorText").style.color = "red";
-  }
+  //} 
+  //catch (error) {
+  //  document.getElementById("errorText").innerHTML = error;
+  //  document.getElementById("errorText").style.color = "red";
+  //}
 }
 
 function downloadSvg(svg, visualizationType) {
