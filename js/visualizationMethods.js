@@ -1,5 +1,5 @@
-function openDetails(e, d, idObject) {
-  console.log(idObject[d.data.id]["description"]);
+function openDetails(id, idObject) {
+  console.log(idObject[id]["description"]);
 }
 
 //TidyTree and ClusterTree
@@ -924,7 +924,7 @@ function generateIndentedComments(data, idObject) {
         .text(d => format(d.value, d));
   }
 
-  node.on("click", openDetails(e, d, idObject));
+  node.on("click", (e, d) => openDetails(d.data.id, idObject));
   
   return svg.node();
 }
