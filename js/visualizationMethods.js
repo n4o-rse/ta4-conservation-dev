@@ -76,6 +76,8 @@ function generateTidyTree(data, idObject, visualizationType) {
         .text(d => idObject[d.data.id]["prefLabel"])
         .attr("stroke", "white")
         .attr("paint-order", "stroke");
+
+    node.on("click", (e, d) => openDetails(d.data.id, idObject));
     
     return svg.node();
   }
@@ -143,6 +145,8 @@ function generateTidyTree(data, idObject, visualizationType) {
       .attr("fill", "currentColor")
       .text(d => idObject[d.data.id]["prefLabel"]);
 
+    node.on("click", (e, d) => openDetails(d.data.id, idObject));
+
   return svg.node();
   }
 
@@ -209,6 +213,8 @@ function generateTidyTree(data, idObject, visualizationType) {
       .attr("fill", "currentColor")
       .text(d => idObject[d.data.id]["prefLabel"]);
 
+  node.on("click", (e, d) => openDetails(d.data.id, idObject));
+
   return svg.node();
   }
 
@@ -272,6 +278,8 @@ function generateTidyTree(data, idObject, visualizationType) {
       })
       .attr("dy", "0.35em")
       .text(d => idObject[d.data.id]["prefLabel"]);
+
+  node.on("click", (e, d) => openDetails(d.data.id, idObject));
 
   // The autoBox function adjusts the SVG’s viewBox to the dimensions of its contents.
   return svg.attr("viewBox", autoBox).node(); //
@@ -363,6 +371,8 @@ function generateForceDirectedTree(data, idObject) {
           .attr("cx", d => d.x)
           .attr("cy", d => d.y);
     });
+
+    node.on("click", (e, d) => openDetails(d.data.id, idObject));
   
     //invalidation.then(() => simulation.stop());
   
@@ -508,6 +518,8 @@ function generateForceDirectedTree(data, idObject) {
       d._children = d.children;
       if (d.depth && idObject[d.data.id]["prefLabel"].length !== 7) d.children = null;
     });
+
+  node.on("click", (e, d) => openDetails(d.data.id, idObject));
   
     update(null, root);
   
@@ -593,6 +605,8 @@ function generateForceDirectedTree(data, idObject) {
         .data(root.copy().sum(value).descendants())
           .text(d => format(d.value, d));
     }
+
+  node.on("click", (e, d) => openDetails(d.data.id, idObject));
   
     return svg.node();
   }
@@ -655,6 +669,8 @@ function generateIcicle(data, idObject) {
     text.append("tspan")
         .attr("fill-opacity", 0.7)
         .text(d => ` ${format(d.value)}`);
+
+  node.on("click", (e, d) => openDetails(d.data.id, idObject));
   
     return svg.node();
   }
@@ -806,6 +822,8 @@ function generateIcicle(data, idObject) {
           // .attr("cx", d => d.x)
           // .attr("cy", d => d.y);
         }
+
+        node.on("click", (e, d) => openDetails(d.data.id, idObject));
       
         function drag(simulation) {
           function dragstarted(event) {
