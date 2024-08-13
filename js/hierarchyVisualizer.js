@@ -171,12 +171,11 @@ function visualizeData([stratifiedData, idObject]) {
     if (visualizationType == "Icicle") {
       svg = generateIcicle(stratifiedData, idObject);
     }
-    //document.getElementById("chartDiv").innerHTML = svg.outerHTML;
+    //document.getElementById("chartDiv").innerHTML = svg.outerHTML; ???
     document.getElementById("errorText").innerHTML = "";
     document.getElementById("errorText").style.color = "black";
     document.getElementById("chartDiv").innerHTML = "";
     document.getElementById("chartDiv").append(svg);
-    // create button to download svg file if no element with id "downloadButton" exists
     if (!document.getElementById("downloadButton")) {
       const button = document.createElement("button");
       button.id = "downloadButton";

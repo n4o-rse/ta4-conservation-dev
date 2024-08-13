@@ -3,6 +3,7 @@
   <head>
     <title>Knowledge management FAIRification tool for conservation and restoration processes</title>
     <link rel="icon" type="image/x-icon" href="pictures/CoffeeAndConservationLogo.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src = "js/d3.v7.js"></script>
     <script src = "js/hierarchyVisualizer.js"></script>
     <script src = "js/visualizationMethods.js"></script>
@@ -62,12 +63,36 @@
             <p id="missingParents"> </p>
             <p id="errorText"> </p>
             <p id="testingText"> </p>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close">&times;</span>
+                  <h2>Begriffsdetails</h2>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                  <h3>Neuer Kommentar</h3>
+                </div>
+              </div> 
+            </div>
             <div id="chartDiv" style="width: 100%"> </div>
           </div>
         </section>
         <aside> </aside>
       </article>
       <script>
+          //var modal = document.getElementById("myModal");
+          //  modal.style.display = "none";
+          var modal = document.getElementById("myModal");
+          modal.style.display = "none";
+          var span = document.getElementsByClassName("close")[0];
+          span.onclick = function() {
+            modal.style.display = "none";
+          }
+
         const fileForm = document.getElementById('fileForm');
         fileForm.addEventListener('submit', inputFile);
 

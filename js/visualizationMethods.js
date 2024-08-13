@@ -1,5 +1,15 @@
 function openDetails(id, idObject) {
-  console.log(idObject[id]["description"]);
+  var body = document.getElementsByClassName("modal-body")
+  var header = document.getElementsByClassName("modal-header")
+  header.innerHTML = idObject[id]["prefLabel"];
+  const details = ["identifier", "concept", "parent", "description", "altLabel", "related", "source", "creator", "closeMatch", "relatedMatch", "seeAlso", "example"]; // , "prefLabel"
+  for (let i = 0; i < details.length; i++) {
+    var detail = document.createElement("p");
+    detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
+    body[0].appendChild(detail);
+  }
+  var modal = document.getElementById("myModal");
+  modal.style.display = "block";
 }
 
 //TidyTree and ClusterTree
