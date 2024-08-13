@@ -236,7 +236,7 @@ function cleanTableData(data) {
         row.identifier = row.identifier.replace(/\s/g, "");
         row.parent = row.parent.replace(/\s/g, "");
         row.prefLabel = row.prefLabel.replace(/\s/g, "");
-        row = {
+        newRow = {
         "identifier":row.identifier,
         "concept":row.prefLabel,
         "parent":row.parent,
@@ -250,12 +250,12 @@ function cleanTableData(data) {
         "seeAlso":row.seeAlso,
         "example":row.example
       }
-        cleanArray.push(row);
+        cleanArray.push(newRow);
       }
     }
     else {
-      row = {"identifier":row.identifier,"concept":row.prefLabel,"parent":row.parent}
-      ignored.push(row);
+      newRow = {"identifier":row.identifier,"concept":row.prefLabel,"parent":row.parent}
+      ignored.push(newRow);
     }
   }
   return [cleanArray, ignored];
