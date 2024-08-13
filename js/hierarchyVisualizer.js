@@ -236,7 +236,8 @@ function cleanTableData(data) {
         row.identifier = row.identifier.replace(/\s/g, "");
         row.parent = row.parent.replace(/\s/g, "");
         row.prefLabel = row.prefLabel.replace(/\s/g, "");
-        row = {"identifier":row.identifier,
+        row = {
+        "identifier":row.identifier,
         "concept":row.prefLabel,
         "parent":row.parent,
         "description":row.description,
@@ -283,7 +284,8 @@ function topData(data) {
     }
   }
   if (topCount > 0) {
-    rootArray.push({"identifier":"top",
+    rootArray.push({
+    "identifier":"top",
     "concept":"Thesaurus",
     "parent":"",
     "description":"This is the synthetic top concept of the thesaurus.",
@@ -299,7 +301,8 @@ function topData(data) {
   }
 
   if (orphans.length > 0) {
-    rootArray.push({"identifier":"orphanage",
+    rootArray.push({
+    "identifier":"orphanage",
     "concept":"orphanage",
     "parent":"top",
     "description":"This is the synthetic top concept of the orphan-terms.",

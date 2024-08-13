@@ -91,6 +91,11 @@
           var span = document.getElementsByClassName("close")[0];
           span.onclick = function() {
             modal.style.display = "none";
+            // rewmove all children from modal-body
+            var modalBody = document.getElementsByClassName("modal-body")[0];
+            while (modalBody.firstChild) {
+              modalBody.removeChild(modalBody.firstChild);
+            }
           }
 
         const fileForm = document.getElementById('fileForm');
