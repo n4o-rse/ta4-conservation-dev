@@ -8,9 +8,7 @@
     <script src = "js/hierarchyVisualizer.js"></script>
     <script src = "js/visualizationMethods.js"></script>
     <script src = "js/podReadAndWrite.js"></script>
-    <!-- 
     <script src = "js/commentify.js"></script>
-    -->
     <script src = "js/rdflib/rdflib.min.js"></script>
   </head>
   <body>
@@ -74,7 +72,12 @@
                 <div class="modal-body">
                 </div>
                 <div class="modal-footer">
-                  <h3>Neuer Kommentar</h3>
+                  <form id="commentForm">
+                    <textarea id="commentText" rows="4" cols="50"></textarea>
+                    <button type="submit" id="commentButton">Kommentieren</button>
+                  </form>
+                </div>
+                <div class="modal-comments">
                 </div>
               </div> 
             </div>
@@ -92,10 +95,12 @@
           span.onclick = function() {
             modal.style.display = "none";
             // rewmove all children from modal-body
+            /* already in build function
             var modalBody = document.getElementsByClassName("modal-body")[0];
             while (modalBody.firstChild) {
               modalBody.removeChild(modalBody.firstChild);
             }
+            */
           }
 
         const fileForm = document.getElementById('fileForm');
@@ -103,6 +108,9 @@
 
         const textForm = document.getElementById('textForm');
         textForm.addEventListener('submit', inputUrl);
+
+        const commentForm = document.getElementById("commentForm");
+        commentForm.addEventListener("submit", updatePod)
         
         function inputFile() {
             event.preventDefault();

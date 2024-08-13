@@ -1,33 +1,46 @@
-async function updatePod(url) {
+async function updatePod() {
+    const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
+    id, commentText, author
+    commentText = document.getElementById("commentText").value;
+    author = document.getElementById("userName").value;
+    id = document.getElementById("commentButton").className;
     // declare namespaces
-    var AO = $rdf.Namespace("http://www.w3.org/ns/oa#")
-    var DC = $rdf.Namespace("http://purl.org/dc/terms/")
-    var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#")
-    var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+    var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
+    var DC = $rdf.Namespace("http://purl.org/dc/terms/");
+    var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
+    var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
 
     // declare entities
-    var comment = AO("bodyValue")
+    var value = AO("bodyValue")
     var target = AO("hasTarget")
     var creator = DC("creator")
     var created = DC("created")
 
-    // 
+    // read ttl from pod
     preRdf = await readFromPod(url)
     // parse ttl into store
     store = $rdf.graph()
     $rdf.parse(preRdf, store, url, 'text/turtle')
 
+    // create a list of all AO('Annotation')
+    let annotations = store.each(undefined, RDF('type'), AO('Annotation'))
+    // calculate the next annotation number
+    let nextAnnoNumber = annotations.length + 1
+
     //create new annotation
-    anno2 = $rdf.sym("https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno2")
-    concept1 = $rdf.sym("https://restaurierungsvokabular.solidweb.org/annotations//concept1")
+    newAnno = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`)
+    newConcept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations//concept${id}`)
 
     // add annotation to store
-    store.add(anno2, RDF('type'), AO('Annotation'))
-    store.add(concept1, RDF('type'), SK('Concept'))
-    store.add(anno2, comment, 'I disapprove this definition as well!')
-    store.add(anno2, creator, 'Lasse Mempel')
-    store.add(anno2, created, new Date().toISOString())
-    store.add(anno2, target, concept1)
+    store.add(newAnno, RDF('type'), AO('Annotation'))
+    // add newConcept if not already in store
+    if (!store.holds(newConcept, RDF('type'), SK('Concept'))) {
+        store.add(newConcept, RDF('type'), SK('Concept'))
+    }
+    store.add(newAnno, value, commentText)
+    store.add(newAnno, creator, author)
+    store.add(newAnno, created, new Date().toISOString())
+    store.add(newAnno, target, newConcept)
 
     // serialize store into ttl
     let ttl = $rdf.serialize(null, store, url, 'text/turtle')
@@ -43,6 +56,3 @@ async function updatePod(url) {
     var motivation = AO("motivatedBy")
     */
 }
-
-const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
-updatePod(url)

@@ -8,12 +8,14 @@ function openDetails(id, idObject) {
   var header = document.getElementById("header-head")
   header.innerHTML = idObject[id]["prefLabel"];
   idObject[id]["identifier"] = id.toString();
-  const details = ["identifier", "description", "altLabel", "related", "source", "creator", "closeMatch", "relatedMatch", "seeAlso", "example"];
+  const details = ["identifier","description", "altLabel", "related", "source", "creator", "closeMatch", "relatedMatch", "seeAlso", "example"];
   for (let i = 0; i < details.length; i++) {
     var detail = document.createElement("p");
     detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
     body[0].appendChild(detail);
-  }
+  } 
+  var commentButton = document.getElementById("commentButton")
+  commentButton.className = id.toString();
   var modal = document.getElementById("myModal");
   modal.style.display = "block";
 }
