@@ -1,6 +1,5 @@
 async function updatePod() {
     const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
-    id, commentText, author
     commentText = document.getElementById("commentText").value;
     author = document.getElementById("userName").value;
     id = document.getElementById("commentButton").className;
