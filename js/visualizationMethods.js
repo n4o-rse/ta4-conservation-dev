@@ -1,8 +1,15 @@
 function openDetails(id, idObject) {
+  var modalBody = document.getElementsByClassName("modal-body")[0];
+  while (modalBody.firstChild) {
+    modalBody.removeChild(modalBody.firstChild);
+  }
+  console.log(idObject[id]);
   var body = document.getElementsByClassName("modal-body")
   var header = document.getElementsByClassName("modal-header")
-  header.innerHTML = idObject[id]["prefLabel"];
-  const details = ["identifier", "concept", "parent", "description", "altLabel", "related", "source", "creator", "closeMatch", "relatedMatch", "seeAlso", "example"]; // , "prefLabel"
+  header.innerHTML = idObject[id]["concept"];
+  idObject[id]["identifier"] = idObject[id]["identifier"].toString();
+  idObject[id]["parent"] = idObject[idObject[id]["parent"]]["concept"];
+  const details = ["identifier", "parent", "description", "altLabel", "related", "source", "creator", "closeMatch", "relatedMatch", "seeAlso", "example"]; // , "prefLabel"
   for (let i = 0; i < details.length; i++) {
     var detail = document.createElement("p");
     detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
