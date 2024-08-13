@@ -351,6 +351,8 @@ function idToName(data) {
   for (let key in transformationObject) {
     if (transformationObject[key]["prefLabel"].length > 1) {
       doublettes.push([key, transformationObject[key]["prefLabel"]]);
+    } else {
+      transformationObject[key]["prefLabel"] = transformationObject[key]["prefLabel"][0];
     }
   }
   for (let i = 0; i < data.length; i++) {
