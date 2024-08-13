@@ -362,6 +362,7 @@ function idToName(data) {
       missingParents.push(row);
     }
   }
+  console.log(transformationObject);
   return [transformationObject, doublettes, missingParents];
 }
 
