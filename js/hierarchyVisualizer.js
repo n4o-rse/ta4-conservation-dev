@@ -332,11 +332,11 @@ function idToName(data) {
     }
     if ("prefLabel" in transformationObject[row.identifier]) {
       transformationObject[row.identifier]["prefLabel"].push(row.concept);
-
     }
     else {
       transformationObject[row.identifier]["prefLabel"] = [row.concept];
     }
+    transformationObject[row.identifier]["concept"] = row.concept;
     transformationObject[row.identifier]["description"] = row.description;
     transformationObject[row.identifier]["altLabel"] = row.altLabel;
     transformationObject[row.identifier]["related"] = row.related;
@@ -346,13 +346,13 @@ function idToName(data) {
     transformationObject[row.identifier]["relatedMatch"] = row.relatedMatch;
     transformationObject[row.identifier]["seeAlso"] = row.seeAlso;
     transformationObject[row.identifier]["example"] = row.example;
-
   }
   for (let key in transformationObject) {
     if (transformationObject[key]["prefLabel"].length > 1) {
       doublettes.push([key, transformationObject[key]["prefLabel"]]);
     } else {
-      transformationObject[key]["prefLabel"] = transformationObject[key]["prefLabel"][0];
+      // delete key prefLabel from transformationObject[key]
+      delete transformationObject[key]["prefLabel"];
     }
   }
   for (let i = 0; i < data.length; i++) {
