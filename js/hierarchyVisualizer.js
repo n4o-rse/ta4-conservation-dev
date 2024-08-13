@@ -322,6 +322,7 @@ function topData(data) {
 }
 
 function idToName(data) {
+  console.log(data);
   const transformationObject = {}
   const doublettes = []
   const missingParents = []
