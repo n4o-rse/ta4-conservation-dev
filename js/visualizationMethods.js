@@ -5,7 +5,7 @@ function openDetails(id, idObject) {
   }
   console.log(idObject[id]);
   var body = document.getElementsByClassName("modal-body")
-  var header = document.getElementsByClassName("modal-header")
+  var header = document.getElementsByID("header-head")
   header.innerHTML = idObject[id]["prefLabel"];
   idObject[id]["identifier"] = id.toString();
   const details = ["identifier", "description", "altLabel", "related", "source", "creator", "closeMatch", "relatedMatch", "seeAlso", "example"];
