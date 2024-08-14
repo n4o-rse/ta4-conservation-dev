@@ -2,7 +2,7 @@ async function updatePod() {
     event.preventDefault();
     const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
     let commentText = document.getElementById("commentText").value;
-    let author = document.getElementById("userName").text;
+    let author = document.getElementById("userName").innerHTML;
     let id = document.getElementById("commentButton").className;
     console.log(`commentText: ${commentText}, author: ${author}, id: ${id}`);
     // declare namespaces
@@ -33,7 +33,7 @@ async function updatePod() {
 
     //create new annotation
     let newAnno = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`)
-    let newConcept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations//concept${id}`)
+    let newConcept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/concept${id}`)
     console.log(`newAnno: ${newAnno}, newConcept: ${newConcept}`)
 
     // add annotation to store
