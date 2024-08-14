@@ -5,6 +5,7 @@ async function updatePod() {
     let author = document.getElementById("userName").innerHTML;
     let id = document.getElementById("commentButton").className;
     console.log(`commentText: ${commentText}, author: ${author}, id: ${id}`);
+
     // declare namespaces
     var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
     var DC = $rdf.Namespace("http://purl.org/dc/terms/");
@@ -19,7 +20,6 @@ async function updatePod() {
 
     // read ttl from pod
     let preRdf = await readFromPod(url)
-    //readFromPod("https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl")
     
     // parse ttl into store
     let store = $rdf.graph()

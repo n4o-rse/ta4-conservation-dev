@@ -1,4 +1,4 @@
-function openDetails(id, idObject) {
+async function openDetails(id, idObject) {
   var modalBody = document.getElementsByClassName("modal-body")[0];
   while (modalBody.firstChild) {
     modalBody.removeChild(modalBody.firstChild);
@@ -14,6 +14,38 @@ function openDetails(id, idObject) {
     detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
     body[0].appendChild(detail);
   } 
+
+  // generate existing comments for this concept
+  var commentDiv = document.getElementsByClassName("modal-comments")[0];
+  const url = "https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl";
+  let commentRdf = await readFromPod(url)
+  
+  // parse ttl into store
+  let store = $rdf.graph()
+  $rdf.parse(preRdf, store, url, 'text/turtle')
+  let concept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/concept${id}`)
+
+  // create namespace
+  var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
+  var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
+  var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+  var target = AO("hasTarget")
+  var value = AO("bodyValue")
+  var creator = DC("creator")
+  var created = DC("created")
+
+  // check if concept is in store
+  if (store.holds(concept, RDF('type'), SK('Concept'))) {
+    // find all comments for this concept
+    let comments = store.each(undefined, target, concept)
+    // generate a paragraph for each comment, containing creator, created, value
+    for (let i = 0; i < comments.length; i++) {
+      let comment = document.createElement("p");
+      comment.innerHTML = "<b>Creator:</b> " + store.any(comments[i], creator) + "<br><b>Created:</b> " + store.any(comments[i], created) + "<br><b>Comment:</b> " + store.any(comments[i], value);
+      commentDiv.appendChild(comment);
+    } 
+  }
+
   var commentButton = document.getElementById("commentButton")
   commentButton.className = id.toString();
   var modal = document.getElementById("myModal");

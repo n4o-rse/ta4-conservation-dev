@@ -236,22 +236,6 @@ function cleanTableData(data) {
         row.identifier = row.identifier.replace(/\s/g, "");
         row.parent = row.parent.replace(/\s/g, "");
         row.prefLabel = row.prefLabel.replace(/\s/g, "");
-        /*
-        let newRow = {
-        "identifier":row.identifier,
-        "concept":row.prefLabel,
-        "parent":row.parent,
-        "description":row.description,
-        "altLabel":row.altLabel,
-        "related":row.related,
-        "source":row.source,
-        "creator":row.creator,
-        "closeMatch":row.closeMatch,
-        "relatedMatch":row.relatedMatch,
-        "seeAlso":row.seeAlso,
-        "example":row.example
-        }
-        */
         cleanArray.push(row);
       }
     }
@@ -288,7 +272,7 @@ function topData(data) {
   if (topCount > 0) {
     rootArray.push({
     "identifier":"top",
-    "concept":"Thesaurus",
+    "prefLabel":"Thesaurus",
     "parent":"",
     "description":"This is the synthetic top concept of the thesaurus.",
     "altLabel":"",
@@ -305,7 +289,7 @@ function topData(data) {
   if (orphans.length > 0) {
     rootArray.push({
     "identifier":"orphanage",
-    "concept":"orphanage",
+    "prefLabel":"orphanage",
     "parent":"top",
     "description":"This is the synthetic top concept of the orphan-terms.",
     "altLabel":"",
