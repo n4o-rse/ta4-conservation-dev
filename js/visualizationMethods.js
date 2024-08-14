@@ -22,7 +22,7 @@ async function openDetails(id, idObject) {
   
   // parse ttl into store
   let store = $rdf.graph()
-  $rdf.parse(preRdf, store, url, 'text/turtle')
+  $rdf.parse(commentRdf, store, url, 'text/turtle')
   let concept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/concept${id}`)
 
   // create namespace
