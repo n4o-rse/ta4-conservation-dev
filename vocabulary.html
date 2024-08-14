@@ -87,22 +87,13 @@
         <aside> </aside>
       </article>
       <script>
-          //var modal = document.getElementById("myModal");
-          //  modal.style.display = "none";
-          var modal = document.getElementById("myModal");
+        readFromPod("https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl")
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
           modal.style.display = "none";
-          var span = document.getElementsByClassName("close")[0];
-          span.onclick = function() {
-            modal.style.display = "none";
-            // rewmove all children from modal-body
-            /* already in build function
-            var modalBody = document.getElementsByClassName("modal-body")[0];
-            while (modalBody.firstChild) {
-              modalBody.removeChild(modalBody.firstChild);
-            }
-            */
-          }
-
+        }
         const fileForm = document.getElementById('fileForm');
         fileForm.addEventListener('submit', inputFile);
 
