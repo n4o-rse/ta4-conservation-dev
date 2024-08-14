@@ -1,8 +1,8 @@
 async function updatePod() {
     const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
-    commentText = document.getElementById("commentText").value;
-    author = document.getElementById("userName").value;
-    id = document.getElementById("commentButton").className;
+    let commentText = document.getElementById("commentText").value;
+    let author = document.getElementById("userName").value;
+    let id = document.getElementById("commentButton").className;
     // declare namespaces
     var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
     var DC = $rdf.Namespace("http://purl.org/dc/terms/");
@@ -16,9 +16,9 @@ async function updatePod() {
     var created = DC("created")
 
     // read ttl from pod
-    preRdf = await readFromPod(url)
+    let preRdf = await readFromPod(url)
     // parse ttl into store
-    store = $rdf.graph()
+    let store = $rdf.graph()
     $rdf.parse(preRdf, store, url, 'text/turtle')
 
     // create a list of all AO('Annotation')
@@ -27,8 +27,8 @@ async function updatePod() {
     let nextAnnoNumber = annotations.length + 1
 
     //create new annotation
-    newAnno = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`)
-    newConcept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations//concept${id}`)
+    let newAnno = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`)
+    let newConcept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations//concept${id}`)
 
     // add annotation to store
     store.add(newAnno, RDF('type'), AO('Annotation'))
