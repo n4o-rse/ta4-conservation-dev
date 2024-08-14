@@ -29,6 +29,7 @@ async function openDetails(id, idObject) {
   var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
   var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
   var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+  var DC = $rdf.Namespace("http://purl.org/dc/terms/");
   var target = AO("hasTarget")
   var value = AO("bodyValue")
   var creator = DC("creator")
