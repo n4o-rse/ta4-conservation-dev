@@ -135,7 +135,8 @@
 
         async function updatePod() {
           const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
-          let preRdf = await readFromPod(url)
+          let preRdf
+          preRdf = await readFromPod(url)
           console.log(preRdf)
         }
 
