@@ -3,6 +3,10 @@ async function openDetails(id, idObject) {
   while (modalBody.firstChild) {
     modalBody.removeChild(modalBody.firstChild);
   }
+  var commentDiv = document.getElementsByClassName("modal-comments")[0];
+  while (commentDiv.firstChild) {
+    commentDiv.removeChild(commentDiv.firstChild);
+  }
   console.log(idObject[id]);
   var body = document.getElementsByClassName("modal-body")
   var header = document.getElementById("header-head")
@@ -16,7 +20,6 @@ async function openDetails(id, idObject) {
   } 
 
   // generate existing comments for this concept
-  var commentDiv = document.getElementsByClassName("modal-comments")[0];
   const url = "https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl";
   let commentRdf = await readFromPod(url)
   
