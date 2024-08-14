@@ -4,6 +4,7 @@ async function updatePod() {
     let commentText = document.getElementById("commentText").value;
     let author = document.getElementById("userName").value;
     let id = document.getElementById("commentButton").className;
+    console.log(`commentText: ${commentText}, author: ${author}, id: ${id}`);
     // declare namespaces
     var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
     var DC = $rdf.Namespace("http://purl.org/dc/terms/");
@@ -28,10 +29,12 @@ async function updatePod() {
     let annotations = store.each(undefined, RDF('type'), AO('Annotation'))
     // calculate the next annotation number
     let nextAnnoNumber = annotations.length + 1
+    console.log(`nextAnnoNumber: ${nextAnnoNumber}`)
 
     //create new annotation
     let newAnno = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`)
     let newConcept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations//concept${id}`)
+    console.log(`newAnno: ${newAnno}, newConcept: ${newConcept}`)
 
     // add annotation to store
     store.add(newAnno, RDF('type'), AO('Annotation'))
