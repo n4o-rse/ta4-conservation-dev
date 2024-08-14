@@ -76,7 +76,7 @@
                 <div class="modal-footer">
                   <form id="commentForm">
                     <textarea id="commentText" rows="4" cols="50"></textarea>
-                    <button type="submit" id="commentButton">Kommentieren</button>
+                    <button type="submit" id="commentButton" onclick=updatePod>Kommentieren</button>
                   </form>
                 </div>
                 <div class="modal-comments">
@@ -101,8 +101,8 @@
         const textForm = document.getElementById('textForm');
         textForm.addEventListener('submit', inputUrl);
 
-        const commentForm = document.getElementById("commentForm");
-        commentForm.addEventListener("submit", updatePod)
+        //const commentForm = document.getElementById("commentForm");
+        //commentForm.addEventListener("submit", updatePod)
         
         function inputFile() {
             event.preventDefault();
