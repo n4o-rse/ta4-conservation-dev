@@ -1,9 +1,10 @@
-async function updatePod() {
+async function updatePod(id, idObject) {
     event.preventDefault();
     const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
     let commentText = document.getElementById("commentText").value;
     let author = document.getElementById("userName").innerHTML;
-    let id = document.getElementById("commentButton").className;
+    //let id = document.getElementById("commentButton").className;
+    id = id.toString();
     console.log(`commentText: ${commentText}, author: ${author}, id: ${id}`);
 
     // declare namespaces
@@ -52,12 +53,6 @@ async function updatePod() {
 
     // write ttl to pod
     writeToPod(ttl, url)
+    openDetails(Number(id), idObject)
 
-    //unused
-    /*
-    var concept = SK('Concept')
-    var thesaurus = SK('ConceptScheme')
-    var annotation = AO('Annotation')
-    var motivation = AO("motivatedBy")
-    */
 }
