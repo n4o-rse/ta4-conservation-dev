@@ -2,7 +2,7 @@ async function updatePod() {
     event.preventDefault();
     const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
     let commentText = document.getElementById("commentText").value;
-    let author = document.getElementById("userName").value;
+    let author = document.getElementById("userName").text;
     let id = document.getElementById("commentButton").className;
     console.log(`commentText: ${commentText}, author: ${author}, id: ${id}`);
     // declare namespaces
