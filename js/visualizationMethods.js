@@ -1,4 +1,7 @@
 async function openDetails(id, idObject) {
+  var modal = document.getElementById("myModal");
+  // make modal invisible
+  modal.style.display = "none";
   var modalBody = document.getElementsByClassName("modal-body")[0];
   while (modalBody.firstChild) {
     modalBody.removeChild(modalBody.firstChild);
@@ -42,17 +45,20 @@ async function openDetails(id, idObject) {
   if (store.holds(concept, RDF('type'), SK('Concept'))) {
     // find all comments for this concept
     let comments = store.each(undefined, target, concept)
+    // sort comments by created date, so newest comments are displayed first
+    comments.sort(function(a, b) {
+      return store.any(b, created).value - store.any(a, created).value;
+    });
     // generate a paragraph for each comment, containing creator, created, value
     for (let i = 0; i < comments.length; i++) {
       let comment = document.createElement("p");
-      comment.innerHTML = "<b>Creator:</b> " + store.any(comments[i], creator) + "<br><b>Created:</b> " + store.any(comments[i], created) + "<br><b>Comment:</b> " + store.any(comments[i], value);
+      comment.innerHTML = "<b>creator:</b> " + store.any(comments[i], creator) + "<br><b>created:</b> " + store.any(comments[i], created) + "<br><b>comment:</b> " + store.any(comments[i], value);
       commentDiv.appendChild(comment);
     } 
   }
 
   var commentButton = document.getElementById("commentButton")
   commentButton.className = id.toString();
-  var modal = document.getElementById("myModal");
   modal.style.display = "block";
 }
 
