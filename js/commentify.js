@@ -17,6 +17,8 @@ async function updatePod() {
 
     // read ttl from pod
     let preRdf = await readFromPod(url)
+    //readFromPod("https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl")
+    
     // parse ttl into store
     let store = $rdf.graph()
     $rdf.parse(preRdf, store, url, 'text/turtle')
