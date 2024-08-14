@@ -8,9 +8,7 @@
     <script src = "js/hierarchyVisualizer.js"></script>
     <script src = "js/visualizationMethods.js"></script>
     <script src = "js/podReadAndWrite.js"></script>
-    <!--
     <script src = "js/commentify.js"></script>
-    --->
     <script src = "js/rdflib/rdflib.min.js"></script>
   </head>
   <body>
@@ -132,15 +130,6 @@
           document.getElementById("userName").innerHTML = userNameText;
           document.getElementById("userNameText").value = "";
         }
-
-        async function updatePod() {
-          event.preventDefault();
-          const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
-          let preRdf
-          preRdf = await readFromPod(url)
-          console.log(preRdf)
-        }
-
 
       </script>
     </main>
