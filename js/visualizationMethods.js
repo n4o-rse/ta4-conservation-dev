@@ -1,5 +1,5 @@
 //TidyTree and ClusterTree
-function generateTidyTree(data, idObject, visualizationType) {
+function generateTidyTree(data, idObject, visualizationType, commentedIdList) {
     const width = 2000; //928
     let tree = d3.tree();
   
@@ -512,7 +512,7 @@ function generateForceDirectedTree(data, idObject) {
     return svg.node();
   }
 
-  function generateIndentedTree(data, idObject) {
+  function generateIndentedTree(data, idObject, commentedIdList) {
     const format = d3.format(",");
     const nodeSize = 17;
     const root = d3.hierarchy(data).eachBefore((i => d => d.index = i++)(0));
@@ -591,6 +591,10 @@ function generateForceDirectedTree(data, idObject) {
         .data(root.copy().sum(value).descendants())
           .text(d => format(d.value, d));
     }
+
+    // select text of nodes which are in comment list
+    node.selectAll("text").filter(function(d) { return commentedIdList.includes(d.data.id); }).attr("fill", "red"); 
+
 
   node.on("click", (e, d) => openDetails(d.data.id, idObject));
   

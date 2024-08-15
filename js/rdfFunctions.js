@@ -161,5 +161,5 @@ async function generateCommentedIdList() {
     id = conceptObject.value.split("concept")[1]
     commentConceptIds.push(id)
   }
-  console.log(commentConceptIds);
+  return commentConceptIds
 }

@@ -33,7 +33,6 @@ function readData(data, inputType) {
   let doublettes = idArray[1]
   let missingParents = idArray[2]
   //test function, delete later
-  generateCommentedIdList()
   validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]);
 }
 
@@ -138,11 +137,12 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
 }
 
 function visualizeData([stratifiedData, idObject]) {
+  let commentedIdList = generateCommentedIdList()
   const visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
   let svg;
   try {
     if (visualizationType == "Tidy tree(Kommentare)" || visualizationType == "Cluster tree(Kommentare)") {
-      svg = generateTidyTree(stratifiedData, idObject, visualizationType);
+      svg = generateTidyTree(stratifiedData, idObject, visualizationType, commentedIdList);
     }
     if (visualizationType == "Radial tidy tree") {
       svg = generateRadialTidyTree(stratifiedData, idObject);
@@ -160,7 +160,7 @@ function visualizeData([stratifiedData, idObject]) {
       svg = generateCollapsibleTree(stratifiedData, idObject);
     }
     if (visualizationType == "Indented Tree(Kommentare)") {
-      svg = generateIndentedTree(stratifiedData, idObject);
+      svg = generateIndentedTree(stratifiedData, idObject, commentedIdList);
     }
     if (visualizationType == "Icicle") {
       svg = generateIcicle(stratifiedData, idObject);
