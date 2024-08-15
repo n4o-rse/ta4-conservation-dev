@@ -42,9 +42,10 @@ async function updatePod() {
     if (!store.holds(newConcept, RDF('type'), SK('Concept'))) {
         store.add(newConcept, RDF('type'), SK('Concept'))
     }
+    var newDate = new Date().toISOString()
     store.add(newAnno, value, commentText)
     store.add(newAnno, creator, author)
-    store.add(newAnno, created, new Date().toISOString())
+    store.add(newAnno, created, newDate)
     store.add(newAnno, target, newConcept)
 
     // serialize store into ttl
@@ -52,5 +53,14 @@ async function updatePod() {
 
     // write ttl to pod
     writeToPod(ttl, url)
+
+    // add new comment to commentaries in modal
+    var commentDiv = document.getElementsByClassName("modal-comments")[0];
+    var newComment = document.createElement("p");
+    newComment.innerHTML = "<b>creator:</b> " + author + "<br><b>created:</b> " + newDate  + "<br><b>comment:</b> " + commentText;
+    // integrate new comment at the top of the list
+    commentDiv.insertBefore(newComment, commentDiv.firstChild);
+    document.getElementById("commentText").value = "";
+
 
 }

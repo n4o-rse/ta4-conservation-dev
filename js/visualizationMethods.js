@@ -45,10 +45,8 @@ async function openDetails(id, idObject) {
   if (store.holds(concept, RDF('type'), SK('Concept'))) {
     // find all comments for this concept
     let comments = store.each(undefined, target, concept)
-    // sort comments by created date, so newest comments are displayed first
-    comments.sort(function(a, b) {
-      return store.any(b, created).value - store.any(a, created).value;
-    });
+    // revert order of array comments
+    comments = comments.reverse()
     // generate a paragraph for each comment, containing creator, created, value
     for (let i = 0; i < comments.length; i++) {
       let comment = document.createElement("p");
