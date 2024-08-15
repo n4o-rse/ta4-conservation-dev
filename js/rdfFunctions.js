@@ -144,16 +144,22 @@ async function generateCommentedIdList() {
   var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
 
   // declare entities
-  var concept = SK('Concept')
+  var concept = SK('Concept');
 
   // read ttl from pod
-  let preRdf = await readFromPod(url)
+  let preRdf = await readFromPod(url);
   
   // parse ttl into store
-  let store = $rdf.graph()
-  $rdf.parse(preRdf, store, url, 'text/turtle')
+  let store = $rdf.graph();
+  $rdf.parse(preRdf, store, url, 'text/turtle');
 
   // create a list of all SK('Concept')
   let concepts = store.each(undefined, RDF('type'), concept);
-  console.log(concepts);
+  let commentConceptIds = [];
+  for (let i=0; i < concepts.length; i++) {
+    conceptObject = concepts[i];
+    id = conceptObject.value.split("concept")[1]
+    commentConceptIds.push(id)
+  }
+  console.log(commentConceptIds);
 }
