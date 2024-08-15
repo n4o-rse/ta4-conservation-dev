@@ -88,7 +88,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       const radioDiv = document.createElement("div");
       radioDiv.id = "radioDiv";
       radioDiv.innerHTML = "Select visualization type: ";
-      const radioTypes = ["Tidy tree(Kommentare)", "Cluster tree(Kommentare)", "Radial tidy tree", "Radial cluster tree", "Collapsible Tree", "Force directed tree", "Sunburst", "Icicle", "Indented Tree(Kommentare)"];
+      const radioTypes = ["Indented Tree(Kommentare)","Tidy tree(Kommentare)", "Cluster tree(Kommentare)", "Radial tidy tree", "Radial cluster tree", "Collapsible Tree", "Force directed tree", "Sunburst", "Icicle"];
       let lineBreakStarter = document.createElement("br");
       radioDiv.appendChild(lineBreakStarter);
       for (let i = 0; i < radioTypes.length; i++) {
@@ -126,7 +126,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       const lineBreak = document.createElement("br");
       lineBreak.id = "lineBreak";
       document.getElementById("visualizeButton").before(radioDiv);
-      document.getElementById("Tidy tree(Kommentare)").checked = true;
+      document.getElementById("Indented Tree(Kommentare)").checked = true;
       document.getElementById("visualizeButton").before(lineBreak);
       return [stratifiedData, idObject];
     } 
