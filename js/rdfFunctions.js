@@ -10,7 +10,6 @@ async function openDetails(id, idObject) {
     while (commentDiv.firstChild) {
       commentDiv.removeChild(commentDiv.firstChild);
     }
-    console.log(idObject[id]);
     var body = document.getElementsByClassName("modal-body")
     var header = document.getElementById("header-head")
     header.innerHTML = idObject[id]["prefLabel"];
@@ -75,7 +74,6 @@ async function updatePod() {
     }
     let author = document.getElementById("userName").innerHTML;
     let id = document.getElementById("commentButton").className;
-    console.log(`commentText: ${commentText}, author: ${author}, id: ${id}`);
 
     // declare namespaces
     var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
@@ -100,12 +98,10 @@ async function updatePod() {
     let annotations = store.each(undefined, RDF('type'), AO('Annotation'))
     // calculate the next annotation number
     let nextAnnoNumber = annotations.length + 1
-    console.log(`nextAnnoNumber: ${nextAnnoNumber}`)
 
     //create new annotation
     let newAnno = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`)
     let newConcept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/concept${id}`)
-    console.log(`newAnno: ${newAnno}, newConcept: ${newConcept}`)
 
     // add annotation to store
     store.add(newAnno, RDF('type'), AO('Annotation'))
@@ -137,4 +133,27 @@ async function updatePod() {
     // integrate new comment at the top of the list
     commentDiv.insertBefore(newComment, commentDiv.firstChild);
     document.getElementById("commentText").value = "";
+}
+
+async function generateCommentedIdList() {
+  const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
+
+  // declare namespaces
+  var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
+  var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
+  var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+
+  // declare entities
+  var concept = SK('Concept')
+
+  // read ttl from pod
+  let preRdf = await readFromPod(url)
+  
+  // parse ttl into store
+  let store = $rdf.graph()
+  $rdf.parse(preRdf, store, url, 'text/turtle')
+
+  // create a list of all SK('Concept')
+  let concepts = store.each(undefined, RDF('type'), concept);
+  console.log(concepts);
 }

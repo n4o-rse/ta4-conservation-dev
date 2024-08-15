@@ -32,6 +32,8 @@ function readData(data, inputType) {
   let idObject = idArray[0]
   let doublettes = idArray[1]
   let missingParents = idArray[2]
+  //test function, delete later
+  generateCommentedIdList()
   validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]);
 }
 
@@ -115,14 +117,6 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       if (document.getElementById("linebreak") != null) {
         document.getElementById("lineBreak").remove();
       }
-      /*
-      try {
-        document.getElementById("lineBreak").remove();
-      }
-      catch (error) {
-        //console.log(error);
-      }
-      */
       const lineBreak = document.createElement("br");
       lineBreak.id = "lineBreak";
       document.getElementById("visualizeButton").before(radioDiv);
@@ -209,7 +203,7 @@ function resetOutput() {
       document.getElementById(ids[i]).innerHTML = "";
     }
     catch (error) {
-      //ignore console.log(error);
+      // pass 
     }
   }
   //document.getElementById("fileButton").innerHTML = "Tabelle validieren";
@@ -219,7 +213,7 @@ function resetOutput() {
       document.getElementById(elements[i]).remove();
     }
     catch (error) {
-      // ignore console.log(error);
+      // pass
     }
   }
   //return to default color
@@ -306,7 +300,6 @@ function topData(data) {
 }
 
 function idToName(data) {
-  console.log(data);
   const transformationObject = {}
   const doublettes = []
   const missingParents = []
@@ -345,7 +338,6 @@ function idToName(data) {
       missingParents.push(row);
     }
   }
-  console.log(transformationObject);
   return [transformationObject, doublettes, missingParents];
 }
 
