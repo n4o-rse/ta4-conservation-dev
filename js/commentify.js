@@ -54,6 +54,11 @@ async function updatePod() {
     // write ttl to pod
     writeToPod(ttl, url)
 
+    // if element exists with id "noCommentsPlaceholder" remove it
+    if (document.getElementById("noCommentsPlaceholder") != null) {
+        document.getElementById("noCommentsPlaceholder").remove();
+    }
+
     // add new comment to commentaries in modal
     var commentDiv = document.getElementsByClassName("modal-comments")[0];
     var newComment = document.createElement("p");
@@ -61,6 +66,4 @@ async function updatePod() {
     // integrate new comment at the top of the list
     commentDiv.insertBefore(newComment, commentDiv.firstChild);
     document.getElementById("commentText").value = "";
-
-
 }
