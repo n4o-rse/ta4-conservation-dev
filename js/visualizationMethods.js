@@ -57,11 +57,9 @@ async function openDetails(id, idObject) {
     } 
   }
 
-  //var commentButton = document.getElementById("commentButton")
-  //commentButton.className = id.toString();
+  var commentButton = document.getElementById("commentButton")
+  commentButton.className = id.toString();
   modal.style.display = "block";
-  const commentForm = document.getElementById("commentForm");
-  commentForm.addEventListener("submit", updatePod(id, idObject));
 }
 
 //TidyTree and ClusterTree
