@@ -593,9 +593,7 @@ function generateForceDirectedTree(data, idObject) {
     }
 
     // select all "text" where node d.data.id is in commentedIdList
-    node.selectAll("text").filter(d => commentedIdList.includes(d.data.id))
-      .attr("fill", "red");
-    
+
   node.on("click", (e, d) => openDetails(d.data.id, idObject));
     return svg.node();
   }
