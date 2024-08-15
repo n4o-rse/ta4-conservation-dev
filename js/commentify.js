@@ -65,6 +65,6 @@ async function updatePod() {
     newComment.innerHTML = "<b>creator:</b> " + author + "<br><b>created:</b> " + newDate  + "<br><b>comment:</b> " + commentText;
     // integrate new comment at the top of the list
     commentDiv.insertBefore(newComment, commentDiv.firstChild);
-    document.getElementById("commentButton").value = `Kommentieren als ${author}`;
+    document.getElementById("commentButton").innerHTML = `Kommentieren als ${author}`;
     document.getElementById("commentText").value = "";
 }
