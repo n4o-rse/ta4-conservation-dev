@@ -53,11 +53,13 @@ async function openDetails(id, idObject) {
       comment.innerHTML = "<b>creator:</b> " + store.any(comments[i], creator) + "<br><b>created:</b> " + store.any(comments[i], created) + "<br><b>comment:</b> " + store.any(comments[i], value);
       commentDiv.appendChild(comment);
     } 
+    console.log(comments)
+    console.log(comments.length)
     if (comments.length == 0) {
-      let comment = document.createElement("p");
-      comment.innerHTML = "No comments yet, be the first to comment!";
-      comment.id = "noCommentsPlaceholder";
-      commentDiv.appendChild(comment);
+      let placeholderComment = document.createElement("p");
+      placeholderComment.innerHTML = "No comments yet, be the first to comment!";
+      placeholderComment.id = "noCommentsPlaceholder";
+      commentDiv.appendChild(placeholderComment);
     }
   }
 
