@@ -62,6 +62,7 @@ async function openDetails(id, idObject) {
 
   var commentButton = document.getElementById("commentButton")
   commentButton.className = id.toString();
+  commentButton.value = `Kommentieren als ${document.getElementById("userName").value}`;
   modal.style.display = "block";
 }
 
