@@ -127,15 +127,14 @@
         function saveUserName() {
           event.preventDefault();
           var userNameText = document.getElementById("userNameText").value;
-          if (!(userNameText == "")) {
-            document.getElementById("userName").innerHTML = userNameText;
-            document.getElementById("userNameText").value = "";
-            document.getElementById("commentButton").innerText = `Kommentieren als ${userNameText}`;
-          } else {
-            alert("Bitte geben Sie einen Benutzernamen ein.");
+          if (userNameText == "") {
+            alert("Bitte geben Sie einen Benutzernamen ein!");
+            return;
           }
+          document.getElementById("userName").innerHTML = userNameText;
+          document.getElementById("userNameText").value = "";
+          document.getElementById("commentButton").innerText = `Kommentieren als ${userNameText}`;
         }
-
       </script>
     </main>
     <footer> </footer>

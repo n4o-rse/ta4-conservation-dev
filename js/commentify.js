@@ -2,6 +2,10 @@ async function updatePod() {
     event.preventDefault();
     const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
     let commentText = document.getElementById("commentText").value;
+    if (commentText == "") {
+        alert("Kein Kommentar eingegeben!");
+        return;
+    }
     let author = document.getElementById("userName").innerHTML;
     let id = document.getElementById("commentButton").className;
     console.log(`commentText: ${commentText}, author: ${author}, id: ${id}`);
