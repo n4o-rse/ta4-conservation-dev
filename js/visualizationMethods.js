@@ -592,12 +592,11 @@ function generateForceDirectedTree(data, idObject) {
           .text(d => format(d.value, d));
     }
 
-    // select text of nodes which are in comment list
-    node.selectAll("text").filter(function(d) { return commentedIdList.includes(d.data.id); }).attr("fill", "red"); 
-
-
+    // select all "text" where node d.data.id is in commentedIdList
+    node.selectAll("text").filter(d => commentedIdList.includes(d.data.id))
+      .attr("fill", "red");
+    
   node.on("click", (e, d) => openDetails(d.data.id, idObject));
-  
     return svg.node();
   }
 
