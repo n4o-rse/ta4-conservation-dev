@@ -341,6 +341,7 @@ function idToName(data) {
   for (let i = 0; i < data.length; i++) {
     row = data[i];
     if (!(row.parent in transformationObject) && !(row.parent == "")) {
+      row = {"identifier":row.identifier,"concept":row.prefLabel,"parent":row.parent}
       missingParents.push(row);
     }
   }
