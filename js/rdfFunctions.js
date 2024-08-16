@@ -38,11 +38,11 @@ async function openDetails(id, idObject) {
     header.innerHTML = idObject[id]["prefLabel"];
     idObject[id]["identifier"] = id.toString();
     const details = ["identifier","description", "altLabel", "related", "source", "creator", "closeMatch", "relatedMatch", "seeAlso", "example"];
-
+    // iterate over all detail contents and create a paragraph for each
     for (let i = 0; i < details.length; i++) {
       let detail = document.createElement("p");
-
       let multiDetails = ["source", "creator", "related"];
+      // check if detail is a multi detail, seperated by "|"
       if (multiDetails.includes(details[i])) {
         if (!(idObject[id][details[i]]) == "") {
           let splittedDetails = idObject[id][details[i]].split("|");
@@ -60,7 +60,7 @@ async function openDetails(id, idObject) {
             finalDetails = mappedDetails[0];
           } 
           else {
-            finalDetails = mappedDetails.join(", ")
+            finalDetails = mappedDetails.join(",\n");
           }
           console.log(finalDetails);
           detail.innerHTML = "<b>" + details[i] + ":</b> " + finalDetails;
