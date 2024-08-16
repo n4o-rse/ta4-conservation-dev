@@ -40,7 +40,8 @@ async function openDetails(id, idObject) {
     const details = ["identifier","description", "altLabel", "related", "source", "creator", "closeMatch", "relatedMatch", "seeAlso", "example"];
     // iterate over all detail contents and create a paragraph for each
     for (let i = 0; i < details.length; i++) {
-      let detail = document.createElement("p");
+
+      let detailDiv = document.createElement("div");
       let multiDetails = ["source", "creator", "related"];
       // check if detail is a multi detail, seperated by "|"
       if (multiDetails.includes(details[i])) {
@@ -56,21 +57,19 @@ async function openDetails(id, idObject) {
             mappedDetails = splittedDetails.map(x => mappingTable[x]);
           }
           console.log(mappedDetails);
-          if (mappedDetails.length == 1) {
-            finalDetails = mappedDetails[0];
-          } 
-          else {
-            finalDetails = mappedDetails.join(",\n");
+          for (let j = 0; j < mappedDetails.length; j++) {
+            detailDiv.innerHTML += "<p>" +"<b>" + details[i] + ":</b> " + mappedDetails[j] + "</p>";
           }
-          console.log(finalDetails);
-          detail.innerHTML = "<b>" + details[i] + ":</b> " + finalDetails;
+          //detail.innerHTML = "<b>" + details[i] + ":</b> " + finalDetails;
         }
         else {
-          detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
+          detailDiv.innerHTML = "<p>" +"<b>" + details[i] + ":</b> " + idObject[id][details[i]] + "</p>";
+          //detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
         }
       }
       else {
-        detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
+        detailDiv.innerHTML = "<p>" +"<b>" + details[i] + ":</b> " + idObject[id][details[i]] + "</p>";
+        //detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
       }
       body[0].appendChild(detail);
     } 
