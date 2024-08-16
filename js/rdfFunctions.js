@@ -1,5 +1,28 @@
 async function openDetails(id, idObject) {
-    var modal = document.getElementById("myModal");
+    mappingTable = {
+      "K6":	"DIN EN 16484	Leder - Anforderungen an die Bestimmung der Herkunft von Leder; Deutsche Fassung EN 16484",
+      "K7":	"KUR Database	Onlinedatenbank für die fachgerechte Verfahrung zur Massenversorgung archäologischer Eisen- und Feuchtholzfunde",
+      "K8":	"DIN EN 15898	Erhaltung des kulturellen Erbes - Allgemeine Begriffe",
+      "K9":	"DIN CEN/TS 17135	Erhaltung des kulturellen Erbes - Allgemeine Begriffe zur Beschreibung von Veränderungen an Objekten; Dreisprachige Fassung",
+      "K10":	"DIN EN ISO 8044	Korrosion von Metallen und Legierungen - Grundbegriffe; Dreisprachige Fassung",
+      "K12":	"DIN EN ISO 7539-1	Korrosion der Metalle und Legierungen - Prüfung der Spannungsrisskorrosion - Teil 1: Allgemeiner Leitfaden für Prüfverfahren",
+      "K14":	"Katharina Schmidt-Ott, Erhaltung von Kulturgütern. Das Plasma in der Metallkonservierung – Möglichkeiten und Grenzen. Collectio archaeologica 7 (Zürich 2010).	Monographie über die Plasmabehandlung von Metallobjekten",
+      "K15":	"DIN EN 844	Rund- und Schnittholz - Terminologie; Dreisprachige Fassung EN 844:2019",
+      "K16":	"DIN EN 16141	Erhaltung des kulturellen Erbes - Richtlinien für den Umgang mit Umwelt- und Umgebungsbedingungen - Schaudepots: Definition und Merkmale von Sammlungszentren bestimmt für die Bewahrung und Pflege des kulturellen Erbes",
+      "K17":	"R. Dietrich/ B. Skinner, Die Gesteine und ihre Mineralien. Ein Einführungs- und Bestimmungsbuch2 (Thun 1995).	Monographie über Gesteine und Mineralien",
+      "K18":	"Mineralienatlas - Fossilienatlas	Onlinedatenbank/Lexikon zu Gesteinen, Mineralien und Fossilien ",
+      "K19":	'Sammelband: P. Heinrich: Metall-Restaurierung. Beiträge zur Analyse, Konzeption und Technologie (Wien 2000)	Sammelband mit verschiedenen Aufsätzen zum Thema "Metallrestaurierung"',
+      "K20":	"Wilhelm P. Bauer, Grundzüge der Metallkorrosion. In: Peter Heinrich (Hrsg.), Metall-Restaurierung. Beiträge zur Analyse, Konzeption und Technologie. Wien 2000, 63–67.	Aufsatz über verschiedene Metallkorrosionsformen in K19",
+      "K21":	"Wolfgang Knobloch, Ergänzungen und Rekonstruktionen an historischen Objekten aus Metall. In: Metallrestaurierung, München Callwey, 1994, S. 70 – 105	Aufsatz über Ergänzungs- und Rekonstruktionsmethoden in Sammelband K19",
+      "K22":	"Erhard Brepohl, Theorie und Praxis des Goldschmieds (München 2000)	Standardwerk der Goldschmiedekunst",
+      "K23":	"DIN EN ISO 2080 Metallische und andere anorganische Überzüge - Oberflächenbehandlung, metallische und andere anorganische Überzüge - Wörterbuch (ISO 2080:2022); Deutsche und Englische Fassung EN ISO 2080:2022",
+      "K24":	"Jochem Wolters, Der Gold- und Silberschmied. Band 1 - Werkstoffe und Materialien (Stuttgart 1989)	Monographie über sämtliche Werkstoffe, Hilfsstoffe und Chemikalien, die in Handwerk und Industrie zur Herstellung von Schmuck, Gerät und Bestecken, sowie zur Edelsteinbestimmung verwendet werden. Standardwerk",
+      "Q7":	"Kristina Fella",
+      "Q8":	"LEIZA KB Restaurierung/Konservierung",
+      "Q16":	"Markus Wittköpper",
+      "Q17":	"Waldemar Muskalla"
+    }
+      var modal = document.getElementById("myModal");
     // make modal invisible
     modal.style.display = "none";
     var modalBody = document.getElementsByClassName("modal-body")[0];
@@ -17,7 +40,15 @@ async function openDetails(id, idObject) {
     const details = ["identifier","description", "altLabel", "related", "source", "creator", "closeMatch", "relatedMatch", "seeAlso", "example"];
     for (let i = 0; i < details.length; i++) {
       var detail = document.createElement("p");
-      detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
+      if (details[i] in ["source", "creator"]) {
+        splittedDetails = idObject[id][details[i]].split("|");
+        mappedDetails = splittedDetails.map(x => mappingTable[x]);
+        detail.innerHTML = "<b>" + details[i] + ":</b> " + mappedDetails.join(", ");
+      } else if (details[i] == "related") {
+      detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[idObject[id][details[i]]]["prefLabel"];
+      } else {
+        detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
+      }
       body[0].appendChild(detail);
     } 
   

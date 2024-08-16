@@ -588,14 +588,14 @@ function generateForceDirectedTree(data, idObject) {
           .attr("x", x)
           .attr("text-anchor", "end")
           .attr("fill", d => d.children ? null : "#555")
-        .data(root.copy().sum(value).descendants())
+          .data(root.copy().sum(value).descendants())
           .text(d => format(d.value, d));
     }
 
     // select all "text" where node d.data.id is in commentedIdList
 
   node.on("click", (e, d) => openDetails(d.data.id, idObject));
-    return svg.node();
+  return svg.node();
   }
 
 function generateIcicle(data, idObject) {
