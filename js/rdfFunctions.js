@@ -39,13 +39,19 @@ async function openDetails(id, idObject) {
     idObject[id]["identifier"] = id.toString();
     const details = ["identifier","description", "altLabel", "related", "source", "creator", "closeMatch", "relatedMatch", "seeAlso", "example"];
     for (let i = 0; i < details.length; i++) {
-      var detail = document.createElement("p");
+      let detail = document.createElement("p");
       if (details[i] in ["source", "creator"]) {
-        splittedDetails = idObject[id][details[i]].split("|");
-        mappedDetails = splittedDetails.map(x => mappingTable[x]);
+        let splittedDetails = idObject[id][details[i]].split("|");
+        let mappedDetails = splittedDetails.map(x => mappingTable[x]);
         detail.innerHTML = "<b>" + details[i] + ":</b> " + mappedDetails.join(", ");
       } else if (details[i] == "related") {
-      detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[idObject[id][details[i]]]["prefLabel"];
+        if (!(idObject[id][details[i]]) == "") {
+          let splittedDetails = idObject[id][details[i]].split("|");
+          let mappedDetails = splittedDetails.map(x => idObject[idObject[id][details[i]]]["prefLabel"]);
+          detail.innerHTML = "<b>" + details[i] + ":</b> " + mappedDetails.join(", ");
+        } else {
+          detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
+        }
       } else {
         detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
       }
