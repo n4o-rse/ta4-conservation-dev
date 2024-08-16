@@ -49,9 +49,11 @@ async function openDetails(id, idObject) {
           let splittedDetails = idObject[id][details[i]].split("|");
           console.log(splittedDetails);
           let mappedDetails
-          let finalDetails
           if (details[i] == "related") {
-            mappedDetails = splittedDetails.map(x => idObject[idObject[id][details[i]]]["prefLabel"]);
+            mappedDetails = []
+            for (let j = 0; j < splittedDetails.length; j++) {
+              mappedDetails.push(idObject[splittedDetails[j]]["prefLabel"]);
+            }
           } 
           else {
             mappedDetails = splittedDetails.map(x => mappingTable[x]);
