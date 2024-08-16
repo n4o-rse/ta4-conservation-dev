@@ -57,8 +57,9 @@ async function openDetails(id, idObject) {
             mappedDetails = splittedDetails.map(x => mappingTable[x]);
           }
           console.log(mappedDetails);
+          detailDiv.innerHTML += "<b>" + details[i] + ":</b>";
           for (let j = 0; j < mappedDetails.length; j++) {
-            detailDiv.innerHTML += "<p>" +"<b>" + details[i] + ":</b> " + mappedDetails[j] + "</p>";
+            detailDiv.innerHTML += "<p>" +"<b>" + "</b> " + mappedDetails[j] + "</p>";
           }
           //detail.innerHTML = "<b>" + details[i] + ":</b> " + finalDetails;
         }
@@ -71,7 +72,7 @@ async function openDetails(id, idObject) {
         detailDiv.innerHTML = "<p>" +"<b>" + details[i] + ":</b> " + idObject[id][details[i]] + "</p>";
         //detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
       }
-      body[0].appendChild(detail);
+      body[0].appendChild(detailDiv);
     } 
   
     // generate existing comments for this concept
