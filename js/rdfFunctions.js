@@ -42,25 +42,33 @@ async function openDetails(id, idObject) {
     for (let i = 0; i < details.length; i++) {
       let detail = document.createElement("p");
 
-      if (details[i] in ["source", "creator"]) {
-        let splittedDetails = idObject[id][details[i]].split("|");
-        console.log(splittedDetails);
-        let mappedDetails = splittedDetails.map(x => mappingTable[x]);
-        console.log(mappedDetails);
-        detail.innerHTML = "<b>" + details[i] + ":</b> " + mappedDetails.join(", ");
-      } 
-      else if (details[i] == "related") {
+      let multiDetails = ["source", "creator", "related"];
+      if (multiDetails.includes(details[i])) {
         if (!(idObject[id][details[i]]) == "") {
           let splittedDetails = idObject[id][details[i]].split("|");
           console.log(splittedDetails);
-          let mappedDetails = splittedDetails.map(x => idObject[idObject[id][details[i]]]["prefLabel"]);
-          console.log(splittedDetails);
-          detail.innerHTML = "<b>" + details[i] + ":</b> " + mappedDetails.join(", ");
-        } 
+          if (details[i] == "related") {
+            let mappedDetails = splittedDetails.map(x => idObject[idObject[id][details[i]]]["prefLabel"]);
+            console.log(mappedDetails);
+          } 
+          else {
+            let mappedDetails = splittedDetails.map(x => mappingTable[x]);
+            console.log(mappedDetails);
+          }
+          if (mappedDetails.length == 1) {
+            let finalDetails = mappedDetails[0];
+            console.log(finalDetails);
+          } 
+          else {
+            let finalDetails = mappedDetails.join(", ")
+            console.log(finalDetails);
+          }
+          detail.innerHTML = "<b>" + details[i] + ":</b> " + finalDetails;
+        }
         else {
           detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
         }
-      } 
+      }
       else {
         detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
       }
