@@ -58,8 +58,8 @@ async function openDetails(id, idObject) {
           else {
             mappedDetails = []
             for (let j = 0; j < splittedDetails.length; j++) {
-              if (splittedDetails[j] in mappingTable) {
-                mappedDetails.push(mappingTable[splittedDetails[j]]);
+              if (splittedDetails[j].trim() in mappingTable) {
+                mappedDetails.push(mappingTable[splittedDetails[j].trim()]);
               } 
               else {
                 mappedDetails.push(splittedDetails[j]);
