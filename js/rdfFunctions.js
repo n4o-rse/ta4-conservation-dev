@@ -47,22 +47,22 @@ async function openDetails(id, idObject) {
         if (!(idObject[id][details[i]]) == "") {
           let splittedDetails = idObject[id][details[i]].split("|");
           console.log(splittedDetails);
+          let mappedDetails
+          let finalDetails
           if (details[i] == "related") {
-            let mappedDetails = splittedDetails.map(x => idObject[idObject[id][details[i]]]["prefLabel"]);
-            console.log(mappedDetails);
+            mappedDetails = splittedDetails.map(x => idObject[idObject[id][details[i]]]["prefLabel"]);
           } 
           else {
-            let mappedDetails = splittedDetails.map(x => mappingTable[x]);
-            console.log(mappedDetails);
+            mappedDetails = splittedDetails.map(x => mappingTable[x]);
           }
+          console.log(mappedDetails);
           if (mappedDetails.length == 1) {
-            let finalDetails = mappedDetails[0];
-            console.log(finalDetails);
+            finalDetails = mappedDetails[0];
           } 
           else {
-            let finalDetails = mappedDetails.join(", ")
-            console.log(finalDetails);
+            finalDetails = mappedDetails.join(", ")
           }
+          console.log(finalDetails);
           detail.innerHTML = "<b>" + details[i] + ":</b> " + finalDetails;
         }
         else {
