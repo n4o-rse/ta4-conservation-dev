@@ -56,7 +56,15 @@ async function openDetails(id, idObject) {
             }
           } 
           else {
-            mappedDetails = splittedDetails.map(x => mappingTable[x]);
+            mappedDetails = []
+            for (let j = 0; j < splittedDetails.length; j++) {
+              if (mappingTable[splittedDetails[j]]) {
+                mappedDetails.push(mappingTable[splittedDetails[j]]);
+              } 
+              else {
+                mappedDetails.push(splittedDetails[j]);
+              }
+            }
           }
           console.log(mappedDetails);
           detailDiv.innerHTML += "<b>" + details[i] + ":</b>";
