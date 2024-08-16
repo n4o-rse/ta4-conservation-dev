@@ -38,21 +38,30 @@ async function openDetails(id, idObject) {
     header.innerHTML = idObject[id]["prefLabel"];
     idObject[id]["identifier"] = id.toString();
     const details = ["identifier","description", "altLabel", "related", "source", "creator", "closeMatch", "relatedMatch", "seeAlso", "example"];
+
     for (let i = 0; i < details.length; i++) {
       let detail = document.createElement("p");
+
       if (details[i] in ["source", "creator"]) {
         let splittedDetails = idObject[id][details[i]].split("|");
+        console.log(splittedDetails);
         let mappedDetails = splittedDetails.map(x => mappingTable[x]);
+        console.log(mappedDetails);
         detail.innerHTML = "<b>" + details[i] + ":</b> " + mappedDetails.join(", ");
-      } else if (details[i] == "related") {
+      } 
+      else if (details[i] == "related") {
         if (!(idObject[id][details[i]]) == "") {
           let splittedDetails = idObject[id][details[i]].split("|");
+          console.log(splittedDetails);
           let mappedDetails = splittedDetails.map(x => idObject[idObject[id][details[i]]]["prefLabel"]);
+          console.log(splittedDetails);
           detail.innerHTML = "<b>" + details[i] + ":</b> " + mappedDetails.join(", ");
-        } else {
+        } 
+        else {
           detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
         }
-      } else {
+      } 
+      else {
         detail.innerHTML = "<b>" + details[i] + ":</b> " + idObject[id][details[i]];
       }
       body[0].appendChild(detail);
