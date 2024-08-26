@@ -1,29 +1,39 @@
-name: SolidPod Securer
+name: SPARQL Unicorn Ontology Documentation CI
 
+# Controls when the workflow will run
 on:
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '0 */1 * * *'
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  secure SolidPodChanges:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout repo content
-        uses: actions/checkout@v3 # checkout the repository content to github runner.
-      - name: setup python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.8 #install the python needed
-      - name: Install dependencies
-        run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - name: execute py script
-        run: |
-          python securer.py
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add comments.ttl
-          git commit -m "crongenerated"
-          git push
-    
+  # This workflow contains a single job called "build"
+  build:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    uses: sparqlunicorn/sparqlunicornGoesGIS-ontdoc/.github/workflows/udoc.yml@main
+    with:
+      version: v017
+      rdffilepath: thesaurus.ttl
+      docpath: docs/
+      prefixns: https://archaeolink.github.io/n4o-ta4-conservation/
+      prefixnsshort: nfdi
+      indexpages: true
+      metadatatable: false
+      createcollections: true
+      createVOWL: true
+      preferredlang: en
+      ghpages: true
+      ogcapifeatures: false
+      iiif: false
+      logourl: https://raw.githubusercontent.com/archaeolink/unicorn-ontdoc-template-n4o-ta4/main/icons/nfdi4objects_logo_bildmarke_digital_rund.png
+      datasettitle: LEIZA Restaurierungs- und Konserverungsthesaurus
+      templatedir: https://github.com/archaeolink/unicorn-ontdoc-template-n4o-ta4/archive/refs/tags/v0.10.zip
+      publishingorg: <a href="http://leiza.de">Leibniz-Zentrum für Archäologie</a>
+      publisher: Kristina Fella, Lasse Mempel-Länger, Florian Thiery
+      license: CC BY 4.0

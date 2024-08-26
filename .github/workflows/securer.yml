@@ -1,0 +1,28 @@
+name: SolidPod Securer
+on:
+  schedule:
+    - cron: '38 */6 * * *'
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+jobs:
+  secureSolidPodChanges:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v4 # checkout the repository content to github runner.
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8 #install the python needed
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+      - name: execute py script
+        run: |
+          python securer.py
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git diff --quiet || (git add comments.ttl && git commit -m "Updated comments.ttl")
+          git push
