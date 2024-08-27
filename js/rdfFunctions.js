@@ -37,6 +37,8 @@ async function openDetails(id, idObject) {
       "Q17":	"Waldemar Muskalla",
       "Q18":	"Roland Schwab",
     }
+    console.log(idObject);
+    console.log(id);
     var modal = document.getElementById("myModal");
     // make modal invisible
     modal.style.display = "none";
@@ -49,9 +51,8 @@ async function openDetails(id, idObject) {
       commentDiv.removeChild(commentDiv.firstChild);
     }
     var historyDiv = document.getElementsByClassName("modal-history")[0];
-    var sidelinerParagraphs = historyDiv.getElementsByTagName("p");
-    for (let i = 0; i < sidelinerParagraphs.length; i++) {
-      sidelinerParagraphs[i].remove();
+    while (historyDiv.firstChild) {
+      historyDiv.removeChild(historyDiv.firstChild);
     }
 
     var body = document.getElementsByClassName("modal-body")
@@ -68,7 +69,6 @@ async function openDetails(id, idObject) {
       if (multiDetails.includes(details[i])) {
         if (!(idObject[id][details[i]]) == "") {
           let splittedDetails = idObject[id][details[i]].split("|");
-          console.log(splittedDetails);
           let mappedDetails
           if (details[i] == "related") {
             mappedDetails = []
@@ -87,7 +87,6 @@ async function openDetails(id, idObject) {
               }
             }
           }
-          console.log(mappedDetails);
           detailDiv.innerHTML += "<b>" + details[i] + ":</b>";
           for (let j = 0; j < mappedDetails.length; j++) {
             detailDiv.innerHTML += "<p>" +"<b>" + "</b> " + mappedDetails[j] + "</p>";
@@ -128,6 +127,7 @@ async function openDetails(id, idObject) {
       let comments = store.each(undefined, target, concept)
       // revert order of array comments
       comments = comments.reverse()
+      console.log(comments)
       // generate a paragraph for each comment, containing creator, created, value
       for (let i = 0; i < comments.length; i++) {
         let comment = document.createElement("p");
