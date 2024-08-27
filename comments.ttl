@@ -1,0 +1,33 @@
+@prefix : <#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix n0: <annotations.ttl/>.
+@prefix o: <http://www.w3.org/ns/oa#>.
+
+n0:anno1
+    a o:Annotation;
+    dct:created "2024-08-27T08:27:54.355Z";
+    dct:creator "Allard Mees";
+    o:bodyValue
+        """Was zur H\u00f6lle bedeutet "gelb"?""";
+    o:hasTarget n0:conceptFD5149 .
+n0:anno2
+    a o:Annotation;
+    dct:created "2024-08-27T11:55:35.932Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        "aus meiner Sicht kann konventionelle Radiographie auch mit einem digitalen Detektor statt R\u00f6ntgenfilmen abbilden";
+    o:hasTarget n0:conceptA2B5A3 .
+n0:anno3
+    a o:Annotation;
+    dct:created "2024-08-27T11:56:02.873Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        "Die Definition ist glaube ich f\u00fcr \u201eR\u00f6ntgen-CT\u201c. Tomographie bezeichnet nur die Rekonstruktion von einem 3D Modell aus vielen (Projektions)Bildern; es gibt auch Neutrontomographie, MRT, usw.  und auch R\u00f6ntgentomographie (ohne Computer)! CT bezeichnet wahrscheinlich nur R\u00f6ntgen-CT aber um sicher zu sein, w\u00fcrde ich empfehlen, den Begriff zu \u201eR\u00f6ntgen-Computertomographie\u201c zu \u00e4ndern.";
+    o:hasTarget n0:conceptAF9A88 .
+n0:conceptA2B5A3 a skos:Concept.
+
+n0:conceptAF9A88 a skos:Concept.
+
+n0:conceptFD5149 a skos:Concept.
+
