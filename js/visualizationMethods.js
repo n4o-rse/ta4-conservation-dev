@@ -593,7 +593,19 @@ function generateForceDirectedTree(data, idObject) {
     }
 
     // select all "text" where node d.data.id is in commentedIdList
+    // still to do
 
+    // change cursor when hovering over text
+    // still to do
+    
+    /*
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    } 
+    */
   node.on("click", (e, d) => openDetails(d.data.id, idObject));
   return svg.node();
   }

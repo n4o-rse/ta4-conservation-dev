@@ -11,9 +11,24 @@
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
+
+  /* Modal Content */
+  .modal-content {
+    position: fixed;
+    left: 0;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
   
  /* Modal Header */
- .modal-header {
+ .modal-header, .comment-header, .history-header {
     padding: 2px 16px;
     background-color: gray;/* #5cb85c;*/
     color: white;
@@ -31,18 +46,24 @@
     background-color: gray;/*#5cb85c;*/
     color: white;
   }
-  
-  /* Modal Content */
-  .modal-content {
+
+  textarea{
+    height: 100px;
+    width: 98%;
+    padding:1%;
+    border:none;
+ }
+
+  /* Modal sideliner */
+  .modal-sideliner {
     position: relative;
+    float: right;
     background-color: #fefefe;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    animation-name: animatetop;
-    animation-duration: 0.4s
+    width: 19%;
+    height: 100%;
   }
   
   /* Add Animation */
