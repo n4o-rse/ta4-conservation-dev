@@ -8,9 +8,8 @@ n0:anno1
     a o:Annotation;
     dct:created "2024-08-27T08:27:54.355Z";
     dct:creator "Lasse Mempel";
-    o:bodyValue
-        "Testkommentar";
-    o:hasTarget n0:concepttop .
+    o:bodyValue "Testkommentar";
+    o:hasTarget n0:concepttop.
 n0:anno2
     a o:Annotation;
     dct:created "2024-08-27T11:55:35.932Z";
@@ -25,9 +24,15 @@ n0:anno3
     o:bodyValue
         "Die Definition ist glaube ich f\u00fcr \u201eR\u00f6ntgen-CT\u201c. Tomographie bezeichnet nur die Rekonstruktion von einem 3D Modell aus vielen (Projektions)Bildern; es gibt auch Neutrontomographie, MRT, usw.  und auch R\u00f6ntgentomographie (ohne Computer)! CT bezeichnet wahrscheinlich nur R\u00f6ntgen-CT aber um sicher zu sein, w\u00fcrde ich empfehlen, den Begriff zu \u201eR\u00f6ntgen-Computertomographie\u201c zu \u00e4ndern.";
     o:hasTarget n0:conceptAF9A88 .
-n0:concepttop a skos:Concept.
-
+n0:anno4
+    a o:Annotation;
+    dct:created "2024-08-27T13:02:42.906Z";
+    dct:creator "Kristina";
+    o:bodyValue "Alright, ist ge\u00e4ndert. Danke Ivan. ";
+    o:hasTarget n0:conceptAF9A88 .
 n0:conceptAF9A88 a skos:Concept.
 
 n0:conceptFD5149 a skos:Concept.
+
+n0:concepttop a skos:Concept.
 
