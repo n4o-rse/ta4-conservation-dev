@@ -152,9 +152,9 @@ async function openDetails(id, idObject) {
       let commentTarget = store.any(allComments[i], target)
       let commentTargetID = commentTarget.value.split("concept")[1]
       let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
-      let creator = store.any(allComments[i], creator)
-      let created = store.any(allComments[i], created)
-      comment.innerHTML = creator + " commented on " + commentTargetLabel + " on " + created;
+      let commentCreator = store.any(allComments[i], creator)
+      let commentCreated = store.any(allComments[i], created)
+      comment.innerHTML = commentCreator + " commented on " + commentTargetLabel + " on " + commentCreated;
       historyDiv.appendChild(comment);
     }
 
