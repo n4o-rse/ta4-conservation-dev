@@ -128,6 +128,7 @@ async function openDetails(id, idObject) {
     let store = $rdf.graph()
     $rdf.parse(commentRdf, store, url, 'text/turtle')
 
+    /*
     // log serialized store into json-ld
     let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
     jsonCommentArray = []
@@ -142,6 +143,8 @@ async function openDetails(id, idObject) {
     }
     console.log(jsonCommentArray)
     console.log(jsonConceptArray)
+    */
+    
 
     //define specific modal-concept in store
     let concept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/concept${id}`)
