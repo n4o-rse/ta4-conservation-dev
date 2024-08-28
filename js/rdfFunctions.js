@@ -186,19 +186,7 @@ async function openDetails(id, idObject) {
       commentDiv.appendChild(comment);
     }
 
-    if (store.holds(concept, RDF('type'), SK('Concept'))) {
-      // find all comments for this concept
-      let comments = store.each(undefined, target, concept)
-      // revert order of array comments
-      comments = comments.reverse()
-      // sort comments by created date
-      // generate a paragraph for each comment, containing creator, created, value
-      for (let i = 0; i < comments.length; i++) {
-        let comment = document.createElement("p");
-        comment.innerHTML = "<b>creator:</b> " + store.any(comments[i], creator) + "<br><b>created:</b> " + store.any(comments[i], created) + "<br><b>comment:</b> " + store.any(comments[i], value);
-        commentDiv.appendChild(comment);
-      } 
-    } else {
+    if (prunedCommentArray.length == 0) {
       let placeholderComment = document.createElement("p");
       placeholderComment.innerHTML = "No comments yet, be the first to comment!";
       placeholderComment.id = "noCommentsPlaceholder";
