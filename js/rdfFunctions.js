@@ -133,31 +133,28 @@ async function openDetails(id, idObject) {
     let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
     // parse json-ld into object
     let parsedJson = JSON.parse(jsonldSerialization)
-    try {
-      let commentObject = {comments: {}, concepts: {}}
-      let jsonCommentArray = parsedJson["@graph"].filter(obj => obj["@type"] == "o:Annotation")
-      let jsonConceptArray = parsedJson["@graph"].filter(obj => obj["@type"] == "skos:Concept")
-      for (let x of jsonCommentArray) {
-        commentObjectID = x["@id"].split("n0:")[1]
-        commentObject["comments"][commentObjectID] = {}
-        commentObject["comments"][commentObjectID]["creator"] = x["dct:creator"]
-        commentObject["comments"][commentObjectID]["created"] = x["dct:created"]
-        commentObject["comments"][commentObjectID]["value"] = x["o:bodyValue"]
-        commentObject["comments"][commentObjectID]["target"] = x["o:hasTarget"]["@id"].split("n0:concept")[1]
-      }
-      for (let x of jsonConceptArray) {
-        conceptObjectID = x["@id"].split("n0:concept")[1]
-        commentObject["concepts"][conceptObjectID] = {}
-        commentObject["concepts"][conceptObjectID]["prefLabel"] = idObject[conceptObjectID]["prefLabel"]
-      }
-      console.log(commentObject)
-      let updatedCommentArray = Object.keys(commentObject["comments"])
-      console.log(updatedCommentArray)
-      let sortedUpdatedCommentArray = updatedCommentArray.sort((a, b) => new Date(commentObject["comments"][b]["created"]) - new Date(commentObject["comments"][a]["created"]))
-      console.log(sortedUpdatedCommentArray)
-    } catch (error) {
-      console.log(error)
+    let commentObject = {comments: {}, concepts: {}}
+    let jsonCommentArray = parsedJson["@graph"].filter(obj => obj["@type"] == "o:Annotation")
+    let jsonConceptArray = parsedJson["@graph"].filter(obj => obj["@type"] == "skos:Concept")
+    for (let x of jsonCommentArray) {
+      commentObjectID = x["@id"].split("n0:")[1]
+      commentObject["comments"][commentObjectID] = {}
+      commentObject["comments"][commentObjectID]["creator"] = x["dct:creator"]
+      commentObject["comments"][commentObjectID]["created"] = x["dct:created"]
+      commentObject["comments"][commentObjectID]["value"] = x["o:bodyValue"]
+      commentObject["comments"][commentObjectID]["target"] = x["o:hasTarget"]["@id"].split("n0:concept")[1]
     }
+    for (let x of jsonConceptArray) {
+      conceptObjectID = x["@id"].split("n0:concept")[1]
+      commentObject["concepts"][conceptObjectID] = {}
+      commentObject["concepts"][conceptObjectID]["prefLabel"] = idObject[conceptObjectID]["prefLabel"]
+    }
+    console.log(commentObject)
+    let updatedCommentArray = Object.keys(commentObject["comments"])
+    console.log(updatedCommentArray)
+    let sortedUpdatedCommentArray
+    sortedUpdatedCommentArray = updatedCommentArray.sort((a, b) => new Date(commentObject["comments"][b]["created"]) - new Date(commentObject["comments"][a]["created"]))
+    console.log(sortedUpdatedCommentArray)
 
     // generate a paragraph for each comment, containing target, creator, created in historyDiv
     for (let i = 0; i < sortedUpdatedCommentArray.length; i++) {
