@@ -45,6 +45,41 @@ n0:anno14
     o:bodyValue
         """Rechtschreibkorrektur: bei dem Wort "Regel" fehlt das "l"...""";
     o:hasTarget n0:conceptDA2D73 .
+n0:anno15
+    a o:Annotation;
+    dct:created "2024-08-28T11:58:55.324Z";
+    dct:creator "Markus";
+    o:bodyValue "Lyofix CHN";
+    o:hasTarget n0:conceptFF4767 .
+n0:anno16
+    a o:Annotation;
+    dct:created "2024-08-28T12:04:14.326Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """Kauramin CE 5549 ist chemisch identisch mit Kauramin 800. Die Typenbezeichung CE steht bei der BASF f\u00fcr Produkte die noch keine volle Marktreife, noch im Teststadium sind. Nachdem sich Kauramin CE 5549 am Markt bew\u00e4hrt hatte, bekam es den brand name Kauramin 800. Vielleicht in der Datenbank Kauramin CE 5549/Kauramin 800 schreiben.
+Kauramin 800 wurde 2023 vom Markt genommen. Das nun modifizierte Nachfolgeharz mit etwas anderen Eigenschaften hei\u00dfe Kauramin 801""";
+    o:hasTarget n0:conceptBFB162 .
+n0:anno17
+    a o:Annotation;
+    dct:created "2024-08-28T12:06:55.990Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "Hausenblasenleim (die Hause ist ein Fisch) wurde am RGZM auch verwendet. Ich habs nur einmal als Azubi 1988 benutzt.";
+    o:hasTarget n0:conceptGD86C1 .
+n0:anno18
+    a o:Annotation;
+    dct:created "2024-08-28T12:20:25.151Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "da k\u00f6nnte ich noch etliche Bearbeitungstechniken zuf\u00fcgen (soll ich?) , eine die viele schon geh\u00f6rt haben: scharriert";
+    o:hasTarget n0:conceptB1B854 .
+n0:anno19
+    a o:Annotation;
+    dct:created "2024-08-28T12:21:46.680Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "manchmal verwende ich auch die harzreichere Variante: Auro Hart\u00f6l Nr.126";
+    o:hasTarget n0:conceptA28B4D.
 n0:anno2
     a o:Annotation;
     dct:created "2024-08-27T11:55:35.932Z";
@@ -100,6 +135,8 @@ n0:anno9
     o:bodyValue
         "Bei der digitalen Mikroskopie geht das Licht vom Objektiv auch bzw. nur zur Kamera.";
     o:hasTarget n0:conceptA9611D.
+n0:conceptA28B4D a skos:Concept.
+
 n0:conceptA2B5A3 a skos:Concept.
 
 n0:conceptA7FA3B a skos:Concept.
@@ -110,7 +147,11 @@ n0:conceptAF9A88 a skos:Concept.
 
 n0:conceptAG4G3C a skos:Concept.
 
+n0:conceptB1B854 a skos:Concept.
+
 n0:conceptB94DCD a skos:Concept.
+
+n0:conceptBFB162 a skos:Concept.
 
 n0:conceptDA2D73 a skos:Concept.
 
@@ -118,7 +159,11 @@ n0:conceptFC2113 a skos:Concept.
 
 n0:conceptFD5149 a skos:Concept.
 
+n0:conceptFF4767 a skos:Concept.
+
 n0:conceptG8D62A a skos:Concept.
+
+n0:conceptGD86C1 a skos:Concept.
 
 n0:concepttop a skos:Concept.
 
