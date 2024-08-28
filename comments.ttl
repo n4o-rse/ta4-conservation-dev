@@ -8,9 +8,22 @@ n0:anno1
     a o:Annotation;
     dct:created "2024-08-27T08:27:54.355Z";
     dct:creator "Lasse Mempel";
+    o:bodyValue "Testkommentar";
+    o:hasTarget n0:concepttop.
+n0:anno10
+    a o:Annotation;
+    dct:created "2024-08-27T14:24:57.931Z";
+    dct:creator "Ivan";
     o:bodyValue
-        "Testkommentar";
-    o:hasTarget n0:concepttop .
+        """Confokalmikroskop ist auch ein wichtiges Lichtmikroskop aber ich m\u00fcsste die genaue Definition suchen. 
+Vielleicht ISO 25178-6 (https://www.iso.org/obp/ui/en/#iso:std:iso:25178:-6:ed-1:v1:en)? Nicht sehr klar f\u00fcr mich allerdings... XD""";
+    o:hasTarget n0:conceptFC2113 .
+n0:anno11
+    a o:Annotation;
+    dct:created "2024-08-27T14:37:04.732Z";
+    dct:creator "Lasse Mempel-L\u00e4nger";
+    o:bodyValue "Funktionstest...";
+    o:hasTarget n0:conceptA2B5A3 .
 n0:anno2
     a o:Annotation;
     dct:created "2024-08-27T11:55:35.932Z";
@@ -25,9 +38,64 @@ n0:anno3
     o:bodyValue
         "Die Definition ist glaube ich f\u00fcr \u201eR\u00f6ntgen-CT\u201c. Tomographie bezeichnet nur die Rekonstruktion von einem 3D Modell aus vielen (Projektions)Bildern; es gibt auch Neutrontomographie, MRT, usw.  und auch R\u00f6ntgentomographie (ohne Computer)! CT bezeichnet wahrscheinlich nur R\u00f6ntgen-CT aber um sicher zu sein, w\u00fcrde ich empfehlen, den Begriff zu \u201eR\u00f6ntgen-Computertomographie\u201c zu \u00e4ndern.";
     o:hasTarget n0:conceptAF9A88 .
-n0:concepttop a skos:Concept.
+n0:anno4
+    a o:Annotation;
+    dct:created "2024-08-27T13:02:42.906Z";
+    dct:creator "Kristina";
+    o:bodyValue "Alright, ist ge\u00e4ndert. Danke Ivan. ";
+    o:hasTarget n0:conceptAF9A88 .
+n0:anno5
+    a o:Annotation;
+    dct:created "2024-08-27T14:21:09.315Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        "der CT ist auch eine R\u00f6ntgenanlage :) Mir fehlt kein Begriff ein, der nur f\u00fcr konventionelle Radiographie als Ger\u00e4t benutzt wird. Vom Hardware gibt es kaum Unterschiede zwischen CT und konventionelle (digitale) Radiographie: nur der Drehteller eigentlich!";
+    o:hasTarget n0:conceptG8D62A.
+n0:anno6
+    a o:Annotation;
+    dct:created "2024-08-27T14:21:45.561Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        "es ist ein Lichtmikroskop. Einfache Definition: Mikroskop ohne Okulare (nur Kamera+Bildschirm).";
+    o:hasTarget n0:conceptAG4G3C.
+n0:anno7
+    a o:Annotation;
+    dct:created "2024-08-27T14:22:14.558Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        "ist es immer mit Cross-Polarisation? Man kann es doch nur mit einem Filter anwenden, oder?";
+    o:hasTarget n0:conceptA7FA3B.
+n0:anno8
+    a o:Annotation;
+    dct:created "2024-08-27T14:22:53.368Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        "Bei der digitalen Mikroskopie geht das Licht vom Objektiv auch bzw. nur zur Kamera.";
+    o:hasTarget n0:conceptB94DCD.
+n0:anno9
+    a o:Annotation;
+    dct:created "2024-08-27T14:23:00.853Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        "Bei der digitalen Mikroskopie geht das Licht vom Objektiv auch bzw. nur zur Kamera.";
+    o:hasTarget n0:conceptA9611D.
+n0:conceptA2B5A3 a skos:Concept.
+
+n0:conceptA7FA3B a skos:Concept.
+
+n0:conceptA9611D a skos:Concept.
 
 n0:conceptAF9A88 a skos:Concept.
 
+n0:conceptAG4G3C a skos:Concept.
+
+n0:conceptB94DCD a skos:Concept.
+
+n0:conceptFC2113 a skos:Concept.
+
 n0:conceptFD5149 a skos:Concept.
+
+n0:conceptG8D62A a skos:Concept.
+
+n0:concepttop a skos:Concept.
 
