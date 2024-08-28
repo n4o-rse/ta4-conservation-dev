@@ -37,8 +37,6 @@ async function openDetails(id, idObject) {
       "Q17":	"Waldemar Muskalla",
       "Q18":	"Roland Schwab",
     }
-    console.log(idObject);
-    console.log(id);
     var modal = document.getElementById("myModal");
     // make modal invisible
     // modal.style.display = "none";
@@ -128,7 +126,6 @@ async function openDetails(id, idObject) {
       // revert order of array comments
       comments = comments.reverse()
       // sort comments by created date
-      console.log(comments)
       // generate a paragraph for each comment, containing creator, created, value
       for (let i = 0; i < comments.length; i++) {
         let comment = document.createElement("p");
@@ -145,7 +142,8 @@ async function openDetails(id, idObject) {
     //display latest comments in general
     // find all comments in store
     let allComments = store.each(undefined, RDF('type'), AO('Annotation'))
-    allComments = allComments.reverse()
+    console.log(allComments)
+    //allComments = allComments.reverse()
     try {
       allComments = allComments.sort((a, b) => store.any(a, created) - store.any(b, created));
     } catch (error) {
