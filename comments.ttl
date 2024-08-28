@@ -24,6 +24,13 @@ n0:anno11
     dct:creator "Lasse Mempel-L\u00e4nger";
     o:bodyValue "Funktionstest...";
     o:hasTarget n0:conceptA2B5A3 .
+n0:anno12
+    a o:Annotation;
+    dct:created "2024-08-28T05:09:35.498Z";
+    dct:creator "Kristina";
+    o:bodyValue
+        "Guter Hinweis, ich hab das nochmal nachgeschlagen und den Text entsprechend angepasst. ";
+    o:hasTarget n0:conceptA7FA3B.
 n0:anno2
     a o:Annotation;
     dct:created "2024-08-27T11:55:35.932Z";
