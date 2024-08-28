@@ -132,6 +132,12 @@ async function openDetails(id, idObject) {
     // log serialized store into json-ld
     let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
     console.log(jsonldSerialization)
+    try {
+      console.log(jsonldSerialization["@graph"])
+    } catch (error) {
+      console.log(error)
+    }
+  
     /*
     jsonCommentArray = []
     jsonConceptArray = []
