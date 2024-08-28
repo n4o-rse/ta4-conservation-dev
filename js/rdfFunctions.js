@@ -96,7 +96,6 @@ async function openDetails(id, idObject) {
               }
             }
           }
-
         }
 
         // case for all other properties, where splitted strings don't have to be converted
@@ -120,13 +119,20 @@ async function openDetails(id, idObject) {
         body[0].appendChild(detailDiv);
       }
     } 
-    // generate existing comments for this concept
+
+    // generate existing comments for this concept from solid pod
     const url = "https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl";
     let commentRdf = await readFromPod(url)
     
     // parse ttl into store
     let store = $rdf.graph()
     $rdf.parse(commentRdf, store, url, 'text/turtle')
+
+    // log serialized store into json-ld
+    console.log($rdf.serialize(null, store, url, 'application/ld+json'));
+    console.log($rdf.serialize(null, store, url, 'application/json'));
+
+    //define specific modal-concept in store
     let concept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/concept${id}`)
   
     // create namespace
@@ -163,7 +169,6 @@ async function openDetails(id, idObject) {
     //display latest comments in general
     // find all comments in store
     let allComments = store.each(undefined, RDF('type'), AO('Annotation'))
-    console.log(allComments)
     allComments = allComments.reverse()
     // generate a paragraph for each comment, containing target, creator, created in historyDiv
     for (let i = 0; i < allComments.length; i++) {
