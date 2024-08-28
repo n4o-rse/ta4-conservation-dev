@@ -130,7 +130,6 @@ async function openDetails(id, idObject) {
 
     // log serialized store into json-ld
     console.log($rdf.serialize(null, store, url, 'application/ld+json'));
-    console.log($rdf.serialize(null, store, url, 'application/json'));
 
     //define specific modal-concept in store
     let concept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/concept${id}`)
