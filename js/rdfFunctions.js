@@ -151,25 +151,11 @@ async function openDetails(id, idObject) {
         commentObject["concepts"][conceptObjectID]["prefLabel"] = idObject[conceptObjectID]["prefLabel"]
       }
       console.log(commentObject)
+      console.log(commentObject["comments"]).sort(a,b => a["created"] - b["created"])
+      console.log(commentObject["comments"]).sort(a,b => b["created"] - a["created"])
     } catch (error) {
       console.log(error)
     }
-  
-    /*
-    jsonCommentArray = []
-    jsonConceptArray = []
-    // loop over all objects in serialized graph 
-    for (let element of jsonldSerialization["@graph"]) {
-      if (element["@type"] == "o:Annotation") {
-        jsonCommentArray.push(element)
-      } else if (element["@type"] == "skos:Concept") {
-        jsonConceptArray.push(element)
-      }
-    }
-    console.log(jsonCommentArray)
-    console.log(jsonConceptArray)
-    */
-    
 
     //define specific modal-concept in store
     let concept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/concept${id}`)
