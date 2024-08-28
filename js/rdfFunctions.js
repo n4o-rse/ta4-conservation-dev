@@ -159,21 +159,36 @@ async function openDetails(id, idObject) {
       console.log(error)
     }
 
-    //define specific modal-concept in store
-    let concept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/concept${id}`)
-  
-    // create namespace
-    var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
-    var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
-    var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
-    var DC = $rdf.Namespace("http://purl.org/dc/terms/");
-    var target = AO("hasTarget")
-    var value = AO("bodyValue")
-    var creator = DC("creator")
-    var created = DC("created")
-  
-    // find all comments for this concept
-    // check if concept is in store
+    // generate a paragraph for each comment, containing target, creator, created in historyDiv
+    for (let i = 0; i < sortedUpdatedCommentArray.length; i++) {
+      let comment = document.createElement("p");
+      let commentTargetID = commentObject["comments"][sortedUpdatedCommentArray[i]]["target"]
+      let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
+      let commentCreator = commentObject["comments"][sortedUpdatedCommentArray[i]]["creator"]
+      let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"]
+      comment.innerHTML = commentCreator + " commented on " + commentTargetLabel + " on " + commentCreated;
+      historyDiv.appendChild(comment);
+    }
+
+    // delete all elements from sortedUpdatedCommentArray, where property target in commentObject["comments"]["target"] is not id
+    let prunedCommentArray = []
+    for (let i = 0; i < sortedUpdatedCommentArray.length; i++) {
+      if (commentObject["comments"][sortedUpdatedCommentArray[i]]["target"] == id) {
+        prunedCommentArray.push(sortedUpdatedCommentArray[i])
+      }
+    }
+    for (let i = 0; i < prunedCommentArray.length; i++) {
+      let comment = document.createElement("p");
+      let commentTargetID = commentObject["comments"][prunedCommentArray[i]]["target"]
+      let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
+      let commentCreator = commentObject["comments"][prunedCommentArray[i]]["creator"]
+      let commentCreated = commentObject["comments"][prunedCommentArray[i]]["created"]
+      let commentValue = commentObject["comments"][prunedCommentArray[i]]["value"]
+      comment.innerHTML = commentCreator + " commented on " + commentTargetLabel + " on " + commentCreated;
+      comment.innerHTML = "<b>creator:</b> " + commentCreator + "<br><b>created:</b> " + commentCreated + "<br><b>comment:</b> " + commentValue;
+      commentDiv.appendChild(comment);
+    }
+
     if (store.holds(concept, RDF('type'), SK('Concept'))) {
       // find all comments for this concept
       let comments = store.each(undefined, target, concept)
@@ -193,22 +208,8 @@ async function openDetails(id, idObject) {
       commentDiv.appendChild(placeholderComment);
     }
 
-    //display latest comments in general
-    // find all comments in store
-    let allComments = store.each(undefined, RDF('type'), AO('Annotation'))
-    allComments = allComments.reverse()
-    // generate a paragraph for each comment, containing target, creator, created in historyDiv
-    for (let i = 0; i < allComments.length; i++) {
-      let comment = document.createElement("p");
-      let commentTarget = store.any(allComments[i], target)
-      let commentTargetID = commentTarget.value.split("concept")[1]
-      let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
-      let commentCreator = store.any(allComments[i], creator)
-      let commentCreated = store.any(allComments[i], created)
-      comment.innerHTML = commentCreator + " commented on " + commentTargetLabel + " on " + commentCreated;
-      historyDiv.appendChild(comment);
-    }
-
+    // temporary fix storing id in comment-button className, to call event listener with id parameter
+    // pls change this!
     var commentButton = document.getElementById("commentButton")
     commentButton.className = id.toString();
     modal.style.display = "block";
