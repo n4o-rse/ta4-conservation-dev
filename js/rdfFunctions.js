@@ -143,13 +143,7 @@ async function openDetails(id, idObject) {
     // find all comments in store
     let allComments = store.each(undefined, RDF('type'), AO('Annotation'))
     console.log(allComments)
-    //allComments = allComments.reverse()
-    try {
-      allComments = allComments.sort((a, b) => store.any(a, created) - store.any(b, created));
-    } catch (error) {
-      console.log(error)
-    }
-    console.log(allComments)
+    allComments = allComments.reverse()
     // generate a paragraph for each comment, containing target, creator, created in historyDiv
     for (let i = 0; i < allComments.length; i++) {
       let comment = document.createElement("p");
