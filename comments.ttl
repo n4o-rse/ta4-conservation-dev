@@ -87,6 +87,57 @@ n0:anno2
     o:bodyValue
         "aus meiner Sicht kann konventionelle Radiographie auch mit einem digitalen Detektor statt R\u00f6ntgenfilmen abbilden";
     o:hasTarget n0:conceptA2B5A3 .
+n0:anno20
+    a o:Annotation;
+    dct:created "2024-08-28T13:17:48.410Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "in der Metallrestaurierung (unter Lazlo Lehoczky) wurden Metallobjekte nach der Bearbeitung mit Pantarol (Nitrocelluloselack) gegen Luftfeuchtigkeit gesch\u00fctzt. Bitte Pantarol aufnehmen";
+    o:hasTarget n0:conceptGC7998 .
+n0:anno21
+    a o:Annotation;
+    dct:created "2024-08-28T14:28:39.985Z";
+    dct:creator "Matthias Heinzel";
+    o:bodyValue
+        """Hier m\u00fcsste noch als Unterpunkt der Sapropelit hinzugef\u00fcgt werden. Ausf\u00fchrliche Beschreibung
+
+Sapropelite sind das Resultat verfestigter Faulschl\u00e4mme (altgriechisch \u03c3\u03b1\u03c0\u03c1\u03cc\u03c2 sapros \u201efaul\u201c, \u201everfault\u201c). Sie entstehen unter nat\u00fcrlichen Bedingungen in zuvor n\u00e4hrstoffreichen Gew\u00e4ssern und S\u00fcmpfen, wenn organisches Material bei Abwesenheit von Sauerstoff biochemisch umgewandelt wird. Quelle: Mineralienatlas.de""";
+    o:hasTarget n0:conceptG76A78 .
+n0:anno22
+    a o:Annotation;
+    dct:created "2024-08-28T14:36:04.802Z";
+    dct:creator "Matthias Heinzel";
+    o:bodyValue
+        "Bei den Mineralien fehlen noch als Untergruppen: Korund mit den Untergruppen Saphire und Rubin; dann der Smaragd; Fluorit oder Flussspat m\u00fcsste auch noch hinzu.  ";
+    o:hasTarget n0:conceptBGC9F3 .
+n0:anno23
+    a o:Annotation;
+    dct:created "2024-08-28T14:37:10.623Z";
+    dct:creator "Matthias Heinzel";
+    o:bodyValue
+    "Sollten wir bei den Mineralien die jeweilige Moossche H\u00e4rte angeben?";
+    o:hasTarget n0:conceptBGC9F3 .
+n0:anno24
+    a o:Annotation;
+    dct:created "2024-08-28T14:42:03.263Z";
+    dct:creator "Matthias Heinzel";
+    o:bodyValue
+        "Hier fehlen noch als Unterpunkt die Perle und da wiederum die Unterscheidung zwischen S\u00fc\u00dfwasser- und Salzwasserperlen";
+    o:hasTarget n0:conceptF1BA31 .
+n0:anno25
+    a o:Annotation;
+    dct:created "2024-08-28T14:44:23.961Z";
+    dct:creator "Matthias Heinzel";
+    o:bodyValue
+        "Unterscheiden wir hier von welchem Baum das Pech gewonnen wurde? Birke, Buche, Nadelholz";
+    o:hasTarget n0:conceptD467F2 .
+n0:anno26
+    a o:Annotation;
+    dct:created "2024-08-28T14:49:55.505Z";
+    dct:creator "Matthias Heinzel";
+    o:bodyValue
+        """Unterscheiden wir hier zwischen fossilem Elfenbein und "frischem Elfenbein"?""";
+    o:hasTarget n0:conceptAG55BC.
 n0:anno3
     a o:Annotation;
     dct:created "2024-08-27T11:56:02.873Z";
@@ -147,13 +198,21 @@ n0:conceptAF9A88 a skos:Concept.
 
 n0:conceptAG4G3C a skos:Concept.
 
+n0:conceptAG55BC a skos:Concept.
+
 n0:conceptB1B854 a skos:Concept.
 
 n0:conceptB94DCD a skos:Concept.
 
 n0:conceptBFB162 a skos:Concept.
 
+n0:conceptBGC9F3 a skos:Concept.
+
+n0:conceptD467F2 a skos:Concept.
+
 n0:conceptDA2D73 a skos:Concept.
+
+n0:conceptF1BA31 a skos:Concept.
 
 n0:conceptFC2113 a skos:Concept.
 
@@ -161,7 +220,11 @@ n0:conceptFD5149 a skos:Concept.
 
 n0:conceptFF4767 a skos:Concept.
 
+n0:conceptG76A78 a skos:Concept.
+
 n0:conceptG8D62A a skos:Concept.
+
+n0:conceptGC7998 a skos:Concept.
 
 n0:conceptGD86C1 a skos:Concept.
 
