@@ -151,8 +151,10 @@ async function openDetails(id, idObject) {
         commentObject["concepts"][conceptObjectID]["prefLabel"] = idObject[conceptObjectID]["prefLabel"]
       }
       console.log(commentObject)
-      console.log(commentObject["comments"]).sort(a,b => a["created"] - b["created"])
-      console.log(commentObject["comments"]).sort(a,b => b["created"] - a["created"])
+      let updatedCommentArray = Object.keys(commentObject["comments"])
+      console.log(updatedCommentArray)
+      let sortedUpdatedCommentArray = updatedCommentArray.sort((a, b) => new Date(commentObject["comments"][b]["created"]) - new Date(commentObject["comments"][a]["created"]))
+      console.log(sortedUpdatedCommentArray)
     } catch (error) {
       console.log(error)
     }
