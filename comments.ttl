@@ -31,6 +31,13 @@ n0:anno12
     o:bodyValue
         "Guter Hinweis, ich hab das nochmal nachgeschlagen und den Text entsprechend angepasst. ";
     o:hasTarget n0:conceptA7FA3B.
+n0:anno13
+    a o:Annotation;
+    dct:created "2024-08-28T05:49:19.977Z";
+    dct:creator "Kristina ";
+    o:bodyValue
+        """Wie w\u00e4re es mit diesem Vorschlag? Simultan zum Begriff "konventionelle Radiographie" habe ich das zugeh\u00f6rige Ger\u00e4t nun statt nur "R\u00f6ntgenanlage" zu "konventionelles R\u00f6ntgenger\u00e4t" umbenannt. In der Description wird dann der Unterschied zum CT erkl\u00e4rt (und bei der Description des CTs entsprechend umgekehrt). """;
+    o:hasTarget n0:conceptG8D62A.
 n0:anno2
     a o:Annotation;
     dct:created "2024-08-27T11:55:35.932Z";
