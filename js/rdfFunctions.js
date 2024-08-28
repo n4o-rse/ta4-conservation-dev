@@ -132,8 +132,13 @@ async function openDetails(id, idObject) {
     // log serialized store into json-ld
     let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
     console.log(jsonldSerialization)
+    // log type of json-ld serialization
+    console.log(typeof jsonldSerialization)
+    // parse json-ld into object
+    let parsedJson = JSON.parse(jsonldSerialization)
+    console.log(typeof parsedJson)
     try {
-      console.log(jsonldSerialization["@graph"])
+      console.log(parsedJson["@graph"])
     } catch (error) {
       console.log(error)
     }
