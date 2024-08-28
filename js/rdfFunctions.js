@@ -131,14 +131,26 @@ async function openDetails(id, idObject) {
     
     // log serialized store into json-ld
     let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
-    console.log(jsonldSerialization)
-    // log type of json-ld serialization
-    console.log(typeof jsonldSerialization)
     // parse json-ld into object
     let parsedJson = JSON.parse(jsonldSerialization)
-    console.log(typeof parsedJson)
     try {
-      console.log(parsedJson["@graph"])
+      let commentObject = {comments: {}, concepts: {}}
+      let jsonCommentArray = parsedJson["@graph"].filter(obj => obj["@type"] == "o:Annotation")
+      let jsonConceptArray = parsedJson["@graph"].filter(obj => obj["@type"] == "skos:Concept")
+      for (let x of jsonCommentArray) {
+        commentObjectID = x["@id"].split("n0:")[1]
+        commentObject["comments"][commentObjectID] = {}
+        commentObject["comments"][commentObjectID]["creator"] = x["dct:creator"]
+        commentObject["comments"][commentObjectID]["created"] = x["dct:created"]
+        commentObject["comments"][commentObjectID]["value"] = x["o:bodyValue"]
+        commentObject["comments"][commentObjectID]["target"] = x["o:hasTarget"]["@id"].split("n0:concept")[1]
+      }
+      for (let x of jsonConceptArray) {
+        conceptObjectID = x["@id"].split("n0:concept")[1]
+        commentObject["concepts"][conceptObjectID] = {}
+        commentObject["concepts"][conceptObjectID]["prefLabel"] = idObject[conceptObjectID]["prefLabel"]
+      }
+      console.log(commentObject)
     } catch (error) {
       console.log(error)
     }
