@@ -131,13 +131,17 @@ async function openDetails(id, idObject) {
     // log serialized store into json-ld
     let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
     jsonCommentArray = []
+    jsonConceptArray = []
     // loop over all objects in serialized graph 
     for (let element of jsonldSerialization["@graph"]) {
       if (element["@type"] == "o:Annotation") {
         jsonCommentArray.push(element)
+      } else if (element["@type"] == "skos:Concept") {
+        jsonConceptArray.push(element)
       }
     }
     console.log(jsonCommentArray)
+    console.log(jsonConceptArray)
 
     //define specific modal-concept in store
     let concept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/concept${id}`)
