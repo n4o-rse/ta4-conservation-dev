@@ -128,9 +128,11 @@ async function openDetails(id, idObject) {
     let store = $rdf.graph()
     $rdf.parse(commentRdf, store, url, 'text/turtle')
 
-    /*
+    
     // log serialized store into json-ld
     let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
+    console.log(jsonldSerialization)
+    /*
     jsonCommentArray = []
     jsonConceptArray = []
     // loop over all objects in serialized graph 
