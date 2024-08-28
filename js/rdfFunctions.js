@@ -41,7 +41,7 @@ async function openDetails(id, idObject) {
     console.log(id);
     var modal = document.getElementById("myModal");
     // make modal invisible
-    modal.style.display = "none";
+    // modal.style.display = "none";
     var modalBody = document.getElementsByClassName("modal-body")[0];
     while (modalBody.firstChild) {
       modalBody.removeChild(modalBody.firstChild);
@@ -127,6 +127,7 @@ async function openDetails(id, idObject) {
       let comments = store.each(undefined, target, concept)
       // revert order of array comments
       comments = comments.reverse()
+      // sort comments by created date
       console.log(comments)
       // generate a paragraph for each comment, containing creator, created, value
       for (let i = 0; i < comments.length; i++) {
@@ -145,6 +146,11 @@ async function openDetails(id, idObject) {
     // find all comments in store
     let allComments = store.each(undefined, RDF('type'), AO('Annotation'))
     allComments = allComments.reverse()
+    try {
+      allComments = allComments.sort((a, b) => store.any(a, created) - store.any(b, created));
+    } catch (error) {
+      console.log(error)
+    }
     console.log(allComments)
     // generate a paragraph for each comment, containing target, creator, created in historyDiv
     for (let i = 0; i < allComments.length; i++) {
