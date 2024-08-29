@@ -4,12 +4,6 @@
 @prefix n0: <annotations.ttl/>.
 @prefix o: <http://www.w3.org/ns/oa#>.
 
-n0:anno1
-    a o:Annotation;
-    dct:created "2024-08-27T08:27:54.355Z";
-    dct:creator "Lasse Mempel";
-    o:bodyValue "Testkommentar";
-    o:hasTarget n0:concepttop.
 n0:anno10
     a o:Annotation;
     dct:created "2024-08-27T14:24:57.931Z";
@@ -18,12 +12,6 @@ n0:anno10
         """Confokalmikroskop ist auch ein wichtiges Lichtmikroskop aber ich m\u00fcsste die genaue Definition suchen. 
 Vielleicht ISO 25178-6 (https://www.iso.org/obp/ui/en/#iso:std:iso:25178:-6:ed-1:v1:en)? Nicht sehr klar f\u00fcr mich allerdings... XD""";
     o:hasTarget n0:conceptFC2113 .
-n0:anno11
-    a o:Annotation;
-    dct:created "2024-08-27T14:37:04.732Z";
-    dct:creator "Lasse Mempel-L\u00e4nger";
-    o:bodyValue "Funktionstest...";
-    o:hasTarget n0:conceptA2B5A3 .
 n0:anno12
     a o:Annotation;
     dct:created "2024-08-28T05:09:35.498Z";
