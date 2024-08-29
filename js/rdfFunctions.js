@@ -164,7 +164,7 @@ async function openDetails(id, idObject) {
       let commentCreator = commentObject["comments"][sortedUpdatedCommentArray[i]]["creator"]
       let commentCreated = new Date(commentObject["comments"][sortedUpdatedCommentArray[i]]["created"])
       commentCreated = commentCreated.getFullYear() + "-" + commentCreated.getMonth() + "-" + commentCreated.getDate() + " " + commentCreated.getHours() + ":" + commentCreated.getMinutes() + " Uhr"
-      comment.innerHTML = " " + commentCreator + " commented on " + commentTargetLabel + " on " + commentCreated;
+      comment.innerHTML = "&nbsp;" + commentCreator + " commented on " + commentTargetLabel + " on " + commentCreated;
       historyDiv.appendChild(comment);
     }
 
