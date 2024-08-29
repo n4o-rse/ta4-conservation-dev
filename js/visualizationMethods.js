@@ -70,6 +70,7 @@ function generateTidyTree(data, idObject, visualizationType, commentedIdList) {
         .attr("x", d => d.children ? -6 : 6)
         .attr("text-anchor", d => d.children ? "end" : "start")
         .text(d => idObject[d.data.id]["prefLabel"])
+        .attr("fill", d => commentedIdList.includes(d.data.id) ? "red" : "black")
         .attr("stroke", "white")
         .attr("paint-order", "stroke");
 
@@ -513,8 +514,6 @@ function generateForceDirectedTree(data, idObject) {
   }
 
   function generateIndentedTree(data, idObject, commentedIdList) {
-    console.log(commentedIdList)
-    console.log(typeof commentedIdList)
     const format = d3.format(",");
     const nodeSize = 17;
     const root = d3.hierarchy(data).eachBefore((i => d => d.index = i++)(0));
