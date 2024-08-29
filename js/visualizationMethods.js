@@ -71,9 +71,7 @@ function generateTidyTree(data, idObject, visualizationType, commentedIdList) {
         .attr("text-anchor", d => d.children ? "end" : "start")
         .text(d => idObject[d.data.id]["prefLabel"])
         .attr("stroke", "white")
-        .attr("paint-order", "stroke")
-        // set color of text to red, if commentedIdList includes d.data.id
-        .attr("fill", d => commentedIdList.includes(d.data.id) ? "red" : "currentColor");
+        .attr("paint-order", "stroke");
 
     node.on("click", (e, d) => openDetails(d.data.id, idObject));
     
@@ -589,9 +587,11 @@ function generateForceDirectedTree(data, idObject) {
           .attr("dy", "0.32em")
           .attr("x", x)
           .attr("text-anchor", "end")
-          .attr("fill", d => d.children ? null : "#555")
+          //.attr("fill", d => d.children ? null : "#555")
           .data(root.copy().sum(value).descendants())
-          .text(d => format(d.value, d));
+          .text(d => format(d.value, d))
+          // set color of text to red, if commentedIdList includes d.data.id
+          .attr("fill", d => commentedIdList.includes(d.data.id) ? "red" : "#555");
     }
 
     // select all "text" where node d.data.id is in commentedIdList
