@@ -167,6 +167,8 @@ async function readComments(id, idObject) {
     let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"]
     commentCreated = commentCreated.split(".")[0].replace("T", " ")
     comment.innerHTML = commentCreator + " kommentierte " + "<b>" + commentTargetLabel + "</b>" + " um " + commentCreated;
+    comment.onclick = function() {openDetails(commentTargetID, idObject)};
+    comment.className = "commentHistoryParagraph";
     historyDiv.appendChild(comment);
   }
 
