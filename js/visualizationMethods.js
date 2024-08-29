@@ -589,23 +589,15 @@ function generateForceDirectedTree(data, idObject) {
           .attr("text-anchor", "end")
           .attr("fill", d => d.children ? null : "#555")
           .data(root.copy().sum(value).descendants())
-          .text(d => format(d.value, d))
+          .text(d => format(d.value, d));
           // set color of text to red, if commentedIdList includes d.data.id
           // alternative not working: d => commentedIdList.includes(d.data.id) ? "red" : "#555"
-          .attr("fill", determineColor(d.data.id, commentedIdList));
+          // also not working: .attr("fill", determineColor(d.data.id, commentedIdList));
     }
 
   node.on("click", (e, d) => openDetails(d.data.id, idObject));
   return svg.node();
   }
-
-function determineColor (id, commentedIdList) {
-  if (commentedIdList.includes(id)) {
-    return "red"
-  } else {
-    return "blue"
-  }
-}
 
 function generateIcicle(data, idObject) {
     // Specify the chart’s dimensions.
