@@ -254,7 +254,7 @@ async function updatePod() {
         store.add(newConcept, RDF('type'), SK('Concept'))
     }
 
-    var newDate = new Date().toDateString()
+    var newDate = new Date().toISOString()
     store.add(newAnno, value, commentText)
     store.add(newAnno, creator, author)
     store.add(newAnno, created, newDate)
