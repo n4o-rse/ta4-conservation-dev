@@ -587,7 +587,7 @@ function generateForceDirectedTree(data, idObject) {
           .attr("dy", "0.32em")
           .attr("x", x)
           .attr("text-anchor", "end")
-          //.attr("fill", d => d.children ? null : "#555")
+          .attr("fill", d => d.children ? null : "#555")
           .data(root.copy().sum(value).descendants())
           .text(d => format(d.value, d))
           // set color of text to red, if commentedIdList includes d.data.id
@@ -603,7 +603,7 @@ function determineColor (id, commentedIdList) {
   if (commentedIdList.includes(id)) {
     return "red"
   } else {
-    return "#555"
+    return "blue"
   }
 }
 
