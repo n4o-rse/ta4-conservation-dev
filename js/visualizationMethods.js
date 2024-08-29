@@ -591,26 +591,21 @@ function generateForceDirectedTree(data, idObject) {
           .data(root.copy().sum(value).descendants())
           .text(d => format(d.value, d))
           // set color of text to red, if commentedIdList includes d.data.id
-          .attr("fill", d => commentedIdList.includes(d.data.id) ? "red" : "#555");
+          // alternative not working: d => commentedIdList.includes(d.data.id) ? "red" : "#555"
+          .attr("fill", determineColor(d, commentedIdList));
     }
 
-    // select all "text" where node d.data.id is in commentedIdList
-    // still to do
-
-    // change cursor when hovering over text
-    // still to do
-    
-    /*
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    } 
-    */
   node.on("click", (e, d) => openDetails(d.data.id, idObject));
   return svg.node();
   }
+
+function determineColor (d, commentedIdList) {
+  if (commentedIdList.includes(d.data.id)) {
+    return "red"
+  } else {
+    return "#555"
+  }
+}
 
 function generateIcicle(data, idObject) {
     // Specify the chart’s dimensions.
