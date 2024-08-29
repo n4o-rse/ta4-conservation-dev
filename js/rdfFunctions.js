@@ -239,8 +239,8 @@ async function updatePod() {
     // calculate the next annotation number
     let nextAnnoNumber = 1
     while (store.holds($rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`), RDF('type'), AO('Annotation'))) {
-        nextAnnoNumber++
-        console.log(nextAnnoNumber + "already used")
+      console.log(nextAnnoNumber + "already used")
+      nextAnnoNumber++
     }
     console.log(nextAnnoNumber + "not used yet")
     //create new annotation
@@ -254,7 +254,7 @@ async function updatePod() {
         store.add(newConcept, RDF('type'), SK('Concept'))
     }
 
-    var newDate = new Date()
+    var newDate = new Date().toDateString()
     store.add(newAnno, value, commentText)
     store.add(newAnno, creator, author)
     store.add(newAnno, created, newDate)
