@@ -121,6 +121,8 @@ async function openDetails(id, idObject) {
 }
 
 async function readComments(id, idObject) {
+  console.log(id, idObject[id]["prefLabel"])
+  // clean modal content from previous comments
   var commentDiv = document.getElementsByClassName("modal-comments")[0];
   while (commentDiv.firstChild) {
     commentDiv.removeChild(commentDiv.firstChild);
