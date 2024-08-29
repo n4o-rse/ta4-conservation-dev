@@ -245,7 +245,9 @@ async function updatePod() {
     if (!store.holds(newConcept, RDF('type'), SK('Concept'))) {
         store.add(newConcept, RDF('type'), SK('Concept'))
     }
-    var newDate = new Date().toISOString()
+
+    var time = new Date()
+    var newDate = time.getFullYear() + "-" + time.getMonth() + "-" + time.getDate() + " " + time.getHours() + ":" + time.getMinutes() + " Uhr"
     store.add(newAnno, value, commentText)
     store.add(newAnno, creator, author)
     store.add(newAnno, created, newDate)
