@@ -569,7 +569,9 @@ function generateForceDirectedTree(data, idObject) {
     node.append("text")
         .attr("dy", "0.32em")
         .attr("x", d => d.depth * nodeSize + 6)
-        .text(d => idObject[d.data.id]["prefLabel"]);
+        .text(d => idObject[d.data.id]["prefLabel"])
+        // fill commented nodes red
+        .attr("fill", d => commentedIdList.includes(d.data.id) ? "red" : "black");
   
     node.append("title")
         .text(d => d.ancestors().reverse().map(d => idObject[d.data.id]["prefLabel"]).join("/"));
