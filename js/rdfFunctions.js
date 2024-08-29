@@ -166,8 +166,6 @@ async function openDetails(id, idObject) {
       console.log(commentCreated)
       console.log(typeof commentCreated)
       commentCreated = commentCreated.split(".")[0].replace("T", " ")
-
-      //commentCreated = commentCreated.getFullYear() + "-" + commentCreated.getMonth() + "-" + commentCreated.getDate() + " " + commentCreated.getHours() + ":" + commentCreated.getMinutes() + " Uhr"
       comment.innerHTML = commentCreator + " kommentierte " + "<b>" + commentTargetLabel + "</b>" + " um " + commentCreated;
       historyDiv.appendChild(comment);
     }
@@ -188,7 +186,6 @@ async function openDetails(id, idObject) {
       console.log(commentCreated)
       console.log(typeof commentCreated)
       commentCreated = commentCreated.split(".")[0].replace("T", " ")
-      //commentCreated = commentCreated.getFullYear() + "-" + commentCreated.getMonth() + "-" + commentCreated.getDate() + " " + commentCreated.getHours() + ":" + commentCreated.getMinutes() + " Uhr"
       let commentValue = commentObject["comments"][prunedCommentArray[i]]["value"]
       comment.innerHTML = commentCreator + " commented on " + commentTargetLabel + " on " + commentCreated;
       comment.innerHTML = "<b>creator:</b> " + commentCreator + "<br><b>created:</b> " + commentCreated + "<br><b>comment:</b> " + commentValue;
@@ -261,7 +258,11 @@ async function updatePod() {
         store.add(newConcept, RDF('type'), SK('Concept'))
     }
 
-    var newDate = new Date().toISOString()
+    var newDate = new Date() 
+    // add time zone offset to date
+    newDate = new Date(newDate.getTime() - newDate.getTimezoneOffset() * 60000)
+    // convert date to iso string
+    newDate = newDate.toISOString()
     store.add(newAnno, value, commentText)
     store.add(newAnno, creator, author)
     store.add(newAnno, created, newDate)
