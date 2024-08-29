@@ -154,12 +154,9 @@ async function readComments(id, idObject) {
     commentObject["concepts"][conceptObjectID] = {}
     commentObject["concepts"][conceptObjectID]["prefLabel"] = idObject[conceptObjectID]["prefLabel"]
   }
-  console.log(commentObject)
   let updatedCommentArray = Object.keys(commentObject["comments"])
-  console.log(updatedCommentArray)
   let sortedUpdatedCommentArray
   sortedUpdatedCommentArray = updatedCommentArray.sort((a, b) => new Date(commentObject["comments"][b]["created"]) - new Date(commentObject["comments"][a]["created"]))
-  console.log(sortedUpdatedCommentArray)
 
   // generate a paragraph for each comment, containing target, creator, created in historyDiv
   for (let i = 0; i < sortedUpdatedCommentArray.length; i++) {
@@ -168,8 +165,6 @@ async function readComments(id, idObject) {
     let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
     let commentCreator = commentObject["comments"][sortedUpdatedCommentArray[i]]["creator"]
     let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"]
-    console.log(commentCreated)
-    console.log(typeof commentCreated)
     commentCreated = commentCreated.split(".")[0].replace("T", " ")
     comment.innerHTML = commentCreator + " kommentierte " + "<b>" + commentTargetLabel + "</b>" + " um " + commentCreated;
     historyDiv.appendChild(comment);
@@ -188,8 +183,6 @@ async function readComments(id, idObject) {
     let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
     let commentCreator = commentObject["comments"][prunedCommentArray[i]]["creator"]
     let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"]
-    console.log(commentCreated)
-    console.log(typeof commentCreated)
     commentCreated = commentCreated.split(".")[0].replace("T", " ")
     let commentValue = commentObject["comments"][prunedCommentArray[i]]["value"]
     comment.innerHTML = commentCreator + " commented on " + commentTargetLabel + " on " + commentCreated;
@@ -237,15 +230,12 @@ async function updatePod() {
 
     // create a list of all AO('Annotation')
     let annotations = store.each(undefined, RDF('type'), AO('Annotation'))
-    console.log(annotations)
 
     // calculate the next annotation number
     let nextAnnoNumber = 1
     while (store.holds($rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`), RDF('type'), AO('Annotation'))) {
-      console.log(nextAnnoNumber + "already used")
       nextAnnoNumber++
     }
-    console.log(nextAnnoNumber + "not used yet")
     //create new annotation
     let newAnno = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`)
     let newConcept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/concept${id}`)
