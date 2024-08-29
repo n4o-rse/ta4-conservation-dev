@@ -48,6 +48,7 @@
   }
 
   textarea{
+    padding: 2px 16px;
     height: 100px;
     width: 98%;
     padding:1%;
@@ -56,13 +57,14 @@
 
   /* Modal sideliner */
   .modal-sideliner {
+    padding: 2px 16px;
     position: relative;
     float: right;
     background-color: #fefefe;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 19%;
+    width: 20%;
     height: 100%;
     overflow: auto;
   }
