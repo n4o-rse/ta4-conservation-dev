@@ -162,7 +162,7 @@ async function openDetails(id, idObject) {
       let commentTargetID = commentObject["comments"][sortedUpdatedCommentArray[i]]["target"]
       let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
       let commentCreator = commentObject["comments"][sortedUpdatedCommentArray[i]]["creator"]
-      let commentCreated = (commentObject["comments"][sortedUpdatedCommentArray[i]]["created"]).split(".")[0].replace("T", " ")
+      let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"].split(".")[0].replace("T", " ")
       //commentCreated = commentCreated.getFullYear() + "-" + commentCreated.getMonth() + "-" + commentCreated.getDate() + " " + commentCreated.getHours() + ":" + commentCreated.getMinutes() + " Uhr"
       comment.innerHTML = commentCreator + " kommentierte " + "<b>" + commentTargetLabel + "</b>" + " um " + commentCreated;
       historyDiv.appendChild(comment);
@@ -180,7 +180,7 @@ async function openDetails(id, idObject) {
       let commentTargetID = commentObject["comments"][prunedCommentArray[i]]["target"]
       let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
       let commentCreator = commentObject["comments"][prunedCommentArray[i]]["creator"]
-      let commentCreated = (commentObject["comments"][sortedUpdatedCommentArray[i]]["created"]).split(".")[0].replace("T", " ")
+      let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"].split(".")[0].replace("T", " ")
       //commentCreated = commentCreated.getFullYear() + "-" + commentCreated.getMonth() + "-" + commentCreated.getDate() + " " + commentCreated.getHours() + ":" + commentCreated.getMinutes() + " Uhr"
       let commentValue = commentObject["comments"][prunedCommentArray[i]]["value"]
       comment.innerHTML = commentCreator + " commented on " + commentTargetLabel + " on " + commentCreated;
