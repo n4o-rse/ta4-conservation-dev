@@ -136,8 +136,8 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
   }
 }
 
-function visualizeData([stratifiedData, idObject]) {
-  let commentedIdList = generateCommentedIdList()
+async function visualizeData([stratifiedData, idObject]) {
+  let commentedIdList = await generateCommentedIdList()
   const visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
   let svg;
   try {
