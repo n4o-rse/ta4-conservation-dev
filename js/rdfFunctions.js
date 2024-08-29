@@ -121,7 +121,6 @@ async function openDetails(id, idObject) {
 }
 
 async function readComments(id, idObject) {
-  console.log(id, idObject[id]["prefLabel"])
   // clean modal content from previous comments
   var commentDiv = document.getElementsByClassName("modal-comments")[0];
   while (commentDiv.firstChild) {
@@ -137,7 +136,7 @@ async function readComments(id, idObject) {
   // parse ttl into store
   let store = $rdf.graph()
   $rdf.parse(commentRdf, store, url, 'text/turtle')
-  // log serialized store into json-ld
+  // serialize store into json-ld
   let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
   // parse json-ld into object
   let parsedJson = JSON.parse(jsonldSerialization)
@@ -184,14 +183,13 @@ async function readComments(id, idObject) {
   }
   for (let i = 0; i < prunedCommentArray.length; i++) {
     let comment = document.createElement("p");
-    let commentTargetID = commentObject["comments"][prunedCommentArray[i]]["target"]
-    let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
+    //let commentTargetID = commentObject["comments"][prunedCommentArray[i]]["target"] //unused?
+    //let commentTargetLabel = idObject[commentTargetID]["prefLabel"] // unused?
     let commentCreator = commentObject["comments"][prunedCommentArray[i]]["creator"]
-    let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"]
+    let commentCreated = commentObject["comments"][prunedCommentArray[i]]["created"]
     commentCreated = commentCreated.split(".")[0].replace("T", " ")
     let commentValue = commentObject["comments"][prunedCommentArray[i]]["value"]
-    comment.innerHTML = commentCreator + " commented on " + commentTargetLabel + " on " + commentCreated;
-    comment.innerHTML = "<b>creator:</b> " + commentCreator + "<br><b>created:</b> " + commentCreated + "<br><b>comment:</b> " + commentValue;
+    comment.innerHTML = "<b>Kommentierender:</b> " + commentCreator + "<br><b>Datum:</b> " + commentCreated + "<br><b>Kommentar:</b> " + commentValue;
     commentDiv.appendChild(comment);
   }
 
