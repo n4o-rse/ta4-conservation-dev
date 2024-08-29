@@ -236,16 +236,13 @@ async function updatePod() {
     let annotations = store.each(undefined, RDF('type'), AO('Annotation'))
     console.log(annotations)
 
-    //test to check annotation naming scheme
-    let firstAnnoNumber = 1
-    let firstAnno = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${firstAnnoNumber}`)
-    if (store.holds(firstAnno, RDF('type'), AO('Annotation'))) {
-        console.log("firstAnno exists")
-    }
-
     // calculate the next annotation number
-    let nextAnnoNumber = annotations.length + 1
-
+    let nextAnnoNumber = 1
+    while (store.holds($rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`), RDF('type'), AO('Annotation'))) {
+        nextAnnoNumber++
+        console.log(nextAnnoNumber + "already used")
+    }
+    console.log(nextAnnoNumber + "not used yet")
     //create new annotation
     let newAnno = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`)
     let newConcept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/concept${id}`)
