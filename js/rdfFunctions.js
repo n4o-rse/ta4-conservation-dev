@@ -162,7 +162,8 @@ async function openDetails(id, idObject) {
       let commentTargetID = commentObject["comments"][sortedUpdatedCommentArray[i]]["target"]
       let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
       let commentCreator = commentObject["comments"][sortedUpdatedCommentArray[i]]["creator"]
-      let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"]
+      let commentCreated = new Date(commentObject["comments"][sortedUpdatedCommentArray[i]]["created"])
+      commentCreated = commentCreated.getFullYear() + "-" + commentCreated.getMonth() + "-" + commentCreated.getDate() + " " + commentCreated.getHours() + ":" + commentCreated.getMinutes() + " Uhr"
       comment.innerHTML = commentCreator + " commented on " + commentTargetLabel + " on " + commentCreated;
       historyDiv.appendChild(comment);
     }
@@ -179,7 +180,8 @@ async function openDetails(id, idObject) {
       let commentTargetID = commentObject["comments"][prunedCommentArray[i]]["target"]
       let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
       let commentCreator = commentObject["comments"][prunedCommentArray[i]]["creator"]
-      let commentCreated = commentObject["comments"][prunedCommentArray[i]]["created"]
+      let commentCreated = new Date(commentObject["comments"][sortedUpdatedCommentArray[i]]["created"])
+      commentCreated = commentCreated.getFullYear() + "-" + commentCreated.getMonth() + "-" + commentCreated.getDate() + " " + commentCreated.getHours() + ":" + commentCreated.getMinutes() + " Uhr"
       let commentValue = commentObject["comments"][prunedCommentArray[i]]["value"]
       comment.innerHTML = commentCreator + " commented on " + commentTargetLabel + " on " + commentCreated;
       comment.innerHTML = "<b>creator:</b> " + commentCreator + "<br><b>created:</b> " + commentCreated + "<br><b>comment:</b> " + commentValue;
@@ -246,8 +248,7 @@ async function updatePod() {
         store.add(newConcept, RDF('type'), SK('Concept'))
     }
 
-    var time = new Date()
-    var newDate = time.getFullYear() + "-" + time.getMonth() + "-" + time.getDate() + " " + time.getHours() + ":" + time.getMinutes() + " Uhr"
+    var newDate = new Date()
     store.add(newAnno, value, commentText)
     store.add(newAnno, creator, author)
     store.add(newAnno, created, newDate)
