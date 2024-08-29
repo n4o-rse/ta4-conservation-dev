@@ -513,6 +513,8 @@ function generateForceDirectedTree(data, idObject) {
   }
 
   function generateIndentedTree(data, idObject, commentedIdList) {
+    console.log(commentedIdList)
+    console.log(typeof commentedIdList)
     const format = d3.format(",");
     const nodeSize = 17;
     const root = d3.hierarchy(data).eachBefore((i => d => d.index = i++)(0));
