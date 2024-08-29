@@ -4,6 +4,13 @@
 @prefix n0: <annotations.ttl/>.
 @prefix o: <http://www.w3.org/ns/oa#>.
 
+n0:anno1
+    a o:Annotation;
+    dct:created "2024-08-29T17:14:02.574Z";
+    dct:creator "Lasse";
+    o:bodyValue
+        "Wir freuen uns immer \u00fcber weitere Beitr\u00e4ge. Gern einfach in ein weiteres Kommentar schreiben, damit Kristina das ganzen nach dem Urlaub aufnehmen kann. Eine Funktion selbst \u00c4nderungen am Thesaurus vorzunehmen, konnte ich (bislang) leider noch nicht einbauen.";
+    o:hasTarget n0:conceptB1B854 .
 n0:anno10
     a o:Annotation;
     dct:created "2024-08-27T14:24:57.931Z";
@@ -204,8 +211,6 @@ n0:conceptF1BA31 a skos:Concept.
 
 n0:conceptFC2113 a skos:Concept.
 
-n0:conceptFD5149 a skos:Concept.
-
 n0:conceptFF4767 a skos:Concept.
 
 n0:conceptG76A78 a skos:Concept.
@@ -215,6 +220,4 @@ n0:conceptG8D62A a skos:Concept.
 n0:conceptGC7998 a skos:Concept.
 
 n0:conceptGD86C1 a skos:Concept.
-
-n0:concepttop a skos:Concept.
 
