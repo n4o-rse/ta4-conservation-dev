@@ -592,15 +592,15 @@ function generateForceDirectedTree(data, idObject) {
           .text(d => format(d.value, d))
           // set color of text to red, if commentedIdList includes d.data.id
           // alternative not working: d => commentedIdList.includes(d.data.id) ? "red" : "#555"
-          .attr("fill", determineColor(d, commentedIdList));
+          .attr("fill", determineColor(d.data.id, commentedIdList));
     }
 
   node.on("click", (e, d) => openDetails(d.data.id, idObject));
   return svg.node();
   }
 
-function determineColor (d, commentedIdList) {
-  if (commentedIdList.includes(d.data.id)) {
+function determineColor (id, commentedIdList) {
+  if (commentedIdList.includes(id)) {
     return "red"
   } else {
     return "#555"
