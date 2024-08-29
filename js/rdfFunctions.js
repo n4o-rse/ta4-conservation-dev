@@ -115,6 +115,7 @@ async function openDetails(id, idObject) {
     // pls change this!
     var commentButton = document.getElementById("commentButton")
     commentButton.dataset.id = id.toString();
+    commentButton.dataset.idObject = JSON.stringify(idObject);
     readComments(id, idObject);
     modal.style.display = "block";
 }
@@ -210,6 +211,7 @@ async function updatePod() {
     }
     let author = document.getElementById("userName").innerHTML;
     let id = document.getElementById("commentButton").dataset.id;
+    let idObject = JSON.parse(document.getElementById("commentButton").dataset.idObject);
 
     // declare namespaces
     var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
@@ -263,13 +265,13 @@ async function updatePod() {
     let ttl = $rdf.serialize(null, store, url, 'text/turtle')
 
     // write ttl to pod
-    writeToPod(ttl, url)
-
+    await writeToPod(ttl, url)
+    readComments(id, idObject)
+    /*
     // if element exists with id "noCommentsPlaceholder" remove it
     if (document.getElementById("noCommentsPlaceholder") != null) {
         document.getElementById("noCommentsPlaceholder").remove();
     }
-
     // add new comment to commentaries in modal
     var commentDiv = document.getElementsByClassName("modal-comments")[0];
     var newComment = document.createElement("p");
@@ -277,6 +279,7 @@ async function updatePod() {
     // integrate new comment at the top of the list
     commentDiv.insertBefore(newComment, commentDiv.firstChild);
     document.getElementById("commentText").value = "";
+    */
 }
 
 async function generateCommentedIdList() {
