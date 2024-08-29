@@ -45,14 +45,6 @@ async function openDetails(id, idObject) {
     while (modalBody.firstChild) {
       modalBody.removeChild(modalBody.firstChild);
     }
-    var commentDiv = document.getElementsByClassName("modal-comments")[0];
-    while (commentDiv.firstChild) {
-      commentDiv.removeChild(commentDiv.firstChild);
-    }
-    var historyDiv = document.getElementsByClassName("modal-history")[0];
-    while (historyDiv.firstChild) {
-      historyDiv.removeChild(historyDiv.firstChild);
-    }
 
     // generate concept information for modal
     var body = document.getElementsByClassName("modal-body")
@@ -119,91 +111,98 @@ async function openDetails(id, idObject) {
         body[0].appendChild(detailDiv);
       }
     } 
-
-    // generate existing comments for this concept from solid pod
-    const url = "https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl";
-    let commentRdf = await readFromPod(url)
-    
-    // parse ttl into store
-    let store = $rdf.graph()
-    $rdf.parse(commentRdf, store, url, 'text/turtle')
-
-    
-    // log serialized store into json-ld
-    let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
-    // parse json-ld into object
-    let parsedJson = JSON.parse(jsonldSerialization)
-    let commentObject = {comments: {}, concepts: {}}
-    let jsonCommentArray = parsedJson["@graph"].filter(obj => obj["@type"] == "o:Annotation")
-    let jsonConceptArray = parsedJson["@graph"].filter(obj => obj["@type"] == "skos:Concept")
-    for (let x of jsonCommentArray) {
-      commentObjectID = x["@id"].split("n0:")[1]
-      commentObject["comments"][commentObjectID] = {}
-      commentObject["comments"][commentObjectID]["creator"] = x["dct:creator"]
-      commentObject["comments"][commentObjectID]["created"] = x["dct:created"]
-      commentObject["comments"][commentObjectID]["value"] = x["o:bodyValue"]
-      commentObject["comments"][commentObjectID]["target"] = x["o:hasTarget"]["@id"].split("n0:concept")[1]
-    }
-    for (let x of jsonConceptArray) {
-      conceptObjectID = x["@id"].split("n0:concept")[1]
-      commentObject["concepts"][conceptObjectID] = {}
-      commentObject["concepts"][conceptObjectID]["prefLabel"] = idObject[conceptObjectID]["prefLabel"]
-    }
-    console.log(commentObject)
-    let updatedCommentArray = Object.keys(commentObject["comments"])
-    console.log(updatedCommentArray)
-    let sortedUpdatedCommentArray
-    sortedUpdatedCommentArray = updatedCommentArray.sort((a, b) => new Date(commentObject["comments"][b]["created"]) - new Date(commentObject["comments"][a]["created"]))
-    console.log(sortedUpdatedCommentArray)
-
-    // generate a paragraph for each comment, containing target, creator, created in historyDiv
-    for (let i = 0; i < sortedUpdatedCommentArray.length; i++) {
-      let comment = document.createElement("p");
-      let commentTargetID = commentObject["comments"][sortedUpdatedCommentArray[i]]["target"]
-      let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
-      let commentCreator = commentObject["comments"][sortedUpdatedCommentArray[i]]["creator"]
-      let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"]
-      console.log(commentCreated)
-      console.log(typeof commentCreated)
-      commentCreated = commentCreated.split(".")[0].replace("T", " ")
-      comment.innerHTML = commentCreator + " kommentierte " + "<b>" + commentTargetLabel + "</b>" + " um " + commentCreated;
-      historyDiv.appendChild(comment);
-    }
-
-    // delete all elements from sortedUpdatedCommentArray, where property target in commentObject["comments"]["target"] is not id
-    let prunedCommentArray = []
-    for (let i = 0; i < sortedUpdatedCommentArray.length; i++) {
-      if (commentObject["comments"][sortedUpdatedCommentArray[i]]["target"] == id) {
-        prunedCommentArray.push(sortedUpdatedCommentArray[i])
-      }
-    }
-    for (let i = 0; i < prunedCommentArray.length; i++) {
-      let comment = document.createElement("p");
-      let commentTargetID = commentObject["comments"][prunedCommentArray[i]]["target"]
-      let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
-      let commentCreator = commentObject["comments"][prunedCommentArray[i]]["creator"]
-      let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"]
-      console.log(commentCreated)
-      console.log(typeof commentCreated)
-      commentCreated = commentCreated.split(".")[0].replace("T", " ")
-      let commentValue = commentObject["comments"][prunedCommentArray[i]]["value"]
-      comment.innerHTML = commentCreator + " commented on " + commentTargetLabel + " on " + commentCreated;
-      comment.innerHTML = "<b>creator:</b> " + commentCreator + "<br><b>created:</b> " + commentCreated + "<br><b>comment:</b> " + commentValue;
-      commentDiv.appendChild(comment);
-    }
-
-    if (prunedCommentArray.length == 0) {
-      let placeholderComment = document.createElement("p");
-      placeholderComment.innerHTML = "No comments yet, be the first to comment!";
-      placeholderComment.id = "noCommentsPlaceholder";
-      commentDiv.appendChild(placeholderComment);
-    }
-
     // temporary fix storing id in comment-button className, to call event listener with id parameter
     // pls change this!
     var commentButton = document.getElementById("commentButton")
     commentButton.className = id.toString();
+    readComments(id, idObject);
     modal.style.display = "block";
+}
+
+async function readComments(id, idObject) {
+  var commentDiv = document.getElementsByClassName("modal-comments")[0];
+  while (commentDiv.firstChild) {
+    commentDiv.removeChild(commentDiv.firstChild);
+  }
+  var historyDiv = document.getElementsByClassName("modal-history")[0];
+  while (historyDiv.firstChild) {
+    historyDiv.removeChild(historyDiv.firstChild);
+  }
+  // generate existing comments for this concept from solid pod
+  const url = "https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl";
+  let commentRdf = await readFromPod(url)
+  // parse ttl into store
+  let store = $rdf.graph()
+  $rdf.parse(commentRdf, store, url, 'text/turtle')
+  // log serialized store into json-ld
+  let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
+  // parse json-ld into object
+  let parsedJson = JSON.parse(jsonldSerialization)
+  let commentObject = {comments: {}, concepts: {}}
+  let jsonCommentArray = parsedJson["@graph"].filter(obj => obj["@type"] == "o:Annotation")
+  let jsonConceptArray = parsedJson["@graph"].filter(obj => obj["@type"] == "skos:Concept")
+  for (let x of jsonCommentArray) {
+    commentObjectID = x["@id"].split("n0:")[1]
+    commentObject["comments"][commentObjectID] = {}
+    commentObject["comments"][commentObjectID]["creator"] = x["dct:creator"]
+    commentObject["comments"][commentObjectID]["created"] = x["dct:created"]
+    commentObject["comments"][commentObjectID]["value"] = x["o:bodyValue"]
+    commentObject["comments"][commentObjectID]["target"] = x["o:hasTarget"]["@id"].split("n0:concept")[1]
+  }
+  for (let x of jsonConceptArray) {
+    conceptObjectID = x["@id"].split("n0:concept")[1]
+    commentObject["concepts"][conceptObjectID] = {}
+    commentObject["concepts"][conceptObjectID]["prefLabel"] = idObject[conceptObjectID]["prefLabel"]
+  }
+  console.log(commentObject)
+  let updatedCommentArray = Object.keys(commentObject["comments"])
+  console.log(updatedCommentArray)
+  let sortedUpdatedCommentArray
+  sortedUpdatedCommentArray = updatedCommentArray.sort((a, b) => new Date(commentObject["comments"][b]["created"]) - new Date(commentObject["comments"][a]["created"]))
+  console.log(sortedUpdatedCommentArray)
+
+  // generate a paragraph for each comment, containing target, creator, created in historyDiv
+  for (let i = 0; i < sortedUpdatedCommentArray.length; i++) {
+    let comment = document.createElement("p");
+    let commentTargetID = commentObject["comments"][sortedUpdatedCommentArray[i]]["target"]
+    let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
+    let commentCreator = commentObject["comments"][sortedUpdatedCommentArray[i]]["creator"]
+    let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"]
+    console.log(commentCreated)
+    console.log(typeof commentCreated)
+    commentCreated = commentCreated.split(".")[0].replace("T", " ")
+    comment.innerHTML = commentCreator + " kommentierte " + "<b>" + commentTargetLabel + "</b>" + " um " + commentCreated;
+    historyDiv.appendChild(comment);
+  }
+
+  // delete all elements from sortedUpdatedCommentArray, where property target in commentObject["comments"]["target"] is not id
+  let prunedCommentArray = []
+  for (let i = 0; i < sortedUpdatedCommentArray.length; i++) {
+    if (commentObject["comments"][sortedUpdatedCommentArray[i]]["target"] == id) {
+      prunedCommentArray.push(sortedUpdatedCommentArray[i])
+    }
+  }
+  for (let i = 0; i < prunedCommentArray.length; i++) {
+    let comment = document.createElement("p");
+    let commentTargetID = commentObject["comments"][prunedCommentArray[i]]["target"]
+    let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
+    let commentCreator = commentObject["comments"][prunedCommentArray[i]]["creator"]
+    let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"]
+    console.log(commentCreated)
+    console.log(typeof commentCreated)
+    commentCreated = commentCreated.split(".")[0].replace("T", " ")
+    let commentValue = commentObject["comments"][prunedCommentArray[i]]["value"]
+    comment.innerHTML = commentCreator + " commented on " + commentTargetLabel + " on " + commentCreated;
+    comment.innerHTML = "<b>creator:</b> " + commentCreator + "<br><b>created:</b> " + commentCreated + "<br><b>comment:</b> " + commentValue;
+    commentDiv.appendChild(comment);
+  }
+
+  if (prunedCommentArray.length == 0) {
+    let placeholderComment = document.createElement("p");
+    placeholderComment.innerHTML = "No comments yet, be the first to comment!";
+    placeholderComment.id = "noCommentsPlaceholder";
+    commentDiv.appendChild(placeholderComment);
+  }
 }
 
 async function updatePod() {
