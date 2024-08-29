@@ -114,7 +114,7 @@ async function openDetails(id, idObject) {
     // temporary fix storing id in comment-button className, to call event listener with id parameter
     // pls change this!
     var commentButton = document.getElementById("commentButton")
-    commentButton.className = id.toString();
+    commentButton.dataset.id = id.toString();
     readComments(id, idObject);
     modal.style.display = "block";
 }
@@ -214,7 +214,7 @@ async function updatePod() {
         return;
     }
     let author = document.getElementById("userName").innerHTML;
-    let id = document.getElementById("commentButton").className;
+    let id = document.getElementById("commentButton").dataset.id;
 
     // declare namespaces
     var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
