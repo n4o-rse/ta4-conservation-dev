@@ -71,7 +71,9 @@ function generateTidyTree(data, idObject, visualizationType, commentedIdList) {
         .attr("text-anchor", d => d.children ? "end" : "start")
         .text(d => idObject[d.data.id]["prefLabel"])
         .attr("stroke", "white")
-        .attr("paint-order", "stroke");
+        .attr("paint-order", "stroke")
+        // set color of text to red, if commentedIdList includes d.data.id
+        .attr("fill", d => commentedIdList.includes(d.data.id) ? "red" : "currentColor");
 
     node.on("click", (e, d) => openDetails(d.data.id, idObject));
     
