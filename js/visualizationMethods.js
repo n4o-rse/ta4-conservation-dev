@@ -607,10 +607,6 @@ function generateForceDirectedTree(data, idObject) {
     } 
     */
   node.on("click", (e, d) => openDetails(d.data.id, idObject));
-  // make mouse cursor a pointer when hovering over node
-  node.on("mouseover", (e) => {
-    d3.select(this).style("cursor", "pointer");
-  });
   return svg.node();
   }
 
