@@ -70,7 +70,7 @@ function generateTidyTree(data, idObject, visualizationType, commentedIdList) {
         .attr("x", d => d.children ? -6 : 6)
         .attr("text-anchor", d => d.children ? "end" : "start")
         .text(d => idObject[d.data.id]["prefLabel"])
-        .attr("fill", d => commentedIdList.includes(d.data.id) ? "red" : "black")
+        .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
         .attr("stroke", "white")
         .attr("paint-order", "stroke");
 
@@ -142,6 +142,8 @@ function generateTidyTree(data, idObject, visualizationType, commentedIdList) {
       .attr("fill", "currentColor")
       .text(d => idObject[d.data.id]["prefLabel"]);
 
+      node.on("click", (e, d) => openDetails(d.data.id, idObject));
+
   return svg.node();
   }
 
@@ -206,6 +208,7 @@ function generateTidyTree(data, idObject, visualizationType, commentedIdList) {
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
       .attr("fill", "currentColor")
+      .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
       .text(d => idObject[d.data.id]["prefLabel"]);
 
   return svg.node();
