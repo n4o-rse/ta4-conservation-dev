@@ -138,14 +138,12 @@ async function readComments(id, idObject) {
   $rdf.parse(commentRdf, store, url, 'text/turtle')
   // serialize store into json-ld
   let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
-  console.log(jsonldSerialization)
   // parse json-ld into object
   let parsedJson = JSON.parse(jsonldSerialization)
   let commentObject = {comments: {}, concepts: {}}
   let jsonCommentArray = parsedJson["@graph"].filter(obj => obj["@type"] == "o:Annotation")
   let jsonConceptArray = parsedJson["@graph"].filter(obj => obj["@type"] == "skos:Concept")
   for (let x of jsonCommentArray) {
-    console.log(x)
     commentObjectID = x["@id"].split("n0:")[1]
     commentObject["comments"][commentObjectID] = {}
     commentObject["comments"][commentObjectID]["creator"] = x["dct:creator"]
@@ -234,9 +232,6 @@ async function updatePod() {
     let store = $rdf.graph()
     $rdf.parse(preRdf, store, url, 'text/turtle')
 
-    // create a list of all AO('Annotation')
-    let annotations = store.each(undefined, RDF('type'), AO('Annotation'))
-
     // calculate the next annotation number
     let nextAnnoNumber = 1
     while (store.holds($rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`), RDF('type'), AO('Annotation'))) {
@@ -245,6 +240,12 @@ async function updatePod() {
     //create new annotation
     let newAnno = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`)
     let newConcept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/concept${id}`)
+
+    // double check if anno already in store, if so alert popup and error
+    if (store.holds(newAnno, RDF('type'), AO('Annotation'))) {
+        alert("Kommentarnummer existiert bereits. Kontaktieren Sie den Administrator.")
+        return
+    }
 
     // add annotation to store
     store.add(newAnno, RDF('type'), AO('Annotation'))
@@ -269,19 +270,6 @@ async function updatePod() {
     // write ttl to pod
     await writeToPod(ttl, url)
     readComments(id, idObject)
-    /*
-    // if element exists with id "noCommentsPlaceholder" remove it
-    if (document.getElementById("noCommentsPlaceholder") != null) {
-        document.getElementById("noCommentsPlaceholder").remove();
-    }
-    // add new comment to commentaries in modal
-    var commentDiv = document.getElementsByClassName("modal-comments")[0];
-    var newComment = document.createElement("p");
-    newComment.innerHTML = "<b>creator:</b> " + author + "<br><b>created:</b> " + newDate.split(".")[0].replace("T", " ")  + "<br><b>comment:</b> " + commentText;
-    // integrate new comment at the top of the list
-    commentDiv.insertBefore(newComment, commentDiv.firstChild);
-    document.getElementById("commentText").value = "";
-    */
 }
 
 async function generateCommentedIdList() {
