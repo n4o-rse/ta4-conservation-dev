@@ -166,7 +166,6 @@ async function visualizeData([stratifiedData, idObject]) {
     if (visualizationType == "Icicle") {
       svg = generateIcicle(stratifiedData, idObject);
     }
-    //document.getElementById("chartDiv").innerHTML = svg.outerHTML; ???
     document.getElementById("errorText").innerHTML = "";
     document.getElementById("errorText").style.color = "black";
     document.getElementById("chartDiv").innerHTML = "";
