@@ -289,10 +289,13 @@ async function generateCommentedIdList() {
   var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
   var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
   var DC = $rdf.Namespace("http://purl.org/dc/terms/");
+  var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
 
   // declare entities
   var concept = SK('Concept');
   var created = DC('created');
+  var anno = AO('Annotation');
+  var target = AO('hasTarget');
 
   // read ttl from pod
   let preRdf = await readFromPod(url);
@@ -309,8 +312,17 @@ async function generateCommentedIdList() {
   for (let i=0; i < concepts.length; i++) {
     conceptObject = concepts[i];
     id = conceptObject.value.split("concept")[1]
-    date = store.any(conceptObject, created);
-    commentConceptObject[id] = date;
+    // find all annotations with target conceptObject
+    annotations = store.each(undefined, target, conceptObject);
+    // create an array of all dates of the annotations
+    let dateArray = [];
+    for (let j=0; j < annotations.length; j++) {
+      date = store.any(annotations[j], created);
+      dateArray.push(date.value);
+    }
+    // find the latest date in the dateArray
+    let latestDate = new Date(Math.max.apply(null, dateArray));
+    commentConceptObject[id] = latestDate;
   }
   console.log(commentConceptObject);
   // create an array sorting the concepts by date
