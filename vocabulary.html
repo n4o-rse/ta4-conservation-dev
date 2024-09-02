@@ -44,7 +44,7 @@
           <h2>Hierarchical vocabulary validation and visualization</h2>
           <p>CSV/TSV-Datei validieren oder Beispieldatensatz verwenden.</p>
           <p>Eigene Dateien müssen folgendem<a href="schema.html"> Tabellenschema </a>entsprechen.</p>
-          <div id="output">
+          <div id="input">
             <!-- temporary disabled
             <form id="fileForm">
               <input type="file" id="fileInput" accept=".tsv, .csv">
@@ -59,6 +59,8 @@
             <!-- temporary disabled
             <button onclick = readExample() id = "exampleButton" >Beispiel laden</button>
             -->
+          </div>
+          <div id="output">
             <p id="ignored"> </p>
             <p id="topped"> </p>
             <p id="orphans"> </p>
@@ -139,6 +141,7 @@
 
         async function inputUrl() {
             event.preventDefault();
+            // display loading popup while fetching data
             const inputURL = document.getElementById('textInput').value;
             const response = await fetch(inputURL, {
                 headers: { "content-type": "text/csv;charset=UTF-8" },
