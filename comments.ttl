@@ -156,7 +156,7 @@ n0:anno28
 n0:anno29
     a o:Annotation;
     dct:created "2024-09-02T16:33:37.113Z";
-    dct:creator "Lasse";
+    dct:creator "Lasse", "Herbert";
     o:bodyValue "Test";
     o:hasTarget n0:concepttop.
 n0:anno3
