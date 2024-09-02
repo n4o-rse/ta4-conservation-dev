@@ -294,8 +294,15 @@ async function generateCommentedIdList() {
   let store = $rdf.graph();
   $rdf.parse(preRdf, store, url, 'text/turtle');
 
-  // find all targets of annotations
-  let concepts = store.each(undefined, target, undefined);
+  // find all concepts
+  let concepts = store.each(undefined, RDF('type'), concept);
+  // remove concepts which are not target of annotations
+  for (let i = 0; i < concepts.length; i++) {
+    if (store.each(undefined, target, concepts[i]).length == 0) {
+      concepts.splice(i, 1);
+    }
+  }
+  console.log(concepts);
   let commentConceptObject = {};
 
   for (let i=0; i < concepts.length; i++) {
