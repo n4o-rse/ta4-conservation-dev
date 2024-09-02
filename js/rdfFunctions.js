@@ -145,6 +145,7 @@ async function readComments(id, idObject) {
   let jsonCommentArray = parsedJson["@graph"].filter(obj => obj["@type"] == "o:Annotation")
   let jsonConceptArray = parsedJson["@graph"].filter(obj => obj["@type"] == "skos:Concept")
   for (let x of jsonCommentArray) {
+    console.log(x)
     commentObjectID = x["@id"].split("n0:")[1]
     commentObject["comments"][commentObjectID] = {}
     commentObject["comments"][commentObjectID]["creator"] = x["dct:creator"]
