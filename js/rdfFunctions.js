@@ -306,7 +306,6 @@ async function generateCommentedIdList() {
 
   // create a list of all SK('Concept')
   let concepts = store.each(undefined, RDF('type'), concept);
-  console.log("concepts: " + concepts);
   let commentConceptObject = {};
 
   for (let i=0; i < concepts.length; i++) {
@@ -317,11 +316,11 @@ async function generateCommentedIdList() {
     // create an array of all dates of the annotations
     let dateArray = [];
     for (let j=0; j < annotations.length; j++) {
-      date = store.any(annotations[j], created);
-      dateArray.push(date.value);
+      let date = Date.parse(store.any(annotations[j], created));
+      dateArray.push(date);
     }
     // find the latest date in the dateArray
-    let latestDate = new Date(Math.max.apply(null, dateArray));
+    let latestDate = Math.max.apply(null, dateArray);
     commentConceptObject[id] = latestDate;
   }
   console.log(commentConceptObject);
