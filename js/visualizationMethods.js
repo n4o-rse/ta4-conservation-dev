@@ -513,7 +513,7 @@ function generateForceDirectedTree(data, idObject) {
     return svg.node();
   }
 
-  function generateIndentedTree(data, idObject, commentedIdList) {
+  function generateIndentedTree(data, idObject, commentConceptObject) {
     const format = d3.format(",");
     const nodeSize = 17;
     const root = d3.hierarchy(data).eachBefore((i => d => d.index = i++)(0));
@@ -572,7 +572,7 @@ function generateForceDirectedTree(data, idObject) {
         .attr("x", d => d.depth * nodeSize + 6)
         .text(d => idObject[d.data.id]["prefLabel"])
         // fill commented nodes red
-        .attr("fill", d => commentedIdList.includes(d.data.id) ? "red" : "black");
+        .attr("fill", d => d.data.id in commentConceptObject ? "red" : "black");
   
     node.append("title")
         .text(d => d.ancestors().reverse().map(d => idObject[d.data.id]["prefLabel"]).join("/"));

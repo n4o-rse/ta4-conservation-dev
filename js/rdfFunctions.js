@@ -286,12 +286,13 @@ async function generateCommentedIdList() {
   const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
 
   // declare namespaces
-  var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
   var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
   var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+  var DC = $rdf.Namespace("http://purl.org/dc/terms/");
 
   // declare entities
   var concept = SK('Concept');
+  var created = DC('created');
 
   // read ttl from pod
   let preRdf = await readFromPod(url);
@@ -302,11 +303,13 @@ async function generateCommentedIdList() {
 
   // create a list of all SK('Concept')
   let concepts = store.each(undefined, RDF('type'), concept);
-  let commentConceptIds = [];
+  let commentConceptObject = {};
+
   for (let i=0; i < concepts.length; i++) {
     conceptObject = concepts[i];
     id = conceptObject.value.split("concept")[1]
-    commentConceptIds.push(id)
+    date = store.any(conceptObject, created);
+    commentConceptObject[id] = date;
   }
-  return commentConceptIds
+  return commentConceptObject
 }
