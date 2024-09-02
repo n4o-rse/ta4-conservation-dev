@@ -17,6 +17,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests
+          pip install rdflib
       - name: execute py script
         run: |
           python securer.py
