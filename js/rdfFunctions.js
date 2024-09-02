@@ -294,19 +294,19 @@ async function generateCommentedIdList() {
   let store = $rdf.graph();
   $rdf.parse(preRdf, store, url, 'text/turtle');
 
-  // create a list of all SK('Concept')
-  let concepts = store.each(undefined, RDF('type'), concept);
+  // find all targets of annotations
+  let concepts = store.each(undefined, target, undefined);
   let commentConceptObject = {};
 
   for (let i=0; i < concepts.length; i++) {
     conceptObject = concepts[i];
     id = conceptObject.value.split("concept")[1]
     // find all annotations with target conceptObject
-    annotations = store.each(undefined, target, conceptObject);
+    targetingAnnotations = store.each(undefined, target, conceptObject);
     // create an array of all dates of the annotations
     let dateArray = [];
-    for (let j=0; j < annotations.length; j++) {
-      let date = Date.parse(store.any(annotations[j], created));
+    for (let j=0; j < targetingAnnotations.length; j++) {
+      let date = Date.parse(store.any(targetingAnnotations[j], created));
       dateArray.push(date);
     }
     // find the latest date in the dateArray
