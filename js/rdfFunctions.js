@@ -311,5 +311,18 @@ async function generateCommentedIdList() {
     date = store.any(conceptObject, created);
     commentConceptObject[id] = date;
   }
+  // create an array sorting the concepts by date
+  let sortedCommentConceptArray = Object.keys(commentConceptObject).sort((a, b) => new Date(commentConceptObject[b]) - new Date(commentConceptObject[a]));
+  // create an array of rgb colors for the concepts depending on their date going from red to blue
+  let colorArray = [];
+  let colorStep = 255 / sortedCommentConceptArray.length;
+  for (let i = 0; i < sortedCommentConceptArray.length; i++) {
+    let color = "rgb(" + (255 - i * colorStep) + ", 0, " + i * colorStep + ")";
+    colorArray.push(color);
+  }
+
+  for (let i=0; i < sortedCommentConceptArray.length; i++) {
+    commentConceptObject[sortedCommentConceptArray[i]] = colorArray[i];
+  }
   return commentConceptObject
 }

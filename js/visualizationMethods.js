@@ -572,7 +572,7 @@ function generateForceDirectedTree(data, idObject) {
         .attr("x", d => d.depth * nodeSize + 6)
         .text(d => idObject[d.data.id]["prefLabel"])
         // fill commented nodes red
-        .attr("fill", d => d.data.id in commentConceptObject ? "red" : "black");
+        .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black");
   
     node.append("title")
         .text(d => d.ancestors().reverse().map(d => idObject[d.data.id]["prefLabel"]).join("/"));
