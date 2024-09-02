@@ -303,6 +303,7 @@ async function generateCommentedIdList() {
 
   // create a list of all SK('Concept')
   let concepts = store.each(undefined, RDF('type'), concept);
+  console.log("concepts: " + concepts);
   let commentConceptObject = {};
 
   for (let i=0; i < concepts.length; i++) {
@@ -311,6 +312,7 @@ async function generateCommentedIdList() {
     date = store.any(conceptObject, created);
     commentConceptObject[id] = date;
   }
+  console.log(commentConceptObject);
   // create an array sorting the concepts by date
   let sortedCommentConceptArray = Object.keys(commentConceptObject).sort((a, b) => new Date(commentConceptObject[b]) - new Date(commentConceptObject[a]));
   // create an array of rgb colors for the concepts depending on their date going from red to blue
