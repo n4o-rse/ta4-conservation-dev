@@ -115,7 +115,6 @@
 
   #loadingDiv {
     display: none;
-    fill: green;
     animation-name: periodicfading;
     animation-duration: 2s;
     animation-iteration-count: infinite;

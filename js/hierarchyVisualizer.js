@@ -128,12 +128,13 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       document.getElementById("errorText").innerHTML = error;
       document.getElementById("errorText").style.color = "red";
     }
+    document.getElementById("loadingDiv").style.display = "none";
   }
   else {
+    document.getElementById("loadingDiv").style.display = "none";
     document.getElementById("outputText").innerHTML = "Data invalid. \n";
     document.getElementById("outputText").style.color = "red";
   }
-  document.getElementById("loadingDiv").style.display = "none";
 }
 
 async function visualizeData([stratifiedData, idObject]) {
