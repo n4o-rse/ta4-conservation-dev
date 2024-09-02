@@ -36,6 +36,10 @@ for annotation in annotations:
     # get the created date of the annotation
     annotationCreated = list(g.objects(annotation, created))
     if len(annotationTarget) > 1 or len(annotationCreator) > 1 or len(annotationCreated) > 1:
-        # if there are multiple entries, raise an exception
-        raise Exception("Annotation with multiple targets, creators or created dates")
+        # if there are multiple entries, cancel workflow of github action
+        print('Multiple entries found in annotation with subject: ' + str(annotation))
+        exit(1)
+    else:
+        print('No multiple entries found in annotation with subject: ' + str(annotation))
+        exit(0)
 
