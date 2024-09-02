@@ -61,6 +61,9 @@
             -->
           </div>
           <div id="output">
+            <div id="loadingDiv">
+              <p>Bitte warten, Daten werden geladen...</p>
+            </div>
             <p id="ignored"> </p>
             <p id="topped"> </p>
             <p id="orphans"> </p>
@@ -141,7 +144,8 @@
 
         async function inputUrl() {
             event.preventDefault();
-            // display loading popup while fetching data
+            // display loading popup until every following function is finished
+            document.getElementById("loadingDiv").style.display = "block";
             const inputURL = document.getElementById('textInput').value;
             const response = await fetch(inputURL, {
                 headers: { "content-type": "text/csv;charset=UTF-8" },

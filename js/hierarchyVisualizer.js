@@ -126,14 +126,14 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
     catch (error) {
       console.log(error);
       document.getElementById("errorText").innerHTML = error;
-      document.getElementById("errorText").style.color = "red";  
-      
+      document.getElementById("errorText").style.color = "red";
     }
   }
   else {
     document.getElementById("outputText").innerHTML = "Data invalid. \n";
     document.getElementById("outputText").style.color = "red";
   }
+  document.getElementById("loadingDiv").style.display = "none";
 }
 
 async function visualizeData([stratifiedData, idObject]) {
