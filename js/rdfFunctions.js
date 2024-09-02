@@ -196,7 +196,7 @@ async function readComments(id, idObject) {
 
     if (prunedCommentArray.length == 0) {
       let placeholderComment = document.createElement("p");
-      placeholderComment.innerHTML = "No comments yet, be the first to comment!";
+      placeholderComment.innerHTML = "Bislang keine Kommentare zum Begriff. Verfasse den ersten!";
       placeholderComment.id = "noCommentsPlaceholder";
       commentDiv.appendChild(placeholderComment);
     }
@@ -210,11 +210,16 @@ async function updatePod() {
     event.preventDefault();
     const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
     let commentText = document.getElementById("commentText").value;
+    let author = document.getElementById("userName").innerHTML;
     if (commentText == "") {
         alert("Kein Kommentar eingegeben!");
         return;
     }
-    let author = document.getElementById("userName").innerHTML;
+    if (author == "Anonymus") {
+      alert("Kein Nutzername eingegeben! Bitte Detailansicht schließen und Nutzernamen oben rechts eingeben.");
+      return;
+    }
+    
     let id = document.getElementById("commentButton").dataset.id;
     let idObject = JSON.parse(document.getElementById("commentButton").dataset.idObject);
 
