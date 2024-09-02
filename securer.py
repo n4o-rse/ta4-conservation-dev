@@ -1,4 +1,5 @@
 import requests
+import sys
 from rdflib import Graph, Literal, BNode, Namespace, URIRef
 from rdflib.namespace import SKOS, RDF, DC, DCTERMS, RDFS
 
@@ -38,8 +39,8 @@ for annotation in annotations:
     if len(annotationTarget) > 1 or len(annotationCreator) > 1 or len(annotationCreated) > 1:
         # if there are multiple entries, cancel workflow of github action
         print('Multiple entries found in annotation with subject: ' + str(annotation))
-        exit(1)
+        sys.exit(1)
     else:
         print('No multiple entries found in annotation with subject: ' + str(annotation))
-        exit(0)
+        sys.exit(0)
 
