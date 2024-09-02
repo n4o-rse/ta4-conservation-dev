@@ -153,12 +153,6 @@ n0:anno28
     o:bodyValue
         """warum sind "Analyse der chemischen Zusammensetzung" und "chemische Zusammensetzung" zwei unterschiedliche Unterpunkte?""";
     o:hasTarget n0:conceptG17B8B.
-n0:anno29
-    a o:Annotation;
-    dct:created "2024-09-02T16:33:37.113Z";
-    dct:creator "Lasse", "Herbert";
-    o:bodyValue "Test";
-    o:hasTarget n0:concepttop.
 n0:anno3
     a o:Annotation;
     dct:created "2024-08-27T11:56:02.873Z";
