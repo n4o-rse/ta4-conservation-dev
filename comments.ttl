@@ -19,6 +19,13 @@ n0:anno10
         """Confokalmikroskop ist auch ein wichtiges Lichtmikroskop aber ich m\u00fcsste die genaue Definition suchen. 
 Vielleicht ISO 25178-6 (https://www.iso.org/obp/ui/en/#iso:std:iso:25178:-6:ed-1:v1:en)? Nicht sehr klar f\u00fcr mich allerdings... XD""";
     o:hasTarget n0:conceptFC2113 .
+n0:anno11
+    a o:Annotation;
+    dct:created "2024-09-02T14:21:25.465Z";
+    dct:creator "eckmann";
+    o:bodyValue
+        """...einer "Holzmaserung" \u00e4hnelt die Struktur von Elfenbein eigentlich nicht. Charakteristisch sind die sogenannten Schreger'schen Linien, die im Querschnitt eine netzartiges Struktur bilden (und sich dadurch von elfenbein\u00e4hnlichen Materialien unterscheiden). """;
+    o:hasTarget n0:conceptAG55BC.
 n0:anno12
     a o:Annotation;
     dct:created "2024-08-28T05:09:35.498Z";
@@ -133,6 +140,19 @@ n0:anno26
     o:bodyValue
         """Unterscheiden wir hier zwischen fossilem Elfenbein und "frischem Elfenbein"?""";
     o:hasTarget n0:conceptAG55BC.
+n0:anno27
+    a o:Annotation;
+    dct:created "2024-09-02T09:52:59.466Z";
+    dct:creator "Anonymus";
+    o:bodyValue "Infrarot Fotographie hier erg\u00e4nzen?";
+    o:hasTarget n0:conceptCA7279 .
+n0:anno28
+    a o:Annotation;
+    dct:created "2024-09-02T09:57:22.096Z";
+    dct:creator "Anonymus";
+    o:bodyValue
+        """warum sind "Analyse der chemischen Zusammensetzung" und "chemische Zusammensetzung" zwei unterschiedliche Unterpunkte?""";
+    o:hasTarget n0:conceptG17B8B.
 n0:anno3
     a o:Annotation;
     dct:created "2024-08-27T11:56:02.873Z";
@@ -203,6 +223,8 @@ n0:conceptBFB162 a skos:Concept.
 
 n0:conceptBGC9F3 a skos:Concept.
 
+n0:conceptCA7279 a skos:Concept.
+
 n0:conceptD467F2 a skos:Concept.
 
 n0:conceptDA2D73 a skos:Concept.
@@ -212,6 +234,8 @@ n0:conceptF1BA31 a skos:Concept.
 n0:conceptFC2113 a skos:Concept.
 
 n0:conceptFF4767 a skos:Concept.
+
+n0:conceptG17B8B a skos:Concept.
 
 n0:conceptG76A78 a skos:Concept.
 
