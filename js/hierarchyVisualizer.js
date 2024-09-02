@@ -257,7 +257,7 @@ function topData(data) {
     }
     else if (row.parent == "") {
       row.parent = "orphanage"
-      orphans.push(row)
+      orphans.push({"identifier":row.identifier,"concept":row.prefLabel})
       rootArray.push(row)
     }
     else {
@@ -269,7 +269,7 @@ function topData(data) {
     "identifier":"top",
     "prefLabel":"Thesaurus",
     "parent":"",
-    "description":"This is the synthetic top concept of the thesaurus.",
+    "description":"Der Leiza Thesaurus für Restaurierung und Konservierung.",
     "altLabel":"",
     "related":"",
     "source":"",
@@ -284,9 +284,9 @@ function topData(data) {
   if (orphans.length > 0) {
     rootArray.push({
     "identifier":"orphanage",
-    "prefLabel":"orphanage",
+    "prefLabel":"Waisenhaus",
     "parent":"top",
-    "description":"This is the synthetic top concept of the orphan-terms.",
+    "description":"Hierhin werden Begriffe verschoben, die keinen Vorgänger haben.",
     "altLabel":"",
     "related":"",
     "source":"",
