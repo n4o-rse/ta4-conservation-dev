@@ -1,5 +1,5 @@
 //TidyTree and ClusterTree
-function generateTidyTree(data, idObject, visualizationType, commentedIdList) {
+function generateTidyTree(data, idObject, visualizationType, commentConceptObject) {
     const width = 2000; //928
     let tree = d3.tree();
   
@@ -79,7 +79,7 @@ function generateTidyTree(data, idObject, visualizationType, commentedIdList) {
     return svg.node();
   }
 
-  function generateRadialTidyTree(data, idObject) {
+  function generateRadialTidyTree(data, idObject, commentConceptObject) {
     // Specify the chart’s dimensions.
   const width = 2000;
   const height = width;
@@ -140,14 +140,15 @@ function generateTidyTree(data, idObject, visualizationType, commentedIdList) {
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
       .attr("fill", "currentColor")
+      .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
       .text(d => idObject[d.data.id]["prefLabel"]);
 
-      node.on("click", (e, d) => openDetails(d.data.id, idObject));
+      text.on("click", (e, d) => openDetails(d.data.id, idObject));
 
   return svg.node();
   }
 
-  function generateRadialClusterTree(data, idObject) {
+  function generateRadialClusterTree(data, idObject, commentConceptObject) {
       // Specify the chart’s dimensions.
   const width = 2000;
   const height = width;
@@ -211,10 +212,12 @@ function generateTidyTree(data, idObject, visualizationType, commentedIdList) {
       .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
       .text(d => idObject[d.data.id]["prefLabel"]);
 
+      text.on("click", (e, d) => openDetails(d.data.id, idObject));
+
   return svg.node();
   }
 
-  function generateSunburst(data, idObject) {
+  function generateSunburst(data, idObject, commentConceptObject) {
   // used for sunburst
   function autoBox() {
     document.body.appendChild(this);
@@ -273,14 +276,17 @@ function generateTidyTree(data, idObject, visualizationType, commentedIdList) {
         return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
       })
       .attr("dy", "0.35em")
-      .text(d => idObject[d.data.id]["prefLabel"]);
+      .text(d => idObject[d.data.id]["prefLabel"])
+      .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black");
+
+      text.on("click", (e, d) => openDetails(d.data.id, idObject));
 
   // The autoBox function adjusts the SVG’s viewBox to the dimensions of its contents.
   return svg.attr("viewBox", autoBox).node(); //
   }
 
 // Validation Method from observable missing
-function generateForceDirectedTree(data, idObject) {
+function generateForceDirectedTree(data, idObject, commentConceptObject) {
 
   // for force directed tree
   drag = simulation => {
@@ -371,7 +377,7 @@ function generateForceDirectedTree(data, idObject) {
     return svg.node();
   }
 
-  function generateCollapsibleTree(data, idObject) {
+  function generateCollapsibleTree(data, idObject, commentConceptObject) {
 
     // Specify the charts’ dimensions. The height is variable, depending on the layout.
     const width = 2000;
@@ -605,7 +611,7 @@ function generateForceDirectedTree(data, idObject) {
   return svg.node();
   }
 
-function generateIcicle(data, idObject) {
+function generateIcicle(data, idObject, commentConceptObject) {
     // Specify the chart’s dimensions.
     const width = 2000;
     const height = 3000;
