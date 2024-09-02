@@ -113,8 +113,7 @@
     cursor: pointer;
   } 
 
-  #loadingDiv {
-    display: none;
+  #loadingContent {
     animation-name: periodicfading;
     animation-duration: 2s;
     animation-iteration-count: infinite;

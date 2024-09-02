@@ -84,6 +84,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
     try {
       //document.getElementById("submitButton").innerHTML = "Neue Datei validieren";
       const stratifiedData = stratifyData(toppedData);
+      document.getElementById("loadingDiv").style.display = "none";
       document.getElementById("outputText").innerHTML = "Data successfully validated. \n";
       document.getElementById("outputText").style.color = "green";
       const radioDiv = document.createElement("div");
@@ -125,10 +126,10 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
     } 
     catch (error) {
       console.log(error);
+      document.getElementById("loadingDiv").style.display = "none";
       document.getElementById("errorText").innerHTML = error;
       document.getElementById("errorText").style.color = "red";
     }
-    document.getElementById("loadingDiv").style.display = "none";
   }
   else {
     document.getElementById("loadingDiv").style.display = "none";
