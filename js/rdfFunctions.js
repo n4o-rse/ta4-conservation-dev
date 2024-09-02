@@ -138,6 +138,7 @@ async function readComments(id, idObject) {
   $rdf.parse(commentRdf, store, url, 'text/turtle')
   // serialize store into json-ld
   let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
+  console.log(jsonldSerialization)
   // parse json-ld into object
   let parsedJson = JSON.parse(jsonldSerialization)
   let commentObject = {comments: {}, concepts: {}}
@@ -323,7 +324,6 @@ async function generateCommentedIdList() {
     let latestDate = Math.max.apply(null, dateArray);
     commentConceptObject[id] = latestDate;
   }
-  console.log(commentConceptObject);
   // create an array sorting the concepts by date
   let sortedCommentConceptArray = Object.keys(commentConceptObject).sort((a, b) => new Date(commentConceptObject[b]) - new Date(commentConceptObject[a]));
   // create an array of rgb colors for the concepts depending on their date going from red to blue
