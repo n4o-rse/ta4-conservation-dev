@@ -274,10 +274,9 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
         return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
       })
       .attr("dy", "0.35em")
-      .text(d => idObject[d.data.id]["prefLabel"]);
+      .text(d => idObject[d.data.id]["prefLabel"])
       //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black");
-
-      text.on("click", (e, d) => openDetails(d.data.id, idObject));
+      .on("click", (e, d) => openDetails(d.data.id, idObject));
 
   // The autoBox function adjusts the SVG’s viewBox to the dimensions of its contents.
   return svg.attr("viewBox", autoBox).node(); //
