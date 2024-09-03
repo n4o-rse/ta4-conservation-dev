@@ -160,7 +160,11 @@ async function readComments(id, idObject) {
       conceptObjectID = x["@id"].split("n0:concept")[1]
       console.log("conceptObjectID " + conceptObjectID)
       commentObject["concepts"][conceptObjectID] = {}
+      if (idObject[conceptObjectID]["prefLabel"] == undefined) {
+        commentObject["concepts"][conceptObjectID]["prefLabel"] = "gelöschter Begriff"
+      } else {
       commentObject["concepts"][conceptObjectID]["prefLabel"] = idObject[conceptObjectID]["prefLabel"]
+      }
     }
     let updatedCommentArray = Object.keys(commentObject["comments"])
     let sortedUpdatedCommentArray
@@ -175,7 +179,10 @@ async function readComments(id, idObject) {
       let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"]
       commentCreated = commentCreated.split(".")[0].replace("T", " ")
       comment.innerHTML = commentCreator + " kommentierte " + "<b>" + commentTargetLabel + "</b>" + " um " + commentCreated;
-      comment.onclick = function() {openDetails(commentTargetID, idObject)};
+      // if not commentTargetLabel "gelöschter Begriff", add event listener to openDetails
+      if (commentTargetLabel != "gelöschter Begriff") {
+        comment.onclick = function() {openDetails(commentTargetID, idObject)};
+      }
       comment.className = "commentHistoryParagraph";
       historyDiv.appendChild(comment);
     }
