@@ -90,7 +90,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       const radioDiv = document.createElement("div");
       radioDiv.id = "radioDiv";
       radioDiv.innerHTML = "Select visualization type: ";
-      const radioTypes = ["Indented Tree(Kommentare)","Tidy tree(Kommentare)", "Cluster tree(Kommentare)", "Radial tidy tree", "Radial cluster tree", "Collapsible Tree", "Force directed tree", "Sunburst", "Icicle"];
+      const radioTypes = ["Indented Tree","Tidy tree", "Cluster tree", "Radial tidy tree", "Radial cluster tree", "Collapsible Tree", "Sunburst(keine Kommentare)", "Icicle"]; //"Force directed tree",
       let lineBreakStarter = document.createElement("br");
       radioDiv.appendChild(lineBreakStarter);
       for (let i = 0; i < radioTypes.length; i++) {
@@ -143,7 +143,7 @@ async function visualizeData([stratifiedData, idObject]) {
   const visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
   let svg;
   try {
-    if (visualizationType == "Tidy tree(Kommentare)" || visualizationType == "Cluster tree(Kommentare)") {
+    if (visualizationType == "Tidy tree" || visualizationType == "Cluster tree") {
       svg = generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject);
     }
     if (visualizationType == "Radial tidy tree") {
@@ -152,7 +152,7 @@ async function visualizeData([stratifiedData, idObject]) {
     if (visualizationType == "Radial cluster tree") {
       svg = generateRadialClusterTree(stratifiedData, idObject);
     }
-    if (visualizationType == "Sunburst") {
+    if (visualizationType == "Sunburst(keine Kommentare)") {
       svg = generateSunburst(stratifiedData, idObject);
     }
     if (visualizationType == "Force directed tree") {
@@ -161,7 +161,7 @@ async function visualizeData([stratifiedData, idObject]) {
     if (visualizationType == "Collapsible Tree") {
       svg = generateCollapsibleTree(stratifiedData, idObject);
     }
-    if (visualizationType == "Indented Tree(Kommentare)") {
+    if (visualizationType == "Indented Tree") {
       svg = generateIndentedTree(stratifiedData, idObject, commentConceptObject);
     }
     if (visualizationType == "Icicle") {
