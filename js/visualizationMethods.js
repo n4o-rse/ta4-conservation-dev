@@ -10,10 +10,10 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
     const dy = width / (root.height+1);
   
     // Create a tree layout.
-    if (visualizationType == "Tidy tree(Kommentare)") {
+    if (visualizationType == "Tidy tree") {
       tree = d3.tree().nodeSize([dx, dy]);
     }
-    if (visualizationType == "Cluster tree(Kommentare)") {
+    if (visualizationType == "Cluster tree") {
       tree = d3.cluster().nodeSize([dx, dy]);
     }
     //const tree = d3.tree().nodeSize([dx, dy]);
