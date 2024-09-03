@@ -3,6 +3,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
 @prefix n0: <annotations.ttl/>.
 @prefix o: <http://www.w3.org/ns/oa#>.
+@prefix n1: <./>.
 
 n0:anno1
     a o:Annotation;
