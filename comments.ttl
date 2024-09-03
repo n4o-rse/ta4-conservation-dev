@@ -3,7 +3,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
 @prefix n0: <annotations.ttl/>.
 @prefix o: <http://www.w3.org/ns/oa#>.
-@prefix n1: <./>.
 
 n0:anno1
     a o:Annotation;
@@ -154,6 +153,13 @@ n0:anno28
     o:bodyValue
         """warum sind "Analyse der chemischen Zusammensetzung" und "chemische Zusammensetzung" zwei unterschiedliche Unterpunkte?""";
     o:hasTarget n0:conceptG17B8B.
+n0:anno29
+    a o:Annotation;
+    dct:created "2024-09-03T13:45:45.455Z";
+    dct:creator "Kristina";
+    o:bodyValue
+        """Kauramin CE 5549 wird als eigener Begriff aussortiert. Stattdessen bei Kauramin 800 als "altLabel" integriert und im der Description erl\u00e4utert""";
+    o:hasTarget n0:conceptBFB162 .
 n0:anno3
     a o:Annotation;
     dct:created "2024-08-27T11:56:02.873Z";
@@ -161,6 +167,20 @@ n0:anno3
     o:bodyValue
         "Die Definition ist glaube ich f\u00fcr \u201eR\u00f6ntgen-CT\u201c. Tomographie bezeichnet nur die Rekonstruktion von einem 3D Modell aus vielen (Projektions)Bildern; es gibt auch Neutrontomographie, MRT, usw.  und auch R\u00f6ntgentomographie (ohne Computer)! CT bezeichnet wahrscheinlich nur R\u00f6ntgen-CT aber um sicher zu sein, w\u00fcrde ich empfehlen, den Begriff zu \u201eR\u00f6ntgen-Computertomographie\u201c zu \u00e4ndern.";
     o:hasTarget n0:conceptAF9A88 .
+n0:anno30
+    a o:Annotation;
+    dct:created "2024-09-03T13:46:00.145Z";
+    dct:creator "Lasse";
+    o:bodyValue
+        "Kristina hat diesen Begriff entfernt. Wir arbeiten noch an einem Umgang mit entfernten Begriffen, damit sie nicht zu Fehlern in der Kommentarumgebung f\u00fchren...";
+    o:hasTarget n0:conceptBFB162 .
+n0:anno31
+    a o:Annotation;
+    dct:created "2024-09-03T13:49:05.583Z";
+    dct:creator "Kristina";
+    o:bodyValue
+        """Die Anmerkung verstehe ich nicht so ganz. Es gibt keinen Punkt "chemische Zusammensetzung". Oder meinst du "chemische Untersuchung" ? Damit sind Untersuchungen gemeint, bei denen mit Hilfe von chemischen Reagenzien Verhaltensweisen von Materialien getestet werden (z.B. Spot-Tests f\u00fcr unbekannte Klebstoffe bei Altrestaurierungen, etc.) """;
+    o:hasTarget n0:conceptG17B8B.
 n0:anno4
     a o:Annotation;
     dct:created "2024-08-27T13:02:42.906Z";
@@ -245,6 +265,4 @@ n0:conceptG8D62A a skos:Concept.
 n0:conceptGC7998 a skos:Concept.
 
 n0:conceptGD86C1 a skos:Concept.
-
-n0:concepttop a skos:Concept.
 
