@@ -120,7 +120,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       const lineBreak = document.createElement("br");
       lineBreak.id = "lineBreak";
       document.getElementById("visualizeButton").before(radioDiv);
-      document.getElementById("Indented Tree(Kommentare)").checked = true;
+      document.getElementById("Indented Tree").checked = true;
       document.getElementById("visualizeButton").before(lineBreak);
       return [stratifiedData, idObject];
     } 
