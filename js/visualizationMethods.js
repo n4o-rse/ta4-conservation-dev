@@ -141,9 +141,8 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
       .attr("stroke", "white")
       .attr("fill", "currentColor")
       //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
-      .text(d => idObject[d.data.id]["prefLabel"]);
-
-      text.on("click", (e, d) => openDetails(d.data.id, idObject));
+      .text(d => idObject[d.data.id]["prefLabel"])
+      .on("click", (e, d) => openDetails(d.data.id, idObject));
 
   return svg.node();
   }
@@ -210,9 +209,8 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
       .attr("stroke", "white")
       .attr("fill", "currentColor")
       //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
-      .text(d => idObject[d.data.id]["prefLabel"]);
-
-      text.on("click", (e, d) => openDetails(d.data.id, idObject));
+      .text(d => idObject[d.data.id]["prefLabel"])
+      .on("click", (e, d) => openDetails(d.data.id, idObject));
 
   return svg.node();
   }
