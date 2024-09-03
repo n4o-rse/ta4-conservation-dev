@@ -140,7 +140,7 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
       .attr("fill", "currentColor")
-      .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
+      //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
       .text(d => idObject[d.data.id]["prefLabel"])
       .on("click", (e, d) => openDetails(d.data.id, idObject));
 
@@ -208,7 +208,7 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
       .attr("fill", "currentColor")
-      .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
+      //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
       .text(d => idObject[d.data.id]["prefLabel"])
       .on("click", (e, d) => openDetails(d.data.id, idObject));
 
@@ -462,7 +462,7 @@ function generateForceDirectedTree(data, idObject, commentConceptObject) {
           .attr("stroke-width", 3)
           .attr("stroke", "white")
           .on("click", (e, d) => openDetails(d.data.id, idObject))
-          .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
+          //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
           .attr("paint-order", "stroke");
   
       // Transition nodes to their new position.
