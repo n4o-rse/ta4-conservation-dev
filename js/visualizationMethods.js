@@ -140,7 +140,7 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
       .attr("fill", "currentColor")
-      .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
+      //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
       .text(d => idObject[d.data.id]["prefLabel"]);
 
       text.on("click", (e, d) => openDetails(d.data.id, idObject));
@@ -209,7 +209,7 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
       .attr("fill", "currentColor")
-      .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
+      //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
       .text(d => idObject[d.data.id]["prefLabel"]);
 
       text.on("click", (e, d) => openDetails(d.data.id, idObject));
@@ -276,8 +276,8 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
         return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
       })
       .attr("dy", "0.35em")
-      .text(d => idObject[d.data.id]["prefLabel"])
-      .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black");
+      .text(d => idObject[d.data.id]["prefLabel"]);
+      //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black");
 
       text.on("click", (e, d) => openDetails(d.data.id, idObject));
 
@@ -669,6 +669,8 @@ function generateIcicle(data, idObject, commentConceptObject) {
     text.append("tspan")
         .attr("fill-opacity", 0.7)
         .text(d => ` ${format(d.value)}`);
+
+    text.on("click", (e, d) => openDetails(d.data.id, idObject));
   
     return svg.node();
   }
