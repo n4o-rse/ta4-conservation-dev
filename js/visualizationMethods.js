@@ -140,7 +140,7 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
       .attr("fill", "currentColor")
-      //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
+      .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
       .text(d => idObject[d.data.id]["prefLabel"])
       .on("click", (e, d) => openDetails(d.data.id, idObject));
 
@@ -208,7 +208,7 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
       .attr("fill", "currentColor")
-      //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
+      .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
       .text(d => idObject[d.data.id]["prefLabel"])
       .on("click", (e, d) => openDetails(d.data.id, idObject));
 
@@ -274,9 +274,9 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
         return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
       })
       .attr("dy", "0.35em")
-      .text(d => idObject[d.data.id]["prefLabel"])
+      .text(d => idObject[d.data.id]["prefLabel"]);
       //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black");
-      .on("click", (e, d) => openDetails(d.data.id, idObject));
+      //.on("click", (e, d) => openDetails(d.data.id, idObject));
 
   // The autoBox function adjusts the SVG’s viewBox to the dimensions of its contents.
   return svg.attr("viewBox", autoBox).node(); //
@@ -442,15 +442,15 @@ function generateForceDirectedTree(data, idObject, commentConceptObject) {
       const nodeEnter = node.enter().append("g")
           .attr("transform", d => `translate(${source.y0},${source.x0})`)
           .attr("fill-opacity", 0)
-          .attr("stroke-opacity", 0)
-          .on("click", (event, d) => {
-            d.children = d.children ? null : d._children;
-            update(event, d);
-          });
+          .attr("stroke-opacity", 0);
   
       nodeEnter.append("circle")
           .attr("r", 2.5)
           .attr("fill", d => d._children ? "#555" : "#999")
+          .on("click", (event, d) => {
+            d.children = d.children ? null : d._children;
+            update(event, d);
+          })
           .attr("stroke-width", 10);
   
       nodeEnter.append("text")
@@ -461,6 +461,8 @@ function generateForceDirectedTree(data, idObject, commentConceptObject) {
           .attr("stroke-linejoin", "round")
           .attr("stroke-width", 3)
           .attr("stroke", "white")
+          .on("click", (e, d) => openDetails(d.data.id, idObject))
+          .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
           .attr("paint-order", "stroke");
   
       // Transition nodes to their new position.
