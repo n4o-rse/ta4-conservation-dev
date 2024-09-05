@@ -6,6 +6,9 @@ fileForm.addEventListener('submit', inputFile);
 const textForm = document.getElementById('textForm');
 textForm.addEventListener('submit', inputUrl);
 
+const closeModalButton = document.getElementsByClassName("close")[0];
+closeModalButton.onclick = closeModal();
+
 function inputFile() {
     event.preventDefault();
     const inputFile = document.getElementById('fileInput');

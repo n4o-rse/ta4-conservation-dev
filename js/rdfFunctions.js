@@ -120,9 +120,6 @@ async function openDetails(id, idObject) {
 
     readComments(id, idObject);
 
-    let closeButton = document.getElementsByClassName("close")[0];
-    closeButton.onclick = closeModal();
-
     const commentForm = document.getElementById("commentForm");
     commentForm.addEventListener("submit", updatePod)
 
