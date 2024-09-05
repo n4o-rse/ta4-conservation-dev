@@ -38,17 +38,17 @@ async function openDetails(id, idObject) {
       "Q17":	"Waldemar Muskalla",
       "Q18":	"Roland Schwab",
     }
-    var modal = document.getElementById("myModal");
+    let modal = document.getElementById("myModal");
 
     // clean modal content from previous concept
-    var modalBody = document.getElementsByClassName("modal-body")[0];
+    let modalBody = document.getElementsByClassName("modal-body")[0];
     while (modalBody.firstChild) {
       modalBody.removeChild(modalBody.firstChild);
     }
 
     // generate concept information for modal
-    var body = document.getElementsByClassName("modal-body")
-    var header = document.getElementById("header-head")
+    let body = document.getElementsByClassName("modal-body")
+    let header = document.getElementById("header-head")
     header.innerHTML = idObject[id]["prefLabel"];
     idObject[id]["identifier"] = id.toString();
 
@@ -113,12 +113,19 @@ async function openDetails(id, idObject) {
     } 
     // temporary fix storing id in comment-button className, to call event listener with id parameter
     // pls change this!
+
     let commentButton = document.getElementById("commentButton")
     commentButton.dataset.id = id.toString();
     commentButton.dataset.idObject = JSON.stringify(idObject);
+
     readComments(id, idObject);
+
     let closeButton = document.getElementsByClassName("close")[0];
     closeButton.onclick = closeModal();
+
+    const commentForm = document.getElementById("commentForm");
+    commentForm.addEventListener("submit", updatePod)
+
     modal.style.display = "block";
 }
 

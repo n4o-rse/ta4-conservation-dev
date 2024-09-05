@@ -6,9 +6,6 @@ fileForm.addEventListener('submit', inputFile);
 const textForm = document.getElementById('textForm');
 textForm.addEventListener('submit', inputUrl);
 
-const commentForm = document.getElementById("commentForm");
-commentForm.addEventListener("submit", updatePod)
-
 function inputFile() {
     event.preventDefault();
     const inputFile = document.getElementById('fileInput');
