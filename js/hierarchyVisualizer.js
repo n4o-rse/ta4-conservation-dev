@@ -6,7 +6,7 @@ function readData(data, inputType) {
     if (file.name.endsWith(".tsv")) {
       Data = d3.tsvParse(data);
     }
-    else { //(file.name.endsWith(".tsv")) 
+    else if (file.name.endsWith(".tsv")) {  
       Data = d3.csvParse(data);
     }
   }
@@ -25,15 +25,14 @@ function readData(data, inputType) {
 
   let toppedArray = topData(cleanedTableData);
   let toppedData = toppedArray[0];
-  //const topPosition = toppedArray[1];
+  let topPosition = toppedArray[1];
   let orphans = toppedArray[2];
 
   let idArray = idToName(toppedData)
   let idObject = idArray[0]
   let doublettes = idArray[1]
   let missingParents = idArray[2]
-  //test function, delete later
-  validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]);
+  validation([toppedData, idObject, doublettes, missingParents, ignored, topPosition, orphans]);
 }
 
 /* not used at the moment
@@ -67,7 +66,7 @@ function readExample() {
 }
 */
 
-function validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]) {
+function validation([toppedData, idObject, doublettes, missingParents, ignored, topPosition, orphans]) {
   const hints = [{variable:ignored, id:"ignored"}, {variable:orphans, id:"orphans"}]; //{variable:topPosition, id:"topped"},
   const strings = ["concepts were ignored: ","concepts are orphans: "]; //, "concepts are on top: "
   for (let i = 0; i < hints.length; i++) {
@@ -84,7 +83,6 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
   }
   if ((doublettes.length < 1) && (missingParents.length < 1)) {
     try {
-      //document.getElementById("submitButton").innerHTML = "Neue Datei validieren";
       const stratifiedData = stratifyData(toppedData);
       document.getElementById("loadingDiv").style.display = "none";
       document.getElementById("outputText").innerHTML = "Data successfully validated. \n";
@@ -200,22 +198,18 @@ function downloadSvg(svg, visualizationType) {
 }
 
 function resetOutput() {
-  let ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chartDiv", "doublettes", "missingParents", "radioDiv", "visualizeButton"]; //
+  let ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chartDiv", "doublettes", "missingParents", "radioDiv", "visualizeButton"];
   for (let i = 0; i < ids.length; i++) {
-    try {
+    // check if getElementById(ids[i]) exists
+    if (document.getElementById(ids[i]) != null) {
       document.getElementById(ids[i]).innerHTML = "";
-    }
-    catch (error) {
-      // pass 
     }
   }
   let elements = ["visualizeButton", "radioDiv", "lineBreak", "downloadButton"]
   for (let i = 0; i < elements.length; i++) {
-    try {
+    // check if getElementById(elements[i]) exists
+    if (document.getElementById(elements[i]) != null) {
       document.getElementById(elements[i]).remove();
-    }
-    catch (error) {
-      // pass
     }
   }
   //return to default color
