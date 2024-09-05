@@ -581,6 +581,8 @@ function generateForceDirectedTree(data, idObject, commentConceptObject) {
         .text(d => idObject[d.data.id]["prefLabel"])
         // fill commented nodes red
         .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black");
+
+    // append tooltip to node
   
     node.append("title")
         .text(d => d.ancestors().reverse().map(d => idObject[d.data.id]["prefLabel"]).join("/"));
@@ -607,14 +609,8 @@ function generateForceDirectedTree(data, idObject, commentConceptObject) {
     }
 
   node.on("click", (e, d) => openDetails(d.data.id, idObject));
-  // display idObject[d.data.id]["description"] as tooltip on hover
-  node.on("mouseover", (e, d) => {
-    let tooltip = document.getElementById("tooltip");
-    tooltip.style.display = "block";
-    tooltip.style.left = e.pageX + "px";
-    tooltip.style.top = e.pageY + "px";
-    tooltip.innerHTML = idObject[d.data.id]["description"];
-  });
+  
+  
   return svg.node();
   }
 

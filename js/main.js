@@ -1,15 +1,4 @@
-// main function for global variables and event listeners
-
-/* temporary disabled for commentation process
-const thesaurusFileInputForm = document.getElementById('fileForm');
-thesaurusFileInputForm.addEventListener('submit', thesaurusInputFile);
-*/
-
-const thesaurusUrlInputForm = document.getElementById('textForm');
-thesaurusUrlInputForm.addEventListener('submit', thesaurusInputUrl);
-
-const commentForm = document.getElementById("commentForm");
-commentForm.addEventListener("submit", updatePod);
+// event functions
 
 function thesaurusInputFile() {
     event.preventDefault();
@@ -51,3 +40,14 @@ function closeModal() {
   let modal = document.getElementById("myModal");
   modal.style.display = "none";
 }
+
+// global variables and event listeners
+
+const thesaurusFileInputForm = document.getElementById('fileForm');
+thesaurusFileInputForm.addEventListener('submit', thesaurusInputFile);
+
+const thesaurusUrlInputForm = document.getElementById('textForm');
+thesaurusUrlInputForm.addEventListener('submit', thesaurusInputUrl);
+
+const commentForm = document.getElementById("commentForm");
+commentForm.addEventListener("submit", updatePod);

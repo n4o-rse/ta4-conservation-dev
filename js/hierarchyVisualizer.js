@@ -36,6 +36,7 @@ function readData(data, inputType) {
   validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]);
 }
 
+/* not used at the moment
 function readExample() {
   resetOutput();
   let bibleCSV = `identifier,prefLabel,parent
@@ -64,6 +65,7 @@ function readExample() {
   let missingParents = idArray[2]
   validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]);
 }
+*/
 
 function validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]) {
   const hints = [{variable:ignored, id:"ignored"}, {variable:orphans, id:"orphans"}]; //{variable:topPosition, id:"topped"},
@@ -198,7 +200,7 @@ function downloadSvg(svg, visualizationType) {
 }
 
 function resetOutput() {
-  const ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chartDiv", "doublettes", "missingParents", "radioDiv", "visualizeButton"]; //
+  let ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chartDiv", "doublettes", "missingParents", "radioDiv", "visualizeButton"]; //
   for (let i = 0; i < ids.length; i++) {
     try {
       document.getElementById(ids[i]).innerHTML = "";
@@ -207,7 +209,6 @@ function resetOutput() {
       // pass 
     }
   }
-  //document.getElementById("fileButton").innerHTML = "Tabelle validieren";
   let elements = ["visualizeButton", "radioDiv", "lineBreak", "downloadButton"]
   for (let i = 0; i < elements.length; i++) {
     try {
@@ -269,7 +270,7 @@ function topData(data) {
     "identifier":"top",
     "prefLabel":"Thesaurus",
     "parent":"",
-    "description":"Der Leiza Thesaurus für Restaurierung und Konservierung.",
+    "description":"Der Thesarus als Beginn der Hierarchie.",
     "altLabel":"",
     "related":"",
     "source":"",
@@ -286,7 +287,7 @@ function topData(data) {
     "identifier":"orphanage",
     "prefLabel":"Waisenhaus",
     "parent":"top",
-    "description":"Hierhin werden Begriffe verschoben, die keinen Vorgänger haben.",
+    "description":"Hierhin werden Begriffe verschoben, die keine Elternteil haben.",
     "altLabel":"",
     "related":"",
     "source":"",
