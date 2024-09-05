@@ -40,13 +40,6 @@ n0:anno13
     o:bodyValue
         """Wie w\u00e4re es mit diesem Vorschlag? Simultan zum Begriff "konventionelle Radiographie" habe ich das zugeh\u00f6rige Ger\u00e4t nun statt nur "R\u00f6ntgenanlage" zu "konventionelles R\u00f6ntgenger\u00e4t" umbenannt. In der Description wird dann der Unterschied zum CT erkl\u00e4rt (und bei der Description des CTs entsprechend umgekehrt). """;
     o:hasTarget n0:conceptG8D62A.
-n0:anno14
-    a o:Annotation;
-    dct:created "2024-08-28T08:15:58.978Z";
-    dct:creator "Anonymus";
-    o:bodyValue
-        """Rechtschreibkorrektur: bei dem Wort "Regel" fehlt das "l"...""";
-    o:hasTarget n0:conceptDA2D73 .
 n0:anno15
     a o:Annotation;
     dct:created "2024-08-28T11:58:55.324Z";
