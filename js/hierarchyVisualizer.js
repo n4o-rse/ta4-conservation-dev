@@ -1,5 +1,4 @@
 function readData(data, inputType) {
-  resetOutput();
   let Data
   if (inputType == "file") {
     const file = document.getElementById("fileInput").files[0];

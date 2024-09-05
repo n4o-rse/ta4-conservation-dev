@@ -2,6 +2,10 @@
 
 function thesaurusInputFile() {
     event.preventDefault();
+    // reset former outputs, if there are any
+    resetOutput();
+    // display loading popup until every following function is finished
+    document.getElementById("loadingDiv").style.display = "block";
     const inputFile = document.getElementById('fileInput');
     const file = inputFile.files[0];
     let reader = new FileReader();
@@ -14,6 +18,8 @@ function thesaurusInputFile() {
 
 async function thesaurusInputUrl() {
     event.preventDefault();
+    // reset former outputs, if there are any
+    resetOutput();
     // display loading popup until every following function is finished
     document.getElementById("loadingDiv").style.display = "block";
     const inputURL = document.getElementById('textInput').value;
