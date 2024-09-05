@@ -1,15 +1,14 @@
+// main function for global variables and event listeners
+
 /* temporary disabled for commentation process
-const fileForm = document.getElementById('fileForm');
-fileForm.addEventListener('submit', inputFile);
+const thesaurusFileInputForm = document.getElementById('fileForm');
+thesaurusFileInputForm.addEventListener('submit', thesaurusInputFile);
 */
 
-let urlInputForm = document.getElementById('textForm');
-urlInputForm.addEventListener('submit', inputUrl);
+const thesaurusUrlInputForm = document.getElementById('textForm');
+thesaurusUrlInputForm.addEventListener('submit', thesaurusInputUrl);
 
-let closeModalButton = document.getElementsByClassName("close")[0];
-closeModalButton.onclick = closeModal;
-
-function inputFile() {
+function thesaurusInputFile() {
     event.preventDefault();
     const inputFile = document.getElementById('fileInput');
     const file = inputFile.files[0];
@@ -21,7 +20,7 @@ function inputFile() {
     reader.readAsText(file);
 }
 
-async function inputUrl() {
+async function thesaurusInputUrl() {
     event.preventDefault();
     // display loading popup until every following function is finished
     document.getElementById("loadingDiv").style.display = "block";
