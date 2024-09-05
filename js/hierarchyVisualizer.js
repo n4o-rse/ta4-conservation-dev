@@ -1,4 +1,4 @@
-function readData(data, inputType) {
+async function readData(data, inputType) {
   let Data
   if (inputType == "file") {
     const file = document.getElementById("fileInput").files[0];
@@ -8,12 +8,8 @@ function readData(data, inputType) {
     else if (file.name.endsWith(".csv")) {  
       Data = d3.csvParse(data);
     }
-    // wait 1 second to make sure the loadingDiv is displayed and user knows different data is loaded
-    const sleep = function(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    }
-    sleep(2000).then(() => {console.log("Waited for loading to take place...")});
-    
+    // wait to make sure the loadingDiv is displayed and user knows different data is loaded
+    await new Promise(r => setTimeout(r, 2000));
   }
   else if (inputType == "url") {
     const textInput = document.getElementById("textInput").value;
