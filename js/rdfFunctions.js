@@ -117,12 +117,15 @@ async function openDetails(id, idObject) {
     let closeModalButton = document.getElementsByClassName("close")[0];
     closeModalButton.onclick = closeModal;
 
+    /* trying to avoid storing id in className
     let commentButton = document.getElementById("commentButton")
     commentButton.dataset.id = id.toString();
     commentButton.dataset.idObject = JSON.stringify(idObject);
+    */
 
     const commentForm = document.getElementById("commentForm");
-    commentForm.addEventListener("submit", updatePod);
+    commentForm.addEventListener("submit", function() { // anonymous function to call updatePod with parameters
+      updatePod(id.toString(), JSON.stringify(idObject));});
 
     readComments(id, idObject);
 
@@ -227,7 +230,7 @@ async function readComments(id, idObject) {
   }
 }
 
-async function updatePod() {
+async function updatePod(id, idObject) {
     event.preventDefault();
     const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
     let commentText = document.getElementById("commentText").value;
@@ -241,8 +244,10 @@ async function updatePod() {
       return;
     }
     
+    /* trying to avoid storing id in className
     let id = document.getElementById("commentButton").dataset.id;
     let idObject = JSON.parse(document.getElementById("commentButton").dataset.idObject);
+    */
 
     // declare namespaces
     var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
