@@ -5,7 +5,7 @@ function readData(data, inputType) {
     if (file.name.endsWith(".tsv")) {
       Data = d3.tsvParse(data);
     }
-    else if (file.name.endsWith(".tsv")) {  
+    else if (file.name.endsWith(".csv")) {  
       Data = d3.csvParse(data);
     }
   }
