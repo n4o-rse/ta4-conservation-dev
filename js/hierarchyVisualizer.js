@@ -9,10 +9,10 @@ function readData(data, inputType) {
       Data = d3.csvParse(data);
     }
     // wait 1 second to make sure the loadingDiv is displayed and user knows different data is loaded
-    const sleep = function() {
-      return new Promise(resolve => setTimeout(resolve, 1000));
+    const sleep = function(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
     }
-    sleep().then(() => {});
+    sleep(2000).then(() => {console.log("Waited for loading to take place...")});
     
   }
   else if (inputType == "url") {
