@@ -8,8 +8,8 @@ function readData(data, inputType) {
     else if (file.name.endsWith(".csv")) {  
       Data = d3.csvParse(data);
     }
-    // wait 0.5 seconds
-    setTimeout(() => {}, 500);
+    // wait 0.5 seconds to make sure the loadingDiv is displayed and user knows different data is loaded
+    setTimeout(() => {}, 1000);
   }
   else if (inputType == "url") {
     const textInput = document.getElementById("textInput").value;
