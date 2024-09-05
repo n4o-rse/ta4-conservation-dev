@@ -8,6 +8,9 @@ thesaurusFileInputForm.addEventListener('submit', thesaurusInputFile);
 const thesaurusUrlInputForm = document.getElementById('textForm');
 thesaurusUrlInputForm.addEventListener('submit', thesaurusInputUrl);
 
+const commentForm = document.getElementById("commentForm");
+commentForm.addEventListener("submit", updatePod);
+
 function thesaurusInputFile() {
     event.preventDefault();
     const inputFile = document.getElementById('fileInput');

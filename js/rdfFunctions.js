@@ -130,9 +130,6 @@ async function openDetails(id, idObject) {
     });
     */
 
-    const commentForm = document.getElementById("commentForm");
-    commentForm.addEventListener("submit", updatePod);
-
     await readComments(id, idObject);
 
     modal.style.display = "block";
