@@ -32,7 +32,7 @@ async function inputUrl() {
 
 function saveUserName() {
   event.preventDefault();
-  var userNameText = document.getElementById("userNameText").value;
+  let userNameText = document.getElementById("userNameText").value;
   if (userNameText == "") {
     alert("Bitte geben Sie einen Benutzernamen ein!");
     return;
@@ -43,6 +43,7 @@ function saveUserName() {
 }
 
 function closeModal() {
-  var modal = document.getElementById("myModal");
+  event.preventDefault();
+  let modal = document.getElementById("myModal");
   modal.style.display = "none";
 }
