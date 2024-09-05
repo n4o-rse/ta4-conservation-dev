@@ -1,10 +1,4 @@
-var modal = document.getElementById("myModal");
-modal.style.display = "none";
-var span = document.getElementsByClassName("close")[0];
-span.onclick = function() {
-  modal.style.display = "none";
-}
-/* temporary disabled
+/* temporary disabled for commentation process
 const fileForm = document.getElementById('fileForm');
 fileForm.addEventListener('submit', inputFile);
 */
@@ -49,4 +43,9 @@ function saveUserName() {
   document.getElementById("userName").innerHTML = userNameText;
   document.getElementById("userNameText").value = "";
   document.getElementById("commentButton").innerText = `Kommentieren als ${userNameText}`;
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
 }

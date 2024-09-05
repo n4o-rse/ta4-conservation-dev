@@ -113,10 +113,12 @@ async function openDetails(id, idObject) {
     } 
     // temporary fix storing id in comment-button className, to call event listener with id parameter
     // pls change this!
-    var commentButton = document.getElementById("commentButton")
+    let commentButton = document.getElementById("commentButton")
     commentButton.dataset.id = id.toString();
     commentButton.dataset.idObject = JSON.stringify(idObject);
     readComments(id, idObject);
+    let closeButton = document.getElementsByClassName("close")[0];
+    closeButton.onclick = closeModal();
     modal.style.display = "block";
 }
 
