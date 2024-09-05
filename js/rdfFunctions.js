@@ -125,7 +125,7 @@ async function openDetails(id, idObject) {
 
     const commentForm = document.getElementById("commentForm");
     commentForm.addEventListener("submit", function() { // anonymous function to call updatePod with parameters
-      updatePod(id.toString(), JSON.stringify(idObject));});
+      updatePod(id, idObject);});
 
     readComments(id, idObject);
 
