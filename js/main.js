@@ -46,7 +46,6 @@ function saveUserName() {
 }
 
 function closeModal() {
-  event.preventDefault();
   let modal = document.getElementById("myModal");
   modal.style.display = "none";
 }
