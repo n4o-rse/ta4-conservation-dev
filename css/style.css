@@ -139,7 +139,7 @@
     small border around the modal
     */
     /*display: none;*/
-    border: 5px solid;
+    border: 3px grey solid;
     position: absolute;
     top: 50%;
     left: 50%;
