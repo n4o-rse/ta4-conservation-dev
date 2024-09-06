@@ -200,7 +200,7 @@ function resetOutput() {
       document.getElementById(ids[i]).innerHTML = "";
     }
   }
-  let elements = ["visualizeButton", "radioDiv", "lineBreak", "downloadButton"]
+  let elements = ["visualizeButton", "radioDiv", "lineBreak", "downloadButton", "thesaurusDownloadButton"];
   for (let i = 0; i < elements.length; i++) {
     // check if getElementById(elements[i]) exists
     if (document.getElementById(elements[i]) != null) {
@@ -300,6 +300,7 @@ function idToName(data) {
     if (!(row.identifier in transformationObject)) {
       transformationObject[row.identifier] = {};
     }
+    // using concept as key to store all prefLabels of the same identifier
     if ("concept" in transformationObject[row.identifier]) {
       transformationObject[row.identifier]["concept"].push(row.prefLabel);
     }
@@ -308,8 +309,10 @@ function idToName(data) {
       transformationObject[row.identifier]["concept"].push(row.prefLabel);
     }
     transformationObject[row.identifier]["prefLabel"] = row.prefLabel;
-    transformationObject[row.identifier]["description"] = row.description;
     transformationObject[row.identifier]["altLabel"] = row.altLabel;
+    transformationObject[row.identifier]["translation"] = row.translation;
+    transformationObject[row.identifier]["description"] = row.description;
+    transformationObject[row.identifier]["parent"] = row.parent;
     transformationObject[row.identifier]["related"] = row.related;
     transformationObject[row.identifier]["source"] = row.source;
     transformationObject[row.identifier]["creator"] = row.creator;

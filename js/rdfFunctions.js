@@ -367,7 +367,13 @@ async function generateCommentedIdList() {
 }
 
 async function generateThesaurus(idObject, topPosition) {
-  alert("Diese Funktion ist noch in Entwicklung und wird in Kürze verfügbar sein.");
+  let thesaurusNamespace = prompt("Bitte geben Sie den Namespace des Thesaurus an, den Sie anzeigen möchten. (z.B. https://BeispielThesaurus.de/)", "");
+  if (thesaurusNamespace == null || thesaurusNamespace == "") {
+    alert("Kein Namespace eingegeben! Bitte erneut versuchen.");
+    generateThesaurus(idObject, topPosition);
+  } else {
+    alert("Der Namespace lautet: " + thesaurusNamespace);
+  }
   // reminder: remove orphanage and orphans
   // reminder: remove thesaurus-concept
 }
