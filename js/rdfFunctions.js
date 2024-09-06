@@ -370,25 +370,22 @@ async function generateThesaurus(idObject, topPosition) {
   event.preventDefault();
   //read all form data from conceptSchemeForm
   let conceptSchemeForm = document.getElementById("conceptSchemeForm");
-  conceptSchemeTitle = conceptSchemeForm.elements["conceptSchemeTitle"].value;
-  conceptSchemeCreator = conceptSchemeForm.elements["conceptSchemeCreator"].value;
-  conceptSchemeSource = conceptSchemeForm.elements["conceptSchemeSource"].value;
-  conceptSchemePublisher = conceptSchemeForm.elements["conceptSchemePublisher"].value;
-  conceptSchemeContributor = conceptSchemeForm.elements["conceptSchemeContributor"].value;
-  conceptSchemeSubject = conceptSchemeForm.elements["conceptSchemeSubject"].value;
-  conceptSchemeDescription = conceptSchemeForm.elements["conceptSchemeDescription"].value;
-  conceptSchemeCreated = conceptSchemeForm.elements["conceptSchemeCreated"].value;
+  conceptSchemeTitle = document.getElementById("titleInput").value;
+  conceptSchemeCreator = document.getElementById("creatorInput").value;
+  conceptSchemePublisher = document.getElementById("publisherInput").value;
+  conceptSchemeContributor = document.getElementById("contributorInput").value;
+  conceptSchemeSubject = document.getElementById("subjectInput").value;
+  conceptSchemeDescription = document.getElementById("descriptionInput").value;
+  conceptSchemeCreated = document.getElementById("createdInput").value;
   // select radio element of conceptSchemeForm which is checked
-  let radioElements = conceptSchemeForm.elements["conceptSchemeType"];
-  let radioValue;
+  let radioElements = conceptSchemeForm.getElementByType("radio");
+  let conceptSchemeFormat;
   for (let i = 0; i < radioElements.length; i++) {
     if (radioElements[i].checked) {
-      radioValue = radioElements[i].value;
+      conceptSchemeFormat = radioElements[i].value;
     }
   }
-
   closeconceptSchemeModal()
-  alert("Everything is working fine until here!");
   // remove idObject["top"]
   idObject = Object.fromEntries(Object.entries(idObject).filter(([key, value]) => key != "top"));
   // remove idObject["orphanage"]
@@ -440,4 +437,20 @@ async function generateThesaurus(idObject, topPosition) {
   // create thesaurus concept scheme
   let thesaurusConceptScheme = $rdf.sym(thesaurusNamespace + "thesaurus");
   store.add(thesaurusConceptScheme, type, conceptScheme);
+  store.add(thesaurusConceptScheme, title, conceptSchemeTitle);
+  store.add(thesaurusConceptScheme, creator, conceptSchemeCreator);
+  store.add(thesaurusConceptScheme, publisher, conceptSchemePublisher);
+  store.add(thesaurusConceptScheme, contributor, conceptSchemeContributor);
+  store.add(thesaurusConceptScheme, subject, conceptSchemeSubject);
+  store.add(thesaurusConceptScheme, created, conceptSchemeCreated);
+  store.add(thesaurusConceptScheme, description, conceptSchemeDescription);
+  // serialize store into ttl if conceptSchemeFormat = "Turtle" and into json-ld if conceptSchemeFormat = "JSON-LD"
+  let serializedThesaurus;
+  if (conceptSchemeFormat == "Turtle") {
+    serializedThesaurus = $rdf.serialize(null, store, thesaurusNamespace + "thesaurus", 'text/turtle');
+  } else if (conceptSchemeFormat == "JSON-LD") {
+    serializedThesaurus = $rdf.serialize(null, store, thesaurusNamespace + "thesaurus", 'application/ld+json');
+  }
+  // create alert with serialized thesaurus as string
+  alert(serializedThesaurus);
 }
