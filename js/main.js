@@ -43,11 +43,13 @@ function saveUserName() {
 }
 
 function closeModal() {
+  event.preventDefault();
   let modal = document.getElementById("myModal");
   modal.style.display = "none";
 }
 
 function closeconceptSchemeModal() {
+  event.preventDefault();
   let modal = document.getElementById("conceptSchemeModal");
   modal.style.display = "none";
   let form = document.getElementById("conceptSchemeForm");
@@ -56,6 +58,7 @@ function closeconceptSchemeModal() {
 }
 
 function collectThesaurusData(idObject, topPosition) {
+  event.preventDefault();
   // make modal visible
   let modal = document.getElementById("conceptSchemeModal");
   modal.style.display = "block";
