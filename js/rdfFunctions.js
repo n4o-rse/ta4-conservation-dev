@@ -435,7 +435,7 @@ async function generateThesaurus(idObject, topPosition) {
   let store = $rdf.graph();
   
   // create thesaurus concept scheme
-  let thesaurusConceptScheme = $rdf.sym("thesaurus1");
+  let thesaurusConceptScheme = $rdf.sym(conceptSchemeNamespace+"1");
   store.add(thesaurusConceptScheme, type, conceptScheme);
   store.add(thesaurusConceptScheme, title, conceptSchemeTitle);
   store.add(thesaurusConceptScheme, creator, conceptSchemeCreator);
@@ -444,7 +444,6 @@ async function generateThesaurus(idObject, topPosition) {
   store.add(thesaurusConceptScheme, subject, conceptSchemeSubject);
   store.add(thesaurusConceptScheme, created, conceptSchemeCreated);
   store.add(thesaurusConceptScheme, description, conceptSchemeDescription);
-  // serialize store into ttl if conceptSchemeFormat = "Turtle" and into json-ld if conceptSchemeFormat = "JSON-LD"
   try {
     let serializedThesaurus = $rdf.serialize(null, store, conceptSchemeNamespace, conceptSchemeFormat);
     // create alert with serialized thesaurus as string
