@@ -129,7 +129,6 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       document.getElementById("visualizeButton").before(radioDiv);
       document.getElementById("Indented Tree").checked = true;
       document.getElementById("visualizeButton").before(lineBreak);
-      return [stratifiedData, idObject];
     } 
     catch (error) {
       console.log(error);
