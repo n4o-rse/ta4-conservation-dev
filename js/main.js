@@ -47,6 +47,22 @@ function closeModal() {
   modal.style.display = "none";
 }
 
+function closeconceptSchemeModal() {
+  let modal = document.getElementById("conceptSchemeModal");
+  modal.style.display = "none";
+  let form = document.getElementById("conceptSchemeForm");
+  // reset value of all input elements
+  form.reset();
+}
+
+function collectThesaurusData() {
+  // make modal visible
+  let modal = document.getElementById("conceptSchemeModal");
+  modal.style.display = "block";
+  let conceptSchemeFormButton = document.getElementById("conceptSchemeFormButton");
+  conceptSchemeFormButton.onclick = function() {generateThesaurus(idObject, topPosition)};
+}
+
 // global variables and event listeners
 
 const thesaurusFileInputForm = document.getElementById('fileForm');

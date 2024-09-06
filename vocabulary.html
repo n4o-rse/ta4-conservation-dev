@@ -51,7 +51,8 @@
               multi input form with fields and label for each entry: title, creator, publisher, contributor, subject, created and description
               button to submit the form
             -->
-            <div id="conceptSchemeModal">
+            <div id="conceptSchemeModal" style="display: none;">
+              <span class="close" onclick=>&times;</span>
               <center>
               <h3>Thesaurus Daten</h3>
               </center>
@@ -69,7 +70,7 @@
                 <input type="radio" id="jsonldFormatRadio">
                 <label for="jsonldFormatRadio">JSON-LD</label>
                 <br><br>
-                <button type="submit">Thesaurus generieren</button>
+                <button type="submit" id="conceptSchemeFormButton">Thesaurus generieren</button>
               </form>
             </div>
             <br>

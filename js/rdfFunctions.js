@@ -367,13 +367,9 @@ async function generateCommentedIdList() {
 }
 
 async function generateThesaurus(idObject, topPosition) {
-  let thesaurusNamespace = prompt("Bitte geben Sie den Namespace des Thesaurus an, den Sie anzeigen möchten. (z.B. https://BeispielThesaurus.de/)", "https://");
-  if (thesaurusNamespace == null || thesaurusNamespace == "") {
-    alert("Kein Namespace eingegeben! Bitte erneut versuchen.");
-    generateThesaurus(idObject, topPosition);
-  } else {
-    alert("Der Namespace lautet: " + thesaurusNamespace);
-  }
+
+  alert("Everything is working fine until here!");
+  document.getElementById("conceptSchemeModal").style.display = "none";
   // remove idObject["top"]
   idObject = Object.fromEntries(Object.entries(idObject).filter(([key, value]) => key != "top"));
   // remove idObject["orphanage"]
@@ -421,6 +417,4 @@ async function generateThesaurus(idObject, topPosition) {
   // create thesaurus concept scheme
   let thesaurusConceptScheme = $rdf.sym(thesaurusNamespace + "thesaurus");
   store.add(thesaurusConceptScheme, RDF('type'), SK('ConceptScheme'));
-  
-
 }

@@ -116,7 +116,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       let thesaurusDownloadButton = document.createElement("button");
       thesaurusDownloadButton.id = "thesaurusDownloadButton";
       thesaurusDownloadButton.innerHTML = "Thesaurus herunterladen";
-      thesaurusDownloadButton.onclick = function() {generateThesaurus(idObject, topPosition)};
+      thesaurusDownloadButton.onclick = function() {collectThesaurusData([idObject, topPosition])};
 
       document.getElementById("chartDiv").before(visualizationButton);
       document.getElementById("chartDiv").before(thesaurusDownloadButton);
