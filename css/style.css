@@ -132,14 +132,20 @@
         opacity: 0.3;
     }
 }
-  /* center at the screen with 50% width and height*/
+  /* 
+  center at the screen with 50% width and height
+  grey border
+  */
   #conceptSchemeDiv {
     /*display: none;*/
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     width: 50%;
     height: 50%;
-
+    transform: translate(-50%, -50%);
+    border: 1px solid grey;
+    background-color: white;
+    z-index: 1;
+    overflow: auto;
   }
