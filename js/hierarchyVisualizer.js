@@ -119,6 +119,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       thesaurusDownloadButton.onclick = function() {generateThesaurus(idObject, topPosition)};
 
       document.getElementById("chartDiv").before(visualizationButton);
+      document.getElementById("chartDiv").before(thesaurusDownloadButton);
       //check if there is an Element with id lineBreak
       if (document.getElementById("linebreak") != null) {
         document.getElementById("lineBreak").remove();
