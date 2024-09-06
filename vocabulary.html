@@ -47,6 +47,22 @@
               <input type="text" id="textInput" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=csv">
               <button type="submit">URL laden</button>
             </form>
+            <!-- 
+              multi input form with fields and label for each entry: title, creator, publisher, contributor, subject, created and description
+              button to submit the form
+            -->
+            <div id="conceptSchemeDiv">
+              <form id="conceptSchemeForm">
+                <input type="text" id="titleInput" placeholder="Titel">
+                <input type="text" id="creatorInput" placeholder="Ersteller">
+                <input type="text" id="publisherInput" placeholder="Veröffentlicher">
+                <input type="text" id="contributorInput" placeholder="Mitwirkende">
+                <input type="text" id="subjectInput" placeholder="Themen">
+                <input type="text" id="createdInput" placeholder="Erstellungsdatum">
+                <input type="text" id="descriptionInput" placeholder="Beschreibung">
+                <button type="submit">Konzeptschema laden</button>
+              </form>
+            </div>
             <br>
             <!-- temporary disabled
             <button onclick = readExample() id = "exampleButton" >Beispiel laden</button>

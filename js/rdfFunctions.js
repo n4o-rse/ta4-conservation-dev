@@ -367,13 +367,60 @@ async function generateCommentedIdList() {
 }
 
 async function generateThesaurus(idObject, topPosition) {
-  let thesaurusNamespace = prompt("Bitte geben Sie den Namespace des Thesaurus an, den Sie anzeigen möchten. (z.B. https://BeispielThesaurus.de/)", "");
+  let thesaurusNamespace = prompt("Bitte geben Sie den Namespace des Thesaurus an, den Sie anzeigen möchten. (z.B. https://BeispielThesaurus.de/)", "https://");
   if (thesaurusNamespace == null || thesaurusNamespace == "") {
     alert("Kein Namespace eingegeben! Bitte erneut versuchen.");
     generateThesaurus(idObject, topPosition);
   } else {
     alert("Der Namespace lautet: " + thesaurusNamespace);
   }
-  // reminder: remove orphanage and orphans
-  // reminder: remove thesaurus-concept
+  // remove idObject["top"]
+  idObject = Object.fromEntries(Object.entries(idObject).filter(([key, value]) => key != "top"));
+  // remove idObject["orphanage"]
+  idObject = Object.fromEntries(Object.entries(idObject).filter(([key, value]) => key != "orphanage"));
+  // remove every object having "orphanage" as parent
+  for (let key in idObject) {
+    if (idObject[key]["parent"] == "orphanage") {
+      delete idObject[key];
+    }
+  }
+
+  // declare namespaces for skos and needed entities
+  var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
+  var DC = $rdf.Namespace("http://purl.org/dc/terms/");
+  var RDFS = $rdf.Namespace("http://www.w3.org/2000/01/rdf-schema#");
+
+  // declare relevant entities for skos properties like prefLabel, altLabel, description, broader, related, closeMatch, relatedMatch, example, inScheme, topConceptOf
+  var prefLabel = SK('prefLabel');
+  var altLabel = SK('altLabel');
+  // be careful ob key "description" in idObject while in skos it is "definition" 
+  var definition = SK('definition');
+  var broader = SK('broader');
+  var related = SK('related');
+  var closeMatch = SK('closeMatch');
+  var relatedMatch = SK('relatedMatch');
+  var example = SK('example');
+  var inScheme = SK('inScheme');
+  var topConceptOf = SK('topConceptOf');
+
+  // declare relevant non skos properties like seeAlso, title, creator, source, publisher, contributor, subject, created, description
+  var translation = SK('translation');
+  var seeAlso = RDFS('seeAlso');
+  var title = DC('title');
+  var creator = DC('creator');
+  var source = DC('source');
+  var publisher = DC('publisher');
+  var contributor = DC('contributor');
+  var subject = DC('subject');
+  var created = DC('created');
+  var description = DC('description');
+
+  // create store
+  let store = $rdf.graph();
+  
+  // create thesaurus concept scheme
+  let thesaurusConceptScheme = $rdf.sym(thesaurusNamespace + "thesaurus");
+  store.add(thesaurusConceptScheme, RDF('type'), SK('ConceptScheme'));
+  
+
 }
