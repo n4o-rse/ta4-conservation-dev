@@ -53,8 +53,8 @@ function closeconceptSchemeModal() {
   let modal = document.getElementById("conceptSchemeModal");
   modal.style.display = "none";
   let form = document.getElementById("conceptSchemeForm");
-  // reset value of all input elements
-  form.reset();
+  // reset value of all input elements in form, currently deactivated
+  //form.reset();
 }
 
 function collectThesaurusData(idObject, topPosition) {
