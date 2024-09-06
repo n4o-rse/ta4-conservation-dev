@@ -378,12 +378,11 @@ async function generateThesaurus(idObject, topPosition) {
   conceptSchemeDescription = document.getElementById("descriptionInput").value;
   conceptSchemeCreated = document.getElementById("createdInput").value;
   // select radio element of conceptSchemeForm which is checked
-  let radioElements = conceptSchemeForm.getElementByType("radio");
   let conceptSchemeFormat;
-  for (let i = 0; i < radioElements.length; i++) {
-    if (radioElements[i].checked) {
-      conceptSchemeFormat = radioElements[i].value;
-    }
+  if (document.getElementById("turtleFormatRadio").checked) {
+      conceptSchemeFormat = 'text/turtle'
+    } else if (document.getElementById("jsonldFormatRadio").checked) {
+      conceptSchemeFormat = 'application/ld+json'
   }
   closeconceptSchemeModal()
   // remove idObject["top"]
@@ -445,12 +444,7 @@ async function generateThesaurus(idObject, topPosition) {
   store.add(thesaurusConceptScheme, created, conceptSchemeCreated);
   store.add(thesaurusConceptScheme, description, conceptSchemeDescription);
   // serialize store into ttl if conceptSchemeFormat = "Turtle" and into json-ld if conceptSchemeFormat = "JSON-LD"
-  let serializedThesaurus;
-  if (conceptSchemeFormat == "Turtle") {
-    serializedThesaurus = $rdf.serialize(null, store, thesaurusNamespace + "thesaurus", 'text/turtle');
-  } else if (conceptSchemeFormat == "JSON-LD") {
-    serializedThesaurus = $rdf.serialize(null, store, thesaurusNamespace + "thesaurus", 'application/ld+json');
-  }
+  let serializedThesaurus = $rdf.serialize(null, store, thesaurusNamespace + "thesaurus", conceptSchemeFormat);
   // create alert with serialized thesaurus as string
   alert(serializedThesaurus);
 }
