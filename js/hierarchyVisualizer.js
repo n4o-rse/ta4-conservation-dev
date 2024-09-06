@@ -144,17 +144,17 @@ async function visualizeData([stratifiedData, idObject]) {
   let visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
   let svg;
   let visualizationObject = {
-    "Indented Tree": function() {return generateIndentedTree(stratifiedData, idObject, commentConceptObject)},
-    "Tidy tree": function() {return generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
-    "Cluster tree": function() {return generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
-    "Radial tidy tree": function() {return generateRadialTidyTree(stratifiedData, idObject, commentConceptObject)}, 
-    "Radial cluster tree": function() {return generateRadialClusterTree(stratifiedData, idObject, commentConceptObject)}, 
-    "Collapsible Tree": function() {return generateCollapsibleTree(stratifiedData, idObject, commentConceptObject)}, 
-    "Sunburst(keine Kommentare)": function() {return generateSunburst(stratifiedData, idObject, commentConceptObject)}, 
-    "Icicle": function() {return generateIcicle(stratifiedData, idObject, commentConceptObject)}
+    "Indented Tree": () => {return generateIndentedTree(stratifiedData, idObject, commentConceptObject)},
+    "Tidy tree": () => {return generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
+    "Cluster tree": () => {return generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
+    "Radial tidy tree": () => {return generateRadialTidyTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Radial cluster tree": () => {return generateRadialClusterTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Collapsible Tree": () => {return generateCollapsibleTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Sunburst(keine Kommentare)": () => {return generateSunburst(stratifiedData, idObject, commentConceptObject)}, 
+    "Icicle": () => {return generateIcicle(stratifiedData, idObject, commentConceptObject)}
   }
   try {
-    svg = visualizationObject[visualizationType];
+    svg = visualizationObject[visualizationType]();
     document.getElementById("errorText").innerHTML = "";
     document.getElementById("errorText").style.color = "black";
     document.getElementById("chartDiv").innerHTML = "";
