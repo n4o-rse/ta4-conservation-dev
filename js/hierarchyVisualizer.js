@@ -144,16 +144,17 @@ async function visualizeData([stratifiedData, idObject]) {
   let visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
   let svg;
   let visualizationObject = {
-    "Indented Tree": () => {return generateIndentedTree(stratifiedData, idObject, commentConceptObject)},
-    "Tidy tree": () => {return generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
-    "Cluster tree": () => {return generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
-    "Radial tidy tree": () => {return generateRadialTidyTree(stratifiedData, idObject, commentConceptObject)}, 
-    "Radial cluster tree": () => {return generateRadialClusterTree(stratifiedData, idObject, commentConceptObject)}, 
-    "Collapsible Tree": () => {return generateCollapsibleTree(stratifiedData, idObject, commentConceptObject)}, 
-    "Sunburst(keine Kommentare)": () => {return generateSunburst(stratifiedData, idObject, commentConceptObject)}, 
-    "Icicle": () => {return generateIcicle(stratifiedData, idObject, commentConceptObject)}
+    "Indented Tree": () => {generateIndentedTree(stratifiedData, idObject, commentConceptObject)},
+    "Tidy tree": () => {generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
+    "Cluster tree": () => {generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
+    "Radial tidy tree": () => {generateRadialTidyTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Radial cluster tree": () => {generateRadialClusterTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Collapsible Tree": () => {generateCollapsibleTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Sunburst(keine Kommentare)": () => {generateSunburst(stratifiedData, idObject, commentConceptObject)}, 
+    "Icicle": () => {generateIcicle(stratifiedData, idObject, commentConceptObject)}
   }
   try {
+    // call the visualization function as value of they key visualizationType
     svg = visualizationObject[visualizationType]();
     document.getElementById("errorText").innerHTML = "";
     document.getElementById("errorText").style.color = "black";
