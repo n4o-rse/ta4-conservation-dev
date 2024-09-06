@@ -133,17 +133,16 @@
     }
 }
 
-  #conceptSchemeDiv {
+  #conceptSchemeModal {
     /* 
     place the modal in the center of the screen
     small border around the modal
     */
     /*display: none;*/
-    position: fixed;
-    z-index: 1;
-    padding-top: 10px;
-    border: solid 1px #888;
-    width: 50%;
-    height: 50%;
-    margin: auto;
+    border: 5px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
   }
