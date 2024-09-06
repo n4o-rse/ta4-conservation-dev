@@ -122,7 +122,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       document.getElementById("visualizeButton").before(radioDiv);
       document.getElementById("Indented Tree").checked = true;
       document.getElementById("visualizeButton").before(lineBreak);
-      return [stratifiedData, idObject, radioTypes];
+      return [stratifiedData, idObject];
     } 
     catch (error) {
       console.log(error);
@@ -141,20 +141,20 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
 async function visualizeData([stratifiedData, idObject]) {
   // ["Indented Tree","Tidy tree", "Cluster tree", "Radial tidy tree", "Radial cluster tree", "Collapsible Tree", "Sunburst(keine Kommentare)", "Icicle"]; //"Force directed tree",
   let commentConceptObject = await generateCommentedIdList();
-  const visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
+  let visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
   let svg;
   let visualizationObject = {
-    "Indented Tree": generateIndentedTree(stratifiedData, idObject, commentConceptObject),
-    "Tidy tree":generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject), 
-    "Cluster tree":generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject), 
-    "Radial tidy tree":generateRadialTidyTree(stratifiedData, idObject, commentConceptObject), 
-    "Radial cluster tree":generateRadialClusterTree(stratifiedData, idObject, commentConceptObject), 
-    "Collapsible Tree": generateCollapsibleTree(stratifiedData, idObject, commentConceptObject), 
-    "Sunburst(keine Kommentare)": generateSunburst(stratifiedData, idObject, commentConceptObject), 
-    "Icicle":generateIcicle(stratifiedData, idObject, commentConceptObject)
+    "Indented Tree": function() {generateIndentedTree(stratifiedData, idObject, commentConceptObject)},
+    "Tidy tree": function() {generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
+    "Cluster tree": function() {generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
+    "Radial tidy tree": function() {generateRadialTidyTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Radial cluster tree": function() {generateRadialClusterTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Collapsible Tree": function() {generateCollapsibleTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Sunburst(keine Kommentare)": function() {generateSunburst(stratifiedData, idObject, commentConceptObject)}, 
+    "Icicle": function() {generateIcicle(stratifiedData, idObject, commentConceptObject)}
   }
   try {
-    svg = visualizationObject.visualizationType;
+    svg = visualizationObject[visualizationType];
     document.getElementById("errorText").innerHTML = "";
     document.getElementById("errorText").style.color = "black";
     document.getElementById("chartDiv").innerHTML = "";
