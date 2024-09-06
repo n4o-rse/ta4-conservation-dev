@@ -139,7 +139,7 @@
     small border around the modal
     */
     /*display: none;*/
-    border: 3px grey solid;
+    border: 2px grey solid;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -148,5 +148,5 @@
   }
 
   .conceptSchemeFormInput {
-    size: 100;
+    size: 200;
   }
