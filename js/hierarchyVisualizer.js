@@ -144,14 +144,14 @@ async function visualizeData([stratifiedData, idObject]) {
   let visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
   let svg;
   let visualizationObject = {
-    "Indented Tree": function() {generateIndentedTree(stratifiedData, idObject, commentConceptObject)},
-    "Tidy tree": function() {generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
-    "Cluster tree": function() {generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
-    "Radial tidy tree": function() {generateRadialTidyTree(stratifiedData, idObject, commentConceptObject)}, 
-    "Radial cluster tree": function() {generateRadialClusterTree(stratifiedData, idObject, commentConceptObject)}, 
-    "Collapsible Tree": function() {generateCollapsibleTree(stratifiedData, idObject, commentConceptObject)}, 
-    "Sunburst(keine Kommentare)": function() {generateSunburst(stratifiedData, idObject, commentConceptObject)}, 
-    "Icicle": function() {generateIcicle(stratifiedData, idObject, commentConceptObject)}
+    "Indented Tree": function() {return generateIndentedTree(stratifiedData, idObject, commentConceptObject)},
+    "Tidy tree": function() {return generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
+    "Cluster tree": function() {return generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
+    "Radial tidy tree": function() {return generateRadialTidyTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Radial cluster tree": function() {return generateRadialClusterTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Collapsible Tree": function() {return generateCollapsibleTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Sunburst(keine Kommentare)": function() {return generateSunburst(stratifiedData, idObject, commentConceptObject)}, 
+    "Icicle": function() {return generateIcicle(stratifiedData, idObject, commentConceptObject)}
   }
   try {
     svg = visualizationObject[visualizationType];
