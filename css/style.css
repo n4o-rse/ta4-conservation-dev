@@ -132,20 +132,19 @@
         opacity: 0.3;
     }
 }
+
+  #conceptSchemeDiv {
   /* 
-  center at the screen with 50% width and height
+  center at the screen
   grey border
   */
-  #conceptSchemeDiv {
     /*display: none;*/
     position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid grey;
-    background-color: white;
     z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     overflow: auto;
   }
