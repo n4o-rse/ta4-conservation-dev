@@ -370,6 +370,7 @@ async function generateThesaurus(idObject, topPosition) {
   event.preventDefault();
   //read all form data from conceptSchemeForm
   let conceptSchemeNamespace = document.getElementById("nameSpaceInput").value;
+  console.log(conceptSchemeNamespace)
   conceptSchemeTitle = document.getElementById("titleInput").value;
   conceptSchemeCreator = document.getElementById("creatorInput").value;
   conceptSchemePublisher = document.getElementById("publisherInput").value;
@@ -434,7 +435,7 @@ async function generateThesaurus(idObject, topPosition) {
   let store = $rdf.graph();
   
   // create thesaurus concept scheme
-  let thesaurusConceptScheme = $rdf.sym(conceptSchemeNamespace + "thesaurus");
+  let thesaurusConceptScheme = $rdf.sym("thesaurus1");
   store.add(thesaurusConceptScheme, type, conceptScheme);
   store.add(thesaurusConceptScheme, title, conceptSchemeTitle);
   store.add(thesaurusConceptScheme, creator, conceptSchemeCreator);
