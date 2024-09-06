@@ -115,7 +115,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
 
       let thesaurusDownloadButton = document.createElement("button");
       thesaurusDownloadButton.id = "thesaurusDownloadButton";
-      thesaurusDownloadButton.innerHTML = "Thesaurus als RDF herunterladen";
+      thesaurusDownloadButton.innerHTML = "Thesaurus herunterladen";
       thesaurusDownloadButton.onclick = function() {generateThesaurus(idObject, topPosition)};
 
       document.getElementById("chartDiv").before(visualizationButton);
@@ -169,7 +169,7 @@ async function visualizeData([stratifiedData, idObject]) {
     if (!document.getElementById("downloadButton")) {
       const button = document.createElement("button");
       button.id = "downloadButton";
-      button.innerHTML = "Download Visualization";
+      button.innerHTML = "Visualisierung herunterladen";
       button.onclick = function() {downloadSvg(svg, visualizationType)};
       document.getElementById("chartDiv").after(button);
     }

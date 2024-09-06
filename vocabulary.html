@@ -53,14 +53,20 @@
             -->
             <div id="conceptSchemeModal">
               <form id="conceptSchemeForm">
-                <input type="text" id="titleInput" placeholder="Titel"> <br>
-                <input type="text" id="creatorInput" placeholder="Ersteller"> <br>
-                <input type="text" id="publisherInput" placeholder="Veröffentlicher"> <br>
-                <input type="text" id="contributorInput" placeholder="Mitwirkende"> <br>
-                <input type="text" id="subjectInput" placeholder="Themen"> <br>
-                <input type="text" id="createdInput" placeholder="Erstellungsdatum"> <br>
-                <input type="text" id="descriptionInput" placeholder="Beschreibung"> <br>
-                <button type="submit">Konzeptschema laden</button>
+                <input type="text" id="titleInput" placeholder="Titel" class="conceptSchemeFormInput"> <br>
+                <input type="text" id="creatorInput" placeholder="Ersteller" class="conceptSchemeFormInput"> <br>
+                <input type="text" id="publisherInput" placeholder="Veröffentlicher" class="conceptSchemeFormInput"> <br>
+                <input type="text" id="contributorInput" placeholder="Mitwirkende" class="conceptSchemeFormInput"> <br>
+                <input type="text" id="subjectInput" placeholder="Themen" class="conceptSchemeFormInput"> <br>
+                <input type="text" id="createdInput" placeholder="Erstellungsdatum" class="conceptSchemeFormInput"> <br>
+                <input type="text" id="descriptionInput" placeholder="Beschreibung" class="conceptSchemeFormInput"> <br>
+                <p>Format wählen</p>
+                <input type="radio" id="turtleFormatRadio">
+                <label for="turtleFormatRadio">Turtle</label>
+                <input type="radio" id="jsonldFormatRadio">
+                <label for="jsonldFormatRadio">JSON-LD</label>
+                <br>
+                <button type="submit">Thesaurus generieren</button>
               </form>
             </div>
             <br>
