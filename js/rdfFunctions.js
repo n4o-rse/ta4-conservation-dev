@@ -367,9 +367,28 @@ async function generateCommentedIdList() {
 }
 
 async function generateThesaurus(idObject, topPosition) {
+  event.preventDefault();
+  //read all form data from conceptSchemeForm
+  let conceptSchemeForm = document.getElementById("conceptSchemeForm");
+  conceptSchemeTitle = conceptSchemeForm.elements["conceptSchemeTitle"].value;
+  conceptSchemeCreator = conceptSchemeForm.elements["conceptSchemeCreator"].value;
+  conceptSchemeSource = conceptSchemeForm.elements["conceptSchemeSource"].value;
+  conceptSchemePublisher = conceptSchemeForm.elements["conceptSchemePublisher"].value;
+  conceptSchemeContributor = conceptSchemeForm.elements["conceptSchemeContributor"].value;
+  conceptSchemeSubject = conceptSchemeForm.elements["conceptSchemeSubject"].value;
+  conceptSchemeDescription = conceptSchemeForm.elements["conceptSchemeDescription"].value;
+  conceptSchemeCreated = conceptSchemeForm.elements["conceptSchemeCreated"].value;
+  // select radio element of conceptSchemeForm which is checked
+  let radioElements = conceptSchemeForm.elements["conceptSchemeType"];
+  let radioValue;
+  for (let i = 0; i < radioElements.length; i++) {
+    if (radioElements[i].checked) {
+      radioValue = radioElements[i].value;
+    }
+  }
 
+  closeconceptSchemeModal()
   alert("Everything is working fine until here!");
-  document.getElementById("conceptSchemeModal").style.display = "none";
   // remove idObject["top"]
   idObject = Object.fromEntries(Object.entries(idObject).filter(([key, value]) => key != "top"));
   // remove idObject["orphanage"]
@@ -385,6 +404,7 @@ async function generateThesaurus(idObject, topPosition) {
   var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
   var DC = $rdf.Namespace("http://purl.org/dc/terms/");
   var RDFS = $rdf.Namespace("http://www.w3.org/2000/01/rdf-schema#");
+  var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
 
   // declare relevant entities for skos properties like prefLabel, altLabel, description, broader, related, closeMatch, relatedMatch, example, inScheme, topConceptOf
   var prefLabel = SK('prefLabel');
@@ -398,6 +418,8 @@ async function generateThesaurus(idObject, topPosition) {
   var example = SK('example');
   var inScheme = SK('inScheme');
   var topConceptOf = SK('topConceptOf');
+  var concept = SK('Concept');
+  var conceptScheme = SK('ConceptScheme');
 
   // declare relevant non skos properties like seeAlso, title, creator, source, publisher, contributor, subject, created, description
   var translation = SK('translation');
@@ -410,11 +432,12 @@ async function generateThesaurus(idObject, topPosition) {
   var subject = DC('subject');
   var created = DC('created');
   var description = DC('description');
+  var type = RDF('type');
 
   // create store
   let store = $rdf.graph();
   
   // create thesaurus concept scheme
   let thesaurusConceptScheme = $rdf.sym(thesaurusNamespace + "thesaurus");
-  store.add(thesaurusConceptScheme, RDF('type'), SK('ConceptScheme'));
+  store.add(thesaurusConceptScheme, type, conceptScheme);
 }

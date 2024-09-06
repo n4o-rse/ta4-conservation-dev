@@ -1,4 +1,4 @@
-// event functions
+// event functions and button onclick functions
 
 function thesaurusInputFile() {
     event.preventDefault();
@@ -60,6 +60,18 @@ function closeconceptSchemeModal() {
 function collectThesaurusData(idObject, topPosition) {
   event.preventDefault();
   // make modal visible
+  let dateInput = document.getElementById("createdInput");
+  // reset readonly attribute of dateInput
+  dateInput.removeAttribute("readonly");
+  // fill dateInput with current date
+  let currentDate = new Date()
+  // add timezone offset to get local time
+  currentDate.setMinutes(currentDate.getMinutes() - currentDate.getTimezoneOffset());
+  // get current date in format yyyy-mm-dd
+  let dateString = currentDate.toISOString().slice(0, 10);
+  dateInput.value = dateString;
+  // set readonly attribute of dateInput again
+  dateInput.setAttribute("readonly", "readonly");
   let modal = document.getElementById("conceptSchemeModal");
   modal.style.display = "block";
   let conceptSchemeFormButton = document.getElementById("conceptSchemeFormButton");
