@@ -113,7 +113,6 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       button.innerHTML = "Tabelle visualisieren";
       button.onclick = function() {visualizeData([stratifiedData, idObject])};
       document.getElementById("chartDiv").before(button);
-
       //check if there is an Element with id lineBreak
       if (document.getElementById("linebreak") != null) {
         document.getElementById("lineBreak").remove();
@@ -148,25 +147,25 @@ async function visualizeData([stratifiedData, idObject]) {
       svg = generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject);
     }
     if (visualizationType == "Radial tidy tree") {
-      svg = generateRadialTidyTree(stratifiedData, idObject);
+      svg = generateRadialTidyTree(stratifiedData, idObject, commentConceptObject);
     }
     if (visualizationType == "Radial cluster tree") {
-      svg = generateRadialClusterTree(stratifiedData, idObject);
+      svg = generateRadialClusterTree(stratifiedData, idObject, commentConceptObject);
     }
     if (visualizationType == "Sunburst(keine Kommentare)") {
-      svg = generateSunburst(stratifiedData, idObject);
+      svg = generateSunburst(stratifiedData, idObject, commentConceptObject);
     }
     if (visualizationType == "Force directed tree") {
-      svg = generateForceDirectedTree(stratifiedData, idObject);
+      svg = generateForceDirectedTree(stratifiedData, idObject, commentConceptObject);
     }
     if (visualizationType == "Collapsible Tree") {
-      svg = generateCollapsibleTree(stratifiedData, idObject);
+      svg = generateCollapsibleTree(stratifiedData, idObject, commentConceptObject);
     }
     if (visualizationType == "Indented Tree") {
       svg = generateIndentedTree(stratifiedData, idObject, commentConceptObject);
     }
     if (visualizationType == "Icicle") {
-      svg = generateIcicle(stratifiedData, idObject);
+      svg = generateIcicle(stratifiedData, idObject, commentConceptObject);
     }
     document.getElementById("errorText").innerHTML = "";
     document.getElementById("errorText").style.color = "black";
@@ -222,11 +221,12 @@ function cleanTableData(data) {
   const ignored = []
   for (let i = 0; i < data.length; i++) {
     let row = data[i];
+    // iterate over all row properties and remove whitespaces
+    for (let key in row) {
+      row[key] = row[key].trim();
+    }
     if (row.parent != "ignore") {
       if (row.prefLabel != "" && row.identifier != "") {
-        row.identifier = row.identifier.replace(/\s/g, "");
-        row.parent = row.parent.replace(/\s/g, "");
-        row.prefLabel = row.prefLabel.replace(/\s/g, "");
         cleanArray.push(row);
       }
     }

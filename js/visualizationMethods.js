@@ -140,7 +140,7 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
       .attr("fill", "currentColor")
-      //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
+      .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
       .text(d => idObject[d.data.id]["prefLabel"])
       .on("click", (e, d) => openDetails(d.data.id, idObject));
 
@@ -282,6 +282,7 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
   return svg.attr("viewBox", autoBox).node(); //
   }
 
+/* not too useful at the moment
 // Validation Method from observable missing
 function generateForceDirectedTree(data, idObject, commentConceptObject) {
 
@@ -373,6 +374,7 @@ function generateForceDirectedTree(data, idObject, commentConceptObject) {
   
     return svg.node();
   }
+  */
 
   function generateCollapsibleTree(data, idObject, commentConceptObject) {
 
@@ -678,6 +680,7 @@ function generateIcicle(data, idObject, commentConceptObject) {
     return svg.node();
   }
 
+  /* not too useful, maybe get to work later
   function generateGraphWithLabels(data){
     return ForceGraph(data, {
         nodeId: d => d.id,
@@ -854,3 +857,4 @@ function generateIcicle(data, idObject, commentConceptObject) {
         return Object.assign(svg.node(), { scales: { color } });
       }
 }
+*/

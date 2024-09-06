@@ -111,18 +111,17 @@ async function openDetails(id, idObject) {
         body[0].appendChild(detailDiv);
       }
     } 
-    // temporary fix storing id in comment-button className, to call event listener with id parameter
-    // pls change this!
 
     let closeModalButton = document.getElementsByClassName("close")[0];
     closeModalButton.onclick = closeModal;
 
-    // not trying to avoid storing id in className anymore
+    // storing id of current concept and idObject comment-button data-properties, to feed updataPod function with parameters
     let commentButton = document.getElementById("commentButton")
     commentButton.dataset.id = id.toString();
     commentButton.dataset.idObject = JSON.stringify(idObject);
 
     /* alternative way to call updatePod with parameters
+    // generates an event listener for every concept id clicked, would need listener removal after each comment to work...
     const commentForm = document.getElementById("commentForm");
     commentForm.addEventListener("submit", function() { // anonymous function to call updatePod with parameters
       event.preventDefault();
@@ -131,13 +130,10 @@ async function openDetails(id, idObject) {
     */
 
     await readComments(id, idObject);
-
     modal.style.display = "block";
 }
 
 async function readComments(id, idObject) {
-  console.log("id: " + id)
-  console.log("idObject: " + idObject)
   try {
     // clean modal content from previous comments
     var commentDiv = document.getElementsByClassName("modal-comments")[0];
@@ -158,10 +154,8 @@ async function readComments(id, idObject) {
     let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
     // parse json-ld into object
     let parsedJson = JSON.parse(jsonldSerialization)
-    console.log("parsedJson " + parsedJson)
     let commentObject = {comments: {}, concepts: {}}
     let jsonCommentArray = parsedJson["@graph"].filter(obj => obj["@type"] == "o:Annotation")
-    console.log("jsonCommentArray " + jsonCommentArray)
     let jsonConceptArray = parsedJson["@graph"].filter(obj => obj["@type"] == "skos:Concept")
     for (let x of jsonCommentArray) {
       commentObjectID = x["@id"].split("n0:")[1]
@@ -173,7 +167,6 @@ async function readComments(id, idObject) {
     }
     for (let x of jsonConceptArray) {
       conceptObjectID = x["@id"].split("n0:concept")[1]
-      console.log("conceptObjectID " + conceptObjectID)
       commentObject["concepts"][conceptObjectID] = {}
       if (idObject[conceptObjectID]["prefLabel"] == undefined) {
         commentObject["concepts"][conceptObjectID]["prefLabel"] = "gelöschter Begriff"
@@ -371,4 +364,10 @@ async function generateCommentedIdList() {
     commentConceptObject[sortedCommentConceptArray[i]] = colorArray[i];
   }
   return commentConceptObject
+}
+
+async function generateThesaurus(idObject, topPosition) {
+
+  // reminder: remove orphanage and orphans
+  // reminder: remove thesaurus-concept
 }
