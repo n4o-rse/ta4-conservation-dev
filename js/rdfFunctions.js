@@ -367,7 +367,7 @@ async function generateCommentedIdList() {
 }
 
 async function generateThesaurus(idObject, topPosition) {
-
+  alert("Diese Funktion ist noch in Entwicklung und wird in Kürze verfügbar sein.");
   // reminder: remove orphanage and orphans
   // reminder: remove thesaurus-concept
 }

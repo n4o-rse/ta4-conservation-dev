@@ -108,11 +108,17 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
         let lineBreak = document.createElement("br");
         radioDiv.appendChild(lineBreak);
       }
-      const button = document.createElement("button");
-      button.id = "visualizeButton";
-      button.innerHTML = "Tabelle visualisieren";
-      button.onclick = function() {visualizeData([stratifiedData, idObject, radioTypes])};
-      document.getElementById("chartDiv").before(button);
+      let visualizationButton = document.createElement("button");
+      visualizationButton.id = "visualizeButton";
+      visualizationButton.innerHTML = "Tabelle visualisieren";
+      visualizationButton.onclick = function() {visualizeData([stratifiedData, idObject, radioTypes])};
+
+      let thesaurusDownloadButton = document.createElement("button");
+      thesaurusDownloadButton.id = "thesaurusDownloadButton";
+      thesaurusDownloadButton.innerHTML = "Thesaurus als RDF herunterladen";
+      thesaurusDownloadButton.onclick = function() {generateThesaurus(idObject, topPosition)};
+
+      document.getElementById("chartDiv").before(visualizationButton);
       //check if there is an Element with id lineBreak
       if (document.getElementById("linebreak") != null) {
         document.getElementById("lineBreak").remove();
