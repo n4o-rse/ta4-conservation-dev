@@ -55,7 +55,7 @@ function closeconceptSchemeModal() {
   form.reset();
 }
 
-function collectThesaurusData() {
+function collectThesaurusData(idObject, topPosition) {
   // make modal visible
   let modal = document.getElementById("conceptSchemeModal");
   modal.style.display = "block";
