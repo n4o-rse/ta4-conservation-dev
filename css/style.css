@@ -138,6 +138,7 @@
     place the modal in the center of the screen
     small border around the modal
     stay in place, even when scrolling
+    not transparent
     */
     /*display: none;*/
     border: 2px grey solid;
@@ -146,6 +147,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px; 
+    background-color: white;
+    z-index: 1000;
   }
 
   .conceptSchemeFormInput {
