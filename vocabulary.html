@@ -67,10 +67,12 @@
                 <input type="text" id="createdInput" placeholder="Erstellungsdatum" class="conceptSchemeFormInput" readonly> <br>
                 <input type="text" id="descriptionInput" placeholder="Beschreibung" class="conceptSchemeFormInput"> <br>
                 <p>Format wählen</p>
-                <input type="radio" id="turtleFormatRadio">
-                <label for="turtleFormatRadio">Turtle</label><br>
-                <input type="radio" id="jsonldFormatRadio">
-                <label for="jsonldFormatRadio">JSON-LD</label>
+                <form id="radioForm">
+                  <input type="radio" id="turtleFormatRadio" checked>
+                  <label for="turtleFormatRadio">Turtle</label><br>
+                  <input type="radio" id="jsonldFormatRadio">
+                  <label for="jsonldFormatRadio">JSON-LD</label>
+                </form>
                 <br><br>
                 <button type="submit" id="conceptSchemeFormButton">Thesaurus generieren</button>
               </form>
