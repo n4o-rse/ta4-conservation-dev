@@ -368,6 +368,8 @@ async function generateCommentedIdList() {
 
 async function generateThesaurus(idObject, topPosition) {
   event.preventDefault();
+  console.log("idObject", idObject)
+  console.log("topPosition", topPosition)
   //read all form data from conceptSchemeForm
   let conceptSchemeNamespace = document.getElementById("nameSpaceInput").value;
   console.log(conceptSchemeNamespace)
@@ -447,6 +449,7 @@ async function generateThesaurus(idObject, topPosition) {
 
   // iterate over all concepts in idObject and add them and their properties to the store
   for (let key in idObject) {
+    console.log("concept " + key, idObject[key])
     let concept = $rdf.sym(conceptSchemeNamespace+"/concept" + key);
     store.add(concept, type, SK('Concept'));
     store.add(concept, prefLabel, idObject[key]["prefLabel"]);
@@ -492,10 +495,14 @@ async function generateThesaurus(idObject, topPosition) {
       for (let i = 0; i < seeAlsos.length; i++) {
         store.add(concept, seeAlso, seeAlsos[i]);
       }
+    }
     // check if idObject[key] is a top concept and add it to thesaurusConceptScheme if so
+    for (let topObject in topPosition) {
+      if (topObject.identifier == idObject[key]["identifier"]) {
+        store.add(concept, topConceptOf, thesaurusConceptScheme);
+      }
     }
   }
-
   try {
     let serializedThesaurus = $rdf.serialize(null, store, conceptSchemeNamespace, conceptSchemeFormat);
     // create alert with serialized thesaurus as string
