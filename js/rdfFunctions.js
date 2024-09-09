@@ -111,10 +111,6 @@ async function openDetails(id, idObject) {
         body[0].appendChild(detailDiv);
       }
     } 
-
-    let closeModalButton = document.getElementsByClassName("close")[0];
-    closeModalButton.onclick = closeModal;
-
     // storing id of current concept and idObject comment-button data-properties, to feed updataPod function with parameters
     let commentButton = document.getElementById("commentButton")
     commentButton.dataset.id = id.toString();

@@ -42,17 +42,17 @@ function saveUserName() {
   document.getElementById("commentButton").innerText = `Kommentieren als ${userNameText}`;
 }
 
-function closeModal() {
+function closeConceptModal() {
   event.preventDefault();
   let modal = document.getElementById("myModal");
   modal.style.display = "none";
 }
 
-function closeconceptSchemeModal() {
+function closeConceptSchemeModal() {
   event.preventDefault();
   let modal = document.getElementById("conceptSchemeModal");
   modal.style.display = "none";
-  let form = document.getElementById("conceptSchemeForm");
+  //let form = document.getElementById("conceptSchemeForm");
   // reset value of all input elements in form, currently deactivated
   //form.reset();
 }
