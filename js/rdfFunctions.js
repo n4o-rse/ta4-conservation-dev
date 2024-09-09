@@ -534,11 +534,16 @@ async function generateThesaurus(idObject, topPosition) {
   try {
     let serializedThesaurus = $rdf.serialize(null, store, conceptSchemeNamespace, conceptSchemeFormat);
     // download file thesaurus.ttl if format is turtle or thesaurus.json if format is jsonld with the serialized thesaurus
+    a = document.createElement("a");
     if (conceptSchemeFormat == 'text/turtle') {
-      download("thesaurus.ttl", serializedThesaurus);
+      a.href = URL.createObjectURL(new Blob([serializedThesaurus], {type: 'text/turtle'}));
+      a.download = 'thesaurus.ttl';
     } else if (conceptSchemeFormat == 'application/ld+json') {
-      download("thesaurus.json", serializedThesaurus);
+      a.href = URL.createObjectURL(new Blob([serializedThesaurus], {type: 'application/ld+json'}));
+      a.download = 'thesaurus.json';
     }
+    a.click();
+    document.body.removeChild(a);
   } catch (error) {
     alert(error);
   }
