@@ -543,7 +543,7 @@ async function generateThesaurus(idObject, topPosition) {
       a.download = 'thesaurus.json';
     }
     a.click();
-    document.body.removeChild(a);
+    document.removeChild(a);
   } catch (error) {
     alert(error);
   }
