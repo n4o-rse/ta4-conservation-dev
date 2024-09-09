@@ -400,44 +400,44 @@ async function generateThesaurus(idObject, topPosition) {
   }
 
   // declare namespaces for skos and needed entities
-  var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
-  var DC = $rdf.Namespace("http://purl.org/dc/terms/");
-  var RDFS = $rdf.Namespace("http://www.w3.org/2000/01/rdf-schema#");
-  var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+  let SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
+  let DC = $rdf.Namespace("http://purl.org/dc/terms/");
+  let RDFS = $rdf.Namespace("http://www.w3.org/2000/01/rdf-schema#");
+  let RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
 
   // declare relevant entities for skos properties like prefLabel, altLabel, description, broader, related, closeMatch, relatedMatch, example, inScheme, topConceptOf
-  var prefLabel = SK('prefLabel');
-  var altLabel = SK('altLabel');
+  let prefLabel = SK('prefLabel');
+  let altLabel = SK('altLabel');
   // be careful ob key "description" in idObject while in skos it is "definition" 
-  var definition = SK('definition');
-  var broader = SK('broader');
-  var related = SK('related');
-  var closeMatch = SK('closeMatch');
-  var relatedMatch = SK('relatedMatch');
-  var example = SK('example');
-  var inScheme = SK('inScheme');
-  var topConceptOf = SK('topConceptOf');
-  var concept = SK('Concept');
-  var conceptScheme = SK('ConceptScheme');
+  let definition = SK('definition');
+  // be careful ob key "parent" in idObject while in skos it is "broader"
+  let broader = SK('broader');
+  let related = SK('related');
+  let closeMatch = SK('closeMatch');
+  let relatedMatch = SK('relatedMatch');
+  let example = SK('example');
+  let inScheme = SK('inScheme');
+  let topConceptOf = SK('topConceptOf');
+  // let concept = SK('Concept'); // removed because used as loop variable
+  let conceptScheme = SK('ConceptScheme');
 
   // declare relevant non skos properties like seeAlso, title, creator, source, publisher, contributor, subject, created, description
-  var translation = SK('translation');
-  var seeAlso = RDFS('seeAlso');
-  var title = DC('title');
-  var creator = DC('creator');
-  var source = DC('source');
-  var publisher = DC('publisher');
-  var contributor = DC('contributor');
-  var subject = DC('subject');
-  var created = DC('created');
-  var description = DC('description');
-  var type = RDF('type');
+  let seeAlso = RDFS('seeAlso');
+  let title = DC('title');
+  let creator = DC('creator');
+  let source = DC('source');
+  let publisher = DC('publisher');
+  let contributor = DC('contributor');
+  let subject = DC('subject');
+  let created = DC('created');
+  let description = DC('description');
+  let type = RDF('type');
 
   // create store
   let store = $rdf.graph();
   
   // create thesaurus concept scheme
-  let thesaurusConceptScheme = $rdf.sym(conceptSchemeNamespace+"/conceptScheme" + "1");
+  let thesaurusConceptScheme = $rdf.sym(conceptSchemeNamespace+"/conceptSchemes/" + "1");
   store.add(thesaurusConceptScheme, type, conceptScheme);
   store.add(thesaurusConceptScheme, title, conceptSchemeTitle);
   store.add(thesaurusConceptScheme, creator, conceptSchemeCreator);
@@ -451,13 +451,34 @@ async function generateThesaurus(idObject, topPosition) {
   for (let key in idObject) {
     console.log("concept " + key, idObject[key])
     let concept = $rdf.sym(conceptSchemeNamespace+"/concepts/" + key);
+    console.log("concept IRI", concept)
+
     store.add(concept, type, SK('Concept'));
-    store.add(concept, prefLabel, idObject[key]["prefLabel"]);
-    store.add(concept, definition, idObject[key]["description"]);
+
+    store.add(concept, inScheme, thesaurusConceptScheme);
+
+    // add idObject[key]["prefLabel"]) as rdf:langString german to concept
+    store.add(concept, prefLabel, $rdf.lit(idObject[key]["prefLabel"], undefined, "de"));
+
+    if (idObject[key]["translation"] != "") {
+      let translations = idObject[key]["translation"].split("|");
+      for (let i = 0; i < translations.length; i++) {
+        let translationValue = translations[i].split("@")[0];
+        let translationLang = translations[i].split("@")[1];
+        store.add(concept, prefLabel, $rdf.lit(translationValue, undefined, translationLang));
+      }
+    }
+
+    // add idObject[key]["definition"] as rdf:langString german to concept
+    if (idObject[key]["definition"] != "") {
+      store.add(concept, definition, $rdf.lit(idObject[key]["definition"], undefined, "de"));
+    }
+
     if (idObject[key]["altLabel"] != "") {
       let altLabels = idObject[key]["altLabel"].split("|");
       for (let i = 0; i < altLabels.length; i++) {
-        store.add(concept, altLabel, altLabels[i]);
+        // add altLabels as rdf:langString german to concept
+        store.add(concept, altLabel, $rdf.lit(altLabels[i], undefined, "de"));
       }
     }
     if (idObject[key]["related"] != "") {
@@ -470,12 +491,6 @@ async function generateThesaurus(idObject, topPosition) {
       let sources = idObject[key]["source"].split("|");
       for (let i = 0; i < sources.length; i++) {
         store.add(concept, source, sources[i]);
-      }
-    }
-    if (idObject[key]["creator"] != "") {
-      let creators = idObject[key]["creator"].split("|");
-      for (let i = 0; i < creators.length; i++) {
-        store.add(concept, creator, creators[i]);
       }
     }
     if (idObject[key]["closeMatch"] != "") {
@@ -496,13 +511,26 @@ async function generateThesaurus(idObject, topPosition) {
         store.add(concept, seeAlso, seeAlsos[i]);
       }
     }
+
+    if (idObject[key]["example"] != "") {
+      let examples = idObject[key]["example"].split("|");
+      for (let i = 0; i < examples.length; i++) {
+        store.add(concept, example, examples[i]);
+      }
+    }
+
+    if (idObject[key]["parent"] != "top") {
+      store.add(concept, broader, $rdf.sym(conceptSchemeNamespace+"/concepts/"+ idObject[key]["parent"]));
+    }
+
     // check if idObject[key] is a top concept and add it to thesaurusConceptScheme if so
     for (let topObject in topPosition) {
-      if (topObject.identifier == idObject[key]["identifier"]) {
+      if (topObject["identifier"] == idObject[key]["identifier"]) {
         store.add(concept, topConceptOf, thesaurusConceptScheme);
       }
     }
   }
+  
   try {
     let serializedThesaurus = $rdf.serialize(null, store, conceptSchemeNamespace, conceptSchemeFormat);
     // create alert with serialized thesaurus as string
