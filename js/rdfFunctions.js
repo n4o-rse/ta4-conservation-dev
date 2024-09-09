@@ -470,8 +470,8 @@ async function generateThesaurus(idObject, topPosition) {
     }
 
     // add idObject[key]["definition"] as rdf:langString german to concept
-    if (idObject[key]["definition"] != "") {
-      store.add(concept, definition, $rdf.lit(idObject[key]["definition"], undefined, "de"));
+    if (idObject[key]["description"] != "") {
+      store.add(concept, definition, $rdf.lit(idObject[key]["description"], undefined, "de"));
     }
 
     if (idObject[key]["altLabel"] != "") {
@@ -530,13 +530,16 @@ async function generateThesaurus(idObject, topPosition) {
       }
     }
   }
-  
+
   try {
     let serializedThesaurus = $rdf.serialize(null, store, conceptSchemeNamespace, conceptSchemeFormat);
-    // create alert with serialized thesaurus as string
-    alert(serializedThesaurus);
+    // download file thesaurus.ttl if format is turtle or thesaurus.json if format is jsonld with the serialized thesaurus
+    if (conceptSchemeFormat == 'text/turtle') {
+      download("thesaurus.ttl", serializedThesaurus);
+    } else if (conceptSchemeFormat == 'application/ld+json') {
+      download("thesaurus.json", serializedThesaurus);
+    }
   } catch (error) {
     alert("error")
   }
-  // create concepts
 }
