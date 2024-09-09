@@ -540,6 +540,6 @@ async function generateThesaurus(idObject, topPosition) {
       download("thesaurus.json", serializedThesaurus);
     }
   } catch (error) {
-    alert("error")
+    alert(error);
   }
 }
