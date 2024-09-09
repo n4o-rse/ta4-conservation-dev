@@ -27,6 +27,7 @@ async function readData(data, inputType) {
   let toppedArray = topData(cleanedTableData);
   let toppedData = toppedArray[0];
   let topPosition = toppedArray[1];
+  console.log(topPosition)
   let orphans = toppedArray[2];
 
   let idArray = idToName(toppedData)

@@ -435,7 +435,7 @@ async function generateThesaurus(idObject, topPosition) {
   let store = $rdf.graph();
   
   // create thesaurus concept scheme
-  let thesaurusConceptScheme = $rdf.sym(conceptSchemeNamespace+"1");
+  let thesaurusConceptScheme = $rdf.sym(conceptSchemeNamespace+"/conceptScheme" + "1");
   store.add(thesaurusConceptScheme, type, conceptScheme);
   store.add(thesaurusConceptScheme, title, conceptSchemeTitle);
   store.add(thesaurusConceptScheme, creator, conceptSchemeCreator);
@@ -444,6 +444,58 @@ async function generateThesaurus(idObject, topPosition) {
   store.add(thesaurusConceptScheme, subject, conceptSchemeSubject);
   store.add(thesaurusConceptScheme, created, conceptSchemeCreated);
   store.add(thesaurusConceptScheme, description, conceptSchemeDescription);
+
+  // iterate over all concepts in idObject and add them and their properties to the store
+  for (let key in idObject) {
+    let concept = $rdf.sym(conceptSchemeNamespace+"/concept" + key);
+    store.add(concept, type, SK('Concept'));
+    store.add(concept, prefLabel, idObject[key]["prefLabel"]);
+    store.add(concept, definition, idObject[key]["description"]);
+    if (idObject[key]["altLabel"] != "") {
+      let altLabels = idObject[key]["altLabel"].split("|");
+      for (let i = 0; i < altLabels.length; i++) {
+        store.add(concept, altLabel, altLabels[i]);
+      }
+    }
+    if (idObject[key]["related"] != "") {
+      let relatedConcepts = idObject[key]["related"].split("|");
+      for (let i = 0; i < relatedConcepts.length; i++) {
+        store.add(concept, related, $rdf.sym(conceptSchemeNamespace+"/concept" + relatedConcepts[i]));
+      }
+    }
+    if (idObject[key]["source"] != "") {
+      let sources = idObject[key]["source"].split("|");
+      for (let i = 0; i < sources.length; i++) {
+        store.add(concept, source, sources[i]);
+      }
+    }
+    if (idObject[key]["creator"] != "") {
+      let creators = idObject[key]["creator"].split("|");
+      for (let i = 0; i < creators.length; i++) {
+        store.add(concept, creator, creators[i]);
+      }
+    }
+    if (idObject[key]["closeMatch"] != "") {
+      let closeMatches = idObject[key]["closeMatch"].split("|");
+      for (let i = 0; i < closeMatches.length; i++) {
+        store.add(concept, closeMatch, closeMatches[i]);
+      }
+    }
+    if (idObject[key]["relatedMatch"] != "") {
+      let relatedMatches = idObject[key]["relatedMatch"].split("|");
+      for (let i = 0; i < relatedMatches.length; i++) {
+        store.add(concept, relatedMatch, relatedMatches[i]);
+      }
+    }
+    if (idObject[key]["seeAlso"] != "") {
+      let seeAlsos = idObject[key]["seeAlso"].split("|");
+      for (let i = 0; i < seeAlsos.length; i++) {
+        store.add(concept, seeAlso, seeAlsos[i]);
+      }
+    // check if idObject[key] is a top concept and add it to thesaurusConceptScheme if so
+    }
+  }
+
   try {
     let serializedThesaurus = $rdf.serialize(null, store, conceptSchemeNamespace, conceptSchemeFormat);
     // create alert with serialized thesaurus as string
