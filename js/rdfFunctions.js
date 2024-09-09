@@ -552,7 +552,8 @@ async function generateThesaurus(idObject, topPosition) {
       a.download = 'thesaurus.json';
     }
     a.click();
-    document.removeChild(a);
+    // remove the created a element after download
+    a.remove();
     alert("Thesaurus heruntergeladen!");
   } catch (error) {
     alert("Fehler: " + error);
