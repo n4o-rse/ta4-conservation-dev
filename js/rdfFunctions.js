@@ -440,10 +440,19 @@ async function generateThesaurus(idObject, topPosition) {
   let thesaurusConceptScheme = $rdf.sym(conceptSchemeNamespace+"/conceptSchemes/" + "1");
   store.add(thesaurusConceptScheme, type, conceptScheme);
   store.add(thesaurusConceptScheme, title, conceptSchemeTitle);
-  store.add(thesaurusConceptScheme, creator, conceptSchemeCreator);
+  let creators = conceptSchemeCreator.split(",");
+  for (let i = 0; i < creators.length; i++) {
+    store.add(thesaurusConceptScheme, creator, creators[i]);
+  }
   store.add(thesaurusConceptScheme, publisher, conceptSchemePublisher);
-  store.add(thesaurusConceptScheme, contributor, conceptSchemeContributor);
-  store.add(thesaurusConceptScheme, subject, conceptSchemeSubject);
+  let contributors = conceptSchemeContributor.split(",");
+  for (let i = 0; i < contributors.length; i++) {
+    store.add(thesaurusConceptScheme, contributor, contributors[i]);
+  }
+  let subjects = conceptSchemeSubject.split(",");
+  for (let i = 0; i < subjects.length; i++) {
+    store.add(thesaurusConceptScheme, subject, subjects[i]);
+  }
   store.add(thesaurusConceptScheme, created, conceptSchemeCreated);
   store.add(thesaurusConceptScheme, description, conceptSchemeDescription);
 
@@ -544,7 +553,8 @@ async function generateThesaurus(idObject, topPosition) {
     }
     a.click();
     document.removeChild(a);
+    alert("Thesaurus heruntergeladen!");
   } catch (error) {
-    alert(error);
+    alert("Fehler: " + error);
   }
 }
