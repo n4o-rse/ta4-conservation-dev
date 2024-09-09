@@ -450,7 +450,7 @@ async function generateThesaurus(idObject, topPosition) {
   // iterate over all concepts in idObject and add them and their properties to the store
   for (let key in idObject) {
     console.log("concept " + key, idObject[key])
-    let concept = $rdf.sym(conceptSchemeNamespace+"/concept" + key);
+    let concept = $rdf.sym(conceptSchemeNamespace+"/concepts/" + key);
     store.add(concept, type, SK('Concept'));
     store.add(concept, prefLabel, idObject[key]["prefLabel"]);
     store.add(concept, definition, idObject[key]["description"]);
@@ -463,7 +463,7 @@ async function generateThesaurus(idObject, topPosition) {
     if (idObject[key]["related"] != "") {
       let relatedConcepts = idObject[key]["related"].split("|");
       for (let i = 0; i < relatedConcepts.length; i++) {
-        store.add(concept, related, $rdf.sym(conceptSchemeNamespace+"/concept" + relatedConcepts[i]));
+        store.add(concept, related, $rdf.sym(conceptSchemeNamespace+"/concepts/" + relatedConcepts[i]));
       }
     }
     if (idObject[key]["source"] != "") {
