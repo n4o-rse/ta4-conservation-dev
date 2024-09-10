@@ -40,6 +40,13 @@ n0:anno13
     o:bodyValue
         """Wie w\u00e4re es mit diesem Vorschlag? Simultan zum Begriff "konventionelle Radiographie" habe ich das zugeh\u00f6rige Ger\u00e4t nun statt nur "R\u00f6ntgenanlage" zu "konventionelles R\u00f6ntgenger\u00e4t" umbenannt. In der Description wird dann der Unterschied zum CT erkl\u00e4rt (und bei der Description des CTs entsprechend umgekehrt). """;
     o:hasTarget n0:conceptG8D62A.
+n0:anno14
+    a o:Annotation;
+    dct:created "2024-09-10T08:10:47.108Z";
+    dct:creator "Anja Cramer";
+    o:bodyValue
+        """Ich w\u00fcrde die Beschreibung hier etwas anpassen, da z.B. bei einem 3D-Druck keine Abformung eines Objektes notwendig ist. Und den Unterbegriff "DigitaleKopieerstellung" in "3D-Druckverfahren" umbenennen, dann w\u00fcrde es besser zu den beiden anderen passen.""";
+    o:hasTarget n0:conceptF8F7CF.
 n0:anno15
     a o:Annotation;
     dct:created "2024-08-28T11:58:55.324Z";
@@ -174,6 +181,19 @@ n0:anno31
     o:bodyValue
         """Die Anmerkung verstehe ich nicht so ganz. Es gibt keinen Punkt "chemische Zusammensetzung". Oder meinst du "chemische Untersuchung" ? Damit sind Untersuchungen gemeint, bei denen mit Hilfe von chemischen Reagenzien Verhaltensweisen von Materialien getestet werden (z.B. Spot-Tests f\u00fcr unbekannte Klebstoffe bei Altrestaurierungen, etc.) """;
     o:hasTarget n0:conceptG17B8B.
+n0:anno32
+    a o:Annotation;
+    dct:created "2024-09-10T08:24:52.519Z";
+    dct:creator "Lasse";
+    o:bodyValue "Beispielkommentar f\u00fcr den Community Cluster.";
+    o:hasTarget n0:concepttop.
+n0:anno33
+    a o:Annotation;
+    dct:created "2024-09-10T08:44:57.246Z";
+    dct:creator "Kristina";
+    o:bodyValue
+        "Ist angepasst, vielen Dank. Die urspr\u00fcngliche Beschreibung war noch auf die reine analoge Kopieherstellung bezogen. Auch den Begriff habe ich entsprechend des Vorschlags ge\u00e4ndert. ";
+    o:hasTarget n0:conceptF8F7CF.
 n0:anno4
     a o:Annotation;
     dct:created "2024-08-27T13:02:42.906Z";
@@ -245,6 +265,8 @@ n0:conceptDA2D73 a skos:Concept.
 
 n0:conceptF1BA31 a skos:Concept.
 
+n0:conceptF8F7CF a skos:Concept.
+
 n0:conceptFC2113 a skos:Concept.
 
 n0:conceptFF4767 a skos:Concept.
@@ -258,4 +280,6 @@ n0:conceptG8D62A a skos:Concept.
 n0:conceptGC7998 a skos:Concept.
 
 n0:conceptGD86C1 a skos:Concept.
+
+n0:concepttop a skos:Concept.
 
