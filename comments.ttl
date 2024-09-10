@@ -181,12 +181,6 @@ n0:anno31
     o:bodyValue
         """Die Anmerkung verstehe ich nicht so ganz. Es gibt keinen Punkt "chemische Zusammensetzung". Oder meinst du "chemische Untersuchung" ? Damit sind Untersuchungen gemeint, bei denen mit Hilfe von chemischen Reagenzien Verhaltensweisen von Materialien getestet werden (z.B. Spot-Tests f\u00fcr unbekannte Klebstoffe bei Altrestaurierungen, etc.) """;
     o:hasTarget n0:conceptG17B8B.
-n0:anno32
-    a o:Annotation;
-    dct:created "2024-09-10T08:24:52.519Z";
-    dct:creator "Lasse";
-    o:bodyValue "Beispielkommentar f\u00fcr den Community Cluster.";
-    o:hasTarget n0:concepttop.
 n0:anno33
     a o:Annotation;
     dct:created "2024-09-10T08:44:57.246Z";
