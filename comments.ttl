@@ -194,6 +194,13 @@ n0:anno33
     o:bodyValue
         "Ist angepasst, vielen Dank. Die urspr\u00fcngliche Beschreibung war noch auf die reine analoge Kopieherstellung bezogen. Auch den Begriff habe ich entsprechend des Vorschlags ge\u00e4ndert. ";
     o:hasTarget n0:conceptF8F7CF.
+n0:anno34
+    a o:Annotation;
+    dct:created "2024-09-10T09:30:10.007Z";
+    dct:creator "Anja Cramer";
+    o:bodyValue
+        "Ist die Unterscheidung zwischen analoger und digitaler Abformung richtig? Ich w\u00fcrde eher auf die Ebene der Abformung noch 3D-Digitalisierung hinzuf\u00fcgen und die Unterscheidung von analoger und digitaler Abformung l\u00f6schen? Dann w\u00e4re 3D-Digitalisierung eine Vorgehensweise zur Erstellung von wissenschaftlichen Kopien.";
+    o:hasTarget n0:conceptDAG2A8 .
 n0:anno4
     a o:Annotation;
     dct:created "2024-08-27T13:02:42.906Z";
@@ -262,6 +269,8 @@ n0:conceptCA7279 a skos:Concept.
 n0:conceptD467F2 a skos:Concept.
 
 n0:conceptDA2D73 a skos:Concept.
+
+n0:conceptDAG2A8 a skos:Concept.
 
 n0:conceptF1BA31 a skos:Concept.
 
