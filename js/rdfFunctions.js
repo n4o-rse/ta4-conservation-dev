@@ -383,7 +383,7 @@ async function generateThesaurus(idObject, topPosition) {
     } else if (document.getElementById("jsonldFormatRadio").checked) {
       conceptSchemeFormat = 'application/ld+json'
   }
-  closeconceptSchemeModal()
+  closeConceptSchemeModal()
   // remove idObject["top"]
   idObject = Object.fromEntries(Object.entries(idObject).filter(([key, value]) => key != "top"));
   // remove idObject["orphanage"]
