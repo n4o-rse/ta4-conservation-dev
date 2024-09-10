@@ -529,7 +529,7 @@ async function generateThesaurus(idObject, topPosition) {
     }
 
     // check if idObject[key] is a top concept and add it to thesaurusConceptScheme if so
-    for (let topObject in topPosition) {
+    for (let topObject of topPosition) {
       if (topObject["identifier"] == key) { //
         store.add(concept, topConceptOf, thesaurusConceptScheme);
       }
