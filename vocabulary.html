@@ -4,12 +4,6 @@
     <title>Knowledge management FAIRification tool for conservation and restoration processes</title>
     <link rel="icon" type="image/x-icon" href="pictures/CoffeeAndConservationLogo.png">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src = "js/d3.v7.js"></script>
-    <script src = "js/hierarchyVisualizer.js"></script>
-    <script src = "js/visualizationMethods.js"></script>
-    <script src = "js/podReadAndWrite.js"></script>
-    <script src = "js/rdfFunctions.js"></script>
-    <script src = "js/rdflib/rdflib.min.js"></script>
   </head>
   <body>
     <header>
@@ -45,16 +39,42 @@
           <p>CSV/TSV-Datei validieren oder Beispieldatensatz verwenden.</p>
           <p>Eigene Dateien müssen folgendem<a href="schema.html"> Tabellenschema </a>entsprechen.</p>
           <div id="input">
-            <!-- temporary disabled
             <form id="fileForm">
               <input type="file" id="fileInput" accept=".tsv, .csv">
               <button type="submit">Datei laden</button>
             </form>
-            -->
             <form id="textForm">
               <input type="text" id="textInput" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=csv">
               <button type="submit">URL laden</button>
             </form>
+            <!-- 
+              multi input form with fields and label for each entry: title, creator, publisher, contributor, subject, created and description
+              button to submit the form
+            -->
+            <div id="conceptSchemeModal" style="display: none;">
+              <span id="closeConceptSchemeModal" class="close" onclick=closeConceptSchemeModal()>&times;</span>
+              <center>
+              <h3>Thesaurus Daten</h3>
+              </center>
+              <!-- <p>(Kommata als Separator multipler Werte verwenden)</p> -->
+              <form id="conceptSchemeForm">
+                <input type="text" id="nameSpaceInput" placeholder="Namespace" class="conceptSchemeFormInput" alt='muss ein ":" beinhalten'> <br>
+                <input type="text" id="titleInput" placeholder="Titel" class="conceptSchemeFormInput"> <br>
+                <input type="text" id="creatorInput" placeholder="Ersteller" class="conceptSchemeFormInput" alt="Kommata als Separator multipler Werte verwenden"> <br>
+                <input type="text" id="publisherInput" placeholder="Veröffentlicher" class="conceptSchemeFormInput"> <br>
+                <input type="text" id="contributorInput" placeholder="Mitwirkende" class="conceptSchemeFormInput" alt="Kommata als Separator multipler Werte verwenden"> <br>
+                <input type="text" id="subjectInput" placeholder="Themen" class="conceptSchemeFormInput" alt="Kommata als Separator multipler Werte verwenden"> <br>
+                <input type="text" id="createdInput" placeholder="Erstellungsdatum" class="conceptSchemeFormInput" readonly> <br>
+                <input type="text" id="descriptionInput" placeholder="Beschreibung" class="conceptSchemeFormInput"> <br>
+                <p>Format wählen</p>
+                <input type="radio" id="turtleFormatRadio" name="formatRadios" checked>
+                <label for="turtleFormatRadio">Turtle</label><br>
+                <input type="radio" id="jsonldFormatRadio" name="formatRadios">
+                <label for="jsonldFormatRadio">JSON-LD</label>
+                <br><br>
+                <button type="submit" id="conceptSchemeFormButton">Thesaurus generieren</button>
+              </form>
+            </div>
             <br>
             <!-- temporary disabled
             <button onclick = readExample() id = "exampleButton" >Beispiel laden</button>
@@ -66,20 +86,22 @@
                 <p style="color: blue;">Bitte warten, Daten werden geladen...</p>
               </div>
             </div>
-            <p id="ignored"> </p>
-            <p id="topped"> </p>
-            <p id="orphans"> </p>
-            <p id="outputText"> </p>
-            <p id="doublettes"> </p>
-            <p id="missingParents"> </p>
-            <p id="errorText"> </p>
-            <p id="testingText"> </p>
+            <div id="validationMessages">
+              <p id="ignored"> </p>
+              <p id="topped"> </p>
+              <p id="orphans"> </p>
+              <p id="outputText"> </p>
+              <p id="doublettes"> </p>
+              <p id="missingParents"> </p>
+              <p id="errorText"> </p>
+              <p id="testingText"> </p>
+            </div>
             <!-- The Modal -->
-            <div id="myModal" class="modal">
+            <div id="myModal" class="modal" style="display: none;">
               <!-- Modal content -->
               <div class="modal-content">
                 <div class="modal-header">
-                  <span class="close">&times;</span>
+                  <span id="closeConceptModal" class="close" onclick=closeConceptModal()>&times;</span>
                   <h2 id="header-head">Begriffsdetails</h2>
                 </div>
                 <div class="modal-body">
@@ -99,9 +121,6 @@
               <div class="modal-sideliner">
                 <div class="history-header">
                     <h2 id="header-head">Letzte Kommentare</h2>
-                    <!--
-                    <p>(-> Anklicken zum Wechseln)</p>
-                    -->
                 </div>
                 <div class="sideliner-content">
                   <div class="modal-history">
@@ -114,61 +133,14 @@
         </section>
         <aside> </aside>
       </article>
-      <script>
-        var modal = document.getElementById("myModal");
-        modal.style.display = "none";
-        var span = document.getElementsByClassName("close")[0];
-        span.onclick = function() {
-          modal.style.display = "none";
-        }
-        /* temporary disabled
-        const fileForm = document.getElementById('fileForm');
-        fileForm.addEventListener('submit', inputFile);
-        */
-
-        const textForm = document.getElementById('textForm');
-        textForm.addEventListener('submit', inputUrl);
-
-        const commentForm = document.getElementById("commentForm");
-        commentForm.addEventListener("submit", updatePod)
-        
-        function inputFile() {
-            event.preventDefault();
-            const inputFile = document.getElementById('fileInput');
-            const file = inputFile.files[0];
-            let reader = new FileReader();
-            reader.onload = function(e) {
-              result = e.target.result;
-              readData(result, "file")
-            };
-            reader.readAsText(file);
-        }
-
-        async function inputUrl() {
-            event.preventDefault();
-            // display loading popup until every following function is finished
-            document.getElementById("loadingDiv").style.display = "block";
-            const inputURL = document.getElementById('textInput').value;
-            const response = await fetch(inputURL, {
-                headers: { "content-type": "text/csv;charset=UTF-8" },
-            });
-            const text = await response.text();
-            readData(text, "url")
-        }
-
-        function saveUserName() {
-          event.preventDefault();
-          var userNameText = document.getElementById("userNameText").value;
-          if (userNameText == "") {
-            alert("Bitte geben Sie einen Benutzernamen ein!");
-            return;
-          }
-          document.getElementById("userName").innerHTML = userNameText;
-          document.getElementById("userNameText").value = "";
-          document.getElementById("commentButton").innerText = `Kommentieren als ${userNameText}`;
-        }
-      </script>
     </main>
     <footer> </footer>
   </body>
+  <script src = "js/d3.v7.js"></script>
+  <script src = "js/hierarchyVisualizer.js"></script>
+  <script src = "js/visualizationMethods.js"></script>
+  <script src = "js/podReadAndWrite.js"></script>
+  <script src = "js/rdfFunctions.js"></script>
+  <script src = "js/rdflib/rdflib.min.js"></script>
+  <script src = "js/main.js"></script>
 </html>

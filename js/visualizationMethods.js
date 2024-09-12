@@ -140,7 +140,7 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
       .attr("fill", "currentColor")
-      //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
+      .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
       .text(d => idObject[d.data.id]["prefLabel"])
       .on("click", (e, d) => openDetails(d.data.id, idObject));
 
@@ -208,7 +208,7 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
       .attr("fill", "currentColor")
-      //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
+      .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
       .text(d => idObject[d.data.id]["prefLabel"])
       .on("click", (e, d) => openDetails(d.data.id, idObject));
 
@@ -282,6 +282,7 @@ function generateTidyTree(data, idObject, visualizationType, commentConceptObjec
   return svg.attr("viewBox", autoBox).node(); //
   }
 
+/* not too useful at the moment
 // Validation Method from observable missing
 function generateForceDirectedTree(data, idObject, commentConceptObject) {
 
@@ -373,6 +374,7 @@ function generateForceDirectedTree(data, idObject, commentConceptObject) {
   
     return svg.node();
   }
+  */
 
   function generateCollapsibleTree(data, idObject, commentConceptObject) {
 
@@ -462,7 +464,7 @@ function generateForceDirectedTree(data, idObject, commentConceptObject) {
           .attr("stroke-width", 3)
           .attr("stroke", "white")
           .on("click", (e, d) => openDetails(d.data.id, idObject))
-          //.attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
+          .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
           .attr("paint-order", "stroke");
   
       // Transition nodes to their new position.
@@ -581,6 +583,8 @@ function generateForceDirectedTree(data, idObject, commentConceptObject) {
         .text(d => idObject[d.data.id]["prefLabel"])
         // fill commented nodes red
         .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black");
+
+    // append tooltip to node
   
     node.append("title")
         .text(d => d.ancestors().reverse().map(d => idObject[d.data.id]["prefLabel"]).join("/"));
@@ -607,6 +611,8 @@ function generateForceDirectedTree(data, idObject, commentConceptObject) {
     }
 
   node.on("click", (e, d) => openDetails(d.data.id, idObject));
+  
+  
   return svg.node();
   }
 
@@ -669,11 +675,14 @@ function generateIcicle(data, idObject, commentConceptObject) {
         .attr("fill-opacity", 0.7)
         .text(d => ` ${format(d.value)}`);
 
-    text.on("click", (e, d) => openDetails(d.data.id, idObject));
+    text
+      .attr("fill", d => d.data.id in commentConceptObject ? commentConceptObject[d.data.id] : "black")
+      .on("click", (e, d) => openDetails(d.data.id, idObject));
   
     return svg.node();
   }
 
+  /* not too useful, maybe get to work later
   function generateGraphWithLabels(data){
     return ForceGraph(data, {
         nodeId: d => d.id,
@@ -850,3 +859,4 @@ function generateIcicle(data, idObject, commentConceptObject) {
         return Object.assign(svg.node(), { scales: { color } });
       }
 }
+*/
