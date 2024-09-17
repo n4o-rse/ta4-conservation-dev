@@ -48,25 +48,25 @@
               <button type="submit">URL laden</button>
             </form>
             <br>
-            <h1></h1>
+            <h1>Kommentare</h1>
             <form id="commentURLForm">
-              <!--<input type="text" id="commentURLInput" value="https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl"> -->
               <label for="commentURLInput">Kommentardatei laden</label>
               <select id="commentURLInput" name="commentURLInput">
                 <option value="">Keine</option>
               </select> 
               <button type="submit">URL laden</button>
             </form>
-            <!-- 
-              multi input form with fields and label for each entry: title, creator, publisher, contributor, subject, created and description
-              button to submit the form
-            -->
+            <form id="createCommentURLForm">
+              <label for="createCommentURLForm">Namen des Thesaurus eingeben</label>
+              <input type="text", name="createCommentURLForm" id="createCommentURLForm"> 
+              <button type="submit">Kommentardatei erstellen</button>
+            </form>
             <div id="conceptSchemeModal" style="display: none;">
               <span id="closeConceptSchemeModal" class="close" onclick=closeConceptSchemeModal()>&times;</span>
               <center>
               <h3>Thesaurus Daten</h3>
               </center>
-              <!-- <p>(Kommata als Separator multipler Werte verwenden)</p> -->
+              <p>(Kommata als Separatoren multipler Werte verwenden)</p>
               <form id="conceptSchemeForm">
                 <input type="text" id="nameSpaceInput" placeholder="Namespace" class="conceptSchemeFormInput" alt='muss ein ":" beinhalten'> <br>
                 <input type="text" id="titleInput" placeholder="Titel" class="conceptSchemeFormInput"> <br>
