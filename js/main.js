@@ -120,6 +120,24 @@ async function readCommentaryFiles() {
   }
 }
 
+async function createCommentURL() {
+  thesaurusName = document.getElementById('createCommentURLInput').value;
+  let commentURL = "https://restaurierungsvokabular.solidweb.org/annotations/" + thesaurusName + ".ttl";
+  writeToPod("", commentURL, "text/turtle");
+  /*
+  let commentMapper = "https://restaurierungsvokabular.solidweb.org/annotations/annotationMappings.json";
+  let commentMapperGraphText = await readFromPod(commentMapper, "application/json");
+  let commentMapperGraph = JSON.parse(commentMapperGraphText);
+  commentMapperGraph[commentURL] = thesaurusName;
+  let commentMapperGraphString = JSON.stringify(commentMapperGraph);
+  await writeToPod(commentMapper, commentMapperGraphString, "application/json");
+  */
+  
+
+
+
+}
+
 // global variables and event listeners
 let commentURL = "";
 
@@ -134,6 +152,9 @@ commentForm.addEventListener("submit", updatePod);
 
 const commentURLForm = document.getElementById("commentURLForm");
 commentURLForm.addEventListener("submit", setCommentURL);
+
+const createCommentURLForm = document.getElementById("createCommentURLForm");
+createCommentURLForm.addEventListener("submit", createCommentURL);
 
 readCommentaryFiles();
 
