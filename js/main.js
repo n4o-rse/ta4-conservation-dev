@@ -86,11 +86,13 @@ function setCommentURL() {
 }
 
 async function readCommentaryFiles() {
-  //event.preventDefault();
-  // reset former outputs, if there are any
-  let response = await fetch("https://restaurierungsvokabular.solidweb.org/annotations/");
-  let text = await response.text();
-  console.log(text);
+  folderGraphText = await readFromPod("https://restaurierungsvokabular.solidweb.org/annotations/");
+  folderGraph = $rdf.graph();
+  $rdf.parse(folderGraphText, folderGraph, "https://restaurierungsvokabular.solidweb.org/annotations/", "text/turtle");
+  // get value of ldp:contains in n0:
+  let folder = folderGraph.any($rdf.sym("https://restaurierungsvokabular.solidweb.org/annotations/"), LDP('contains'));
+  let folderURL = folder.value;
+  console.log(folderURL);
 } 
 
 // global variables and event listeners
