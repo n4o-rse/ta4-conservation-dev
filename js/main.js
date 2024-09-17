@@ -86,7 +86,7 @@ function setCommentURL() {
 }
 
 async function readCommentaryFiles() {
-  event.preventDefault();
+  //event.preventDefault();
   // reset former outputs, if there are any
   let response = await fetch("https://restaurierungsvokabular.solidweb.org/annotations/");
   let text = await response.text();
