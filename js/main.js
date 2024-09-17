@@ -88,6 +88,8 @@ function setCommentURL() {
 async function readCommentaryFiles() {
   folderGraphText = await readFromPod("https://restaurierungsvokabular.solidweb.org/annotations/");
   folderGraph = $rdf.graph();
+  // define LDP namespace
+  LDP = $rdf.Namespace("http://www.w3.org/ns/ldp#");
   $rdf.parse(folderGraphText, folderGraph, "https://restaurierungsvokabular.solidweb.org/annotations/", "text/turtle");
   // get value of ldp:contains in n0:
   let folder = folderGraph.any($rdf.sym("https://restaurierungsvokabular.solidweb.org/annotations/"), LDP('contains'));
