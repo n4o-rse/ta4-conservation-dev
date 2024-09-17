@@ -109,13 +109,16 @@ async function readCommentaryFiles() {
       let jsonString = await readFromPod(fileURL, "application/json");
       annotationMapper = JSON.parse(jsonString);
     }
-    console.log(annotationMapper);
-    console.log(annotationURLS);
-    for (let x of annotationURLS) {
-      console.log(x, annotationMapper[x]);
-    }
   }
-} 
+  let commentURLSelector = document.getElementById("commentURLInput");
+  // add option tag to commentURLSelector for each URL in annotationURLS with value = URL and innerHTML = annotationMapper[URL]
+  for (let x of annotationURLS) {
+    let option = document.createElement("option");
+    option.value = x;
+    option.innerHTML = annotationMapper[x];
+    commentURLSelector.appendChild(option);
+  }
+}
 
 // global variables and event listeners
 let commentURL = "";
