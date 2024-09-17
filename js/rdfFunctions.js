@@ -131,8 +131,16 @@ async function openDetails(id, idObject) {
 
 async function readComments(id, idObject) {
   try {
+    const url = commentURL;
     // clean modal content from previous comments
     var commentDiv = document.getElementsByClassName("modal-comments")[0];
+    if (url == "") {
+      let placeholderComment = document.createElement("p");
+      placeholderComment.innerHTML = "Keine Kommentardatei geladen...";
+      placeholderComment.id = "noCommentsPlaceholder";
+      commentDiv.appendChild(placeholderComment);
+      return;
+    }
     while (commentDiv.firstChild) {
       commentDiv.removeChild(commentDiv.firstChild);
     }
@@ -141,7 +149,7 @@ async function readComments(id, idObject) {
       historyDiv.removeChild(historyDiv.firstChild);
     }
     // generate existing comments for this concept from solid pod
-    const url = "https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl";
+    
     let commentRdf = await readFromPod(url)
     // parse ttl into store
     let store = $rdf.graph()
@@ -218,13 +226,17 @@ async function readComments(id, idObject) {
     }
   } catch (error) {
       console.error(error);
-      alert("Fehler beim Laden der Kommentare! Bitte den Entwickler (Lasse) informieren.");
+      alert("Fehler beim Laden der Kommentare! Bitte den Entwickler informieren.");
   }
 }
 
 async function updatePod() {
     event.preventDefault();
-    const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
+    const url = commentURL;
+    if (url == "") {
+      alert("Keine Kommentardatei geladen!")
+      return;
+    }
     let commentText = document.getElementById("commentText").value;
     let author = document.getElementById("userName").innerHTML;
     if (commentText == "") {
@@ -261,18 +273,12 @@ async function updatePod() {
 
     // calculate the next annotation number
     let nextAnnoNumber = 1
-    while (store.holds($rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`), RDF('type'), AO('Annotation'))) {
+    while (store.holds($rdf.sym(`${commentURL}/anno${nextAnnoNumber}`), RDF('type'), AO('Annotation'))) {
       nextAnnoNumber++
     }
     //create new annotation
-    let newAnno = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/anno${nextAnnoNumber}`)
-    let newConcept = $rdf.sym(`https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl/concept${id}`)
-
-    // double check if anno already in store, if so alert popup and error
-    if (store.holds(newAnno, RDF('type'), AO('Annotation'))) {
-        alert("Fehler beim Erstellen des Kommentars! Bitte den Entwickler (Lasse) informieren.");
-        return
-    }
+    let newAnno = $rdf.sym(`${commentURL}/anno${nextAnnoNumber}`)
+    let newConcept = $rdf.sym(`${commentURL}/concept${id}`)
 
     // add annotation to store
     store.add(newAnno, RDF('type'), AO('Annotation'))
@@ -300,7 +306,11 @@ async function updatePod() {
 }
 
 async function generateCommentedIdList() {
-  const url = 'https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl';
+  const url = commentURL;
+  let commentConceptObject = {};
+  if (url == "") {
+    return commentConceptObject
+  }
 
   // declare namespaces
   var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
@@ -329,8 +339,6 @@ async function generateCommentedIdList() {
       concepts.splice(i, 1);
     }
   }
-  let commentConceptObject = {};
-
   for (let i=0; i < concepts.length; i++) {
     conceptObject = concepts[i];
     id = conceptObject.value.split("concept")[1]

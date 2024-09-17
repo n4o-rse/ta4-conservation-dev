@@ -78,7 +78,15 @@ function collectThesaurusData(idObject, topPosition) {
   conceptSchemeFormButton.onclick = function() {generateThesaurus(idObject, topPosition)};
 }
 
+function setCommentURL() {
+  event.preventDefault();
+  // read and return value of global variable commentURL
+  commentURL = document.getElementById('commentURLInput').value;
+  return commentURL;
+}
+
 // global variables and event listeners
+let commentURL = "";
 
 const thesaurusFileInputForm = document.getElementById('fileForm');
 thesaurusFileInputForm.addEventListener('submit', thesaurusInputFile);
@@ -88,3 +96,6 @@ thesaurusUrlInputForm.addEventListener('submit', thesaurusInputUrl);
 
 const commentForm = document.getElementById("commentForm");
 commentForm.addEventListener("submit", updatePod);
+
+const commentURLForm = document.getElementById("commentURLForm");
+commentURLForm.addEventListener("submit", setCommentURL);

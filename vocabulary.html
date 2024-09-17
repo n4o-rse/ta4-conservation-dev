@@ -35,8 +35,8 @@
     <main>
       <article> 
         <section>
-          <h2>Hierarchical vocabulary validation and visualization</h2>
-          <p>CSV/TSV-Datei validieren oder Beispieldatensatz verwenden.</p>
+          <h2>Validierung und Visualisierung hierarchischer Vokabulare</h2>
+          <h1>Vokabular laden</h1>
           <p>Eigene Dateien müssen folgendem<a href="schema.html"> Tabellenschema </a>entsprechen.</p>
           <div id="input">
             <form id="fileForm">
@@ -45,6 +45,12 @@
             </form>
             <form id="textForm">
               <input type="text" id="textInput" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=csv">
+              <button type="submit">URL laden</button>
+            </form>
+            <br>
+            <h1>Optional: Kommentardatei via URL laden</h1>
+            <form id="commentURLForm">
+              <input type="text" id="commentURLInput" value="https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl">
               <button type="submit">URL laden</button>
             </form>
             <!-- 
