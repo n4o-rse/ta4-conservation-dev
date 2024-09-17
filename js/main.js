@@ -85,6 +85,14 @@ function setCommentURL() {
   return commentURL;
 }
 
+async function readCommentaryFiles() {
+  event.preventDefault();
+  // reset former outputs, if there are any
+  let response = await fetch("https://restaurierungsvokabular.solidweb.org/annotations/");
+  let text = await response.text();
+  console.log(text);
+} 
+
 // global variables and event listeners
 let commentURL = "";
 
@@ -99,3 +107,7 @@ commentForm.addEventListener("submit", updatePod);
 
 const commentURLForm = document.getElementById("commentURLForm");
 commentURLForm.addEventListener("submit", setCommentURL);
+
+readCommentaryFiles();
+
+
