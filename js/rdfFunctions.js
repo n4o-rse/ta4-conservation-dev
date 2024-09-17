@@ -150,7 +150,7 @@ async function readComments(id, idObject) {
     }
     // generate existing comments for this concept from solid pod
     
-    let commentRdf = await readFromPod(url)
+    let commentRdf = await readFromPod(url, 'text/turtle')
     // parse ttl into store
     let store = $rdf.graph()
     $rdf.parse(commentRdf, store, url, 'text/turtle')
@@ -265,7 +265,7 @@ async function updatePod() {
     var created = DC("created")
 
     // read ttl from pod
-    let preRdf = await readFromPod(url)
+    let preRdf = await readFromPod(url, 'text/turtle')
     
     // parse ttl into store
     let store = $rdf.graph()
@@ -301,7 +301,7 @@ async function updatePod() {
     let ttl = $rdf.serialize(null, store, url, 'text/turtle')
 
     // write ttl to pod
-    await writeToPod(ttl, url)
+    await writeToPod(ttl, url, 'text/turtle')
     readComments(id, idObject)
 }
 
@@ -325,7 +325,7 @@ async function generateCommentedIdList() {
   var target = AO('hasTarget');
 
   // read ttl from pod
-  let preRdf = await readFromPod(url);
+  let preRdf = await readFromPod(url, 'text/turtle');
   
   // parse ttl into store
   let store = $rdf.graph();

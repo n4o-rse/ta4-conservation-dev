@@ -1,10 +1,10 @@
-async function writeToPod(text, url) {
+async function writeToPod(text, url, type) {
     let response;
     try {
         response = await fetch(url, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'text/turtle'
+                'Content-Type': type
             },
             body: text
         });
@@ -18,19 +18,20 @@ async function writeToPod(text, url) {
     }
 }
 
-async function readFromPod(url) {
+async function readFromPod(url, type) {
     let result;
     try {
         result = await fetch(url, {
             method: 'GET',
             headers: {
-                'Content-Type': 'text/turtle'
+                'Content-Type': type
             }
         }
         );
         if (!result.ok) {
             throw new Error(`Response status: ${result.status}`);
         }
+        console.log(result);
         return result.text();
     } catch (error) {
         console.error(error);

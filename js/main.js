@@ -86,14 +86,35 @@ function setCommentURL() {
 }
 
 async function readCommentaryFiles() {
-  folderGraphText = await readFromPod("https://restaurierungsvokabular.solidweb.org/annotations/");
+  folderGraphText = await readFromPod("https://restaurierungsvokabular.solidweb.org/annotations/", "text/turtle");
   folderGraph = $rdf.graph();
   // define LDP namespace
   LDP = $rdf.Namespace("http://www.w3.org/ns/ldp#");
   $rdf.parse(folderGraphText, folderGraph, "https://restaurierungsvokabular.solidweb.org/annotations/", "text/turtle");
-  // get every value of ldp:contains in n0: as a list
-  let folderURLs = folderGraph.each($rdf.sym("https://restaurierungsvokabular.solidweb.org/annotations/"), LDP("contains")).value;
-  console.log(folderURLs);
+  // get values of all ldp:contains in n0: as a list
+  let folderList = folderGraph.each($rdf.sym("https://restaurierungsvokabular.solidweb.org/annotations/"), LDP("contains"));
+  // iterate over all values of ldp:contains
+  let annotationURLS = [];
+  let annotationMapper = {};
+
+  for (let x of folderList) {
+    // get the URL of the file
+    let fileURL = x.value;
+    // check if file ends with .ttl
+    if (fileURL.endsWith(".ttl")) {
+      // add URL to list of annotationURLS
+      annotationURLS.push(fileURL);
+    }
+    if (fileURL.endsWith("annotationMappings.json")) {
+      let jsonString = await readFromPod(fileURL, "application/json");
+      annotationMapper = JSON.parse(jsonString);
+    }
+    console.log(annotationMapper);
+    console.log(annotationURLS);
+    for (let x of annotationURLS) {
+      console.log(x, annotationMapper[x]);
+    }
+  }
 } 
 
 // global variables and event listeners
