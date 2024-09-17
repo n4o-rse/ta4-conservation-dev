@@ -112,7 +112,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       let visualizationButton = document.createElement("button");
       visualizationButton.id = "visualizeButton";
       visualizationButton.innerHTML = "Tabelle visualisieren";
-      visualizationButton.onclick = function() {visualizeData([stratifiedData, idObject, radioTypes])};
+      visualizationButton.onclick = function() {visualizeData([stratifiedData, idObject])};
 
       let thesaurusDownloadButton = document.createElement("button");
       thesaurusDownloadButton.id = "thesaurusDownloadButton";
@@ -148,6 +148,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
 async function visualizeData([stratifiedData, idObject]) {
   // ["Indented Tree","Tidy tree", "Cluster tree", "Radial tidy tree", "Radial cluster tree", "Collapsible Tree", "Sunburst(keine Kommentare)", "Icicle"]; //"Force directed tree",
   let commentConceptObject = await generateCommentedIdList();
+  console.log("commentConceptObject" + commentConceptObject);
   let visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
   let svg;
   let visualizationObject = {

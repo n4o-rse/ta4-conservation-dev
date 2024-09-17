@@ -306,7 +306,7 @@ async function updatePod() {
 }
 
 async function generateCommentedIdList() {
-  const url = commentURL;
+  let url = commentURL;
   let commentConceptObject = {};
   if (url == "") {
     return commentConceptObject
