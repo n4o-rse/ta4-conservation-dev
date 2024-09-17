@@ -92,7 +92,7 @@ async function readCommentaryFiles() {
   LDP = $rdf.Namespace("http://www.w3.org/ns/ldp#");
   $rdf.parse(folderGraphText, folderGraph, "https://restaurierungsvokabular.solidweb.org/annotations/", "text/turtle");
   // get every value of ldp:contains in n0: as a list
-  let folderURLs = folderGraph.each($rdf.sym("https://restaurierungsvokabular.solidweb.org/annotations/"), LDP("contains"));
+  let folderURLs = folderGraph.each($rdf.sym("https://restaurierungsvokabular.solidweb.org/annotations/"), LDP("contains")).value;
   console.log(folderURLs);
 } 
 
