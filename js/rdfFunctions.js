@@ -147,6 +147,9 @@ async function readComments(id, idObject) {
       placeholderComment.innerHTML = "Keine Kommentardatei geladen...";
       placeholderComment.id = "noCommentsPlaceholder";
       commentDiv.appendChild(placeholderComment);
+      let historyCommentPlaceholder = document.createElement("p");
+      historyCommentPlaceholder.innerHTML = "Keine Kommentardatei geladen...";
+      historyDiv.appendChild(historyCommentPlaceholder);
       return;
     }
     // generate existing comments for this concept from solid pod
@@ -305,6 +308,7 @@ async function updatePod() {
     readComments(id, idObject)
 }
 
+// function to generate an object with all concepts and their latest comment date for visualization
 async function generateCommentedIdList() {
   let url = commentURL;
   let commentConceptObject = {};
