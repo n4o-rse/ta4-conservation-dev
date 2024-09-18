@@ -134,13 +134,6 @@ async function readComments(id, idObject) {
     const url = commentURL;
     // clean modal content from previous comments
     var commentDiv = document.getElementsByClassName("modal-comments")[0];
-    if (url == "") {
-      let placeholderComment = document.createElement("p");
-      placeholderComment.innerHTML = "Keine Kommentardatei geladen...";
-      placeholderComment.id = "noCommentsPlaceholder";
-      commentDiv.appendChild(placeholderComment);
-      return;
-    }
     while (commentDiv.firstChild) {
       commentDiv.removeChild(commentDiv.firstChild);
     }
@@ -148,8 +141,15 @@ async function readComments(id, idObject) {
     while (historyDiv.firstChild) {
       historyDiv.removeChild(historyDiv.firstChild);
     }
+    // return if no comment file is loaded
+    if (url == "") {
+      let placeholderComment = document.createElement("p");
+      placeholderComment.innerHTML = "Keine Kommentardatei geladen...";
+      placeholderComment.id = "noCommentsPlaceholder";
+      commentDiv.appendChild(placeholderComment);
+      return;
+    }
     // generate existing comments for this concept from solid pod
-    
     let commentRdf = await readFromPod(url, 'text/turtle')
     // parse ttl into store
     let store = $rdf.graph()
@@ -180,16 +180,16 @@ async function readComments(id, idObject) {
     }
     let updatedCommentArray = Object.keys(commentObject["comments"])
     let sortedUpdatedCommentArray
-    sortedUpdatedCommentArray = updatedCommentArray.sort((a, b) => new Date(commentObject["comments"][b]["created"]) - new Date(commentObject["comments"][a]["created"]))
-
+    sortedUpdatedCommentArray = updatedCommentArray.sort((a, b) => new Date(commentObject["comments"][b]["created"]) - new Date(commentObject["comments"][a]["created"]));
+    
     // generate a paragraph for each comment, containing target, creator, created in historyDiv
     for (let i = 0; i < sortedUpdatedCommentArray.length; i++) {
       let comment = document.createElement("p");
-      let commentTargetID = commentObject["comments"][sortedUpdatedCommentArray[i]]["target"]
-      let commentTargetLabel = idObject[commentTargetID]["prefLabel"]
-      let commentCreator = commentObject["comments"][sortedUpdatedCommentArray[i]]["creator"]
-      let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"]
-      commentCreated = commentCreated.split(".")[0].replace("T", " ")
+      let commentTargetID = commentObject["comments"][sortedUpdatedCommentArray[i]]["target"];
+      let commentTargetLabel = idObject[commentTargetID]["prefLabel"];
+      let commentCreator = commentObject["comments"][sortedUpdatedCommentArray[i]]["creator"];
+      let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"];
+      commentCreated = commentCreated.split(".")[0].replace("T", " ");
       comment.innerHTML = commentCreator + " kommentierte " + "<b>" + commentTargetLabel + "</b>" + " um " + commentCreated;
       // if not commentTargetLabel "gelöschter Begriff", add event listener to openDetails
       if (commentTargetLabel != "gelöschter Begriff") {
