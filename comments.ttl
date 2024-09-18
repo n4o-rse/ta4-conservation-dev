@@ -208,9 +208,6 @@ n0:anno9 a o:Annotation ;
 n0:conceptDA2D73 a skos:Concept ;
     skos:inScheme n0:scheme1 .
 
-n0:concepttop a skos:Concept ;
-    skos:inScheme n0:scheme1 .
-
 n0:conceptA28B4D a skos:Concept ;
     skos:inScheme n0:scheme1 .
 
