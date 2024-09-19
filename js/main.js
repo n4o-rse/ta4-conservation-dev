@@ -91,7 +91,7 @@ async function readConceptSchemeTitles() {
   // define namespaces
   let SKOS = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
   let DCT = $rdf.Namespace("http://purl.org/dc/terms/");
-  $rdf.parse(annotationGraphText, annotationGraph, "text/turtle");
+  $rdf.parse(annotationGraphText, annotationGraph, commentURL, "text/turtle");
   // get all conceptSchemes in graph
   let conceptSchemes = annotationGraph.each(undefined, RDF("type"), SKOS("ConceptScheme"));
   // get names of all conceptSchemes
@@ -125,7 +125,7 @@ async function createConceptScheme() {
   // define namespaces
   let SKOS = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
   let DCT = $rdf.Namespace("http://purl.org/dc/terms/");
-  $rdf.parse(annotationGraphText, annotationGraph, "text/turtle");
+  $rdf.parse(annotationGraphText, annotationGraph, commentURL, "text/turtle");
   // check if there already exists a ConceptScheme with title = newConceptSchemeTitle
   let conceptSchemes = annotationGraph.each(undefined, RDF("type"), SKOS("ConceptScheme"));
   for (let x of conceptSchemes) {
