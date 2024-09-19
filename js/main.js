@@ -103,6 +103,10 @@ async function readConceptSchemeTitles() {
   }
   // get selector for conceptSchemeTitle
   let conceptSchemeTitleSelector = document.getElementById("conceptSchemeTitleInput");
+  // remove all children from conceptSchemeTitleSelector
+  while (conceptSchemeTitleSelector.firstChild) {
+    conceptSchemeTitleSelector.removeChild(conceptSchemeTitleSelector.firstChild);
+  }
   // add generic option "keine"
   let option = document.createElement("option");
   option.value = "keine";
