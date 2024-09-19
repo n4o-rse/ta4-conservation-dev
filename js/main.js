@@ -137,7 +137,7 @@ async function createConceptScheme() {
   let conceptSchemes = annotationGraph.each(undefined, RDF("type"), SKOS("ConceptScheme"));
   // print all conceptSchemes
   for (let x of conceptSchemes) {
-    console.log(x);
+    console.log("existing ConceptScheme: " + x);
     let conceptSchemeName = annotationGraph.any(x, DCT("title"));
     if (conceptSchemeName.value == newConceptSchemeTitle) {
       alert("Es existiert bereits ein Thesaurus mit diesem Titel!");
@@ -145,10 +145,14 @@ async function createConceptScheme() {
     }
   }
   let i = 1;
-  while (annotationGraph.any($rdf.sym("https://www.annotations/ConceptScheme" + i), RDF("type"), SKOS("ConceptScheme"))) {
+  let conceptSchemeURI = "https://www.annotations/ConceptScheme"
+  newConceptScheme = $rdf.sym(conceptSchemeURI + i);
+
+  // check if newConceptScheme already exists in Graph, while loop increasing i and checking again
+  while (annotationGraph.holds(newConceptScheme, RDF("type"), SKOS("ConceptScheme"))) {
     i++;
+    newConceptScheme = $rdf.sym(conceptSchemeURI + i);
   }
-  let newConceptScheme = $rdf.sym("https://www.annotations/ConceptScheme" + i);
   console.log("newConceptScheme: " + newConceptScheme);
   annotationGraph.add(newConceptScheme, RDF("type"), SKOS("ConceptScheme"));
   annotationGraph.add(newConceptScheme, DCT("title"), $rdf.lit(newConceptSchemeTitle));
