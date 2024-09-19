@@ -127,6 +127,7 @@ async function createConceptScheme() {
   // define namespaces
   let SKOS = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
   let DCT = $rdf.Namespace("http://purl.org/dc/terms/");
+  let RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
   $rdf.parse(annotationGraphText, annotationGraph, commentURL, "text/turtle");
   // check if there already exists a ConceptScheme with title = newConceptSchemeTitle
   let conceptSchemes = annotationGraph.each(undefined, RDF("type"), SKOS("ConceptScheme"));
