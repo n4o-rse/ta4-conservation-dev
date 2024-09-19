@@ -146,8 +146,9 @@ async function createConceptScheme() {
   let newConceptScheme = $rdf.sym(":annotations/ConceptScheme" + i + "/");
   annotationGraph.add(newConceptScheme, RDF("type"), SKOS("ConceptScheme"));
   annotationGraph.add(newConceptScheme, DCT("title"), $rdf.lit(newConceptSchemeTitle));
-  // write annotation graph to pod
-  await writeToPod(annotationGraph, commentURL, "text/turtle");
+  // write serialized graph to pod
+  serializedGraph = $rdf.serialize(null, annotationGraph, commentURL, "text/turtle");
+  await writeToPod(serializedGraph, commentURL, "text/turtle");
   // reload dropdown menu for conceptSchemes
   readConceptSchemeTitles();
 }
