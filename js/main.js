@@ -135,19 +135,21 @@ async function createConceptScheme() {
   $rdf.parse(annotationGraphText, annotationGraph, commentURL, "text/turtle");
   // check if there already exists a ConceptScheme with title = newConceptSchemeTitle
   let conceptSchemes = annotationGraph.each(undefined, RDF("type"), SKOS("ConceptScheme"));
+  // print all conceptSchemes
   for (let x of conceptSchemes) {
+    console.log(x);
     let conceptSchemeName = annotationGraph.any(x, DCT("title"));
     if (conceptSchemeName.value == newConceptSchemeTitle) {
       alert("Es existiert bereits ein Thesaurus mit diesem Titel!");
       return;
     }
   }
-  // create new conceptScheme
   let i = 1;
   while (annotationGraph.any($rdf.sym("https://www.annotations/ConceptScheme" + i), RDF("type"), SKOS("ConceptScheme"))) {
     i++;
   }
   let newConceptScheme = $rdf.sym("https://www.annotations/ConceptScheme" + i);
+  console.log("newConceptScheme: " + newConceptScheme);
   annotationGraph.add(newConceptScheme, RDF("type"), SKOS("ConceptScheme"));
   annotationGraph.add(newConceptScheme, DCT("title"), $rdf.lit(newConceptSchemeTitle));
   // write serialized graph to pod
