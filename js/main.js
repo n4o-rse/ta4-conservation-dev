@@ -137,7 +137,6 @@ async function createConceptScheme() {
   let conceptSchemes = annotationGraph.each(undefined, RDF("type"), SKOS("ConceptScheme"));
   // print all conceptSchemes
   for (let x of conceptSchemes) {
-    console.log("existing ConceptScheme: " + x);
     let conceptSchemeName = annotationGraph.any(x, DCT("title"));
     if (conceptSchemeName.value == newConceptSchemeTitle) {
       alert("Es existiert bereits ein Thesaurus mit diesem Titel!");
@@ -145,7 +144,7 @@ async function createConceptScheme() {
     }
   }
   let i = 1;
-  let conceptSchemeURI = "https://www.annotations/ConceptScheme"
+  let conceptSchemeURI = baseURI + "ConceptSchemes/ConceptScheme"
   newConceptScheme = $rdf.sym(conceptSchemeURI + i);
 
   // check if newConceptScheme already exists in Graph, while loop increasing i and checking again
@@ -165,6 +164,7 @@ async function createConceptScheme() {
 
 // global variables and event listeners
 let commentURL = "https://restaurierungsvokabular.solidweb.org/annotations/annotations2.ttl";
+let baseURI = "https://restaurierungsvokabular.solidweb.org/annotations/";
 let conceptSchemeTitle = "";
 
 const thesaurusFileInputForm = document.getElementById('fileForm');
