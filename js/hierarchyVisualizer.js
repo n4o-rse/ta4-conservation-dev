@@ -148,7 +148,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
 async function visualizeData([stratifiedData, idObject]) {
   // ["Indented Tree","Tidy tree", "Cluster tree", "Radial tidy tree", "Radial cluster tree", "Collapsible Tree", "Sunburst(keine Kommentare)", "Icicle"]; //"Force directed tree",
   let commentConceptObject = await generateCommentedIdList();
-  console.log("commentConceptObject" + commentConceptObject);
+  //console.log("commentConceptObject" + commentConceptObject);
   let visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
   let svg;
   let visualizationObject = {

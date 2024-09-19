@@ -12,7 +12,7 @@ async function writeToPod(text, url, type) {
             throw new Error(`Response status: ${response.status}`);
         }
         let result = await response.text();
-        console.log(result);
+        //console.log(result);
     } catch (error) {
         console.error(error.message);
     }
@@ -31,7 +31,7 @@ async function readFromPod(url, type) {
         if (!result.ok) {
             throw new Error(`Response status: ${result.status}`);
         }
-        console.log(result);
+        //console.log(result);
         return result.text();
     } catch (error) {
         console.error(error);
