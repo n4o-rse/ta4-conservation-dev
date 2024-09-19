@@ -1,14 +1,15 @@
-function readData(data, inputType) {
-  resetOutput();
+async function readData(data, inputType) {
   let Data
   if (inputType == "file") {
     const file = document.getElementById("fileInput").files[0];
     if (file.name.endsWith(".tsv")) {
       Data = d3.tsvParse(data);
     }
-    else { //(file.name.endsWith(".tsv")) 
+    else if (file.name.endsWith(".csv")) {  
       Data = d3.csvParse(data);
     }
+    // wait to make sure the loadingDiv is displayed and user knows different data is loaded
+    await new Promise(r => setTimeout(r, 2000));
   }
   else if (inputType == "url") {
     const textInput = document.getElementById("textInput").value;
@@ -25,17 +26,18 @@ function readData(data, inputType) {
 
   let toppedArray = topData(cleanedTableData);
   let toppedData = toppedArray[0];
-  //const topPosition = toppedArray[1];
+  let topPosition = toppedArray[1];
+  console.log(topPosition)
   let orphans = toppedArray[2];
 
   let idArray = idToName(toppedData)
   let idObject = idArray[0]
   let doublettes = idArray[1]
   let missingParents = idArray[2]
-  //test function, delete later
-  validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]);
+  validation([toppedData, idObject, doublettes, missingParents, ignored, topPosition, orphans]);
 }
 
+/* not used at the moment
 function readExample() {
   resetOutput();
   let bibleCSV = `identifier,prefLabel,parent
@@ -64,8 +66,9 @@ function readExample() {
   let missingParents = idArray[2]
   validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]);
 }
+*/
 
-function validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]) {
+function validation([toppedData, idObject, doublettes, missingParents, ignored, topPosition, orphans]) {
   const hints = [{variable:ignored, id:"ignored"}, {variable:orphans, id:"orphans"}]; //{variable:topPosition, id:"topped"},
   const strings = ["concepts were ignored: ","concepts are orphans: "]; //, "concepts are on top: "
   for (let i = 0; i < hints.length; i++) {
@@ -82,7 +85,6 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
   }
   if ((doublettes.length < 1) && (missingParents.length < 1)) {
     try {
-      //document.getElementById("submitButton").innerHTML = "Neue Datei validieren";
       const stratifiedData = stratifyData(toppedData);
       document.getElementById("loadingDiv").style.display = "none";
       document.getElementById("outputText").innerHTML = "Data successfully validated. \n";
@@ -107,12 +109,18 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
         let lineBreak = document.createElement("br");
         radioDiv.appendChild(lineBreak);
       }
-      const button = document.createElement("button");
-      button.id = "visualizeButton";
-      button.innerHTML = "Tabelle visualisieren";
-      button.onclick = function() {visualizeData([stratifiedData, idObject])};
-      document.getElementById("chartDiv").before(button);
+      let visualizationButton = document.createElement("button");
+      visualizationButton.id = "visualizeButton";
+      visualizationButton.innerHTML = "Tabelle visualisieren";
+      visualizationButton.onclick = function() {visualizeData([stratifiedData, idObject, radioTypes])};
 
+      let thesaurusDownloadButton = document.createElement("button");
+      thesaurusDownloadButton.id = "thesaurusDownloadButton";
+      thesaurusDownloadButton.innerHTML = "Thesaurus herunterladen";
+      thesaurusDownloadButton.onclick = function() {collectThesaurusData(idObject, topPosition)};
+
+      document.getElementById("chartDiv").before(visualizationButton);
+      document.getElementById("chartDiv").before(thesaurusDownloadButton);
       //check if there is an Element with id lineBreak
       if (document.getElementById("linebreak") != null) {
         document.getElementById("lineBreak").remove();
@@ -122,7 +130,6 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       document.getElementById("visualizeButton").before(radioDiv);
       document.getElementById("Indented Tree").checked = true;
       document.getElementById("visualizeButton").before(lineBreak);
-      return [stratifiedData, idObject];
     } 
     catch (error) {
       console.log(error);
@@ -139,34 +146,23 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
 }
 
 async function visualizeData([stratifiedData, idObject]) {
-  let commentConceptObject = await generateCommentedIdList()
-  const visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
+  // ["Indented Tree","Tidy tree", "Cluster tree", "Radial tidy tree", "Radial cluster tree", "Collapsible Tree", "Sunburst(keine Kommentare)", "Icicle"]; //"Force directed tree",
+  let commentConceptObject = await generateCommentedIdList();
+  let visualizationType = document.querySelector('input[name="visualizationType"]:checked').value;
   let svg;
+  let visualizationObject = {
+    "Indented Tree": () => {return generateIndentedTree(stratifiedData, idObject, commentConceptObject)},
+    "Tidy tree": () => {return generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
+    "Cluster tree": () => {return generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject)}, 
+    "Radial tidy tree": () => {return generateRadialTidyTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Radial cluster tree": () => {return generateRadialClusterTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Collapsible Tree": () => {return generateCollapsibleTree(stratifiedData, idObject, commentConceptObject)}, 
+    "Sunburst(keine Kommentare)": () => {return generateSunburst(stratifiedData, idObject, commentConceptObject)}, 
+    "Icicle": () => {return generateIcicle(stratifiedData, idObject, commentConceptObject)}
+  }
   try {
-    if (visualizationType == "Tidy tree" || visualizationType == "Cluster tree") {
-      svg = generateTidyTree(stratifiedData, idObject, visualizationType, commentConceptObject);
-    }
-    if (visualizationType == "Radial tidy tree") {
-      svg = generateRadialTidyTree(stratifiedData, idObject);
-    }
-    if (visualizationType == "Radial cluster tree") {
-      svg = generateRadialClusterTree(stratifiedData, idObject);
-    }
-    if (visualizationType == "Sunburst(keine Kommentare)") {
-      svg = generateSunburst(stratifiedData, idObject);
-    }
-    if (visualizationType == "Force directed tree") {
-      svg = generateForceDirectedTree(stratifiedData, idObject);
-    }
-    if (visualizationType == "Collapsible Tree") {
-      svg = generateCollapsibleTree(stratifiedData, idObject);
-    }
-    if (visualizationType == "Indented Tree") {
-      svg = generateIndentedTree(stratifiedData, idObject, commentConceptObject);
-    }
-    if (visualizationType == "Icicle") {
-      svg = generateIcicle(stratifiedData, idObject);
-    }
+    // call the visualization function as value of they key visualizationType
+    svg = visualizationObject[visualizationType]();
     document.getElementById("errorText").innerHTML = "";
     document.getElementById("errorText").style.color = "black";
     document.getElementById("chartDiv").innerHTML = "";
@@ -174,7 +170,7 @@ async function visualizeData([stratifiedData, idObject]) {
     if (!document.getElementById("downloadButton")) {
       const button = document.createElement("button");
       button.id = "downloadButton";
-      button.innerHTML = "Download Visualization";
+      button.innerHTML = "Visualisierung herunterladen";
       button.onclick = function() {downloadSvg(svg, visualizationType)};
       document.getElementById("chartDiv").after(button);
     }
@@ -198,23 +194,18 @@ function downloadSvg(svg, visualizationType) {
 }
 
 function resetOutput() {
-  const ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chartDiv", "doublettes", "missingParents", "radioDiv", "visualizeButton"]; //
+  let ids = ["outputText", "errorText", "ignored", "topped", "orphans", "chartDiv", "doublettes", "missingParents", "radioDiv", "visualizeButton"];
   for (let i = 0; i < ids.length; i++) {
-    try {
+    // check if getElementById(ids[i]) exists
+    if (document.getElementById(ids[i]) != null) {
       document.getElementById(ids[i]).innerHTML = "";
     }
-    catch (error) {
-      // pass 
-    }
   }
-  //document.getElementById("fileButton").innerHTML = "Tabelle validieren";
-  let elements = ["visualizeButton", "radioDiv", "lineBreak", "downloadButton"]
+  let elements = ["visualizeButton", "radioDiv", "lineBreak", "downloadButton", "thesaurusDownloadButton"];
   for (let i = 0; i < elements.length; i++) {
-    try {
+    // check if getElementById(elements[i]) exists
+    if (document.getElementById(elements[i]) != null) {
       document.getElementById(elements[i]).remove();
-    }
-    catch (error) {
-      // pass
     }
   }
   //return to default color
@@ -226,11 +217,12 @@ function cleanTableData(data) {
   const ignored = []
   for (let i = 0; i < data.length; i++) {
     let row = data[i];
+    // iterate over all row properties and remove whitespaces
+    for (let key in row) {
+      row[key] = row[key].trim();
+    }
     if (row.parent != "ignore") {
       if (row.prefLabel != "" && row.identifier != "") {
-        row.identifier = row.identifier.replace(/\s/g, "");
-        row.parent = row.parent.replace(/\s/g, "");
-        row.prefLabel = row.prefLabel.replace(/\s/g, "");
         cleanArray.push(row);
       }
     }
@@ -268,9 +260,10 @@ function topData(data) {
     rootArray.push({
     "identifier":"top",
     "prefLabel":"Thesaurus",
-    "parent":"",
-    "description":"Der Leiza Thesaurus für Restaurierung und Konservierung.",
     "altLabel":"",
+    "translation":"",
+    "description":"Der Thesarus als Beginn der Hierarchie.",
+    "parent":"",
     "related":"",
     "source":"",
     "creator":"",
@@ -285,9 +278,10 @@ function topData(data) {
     rootArray.push({
     "identifier":"orphanage",
     "prefLabel":"Waisenhaus",
-    "parent":"top",
-    "description":"Hierhin werden Begriffe verschoben, die keinen Vorgänger haben.",
     "altLabel":"",
+    "translation":"",
+    "description":"Hierhin werden Begriffe verschoben, die keine Elternteil haben.",
+    "parent":"top",
     "related":"",
     "source":"",
     "creator":"",
@@ -309,6 +303,7 @@ function idToName(data) {
     if (!(row.identifier in transformationObject)) {
       transformationObject[row.identifier] = {};
     }
+    // using concept as key to store all prefLabels of the same identifier
     if ("concept" in transformationObject[row.identifier]) {
       transformationObject[row.identifier]["concept"].push(row.prefLabel);
     }
@@ -317,8 +312,10 @@ function idToName(data) {
       transformationObject[row.identifier]["concept"].push(row.prefLabel);
     }
     transformationObject[row.identifier]["prefLabel"] = row.prefLabel;
-    transformationObject[row.identifier]["description"] = row.description;
     transformationObject[row.identifier]["altLabel"] = row.altLabel;
+    transformationObject[row.identifier]["translation"] = row.translation;
+    transformationObject[row.identifier]["description"] = row.description;
+    transformationObject[row.identifier]["parent"] = row.parent;
     transformationObject[row.identifier]["related"] = row.related;
     transformationObject[row.identifier]["source"] = row.source;
     transformationObject[row.identifier]["creator"] = row.creator;
