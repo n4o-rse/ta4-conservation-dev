@@ -80,8 +80,8 @@ function collectThesaurusData(idObject, topPosition) {
 
 function setConceptSchemeTitle() {
   event.preventDefault();
-  // read and return value of global variable commentURL
-  conceptSchemeTitle = document.getElementById('conceptSchemeTitle').value;
+  conceptSchemeTitle = document.getElementById('conceptSchemeTitleInput').value;
+  alert(conceptSchemeTitle + " wurde ausgewählt.");
   return conceptSchemeTitle;
 }
 
