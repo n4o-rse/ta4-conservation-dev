@@ -140,10 +140,10 @@ async function createConceptScheme() {
   }
   // create new conceptScheme
   let i = 1;
-  while (annotationGraph.any($rdf.sym(":annotations/ConceptScheme" + i + "/"), RDF("type"), SKOS("ConceptScheme"))) {
+  while (annotationGraph.any($rdf.sym("https://www.annotations/ConceptScheme" + i), RDF("type"), SKOS("ConceptScheme"))) {
     i++;
   }
-  let newConceptScheme = $rdf.sym(":annotations/ConceptScheme" + i + "/");
+  let newConceptScheme = $rdf.sym("https://www.annotations/ConceptScheme" + i);
   annotationGraph.add(newConceptScheme, RDF("type"), SKOS("ConceptScheme"));
   annotationGraph.add(newConceptScheme, DCT("title"), $rdf.lit(newConceptSchemeTitle));
   // write serialized graph to pod
