@@ -119,6 +119,7 @@ async function readConceptSchemeTitles() {
 }
 
 async function createConceptScheme() {
+  event.preventDefault();
   newConceptSchemeTitle = document.getElementById('createconceptSchemeTitleInput').value;
   // read annotation graph from pod
   annotationGraphText = await readFromPod(commentURL, "text/turtle");
