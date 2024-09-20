@@ -1,282 +1,594 @@
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix n0: <annotations.ttl/> .
-@prefix o: <http://www.w3.org/ns/oa#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix n0: <annotations.ttl/>.
+@prefix o: <http://www.w3.org/ns/oa#>.
 
-n0:anno1 a o:Annotation ;
-    dct:created "2024-08-29T17:14:02.574Z" ;
-    dct:creator "Lasse" ;
-    o:bodyValue "Wir freuen uns immer Ã¼ber weitere BeitrÃ¤ge. Gern einfach in ein weiteres Kommentar schreiben, damit Kristina das ganzen nach dem Urlaub aufnehmen kann. Eine Funktion selbst Ãnderungen am Thesaurus vorzunehmen, konnte ich (bislang) leider noch nicht einbauen." ;
+n0:anno1
+    a o:Annotation;
+    dct:created "2024-08-29T17:14:02.574Z";
+    dct:creator "Lasse";
+    o:bodyValue
+        "Wir freuen uns immer \u00fcber weitere Beitr\u00e4ge. Gern einfach in ein weiteres Kommentar schreiben, damit Kristina das ganzen nach dem Urlaub aufnehmen kann. Eine Funktion selbst \u00c4nderungen am Thesaurus vorzunehmen, konnte ich (bislang) leider noch nicht einbauen.";
     o:hasTarget n0:conceptB1B854 .
-
-n0:anno10 a o:Annotation ;
-    dct:created "2024-08-27T14:24:57.931Z" ;
-    dct:creator "Ivan" ;
-    o:bodyValue """Confokalmikroskop ist auch ein wichtiges Lichtmikroskop aber ich mÃ¼sste die genaue Definition suchen. 
-Vielleicht ISO 25178-6 (https://www.iso.org/obp/ui/en/#iso:std:iso:25178:-6:ed-1:v1:en)? Nicht sehr klar fÃ¼r mich allerdings... XD""" ;
+n0:anno10
+    a o:Annotation;
+    dct:created "2024-08-27T14:24:57.931Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        """Confokalmikroskop ist auch ein wichtiges Lichtmikroskop aber ich m\u00fcsste die genaue Definition suchen. 
+Vielleicht ISO 25178-6 (https://www.iso.org/obp/ui/en/#iso:std:iso:25178:-6:ed-1:v1:en)? Nicht sehr klar f\u00fcr mich allerdings... XD""";
     o:hasTarget n0:conceptFC2113 .
-
-n0:anno11 a o:Annotation ;
-    dct:created "2024-09-02T14:21:25.465Z" ;
-    dct:creator "eckmann" ;
-    o:bodyValue "...einer \"Holzmaserung\" Ã¤hnelt die Struktur von Elfenbein eigentlich nicht. Charakteristisch sind die sogenannten Schreger'schen Linien, die im Querschnitt eine netzartiges Struktur bilden (und sich dadurch von elfenbeinÃ¤hnlichen Materialien unterscheiden). " ;
-    o:hasTarget n0:conceptAG55BC .
-
-n0:anno12 a o:Annotation ;
-    dct:created "2024-08-28T05:09:35.498Z" ;
-    dct:creator "Kristina" ;
-    o:bodyValue "Guter Hinweis, ich hab das nochmal nachgeschlagen und den Text entsprechend angepasst. " ;
-    o:hasTarget n0:conceptA7FA3B .
-
-n0:anno13 a o:Annotation ;
-    dct:created "2024-08-28T05:49:19.977Z" ;
-    dct:creator "Kristina " ;
-    o:bodyValue "Wie wÃ¤re es mit diesem Vorschlag? Simultan zum Begriff \"konventionelle Radiographie\" habe ich das zugehÃ¶rige GerÃ¤t nun statt nur \"RÃ¶ntgenanlage\" zu \"konventionelles RÃ¶ntgengerÃ¤t\" umbenannt. In der Description wird dann der Unterschied zum CT erklÃ¤rt (und bei der Description des CTs entsprechend umgekehrt). " ;
-    o:hasTarget n0:conceptG8D62A .
-
-n0:anno14 a o:Annotation ;
-    dct:created "2024-09-10T08:10:47.108Z" ;
-    dct:creator "Anja Cramer" ;
-    o:bodyValue "Ich wÃ¼rde die Beschreibung hier etwas anpassen, da z.B. bei einem 3D-Druck keine Abformung eines Objektes notwendig ist. Und den Unterbegriff \"DigitaleKopieerstellung\" in \"3D-Druckverfahren\" umbenennen, dann wÃ¼rde es besser zu den beiden anderen passen." ;
-    o:hasTarget n0:conceptF8F7CF .
-
-n0:anno15 a o:Annotation ;
-    dct:created "2024-08-28T11:58:55.324Z" ;
-    dct:creator "Markus" ;
-    o:bodyValue "Lyofix CHN" ;
+n0:anno11
+    a o:Annotation;
+    dct:created "2024-09-02T14:21:25.465Z";
+    dct:creator "eckmann";
+    o:bodyValue
+        """...einer "Holzmaserung" \u00e4hnelt die Struktur von Elfenbein eigentlich nicht. Charakteristisch sind die sogenannten Schreger'schen Linien, die im Querschnitt eine netzartiges Struktur bilden (und sich dadurch von elfenbein\u00e4hnlichen Materialien unterscheiden). """;
+    o:hasTarget n0:conceptAG55BC.
+n0:anno12
+    a o:Annotation;
+    dct:created "2024-08-28T05:09:35.498Z";
+    dct:creator "Kristina";
+    o:bodyValue
+        "Guter Hinweis, ich hab das nochmal nachgeschlagen und den Text entsprechend angepasst. ";
+    o:hasTarget n0:conceptA7FA3B.
+n0:anno13
+    a o:Annotation;
+    dct:created "2024-08-28T05:49:19.977Z";
+    dct:creator "Kristina ";
+    o:bodyValue
+        """Wie w\u00e4re es mit diesem Vorschlag? Simultan zum Begriff "konventionelle Radiographie" habe ich das zugeh\u00f6rige Ger\u00e4t nun statt nur "R\u00f6ntgenanlage" zu "konventionelles R\u00f6ntgenger\u00e4t" umbenannt. In der Description wird dann der Unterschied zum CT erkl\u00e4rt (und bei der Description des CTs entsprechend umgekehrt). """;
+    o:hasTarget n0:conceptG8D62A.
+n0:anno14
+    a o:Annotation;
+    dct:created "2024-09-10T08:10:47.108Z";
+    dct:creator "Anja Cramer";
+    o:bodyValue
+        """Ich w\u00fcrde die Beschreibung hier etwas anpassen, da z.B. bei einem 3D-Druck keine Abformung eines Objektes notwendig ist. Und den Unterbegriff "DigitaleKopieerstellung" in "3D-Druckverfahren" umbenennen, dann w\u00fcrde es besser zu den beiden anderen passen.""";
+    o:hasTarget n0:conceptF8F7CF.
+n0:anno15
+    a o:Annotation;
+    dct:created "2024-08-28T11:58:55.324Z";
+    dct:creator "Markus";
+    o:bodyValue "Lyofix CHN";
     o:hasTarget n0:conceptFF4767 .
-
-n0:anno16 a o:Annotation ;
-    dct:created "2024-08-28T12:04:14.326Z" ;
-    dct:creator "Markus" ;
-    o:bodyValue """Kauramin CE 5549 ist chemisch identisch mit Kauramin 800. Die Typenbezeichung CE steht bei der BASF fÃ¼r Produkte die noch keine volle Marktreife, noch im Teststadium sind. Nachdem sich Kauramin CE 5549 am Markt bewÃ¤hrt hatte, bekam es den brand name Kauramin 800. Vielleicht in der Datenbank Kauramin CE 5549/Kauramin 800 schreiben.
-Kauramin 800 wurde 2023 vom Markt genommen. Das nun modifizierte Nachfolgeharz mit etwas anderen Eigenschaften heiÃe Kauramin 801""" ;
+n0:anno16
+    a o:Annotation;
+    dct:created "2024-08-28T12:04:14.326Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """Kauramin CE 5549 ist chemisch identisch mit Kauramin 800. Die Typenbezeichung CE steht bei der BASF f\u00fcr Produkte die noch keine volle Marktreife, noch im Teststadium sind. Nachdem sich Kauramin CE 5549 am Markt bew\u00e4hrt hatte, bekam es den brand name Kauramin 800. Vielleicht in der Datenbank Kauramin CE 5549/Kauramin 800 schreiben.
+Kauramin 800 wurde 2023 vom Markt genommen. Das nun modifizierte Nachfolgeharz mit etwas anderen Eigenschaften hei\u00dfe Kauramin 801""";
     o:hasTarget n0:conceptBFB162 .
-
-n0:anno17 a o:Annotation ;
-    dct:created "2024-08-28T12:06:55.990Z" ;
-    dct:creator "Markus" ;
-    o:bodyValue "Hausenblasenleim (die Hause ist ein Fisch) wurde am RGZM auch verwendet. Ich habs nur einmal als Azubi 1988 benutzt." ;
+n0:anno17
+    a o:Annotation;
+    dct:created "2024-08-28T12:06:55.990Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "Hausenblasenleim (die Hause ist ein Fisch) wurde am RGZM auch verwendet. Ich habs nur einmal als Azubi 1988 benutzt.";
     o:hasTarget n0:conceptGD86C1 .
-
-n0:anno18 a o:Annotation ;
-    dct:created "2024-08-28T12:20:25.151Z" ;
-    dct:creator "Markus" ;
-    o:bodyValue "da kÃ¶nnte ich noch etliche Bearbeitungstechniken zufÃ¼gen (soll ich?) , eine die viele schon gehÃ¶rt haben: scharriert" ;
+n0:anno18
+    a o:Annotation;
+    dct:created "2024-08-28T12:20:25.151Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "da k\u00f6nnte ich noch etliche Bearbeitungstechniken zuf\u00fcgen (soll ich?) , eine die viele schon geh\u00f6rt haben: scharriert";
     o:hasTarget n0:conceptB1B854 .
-
-n0:anno19 a o:Annotation ;
-    dct:created "2024-08-28T12:21:46.680Z" ;
-    dct:creator "Markus" ;
-    o:bodyValue "manchmal verwende ich auch die harzreichere Variante: Auro HartÃ¶l Nr.126" ;
-    o:hasTarget n0:conceptA28B4D .
-
-n0:anno2 a o:Annotation ;
-    dct:created "2024-08-27T11:55:35.932Z" ;
-    dct:creator "Ivan" ;
-    o:bodyValue "aus meiner Sicht kann konventionelle Radiographie auch mit einem digitalen Detektor statt RÃ¶ntgenfilmen abbilden" ;
+n0:anno19
+    a o:Annotation;
+    dct:created "2024-08-28T12:21:46.680Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "manchmal verwende ich auch die harzreichere Variante: Auro Hart\u00f6l Nr.126";
+    o:hasTarget n0:conceptA28B4D.
+n0:anno2
+    a o:Annotation;
+    dct:created "2024-08-27T11:55:35.932Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        "aus meiner Sicht kann konventionelle Radiographie auch mit einem digitalen Detektor statt R\u00f6ntgenfilmen abbilden";
     o:hasTarget n0:conceptA2B5A3 .
-
-n0:anno20 a o:Annotation ;
-    dct:created "2024-08-28T13:17:48.410Z" ;
-    dct:creator "Markus" ;
-    o:bodyValue "in der Metallrestaurierung (unter Lazlo Lehoczky) wurden Metallobjekte nach der Bearbeitung mit Pantarol (Nitrocelluloselack) gegen Luftfeuchtigkeit geschÃ¼tzt. Bitte Pantarol aufnehmen" ;
+n0:anno20
+    a o:Annotation;
+    dct:created "2024-08-28T13:17:48.410Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "in der Metallrestaurierung (unter Lazlo Lehoczky) wurden Metallobjekte nach der Bearbeitung mit Pantarol (Nitrocelluloselack) gegen Luftfeuchtigkeit gesch\u00fctzt. Bitte Pantarol aufnehmen";
     o:hasTarget n0:conceptGC7998 .
+n0:anno21
+    a o:Annotation;
+    dct:created "2024-08-28T14:28:39.985Z";
+    dct:creator "Matthias Heinzel";
+    o:bodyValue
+        """Hier m\u00fcsste noch als Unterpunkt der Sapropelit hinzugef\u00fcgt werden. Ausf\u00fchrliche Beschreibung
 
-n0:anno21 a o:Annotation ;
-    dct:created "2024-08-28T14:28:39.985Z" ;
-    dct:creator "Matthias Heinzel" ;
-    o:bodyValue """Hier mÃ¼sste noch als Unterpunkt der Sapropelit hinzugefÃ¼gt werden. AusfÃ¼hrliche Beschreibung
-
-Sapropelite sind das Resultat verfestigter FaulschlÃ¤mme (altgriechisch ÏÎ±ÏÏÏÏ sapros âfaulâ, âverfaultâ). Sie entstehen unter natÃ¼rlichen Bedingungen in zuvor nÃ¤hrstoffreichen GewÃ¤ssern und SÃ¼mpfen, wenn organisches Material bei Abwesenheit von Sauerstoff biochemisch umgewandelt wird. Quelle: Mineralienatlas.de""" ;
+Sapropelite sind das Resultat verfestigter Faulschl\u00e4mme (altgriechisch \u03c3\u03b1\u03c0\u03c1\u03cc\u03c2 sapros \u201efaul\u201c, \u201everfault\u201c). Sie entstehen unter nat\u00fcrlichen Bedingungen in zuvor n\u00e4hrstoffreichen Gew\u00e4ssern und S\u00fcmpfen, wenn organisches Material bei Abwesenheit von Sauerstoff biochemisch umgewandelt wird. Quelle: Mineralienatlas.de""";
     o:hasTarget n0:conceptG76A78 .
-
-n0:anno22 a o:Annotation ;
-    dct:created "2024-08-28T14:36:04.802Z" ;
-    dct:creator "Matthias Heinzel" ;
-    o:bodyValue "Bei den Mineralien fehlen noch als Untergruppen: Korund mit den Untergruppen Saphire und Rubin; dann der Smaragd; Fluorit oder Flussspat mÃ¼sste auch noch hinzu.  " ;
+n0:anno22
+    a o:Annotation;
+    dct:created "2024-08-28T14:36:04.802Z";
+    dct:creator "Matthias Heinzel";
+    o:bodyValue
+        "Bei den Mineralien fehlen noch als Untergruppen: Korund mit den Untergruppen Saphire und Rubin; dann der Smaragd; Fluorit oder Flussspat m\u00fcsste auch noch hinzu.  ";
     o:hasTarget n0:conceptBGC9F3 .
-
-n0:anno23 a o:Annotation ;
-    dct:created "2024-08-28T14:37:10.623Z" ;
-    dct:creator "Matthias Heinzel" ;
-    o:bodyValue "Sollten wir bei den Mineralien die jeweilige Moossche HÃ¤rte angeben?" ;
+n0:anno23
+    a o:Annotation;
+    dct:created "2024-08-28T14:37:10.623Z";
+    dct:creator "Matthias Heinzel";
+    o:bodyValue
+    "Sollten wir bei den Mineralien die jeweilige Moossche H\u00e4rte angeben?";
     o:hasTarget n0:conceptBGC9F3 .
-
-n0:anno24 a o:Annotation ;
-    dct:created "2024-08-28T14:42:03.263Z" ;
-    dct:creator "Matthias Heinzel" ;
-    o:bodyValue "Hier fehlen noch als Unterpunkt die Perle und da wiederum die Unterscheidung zwischen SÃ¼Ãwasser- und Salzwasserperlen" ;
+n0:anno24
+    a o:Annotation;
+    dct:created "2024-08-28T14:42:03.263Z";
+    dct:creator "Matthias Heinzel";
+    o:bodyValue
+        "Hier fehlen noch als Unterpunkt die Perle und da wiederum die Unterscheidung zwischen S\u00fc\u00dfwasser- und Salzwasserperlen";
     o:hasTarget n0:conceptF1BA31 .
-
-n0:anno25 a o:Annotation ;
-    dct:created "2024-08-28T14:44:23.961Z" ;
-    dct:creator "Matthias Heinzel" ;
-    o:bodyValue "Unterscheiden wir hier von welchem Baum das Pech gewonnen wurde? Birke, Buche, Nadelholz" ;
+n0:anno25
+    a o:Annotation;
+    dct:created "2024-08-28T14:44:23.961Z";
+    dct:creator "Matthias Heinzel";
+    o:bodyValue
+        "Unterscheiden wir hier von welchem Baum das Pech gewonnen wurde? Birke, Buche, Nadelholz";
     o:hasTarget n0:conceptD467F2 .
-
-n0:anno26 a o:Annotation ;
-    dct:created "2024-08-28T14:49:55.505Z" ;
-    dct:creator "Matthias Heinzel" ;
-    o:bodyValue "Unterscheiden wir hier zwischen fossilem Elfenbein und \"frischem Elfenbein\"?" ;
-    o:hasTarget n0:conceptAG55BC .
-
-n0:anno27 a o:Annotation ;
-    dct:created "2024-09-02T09:52:59.466Z" ;
-    dct:creator "Anonymus" ;
-    o:bodyValue "Infrarot Fotographie hier ergÃ¤nzen?" ;
+n0:anno26
+    a o:Annotation;
+    dct:created "2024-08-28T14:49:55.505Z";
+    dct:creator "Matthias Heinzel";
+    o:bodyValue
+        """Unterscheiden wir hier zwischen fossilem Elfenbein und "frischem Elfenbein"?""";
+    o:hasTarget n0:conceptAG55BC.
+n0:anno27
+    a o:Annotation;
+    dct:created "2024-09-02T09:52:59.466Z";
+    dct:creator "Anonymus";
+    o:bodyValue "Infrarot Fotographie hier erg\u00e4nzen?";
     o:hasTarget n0:conceptCA7279 .
-
-n0:anno28 a o:Annotation ;
-    dct:created "2024-09-02T09:57:22.096Z" ;
-    dct:creator "Anonymus" ;
-    o:bodyValue "warum sind \"Analyse der chemischen Zusammensetzung\" und \"chemische Zusammensetzung\" zwei unterschiedliche Unterpunkte?" ;
-    o:hasTarget n0:conceptG17B8B .
-
-n0:anno29 a o:Annotation ;
-    dct:created "2024-09-03T13:45:45.455Z" ;
-    dct:creator "Kristina" ;
-    o:bodyValue "Kauramin CE 5549 wird als eigener Begriff aussortiert. Stattdessen bei Kauramin 800 als \"altLabel\" integriert und im der Description erlÃ¤utert" ;
+n0:anno28
+    a o:Annotation;
+    dct:created "2024-09-02T09:57:22.096Z";
+    dct:creator "Anonymus";
+    o:bodyValue
+        """warum sind "Analyse der chemischen Zusammensetzung" und "chemische Zusammensetzung" zwei unterschiedliche Unterpunkte?""";
+    o:hasTarget n0:conceptG17B8B.
+n0:anno29
+    a o:Annotation;
+    dct:created "2024-09-03T13:45:45.455Z";
+    dct:creator "Kristina";
+    o:bodyValue
+        """Kauramin CE 5549 wird als eigener Begriff aussortiert. Stattdessen bei Kauramin 800 als "altLabel" integriert und im der Description erl\u00e4utert""";
     o:hasTarget n0:conceptBFB162 .
-
-n0:anno3 a o:Annotation ;
-    dct:created "2024-08-27T11:56:02.873Z" ;
-    dct:creator "Ivan" ;
-    o:bodyValue "Die Definition ist glaube ich fÃ¼r âRÃ¶ntgen-CTâ. Tomographie bezeichnet nur die Rekonstruktion von einem 3D Modell aus vielen (Projektions)Bildern; es gibt auch Neutrontomographie, MRT, usw.  und auch RÃ¶ntgentomographie (ohne Computer)! CT bezeichnet wahrscheinlich nur RÃ¶ntgen-CT aber um sicher zu sein, wÃ¼rde ich empfehlen, den Begriff zu âRÃ¶ntgen-Computertomographieâ zu Ã¤ndern." ;
+n0:anno3
+    a o:Annotation;
+    dct:created "2024-08-27T11:56:02.873Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        "Die Definition ist glaube ich f\u00fcr \u201eR\u00f6ntgen-CT\u201c. Tomographie bezeichnet nur die Rekonstruktion von einem 3D Modell aus vielen (Projektions)Bildern; es gibt auch Neutrontomographie, MRT, usw.  und auch R\u00f6ntgentomographie (ohne Computer)! CT bezeichnet wahrscheinlich nur R\u00f6ntgen-CT aber um sicher zu sein, w\u00fcrde ich empfehlen, den Begriff zu \u201eR\u00f6ntgen-Computertomographie\u201c zu \u00e4ndern.";
     o:hasTarget n0:conceptAF9A88 .
-
-n0:anno30 a o:Annotation ;
-    dct:created "2024-09-03T13:46:00.145Z" ;
-    dct:creator "Lasse" ;
-    o:bodyValue "Kristina hat diesen Begriff entfernt. Wir arbeiten noch an einem Umgang mit entfernten Begriffen, damit sie nicht zu Fehlern in der Kommentarumgebung fÃ¼hren..." ;
+n0:anno30
+    a o:Annotation;
+    dct:created "2024-09-03T13:46:00.145Z";
+    dct:creator "Lasse";
+    o:bodyValue
+        "Kristina hat diesen Begriff entfernt. Wir arbeiten noch an einem Umgang mit entfernten Begriffen, damit sie nicht zu Fehlern in der Kommentarumgebung f\u00fchren...";
     o:hasTarget n0:conceptBFB162 .
-
-n0:anno31 a o:Annotation ;
-    dct:created "2024-09-03T13:49:05.583Z" ;
-    dct:creator "Kristina" ;
-    o:bodyValue "Die Anmerkung verstehe ich nicht so ganz. Es gibt keinen Punkt \"chemische Zusammensetzung\". Oder meinst du \"chemische Untersuchung\" ? Damit sind Untersuchungen gemeint, bei denen mit Hilfe von chemischen Reagenzien Verhaltensweisen von Materialien getestet werden (z.B. Spot-Tests fÃ¼r unbekannte Klebstoffe bei Altrestaurierungen, etc.) " ;
-    o:hasTarget n0:conceptG17B8B .
-
-n0:anno33 a o:Annotation ;
-    dct:created "2024-09-10T08:44:57.246Z" ;
-    dct:creator "Kristina" ;
-    o:bodyValue "Ist angepasst, vielen Dank. Die ursprÃ¼ngliche Beschreibung war noch auf die reine analoge Kopieherstellung bezogen. Auch den Begriff habe ich entsprechend des Vorschlags geÃ¤ndert. " ;
-    o:hasTarget n0:conceptF8F7CF .
-
-n0:anno34 a o:Annotation ;
-    dct:created "2024-09-10T09:30:10.007Z" ;
-    dct:creator "Anja Cramer" ;
-    o:bodyValue "Ist die Unterscheidung zwischen analoger und digitaler Abformung richtig? Ich wÃ¼rde eher auf die Ebene der Abformung noch 3D-Digitalisierung hinzufÃ¼gen und die Unterscheidung von analoger und digitaler Abformung lÃ¶schen? Dann wÃ¤re 3D-Digitalisierung eine Vorgehensweise zur Erstellung von wissenschaftlichen Kopien." ;
+n0:anno31
+    a o:Annotation;
+    dct:created "2024-09-03T13:49:05.583Z";
+    dct:creator "Kristina";
+    o:bodyValue
+        """Die Anmerkung verstehe ich nicht so ganz. Es gibt keinen Punkt "chemische Zusammensetzung". Oder meinst du "chemische Untersuchung" ? Damit sind Untersuchungen gemeint, bei denen mit Hilfe von chemischen Reagenzien Verhaltensweisen von Materialien getestet werden (z.B. Spot-Tests f\u00fcr unbekannte Klebstoffe bei Altrestaurierungen, etc.) """;
+    o:hasTarget n0:conceptG17B8B.
+n0:anno32
+    a o:Annotation;
+    dct:created "2024-09-20T10:40:44.734Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """ mohssche H\u00e4rte... (Markus=Klugschei\u00dfer)
+""";
+    o:hasTarget n0:conceptBGC9F3 .
+n0:anno33
+    a o:Annotation;
+    dct:created "2024-09-10T08:44:57.246Z";
+    dct:creator "Kristina";
+    o:bodyValue
+        "Ist angepasst, vielen Dank. Die urspr\u00fcngliche Beschreibung war noch auf die reine analoge Kopieherstellung bezogen. Auch den Begriff habe ich entsprechend des Vorschlags ge\u00e4ndert. ";
+    o:hasTarget n0:conceptF8F7CF.
+n0:anno34
+    a o:Annotation;
+    dct:created "2024-09-10T09:30:10.007Z";
+    dct:creator "Anja Cramer";
+    o:bodyValue
+        "Ist die Unterscheidung zwischen analoger und digitaler Abformung richtig? Ich w\u00fcrde eher auf die Ebene der Abformung noch 3D-Digitalisierung hinzuf\u00fcgen und die Unterscheidung von analoger und digitaler Abformung l\u00f6schen? Dann w\u00e4re 3D-Digitalisierung eine Vorgehensweise zur Erstellung von wissenschaftlichen Kopien.";
     o:hasTarget n0:conceptDAG2A8 .
+n0:anno35
+    a o:Annotation;
+    dct:created "2024-09-20T10:55:11.809Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """ mohssche H\u00e4rte... (Markus=Klugschei\u00dfer)
+zu description: nat\u00fcrliches Material, nachwachsender Rohstoff; die Hauptbestandteile von Holz sind Cellulose, Hemicellulose und Lignin, w\u00e4hrend des Wachstums werden Extraktstoffe und Mineralien in den Zellen eingelagert.Holz ist aufgrund...""";
+    o:hasTarget n0:conceptA9A858 .
+n0:anno36
+    a o:Annotation;
+    dct:created "2024-09-20T10:56:50.217Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """ mohssche H\u00e4rte... (Markus=Klugschei\u00dfer)
+zu description: nat\u00fcrliches Material, nachwachsender Rohstoff; die Hauptbestandteile von Holz sind Cellulose, Hemicellulose und Lignin, w\u00e4hrend des Wachstums werden Extraktstoffe und Mineralien in den Zellen eingelagert.Holz ist aufgrund...""";
+    o:hasTarget n0:conceptC47769 .
+n0:anno37
+    a o:Annotation;
+    dct:created "2024-09-20T10:57:16.389Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """ mohssche H\u00e4rte... (Markus=Klugschei\u00dfer)
+zu description: nat\u00fcrliches Material, nachwachsender Rohstoff; die Hauptbestandteile von Holz sind Cellulose, Hemicellulose und Lignin, w\u00e4hrend des Wachstums werden Extraktstoffe und Mineralien in den Zellen eingelagert.Holz ist aufgrund...""";
+    o:hasTarget n0:conceptC47769 .
+n0:anno38
+    a o:Annotation;
+    dct:created "2024-09-20T11:09:22.152Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """description: Holz, frisch geschlagen oder auch abgelagert, jedenfalls im Vergleich zu arch\u00e4ologischem Holz keinen Abbauprozessen ausgesetzt war
 
-n0:anno4 a o:Annotation ;
-    dct:created "2024-08-27T13:02:42.906Z" ;
-    dct:creator "Kristina" ;
-    o:bodyValue "Alright, ist geÃ¤ndert. Danke Ivan. " ;
+""";
+    o:hasTarget n0:conceptC47769 .
+n0:anno39
+    a o:Annotation;
+    dct:created "2024-09-20T11:13:56.307Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "\nzu altLabel: Quercus: da es verschiedene Eichenspezies gibt, die sich (zumindest bei arch\u00e4ologischen Holzproben) nicht genauer bestimmen lassen, w\u00e4re quercus spec. (quercus species) korrekt, das schlie\u00dft alle Eichensorten ein.\n";
+    o:hasTarget n0:conceptFG3BCD.
+n0:anno4
+    a o:Annotation;
+    dct:created "2024-08-27T13:02:42.906Z";
+    dct:creator "Kristina";
+    o:bodyValue "Alright, ist ge\u00e4ndert. Danke Ivan. ";
     o:hasTarget n0:conceptAF9A88 .
+n0:anno40
+    a o:Annotation;
+    dct:created "2024-09-20T11:41:02.303Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "description:Nadelb\u00e4ume, sind evolution\u00e4r betrachtet \u00e4lter als Laubb\u00e4ume. Eine einzige Art von Zellen, die Tracheiden, \u00fcbernimmt sowohl die Stabilit\u00e4ts- als auch die Wassertransportfunktion, was dem Nadelholz einen relativ einfachen und regelm\u00e4\u00dfigen Zellaufbau verleiht.Dank ihrer Anpassung an kurze Vegetationsperioden k\u00f6nnen Nadelb\u00e4ume auch in Regionen mit langen, kalten Wintern oder in gro\u00dfen H\u00f6hen \u00fcberleben, wo Laubb\u00e4ume nicht mehr wachsen.";
+    o:hasTarget n0:conceptFC3FD6 .
+n0:anno41
+    a o:Annotation;
+    dct:created "2024-09-20T11:45:57.498Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """
+liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein?""";
+    o:hasTarget n0:conceptG2944B.
+n0:anno42
+    a o:Annotation;
+    dct:created "2024-09-20T11:46:51.951Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein?
+""";
+    o:hasTarget n0:conceptA73FD7 .
+n0:anno43
+    a o:Annotation;
+    dct:created "2024-09-20T11:47:01.506Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein?
+""";
+    o:hasTarget n0:conceptF5GA47 .
+n0:anno44
+    a o:Annotation;
+    dct:created "2024-09-20T11:47:24.831Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein?
+""";
+    o:hasTarget n0:conceptFCA7DA.
+n0:anno45
+    a o:Annotation;
+    dct:created "2024-09-20T12:13:36.393Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "description: Im Laubholz \u00fcbernehmen verschiedene spezialisierte Zelltypen die Aufgaben des Stofftransports, der Stabilit\u00e4t und des Stoffwechsels bzw. der Stoffspeicherung. Das Holzgewebe besteht aus mehr als 100  unterschiedlichen Elementen, darunter Tracheen f\u00fcr den Wassertransport, Tracheiden,die ebenfalls zur Wasserleitung und Stabilit\u00e4t beitragen, sowie Parenchymzellen, die f\u00fcr den Stoffwechsel und die Speicherung von N\u00e4hrstoffen zust\u00e4ndig sind";
+    o:hasTarget n0:conceptB7DD6B.
+n0:anno46
+    a o:Annotation;
+    dct:created "2024-09-20T12:17:54.610Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "auch hier, besser betula spec. die Unterarten lassen sich bei arch. Holz kaum/nicht unterscheiden";
+    o:hasTarget n0:conceptBGG879 .
+n0:anno47
+    a o:Annotation;
+    dct:created "2024-09-20T12:19:39.240Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """09-20 11:47:01
+Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? """;
+    o:hasTarget n0:conceptFA1B26 .
+n0:anno48
+    a o:Annotation;
+    dct:created "2024-09-20T12:20:03.739Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """09-20 11:47:01
+Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? """;
+    o:hasTarget n0:conceptGAG81G.
+n0:anno49
+    a o:Annotation;
+    dct:created "2024-09-20T12:21:18.625Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """09-20 11:47:01
+Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? 
+und auch hier besser tilia spec.""";
+    o:hasTarget n0:conceptB44F39 .
+n0:anno5
+    a o:Annotation;
+    dct:created "2024-08-27T14:21:09.315Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        "der CT ist auch eine R\u00f6ntgenanlage :) Mir fehlt kein Begriff ein, der nur f\u00fcr konventionelle Radiographie als Ger\u00e4t benutzt wird. Vom Hardware gibt es kaum Unterschiede zwischen CT und konventionelle (digitale) Radiographie: nur der Drehteller eigentlich!";
+    o:hasTarget n0:conceptG8D62A.
+n0:anno50
+    a o:Annotation;
+    dct:created "2024-09-20T12:21:49.090Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """09-20 11:47:01
+Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? 
+und auch hier besser prunus spec.""";
+    o:hasTarget n0:conceptABBFB5 .
+n0:anno51
+    a o:Annotation;
+    dct:created "2024-09-20T12:23:00.631Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """09-20 11:47:01
+Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? 
+und auch hier besser populus spec.""";
+    o:hasTarget n0:conceptB5C86F.
+n0:anno52
+    a o:Annotation;
+    dct:created "2024-09-20T12:23:59.784Z";
+    dct:creator "Markus";
+    o:bodyValue
+        """09-20 11:47:01
+Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? 
+und auch hier besser salix spec.""";
+    o:hasTarget n0:conceptGG1CG9 .
+n0:anno53
+    a o:Annotation;
+    dct:created "2024-09-20T12:59:22.419Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "Deionisiertes Wasser (mit einer Leitf\u00e4higkeit von \u2265 0,1\u20131 \u03bcS/cm) unterscheidet sich durch seinen Reinheitsgrad von destilliertem Wasser (mit einer Leitf\u00e4higkeit von \u2265 1\u201310 \u03bcS/cm), ist jedoch nicht keimfrei. In der Medizin werden beide Verfahren oft kombiniert, wenn f\u00fcr einen Arbeitsprozess vollentsalztes und gleichzeitig keimfreies Wasser erforderlich ist.";
+    o:hasTarget n0:conceptBBF7BG.
+n0:anno54
+    a o:Annotation;
+    dct:created "2024-09-20T13:18:52.132Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "ich vermisse die Polyurethanharze/kleber. Verwendet die niemand? Das sind z.B Montagekleber, die quellen immer etwas auf bei der Aush\u00e4rtung";
+    o:hasTarget n0:conceptA1D125 .
+n0:anno55
+    a o:Annotation;
+    dct:created "2024-09-20T13:27:08.642Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "Ebacryl ist ein acrylharzmodifizierter Hartgips, 2 komponentig, Pulver und Emulsion. Ebacryl w\u00fcrde ich eher bei den Gipsen platzieren";
+    o:hasTarget n0:conceptCG2863 .
+n0:anno56
+    a o:Annotation;
+    dct:created "2024-09-20T13:35:32.960Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "Palatal\u00ae P 4-01 ist ein unges\u00e4ttigtes Polyesterharz, gel\u00f6st in Stryol. Es wird durch die Zugabe eines Katalysator (Butanox) und Kobaltbeschleuniger vernetzt. In den 1980-1990er Jahren wurde es h\u00e4ufig zur Herstellung von Kopien, meist mit Zuschlagstoffen eingesetzt.";
+    o:hasTarget n0:conceptD39264 .
+n0:anno57
+    a o:Annotation;
+    dct:created "2024-09-20T13:44:12.326Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "scharriert,  Oberfl\u00e4chenbearbeitung/Gl\u00e4ttung eines Werksteinsteins. Ein Scharriereisen hat die Form eines \u00fcberbreiten Mei\u00dfels und erzeugt parallele Rillen";
+    o:hasTarget n0:conceptAGG387 .
+n0:anno58
+    a o:Annotation;
+    dct:created "2024-09-20T13:49:33.020Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "gebeilt: Bearbeitung von Holz oder auch Werkstein. In der Romanik oft verwendetes Werkzeug um als Finish eine Steinoberfl\u00e4che zu planieren/gl\u00e4tten. Wird beidh\u00e4ndig gef\u00fchrt und erzeugt parallele, sich meist \u00fcberkreuzende Rillen\t";
+    o:hasTarget n0:conceptB437A9 .
+n0:anno59
+    a o:Annotation;
+    dct:created "2024-09-20T13:55:12.308Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "Gespitzt: Ein Spitzeisen (Spitzmei\u00dfel) dient zum groben Formen eines Werkst\u00fccks. Mit ihm lassen sich  gr\u00f6\u00dfere Steinbrocken abschlagen. Oft bleiben Spitzhiebe in einer planierten, eingeebneten Oberfl\u00e4che sichtbar, da sie zu tief ausgef\u00fchrt wurden.";
+    o:hasTarget n0:conceptB1B854 .
+n0:anno6
+    a o:Annotation;
+    dct:created "2024-08-27T14:21:45.561Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        "es ist ein Lichtmikroskop. Einfache Definition: Mikroskop ohne Okulare (nur Kamera+Bildschirm).";
+    o:hasTarget n0:conceptAG4G3C.
+n0:anno60
+    a o:Annotation;
+    dct:created "2024-09-20T13:57:47.820Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "gezahnt: Ein Zahneisen ist gestaltet wie ein Flachmei\u00dfel, mit Z\u00e4hnen. Durch diese Form l\u00e4\u00dft sich mehr Material abtragen als es mit einem Flachmei\u00dfel m\u00f6glich ist. Es entstehen kurze, tiefe Rillen in der Steinoberfl\u00e4che, auch auch oft noch nach einer Einebnung/Gl\u00e4ttung sichtbar sind.";
+    o:hasTarget n0:conceptBAB7B3 .
+n0:anno61
+    a o:Annotation;
+    dct:created "2024-09-20T14:03:50.221Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "gespalten: Trennvorgang an Materialen (z.B Holz,Stein) oft unter Nutzung nat\u00fcrlicher Schwachstellen/Wachstumslinien/Sedimentlagern. Bei Holz wird der Spaltvorgang radial ausgef\u00fchrt und folgt den Wachstumsstrukturen (Holzstrahlen). Daher werden die Holzstrahlen nicht verletzt/getrennt wie beim S\u00e4gen, das gewonnene Werkst\u00fcck ist besonders stabil und bruchfest.";
+    o:hasTarget n0:conceptADB89D.
+n0:anno62
+    a o:Annotation;
+    dct:created "2024-09-20T14:09:46.336Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "Inkrustiert: Die Verzierung/Oberfl\u00e4chegestaltung von mineralischen Werkstoffen (wie Keramik oder Stein) durch das Einlegen verschiedenfarbiger, kontrastreicher Materialien";
+    o:hasTarget n0:conceptA6FA7G.
+n0:anno63
+    a o:Annotation;
+    dct:created "2024-09-20T14:14:27.026Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "description:Rezentes Holz bezeichnet Holz, das frisch geschlagen oder abgelagert ist, jedoch im Vergleich zu arch\u00e4ologischem Holz noch keinen nennenswerten Abbauprozessen ausgesetzt war";
+    o:hasTarget n0:conceptC47769 .
+n0:anno64
+    a o:Annotation;
+    dct:created "2024-09-20T14:22:19.108Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "Ringporiges Laubholz bezeichnet Laubh\u00f6lzer, die gro\u00dfe Tracheen/Poren im Fr\u00fchholz und deutlich kleinere im Sp\u00e4tholz ausbilden. Im Querschnitt sind deutlich ringf\u00f6rmige Strukturen sichtbar.";
+    o:hasTarget n0:conceptD39191 .
+n0:anno65
+    a o:Annotation;
+    dct:created "2024-09-20T14:25:27.850Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "Ringporiges Laubholz bezeichnet Laubh\u00f6lzer, die gro\u00dfe Tracheen/Gef\u00e4\u00dfe im Fr\u00fchholz und deutlich kleinere im Sp\u00e4tholz ausbilden. Im Querschnitt sind deutlich ringf\u00f6rmige Strukturen sichtbar";
+    o:hasTarget n0:conceptD39191 .
+n0:anno66
+    a o:Annotation;
+    dct:created "2024-09-20T14:28:37.957Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "Zerstreutporiges Laubholz bezeichnet Laubh\u00f6lzern, bei denen die Gef\u00e4\u00dfe/Tracheen gleichm\u00e4\u00dfig und ohne klare Anordnung \u00fcber einen gesamten Jahrring verteilt im Holz vorkommen. Anders als bei ringporigen H\u00f6lzern, bei denen gro\u00dfe Gef\u00e4\u00dfe im Fr\u00fchholz und kleinere im Sp\u00e4tholz auftreten, gibt es bei zerstreutporigen H\u00f6lzern keinen gro\u00dfen Unterschied in der Gr\u00f6\u00dfe oder Verteilung der Gef\u00e4\u00dfe zwischen Fr\u00fch- und Sp\u00e4tholz.";
+    o:hasTarget n0:conceptDAA3F9 .
+n0:anno7
+    a o:Annotation;
+    dct:created "2024-08-27T14:22:14.558Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        "ist es immer mit Cross-Polarisation? Man kann es doch nur mit einem Filter anwenden, oder?";
+    o:hasTarget n0:conceptA7FA3B.
+n0:anno8
+    a o:Annotation;
+    dct:created "2024-08-27T14:22:53.368Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        "Bei der digitalen Mikroskopie geht das Licht vom Objektiv auch bzw. nur zur Kamera.";
+    o:hasTarget n0:conceptB94DCD.
+n0:anno9
+    a o:Annotation;
+    dct:created "2024-08-27T14:23:00.853Z";
+    dct:creator "Ivan";
+    o:bodyValue
+        "Bei der digitalen Mikroskopie geht das Licht vom Objektiv auch bzw. nur zur Kamera.";
+    o:hasTarget n0:conceptA9611D.
+n0:conceptA1D125 a skos:Concept.
 
-n0:anno5 a o:Annotation ;
-    dct:created "2024-08-27T14:21:09.315Z" ;
-    dct:creator "Ivan" ;
-    o:bodyValue "der CT ist auch eine RÃ¶ntgenanlage :) Mir fehlt kein Begriff ein, der nur fÃ¼r konventionelle Radiographie als GerÃ¤t benutzt wird. Vom Hardware gibt es kaum Unterschiede zwischen CT und konventionelle (digitale) Radiographie: nur der Drehteller eigentlich!" ;
-    o:hasTarget n0:conceptG8D62A .
+n0:conceptA28B4D a skos:Concept; skos:inScheme n0:scheme1 .
 
-n0:anno6 a o:Annotation ;
-    dct:created "2024-08-27T14:21:45.561Z" ;
-    dct:creator "Ivan" ;
-    o:bodyValue "es ist ein Lichtmikroskop. Einfache Definition: Mikroskop ohne Okulare (nur Kamera+Bildschirm)." ;
-    o:hasTarget n0:conceptAG4G3C .
+n0:conceptA2B5A3 a skos:Concept; skos:inScheme n0:scheme1 .
 
-n0:anno7 a o:Annotation ;
-    dct:created "2024-08-27T14:22:14.558Z" ;
-    dct:creator "Ivan" ;
-    o:bodyValue "ist es immer mit Cross-Polarisation? Man kann es doch nur mit einem Filter anwenden, oder?" ;
-    o:hasTarget n0:conceptA7FA3B .
+n0:conceptA6FA7G a skos:Concept.
 
-n0:anno8 a o:Annotation ;
-    dct:created "2024-08-27T14:22:53.368Z" ;
-    dct:creator "Ivan" ;
-    o:bodyValue "Bei der digitalen Mikroskopie geht das Licht vom Objektiv auch bzw. nur zur Kamera." ;
-    o:hasTarget n0:conceptB94DCD .
+n0:conceptA73FD7 a skos:Concept.
 
-n0:anno9 a o:Annotation ;
-    dct:created "2024-08-27T14:23:00.853Z" ;
-    dct:creator "Ivan" ;
-    o:bodyValue "Bei der digitalen Mikroskopie geht das Licht vom Objektiv auch bzw. nur zur Kamera." ;
-    o:hasTarget n0:conceptA9611D .
+n0:conceptA7FA3B a skos:Concept; skos:inScheme n0:scheme1 .
 
-n0:conceptDA2D73 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptA9611D a skos:Concept; skos:inScheme n0:scheme1 .
 
-n0:conceptA28B4D a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptA9A858 a skos:Concept.
 
-n0:conceptA2B5A3 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptABBFB5 a skos:Concept.
 
-n0:conceptA9611D a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptADB89D a skos:Concept.
 
-n0:conceptAG4G3C a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptAF9A88 a skos:Concept; skos:inScheme n0:scheme1 .
 
-n0:conceptB94DCD a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptAG4G3C a skos:Concept; skos:inScheme n0:scheme1 .
 
-n0:conceptCA7279 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptAG55BC a skos:Concept; skos:inScheme n0:scheme1 .
 
-n0:conceptD467F2 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptAGG387 a skos:Concept.
 
-n0:conceptDAG2A8 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptB1B854 a skos:Concept; skos:inScheme n0:scheme1 .
 
-n0:conceptF1BA31 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptB437A9 a skos:Concept.
 
-n0:conceptFC2113 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptB44F39 a skos:Concept.
 
-n0:conceptFF4767 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptB5C86F a skos:Concept.
 
-n0:conceptG76A78 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptB7DD6B a skos:Concept.
 
-n0:conceptGC7998 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptB94DCD a skos:Concept; skos:inScheme n0:scheme1 .
 
-n0:conceptGD86C1 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptBAB7B3 a skos:Concept.
 
-n0:conceptA7FA3B a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptBBF7BG a skos:Concept.
 
-n0:conceptAF9A88 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptBFB162 a skos:Concept; skos:inScheme n0:scheme1 .
 
-n0:conceptAG55BC a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptBGC9F3 a skos:Concept; skos:inScheme n0:scheme1 .
 
-n0:conceptB1B854 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptBGG879 a skos:Concept.
 
-n0:conceptBGC9F3 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptC47769 a skos:Concept.
 
-n0:conceptF8F7CF a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptCA7279 a skos:Concept; skos:inScheme n0:scheme1 .
 
-n0:conceptG17B8B a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptCG2863 a skos:Concept.
 
-n0:conceptG8D62A a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptD39191 a skos:Concept.
 
-n0:conceptBFB162 a skos:Concept ;
-    skos:inScheme n0:scheme1 .
+n0:conceptD39264 a skos:Concept.
 
-n0:scheme1 a skos:ConceptScheme ;
-dct:title "Leiza Restaurierungs- und Konservierungsthesaurus".
+n0:conceptD467F2 a skos:Concept; skos:inScheme n0:scheme1 .
 
+n0:conceptDA2D73 a skos:Concept; skos:inScheme n0:scheme1 .
+
+n0:conceptDAA3F9 a skos:Concept.
+
+n0:conceptDAG2A8 a skos:Concept; skos:inScheme n0:scheme1 .
+
+n0:conceptF1BA31 a skos:Concept; skos:inScheme n0:scheme1 .
+
+n0:conceptF5GA47 a skos:Concept.
+
+n0:conceptF8F7CF a skos:Concept; skos:inScheme n0:scheme1 .
+
+n0:conceptFA1B26 a skos:Concept.
+
+n0:conceptFC2113 a skos:Concept; skos:inScheme n0:scheme1 .
+
+n0:conceptFC3FD6 a skos:Concept.
+
+n0:conceptFCA7DA a skos:Concept.
+
+n0:conceptFF4767 a skos:Concept; skos:inScheme n0:scheme1 .
+
+n0:conceptFG3BCD a skos:Concept.
+
+n0:conceptG17B8B a skos:Concept; skos:inScheme n0:scheme1 .
+
+n0:conceptG2944B a skos:Concept.
+
+n0:conceptG76A78 a skos:Concept; skos:inScheme n0:scheme1 .
+
+n0:conceptG8D62A a skos:Concept; skos:inScheme n0:scheme1 .
+
+n0:conceptGAG81G a skos:Concept.
+
+n0:conceptGC7998 a skos:Concept; skos:inScheme n0:scheme1 .
+
+n0:conceptGD86C1 a skos:Concept; skos:inScheme n0:scheme1 .
+
+n0:conceptGG1CG9 a skos:Concept.
+
+n0:scheme1
+    a skos:ConceptScheme;
+    dct:title "Leiza Restaurierungs- und Konservierungsthesaurus".
