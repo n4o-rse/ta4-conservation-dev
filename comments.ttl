@@ -6,11 +6,13 @@
 
 n0:anno1
     a o:Annotation;
-    dct:created "2024-08-29T17:14:02.574Z";
-    dct:creator "Lasse";
+    dct:created "2024-09-24T07:04:40.439Z";
+    dct:creator "Kristina";
     o:bodyValue
-        "Wir freuen uns immer \u00fcber weitere Beitr\u00e4ge. Gern einfach in ein weiteres Kommentar schreiben, damit Kristina das ganzen nach dem Urlaub aufnehmen kann. Eine Funktion selbst \u00c4nderungen am Thesaurus vorzunehmen, konnte ich (bislang) leider noch nicht einbauen.";
-    o:hasTarget n0:conceptB1B854 .
+        """Aber selbstverst\u00e4ndlich, lieber Markus. Dein Wunsch sei mir Befehl ;). 
+
+Der Punkt "description" taucht manchmal hier in der Darstellung noch nicht auf, wenn kein Text in dem Feld eingetragen ist. Er ist aber grunds\u00e4tzlich bei jedem Begriff schon angelegt. Schreib mir gerne einen Beschreibungstext in die jeweilige Kommentarspalte, dann f\u00fcge ich es in die Arbeitstabelle ein und er erscheint dann auch hier in der Darstellung. """;
+    o:hasTarget n0:conceptG2944B.
 n0:anno10
     a o:Annotation;
     dct:created "2024-08-27T14:24:57.931Z";
@@ -26,27 +28,6 @@ n0:anno11
     o:bodyValue
         """...einer "Holzmaserung" \u00e4hnelt die Struktur von Elfenbein eigentlich nicht. Charakteristisch sind die sogenannten Schreger'schen Linien, die im Querschnitt eine netzartiges Struktur bilden (und sich dadurch von elfenbein\u00e4hnlichen Materialien unterscheiden). """;
     o:hasTarget n0:conceptAG55BC.
-n0:anno12
-    a o:Annotation;
-    dct:created "2024-08-28T05:09:35.498Z";
-    dct:creator "Kristina";
-    o:bodyValue
-        "Guter Hinweis, ich hab das nochmal nachgeschlagen und den Text entsprechend angepasst. ";
-    o:hasTarget n0:conceptA7FA3B.
-n0:anno13
-    a o:Annotation;
-    dct:created "2024-08-28T05:49:19.977Z";
-    dct:creator "Kristina ";
-    o:bodyValue
-        """Wie w\u00e4re es mit diesem Vorschlag? Simultan zum Begriff "konventionelle Radiographie" habe ich das zugeh\u00f6rige Ger\u00e4t nun statt nur "R\u00f6ntgenanlage" zu "konventionelles R\u00f6ntgenger\u00e4t" umbenannt. In der Description wird dann der Unterschied zum CT erkl\u00e4rt (und bei der Description des CTs entsprechend umgekehrt). """;
-    o:hasTarget n0:conceptG8D62A.
-n0:anno14
-    a o:Annotation;
-    dct:created "2024-09-10T08:10:47.108Z";
-    dct:creator "Anja Cramer";
-    o:bodyValue
-        """Ich w\u00fcrde die Beschreibung hier etwas anpassen, da z.B. bei einem 3D-Druck keine Abformung eines Objektes notwendig ist. Und den Unterbegriff "DigitaleKopieerstellung" in "3D-Druckverfahren" umbenennen, dann w\u00fcrde es besser zu den beiden anderen passen.""";
-    o:hasTarget n0:conceptF8F7CF.
 n0:anno15
     a o:Annotation;
     dct:created "2024-08-28T11:58:55.324Z";
@@ -82,13 +63,6 @@ n0:anno19
     o:bodyValue
         "manchmal verwende ich auch die harzreichere Variante: Auro Hart\u00f6l Nr.126";
     o:hasTarget n0:conceptA28B4D.
-n0:anno2
-    a o:Annotation;
-    dct:created "2024-08-27T11:55:35.932Z";
-    dct:creator "Ivan";
-    o:bodyValue
-        "aus meiner Sicht kann konventionelle Radiographie auch mit einem digitalen Detektor statt R\u00f6ntgenfilmen abbilden";
-    o:hasTarget n0:conceptA2B5A3 .
 n0:anno20
     a o:Annotation;
     dct:created "2024-08-28T13:17:48.410Z";
@@ -96,15 +70,6 @@ n0:anno20
     o:bodyValue
         "in der Metallrestaurierung (unter Lazlo Lehoczky) wurden Metallobjekte nach der Bearbeitung mit Pantarol (Nitrocelluloselack) gegen Luftfeuchtigkeit gesch\u00fctzt. Bitte Pantarol aufnehmen";
     o:hasTarget n0:conceptGC7998 .
-n0:anno21
-    a o:Annotation;
-    dct:created "2024-08-28T14:28:39.985Z";
-    dct:creator "Matthias Heinzel";
-    o:bodyValue
-        """Hier m\u00fcsste noch als Unterpunkt der Sapropelit hinzugef\u00fcgt werden. Ausf\u00fchrliche Beschreibung
-
-Sapropelite sind das Resultat verfestigter Faulschl\u00e4mme (altgriechisch \u03c3\u03b1\u03c0\u03c1\u03cc\u03c2 sapros \u201efaul\u201c, \u201everfault\u201c). Sie entstehen unter nat\u00fcrlichen Bedingungen in zuvor n\u00e4hrstoffreichen Gew\u00e4ssern und S\u00fcmpfen, wenn organisches Material bei Abwesenheit von Sauerstoff biochemisch umgewandelt wird. Quelle: Mineralienatlas.de""";
-    o:hasTarget n0:conceptG76A78 .
 n0:anno22
     a o:Annotation;
     dct:created "2024-08-28T14:36:04.802Z";
@@ -119,13 +84,6 @@ n0:anno23
     o:bodyValue
     "Sollten wir bei den Mineralien die jeweilige Moossche H\u00e4rte angeben?";
     o:hasTarget n0:conceptBGC9F3 .
-n0:anno24
-    a o:Annotation;
-    dct:created "2024-08-28T14:42:03.263Z";
-    dct:creator "Matthias Heinzel";
-    o:bodyValue
-        "Hier fehlen noch als Unterpunkt die Perle und da wiederum die Unterscheidung zwischen S\u00fc\u00dfwasser- und Salzwasserperlen";
-    o:hasTarget n0:conceptF1BA31 .
 n0:anno25
     a o:Annotation;
     dct:created "2024-08-28T14:44:23.961Z";
@@ -160,13 +118,6 @@ n0:anno29
     o:bodyValue
         """Kauramin CE 5549 wird als eigener Begriff aussortiert. Stattdessen bei Kauramin 800 als "altLabel" integriert und im der Description erl\u00e4utert""";
     o:hasTarget n0:conceptBFB162 .
-n0:anno3
-    a o:Annotation;
-    dct:created "2024-08-27T11:56:02.873Z";
-    dct:creator "Ivan";
-    o:bodyValue
-        "Die Definition ist glaube ich f\u00fcr \u201eR\u00f6ntgen-CT\u201c. Tomographie bezeichnet nur die Rekonstruktion von einem 3D Modell aus vielen (Projektions)Bildern; es gibt auch Neutrontomographie, MRT, usw.  und auch R\u00f6ntgentomographie (ohne Computer)! CT bezeichnet wahrscheinlich nur R\u00f6ntgen-CT aber um sicher zu sein, w\u00fcrde ich empfehlen, den Begriff zu \u201eR\u00f6ntgen-Computertomographie\u201c zu \u00e4ndern.";
-    o:hasTarget n0:conceptAF9A88 .
 n0:anno30
     a o:Annotation;
     dct:created "2024-09-03T13:46:00.145Z";
@@ -174,13 +125,6 @@ n0:anno30
     o:bodyValue
         "Kristina hat diesen Begriff entfernt. Wir arbeiten noch an einem Umgang mit entfernten Begriffen, damit sie nicht zu Fehlern in der Kommentarumgebung f\u00fchren...";
     o:hasTarget n0:conceptBFB162 .
-n0:anno31
-    a o:Annotation;
-    dct:created "2024-09-03T13:49:05.583Z";
-    dct:creator "Kristina";
-    o:bodyValue
-        """Die Anmerkung verstehe ich nicht so ganz. Es gibt keinen Punkt "chemische Zusammensetzung". Oder meinst du "chemische Untersuchung" ? Damit sind Untersuchungen gemeint, bei denen mit Hilfe von chemischen Reagenzien Verhaltensweisen von Materialien getestet werden (z.B. Spot-Tests f\u00fcr unbekannte Klebstoffe bei Altrestaurierungen, etc.) """;
-    o:hasTarget n0:conceptG17B8B.
 n0:anno32
     a o:Annotation;
     dct:created "2024-09-20T10:40:44.734Z";
@@ -189,44 +133,13 @@ n0:anno32
         """ mohssche H\u00e4rte... (Markus=Klugschei\u00dfer)
 """;
     o:hasTarget n0:conceptBGC9F3 .
-n0:anno33
-    a o:Annotation;
-    dct:created "2024-09-10T08:44:57.246Z";
-    dct:creator "Kristina";
-    o:bodyValue
-        "Ist angepasst, vielen Dank. Die urspr\u00fcngliche Beschreibung war noch auf die reine analoge Kopieherstellung bezogen. Auch den Begriff habe ich entsprechend des Vorschlags ge\u00e4ndert. ";
-    o:hasTarget n0:conceptF8F7CF.
-n0:anno34
-    a o:Annotation;
-    dct:created "2024-09-10T09:30:10.007Z";
-    dct:creator "Anja Cramer";
-    o:bodyValue
-        "Ist die Unterscheidung zwischen analoger und digitaler Abformung richtig? Ich w\u00fcrde eher auf die Ebene der Abformung noch 3D-Digitalisierung hinzuf\u00fcgen und die Unterscheidung von analoger und digitaler Abformung l\u00f6schen? Dann w\u00e4re 3D-Digitalisierung eine Vorgehensweise zur Erstellung von wissenschaftlichen Kopien.";
-    o:hasTarget n0:conceptDAG2A8 .
 n0:anno35
     a o:Annotation;
     dct:created "2024-09-20T10:55:11.809Z";
     dct:creator "Markus";
     o:bodyValue
-        """ mohssche H\u00e4rte... (Markus=Klugschei\u00dfer)
-zu description: nat\u00fcrliches Material, nachwachsender Rohstoff; die Hauptbestandteile von Holz sind Cellulose, Hemicellulose und Lignin, w\u00e4hrend des Wachstums werden Extraktstoffe und Mineralien in den Zellen eingelagert.Holz ist aufgrund...""";
+        "zu description: nat\u00fcrliches Material, nachwachsender Rohstoff; die Hauptbestandteile von Holz sind Cellulose, Hemicellulose und Lignin, w\u00e4hrend des Wachstums werden Extraktstoffe und Mineralien in den Zellen eingelagert.Holz ist aufgrund...";
     o:hasTarget n0:conceptA9A858 .
-n0:anno36
-    a o:Annotation;
-    dct:created "2024-09-20T10:56:50.217Z";
-    dct:creator "Markus";
-    o:bodyValue
-        """ mohssche H\u00e4rte... (Markus=Klugschei\u00dfer)
-zu description: nat\u00fcrliches Material, nachwachsender Rohstoff; die Hauptbestandteile von Holz sind Cellulose, Hemicellulose und Lignin, w\u00e4hrend des Wachstums werden Extraktstoffe und Mineralien in den Zellen eingelagert.Holz ist aufgrund...""";
-    o:hasTarget n0:conceptC47769 .
-n0:anno37
-    a o:Annotation;
-    dct:created "2024-09-20T10:57:16.389Z";
-    dct:creator "Markus";
-    o:bodyValue
-        """ mohssche H\u00e4rte... (Markus=Klugschei\u00dfer)
-zu description: nat\u00fcrliches Material, nachwachsender Rohstoff; die Hauptbestandteile von Holz sind Cellulose, Hemicellulose und Lignin, w\u00e4hrend des Wachstums werden Extraktstoffe und Mineralien in den Zellen eingelagert.Holz ist aufgrund...""";
-    o:hasTarget n0:conceptC47769 .
 n0:anno38
     a o:Annotation;
     dct:created "2024-09-20T11:09:22.152Z";
@@ -264,30 +177,6 @@ n0:anno41
         """
 liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein?""";
     o:hasTarget n0:conceptG2944B.
-n0:anno42
-    a o:Annotation;
-    dct:created "2024-09-20T11:46:51.951Z";
-    dct:creator "Markus";
-    o:bodyValue
-        """liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein?
-""";
-    o:hasTarget n0:conceptA73FD7 .
-n0:anno43
-    a o:Annotation;
-    dct:created "2024-09-20T11:47:01.506Z";
-    dct:creator "Markus";
-    o:bodyValue
-        """liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein?
-""";
-    o:hasTarget n0:conceptF5GA47 .
-n0:anno44
-    a o:Annotation;
-    dct:created "2024-09-20T11:47:24.831Z";
-    dct:creator "Markus";
-    o:bodyValue
-        """liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein?
-""";
-    o:hasTarget n0:conceptFCA7DA.
 n0:anno45
     a o:Annotation;
     dct:created "2024-09-20T12:13:36.393Z";
@@ -302,22 +191,6 @@ n0:anno46
     o:bodyValue
         "auch hier, besser betula spec. die Unterarten lassen sich bei arch. Holz kaum/nicht unterscheiden";
     o:hasTarget n0:conceptBGG879 .
-n0:anno47
-    a o:Annotation;
-    dct:created "2024-09-20T12:19:39.240Z";
-    dct:creator "Markus";
-    o:bodyValue
-        """09-20 11:47:01
-Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? """;
-    o:hasTarget n0:conceptFA1B26 .
-n0:anno48
-    a o:Annotation;
-    dct:created "2024-09-20T12:20:03.739Z";
-    dct:creator "Markus";
-    o:bodyValue
-        """09-20 11:47:01
-Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? """;
-    o:hasTarget n0:conceptGAG81G.
 n0:anno49
     a o:Annotation;
     dct:created "2024-09-20T12:21:18.625Z";
@@ -410,13 +283,6 @@ n0:anno59
     o:bodyValue
         "Gespitzt: Ein Spitzeisen (Spitzmei\u00dfel) dient zum groben Formen eines Werkst\u00fccks. Mit ihm lassen sich  gr\u00f6\u00dfere Steinbrocken abschlagen. Oft bleiben Spitzhiebe in einer planierten, eingeebneten Oberfl\u00e4che sichtbar, da sie zu tief ausgef\u00fchrt wurden.";
     o:hasTarget n0:conceptB1B854 .
-n0:anno6
-    a o:Annotation;
-    dct:created "2024-08-27T14:21:45.561Z";
-    dct:creator "Ivan";
-    o:bodyValue
-        "es ist ein Lichtmikroskop. Einfache Definition: Mikroskop ohne Okulare (nur Kamera+Bildschirm).";
-    o:hasTarget n0:conceptAG4G3C.
 n0:anno60
     a o:Annotation;
     dct:created "2024-09-20T13:57:47.820Z";
@@ -445,13 +311,6 @@ n0:anno63
     o:bodyValue
         "description:Rezentes Holz bezeichnet Holz, das frisch geschlagen oder abgelagert ist, jedoch im Vergleich zu arch\u00e4ologischem Holz noch keinen nennenswerten Abbauprozessen ausgesetzt war";
     o:hasTarget n0:conceptC47769 .
-n0:anno64
-    a o:Annotation;
-    dct:created "2024-09-20T14:22:19.108Z";
-    dct:creator "Markus";
-    o:bodyValue
-        "Ringporiges Laubholz bezeichnet Laubh\u00f6lzer, die gro\u00dfe Tracheen/Poren im Fr\u00fchholz und deutlich kleinere im Sp\u00e4tholz ausbilden. Im Querschnitt sind deutlich ringf\u00f6rmige Strukturen sichtbar.";
-    o:hasTarget n0:conceptD39191 .
 n0:anno65
     a o:Annotation;
     dct:created "2024-09-20T14:25:27.850Z";
@@ -466,27 +325,7 @@ n0:anno66
     o:bodyValue
         "Zerstreutporiges Laubholz bezeichnet Laubh\u00f6lzern, bei denen die Gef\u00e4\u00dfe/Tracheen gleichm\u00e4\u00dfig und ohne klare Anordnung \u00fcber einen gesamten Jahrring verteilt im Holz vorkommen. Anders als bei ringporigen H\u00f6lzern, bei denen gro\u00dfe Gef\u00e4\u00dfe im Fr\u00fchholz und kleinere im Sp\u00e4tholz auftreten, gibt es bei zerstreutporigen H\u00f6lzern keinen gro\u00dfen Unterschied in der Gr\u00f6\u00dfe oder Verteilung der Gef\u00e4\u00dfe zwischen Fr\u00fch- und Sp\u00e4tholz.";
     o:hasTarget n0:conceptDAA3F9 .
-n0:anno7
-    a o:Annotation;
-    dct:created "2024-08-27T14:22:14.558Z";
-    dct:creator "Ivan";
-    o:bodyValue
-        "ist es immer mit Cross-Polarisation? Man kann es doch nur mit einem Filter anwenden, oder?";
-    o:hasTarget n0:conceptA7FA3B.
-n0:anno8
-    a o:Annotation;
-    dct:created "2024-08-27T14:22:53.368Z";
-    dct:creator "Ivan";
-    o:bodyValue
-        "Bei der digitalen Mikroskopie geht das Licht vom Objektiv auch bzw. nur zur Kamera.";
-    o:hasTarget n0:conceptB94DCD.
-n0:anno9
-    a o:Annotation;
-    dct:created "2024-08-27T14:23:00.853Z";
-    dct:creator "Ivan";
-    o:bodyValue
-        "Bei der digitalen Mikroskopie geht das Licht vom Objektiv auch bzw. nur zur Kamera.";
-    o:hasTarget n0:conceptA9611D.
+
 n0:conceptA1D125 a skos:Concept.
 
 n0:conceptA28B4D a skos:Concept; skos:inScheme n0:scheme1 .
