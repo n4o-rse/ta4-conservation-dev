@@ -63,6 +63,13 @@ n0:anno19
     o:bodyValue
         "manchmal verwende ich auch die harzreichere Variante: Auro Hart\u00f6l Nr.126";
     o:hasTarget n0:conceptA28B4D.
+n0:anno2
+    a o:Annotation;
+    dct:created "2024-09-25T10:32:35.120Z";
+    dct:creator "Markus";
+    o:bodyValue
+        "Lava ist aus meiner Sicht kein Gestein, sondern das vulkanische Ausgangsmaterial aus der unterschiedlichste Gesteine entstehen. Die Mineralzusammensetzung ist dabei gleich, aber unter unterschiedlichem Druck und Zeitdauer bilden sich spezifische Kristallformen. Tiefengesteine/Plutonite (Granit, Diorit..) Ergu\u00dfgesteine/Vulkanit (Basalt, Andesit..) oder Auswurfgestein/pyroklastisches Gestein (Tuff, Bims..)";
+    o:hasTarget n0:conceptC6F794 .
 n0:anno20
     a o:Annotation;
     dct:created "2024-08-28T13:17:48.410Z";
@@ -325,7 +332,6 @@ n0:anno66
     o:bodyValue
         "Zerstreutporiges Laubholz bezeichnet Laubh\u00f6lzern, bei denen die Gef\u00e4\u00dfe/Tracheen gleichm\u00e4\u00dfig und ohne klare Anordnung \u00fcber einen gesamten Jahrring verteilt im Holz vorkommen. Anders als bei ringporigen H\u00f6lzern, bei denen gro\u00dfe Gef\u00e4\u00dfe im Fr\u00fchholz und kleinere im Sp\u00e4tholz auftreten, gibt es bei zerstreutporigen H\u00f6lzern keinen gro\u00dfen Unterschied in der Gr\u00f6\u00dfe oder Verteilung der Gef\u00e4\u00dfe zwischen Fr\u00fch- und Sp\u00e4tholz.";
     o:hasTarget n0:conceptDAA3F9 .
-
 n0:conceptA1D125 a skos:Concept.
 
 n0:conceptA28B4D a skos:Concept; skos:inScheme n0:scheme1 .
@@ -377,6 +383,8 @@ n0:conceptBGC9F3 a skos:Concept; skos:inScheme n0:scheme1 .
 n0:conceptBGG879 a skos:Concept.
 
 n0:conceptC47769 a skos:Concept.
+
+n0:conceptC6F794 a skos:Concept.
 
 n0:conceptCA7279 a skos:Concept; skos:inScheme n0:scheme1 .
 
