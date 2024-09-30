@@ -130,10 +130,11 @@ async function openDetails(id, idObject) {
 }
 
 async function readComments(id, idObject) {
-  console.log("ID" + id)
-  console.log("IDObject" + JSON.stringify(idObject))
+  console.log("ID: " + id)
+  console.log("IDObject: " + JSON.stringify(idObject))
   try {
     const url = commentURL;
+    console.log("URL: " + url)
     // clean modal content from previous comments
     var commentDiv = document.getElementsByClassName("modal-comments")[0];
     while (commentDiv.firstChild) {
