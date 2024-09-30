@@ -134,7 +134,6 @@ async function readComments(id, idObject) {
   console.log("IDObject: " + JSON.stringify(idObject))
   try {
     const url = commentURL;
-    console.log("URL: " + url)
     // clean modal content from previous comments
     var commentDiv = document.getElementsByClassName("modal-comments")[0];
     while (commentDiv.firstChild) {
@@ -164,19 +163,26 @@ async function readComments(id, idObject) {
     let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
     // parse json-ld into object
     let parsedJson = JSON.parse(jsonldSerialization)
+    console.log("parsedJSON: " + JSON.stringify(parsedJson))
     let commentObject = {comments: {}, concepts: {}}
     let jsonCommentArray = parsedJson["@graph"].filter(obj => obj["@type"] == "o:Annotation")
+    /*
+    // for each comment in CommentArray: find hasTarget concept. 
+    // then find conceptScheme of concept
+    // then check if conceptSchemeTitle is the same as the loaded conceptSchemeTitle
+    // if not, remove comment from jsonCommentArray
+    */
     let jsonConceptArray = parsedJson["@graph"].filter(obj => obj["@type"] == "skos:Concept")
     for (let x of jsonCommentArray) {
-      commentObjectID = x["@id"].split("n0:")[1]
+      commentObjectID = x["@id"].split("/")[1]
       commentObject["comments"][commentObjectID] = {}
       commentObject["comments"][commentObjectID]["creator"] = x["dct:creator"]
       commentObject["comments"][commentObjectID]["created"] = x["dct:created"]
       commentObject["comments"][commentObjectID]["value"] = x["o:bodyValue"]
-      commentObject["comments"][commentObjectID]["target"] = x["o:hasTarget"]["@id"].split("n0:concept")[1]
+      commentObject["comments"][commentObjectID]["target"] = x["o:hasTarget"]["@id"].split("/")[1]
     }
     for (let x of jsonConceptArray) {
-      conceptObjectID = x["@id"].split("n0:concept")[1]
+      conceptObjectID = x["@id"].split("/")[1]
       commentObject["concepts"][conceptObjectID] = {}
       if (idObject[conceptObjectID]["prefLabel"] == undefined) {
         commentObject["concepts"][conceptObjectID]["prefLabel"] = "gelöschter Begriff"
