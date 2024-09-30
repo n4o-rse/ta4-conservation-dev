@@ -183,5 +183,3 @@ const createconceptSchemeTitleForm = document.getElementById("createconceptSchem
 createconceptSchemeTitleForm.addEventListener("submit", createConceptScheme);
 
 readConceptSchemeTitles();
-
-

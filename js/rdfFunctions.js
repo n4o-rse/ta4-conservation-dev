@@ -144,8 +144,8 @@ async function readComments(id, idObject) {
     while (historyDiv.firstChild) {
       historyDiv.removeChild(historyDiv.firstChild);
     }
-    // return if no comment file is loaded
-    if (url == "") {
+    // return if no comment file is loaded, i.e. no conceptSchemeTitle
+    if (conceptSchemeTitle == "") {
       let placeholderComment = document.createElement("p");
       placeholderComment.innerHTML = "Keine Kommentardatei geladen...";
       placeholderComment.id = "noCommentsPlaceholder";
