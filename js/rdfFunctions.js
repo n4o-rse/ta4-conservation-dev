@@ -131,7 +131,7 @@ async function openDetails(id, idObject) {
 
 async function readComments(id, idObject) {
   console.log("ID" + id)
-  console.log("IDObject" + json.stringify(idObject))
+  console.log("IDObject" + JSON.stringify(idObject))
   try {
     const url = commentURL;
     // clean modal content from previous comments
