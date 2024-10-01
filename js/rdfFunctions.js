@@ -94,6 +94,17 @@ async function readComments(id, idObject) {
     // load store and namespaces
     [store, AO, DC, SK, RDF] = await readStore(commentURL)
 
+    // finde Skos ConceptScheme where title is conceptSchemeTitle
+    let conceptScheme = store.each(undefined, RDF('type'), SK('ConceptScheme')).find(conceptScheme => store.any(conceptScheme, DC('title')).value == conceptSchemeTitle)
+    // find all concepts in conceptScheme
+    let conceptsInScheme = store.each(undefined, SK('inScheme'), conceptScheme)
+    // remove all annotations from store where target not in conceptsInScheme
+    for (let annotation of store.each(undefined, RDF('type'), AO('Annotation'))) {
+      if (!conceptsInScheme.includes(store.any(annotation, target))) {
+        store.removeMany(annotation, null, null)
+      }
+    }
+
     // serialize store into json-ld
     let jsonldSerialization = $rdf.serialize(null, store, commentURL, 'application/ld+json');
     // parse json-ld into object
@@ -101,12 +112,6 @@ async function readComments(id, idObject) {
     console.log("parsedJSON: " + JSON.stringify(parsedJson))
     let commentObject = {comments: {}, concepts: {}}
     let jsonCommentArray = parsedJson["@graph"].filter(obj => obj["@type"] == "o:Annotation")
-    /*
-    // for each comment in CommentArray: find hasTarget concept. 
-    // then find conceptScheme of concept
-    // then check if conceptSchemeTitle is the same as the loaded conceptSchemeTitle
-    // if not, remove comment from jsonCommentArray
-    */
     let jsonConceptArray = parsedJson["@graph"].filter(obj => obj["@type"] == "skos:Concept")
     for (let x of jsonCommentArray) {
       commentObjectID = x["@id"].split("/")[1]
@@ -208,14 +213,16 @@ async function updatePod() {
     var creator = DC("creator")
     var created = DC("created")
 
+    let conceptScheme = store.each(undefined, RDF('type'), SK('ConceptScheme')).find(conceptScheme => store.any(conceptScheme, DC('title')).value == conceptSchemeTitle)
+
     // calculate the next annotation number
     let nextAnnoNumber = 1
-    while (store.holds($rdf.sym(`${commentURL}/anno${nextAnnoNumber}`), RDF('type'), AO('Annotation'))) {
+    while (store.holds($rdf.sym(`${conceptScheme.value}/Annotations/anno${nextAnnoNumber}`), RDF('type'), AO('Annotation'))) {
       nextAnnoNumber++
     }
     //create new annotation
-    let newAnno = $rdf.sym(`${commentURL}/anno${nextAnnoNumber}`)
-    let newConcept = $rdf.sym(`${commentURL}/concept${id}`)
+    let newAnno = $rdf.sym(`${conceptScheme.value}/Annotations/anno${nextAnnoNumber}`)
+    let newConcept = $rdf.sym(`${conceptScheme.value}/Concepts/${id}`)
 
     // add annotation to store
     store.add(newAnno, RDF('type'), AO('Annotation'))
@@ -249,11 +256,7 @@ async function generateCommentedIdList() {
     return commentConceptObject
   }
 
-  // declare namespaces
-  var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
-  var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
-  var DC = $rdf.Namespace("http://purl.org/dc/terms/");
-  var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
+  [store, AO, DC, SK, RDF] = await readStore(commentURL)
 
   // declare entities
   var concept = SK('Concept');
@@ -261,15 +264,13 @@ async function generateCommentedIdList() {
   var anno = AO('Annotation');
   var target = AO('hasTarget');
 
-  // read ttl from pod
-  let preRdf = await readFromPod(commentURL, 'text/turtle');
-  
-  // parse ttl into store
-  let store = $rdf.graph();
-  $rdf.parse(preRdf, store, commentURL, 'text/turtle');
+  // find conceptScheme
+  let conceptScheme = store.each(undefined, RDF('type'), SK('ConceptScheme')).find(conceptScheme => store.any(conceptScheme, DC('title')).value == conceptSchemeTitle)
 
-  // find all concepts
-  let concepts = store.each(undefined, RDF('type'), concept);
+  // find all concepts in conceptScheme
+  let concepts = store.each(undefined, SK('inScheme'), conceptScheme)
+  // 
+
   // remove concepts which are not target of annotations
   for (let i = 0; i < concepts.length; i++) {
     if (store.each(undefined, target, concepts[i]).length == 0) {
