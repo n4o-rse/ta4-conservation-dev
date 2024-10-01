@@ -23,6 +23,7 @@ async function openDetails(id, idObject) {
         console.log("idObject: " + JSON.stringify(idObject))
         console.log("id: " + id)
         console.log("details[i]: " + details[i])
+        console.log("idObject[id][details[i]]: " + idObject[id][details[i]])
         if (!(idObject[id][details[i]].trim()) == "") {
           let detailDiv = document.createElement("div");
 
