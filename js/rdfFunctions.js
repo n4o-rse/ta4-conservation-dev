@@ -97,19 +97,22 @@ async function readComments(id, idObject) {
 
     // finde Skos ConceptScheme where title is conceptSchemeTitle
     let conceptScheme = store.each(undefined, RDF('type'), SK('ConceptScheme')).find(conceptScheme => store.any(conceptScheme, DC('title')).value == conceptSchemeTitle)
+    console.log("conceptScheme: " + conceptScheme)
+    
     // find all concepts in conceptScheme
     let conceptsInScheme = store.each(undefined, SK('inScheme'), conceptScheme)
+
     // remove all annotations from store where target not in conceptsInScheme
     for (let annotation of store.each(undefined, RDF('type'), AO('Annotation'))) {
       if (!conceptsInScheme.includes(store.any(annotation, AO('hasTarget')))) {
-        store.removeMany(annotation, null, null)
+        store.remove(annotation, null, null)
       }
     }
 
     // remove all concepts from store which are not in conceptsInScheme
     for (let concept of store.each(undefined, RDF('type'), SK('Concept'))) {
       if (!conceptsInScheme.includes(concept)) {
-        store.removeMany(concept, null, null)
+        store.remove(concept, null, null)
       }
     }
 
