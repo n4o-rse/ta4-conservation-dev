@@ -144,7 +144,7 @@ async function createConceptScheme() {
     }
   }
   let i = 1;
-  let conceptSchemeURI = baseURI + "ConceptSchemes/ConceptScheme"
+  let conceptSchemeURI = baseURI + "ConceptScheme"
   newConceptScheme = $rdf.sym(conceptSchemeURI + i);
 
   // check if newConceptScheme already exists in Graph, while loop increasing i and checking again
