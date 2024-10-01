@@ -18,7 +18,7 @@ async function openDetails(id, idObject) {
     // iterate over all detail contents and create a paragraph for each
     for (let i = 0; i < details.length; i++) {
       // check if details[i] is a key in idObject[id]
-      if (details[i] in idObject[id]) {
+      if (idObject[id].hasOwnProperty(details[i])) {
         //check if detail has a value at all
         console.log("idObject: " + JSON.stringify(idObject))
         console.log("id: " + id)
@@ -63,7 +63,6 @@ async function openDetails(id, idObject) {
     let commentButton = document.getElementById("commentButton")
     commentButton.dataset.id = id.toString();
     commentButton.dataset.idObject = JSON.stringify(idObject);
-
     await readComments(id, idObject);
     modal.style.display = "block";
 }
