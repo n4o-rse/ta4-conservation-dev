@@ -68,6 +68,7 @@ async function openDetails(id, idObject) {
 async function readComments(id, idObject) {
   console.log("ID: " + id)
   console.log("IDObject: " + JSON.stringify(idObject))
+  console.log("ConceptSchemeTitle: " + conceptSchemeTitle)
   try {
     // clean modal content from previous comments
     var commentDiv = document.getElementsByClassName("modal-comments")[0];
@@ -100,7 +101,7 @@ async function readComments(id, idObject) {
     let conceptsInScheme = store.each(undefined, SK('inScheme'), conceptScheme)
     // remove all annotations from store where target not in conceptsInScheme
     for (let annotation of store.each(undefined, RDF('type'), AO('Annotation'))) {
-      if (!conceptsInScheme.includes(store.any(annotation, target))) {
+      if (!conceptsInScheme.includes(store.any(annotation, AO('hasTarget')))) {
         store.removeMany(annotation, null, null)
       }
     }
