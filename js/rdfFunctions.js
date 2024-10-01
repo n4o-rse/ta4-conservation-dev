@@ -17,44 +17,46 @@ async function openDetails(id, idObject) {
 
     // iterate over all detail contents and create a paragraph for each
     for (let i = 0; i < details.length; i++) {
+      // check if details[i] is a key in idObject[id]
+      if (details[i] in idObject[id]) {
+        //check if detail has a value at all
+        console.log("idObject: " + JSON.stringify(idObject))
+        console.log("id: " + id)
+        console.log("details[i]: " + details[i])
+        if (!(idObject[id][details[i]].trim()) == "") {
+          let detailDiv = document.createElement("div");
 
-      //check if detail has a value at all
-      console.log("idObject: " + JSON.stringify(idObject))
-      console.log("id: " + id)
-      console.log("details[i]: " + details[i])
-      if (!(idObject[id][details[i]].trim()) == "") {
-        let detailDiv = document.createElement("div");
+          let splittedDetails = idObject[id][details[i]].split("|");
+          let mappedDetails
 
-        let splittedDetails = idObject[id][details[i]].split("|");
-        let mappedDetails
+          // case for related, to generate prefLabel from identifier
+          if (details[i] == "related") {
+            mappedDetails = []
+            for (let j = 0; j < splittedDetails.length; j++) {
+              mappedDetails.push(idObject[splittedDetails[j]]["prefLabel"]);
+            }
+          } 
 
-        // case for related, to generate prefLabel from identifier
-        if (details[i] == "related") {
-          mappedDetails = []
-          for (let j = 0; j < splittedDetails.length; j++) {
-            mappedDetails.push(idObject[splittedDetails[j]]["prefLabel"]);
+          // case for all other properties, where splitted strings don't have to be converted
+          else {
+            mappedDetails = splittedDetails;
           }
-        } 
 
-        // case for all other properties, where splitted strings don't have to be converted
-        else {
-          mappedDetails = splittedDetails;
-        }
-
-        // generate HTML element for each detail
-        // case for properties with multiple values
-        if (mappedDetails.length > 1) {
-          detailDiv.innerHTML += "<b>" + details[i] + ":</b>";
-          for (let j = 0; j < mappedDetails.length; j++) {
-            detailDiv.innerHTML += "<p>" +"<b>" + "</b> " + mappedDetails[j] + "</p>";
+          // generate HTML element for each detail
+          // case for properties with multiple values
+          if (mappedDetails.length > 1) {
+            detailDiv.innerHTML += "<b>" + details[i] + ":</b>";
+            for (let j = 0; j < mappedDetails.length; j++) {
+              detailDiv.innerHTML += "<p>" +"<b>" + "</b> " + mappedDetails[j] + "</p>";
+            }
           }
-        }
 
-        // case for properties with single values
-        else {
-          detailDiv.innerHTML = "<p>" +"<b>" + details[i] + ":</b> " + mappedDetails[0] + "</p>";
+          // case for properties with single values
+          else {
+            detailDiv.innerHTML = "<p>" +"<b>" + details[i] + ":</b> " + mappedDetails[0] + "</p>";
+          }
+          body[0].appendChild(detailDiv);
         }
-        body[0].appendChild(detailDiv);
       }
     } 
     // storing id of current concept and idObject in comment-button data-properties, to feed updataPod function with parameters
