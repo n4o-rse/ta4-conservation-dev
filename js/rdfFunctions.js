@@ -1,43 +1,4 @@
 async function openDetails(id, idObject) {
-    mappingTable = {
-      "K6":	"DIN EN 16484 -	Leder - Anforderungen an die Bestimmung der Herkunft von Leder; Deutsche Fassung EN 16484",
-      "K7":	"KUR Database -	Onlinedatenbank für die fachgerechte Verfahrung zur Massenversorgung archäologischer Eisen- und Feuchtholzfunde",
-      "K8":	"DIN EN 15898	Erhaltung des kulturellen Erbes - Allgemeine Begriffe",
-      "K9":	"DIN CEN/TS 17135	- Erhaltung des kulturellen Erbes - Allgemeine Begriffe zur Beschreibung von Veränderungen an Objekten; Dreisprachige Fassung",
-      "K10":	"DIN EN ISO 8044 - Korrosion von Metallen und Legierungen - Grundbegriffe; Dreisprachige Fassung",
-      "K12":	"DIN EN ISO 7539-1 - Korrosion der Metalle und Legierungen - Prüfung der Spannungsrisskorrosion - Teil 1: Allgemeiner Leitfaden für Prüfverfahren",
-      "K14":	"Katharina Schmidt-Ott, Erhaltung von Kulturgütern. Das Plasma in der Metallkonservierung - Möglichkeiten und Grenzen. Collectio archaeologica 7 (Zürich 2010).",
-      "K15":	"DIN EN 844 -	Rund- und Schnittholz - Terminologie; Dreisprachige Fassung EN 844:2019",
-      "K16":	"DIN EN 16141 -	Erhaltung des kulturellen Erbes - Richtlinien für den Umgang mit Umwelt- und Umgebungsbedingungen - Schaudepots: Definition und Merkmale von Sammlungszentren bestimmt für die Bewahrung und Pflege des kulturellen Erbes",
-      "K17":	"R. Dietrich/ B. Skinner, Die Gesteine und ihre Mineralien. Ein Einführungs- und Bestimmungsbuch2 (Thun 1995).",
-      "K18":	"Mineralienatlas - Fossilienatlas	- Onlinedatenbank/Lexikon zu Gesteinen, Mineralien und Fossilien",
-      "K19":	'Heinrich Fendel, Mechanische Bearbeitung von Korrosionsprodukten. In: Peter Heinrich (Hrsg.), Metallrestaurierung. Beiträge zur Analyse, Konzeption und Technologie. München 2000, S106 - 125',
-      "K20":	"Wilhelm P. Bauer, Grundzüge der Metallkorrosion. In: Peter Heinrich (Hrsg.), Metallrestaurierung. Beiträge zur Analyse, Konzeption und Technologie. München 2000, 63-67.",
-      "K21":	"Wolfgang Knobloch, Ergänzungen und Rekonstruktionen an historischen Objekten aus Metall. In: In: Peter Heinrich (Hrsg.), Metallrestaurierung. Beiträge zur Analyse, Konzeption und Technologie. München 2000, S. 70 - 105.",
-      "K22":	"Erhard Brepohl, Theorie und Praxis des Goldschmieds (München 2000).",
-      "K23":	"DIN EN ISO 2080 - Metallische und andere anorganische Überzüge - Oberflächenbehandlung, metallische und andere anorganische Überzüge - Wörterbuch (ISO 2080:2022); Deutsche und Englische Fassung EN ISO 2080:2022",
-      "K24":	"Jochem Wolters, Der Gold- und Silberschmied. Band 1 - Werkstoffe und Materialien (Stuttgart 1989)",
-      "K25": "Mindat.org - Online-Datenbank des Hudson Institute of Mineralogy über Mineralien und Gesteine",
-      "K26": "Barbara Stuart, Analytical Techniques in Materials Conservation (West Sussex 2007).",
-      "K27": "Joel R. Fried, Polymer Science and Technology (New Jersey 2014)3.",
-      "K28": "Der Brockhaus von A-Z: In drei Bänden (Mannheim 2002).",
-      "K29": "Barbara Stuart, Infrared Spectroscopy: Fundamentals and Applications (Chichester 2004). ",
-      "K30": "William D. Callister, David G. Rethwisch, Materials Science and Engineering. An Introduction (New Jersey 2018)10.",
-      "K31": "Janey Cronyn, The Elements of Archaeological Conservation (London 1990).",
-      "K32": "Marcel Locquin, Maurice Langeron, Handbook of Microscopy (London 1983).",
-      "K33": "Franz Mairinger, UV-, IR- and X-ray imaging. In: S Jannsens, R. van Grieken (Hrsg.), Non-Destructive Microanalysis of Cultural Heritage Materials, Amsterdam 2004, 15-75.",
-      "K34": "Velson Horie, Materials for Conservation. Organic consolidants, adhesives and coatings (London 2010)2.",
-      "K35": "GESTIS-Stoffdatenbank - online Gefahrstoffinformationssystem der Deutschen Gesetzlichen Unfallversicherung",
-      "K36": "Charles E. Mortimer, Ulrich Müller, Chemie. Das Basiswissen der Chemie (Stuttgart 2007)9.",
-      "K37": "Gerhard Banik, Gabriela Krist, Lösungsmittel in der Restaurierung. Restaurierung - Konservierung - Technologie 1, Wien 2003.",
-      "K38": "DIN EN 923 - Klebstoffe - Benennungen und Definitionen; Deutsche Fassung EN 923:2015",
-      "K39": "Frédérique-Sophie Tissier, Sabine Brechbühl Trijasse, Röntgenaufnahmen, Computertomografie und Neutronenuntersuchung.Bildgebende Verfahren im Dienst der Archäologie und der Konservierung-Restaurierung. Archäologie Bern 2014, 236 - 246.",
-      "Q7":	"Kristina Fella",
-      "Q8":	"LEIZA KB Restaurierung/Konservierung",
-      "Q16":	"Markus Wittköpper",
-      "Q17":	"Waldemar Muskalla",
-      "Q18":	"Roland Schwab",
-    }
     let modal = document.getElementById("myModal");
 
     // clean modal content from previous concept
@@ -53,42 +14,27 @@ async function openDetails(id, idObject) {
     idObject[id]["identifier"] = id.toString();
 
     const details = ["identifier","description", "altLabel", "related", "source", "creator", "closeMatch", "relatedMatch", "seeAlso", "example"];
-    let mappingDetails = ["source", "creator", "related"];
 
     // iterate over all detail contents and create a paragraph for each
     for (let i = 0; i < details.length; i++) {
 
       //check if detail has a value at all
+      console.log("idObject: " + JSON.stringify(idObject))
+      console.log("id: " + id)
+      console.log("details[i]: " + details[i])
       if (!(idObject[id][details[i]].trim()) == "") {
         let detailDiv = document.createElement("div");
 
         let splittedDetails = idObject[id][details[i]].split("|");
         let mappedDetails
 
-        // check if detail belongs to properties with values to be converted, either by mapping or by generating prefLabel from identifier
-        if (mappingDetails.includes(details[i])) {
-
-          // case for related, to generate prefLabel from identifier
-          if (details[i] == "related") {
-            mappedDetails = []
-            for (let j = 0; j < splittedDetails.length; j++) {
-              mappedDetails.push(idObject[splittedDetails[j]]["prefLabel"]);
-            }
-          } 
-
-          // case for source and creator, to generate mapped values
-          else {
-            mappedDetails = []
-            for (let j = 0; j < splittedDetails.length; j++) {
-              if (splittedDetails[j].trim() in mappingTable) {
-                mappedDetails.push(mappingTable[splittedDetails[j].trim()]);
-              } 
-              else {
-                mappedDetails.push(splittedDetails[j]);
-              }
-            }
+        // case for related, to generate prefLabel from identifier
+        if (details[i] == "related") {
+          mappedDetails = []
+          for (let j = 0; j < splittedDetails.length; j++) {
+            mappedDetails.push(idObject[splittedDetails[j]]["prefLabel"]);
           }
-        }
+        } 
 
         // case for all other properties, where splitted strings don't have to be converted
         else {
@@ -111,19 +57,10 @@ async function openDetails(id, idObject) {
         body[0].appendChild(detailDiv);
       }
     } 
-    // storing id of current concept and idObject comment-button data-properties, to feed updataPod function with parameters
+    // storing id of current concept and idObject in comment-button data-properties, to feed updataPod function with parameters
     let commentButton = document.getElementById("commentButton")
     commentButton.dataset.id = id.toString();
     commentButton.dataset.idObject = JSON.stringify(idObject);
-
-    /* alternative way to call updatePod with parameters
-    // generates an event listener for every concept id clicked, would need listener removal after each comment to work...
-    const commentForm = document.getElementById("commentForm");
-    commentForm.addEventListener("submit", function() { // anonymous function to call updatePod with parameters
-      event.preventDefault();
-      updatePod(id.toString(), idObject);
-    });
-    */
 
     await readComments(id, idObject);
     modal.style.display = "block";
@@ -133,7 +70,6 @@ async function readComments(id, idObject) {
   console.log("ID: " + id)
   console.log("IDObject: " + JSON.stringify(idObject))
   try {
-    const url = commentURL;
     // clean modal content from previous comments
     var commentDiv = document.getElementsByClassName("modal-comments")[0];
     while (commentDiv.firstChild) {
@@ -143,6 +79,7 @@ async function readComments(id, idObject) {
     while (historyDiv.firstChild) {
       historyDiv.removeChild(historyDiv.firstChild);
     }
+
     // return if no comment file is loaded, i.e. no conceptSchemeTitle
     if (conceptSchemeTitle == "") {
       let placeholderComment = document.createElement("p");
@@ -154,13 +91,12 @@ async function readComments(id, idObject) {
       historyDiv.appendChild(historyCommentPlaceholder);
       return;
     }
-    // generate existing comments for this concept from solid pod
-    let commentRdf = await readFromPod(url, 'text/turtle')
-    // parse ttl into store
-    let store = $rdf.graph()
-    $rdf.parse(commentRdf, store, url, 'text/turtle')
+
+    // load store and namespaces
+    [store, AO, DC, SK, RDF] = await readStore(commentURL)
+
     // serialize store into json-ld
-    let jsonldSerialization = $rdf.serialize(null, store, url, 'application/ld+json');
+    let jsonldSerialization = $rdf.serialize(null, store, commentURL, 'application/ld+json');
     // parse json-ld into object
     let parsedJson = JSON.parse(jsonldSerialization)
     console.log("parsedJSON: " + JSON.stringify(parsedJson))
@@ -244,11 +180,12 @@ async function readComments(id, idObject) {
 
 async function updatePod() {
     event.preventDefault();
-    const url = commentURL;
-    if (url == "") {
+    // check if comment file is selected
+    if (conceptSchemeTitle == "") {
       alert("Keine Kommentardatei geladen!")
       return;
     }
+    // avoid empty comments and anonymous commenters
     let commentText = document.getElementById("commentText").value;
     let author = document.getElementById("userName").innerHTML;
     if (commentText == "") {
@@ -260,28 +197,17 @@ async function updatePod() {
       return;
     }
     
-    // not trying to avoid storing id in className anymore
+    // get id and idObject from commentButton data-properties
     let id = document.getElementById("commentButton").dataset.id;
     let idObject = JSON.parse(document.getElementById("commentButton").dataset.idObject);
 
-    // declare namespaces
-    var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
-    var DC = $rdf.Namespace("http://purl.org/dc/terms/");
-    var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
-    var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+    [store, AO, DC, SK, RDF] = await readStore(commentURL)
 
     // declare entities
     var value = AO("bodyValue")
     var target = AO("hasTarget")
     var creator = DC("creator")
     var created = DC("created")
-
-    // read ttl from pod
-    let preRdf = await readFromPod(url, 'text/turtle')
-    
-    // parse ttl into store
-    let store = $rdf.graph()
-    $rdf.parse(preRdf, store, url, 'text/turtle')
 
     // calculate the next annotation number
     let nextAnnoNumber = 1
@@ -310,18 +236,17 @@ async function updatePod() {
     store.add(newAnno, target, newConcept)
 
     // serialize store into ttl
-    let ttl = $rdf.serialize(null, store, url, 'text/turtle')
+    let ttl = $rdf.serialize(null, store, commentURL, 'text/turtle')
 
     // write ttl to pod
-    await writeToPod(ttl, url, 'text/turtle')
+    await writeToPod(ttl, commentURL, 'text/turtle')
     readComments(id, idObject)
 }
 
 // function to generate an object with all concepts and their latest comment date for visualization
 async function generateCommentedIdList() {
-  let url = commentURL;
   let commentConceptObject = {};
-  if (url == "") {
+  if (conceptSchemeTitle == "") {
     return commentConceptObject
   }
 
@@ -338,11 +263,11 @@ async function generateCommentedIdList() {
   var target = AO('hasTarget');
 
   // read ttl from pod
-  let preRdf = await readFromPod(url, 'text/turtle');
+  let preRdf = await readFromPod(commentURL, 'text/turtle');
   
   // parse ttl into store
   let store = $rdf.graph();
-  $rdf.parse(preRdf, store, url, 'text/turtle');
+  $rdf.parse(preRdf, store, commentURL, 'text/turtle');
 
   // find all concepts
   let concepts = store.each(undefined, RDF('type'), concept);
@@ -575,4 +500,27 @@ async function generateThesaurus(idObject, topPosition) {
   } catch (error) {
     alert("Fehler: " + error);
   }
+}
+
+async function readStore(commentURL) {
+      // read ttl from pod
+      let preRdf = await readFromPod(commentURL, 'text/turtle')
+      
+      // parse ttl into store
+      let store = $rdf.graph()
+      $rdf.parse(preRdf, store, commentURL, 'text/turtle')
+
+      // declare namespaces
+      var AO = $rdf.Namespace("http://www.w3.org/ns/oa#");
+      var DC = $rdf.Namespace("http://purl.org/dc/terms/");
+      var SK = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
+      var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+  
+      // declare entities
+      var value = AO("bodyValue")
+      var target = AO("hasTarget")
+      var creator = DC("creator")
+      var created = DC("created")
+
+      return [store, AO, DC, SK, RDF]
 }
