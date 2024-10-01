@@ -106,6 +106,13 @@ async function readComments(id, idObject) {
       }
     }
 
+    // remove all concepts from store which are not in conceptsInScheme
+    for (let concept of store.each(undefined, RDF('type'), SK('Concept'))) {
+      if (!conceptsInScheme.includes(concept)) {
+        store.removeMany(concept, null, null)
+      }
+    }
+
     // serialize store into json-ld
     let jsonldSerialization = $rdf.serialize(null, store, commentURL, 'application/ld+json');
     // parse json-ld into object
