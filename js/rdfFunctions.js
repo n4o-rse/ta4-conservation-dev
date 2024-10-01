@@ -18,15 +18,10 @@ async function openDetails(id, idObject) {
     // iterate over all detail contents and create a paragraph for each
     for (let i = 0; i < details.length; i++) {
       // check if details[i] is a key in idObject[id]
-      if (idObject[id].hasOwnProperty(details[i])) {
+      try {
         //check if detail has a value at all
-        console.log("idObject: " + JSON.stringify(idObject))
-        console.log("id: " + id)
-        console.log("details[i]: " + details[i])
-        console.log("idObject[id][details[i]]: " + idObject[id][details[i]])
         if (!(idObject[id][details[i]].trim()) == "") {
           let detailDiv = document.createElement("div");
-
           let splittedDetails = idObject[id][details[i]].split("|");
           let mappedDetails
 
@@ -58,6 +53,8 @@ async function openDetails(id, idObject) {
           }
           body[0].appendChild(detailDiv);
         }
+      } catch (error) {
+        // if details[i] is not a key in idObject[id], do nothing. Keycheck didn't work. Pls fix this later...
       }
     } 
     // storing id of current concept and idObject in comment-button data-properties, to feed updataPod function with parameters
