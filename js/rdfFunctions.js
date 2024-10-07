@@ -134,7 +134,7 @@ async function readComments(id, idObject) {
     conceptObjectID = x["@id"].split(":")[1]
     commentObject["concepts"][conceptObjectID] = {}
     if (!(conceptObjectID in idObject)) {
-      commentObject["concepts"][conceptObjectID]["prefLabel"] = "fehlender Begriff"
+      commentObject["concepts"][conceptObjectID]["prefLabel"] = "Fehlender Begriff"
     } else {
     commentObject["concepts"][conceptObjectID]["prefLabel"] = idObject[conceptObjectID]["prefLabel"]
     }
@@ -148,18 +148,25 @@ async function readComments(id, idObject) {
   for (let i = 0; i < sortedUpdatedCommentArray.length; i++) {
     let comment = document.createElement("p");
     let commentTargetID = commentObject["comments"][sortedUpdatedCommentArray[i]]["target"];
-    let commentTargetLabel = idObject[commentTargetID]["prefLabel"];
+    let commentTargetLabel
+    if (!(commentTargetID in idObject)) {
+      commentTargetLabel = "Fehlender Begriff"
+    } else {
+      idObject[commentTargetID]["prefLabel"];
+    }
     let commentCreator = commentObject["comments"][sortedUpdatedCommentArray[i]]["creator"];
     let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"];
     commentCreated = commentCreated.split(".")[0].replace("T", " ");
     comment.innerHTML = commentCreator + " kommentierte " + "<b>" + commentTargetLabel + "</b>" + " um " + commentCreated;
     // if not commentTargetLabel "gelöschter Begriff", add event listener to openDetails
-    if (commentTargetLabel != "fehlender Begriff") {
+    if (commentTargetLabel != "Fehlender Begriff") {
       comment.onclick = function() {openDetails(commentTargetID, idObject)};
     }
     comment.className = "commentHistoryParagraph";
     historyDiv.appendChild(comment);
   }
+
+  // refactorize this part to be included in the upper
 
   // delete all elements from sortedUpdatedCommentArray, where property target in commentObject["comments"]["target"] is not id
   let prunedCommentArray = []
