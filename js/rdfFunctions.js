@@ -151,7 +151,7 @@ async function readComments(id, idObject) {
     if (!(commentTargetID in idObject)) {
       commentTargetLabel = "Fehlender Begriff"
     } else {
-      idObject[commentTargetID]["prefLabel"];
+      commentTargetLabel = idObject[commentTargetID]["prefLabel"];
     }
     let commentCreator = commentObject["comments"][sortedUpdatedCommentArray[i]]["creator"];
     let commentCreated = commentObject["comments"][sortedUpdatedCommentArray[i]]["created"];
