@@ -112,7 +112,7 @@ async function readComments(id, idObject) {
       store.remove(concept, null, null)
     }
   }
-
+  
   // remove all annotations from store which are not in annotationsInScheme
   for (let annotation of store.each(undefined, RDF('type'), AO('Annotation'))) {
     if (!thingsInScheme.includes(annotation)) {
