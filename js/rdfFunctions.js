@@ -133,8 +133,8 @@ async function readComments(id, idObject) {
   for (let x of jsonConceptArray) {
     conceptObjectID = x["@id"].split(":")[1]
     commentObject["concepts"][conceptObjectID] = {}
-    if (idObject[conceptObjectID]["prefLabel"] == undefined) {
-      commentObject["concepts"][conceptObjectID]["prefLabel"] = "gelöschter Begriff"
+    if (! conceptObjectID in idObject) {
+      commentObject["concepts"][conceptObjectID]["prefLabel"] = "fehlender Begriff"
     } else {
     commentObject["concepts"][conceptObjectID]["prefLabel"] = idObject[conceptObjectID]["prefLabel"]
     }
@@ -154,7 +154,7 @@ async function readComments(id, idObject) {
     commentCreated = commentCreated.split(".")[0].replace("T", " ");
     comment.innerHTML = commentCreator + " kommentierte " + "<b>" + commentTargetLabel + "</b>" + " um " + commentCreated;
     // if not commentTargetLabel "gelöschter Begriff", add event listener to openDetails
-    if (commentTargetLabel != "gelöschter Begriff") {
+    if (commentTargetLabel != "fehlender Begriff") {
       comment.onclick = function() {openDetails(commentTargetID, idObject)};
     }
     comment.className = "commentHistoryParagraph";
