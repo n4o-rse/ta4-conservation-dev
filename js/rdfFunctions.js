@@ -105,18 +105,12 @@ async function readComments(id, idObject) {
   // find entries in conceptScheme, both concepts and annotations
   // annotations use skos: inScheme to reference the conceptScheme
   let thingsInScheme = store.each(undefined, SK('inScheme'), conceptScheme)
+  console.log("thingsInScheme: " + thingsInScheme)
 
-  // remove all concepts from store which are not in conceptsInScheme
-  for (let concept of store.each(undefined, RDF('type'), SK('Concept'))) {
-    if (!thingsInScheme.includes(concept)) {
-      store.remove(concept, null, null)
-    }
-  }
-  
-  // remove all annotations from store which are not in annotationsInScheme
-  for (let annotation of store.each(undefined, RDF('type'), AO('Annotation'))) {
-    if (!thingsInScheme.includes(annotation)) {
-      store.remove(annotation, null, null)
+  // remove all concepts and annotations that dont have the conceptScheme as inScheme
+  for (thing of store.each(undefined, RDF('type'), SK('Concept')).concat(store.each(undefined, RDF('type'), AO('Annotation')))) {
+    if (!store.holds(thing, SK('inScheme'), conceptScheme)) {
+      store.removeMany(thing, undefined, undefined)
     }
   }
 
