@@ -109,7 +109,7 @@ async function readConceptSchemeTitles() {
   }
   // add generic option "keine"
   let option = document.createElement("option");
-  option.value = "keine";
+  option.value = "";
   option.innerHTML = "keine";
   conceptSchemeTitleSelector.appendChild(option);
 
