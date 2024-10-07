@@ -123,7 +123,7 @@ async function readComments(id, idObject) {
   let jsonCommentArray = parsedJson["@graph"].filter(obj => obj["@type"] == "o:Annotation")
   let jsonConceptArray = parsedJson["@graph"].filter(obj => obj["@type"] == "skos:Concept")
   for (let x of jsonCommentArray) {
-    commentObjectID = x["@id"].split("/")[1]
+    commentObjectID = x["@id"].split(":")[1]
     commentObject["comments"][commentObjectID] = {}
     commentObject["comments"][commentObjectID]["creator"] = x["dct:creator"]
     commentObject["comments"][commentObjectID]["created"] = x["dct:created"]
@@ -131,7 +131,7 @@ async function readComments(id, idObject) {
     commentObject["comments"][commentObjectID]["target"] = x["o:hasTarget"]["@id"].split("/")[1]
   }
   for (let x of jsonConceptArray) {
-    conceptObjectID = x["@id"].split("/")[1]
+    conceptObjectID = x["@id"].split(":")[1]
     commentObject["concepts"][conceptObjectID] = {}
     if (idObject[conceptObjectID]["prefLabel"] == undefined) {
       commentObject["concepts"][conceptObjectID]["prefLabel"] = "gelöschter Begriff"
@@ -223,23 +223,25 @@ async function updatePod() {
     var target = AO("hasTarget")
     var creator = DC("creator")
     var created = DC("created")
+    var inScheme = SK("inScheme")
 
     let conceptScheme = store.each(undefined, RDF('type'), SK('ConceptScheme')).find(conceptScheme => store.any(conceptScheme, DC('title')).value == conceptSchemeTitle)
 
     // calculate the next annotation number
     let nextAnnoNumber = 1
-    while (store.holds($rdf.sym(`${conceptScheme.value}/Annotations/anno${nextAnnoNumber}`), RDF('type'), AO('Annotation'))) {
+    while (store.holds($rdf.sym(`ConceptSchemes/${conceptScheme.value.split("/")[1]}/Annotations/anno${nextAnnoNumber}`), RDF('type'), AO('Annotation'))) {
       nextAnnoNumber++
     }
     //create new annotation
     let newAnno = $rdf.sym(`${conceptScheme.value}/Annotations/anno${nextAnnoNumber}`)
-    let newConcept = $rdf.sym(`${conceptScheme.value}/Concepts/${id}`)
+    let newConcept = $rdf.sym(`ConceptSchemes/${conceptScheme.value.split("/")[1]}/Annotations/Concepts/${id}`)
 
     // add annotation to store
     store.add(newAnno, RDF('type'), AO('Annotation'))
     // add newConcept if not already in store
     if (!store.holds(newConcept, RDF('type'), SK('Concept'))) {
         store.add(newConcept, RDF('type'), SK('Concept'))
+        store.add(newConcept, inScheme, conceptScheme)
     }
 
     var newDate = new Date() 
@@ -251,6 +253,7 @@ async function updatePod() {
     store.add(newAnno, creator, author)
     store.add(newAnno, created, newDate)
     store.add(newAnno, target, newConcept)
+    store.add(newAnno, inScheme, conceptScheme)
 
     // serialize store into ttl
     let ttl = $rdf.serialize(null, store, commentURL, 'text/turtle')
@@ -290,7 +293,8 @@ async function generateCommentedIdList() {
   }
   for (let i=0; i < concepts.length; i++) {
     conceptObject = concepts[i];
-    id = conceptObject.value.split("concept")[1]
+    let id = conceptObject.value.split("/")
+    id = id[id.length - 1];
     // find all annotations with target conceptObject
     targetingAnnotations = store.each(undefined, target, conceptObject);
     // create an array of all dates of the annotations
