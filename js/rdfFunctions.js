@@ -133,7 +133,7 @@ async function readComments(id, idObject) {
   for (let x of jsonConceptArray) {
     conceptObjectID = x["@id"].split(":")[1]
     commentObject["concepts"][conceptObjectID] = {}
-    if (! conceptObjectID in idObject) {
+    if (!(conceptObjectID in idObject)) {
       commentObject["concepts"][conceptObjectID]["prefLabel"] = "fehlender Begriff"
     } else {
     commentObject["concepts"][conceptObjectID]["prefLabel"] = idObject[conceptObjectID]["prefLabel"]
