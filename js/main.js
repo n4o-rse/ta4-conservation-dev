@@ -164,7 +164,7 @@ async function createConceptScheme() {
 
 // global variables and event listeners
 let commentURL = "https://restaurierungsvokabular.solidweb.org/annotations/annotations2.ttl";
-let baseURI = "https://restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/";
+let baseURI = "https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/";
 let conceptSchemeTitle = "";
 
 const thesaurusFileInputForm = document.getElementById('fileForm');
