@@ -128,7 +128,7 @@ async function readComments(id, idObject) {
     commentObject["comments"][commentObjectID]["creator"] = x["dct:creator"]
     commentObject["comments"][commentObjectID]["created"] = x["dct:created"]
     commentObject["comments"][commentObjectID]["value"] = x["o:bodyValue"]
-    commentObject["comments"][commentObjectID]["target"] = x["o:hasTarget"]["@id"].split("/")[1]
+    commentObject["comments"][commentObjectID]["target"] = x["o:hasTarget"]["@id"].split(":")[1]
   }
   for (let x of jsonConceptArray) {
     conceptObjectID = x["@id"].split(":")[1]
@@ -139,6 +139,7 @@ async function readComments(id, idObject) {
     commentObject["concepts"][conceptObjectID]["prefLabel"] = idObject[conceptObjectID]["prefLabel"]
     }
   }
+  console.log("commentObject: " + JSON.stringify(commentObject))
   let updatedCommentArray = Object.keys(commentObject["comments"])
   let sortedUpdatedCommentArray
   sortedUpdatedCommentArray = updatedCommentArray.sort((a, b) => new Date(commentObject["comments"][b]["created"]) - new Date(commentObject["comments"][a]["created"]));
