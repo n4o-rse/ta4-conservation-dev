@@ -233,15 +233,16 @@ async function updatePod() {
     var inScheme = SK("inScheme")
 
     let conceptScheme = store.each(undefined, RDF('type'), SK('ConceptScheme')).find(conceptScheme => store.any(conceptScheme, DC('title')).value == conceptSchemeTitle)
-
+    let conceptSchemeValueSplits = conceptScheme.value.split("/");
+    let conceptSchemeValue = conceptSchemeValueSplits[conceptSchemeValueSplits.length - 1];
     // calculate the next annotation number
     let nextAnnoNumber = 1
-    while (store.holds($rdf.sym(`ConceptSchemes/${conceptScheme.value.split("/")[1]}/Annotations/anno${nextAnnoNumber}`), RDF('type'), AO('Annotation'))) {
+    while (store.holds($rdf.sym(`${baseURI}${conceptSchemeValue}/Annotations/anno${nextAnnoNumber}`), RDF('type'), AO('Annotation'))) {
       nextAnnoNumber++
     }
     //create new annotation
-    let newAnno = $rdf.sym(`${conceptScheme.value}/Annotations/anno${nextAnnoNumber}`)
-    let newConcept = $rdf.sym(`ConceptSchemes/${conceptScheme.value.split("/")[1]}/Annotations/Concepts/${id}`)
+    let newAnno = $rdf.sym(`${baseURI}${conceptSchemeValue}/Annotations/anno${nextAnnoNumber}`)
+    let newConcept = $rdf.sym(`${baseURI}${conceptSchemeValue}/Concepts/${id}`)
 
     // add annotation to store
     store.add(newAnno, RDF('type'), AO('Annotation'))
