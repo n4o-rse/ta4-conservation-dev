@@ -100,12 +100,10 @@ async function readComments(id, idObject) {
 
   // finde Skos ConceptScheme where title is conceptSchemeTitle
   let conceptScheme = store.each(undefined, RDF('type'), SK('ConceptScheme')).find(conceptScheme => store.any(conceptScheme, DC('title')).value == conceptSchemeTitle)
-  console.log("conceptScheme: " + conceptScheme)
 
   // find entries in conceptScheme, both concepts and annotations
   // annotations use skos: inScheme to reference the conceptScheme
   let thingsInScheme = store.each(undefined, SK('inScheme'), conceptScheme)
-  console.log("thingsInScheme: " + thingsInScheme)
 
   // remove all concepts and annotations that dont have the conceptScheme as inScheme
   for (thing of store.each(undefined, RDF('type'), SK('Concept')).concat(store.each(undefined, RDF('type'), AO('Annotation')))) {
@@ -148,6 +146,7 @@ async function readComments(id, idObject) {
   for (let i = 0; i < sortedUpdatedCommentArray.length; i++) {
     let comment = document.createElement("p");
     let commentTargetID = commentObject["comments"][sortedUpdatedCommentArray[i]]["target"];
+    console.log("commentTargetID: " + commentTargetID) 
     let commentTargetLabel
     if (!(commentTargetID in idObject)) {
       commentTargetLabel = "Fehlender Begriff"
