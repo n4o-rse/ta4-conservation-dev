@@ -4,14 +4,14 @@ from rdflib import Graph, Literal, BNode, Namespace, URIRef
 from rdflib.namespace import SKOS, RDF, DC, DCTERMS, RDFS
 
 # get the ttl file from the solid pod
-ttlText = requests.get('https://restaurierungsvokabular.solidweb.org/annotations/annotations.ttl').text
+ttlText = requests.get('https://restaurierungsvokabular.solidweb.org/annotations/annotations2.ttl').text
 
 # check if the ttl file has changed
-with open('comments.ttl', 'r') as f:
+with open('comments2.ttl', 'r') as f:
     fileText = f.read()
 
 if fileText != ttlText:
-    with open('comments.ttl', 'w') as f:
+    with open('comments2.ttl', 'w') as f:
         f.write(ttlText)
 
 # check annotations for multiple entries
