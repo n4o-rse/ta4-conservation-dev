@@ -25,9 +25,11 @@ def main():
     numberOfIds = 2000
     idList = []
     checkList = []
+    """
     oldIds = readOldIds()
     for i in range(len(oldIds)):
         checkList.append(oldIds[i])
+    """
     with open("idList.csv", "w") as f:
         for i in range(numberOfIds):
             ID = createNewId(checkList)
