@@ -78,7 +78,94 @@ function collectThesaurusData(idObject, topPosition) {
   conceptSchemeFormButton.onclick = function() {generateThesaurus(idObject, topPosition)};
 }
 
+function setConceptSchemeTitle() {
+  event.preventDefault();
+  conceptSchemeTitle = document.getElementById('conceptSchemeTitleInput').value;
+  alert(conceptSchemeTitle + " wurde ausgewählt.");
+  return conceptSchemeTitle;
+}
+
+async function readConceptSchemeTitles() {
+  annotationGraphText = await readFromPod(commentURL, "text/turtle");
+  annotationGraph = $rdf.graph();
+  // define namespaces
+  let SKOS = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
+  let DCT = $rdf.Namespace("http://purl.org/dc/terms/");
+  let RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+  $rdf.parse(annotationGraphText, annotationGraph, commentURL, "text/turtle");
+  // get all conceptSchemes in graph
+  let conceptSchemes = annotationGraph.each(undefined, RDF("type"), SKOS("ConceptScheme"));
+  // get names of all conceptSchemes
+  let conceptSchemeNames = [];
+  for (let x of conceptSchemes) {
+    let conceptSchemeName = annotationGraph.any(x, DCT("title"));
+    conceptSchemeNames.push(conceptSchemeName.value);
+  }
+  // get selector for conceptSchemeTitle
+  let conceptSchemeTitleSelector = document.getElementById("conceptSchemeTitleInput");
+  // remove all children from conceptSchemeTitleSelector
+  while (conceptSchemeTitleSelector.firstChild) {
+    conceptSchemeTitleSelector.removeChild(conceptSchemeTitleSelector.firstChild);
+  }
+  // add generic option "keine"
+  let option = document.createElement("option");
+  option.value = "";
+  option.innerHTML = "keine";
+  conceptSchemeTitleSelector.appendChild(option);
+
+  // add option tag to commentURLSelector for each conceptSchemeTitle in conceptSchemeNames
+  for (let x of conceptSchemeNames) {
+    let option = document.createElement("option");
+    option.value = x;
+    option.innerHTML = x;
+    conceptSchemeTitleSelector.appendChild(option);
+  }
+}
+
+async function createConceptScheme() {
+  event.preventDefault();
+  newConceptSchemeTitle = document.getElementById('createconceptSchemeTitleInput').value;
+  // read annotation graph from pod
+  annotationGraphText = await readFromPod(commentURL, "text/turtle");
+  annotationGraph = $rdf.graph();
+  // define namespaces
+  let SKOS = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#");
+  let DCT = $rdf.Namespace("http://purl.org/dc/terms/");
+  let RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+  $rdf.parse(annotationGraphText, annotationGraph, commentURL, "text/turtle");
+  // check if there already exists a ConceptScheme with title = newConceptSchemeTitle
+  let conceptSchemes = annotationGraph.each(undefined, RDF("type"), SKOS("ConceptScheme"));
+  // print all conceptSchemes
+  for (let x of conceptSchemes) {
+    let conceptSchemeName = annotationGraph.any(x, DCT("title"));
+    if (conceptSchemeName.value == newConceptSchemeTitle) {
+      alert("Es existiert bereits ein Thesaurus mit diesem Titel!");
+      return;
+    }
+  }
+  let i = 1;
+  let conceptSchemeURI = baseURI + "ConceptScheme"
+  newConceptScheme = $rdf.sym(conceptSchemeURI + i);
+
+  // check if newConceptScheme already exists in Graph, while loop increasing i and checking again
+  while (annotationGraph.holds(newConceptScheme, RDF("type"), SKOS("ConceptScheme"))) {
+    i++;
+    newConceptScheme = $rdf.sym(conceptSchemeURI + i);
+  }
+  console.log("newConceptScheme: " + newConceptScheme);
+  annotationGraph.add(newConceptScheme, RDF("type"), SKOS("ConceptScheme"));
+  annotationGraph.add(newConceptScheme, DCT("title"), $rdf.lit(newConceptSchemeTitle));
+  // write serialized graph to pod
+  serializedGraph = $rdf.serialize(null, annotationGraph, commentURL, "text/turtle");
+  await writeToPod(serializedGraph, commentURL, "text/turtle");
+  // reload dropdown menu for conceptSchemes
+  readConceptSchemeTitles();
+}
+
 // global variables and event listeners
+let commentURL = "https://restaurierungsvokabular.solidweb.org/annotations/annotations2.ttl";
+let baseURI = "https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/";
+let conceptSchemeTitle = "";
 
 const thesaurusFileInputForm = document.getElementById('fileForm');
 thesaurusFileInputForm.addEventListener('submit', thesaurusInputFile);
@@ -88,3 +175,11 @@ thesaurusUrlInputForm.addEventListener('submit', thesaurusInputUrl);
 
 const commentForm = document.getElementById("commentForm");
 commentForm.addEventListener("submit", updatePod);
+
+const conceptSchemeTitleForm = document.getElementById("conceptSchemeTitleForm");
+conceptSchemeTitleForm.addEventListener("submit", setConceptSchemeTitle);
+
+const createconceptSchemeTitleForm = document.getElementById("createconceptSchemeTitleForm");
+createconceptSchemeTitleForm.addEventListener("submit", createConceptScheme);
+
+readConceptSchemeTitles();

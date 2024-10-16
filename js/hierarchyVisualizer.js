@@ -27,7 +27,6 @@ async function readData(data, inputType) {
   let toppedArray = topData(cleanedTableData);
   let toppedData = toppedArray[0];
   let topPosition = toppedArray[1];
-  console.log(topPosition)
   let orphans = toppedArray[2];
 
   let idArray = idToName(toppedData)
@@ -112,7 +111,7 @@ function validation([toppedData, idObject, doublettes, missingParents, ignored, 
       let visualizationButton = document.createElement("button");
       visualizationButton.id = "visualizeButton";
       visualizationButton.innerHTML = "Tabelle visualisieren";
-      visualizationButton.onclick = function() {visualizeData([stratifiedData, idObject, radioTypes])};
+      visualizationButton.onclick = function() {visualizeData([stratifiedData, idObject])};
 
       let thesaurusDownloadButton = document.createElement("button");
       thesaurusDownloadButton.id = "thesaurusDownloadButton";

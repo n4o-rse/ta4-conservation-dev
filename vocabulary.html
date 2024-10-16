@@ -13,7 +13,7 @@
     <nav>
       <a href="index.html">Introduction</a>
       <a href="vocabulary.html">Vocabulary</a>
-      <a href="ontology.html">Ontology</a>
+      <!-- <a href="ontology.html">Ontology</a>  -->
       <a href="contact.html">Contact</a>
       <!-- create a form aligning to the right of the screen-->
       <div style="float: right;">
@@ -35,8 +35,8 @@
     <main>
       <article> 
         <section>
-          <h2>Hierarchical vocabulary validation and visualization</h2>
-          <p>CSV/TSV-Datei validieren oder Beispieldatensatz verwenden.</p>
+          <h2>Validierung und Visualisierung hierarchischer Vokabulare</h2>
+          <h1>Vokabulare</h1>
           <p>Eigene Dateien müssen folgendem<a href="schema.html"> Tabellenschema </a>entsprechen.</p>
           <div id="input">
             <form id="fileForm">
@@ -47,16 +47,25 @@
               <input type="text" id="textInput" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=csv">
               <button type="submit">URL laden</button>
             </form>
-            <!-- 
-              multi input form with fields and label for each entry: title, creator, publisher, contributor, subject, created and description
-              button to submit the form
-            -->
+            <br>
+            <h1>Kommentare</h1>
+            <form id="conceptSchemeTitleForm">
+              <!-- <label for="conceptSchemeTitleInput">Kommentardatei laden</label> -->
+              <select id="conceptSchemeTitleInput" name="conceptSchemeTitleInput">
+              </select> 
+              <button type="submit">Kommentardatei laden</button>
+            </form>
+            <form id="createconceptSchemeTitleForm">
+              <label for="createconceptSchemeTitleInput">Titel des Thesaurus</label>
+              <input type="text", name="createconceptSchemeTitleInput" id="createconceptSchemeTitleInput"> 
+              <button type="submit">Kommentardatei erstellen</button>
+            </form>
             <div id="conceptSchemeModal" style="display: none;">
               <span id="closeConceptSchemeModal" class="close" onclick=closeConceptSchemeModal()>&times;</span>
               <center>
               <h3>Thesaurus Daten</h3>
               </center>
-              <!-- <p>(Kommata als Separator multipler Werte verwenden)</p> -->
+              <p>(Kommata als Separatoren multipler Werte verwenden)</p>
               <form id="conceptSchemeForm">
                 <input type="text" id="nameSpaceInput" placeholder="Namespace" class="conceptSchemeFormInput" alt='muss ein ":" beinhalten'> <br>
                 <input type="text" id="titleInput" placeholder="Titel" class="conceptSchemeFormInput"> <br>

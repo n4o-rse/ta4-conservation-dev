@@ -1,2 +1,2 @@
-# rest-n4o-ta4-test   
+# Tool zur Überführung von Tabellen mit Begriffen in Skos-Turtle Files.
   
