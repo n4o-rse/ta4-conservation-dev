@@ -1,491 +1,451 @@
-@prefix : <#>.
-@prefix dct: <http://purl.org/dc/terms/>.
-@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
-@prefix Con: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/>.
-@prefix Annot: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/>.
-@prefix o: <http://www.w3.org/ns/oa#>.
-@prefix Co: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/>.
-@prefix Ann: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme2/Annotations/>.
-@prefix Conc: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme2/Concepts/>.
+@prefix ns1: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns2: <http://purl.org/dc/terms/> .
+@prefix ns3: <http://www.w3.org/ns/oa#> .
 
-Con:ConceptScheme1
-    a skos:ConceptScheme;
-    dct:title "LEIZA Restaurierungs- und Konservierungsthesaurus".
-Annot:anno1
-    a o:Annotation;
-    dct:created "2024-09-24T07:04:40.439Z";
-    dct:creator "Kristina";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """Aber selbstverst\u00e4ndlich, lieber Markus. Dein Wunsch sei mir Befehl ;). 
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno1> a ns3:Annotation ;
+    ns2:created "2024-09-24T07:04:40.439Z" ;
+    ns2:creator "Kristina" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue """Aber selbstverstÃ¤ndlich, lieber Markus. Dein Wunsch sei mir Befehl ;). 
 
-Der Punkt "description" taucht manchmal hier in der Darstellung noch nicht auf, wenn kein Text in dem Feld eingetragen ist. Er ist aber grunds\u00e4tzlich bei jedem Begriff schon angelegt. Schreib mir gerne einen Beschreibungstext in die jeweilige Kommentarspalte, dann f\u00fcge ich es in die Arbeitstabelle ein und er erscheint dann auch hier in der Darstellung. """;
-    o:hasTarget Co:G2944B.
-Annot:anno10
-    a o:Annotation;
-    dct:created "2024-08-27T14:24:57.931Z";
-    dct:creator "Ivan";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """Confokalmikroskop ist auch ein wichtiges Lichtmikroskop aber ich m\u00fcsste die genaue Definition suchen. 
-Vielleicht ISO 25178-6 (https://www.iso.org/obp/ui/en/#iso:std:iso:25178:-6:ed-1:v1:en)? Nicht sehr klar f\u00fcr mich allerdings... XD""";
-    o:hasTarget Co:FC2113 .
-Annot:anno11
-    a o:Annotation;
-    dct:created "2024-09-02T14:21:25.465Z";
-    dct:creator "eckmann";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """...einer "Holzmaserung" \u00e4hnelt die Struktur von Elfenbein eigentlich nicht. Charakteristisch sind die sogenannten Schreger'schen Linien, die im Querschnitt eine netzartiges Struktur bilden (und sich dadurch von elfenbein\u00e4hnlichen Materialien unterscheiden). """;
-    o:hasTarget Co:AG55BC.
-Annot:anno15
-    a o:Annotation;
-    dct:created "2024-08-28T11:58:55.324Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue "Lyofix CHN";
-    o:hasTarget Co:FF4767 .
-Annot:anno16
-    a o:Annotation;
-    dct:created "2024-08-28T12:04:14.326Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """Kauramin CE 5549 ist chemisch identisch mit Kauramin 800. Die Typenbezeichung CE steht bei der BASF f\u00fcr Produkte die noch keine volle Marktreife, noch im Teststadium sind. Nachdem sich Kauramin CE 5549 am Markt bew\u00e4hrt hatte, bekam es den brand name Kauramin 800. Vielleicht in der Datenbank Kauramin CE 5549/Kauramin 800 schreiben.
-Kauramin 800 wurde 2023 vom Markt genommen. Das nun modifizierte Nachfolgeharz mit etwas anderen Eigenschaften hei\u00dfe Kauramin 801""";
-    o:hasTarget Co:BFB162 .
-Annot:anno17
-    a o:Annotation;
-    dct:created "2024-08-28T12:06:55.990Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "Hausenblasenleim (die Hause ist ein Fisch) wurde am RGZM auch verwendet. Ich habs nur einmal als Azubi 1988 benutzt.";
-    o:hasTarget Co:GD86C1 .
-Annot:anno18
-    a o:Annotation;
-    dct:created "2024-08-28T12:20:25.151Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "da k\u00f6nnte ich noch etliche Bearbeitungstechniken zuf\u00fcgen (soll ich?) , eine die viele schon geh\u00f6rt haben: scharriert";
-    o:hasTarget Co:B1B854 .
-Annot:anno19
-    a o:Annotation;
-    dct:created "2024-08-28T12:21:46.680Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "manchmal verwende ich auch die harzreichere Variante: Auro Hart\u00f6l Nr.126";
-    o:hasTarget Co:A28B4D.
-Annot:anno2
-    a o:Annotation;
-    dct:created "2024-09-25T10:32:35.120Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "Lava ist aus meiner Sicht kein Gestein, sondern das vulkanische Ausgangsmaterial aus der unterschiedlichste Gesteine entstehen. Die Mineralzusammensetzung ist dabei gleich, aber unter unterschiedlichem Druck und Zeitdauer bilden sich spezifische Kristallformen. Tiefengesteine/Plutonite (Granit, Diorit..) Ergu\u00dfgesteine/Vulkanit (Basalt, Andesit..) oder Auswurfgestein/pyroklastisches Gestein (Tuff, Bims..)";
-    o:hasTarget Co:C6F794 .
-Annot:anno20
-    a o:Annotation;
-    dct:created "2024-08-28T13:17:48.410Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "in der Metallrestaurierung (unter Lazlo Lehoczky) wurden Metallobjekte nach der Bearbeitung mit Pantarol (Nitrocelluloselack) gegen Luftfeuchtigkeit gesch\u00fctzt. Bitte Pantarol aufnehmen";
-    o:hasTarget Co:GC7998 .
-Annot:anno22
-    a o:Annotation;
-    dct:created "2024-08-28T14:36:04.802Z";
-    dct:creator "Matthias Heinzel";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "Bei den Mineralien fehlen noch als Untergruppen: Korund mit den Untergruppen Saphire und Rubin; dann der Smaragd; Fluorit oder Flussspat m\u00fcsste auch noch hinzu.  ";
-    o:hasTarget Co:BGC9F3 .
-Annot:anno23
-    a o:Annotation;
-    dct:created "2024-08-28T14:37:10.623Z";
-    dct:creator "Matthias Heinzel";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-    "Sollten wir bei den Mineralien die jeweilige Moossche H\u00e4rte angeben?";
-    o:hasTarget Co:BGC9F3 .
-Annot:anno25
-    a o:Annotation;
-    dct:created "2024-08-28T14:44:23.961Z";
-    dct:creator "Matthias Heinzel";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "Unterscheiden wir hier von welchem Baum das Pech gewonnen wurde? Birke, Buche, Nadelholz";
-    o:hasTarget Co:D467F2 .
-Annot:anno26
-    a o:Annotation;
-    dct:created "2024-08-28T14:49:55.505Z";
-    dct:creator "Matthias Heinzel";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """Unterscheiden wir hier zwischen fossilem Elfenbein und "frischem Elfenbein"?""";
-    o:hasTarget Co:AG55BC.
-Annot:anno27
-    a o:Annotation;
-    dct:created "2024-09-02T09:52:59.466Z";
-    dct:creator "Anonymus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue "Infrarot Fotographie hier erg\u00e4nzen?";
-    o:hasTarget Co:CA7279 .
-Annot:anno28
-    a o:Annotation;
-    dct:created "2024-09-02T09:57:22.096Z";
-    dct:creator "Anonymus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """warum sind "Analyse der chemischen Zusammensetzung" und "chemische Zusammensetzung" zwei unterschiedliche Unterpunkte?""";
-    o:hasTarget Co:G17B8B.
-Annot:anno29
-    a o:Annotation;
-    dct:created "2024-09-03T13:45:45.455Z";
-    dct:creator "Kristina";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """Kauramin CE 5549 wird als eigener Begriff aussortiert. Stattdessen bei Kauramin 800 als "altLabel" integriert und im der Description erl\u00e4utert""";
-    o:hasTarget Co:BFB162 .
-Annot:anno30
-    a o:Annotation;
-    dct:created "2024-09-03T13:46:00.145Z";
-    dct:creator "Lasse";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "Kristina hat diesen Begriff entfernt. Wir arbeiten noch an einem Umgang mit entfernten Begriffen, damit sie nicht zu Fehlern in der Kommentarumgebung f\u00fchren...";
-    o:hasTarget Co:BFB162 .
-Annot:anno32
-    a o:Annotation;
-    dct:created "2024-09-20T10:40:44.734Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """ mohssche H\u00e4rte... (Markus=Klugschei\u00dfer)
-""";
-    o:hasTarget Co:BGC9F3 .
-Annot:anno35
-    a o:Annotation;
-    dct:created "2024-09-20T10:55:11.809Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "zu description: nat\u00fcrliches Material, nachwachsender Rohstoff; die Hauptbestandteile von Holz sind Cellulose, Hemicellulose und Lignin, w\u00e4hrend des Wachstums werden Extraktstoffe und Mineralien in den Zellen eingelagert.Holz ist aufgrund...";
-    o:hasTarget Co:A9A858 .
-Annot:anno38
-    a o:Annotation;
-    dct:created "2024-09-20T11:09:22.152Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """description: Holz, frisch geschlagen oder auch abgelagert, jedenfalls im Vergleich zu arch\u00e4ologischem Holz keinen Abbauprozessen ausgesetzt war
+Der Punkt "description" taucht manchmal hier in der Darstellung noch nicht auf, wenn kein Text in dem Feld eingetragen ist. Er ist aber grundsÃ¤tzlich bei jedem Begriff schon angelegt. Schreib mir gerne einen Beschreibungstext in die jeweilige Kommentarspalte, dann fÃ¼ge ich es in die Arbeitstabelle ein und er erscheint dann auch hier in der Darstellung. """ ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/G2944B> .
 
-""";
-    o:hasTarget Co:C47769 .
-Annot:anno39
-    a o:Annotation;
-    dct:created "2024-09-20T11:13:56.307Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "\nzu altLabel: Quercus: da es verschiedene Eichenspezies gibt, die sich (zumindest bei arch\u00e4ologischen Holzproben) nicht genauer bestimmen lassen, w\u00e4re quercus spec. (quercus species) korrekt, das schlie\u00dft alle Eichensorten ein.\n";
-    o:hasTarget Co:FG3BCD.
-Annot:anno4
-    a o:Annotation;
-    dct:created "2024-08-27T13:02:42.906Z";
-    dct:creator "Kristina";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue "Alright, ist ge\u00e4ndert. Danke Ivan. ";
-    o:hasTarget Co:AF9A88 .
-Annot:anno40
-    a o:Annotation;
-    dct:created "2024-09-20T11:41:02.303Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "description:Nadelb\u00e4ume, sind evolution\u00e4r betrachtet \u00e4lter als Laubb\u00e4ume. Eine einzige Art von Zellen, die Tracheiden, \u00fcbernimmt sowohl die Stabilit\u00e4ts- als auch die Wassertransportfunktion, was dem Nadelholz einen relativ einfachen und regelm\u00e4\u00dfigen Zellaufbau verleiht.Dank ihrer Anpassung an kurze Vegetationsperioden k\u00f6nnen Nadelb\u00e4ume auch in Regionen mit langen, kalten Wintern oder in gro\u00dfen H\u00f6hen \u00fcberleben, wo Laubb\u00e4ume nicht mehr wachsen.";
-    o:hasTarget Co:FC3FD6 .
-Annot:anno41
-    a o:Annotation;
-    dct:created "2024-09-20T11:45:57.498Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """
-liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein?""";
-    o:hasTarget Co:G2944B.
-Annot:anno45
-    a o:Annotation;
-    dct:created "2024-09-20T12:13:36.393Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "description: Im Laubholz \u00fcbernehmen verschiedene spezialisierte Zelltypen die Aufgaben des Stofftransports, der Stabilit\u00e4t und des Stoffwechsels bzw. der Stoffspeicherung. Das Holzgewebe besteht aus mehr als 100  unterschiedlichen Elementen, darunter Tracheen f\u00fcr den Wassertransport, Tracheiden,die ebenfalls zur Wasserleitung und Stabilit\u00e4t beitragen, sowie Parenchymzellen, die f\u00fcr den Stoffwechsel und die Speicherung von N\u00e4hrstoffen zust\u00e4ndig sind";
-    o:hasTarget Co:B7DD6B.
-Annot:anno46
-    a o:Annotation;
-    dct:created "2024-09-20T12:17:54.610Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "auch hier, besser betula spec. die Unterarten lassen sich bei arch. Holz kaum/nicht unterscheiden";
-    o:hasTarget Co:BGG879 .
-Annot:anno49
-    a o:Annotation;
-    dct:created "2024-09-20T12:21:18.625Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """09-20 11:47:01
-Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? 
-und auch hier besser tilia spec.""";
-    o:hasTarget Co:B44F39 .
-Annot:anno5
-    a o:Annotation;
-    dct:created "2024-08-27T14:21:09.315Z";
-    dct:creator "Ivan";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "der CT ist auch eine R\u00f6ntgenanlage :) Mir fehlt kein Begriff ein, der nur f\u00fcr konventionelle Radiographie als Ger\u00e4t benutzt wird. Vom Hardware gibt es kaum Unterschiede zwischen CT und konventionelle (digitale) Radiographie: nur der Drehteller eigentlich!";
-    o:hasTarget Co:G8D62A.
-Annot:anno50
-    a o:Annotation;
-    dct:created "2024-09-20T12:21:49.090Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """09-20 11:47:01
-Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? 
-und auch hier besser prunus spec.""";
-    o:hasTarget Co:ABBFB5 .
-Annot:anno51
-    a o:Annotation;
-    dct:created "2024-09-20T12:23:00.631Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """09-20 11:47:01
-Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? 
-und auch hier besser populus spec.""";
-    o:hasTarget Co:B5C86F.
-Annot:anno52
-    a o:Annotation;
-    dct:created "2024-09-20T12:23:59.784Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """09-20 11:47:01
-Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? 
-und auch hier besser salix spec.""";
-    o:hasTarget Co:GG1CG9 .
-Annot:anno53
-    a o:Annotation;
-    dct:created "2024-09-20T12:59:22.419Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "Deionisiertes Wasser (mit einer Leitf\u00e4higkeit von \u2265 0,1\u20131 \u03bcS/cm) unterscheidet sich durch seinen Reinheitsgrad von destilliertem Wasser (mit einer Leitf\u00e4higkeit von \u2265 1\u201310 \u03bcS/cm), ist jedoch nicht keimfrei. In der Medizin werden beide Verfahren oft kombiniert, wenn f\u00fcr einen Arbeitsprozess vollentsalztes und gleichzeitig keimfreies Wasser erforderlich ist.";
-    o:hasTarget Co:BBF7BG.
-Annot:anno54
-    a o:Annotation;
-    dct:created "2024-09-20T13:18:52.132Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "ich vermisse die Polyurethanharze/kleber. Verwendet die niemand? Das sind z.B Montagekleber, die quellen immer etwas auf bei der Aush\u00e4rtung";
-    o:hasTarget Co:A1D125 .
-Annot:anno55
-    a o:Annotation;
-    dct:created "2024-09-20T13:27:08.642Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "Ebacryl ist ein acrylharzmodifizierter Hartgips, 2 komponentig, Pulver und Emulsion. Ebacryl w\u00fcrde ich eher bei den Gipsen platzieren";
-    o:hasTarget Co:CG2863 .
-Annot:anno56
-    a o:Annotation;
-    dct:created "2024-09-20T13:35:32.960Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "Palatal\u00ae P 4-01 ist ein unges\u00e4ttigtes Polyesterharz, gel\u00f6st in Stryol. Es wird durch die Zugabe eines Katalysator (Butanox) und Kobaltbeschleuniger vernetzt. In den 1980-1990er Jahren wurde es h\u00e4ufig zur Herstellung von Kopien, meist mit Zuschlagstoffen eingesetzt.";
-    o:hasTarget Co:D39264 .
-Annot:anno57
-    a o:Annotation;
-    dct:created "2024-09-20T13:44:12.326Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "scharriert,  Oberfl\u00e4chenbearbeitung/Gl\u00e4ttung eines Werksteinsteins. Ein Scharriereisen hat die Form eines \u00fcberbreiten Mei\u00dfels und erzeugt parallele Rillen";
-    o:hasTarget Co:AGG387 .
-Annot:anno58
-    a o:Annotation;
-    dct:created "2024-09-20T13:49:33.020Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "gebeilt: Bearbeitung von Holz oder auch Werkstein. In der Romanik oft verwendetes Werkzeug um als Finish eine Steinoberfl\u00e4che zu planieren/gl\u00e4tten. Wird beidh\u00e4ndig gef\u00fchrt und erzeugt parallele, sich meist \u00fcberkreuzende Rillen\t";
-    o:hasTarget Co:B437A9 .
-Annot:anno59
-    a o:Annotation;
-    dct:created "2024-09-20T13:55:12.308Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "Gespitzt: Ein Spitzeisen (Spitzmei\u00dfel) dient zum groben Formen eines Werkst\u00fccks. Mit ihm lassen sich  gr\u00f6\u00dfere Steinbrocken abschlagen. Oft bleiben Spitzhiebe in einer planierten, eingeebneten Oberfl\u00e4che sichtbar, da sie zu tief ausgef\u00fchrt wurden.";
-    o:hasTarget Co:B1B854 .
-Annot:anno60
-    a o:Annotation;
-    dct:created "2024-09-20T13:57:47.820Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "gezahnt: Ein Zahneisen ist gestaltet wie ein Flachmei\u00dfel, mit Z\u00e4hnen. Durch diese Form l\u00e4\u00dft sich mehr Material abtragen als es mit einem Flachmei\u00dfel m\u00f6glich ist. Es entstehen kurze, tiefe Rillen in der Steinoberfl\u00e4che, auch auch oft noch nach einer Einebnung/Gl\u00e4ttung sichtbar sind.";
-    o:hasTarget Co:BAB7B3 .
-Annot:anno61
-    a o:Annotation;
-    dct:created "2024-09-20T14:03:50.221Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "gespalten: Trennvorgang an Materialen (z.B Holz,Stein) oft unter Nutzung nat\u00fcrlicher Schwachstellen/Wachstumslinien/Sedimentlagern. Bei Holz wird der Spaltvorgang radial ausgef\u00fchrt und folgt den Wachstumsstrukturen (Holzstrahlen). Daher werden die Holzstrahlen nicht verletzt/getrennt wie beim S\u00e4gen, das gewonnene Werkst\u00fcck ist besonders stabil und bruchfest.";
-    o:hasTarget Co:ADB89D.
-Annot:anno62
-    a o:Annotation;
-    dct:created "2024-09-20T14:09:46.336Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "Inkrustiert: Die Verzierung/Oberfl\u00e4chegestaltung von mineralischen Werkstoffen (wie Keramik oder Stein) durch das Einlegen verschiedenfarbiger, kontrastreicher Materialien";
-    o:hasTarget Co:A6FA7G.
-Annot:anno63
-    a o:Annotation;
-    dct:created "2024-09-20T14:14:27.026Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "description:Rezentes Holz bezeichnet Holz, das frisch geschlagen oder abgelagert ist, jedoch im Vergleich zu arch\u00e4ologischem Holz noch keinen nennenswerten Abbauprozessen ausgesetzt war";
-    o:hasTarget Co:C47769 .
-Annot:anno65
-    a o:Annotation;
-    dct:created "2024-09-20T14:25:27.850Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "Ringporiges Laubholz bezeichnet Laubh\u00f6lzer, die gro\u00dfe Tracheen/Gef\u00e4\u00dfe im Fr\u00fchholz und deutlich kleinere im Sp\u00e4tholz ausbilden. Im Querschnitt sind deutlich ringf\u00f6rmige Strukturen sichtbar";
-    o:hasTarget Co:D39191 .
-Annot:anno66
-    a o:Annotation;
-    dct:created "2024-09-20T14:28:37.957Z";
-    dct:creator "Markus";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "Zerstreutporiges Laubholz bezeichnet Laubh\u00f6lzern, bei denen die Gef\u00e4\u00dfe/Tracheen gleichm\u00e4\u00dfig und ohne klare Anordnung \u00fcber einen gesamten Jahrring verteilt im Holz vorkommen. Anders als bei ringporigen H\u00f6lzern, bei denen gro\u00dfe Gef\u00e4\u00dfe im Fr\u00fchholz und kleinere im Sp\u00e4tholz auftreten, gibt es bei zerstreutporigen H\u00f6lzern keinen gro\u00dfen Unterschied in der Gr\u00f6\u00dfe oder Verteilung der Gef\u00e4\u00dfe zwischen Fr\u00fch- und Sp\u00e4tholz.";
-    o:hasTarget Co:DAA3F9 .
-Co:A1D125 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno10> a ns3:Annotation ;
+    ns2:created "2024-08-27T14:24:57.931Z" ;
+    ns2:creator "Ivan" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue """Confokalmikroskop ist auch ein wichtiges Lichtmikroskop aber ich mÃ¼sste die genaue Definition suchen. 
+Vielleicht ISO 25178-6 (https://www.iso.org/obp/ui/en/#iso:std:iso:25178:-6:ed-1:v1:en)? Nicht sehr klar fÃ¼r mich allerdings... XD""" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/FC2113> .
 
-Co:A28B4D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno11> a ns3:Annotation ;
+    ns2:created "2024-09-02T14:21:25.465Z" ;
+    ns2:creator "eckmann" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "...einer \"Holzmaserung\" Ã¤hnelt die Struktur von Elfenbein eigentlich nicht. Charakteristisch sind die sogenannten Schreger'schen Linien, die im Querschnitt eine netzartiges Struktur bilden (und sich dadurch von elfenbeinÃ¤hnlichen Materialien unterscheiden). " ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/AG55BC> .
 
-Co:A6FA7G a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno15> a ns3:Annotation ;
+    ns2:created "2024-08-28T11:58:55.324Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Lyofix CHN" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/FF4767> .
 
-Co:A9A858 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno16> a ns3:Annotation ;
+    ns2:created "2024-08-28T12:04:14.326Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue """Kauramin CE 5549 ist chemisch identisch mit Kauramin 800. Die Typenbezeichung CE steht bei der BASF fÃ¼r Produkte die noch keine volle Marktreife, noch im Teststadium sind. Nachdem sich Kauramin CE 5549 am Markt bewÃ¤hrt hatte, bekam es den brand name Kauramin 800. Vielleicht in der Datenbank Kauramin CE 5549/Kauramin 800 schreiben.
+Kauramin 800 wurde 2023 vom Markt genommen. Das nun modifizierte Nachfolgeharz mit etwas anderen Eigenschaften heiÃe Kauramin 801""" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/BFB162> .
 
-Co:ABBFB5 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno17> a ns3:Annotation ;
+    ns2:created "2024-08-28T12:06:55.990Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Hausenblasenleim (die Hause ist ein Fisch) wurde am RGZM auch verwendet. Ich habs nur einmal als Azubi 1988 benutzt." ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/GD86C1> .
 
-Co:ADB89D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno18> a ns3:Annotation ;
+    ns2:created "2024-08-28T12:20:25.151Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "da kÃ¶nnte ich noch etliche Bearbeitungstechniken zufÃ¼gen (soll ich?) , eine die viele schon gehÃ¶rt haben: scharriert" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/B1B854> .
 
-Co:AF9A88 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno19> a ns3:Annotation ;
+    ns2:created "2024-08-28T12:21:46.680Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "manchmal verwende ich auch die harzreichere Variante: Auro HartÃ¶l Nr.126" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/A28B4D> .
 
-Co:AG55BC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno2> a ns3:Annotation ;
+    ns2:created "2024-09-25T10:32:35.120Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Lava ist aus meiner Sicht kein Gestein, sondern das vulkanische Ausgangsmaterial aus der unterschiedlichste Gesteine entstehen. Die Mineralzusammensetzung ist dabei gleich, aber unter unterschiedlichem Druck und Zeitdauer bilden sich spezifische Kristallformen. Tiefengesteine/Plutonite (Granit, Diorit..) ErguÃgesteine/Vulkanit (Basalt, Andesit..) oder Auswurfgestein/pyroklastisches Gestein (Tuff, Bims..)" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/C6F794> .
 
-Co:AGG387 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno20> a ns3:Annotation ;
+    ns2:created "2024-08-28T13:17:48.410Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "in der Metallrestaurierung (unter Lazlo Lehoczky) wurden Metallobjekte nach der Bearbeitung mit Pantarol (Nitrocelluloselack) gegen Luftfeuchtigkeit geschÃ¼tzt. Bitte Pantarol aufnehmen" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/GC7998> .
 
-Co:B1B854 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno22> a ns3:Annotation ;
+    ns2:created "2024-08-28T14:36:04.802Z" ;
+    ns2:creator "Matthias Heinzel" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Bei den Mineralien fehlen noch als Untergruppen: Korund mit den Untergruppen Saphire und Rubin; dann der Smaragd; Fluorit oder Flussspat mÃ¼sste auch noch hinzu.  " ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/BGC9F3> .
 
-Co:B437A9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno23> a ns3:Annotation ;
+    ns2:created "2024-08-28T14:37:10.623Z" ;
+    ns2:creator "Matthias Heinzel" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Sollten wir bei den Mineralien die jeweilige Moossche HÃ¤rte angeben?" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/BGC9F3> .
 
-Co:B44F39 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno25> a ns3:Annotation ;
+    ns2:created "2024-08-28T14:44:23.961Z" ;
+    ns2:creator "Matthias Heinzel" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Unterscheiden wir hier von welchem Baum das Pech gewonnen wurde? Birke, Buche, Nadelholz" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/D467F2> .
 
-Co:B5C86F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno26> a ns3:Annotation ;
+    ns2:created "2024-08-28T14:49:55.505Z" ;
+    ns2:creator "Matthias Heinzel" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Unterscheiden wir hier zwischen fossilem Elfenbein und \"frischem Elfenbein\"?" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/AG55BC> .
 
-Co:B7DD6B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno27> a ns3:Annotation ;
+    ns2:created "2024-09-02T09:52:59.466Z" ;
+    ns2:creator "Anonymus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Infrarot Fotographie hier ergÃ¤nzen?" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/CA7279> .
 
-Co:BAB7B3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno28> a ns3:Annotation ;
+    ns2:created "2024-09-02T09:57:22.096Z" ;
+    ns2:creator "Anonymus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "warum sind \"Analyse der chemischen Zusammensetzung\" und \"chemische Zusammensetzung\" zwei unterschiedliche Unterpunkte?" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/G17B8B> .
 
-Co:BBF7BG a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno29> a ns3:Annotation ;
+    ns2:created "2024-09-03T13:45:45.455Z" ;
+    ns2:creator "Kristina" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Kauramin CE 5549 wird als eigener Begriff aussortiert. Stattdessen bei Kauramin 800 als \"altLabel\" integriert und im der Description erlÃ¤utert" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/BFB162> .
 
-Co:BFB162 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno30> a ns3:Annotation ;
+    ns2:created "2024-09-03T13:46:00.145Z" ;
+    ns2:creator "Lasse" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Kristina hat diesen Begriff entfernt. Wir arbeiten noch an einem Umgang mit entfernten Begriffen, damit sie nicht zu Fehlern in der Kommentarumgebung fÃ¼hren..." ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/BFB162> .
 
-Co:BGC9F3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno32> a ns3:Annotation ;
+    ns2:created "2024-09-20T10:40:44.734Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue """ mohssche HÃ¤rte... (Markus=KlugscheiÃer)
+""" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/BGC9F3> .
 
-Co:BGG879 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno35> a ns3:Annotation ;
+    ns2:created "2024-09-20T10:55:11.809Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "zu description: natÃ¼rliches Material, nachwachsender Rohstoff; die Hauptbestandteile von Holz sind Cellulose, Hemicellulose und Lignin, wÃ¤hrend des Wachstums werden Extraktstoffe und Mineralien in den Zellen eingelagert.Holz ist aufgrund..." ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/A9A858> .
 
-Co:C47769 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno38> a ns3:Annotation ;
+    ns2:created "2024-09-20T11:09:22.152Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue """description: Holz, frisch geschlagen oder auch abgelagert, jedenfalls im Vergleich zu archÃ¤ologischem Holz keinen Abbauprozessen ausgesetzt war
 
-Co:C6F794 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+""" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/C47769> .
 
-Co:CA7279 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno39> a ns3:Annotation ;
+    ns2:created "2024-09-20T11:13:56.307Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue """
+zu altLabel: Quercus: da es verschiedene Eichenspezies gibt, die sich (zumindest bei archÃ¤ologischen Holzproben) nicht genauer bestimmen lassen, wÃ¤re quercus spec. (quercus species) korrekt, das schlieÃt alle Eichensorten ein.
+""" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/FG3BCD> .
 
-Co:CG2863 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno4> a ns3:Annotation ;
+    ns2:created "2024-08-27T13:02:42.906Z" ;
+    ns2:creator "Kristina" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Alright, ist geÃ¤ndert. Danke Ivan. " ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/AF9A88> .
 
-Co:D39191 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno40> a ns3:Annotation ;
+    ns2:created "2024-09-20T11:41:02.303Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "description:NadelbÃ¤ume, sind evolutionÃ¤r betrachtet Ã¤lter als LaubbÃ¤ume. Eine einzige Art von Zellen, die Tracheiden, Ã¼bernimmt sowohl die StabilitÃ¤ts- als auch die Wassertransportfunktion, was dem Nadelholz einen relativ einfachen und regelmÃ¤Ãigen Zellaufbau verleiht.Dank ihrer Anpassung an kurze Vegetationsperioden kÃ¶nnen NadelbÃ¤ume auch in Regionen mit langen, kalten Wintern oder in groÃen HÃ¶hen Ã¼berleben, wo LaubbÃ¤ume nicht mehr wachsen." ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/FC3FD6> .
 
-Co:D39264 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno41> a ns3:Annotation ;
+    ns2:created "2024-09-20T11:45:57.498Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue """
+liebe Kristina, hier gibt es keine "description", fÃ¼gst du da noch was ein?""" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/G2944B> .
 
-Co:D467F2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno45> a ns3:Annotation ;
+    ns2:created "2024-09-20T12:13:36.393Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "description: Im Laubholz Ã¼bernehmen verschiedene spezialisierte Zelltypen die Aufgaben des Stofftransports, der StabilitÃ¤t und des Stoffwechsels bzw. der Stoffspeicherung. Das Holzgewebe besteht aus mehr als 100  unterschiedlichen Elementen, darunter Tracheen fÃ¼r den Wassertransport, Tracheiden,die ebenfalls zur Wasserleitung und StabilitÃ¤t beitragen, sowie Parenchymzellen, die fÃ¼r den Stoffwechsel und die Speicherung von NÃ¤hrstoffen zustÃ¤ndig sind" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/B7DD6B> .
 
-Co:DAA3F9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno46> a ns3:Annotation ;
+    ns2:created "2024-09-20T12:17:54.610Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "auch hier, besser betula spec. die Unterarten lassen sich bei arch. Holz kaum/nicht unterscheiden" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/BGG879> .
 
-Co:FC2113 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno49> a ns3:Annotation ;
+    ns2:created "2024-09-20T12:21:18.625Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue """09-20 11:47:01
+Kommentar: liebe Kristina, hier gibt es keine "description", fÃ¼gst du da noch was ein? 
+und auch hier besser tilia spec.""" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/B44F39> .
 
-Co:FC3FD6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno5> a ns3:Annotation ;
+    ns2:created "2024-08-27T14:21:09.315Z" ;
+    ns2:creator "Ivan" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "der CT ist auch eine RÃ¶ntgenanlage :) Mir fehlt kein Begriff ein, der nur fÃ¼r konventionelle Radiographie als GerÃ¤t benutzt wird. Vom Hardware gibt es kaum Unterschiede zwischen CT und konventionelle (digitale) Radiographie: nur der Drehteller eigentlich!" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/G8D62A> .
 
-Co:FF4767 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno50> a ns3:Annotation ;
+    ns2:created "2024-09-20T12:21:49.090Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue """09-20 11:47:01
+Kommentar: liebe Kristina, hier gibt es keine "description", fÃ¼gst du da noch was ein? 
+und auch hier besser prunus spec.""" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/ABBFB5> .
 
-Co:FG3BCD a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno51> a ns3:Annotation ;
+    ns2:created "2024-09-20T12:23:00.631Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue """09-20 11:47:01
+Kommentar: liebe Kristina, hier gibt es keine "description", fÃ¼gst du da noch was ein? 
+und auch hier besser populus spec.""" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/B5C86F> .
 
-Co:G17B8B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno52> a ns3:Annotation ;
+    ns2:created "2024-09-20T12:23:59.784Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue """09-20 11:47:01
+Kommentar: liebe Kristina, hier gibt es keine "description", fÃ¼gst du da noch was ein? 
+und auch hier besser salix spec.""" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/GG1CG9> .
 
-Co:G2944B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno53> a ns3:Annotation ;
+    ns2:created "2024-09-20T12:59:22.419Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Deionisiertes Wasser (mit einer LeitfÃ¤higkeit von â¥ 0,1â1 Î¼S/cm) unterscheidet sich durch seinen Reinheitsgrad von destilliertem Wasser (mit einer LeitfÃ¤higkeit von â¥ 1â10 Î¼S/cm), ist jedoch nicht keimfrei. In der Medizin werden beide Verfahren oft kombiniert, wenn fÃ¼r einen Arbeitsprozess vollentsalztes und gleichzeitig keimfreies Wasser erforderlich ist." ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/BBF7BG> .
 
-Co:G8D62A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno54> a ns3:Annotation ;
+    ns2:created "2024-09-20T13:18:52.132Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "ich vermisse die Polyurethanharze/kleber. Verwendet die niemand? Das sind z.B Montagekleber, die quellen immer etwas auf bei der AushÃ¤rtung" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/A1D125> .
 
-Co:GC7998 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno55> a ns3:Annotation ;
+    ns2:created "2024-09-20T13:27:08.642Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Ebacryl ist ein acrylharzmodifizierter Hartgips, 2 komponentig, Pulver und Emulsion. Ebacryl wÃ¼rde ich eher bei den Gipsen platzieren" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/CG2863> .
 
-Co:GD86C1 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno56> a ns3:Annotation ;
+    ns2:created "2024-09-20T13:35:32.960Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "PalatalÂ® P 4-01 ist ein ungesÃ¤ttigtes Polyesterharz, gelÃ¶st in Stryol. Es wird durch die Zugabe eines Katalysator (Butanox) und Kobaltbeschleuniger vernetzt. In den 1980-1990er Jahren wurde es hÃ¤ufig zur Herstellung von Kopien, meist mit Zuschlagstoffen eingesetzt." ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/D39264> .
 
-Co:GG1CG9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno57> a ns3:Annotation ;
+    ns2:created "2024-09-20T13:44:12.326Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "scharriert,  OberflÃ¤chenbearbeitung/GlÃ¤ttung eines Werksteinsteins. Ein Scharriereisen hat die Form eines Ã¼berbreiten MeiÃels und erzeugt parallele Rillen" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/AGG387> .
 
-Con:ConceptScheme2 a skos:ConceptScheme; dct:title "Testthesaurus".
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno58> a ns3:Annotation ;
+    ns2:created "2024-09-20T13:49:33.020Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "gebeilt: Bearbeitung von Holz oder auch Werkstein. In der Romanik oft verwendetes Werkzeug um als Finish eine SteinoberflÃ¤che zu planieren/glÃ¤tten. Wird beidhÃ¤ndig gefÃ¼hrt und erzeugt parallele, sich meist Ã¼berkreuzende Rillen	" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/B437A9> .
 
-Ann:anno1
-    a o:Annotation;
-    dct:created "2024-10-07T23:37:36.599Z";
-    dct:creator "Lasse";
-    skos:inScheme Con:ConceptScheme2;
-    o:bodyValue "Testkommentar!";
-    o:hasTarget Conc:658f6e2f-e8be-488f-b8cc-5872c63c7064 .
-Ann:anno2
-    a o:Annotation;
-    dct:created "2024-10-07T23:37:59.662Z";
-    dct:creator "Lasse";
-    skos:inScheme Con:ConceptScheme2;
-    o:bodyValue "Hier fallen Sp\u00e4ne";
-    o:hasTarget Conc:74ae0f50-6269-4bee-ad45-55cac4fae0f6 .
-Ann:anno3
-    a o:Annotation;
-    dct:created "2024-10-08T09:36:37.403Z";
-    dct:creator "Lasse";
-    skos:inScheme Con:ConceptScheme2;
-    o:bodyValue "Falscher Name f\u00fcr den Thesaurus";
-    o:hasTarget Conc:top.
-Conc:658f6e2f-e8be-488f-b8cc-5872c63c7064
-a skos:Concept; skos:inScheme Con:ConceptScheme2 .
-Conc:74ae0f50-6269-4bee-ad45-55cac4fae0f6
-a skos:Concept; skos:inScheme Con:ConceptScheme2 .
-Conc:top a skos:Concept; skos:inScheme Con:ConceptScheme2 .
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno59> a ns3:Annotation ;
+    ns2:created "2024-09-20T13:55:12.308Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Gespitzt: Ein Spitzeisen (SpitzmeiÃel) dient zum groben Formen eines WerkstÃ¼cks. Mit ihm lassen sich  grÃ¶Ãere Steinbrocken abschlagen. Oft bleiben Spitzhiebe in einer planierten, eingeebneten OberflÃ¤che sichtbar, da sie zu tief ausgefÃ¼hrt wurden." ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/B1B854> .
 
-Con:ConceptScheme3 a skos:ConceptScheme; dct:title "Test".
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno60> a ns3:Annotation ;
+    ns2:created "2024-09-20T13:57:47.820Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "gezahnt: Ein Zahneisen ist gestaltet wie ein FlachmeiÃel, mit ZÃ¤hnen. Durch diese Form lÃ¤Ãt sich mehr Material abtragen als es mit einem FlachmeiÃel mÃ¶glich ist. Es entstehen kurze, tiefe Rillen in der SteinoberflÃ¤che, auch auch oft noch nach einer Einebnung/GlÃ¤ttung sichtbar sind." ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/BAB7B3> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno61> a ns3:Annotation ;
+    ns2:created "2024-09-20T14:03:50.221Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "gespalten: Trennvorgang an Materialen (z.B Holz,Stein) oft unter Nutzung natÃ¼rlicher Schwachstellen/Wachstumslinien/Sedimentlagern. Bei Holz wird der Spaltvorgang radial ausgefÃ¼hrt und folgt den Wachstumsstrukturen (Holzstrahlen). Daher werden die Holzstrahlen nicht verletzt/getrennt wie beim SÃ¤gen, das gewonnene WerkstÃ¼ck ist besonders stabil und bruchfest." ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/ADB89D> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno62> a ns3:Annotation ;
+    ns2:created "2024-09-20T14:09:46.336Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Inkrustiert: Die Verzierung/OberflÃ¤chegestaltung von mineralischen Werkstoffen (wie Keramik oder Stein) durch das Einlegen verschiedenfarbiger, kontrastreicher Materialien" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/A6FA7G> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno63> a ns3:Annotation ;
+    ns2:created "2024-09-20T14:14:27.026Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "description:Rezentes Holz bezeichnet Holz, das frisch geschlagen oder abgelagert ist, jedoch im Vergleich zu archÃ¤ologischem Holz noch keinen nennenswerten Abbauprozessen ausgesetzt war" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/C47769> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno65> a ns3:Annotation ;
+    ns2:created "2024-09-20T14:25:27.850Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Ringporiges Laubholz bezeichnet LaubhÃ¶lzer, die groÃe Tracheen/GefÃ¤Ãe im FrÃ¼hholz und deutlich kleinere im SpÃ¤tholz ausbilden. Im Querschnitt sind deutlich ringfÃ¶rmige Strukturen sichtbar" ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/D39191> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/anno66> a ns3:Annotation ;
+    ns2:created "2024-09-20T14:28:37.957Z" ;
+    ns2:creator "Markus" ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> ;
+    ns3:bodyValue "Zerstreutporiges Laubholz bezeichnet LaubhÃ¶lzern, bei denen die GefÃ¤Ãe/Tracheen gleichmÃ¤Ãig und ohne klare Anordnung Ã¼ber einen gesamten Jahrring verteilt im Holz vorkommen. Anders als bei ringporigen HÃ¶lzern, bei denen groÃe GefÃ¤Ãe im FrÃ¼hholz und kleinere im SpÃ¤tholz auftreten, gibt es bei zerstreutporigen HÃ¶lzern keinen groÃen Unterschied in der GrÃ¶Ãe oder Verteilung der GefÃ¤Ãe zwischen FrÃ¼h- und SpÃ¤tholz." ;
+    ns3:hasTarget <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/DAA3F9> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/A1D125> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/A28B4D> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/A6FA7G> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/A9A858> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/ABBFB5> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/ADB89D> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/AF9A88> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/AGG387> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/B437A9> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/B44F39> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/B5C86F> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/B7DD6B> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/BAB7B3> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/BBF7BG> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/BGG879> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/C6F794> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/CA7279> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/CG2863> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/D39191> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/D39264> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/D467F2> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/DAA3F9> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/FC2113> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/FC3FD6> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/FF4767> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/FG3BCD> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/G17B8B> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/G8D62A> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/GC7998> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/GD86C1> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/GG1CG9> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/AG55BC> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/B1B854> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/C47769> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/G2944B> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/BFB162> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/BGC9F3> a ns1:Concept ;
+    ns1:inScheme <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> .
+
+<https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1> a ns1:ConceptScheme ;
+    ns2:title "LEIZA Restaurierungs- und Konservierungsthesaurus" .
 
