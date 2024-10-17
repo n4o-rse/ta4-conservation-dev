@@ -16,13 +16,12 @@ function thesaurusInputFile() {
     reader.readAsText(file);
 }
 
-async function thesaurusInputUrl() {
+async function thesaurusInputUrl(inputURL) {
     event.preventDefault();
     // reset former outputs, if there are any
     resetOutput();
     // display loading popup until every following function is finished
     document.getElementById("loadingDiv").style.display = "block";
-    const inputURL = document.getElementById('textInput').value;
     const response = await fetch(inputURL, {
         headers: { "content-type": "text/csv;charset=UTF-8" },
     });
@@ -81,8 +80,8 @@ function collectThesaurusData(idObject, topPosition) {
 function setConceptSchemeTitle() {
   event.preventDefault();
   conceptSchemeTitle = document.getElementById('conceptSchemeTitleInput').value;
-  alert(conceptSchemeTitle + " wurde ausgewählt.");
-  return conceptSchemeTitle;
+  let inputURL = document.getElementById('conceptSchemeTitleInput').dataset.urlmap[conceptSchemeTitle];
+  thesaurusInputUrl(inputURL);
 }
 
 async function readConceptSchemeTitles() {
@@ -97,9 +96,12 @@ async function readConceptSchemeTitles() {
   let conceptSchemes = annotationGraph.each(undefined, RDF("type"), SKOS("ConceptScheme"));
   // get names of all conceptSchemes
   let conceptSchemeNames = [];
+  let conceptSchemeSources = [];
   for (let x of conceptSchemes) {
     let conceptSchemeName = annotationGraph.any(x, DCT("title"));
+    let conceptSchemeSource = annotationGraph.any(x, DCT("source"));
     conceptSchemeNames.push(conceptSchemeName.value);
+    conceptSchemeSources.push(conceptSchemeSource.value);
   }
   // get selector for conceptSchemeTitle
   let conceptSchemeTitleSelector = document.getElementById("conceptSchemeTitleInput");
@@ -120,6 +122,12 @@ async function readConceptSchemeTitles() {
     option.innerHTML = x;
     conceptSchemeTitleSelector.appendChild(option);
   }
+  // create data property dataset.urlmap for conceptSchemeTitleSelector containing an object with urls as values for each conceptSchemeTitle
+  let urlMap = {};
+  for (let i = 0; i < conceptSchemeNames.length; i++) {
+    urlMap[conceptSchemeNames[i]] = conceptSchemeSources[i];
+  }
+  conceptSchemeTitleSelector.dataset.urlmap = JSON.stringify(urlMap);
 }
 
 async function createConceptScheme() {
@@ -171,15 +179,14 @@ async function createConceptScheme() {
 }
 
 // global variables and event listeners
-let commentURL = "https://restaurierungsvokabular.solidweb.org/annotations/annotations2.ttl";
+let commentURL = "https://restaurierungsvokabular.solidweb.org/annotations/annotations3.ttl";
 let baseURI = "https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/";
 let conceptSchemeTitle = "";
 
 const thesaurusFileInputForm = document.getElementById('fileForm');
 thesaurusFileInputForm.addEventListener('submit', thesaurusInputFile);
 
-const thesaurusUrlInputForm = document.getElementById('textForm');
-thesaurusUrlInputForm.addEventListener('submit', thesaurusInputUrl);
+
 
 const commentForm = document.getElementById("commentForm");
 commentForm.addEventListener("submit", updatePod);

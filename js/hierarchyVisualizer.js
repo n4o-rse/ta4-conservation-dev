@@ -36,37 +36,6 @@ async function readData(data, inputType) {
   validation([toppedData, idObject, doublettes, missingParents, ignored, topPosition, orphans]);
 }
 
-/* not used at the moment
-function readExample() {
-  resetOutput();
-  let bibleCSV = `identifier,prefLabel,parent
-  Eve,Eve,top
-  Cain,Cain,Eve
-  Seth,Seth,Eve
-  Enos,Enos,Seth
-  Noam,Noam,Seth
-  Abel,Abel,Eve
-  Awan,Awan,Eve
-  Enoch,Enoch,Awan
-  Azura,Azura,Eve`;
-  let csvData = d3.csvParse(bibleCSV);
-  let exampleData = csvData
-  let cleanedArray= cleanTableData(exampleData);
-  let cleanedTableData = cleanedArray[0];
-  let ignored = cleanedArray[1];
-
-  let toppedArray = topData(cleanedTableData);
-  let toppedData = toppedArray[0];
-  //const topPosition = toppedArray[1];
-  let orphans = toppedArray[2];
-  let idArray = idToName(toppedData)
-  let idObject = idArray[0]
-  let doublettes = idArray[1]
-  let missingParents = idArray[2]
-  validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]);
-}
-*/
-
 function validation([toppedData, idObject, doublettes, missingParents, ignored, topPosition, orphans]) {
   const hints = [{variable:ignored, id:"ignored"}, {variable:orphans, id:"orphans"}]; //{variable:topPosition, id:"topped"},
   const strings = ["concepts were ignored: ","concepts are orphans: "]; //, "concepts are on top: "
