@@ -43,12 +43,6 @@
               <input type="file" id="fileInput" accept=".tsv, .csv">
               <button type="submit">Vokabular laden</button>
             </form>
-            <!--
-            <form id="textForm">
-              <input type="text" id="textInput" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=csv"> 
-              <button type="submit">URL laden</button>
-            </form>
-            --->
             <br>
             <h1>Online-Tabelle laden</h1>
             <form id="conceptSchemeTitleForm">
@@ -58,11 +52,7 @@
               <button type="submit">Vokabular laden</button>
             </form>
             <br>
-            <form id="createconceptSchemeTitleForm">
-              <label for="createconceptSchemeTitleInput">Titel des Thesaurus</label>
-              <input type="text", name="createconceptSchemeTitleInput" id="createconceptSchemeTitleInput"> 
-              <button type="submit">URL erstellen</button>
-            </form>
+            <button type="submit" id="createconceptSchemeTitleInput" onclick=openConceptSchemeTitelModel()>Neuen Thesaurus anlegen</button>
             <div id="conceptSchemeModal" style="display: none;">
               <span id="closeConceptSchemeModal" class="close" onclick=closeConceptSchemeModal()>&times;</span>
               <center>
@@ -85,6 +75,17 @@
                 <label for="jsonldFormatRadio">JSON-LD</label>
                 <br><br>
                 <button type="submit" id="conceptSchemeFormButton">Vokabular herunterladen</button>
+              </form>
+            </div>
+            <div id="conceptSchemeTitelModal" style="display: none;">
+              <span id="closeConceptSchemeTitelModal" class="close" onclick=closeConceptSchemeTitelModal()>&times;</span>
+              <center>
+              <h3>Vokabular via Online-Tabelle anlegen</h3>
+              <form id="conceptSchemeTitelForm">
+                <input type="text" id="conceptSchemeTitelInput" placeholder="Names des Vokabulars" class="conceptSchemeFormInput"> <br>
+                <input type="text" id="conceptSchemeSourceImput" placeholder="URL der Online-Tabelle" class="conceptSchemeFormInput"> <br>
+                <br><br>
+                <button type="submit" id="conceptSchemeTitelFormButton" onclick=createConceptScheme()>Vokabular anlegen</button>
               </form>
             </div>
             <br>

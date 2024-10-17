@@ -51,9 +51,12 @@ function closeConceptSchemeModal() {
   event.preventDefault();
   let modal = document.getElementById("conceptSchemeModal");
   modal.style.display = "none";
-  //let form = document.getElementById("conceptSchemeForm");
-  // reset value of all input elements in form, currently deactivated
-  //form.reset();
+}
+
+function closeConceptSchemeTitelModal() {
+  event.preventDefault();
+  let modal = document.getElementById("conceptSchemeTitelModal");
+  modal.style.display = "none";
 }
 
 function collectThesaurusData(idObject, topPosition) {
@@ -88,6 +91,10 @@ function setConceptSchemeTitle() {
   let inputURL = urlMapJson[conceptSchemeTitle];
   console.log("inputURL: " + inputURL);
   thesaurusInputUrl(inputURL);
+}
+
+function openConceptSchemeTitelModal() {
+  document.getElementById('conceptSchemeTitelModal').style.display = 'block';
 }
 
 async function readConceptSchemeTitles() {
@@ -133,7 +140,8 @@ async function readConceptSchemeTitles() {
 
 async function createConceptScheme() {
   event.preventDefault();
-  newConceptSchemeTitle = document.getElementById('createconceptSchemeTitleInput').value;
+  closeConceptSchemeTitelModal();
+  newConceptSchemeTitle = document.getElementById('conceptSchemeTitelInput').value;
   // read annotation graph from pod
   annotationGraphText = await readFromPod(commentURL, "text/turtle");
   annotationGraph = $rdf.graph();
@@ -153,7 +161,7 @@ async function createConceptScheme() {
     }
   }
   let newConceptSchemeSource = ""
-  newConceptSchemeSource = window.prompt("Insert URL of the online table","");
+  newConceptSchemeSource = document.getElementById('conceptSchemeSourceImput').value;
   if (newConceptSchemeSource == "") {
     alert("Bitte geben Sie eine URL ein!");
     return;
@@ -187,15 +195,10 @@ let conceptSchemeTitle = "";
 const thesaurusFileInputForm = document.getElementById('fileForm');
 thesaurusFileInputForm.addEventListener('submit', thesaurusInputFile);
 
-
-
 const commentForm = document.getElementById("commentForm");
 commentForm.addEventListener("submit", updatePod);
 
 const conceptSchemeTitleForm = document.getElementById("conceptSchemeTitleForm");
 conceptSchemeTitleForm.addEventListener("submit", setConceptSchemeTitle);
-
-const createconceptSchemeTitleForm = document.getElementById("createconceptSchemeTitleForm");
-createconceptSchemeTitleForm.addEventListener("submit", createConceptScheme);
 
 readConceptSchemeTitles();
