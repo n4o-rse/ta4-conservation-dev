@@ -66,13 +66,6 @@ async function openDetails(id, idObject) {
 }
 
 async function readComments(id, idObject) {
-  console.log("ID: " + id)
-  console.log("IDObject: " + JSON.stringify(idObject))
-  console.log("ConceptSchemeTitle: " + conceptSchemeTitle)
-  /*
-  try {
-  */
-
   // clean modal content from previous comments
   var commentDiv = document.getElementsByClassName("modal-comments")[0];
   while (commentDiv.firstChild) {
@@ -116,7 +109,6 @@ async function readComments(id, idObject) {
   let jsonldSerialization = $rdf.serialize(null, store, commentURL, 'application/ld+json');
   // parse json-ld into object
   let parsedJson = JSON.parse(jsonldSerialization)
-  console.log("parsedJSON: " + JSON.stringify(parsedJson))
   let commentObject = {comments: {}, concepts: {}}
   let jsonCommentArray = parsedJson["@graph"].filter(obj => obj["@type"] == "o:Annotation")
   let jsonConceptArray = parsedJson["@graph"].filter(obj => obj["@type"] == "skos:Concept")
@@ -137,7 +129,6 @@ async function readComments(id, idObject) {
     commentObject["concepts"][conceptObjectID]["prefLabel"] = idObject[conceptObjectID]["prefLabel"]
     }
   }
-  console.log("commentObject: " + JSON.stringify(commentObject))
   let updatedCommentArray = Object.keys(commentObject["comments"])
   let sortedUpdatedCommentArray
   sortedUpdatedCommentArray = updatedCommentArray.sort((a, b) => new Date(commentObject["comments"][b]["created"]) - new Date(commentObject["comments"][a]["created"]));
@@ -146,7 +137,6 @@ async function readComments(id, idObject) {
   for (let i = 0; i < sortedUpdatedCommentArray.length; i++) {
     let comment = document.createElement("p");
     let commentTargetID = commentObject["comments"][sortedUpdatedCommentArray[i]]["target"];
-    console.log("commentTargetID: " + commentTargetID) 
     let commentTargetLabel
     if (!(commentTargetID in idObject)) {
       commentTargetLabel = "Fehlender Begriff"
@@ -192,12 +182,6 @@ async function readComments(id, idObject) {
     placeholderComment.id = "noCommentsPlaceholder";
     commentDiv.appendChild(placeholderComment);
   }
-  /*
-  } catch (error) {
-      console.error(error);
-      alert("Fehler beim Laden der Kommentare! Bitte den Entwickler informieren.");
-  }
-  */
 }
 
 async function updatePod() {
@@ -333,11 +317,8 @@ async function generateCommentedIdList() {
 
 async function generateThesaurus(idObject, topPosition) {
   event.preventDefault();
-  console.log("idObject", idObject)
-  console.log("topPosition", topPosition)
   //read all form data from conceptSchemeForm
   let conceptSchemeNamespace = document.getElementById("nameSpaceInput").value;
-  console.log(conceptSchemeNamespace)
   conceptSchemeTitle = document.getElementById("titleInput").value;
   conceptSchemeCreator = document.getElementById("creatorInput").value;
   conceptSchemePublisher = document.getElementById("publisherInput").value;
@@ -423,9 +404,7 @@ async function generateThesaurus(idObject, topPosition) {
 
   // iterate over all concepts in idObject and add them and their properties to the store
   for (let key in idObject) {
-    console.log("concept " + key, idObject[key])
     let concept = $rdf.sym(conceptSchemeNamespace+"/concepts/" + key);
-    console.log("concept IRI", concept)
 
     store.add(concept, type, SK('Concept'));
 
