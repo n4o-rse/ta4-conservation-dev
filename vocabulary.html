@@ -53,7 +53,7 @@
             </form>
             <br>
             <button type="submit" id="createconceptSchemeTitleInput" onclick=openConceptSchemeTitelModal()>Neue Tabelle anlegen</button>
-            <div id="conceptSchemeModal" style="display: none;">
+            <div id="conceptSchemeModal" style="display: none;" class="mediumModal">
               <span id="closeConceptSchemeModal" class="close" onclick=closeConceptSchemeModal()>&times;</span>
               <center>
               <h3>Thesaurus Daten</h3>
@@ -77,12 +77,12 @@
                 <button type="submit" id="conceptSchemeFormButton">Vokabular herunterladen</button>
               </form>
             </div>
-            <div id="conceptSchemeTitelModal" style="display: none;">
+            <div id="conceptSchemeTitelModal" style="display: none;" class="mediumModal">
               <span id="closeConceptSchemeTitelModal" class="close" onclick=closeConceptSchemeTitelModal()>&times;</span>
               <center>
-              <h3>Vokabular via Online-Tabelle anlegen</h3>
+              <h3>Online-Tabelle anlegen</h3>
               <form id="conceptSchemeTitelForm">
-                <input type="text" id="conceptSchemeTitelInput" placeholder="Names des Vokabulars" class="conceptSchemeFormInput"> <br>
+                <input type="text" id="conceptSchemeTitelInput" placeholder="Names des Thesaurus" class="conceptSchemeFormInput"> <br>
                 <input type="text" id="conceptSchemeSourceImput" placeholder="URL der Online-Tabelle" class="conceptSchemeFormInput"> <br>
                 <br><br>
                 <button type="submit" id="conceptSchemeTitelFormButton" onclick=createConceptScheme()>Vokabular anlegen</button>
