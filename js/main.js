@@ -80,7 +80,13 @@ function collectThesaurusData(idObject, topPosition) {
 function setConceptSchemeTitle() {
   event.preventDefault();
   conceptSchemeTitle = document.getElementById('conceptSchemeTitleInput').value;
-  let inputURL = document.getElementById('conceptSchemeTitleInput').dataset.urlmap[conceptSchemeTitle];
+  console.log("conceptSchemeTitle: " + conceptSchemeTitle);
+  let urlMapJsonString = document.getElementById('conceptSchemeTitleInput').dataset.urlmap;
+  console.log("urlMapJsonString: " + urlMapJsonString);
+  let urlMapJson = JSON.parse(urlMapJsonString);
+  console.log("urlMapJson: " + urlMapJson);
+  let inputURL = urlMapJson[conceptSchemeTitle];
+  console.log("inputURL: " + inputURL);
   thesaurusInputUrl(inputURL);
 }
 
@@ -109,11 +115,6 @@ async function readConceptSchemeTitles() {
   while (conceptSchemeTitleSelector.firstChild) {
     conceptSchemeTitleSelector.removeChild(conceptSchemeTitleSelector.firstChild);
   }
-  // add generic option "keine"
-  let option = document.createElement("option");
-  option.value = "";
-  option.innerHTML = "keine";
-  conceptSchemeTitleSelector.appendChild(option);
 
   // add option tag to commentURLSelector for each conceptSchemeTitle in conceptSchemeNames
   for (let x of conceptSchemeNames) {
