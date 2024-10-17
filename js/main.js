@@ -153,7 +153,7 @@ async function createConceptScheme() {
     }
   }
   let newConceptSchemeSource = ""
-  newConceptSchemeSource = window.prompt("URL of the Data","");
+  newConceptSchemeSource = window.prompt("Insert URL of the online table","");
   if (newConceptSchemeSource == "") {
     alert("Bitte geben Sie eine URL ein!");
     return;
