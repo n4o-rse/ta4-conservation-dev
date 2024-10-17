@@ -11,7 +11,7 @@ function thesaurusInputFile() {
     let reader = new FileReader();
     reader.onload = function(e) {
       result = e.target.result;
-      readData(result, "file")
+      readData(result, "file", "");
     };
     reader.readAsText(file);
 }
@@ -26,7 +26,7 @@ async function thesaurusInputUrl(inputURL) {
         headers: { "content-type": "text/csv;charset=UTF-8" },
     });
     const text = await response.text();
-    readData(text, "url")
+    readData(text, "url", inputURL);
 }
 
 function saveUserName() {

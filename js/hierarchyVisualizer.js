@@ -1,4 +1,4 @@
-async function readData(data, inputType) {
+async function readData(data, inputType, inputURL) {
   let Data
   if (inputType == "file") {
     const file = document.getElementById("fileInput").files[0];
@@ -12,8 +12,7 @@ async function readData(data, inputType) {
     await new Promise(r => setTimeout(r, 2000));
   }
   else if (inputType == "url") {
-    const textInput = document.getElementById("textInput").value;
-    if (textInput.endsWith("tsv")) {
+    if (inputURL.endsWith("tsv")) {
       Data = d3.tsvParse(data);
     }
     else {
