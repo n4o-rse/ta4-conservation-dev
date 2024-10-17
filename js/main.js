@@ -143,6 +143,13 @@ async function createConceptScheme() {
       return;
     }
   }
+  let newConceptSchemeSource = ""
+  newConceptSchemeSource = window.prompt("URL of the Data","");
+  if (newConceptSchemeSource == "") {
+    alert("Bitte geben Sie eine URL ein!");
+    return;
+  }
+
   let i = 1;
   let conceptSchemeURI = baseURI + "ConceptScheme"
   newConceptScheme = $rdf.sym(conceptSchemeURI + i);
@@ -155,6 +162,7 @@ async function createConceptScheme() {
   console.log("newConceptScheme: " + newConceptScheme);
   annotationGraph.add(newConceptScheme, RDF("type"), SKOS("ConceptScheme"));
   annotationGraph.add(newConceptScheme, DCT("title"), $rdf.lit(newConceptSchemeTitle));
+  annotationGraph.add(newConceptScheme, DCT("source"), $rdf.sym(newConceptSchemeSource));
   // write serialized graph to pod
   serializedGraph = $rdf.serialize(null, annotationGraph, commentURL, "text/turtle");
   await writeToPod(serializedGraph, commentURL, "text/turtle");
