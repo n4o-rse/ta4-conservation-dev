@@ -11,23 +11,22 @@ function thesaurusInputFile() {
     let reader = new FileReader();
     reader.onload = function(e) {
       result = e.target.result;
-      readData(result, "file")
+      readData(result, "file", "");
     };
     reader.readAsText(file);
 }
 
-async function thesaurusInputUrl() {
+async function thesaurusInputUrl(inputURL) {
     event.preventDefault();
     // reset former outputs, if there are any
     resetOutput();
     // display loading popup until every following function is finished
     document.getElementById("loadingDiv").style.display = "block";
-    const inputURL = document.getElementById('textInput').value;
     const response = await fetch(inputURL, {
         headers: { "content-type": "text/csv;charset=UTF-8" },
     });
     const text = await response.text();
-    readData(text, "url")
+    readData(text, "url", inputURL);
 }
 
 function saveUserName() {
@@ -52,9 +51,12 @@ function closeConceptSchemeModal() {
   event.preventDefault();
   let modal = document.getElementById("conceptSchemeModal");
   modal.style.display = "none";
-  //let form = document.getElementById("conceptSchemeForm");
-  // reset value of all input elements in form, currently deactivated
-  //form.reset();
+}
+
+function closeConceptSchemeTitelModal() {
+  event.preventDefault();
+  let modal = document.getElementById("conceptSchemeTitelModal");
+  modal.style.display = "none";
 }
 
 function collectThesaurusData(idObject, topPosition) {
@@ -81,8 +83,18 @@ function collectThesaurusData(idObject, topPosition) {
 function setConceptSchemeTitle() {
   event.preventDefault();
   conceptSchemeTitle = document.getElementById('conceptSchemeTitleInput').value;
-  alert(conceptSchemeTitle + " wurde ausgewählt.");
-  return conceptSchemeTitle;
+  console.log("conceptSchemeTitle: " + conceptSchemeTitle);
+  let urlMapJsonString = document.getElementById('conceptSchemeTitleInput').dataset.urlmap;
+  console.log("urlMapJsonString: " + urlMapJsonString);
+  let urlMapJson = JSON.parse(urlMapJsonString);
+  console.log("urlMapJson: " + urlMapJson);
+  let inputURL = urlMapJson[conceptSchemeTitle];
+  console.log("inputURL: " + inputURL);
+  thesaurusInputUrl(inputURL);
+}
+
+function openConceptSchemeTitelModal() {
+  document.getElementById('conceptSchemeTitelModal').style.display = 'block';
 }
 
 async function readConceptSchemeTitles() {
@@ -97,9 +109,12 @@ async function readConceptSchemeTitles() {
   let conceptSchemes = annotationGraph.each(undefined, RDF("type"), SKOS("ConceptScheme"));
   // get names of all conceptSchemes
   let conceptSchemeNames = [];
+  let conceptSchemeSources = [];
   for (let x of conceptSchemes) {
     let conceptSchemeName = annotationGraph.any(x, DCT("title"));
+    let conceptSchemeSource = annotationGraph.any(x, DCT("source"));
     conceptSchemeNames.push(conceptSchemeName.value);
+    conceptSchemeSources.push(conceptSchemeSource.value);
   }
   // get selector for conceptSchemeTitle
   let conceptSchemeTitleSelector = document.getElementById("conceptSchemeTitleInput");
@@ -107,11 +122,6 @@ async function readConceptSchemeTitles() {
   while (conceptSchemeTitleSelector.firstChild) {
     conceptSchemeTitleSelector.removeChild(conceptSchemeTitleSelector.firstChild);
   }
-  // add generic option "keine"
-  let option = document.createElement("option");
-  option.value = "";
-  option.innerHTML = "keine";
-  conceptSchemeTitleSelector.appendChild(option);
 
   // add option tag to commentURLSelector for each conceptSchemeTitle in conceptSchemeNames
   for (let x of conceptSchemeNames) {
@@ -120,11 +130,18 @@ async function readConceptSchemeTitles() {
     option.innerHTML = x;
     conceptSchemeTitleSelector.appendChild(option);
   }
+  // create data property dataset.urlmap for conceptSchemeTitleSelector containing an object with urls as values for each conceptSchemeTitle
+  let urlMap = {};
+  for (let i = 0; i < conceptSchemeNames.length; i++) {
+    urlMap[conceptSchemeNames[i]] = conceptSchemeSources[i];
+  }
+  conceptSchemeTitleSelector.dataset.urlmap = JSON.stringify(urlMap);
 }
 
 async function createConceptScheme() {
   event.preventDefault();
-  newConceptSchemeTitle = document.getElementById('createconceptSchemeTitleInput').value;
+  closeConceptSchemeTitelModal();
+  newConceptSchemeTitle = document.getElementById('conceptSchemeTitelInput').value;
   // read annotation graph from pod
   annotationGraphText = await readFromPod(commentURL, "text/turtle");
   annotationGraph = $rdf.graph();
@@ -143,6 +160,13 @@ async function createConceptScheme() {
       return;
     }
   }
+  let newConceptSchemeSource = ""
+  newConceptSchemeSource = document.getElementById('conceptSchemeSourceImput').value;
+  if (newConceptSchemeSource == "") {
+    alert("Bitte geben Sie eine URL ein!");
+    return;
+  }
+
   let i = 1;
   let conceptSchemeURI = baseURI + "ConceptScheme"
   newConceptScheme = $rdf.sym(conceptSchemeURI + i);
@@ -155,6 +179,7 @@ async function createConceptScheme() {
   console.log("newConceptScheme: " + newConceptScheme);
   annotationGraph.add(newConceptScheme, RDF("type"), SKOS("ConceptScheme"));
   annotationGraph.add(newConceptScheme, DCT("title"), $rdf.lit(newConceptSchemeTitle));
+  annotationGraph.add(newConceptScheme, DCT("source"), $rdf.sym(newConceptSchemeSource));
   // write serialized graph to pod
   serializedGraph = $rdf.serialize(null, annotationGraph, commentURL, "text/turtle");
   await writeToPod(serializedGraph, commentURL, "text/turtle");
@@ -163,23 +188,17 @@ async function createConceptScheme() {
 }
 
 // global variables and event listeners
-let commentURL = "https://restaurierungsvokabular.solidweb.org/annotations/annotations2.ttl";
+let commentURL = "https://restaurierungsvokabular.solidweb.org/annotations/annotations3.ttl";
 let baseURI = "https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/";
 let conceptSchemeTitle = "";
 
 const thesaurusFileInputForm = document.getElementById('fileForm');
 thesaurusFileInputForm.addEventListener('submit', thesaurusInputFile);
 
-const thesaurusUrlInputForm = document.getElementById('textForm');
-thesaurusUrlInputForm.addEventListener('submit', thesaurusInputUrl);
-
 const commentForm = document.getElementById("commentForm");
 commentForm.addEventListener("submit", updatePod);
 
 const conceptSchemeTitleForm = document.getElementById("conceptSchemeTitleForm");
 conceptSchemeTitleForm.addEventListener("submit", setConceptSchemeTitle);
-
-const createconceptSchemeTitleForm = document.getElementById("createconceptSchemeTitleForm");
-createconceptSchemeTitleForm.addEventListener("submit", createConceptScheme);
 
 readConceptSchemeTitles();

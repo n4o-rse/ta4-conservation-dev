@@ -1,4 +1,4 @@
-async function readData(data, inputType) {
+async function readData(data, inputType, inputURL) {
   let Data
   if (inputType == "file") {
     const file = document.getElementById("fileInput").files[0];
@@ -12,8 +12,7 @@ async function readData(data, inputType) {
     await new Promise(r => setTimeout(r, 2000));
   }
   else if (inputType == "url") {
-    const textInput = document.getElementById("textInput").value;
-    if (textInput.endsWith("tsv")) {
+    if (inputURL.endsWith("tsv")) {
       Data = d3.tsvParse(data);
     }
     else {
@@ -35,37 +34,6 @@ async function readData(data, inputType) {
   let missingParents = idArray[2]
   validation([toppedData, idObject, doublettes, missingParents, ignored, topPosition, orphans]);
 }
-
-/* not used at the moment
-function readExample() {
-  resetOutput();
-  let bibleCSV = `identifier,prefLabel,parent
-  Eve,Eve,top
-  Cain,Cain,Eve
-  Seth,Seth,Eve
-  Enos,Enos,Seth
-  Noam,Noam,Seth
-  Abel,Abel,Eve
-  Awan,Awan,Eve
-  Enoch,Enoch,Awan
-  Azura,Azura,Eve`;
-  let csvData = d3.csvParse(bibleCSV);
-  let exampleData = csvData
-  let cleanedArray= cleanTableData(exampleData);
-  let cleanedTableData = cleanedArray[0];
-  let ignored = cleanedArray[1];
-
-  let toppedArray = topData(cleanedTableData);
-  let toppedData = toppedArray[0];
-  //const topPosition = toppedArray[1];
-  let orphans = toppedArray[2];
-  let idArray = idToName(toppedData)
-  let idObject = idArray[0]
-  let doublettes = idArray[1]
-  let missingParents = idArray[2]
-  validation([toppedData, idObject, doublettes, missingParents, ignored, orphans]);
-}
-*/
 
 function validation([toppedData, idObject, doublettes, missingParents, ignored, topPosition, orphans]) {
   const hints = [{variable:ignored, id:"ignored"}, {variable:orphans, id:"orphans"}]; //{variable:topPosition, id:"topped"},
