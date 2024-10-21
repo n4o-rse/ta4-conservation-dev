@@ -463,8 +463,8 @@ Co:GG1CG9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Con:ConceptScheme2
     a skos:ConceptScheme;
     dct:source
-        <https://docs.google.com/spreadsheets/d/1iJIO9oP8c5fuxurpr9MeggXclWRUVxuhPKGjyKZn8q8/edit?gid=0#gid=0>;
-    dct:title "".
+        <https://docs.google.com/spreadsheets/d/e/2PACX-1vTdBmgO6xCH3SpJ1w5A7O_rCsSmnU2wXzWyiws22cSiL71eP7dfMwIvsbiQGrOkagD32JUSJtthn5Cf/pub?output=csv>;
+    dct:title "Test-Thesaurus".
 Con:ConceptScheme3
     a skos:ConceptScheme;
     dct:source
