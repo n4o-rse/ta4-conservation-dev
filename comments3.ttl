@@ -7,6 +7,8 @@
 @prefix Co: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/>.
 @prefix Ann: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme3/Annotations/>.
 @prefix Conc: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme3/Concepts/>.
+@prefix An: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme2/Annotations/>.
+@prefix C: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme2/Concepts/>.
 
 Con:ConceptScheme1
     a skos:ConceptScheme;
@@ -465,6 +467,15 @@ Con:ConceptScheme2
     dct:source
         <https://docs.google.com/spreadsheets/d/e/2PACX-1vTdBmgO6xCH3SpJ1w5A7O_rCsSmnU2wXzWyiws22cSiL71eP7dfMwIvsbiQGrOkagD32JUSJtthn5Cf/pub?output=csv>;
     dct:title "Test-Thesaurus".
+An:anno1
+    a o:Annotation;
+    dct:created "2024-10-24T14:58:59.904Z";
+    dct:creator "Kristina ";
+    skos:inScheme Con:ConceptScheme2;
+    o:bodyValue "Test";
+    o:hasTarget C:408AB5BF-D44F-4D61-83B9-4CEE9C180907 .
+C:408AB5BF-D44F-4D61-83B9-4CEE9C180907
+a skos:Concept; skos:inScheme Con:ConceptScheme2 .
 Con:ConceptScheme3
     a skos:ConceptScheme;
     dct:source
