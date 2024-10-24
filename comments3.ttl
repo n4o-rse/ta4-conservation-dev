@@ -506,3 +506,8 @@ Conc:AAA12 a skos:Concept; skos:inScheme Con:ConceptScheme3 .
 
 Conc:AAA30 a skos:Concept; skos:inScheme Con:ConceptScheme3 .
 
+Con:ConceptScheme4
+    a skos:ConceptScheme;
+    dct:source
+        <https://docs.google.com/spreadsheets/d/e/2PACX-1vTdBmgO6xCH3SpJ1w5A7O_rCsSmnU2wXzWyiws22cSiL71eP7dfMwIvsbiQGrOkagD32JUSJtthn5Cf/pub?output=csv>;
+    dct:title "DBM_Schadensbilder an Kunststoffen".
