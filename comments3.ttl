@@ -153,6 +153,13 @@ Annot:anno29
     o:bodyValue
         """Kauramin CE 5549 wird als eigener Begriff aussortiert. Stattdessen bei Kauramin 800 als "altLabel" integriert und im der Description erl\u00e4utert""";
     o:hasTarget Co:BFB162 .
+Annot:anno3
+    a o:Annotation;
+    dct:created "2024-10-28T09:47:22.117Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "jfhsdsdklfjskfjasdljdf";
+    o:hasTarget Co:C97B35 .
 Annot:anno30
     a o:Annotation;
     dct:created "2024-09-03T13:46:00.145Z";
@@ -429,6 +436,8 @@ Co:BGG879 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:C47769 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C6F794 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:C97B35 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:CA7279 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
