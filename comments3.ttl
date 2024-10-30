@@ -347,6 +347,14 @@ Annot:anno59
     o:bodyValue
         "Gespitzt: Ein Spitzeisen (Spitzmei\u00dfel) dient zum groben Formen eines Werkst\u00fccks. Mit ihm lassen sich  gr\u00f6\u00dfere Steinbrocken abschlagen. Oft bleiben Spitzhiebe in einer planierten, eingeebneten Oberfl\u00e4che sichtbar, da sie zu tief ausgef\u00fchrt wurden.";
     o:hasTarget Co:B1B854 .
+Annot:anno6
+    a o:Annotation;
+    dct:created "2024-10-30T08:32:50.781Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Braucht es hier die Unterpunkt "Klebungen entfernt", "Oberfl\u00e4chenbeschichtung entfernt", etc.? Oder w\u00e4ren stattdessen (oder zus\u00e4tzlich) Informationen wie die Materialien entfernt wurden sinnvoller? "mechanische Entfernung", "chemische Entfernung" und so weiter. Was geben wir bisher in unseren Berichten an?""";
+    o:hasTarget Co:C6C3CF.
 Annot:anno60
     a o:Annotation;
     dct:created "2024-09-20T13:57:47.820Z";
@@ -395,6 +403,14 @@ Annot:anno66
     o:bodyValue
         "Zerstreutporiges Laubholz bezeichnet Laubh\u00f6lzern, bei denen die Gef\u00e4\u00dfe/Tracheen gleichm\u00e4\u00dfig und ohne klare Anordnung \u00fcber einen gesamten Jahrring verteilt im Holz vorkommen. Anders als bei ringporigen H\u00f6lzern, bei denen gro\u00dfe Gef\u00e4\u00dfe im Fr\u00fchholz und kleinere im Sp\u00e4tholz auftreten, gibt es bei zerstreutporigen H\u00f6lzern keinen gro\u00dfen Unterschied in der Gr\u00f6\u00dfe oder Verteilung der Gef\u00e4\u00dfe zwischen Fr\u00fch- und Sp\u00e4tholz.";
     o:hasTarget Co:DAA3F9 .
+Annot:anno7
+    a o:Annotation;
+    dct:created "2024-10-30T08:41:21.027Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Der Begriff wurde als k\u00fcnstlicher \u00dcberbegriff erzeugt (darum auch in eckigen Klammern), da wir ja eine Reihe von Stoffen (vor allem Polymere) f\u00fcr eine Vielzahl von Anwendungen benutzen. Zum Beispiel Araldite 2020 f\u00fcr Klebungen, Erg\u00e4nzungen und Kopien. Dabei handelt es sich aber ja immer um genau das selbe Produkt, sodass ich es nicht sinnvoll fand f\u00fcr jede Verwendungsart ein eigenes Conzept im Thesaurus zu erstellen. Zumal wir dann in der Verwendung in der EasyDB jedes mal genau aufpassen m\u00fcssen das "richtige" Araldite auszuw\u00e4hlen. Durch den Umweg \u00fcber diesen \u00dcberbegriff k\u00f6nnen wir bei der Implementierung des Thesaurus in der EasyDB dem Computer sagen, er soll uns wenn wir die Methoden "Klebung", "Erg\u00e4nzung", "Festigung", etc. ausw\u00e4hlen direkt automatisch die Stoffe unter dem Oberbegriff "Adh\u00e4sivstoff" zur Auswahl anzeigen. Ich hoffe die Erkl\u00e4rung ist halbwegs nachvollziehbar, ansonsten jederzeit bei mir nachfragen. """;
+    o:hasTarget Co:B7B8B6 .
 Co:A1D125 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A28B4D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -421,6 +437,8 @@ Co:B44F39 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:B5C86F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:B7B8B6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:B7DD6B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BAB7B3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -434,6 +452,8 @@ Co:BGC9F3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:BGG879 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C47769 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:C6C3CF a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C6F794 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
