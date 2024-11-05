@@ -7,8 +7,6 @@
 @prefix Co: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/>.
 @prefix Ann: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme3/Annotations/>.
 @prefix Conc: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme3/Concepts/>.
-@prefix An: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme2/Annotations/>.
-@prefix C: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme2/Concepts/>.
 
 Con:ConceptScheme1
     a skos:ConceptScheme;
@@ -411,6 +409,15 @@ Annot:anno7
     o:bodyValue
         """Der Begriff wurde als k\u00fcnstlicher \u00dcberbegriff erzeugt (darum auch in eckigen Klammern), da wir ja eine Reihe von Stoffen (vor allem Polymere) f\u00fcr eine Vielzahl von Anwendungen benutzen. Zum Beispiel Araldite 2020 f\u00fcr Klebungen, Erg\u00e4nzungen und Kopien. Dabei handelt es sich aber ja immer um genau das selbe Produkt, sodass ich es nicht sinnvoll fand f\u00fcr jede Verwendungsart ein eigenes Conzept im Thesaurus zu erstellen. Zumal wir dann in der Verwendung in der EasyDB jedes mal genau aufpassen m\u00fcssen das "richtige" Araldite auszuw\u00e4hlen. Durch den Umweg \u00fcber diesen \u00dcberbegriff k\u00f6nnen wir bei der Implementierung des Thesaurus in der EasyDB dem Computer sagen, er soll uns wenn wir die Methoden "Klebung", "Erg\u00e4nzung", "Festigung", etc. ausw\u00e4hlen direkt automatisch die Stoffe unter dem Oberbegriff "Adh\u00e4sivstoff" zur Auswahl anzeigen. Ich hoffe die Erkl\u00e4rung ist halbwegs nachvollziehbar, ansonsten jederzeit bei mir nachfragen. """;
     o:hasTarget Co:B7B8B6 .
+Annot:anno8
+    a o:Annotation;
+    dct:created "2024-11-05T08:11:07.807Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """...Konzentrationsgef\u00e4lle z(wi)schen...
+""";
+    o:hasTarget Co:DA9G57 .
 Co:A1D125 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A28B4D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -468,6 +475,8 @@ Co:D39191 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:D39264 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D467F2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:DA9G57 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:DAA3F9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
