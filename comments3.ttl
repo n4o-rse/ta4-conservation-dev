@@ -40,6 +40,33 @@ Annot:anno11
     o:bodyValue
         """...einer "Holzmaserung" \u00e4hnelt die Struktur von Elfenbein eigentlich nicht. Charakteristisch sind die sogenannten Schreger'schen Linien, die im Querschnitt eine netzartiges Struktur bilden (und sich dadurch von elfenbein\u00e4hnlichen Materialien unterscheiden). """;
     o:hasTarget Co:AG55BC.
+Annot:anno12
+    a o:Annotation;
+    dct:created "2024-11-05T14:08:26.134Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Formbau mit Materialien, die das zu kopierende Objekt im Negativ abbilden
+""";
+    o:hasTarget Co:G52378 .
+Annot:anno13
+    a o:Annotation;
+    dct:created "2024-11-05T14:22:11.838Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Durch photogrammetrische Verfahren (z.B. Streifenlichtprojektion, Laserscanning) erzeugte digitale, dreidimensionale Bildkopie
+""";
+    o:hasTarget Co:GC14B8 .
+Annot:anno14
+    a o:Annotation;
+    dct:created "2024-11-05T15:36:11.473Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """ Formbau mit Materialien, die auf das Orignal aufgetragen werden und das zu kopierende Objekt im Negativ abbilden 
+""";
+    o:hasTarget Co:G52378 .
 Annot:anno15
     a o:Annotation;
     dct:created "2024-08-28T11:58:55.324Z";
@@ -96,6 +123,15 @@ Annot:anno20
     o:bodyValue
         "in der Metallrestaurierung (unter Lazlo Lehoczky) wurden Metallobjekte nach der Bearbeitung mit Pantarol (Nitrocelluloselack) gegen Luftfeuchtigkeit gesch\u00fctzt. Bitte Pantarol aufnehmen";
     o:hasTarget Co:GC7998 .
+Annot:anno21
+    a o:Annotation;
+    dct:created "2024-11-05T15:44:34.510Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Verarbeitung von Formbaumaterialien zur Herstellung einer Negativform. Die gebr\u00e4uchlichste Form besteht aus einer d\u00fcnnen, flexiblen Silikonkautschuckhaut, die die Oberf\u00e4che des Originals im Negativ abzeichnet und einer starren Kapsel, in der die Hautform formschl\u00fcssig eingelegt wird. 
+""";
+    o:hasTarget Co:A2G7B9 .
 Annot:anno22
     a o:Annotation;
     dct:created "2024-08-28T14:36:04.802Z";
@@ -112,6 +148,14 @@ Annot:anno23
     o:bodyValue
     "Sollten wir bei den Mineralien die jeweilige Moossche H\u00e4rte angeben?";
     o:hasTarget Co:BGC9F3 .
+Annot:anno24
+    a o:Annotation;
+    dct:created "2024-11-05T15:48:23.652Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Methode zur Herstellung einer starren St\u00fctzkapsel zur Aufnahme der flexiblen Abformmasse";
+    o:hasTarget Co:CC67B2 .
 Annot:anno25
     a o:Annotation;
     dct:created "2024-08-28T14:44:23.961Z";
@@ -418,9 +462,20 @@ Annot:anno8
         """...Konzentrationsgef\u00e4lle z(wi)schen...
 """;
     o:hasTarget Co:DA9G57 .
+Annot:anno9
+    a o:Annotation;
+    dct:created "2024-11-05T14:03:20.195Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Herstellung einer Negativform durch Auftrag des Formmaterials am Original
+""";
+    o:hasTarget Co:DAG2A8 .
 Co:A1D125 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A28B4D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:A2G7B9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A6FA7G a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -468,6 +523,8 @@ Co:C97B35 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:CA7279 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:CC67B2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:CG2863 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D39191 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -479,6 +536,8 @@ Co:D467F2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:DA9G57 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:DAA3F9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:DAG2A8 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:FC2113 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -492,7 +551,11 @@ Co:G17B8B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:G2944B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:G52378 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:G8D62A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:GC14B8 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:GC7998 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
