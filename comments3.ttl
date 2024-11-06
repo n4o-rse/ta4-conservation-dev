@@ -210,6 +210,14 @@ Annot:anno30
     o:bodyValue
         "Kristina hat diesen Begriff entfernt. Wir arbeiten noch an einem Umgang mit entfernten Begriffen, damit sie nicht zu Fehlern in der Kommentarumgebung f\u00fchren...";
     o:hasTarget Co:BFB162 .
+Annot:anno31
+    a o:Annotation;
+    dct:created "2024-11-06T07:36:37.088Z";
+    dct:creator "hochgesand";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "M\u00fcsste hier dann nicht auch nach unterschiedlichen Tierh\u00e4uten unterschieden werden?";
+    o:hasTarget Co:D73F9B.
 Annot:anno32
     a o:Annotation;
     dct:created "2024-09-20T10:40:44.734Z";
@@ -532,6 +540,8 @@ Co:D39191 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:D39264 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D467F2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:D73F9B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:DA9G57 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
