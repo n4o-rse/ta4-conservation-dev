@@ -227,6 +227,22 @@ Annot:anno32
         """ mohssche H\u00e4rte... (Markus=Klugschei\u00dfer)
 """;
     o:hasTarget Co:BGC9F3 .
+Annot:anno33
+    a o:Annotation;
+    dct:created "2024-11-06T08:45:15.404Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Erfassung der Informationen zur Reproduktionn von Form und aller sichtbaren Oberfl\u00e4chen eines Gegenstandes";
+    o:hasTarget Co:DAG2A8 .
+Annot:anno34
+    a o:Annotation;
+    dct:created "2024-11-06T08:52:01.003Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Erfassung der Informationen von Form und aller sichtbaren Oberfl\u00e4chen eines Gegenstandes";
+    o:hasTarget Co:DAG2A8 .
 Annot:anno35
     a o:Annotation;
     dct:created "2024-09-20T10:55:11.809Z";
@@ -235,6 +251,22 @@ Annot:anno35
     o:bodyValue
         "zu description: nat\u00fcrliches Material, nachwachsender Rohstoff; die Hauptbestandteile von Holz sind Cellulose, Hemicellulose und Lignin, w\u00e4hrend des Wachstums werden Extraktstoffe und Mineralien in den Zellen eingelagert.Holz ist aufgrund...";
     o:hasTarget Co:A9A858 .
+Annot:anno36
+    a o:Annotation;
+    dct:created "2024-11-06T11:44:52.262Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Einteilige, offene Form mit nur einseitiger Abbildung des Objektes im Negativ";
+    o:hasTarget Co:G967G1 .
+Annot:anno37
+    a o:Annotation;
+    dct:created "2024-11-06T12:00:12.391Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Mehrteilige Form, bei der der Auftrag der Ausformungsmasse vor dem Zusammenbau der Form erfolgt. Ein \u00dcberschuss an den Kontaktfl\u00e4chen der Form sorgt f\u00fcr ein 'Zusammenquetschen' und Verbinden der nicht ausgeh\u00e4rtenden Ausformmasse beim Zusammenf\u00fcgen der Formteile.";
+    o:hasTarget Co:DC3F7A.
 Annot:anno38
     a o:Annotation;
     dct:created "2024-09-20T11:09:22.152Z";
@@ -277,6 +309,30 @@ Annot:anno41
         """
 liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein?""";
     o:hasTarget Co:G2944B.
+Annot:anno42
+    a o:Annotation;
+    dct:created "2024-11-06T12:02:16.446Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Form, in die die Ausformmasse in Verbindung mit Geweben aus Verst\u00e4rkungsfasern eingebracht (laminiert) wird";
+    o:hasTarget Co:ADCC8A.
+Annot:anno43
+    a o:Annotation;
+    dct:created "2024-11-06T12:02:50.588Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+    "Form, in die die fl\u00fcssige Ausformmasse gegossen werden kann";
+    o:hasTarget Co:B1DB9G.
+Annot:anno44
+    a o:Annotation;
+    dct:created "2024-11-06T12:08:01.631Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Mehrteilige, geschlossene Form, bei der der Auftrag der Ausformungsmasse vor dem Zusammenbau der Form erfolgt. Ein \u00dcberschuss an den Kontaktfl\u00e4chen der Form sorgt f\u00fcr ein 'Zusammenquetschen' und Verbinden der nicht ausgeh\u00e4rtenden Ausformmasse beim Zusammenf\u00fcgen der Formteile.";
+    o:hasTarget Co:DC3F7A.
 Annot:anno45
     a o:Annotation;
     dct:created "2024-09-20T12:13:36.393Z";
@@ -293,6 +349,22 @@ Annot:anno46
     o:bodyValue
         "auch hier, besser betula spec. die Unterarten lassen sich bei arch. Holz kaum/nicht unterscheiden";
     o:hasTarget Co:BGG879 .
+Annot:anno47
+    a o:Annotation;
+    dct:created "2024-11-06T12:09:06.162Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Form mit Einf\u00fcll\u00f6ffnung, in die die fl\u00fcssige Ausformmasse gegossen werden kann";
+    o:hasTarget Co:B1DB9G.
+Annot:anno48
+    a o:Annotation;
+    dct:created "2024-11-06T12:15:25.744Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Form mit unterer Einf\u00fcll\u00f6ffnung, in die die fl\u00fcssige Ausformmasse \u00fcber eine seperate Steigleitung eingegossen werden kann";
+    o:hasTarget Co:C369CB.
 Annot:anno49
     a o:Annotation;
     dct:created "2024-09-20T12:21:18.625Z";
@@ -437,6 +509,13 @@ Annot:anno63
     o:bodyValue
         "description:Rezentes Holz bezeichnet Holz, das frisch geschlagen oder abgelagert ist, jedoch im Vergleich zu arch\u00e4ologischem Holz noch keinen nennenswerten Abbauprozessen ausgesetzt war";
     o:hasTarget Co:C47769 .
+Annot:anno64
+    a o:Annotation;
+    dct:created "2024-11-06T12:20:00.402Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "Form zur Herstellung galvanoplastischer Kopien. ";
+    o:hasTarget Co:A2GC16 .
 Annot:anno65
     a o:Annotation;
     dct:created "2024-09-20T14:25:27.850Z";
@@ -453,6 +532,20 @@ Annot:anno66
     o:bodyValue
         "Zerstreutporiges Laubholz bezeichnet Laubh\u00f6lzern, bei denen die Gef\u00e4\u00dfe/Tracheen gleichm\u00e4\u00dfig und ohne klare Anordnung \u00fcber einen gesamten Jahrring verteilt im Holz vorkommen. Anders als bei ringporigen H\u00f6lzern, bei denen gro\u00dfe Gef\u00e4\u00dfe im Fr\u00fchholz und kleinere im Sp\u00e4tholz auftreten, gibt es bei zerstreutporigen H\u00f6lzern keinen gro\u00dfen Unterschied in der Gr\u00f6\u00dfe oder Verteilung der Gef\u00e4\u00dfe zwischen Fr\u00fch- und Sp\u00e4tholz.";
     o:hasTarget Co:DAA3F9 .
+Annot:anno67
+    a o:Annotation;
+    dct:created "2024-11-06T13:33:22.987Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "Form, die aus einem Formbauteil besteht - siehe Spiegelform";
+    o:hasTarget Co:F7G7CB.
+Annot:anno68
+    a o:Annotation;
+    dct:created "2024-11-06T13:33:54.144Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "Form, die aus mehreren Formbauteilen besteht";
+    o:hasTarget Co:B2D9C9 .
 Annot:anno7
     a o:Annotation;
     dct:created "2024-10-30T08:41:21.027Z";
@@ -485,6 +578,8 @@ Co:A28B4D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A2G7B9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:A2GC16 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:A6FA7G a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A9A858 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -493,6 +588,8 @@ Co:ABBFB5 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:ADB89D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:ADCC8A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:AF9A88 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:AG55BC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -500,6 +597,10 @@ Co:AG55BC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:AGG387 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:B1B854 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:B1DB9G a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:B2D9C9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:B437A9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -520,6 +621,8 @@ Co:BFB162 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:BGC9F3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BGG879 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:C369CB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C47769 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -549,6 +652,10 @@ Co:DAA3F9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:DAG2A8 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:DC3F7A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:F7G7CB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:FC2113 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:FC3FD6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -564,6 +671,8 @@ Co:G2944B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:G52378 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:G8D62A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:G967G1 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:GC14B8 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
