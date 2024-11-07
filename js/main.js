@@ -8,12 +8,27 @@ function thesaurusInputFile() {
     document.getElementById("loadingDiv").style.display = "block";
     const inputFile = document.getElementById('fileInput');
     const file = inputFile.files[0];
-    let reader = new FileReader();
-    reader.onload = function(e) {
-      result = e.target.result;
-      readData(result, "file", "");
-    };
-    reader.readAsText(file);
+    if (file.name.endswith(".xlsx")) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var data = e.target.result;
+        var workbook = XLSX.read(data, {
+          type: 'binary'
+        });
+        var sheetName = workbook.SheetNames[0];
+        var sheet = workbook.Sheets[sheetName];
+        var csv = XLSX.utils.sheet_to_csv(sheet);
+        readData(csv, "file", "");
+      };
+      reader.readAsBinaryString(file);
+    } else {
+      let reader = new FileReader();
+      reader.onload = function(e) {
+        result = e.target.result;
+        readData(result, "file", "");
+      };
+      reader.readAsText(file);
+    }
 }
 
 async function thesaurusInputUrl(inputURL) {
