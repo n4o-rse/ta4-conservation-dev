@@ -1,5 +1,11 @@
-// event functions and button onclick functions
+// imports
+import {fileTypeFromStream} from 'node_modules/file-type';
+const url = 'https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg';
+const response = await fetch(url);
+const fileType = await fileTypeFromStream(response.body);
+console.log(fileType);
 
+// event functions and button onclick functions
 function thesaurusInputFile() {
     event.preventDefault();
     // reset former outputs, if there are any
@@ -206,14 +212,6 @@ async function createConceptScheme() {
   // reload dropdown menu for conceptSchemes
   readConceptSchemeTitles();
 }
-
-// imports
-
-import {fileTypeFromStream} from 'node_modules/file-type';
-const url = 'https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg';
-const response = await fetch(url);
-const fileType = await fileTypeFromStream(response.body);
-console.log(fileType);
 
 // global variables and event listeners
 let commentURL = "https://restaurierungsvokabular.solidweb.org/annotations/annotations3.ttl";
