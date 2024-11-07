@@ -8,6 +8,15 @@ async function readData(data, inputType, inputURL) {
     else if (file.name.endsWith(".csv")) {  
       Data = d3.csvParse(data);
     }
+    else if (file.name.endsWith(".xlsx")) {
+      // use the xlsx library to parse the data
+      const workbook = XLSX.read(data, {type: 'binary'});
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
+      Data = XLSX.utils.sheet_to_json(sheet, {header: 1});
+      // convert json to csv
+      Data = Papa.unparse(Data);
+    }
     // wait to make sure the loadingDiv is displayed and user knows different data is loaded
     await new Promise(r => setTimeout(r, 2000));
   }
@@ -15,7 +24,7 @@ async function readData(data, inputType, inputURL) {
     if (inputURL.endsWith("tsv")) {
       Data = d3.tsvParse(data);
     }
-    else {
+    else if (inputURL.endsWith("csv")) {
       Data = d3.csvParse(data);
     }
   }
