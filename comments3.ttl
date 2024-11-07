@@ -1,0 +1,782 @@
+@prefix : <#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix Con: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/>.
+@prefix Annot: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Annotations/>.
+@prefix o: <http://www.w3.org/ns/oa#>.
+@prefix Co: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/>.
+@prefix Ann: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme3/Annotations/>.
+@prefix Conc: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme3/Concepts/>.
+
+Con:ConceptScheme1
+    a skos:ConceptScheme;
+    dct:source
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=tsv";
+    dct:title "LEIZA Restaurierungs- und Konservierungsthesaurus".
+Annot:anno1
+    a o:Annotation;
+    dct:created "2024-09-24T07:04:40.439Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Aber selbstverst\u00e4ndlich, lieber Markus. Dein Wunsch sei mir Befehl ;). 
+
+Der Punkt "description" taucht manchmal hier in der Darstellung noch nicht auf, wenn kein Text in dem Feld eingetragen ist. Er ist aber grunds\u00e4tzlich bei jedem Begriff schon angelegt. Schreib mir gerne einen Beschreibungstext in die jeweilige Kommentarspalte, dann f\u00fcge ich es in die Arbeitstabelle ein und er erscheint dann auch hier in der Darstellung. """;
+    o:hasTarget Co:G2944B.
+Annot:anno10
+    a o:Annotation;
+    dct:created "2024-08-27T14:24:57.931Z";
+    dct:creator "Ivan";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Confokalmikroskop ist auch ein wichtiges Lichtmikroskop aber ich m\u00fcsste die genaue Definition suchen. 
+Vielleicht ISO 25178-6 (https://www.iso.org/obp/ui/en/#iso:std:iso:25178:-6:ed-1:v1:en)? Nicht sehr klar f\u00fcr mich allerdings... XD""";
+    o:hasTarget Co:FC2113 .
+Annot:anno11
+    a o:Annotation;
+    dct:created "2024-09-02T14:21:25.465Z";
+    dct:creator "eckmann";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """...einer "Holzmaserung" \u00e4hnelt die Struktur von Elfenbein eigentlich nicht. Charakteristisch sind die sogenannten Schreger'schen Linien, die im Querschnitt eine netzartiges Struktur bilden (und sich dadurch von elfenbein\u00e4hnlichen Materialien unterscheiden). """;
+    o:hasTarget Co:AG55BC.
+Annot:anno12
+    a o:Annotation;
+    dct:created "2024-11-05T14:08:26.134Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Formbau mit Materialien, die das zu kopierende Objekt im Negativ abbilden
+""";
+    o:hasTarget Co:G52378 .
+Annot:anno13
+    a o:Annotation;
+    dct:created "2024-11-05T14:22:11.838Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Durch photogrammetrische Verfahren (z.B. Streifenlichtprojektion, Laserscanning) erzeugte digitale, dreidimensionale Bildkopie
+""";
+    o:hasTarget Co:GC14B8 .
+Annot:anno14
+    a o:Annotation;
+    dct:created "2024-11-05T15:36:11.473Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """ Formbau mit Materialien, die auf das Orignal aufgetragen werden und das zu kopierende Objekt im Negativ abbilden 
+""";
+    o:hasTarget Co:G52378 .
+Annot:anno15
+    a o:Annotation;
+    dct:created "2024-08-28T11:58:55.324Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "Lyofix CHN";
+    o:hasTarget Co:FF4767 .
+Annot:anno16
+    a o:Annotation;
+    dct:created "2024-08-28T12:04:14.326Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Kauramin CE 5549 ist chemisch identisch mit Kauramin 800. Die Typenbezeichung CE steht bei der BASF f\u00fcr Produkte die noch keine volle Marktreife, noch im Teststadium sind. Nachdem sich Kauramin CE 5549 am Markt bew\u00e4hrt hatte, bekam es den brand name Kauramin 800. Vielleicht in der Datenbank Kauramin CE 5549/Kauramin 800 schreiben.
+Kauramin 800 wurde 2023 vom Markt genommen. Das nun modifizierte Nachfolgeharz mit etwas anderen Eigenschaften hei\u00dfe Kauramin 801""";
+    o:hasTarget Co:BFB162 .
+Annot:anno17
+    a o:Annotation;
+    dct:created "2024-08-28T12:06:55.990Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Hausenblasenleim (die Hause ist ein Fisch) wurde am RGZM auch verwendet. Ich habs nur einmal als Azubi 1988 benutzt.";
+    o:hasTarget Co:GD86C1 .
+Annot:anno18
+    a o:Annotation;
+    dct:created "2024-08-28T12:20:25.151Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "da k\u00f6nnte ich noch etliche Bearbeitungstechniken zuf\u00fcgen (soll ich?) , eine die viele schon geh\u00f6rt haben: scharriert";
+    o:hasTarget Co:B1B854 .
+Annot:anno19
+    a o:Annotation;
+    dct:created "2024-08-28T12:21:46.680Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "manchmal verwende ich auch die harzreichere Variante: Auro Hart\u00f6l Nr.126";
+    o:hasTarget Co:A28B4D.
+Annot:anno2
+    a o:Annotation;
+    dct:created "2024-09-25T10:32:35.120Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Lava ist aus meiner Sicht kein Gestein, sondern das vulkanische Ausgangsmaterial aus der unterschiedlichste Gesteine entstehen. Die Mineralzusammensetzung ist dabei gleich, aber unter unterschiedlichem Druck und Zeitdauer bilden sich spezifische Kristallformen. Tiefengesteine/Plutonite (Granit, Diorit..) Ergu\u00dfgesteine/Vulkanit (Basalt, Andesit..) oder Auswurfgestein/pyroklastisches Gestein (Tuff, Bims..)";
+    o:hasTarget Co:C6F794 .
+Annot:anno20
+    a o:Annotation;
+    dct:created "2024-08-28T13:17:48.410Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "in der Metallrestaurierung (unter Lazlo Lehoczky) wurden Metallobjekte nach der Bearbeitung mit Pantarol (Nitrocelluloselack) gegen Luftfeuchtigkeit gesch\u00fctzt. Bitte Pantarol aufnehmen";
+    o:hasTarget Co:GC7998 .
+Annot:anno21
+    a o:Annotation;
+    dct:created "2024-11-05T15:44:34.510Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Verarbeitung von Formbaumaterialien zur Herstellung einer Negativform. Die gebr\u00e4uchlichste Form besteht aus einer d\u00fcnnen, flexiblen Silikonkautschuckhaut, die die Oberf\u00e4che des Originals im Negativ abzeichnet und einer starren Kapsel, in der die Hautform formschl\u00fcssig eingelegt wird. 
+""";
+    o:hasTarget Co:A2G7B9 .
+Annot:anno22
+    a o:Annotation;
+    dct:created "2024-08-28T14:36:04.802Z";
+    dct:creator "Matthias Heinzel";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Bei den Mineralien fehlen noch als Untergruppen: Korund mit den Untergruppen Saphire und Rubin; dann der Smaragd; Fluorit oder Flussspat m\u00fcsste auch noch hinzu.  ";
+    o:hasTarget Co:BGC9F3 .
+Annot:anno23
+    a o:Annotation;
+    dct:created "2024-08-28T14:37:10.623Z";
+    dct:creator "Matthias Heinzel";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+    "Sollten wir bei den Mineralien die jeweilige Moossche H\u00e4rte angeben?";
+    o:hasTarget Co:BGC9F3 .
+Annot:anno24
+    a o:Annotation;
+    dct:created "2024-11-05T15:48:23.652Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Methode zur Herstellung einer starren St\u00fctzkapsel zur Aufnahme der flexiblen Abformmasse";
+    o:hasTarget Co:CC67B2 .
+Annot:anno25
+    a o:Annotation;
+    dct:created "2024-08-28T14:44:23.961Z";
+    dct:creator "Matthias Heinzel";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Unterscheiden wir hier von welchem Baum das Pech gewonnen wurde? Birke, Buche, Nadelholz";
+    o:hasTarget Co:D467F2 .
+Annot:anno26
+    a o:Annotation;
+    dct:created "2024-08-28T14:49:55.505Z";
+    dct:creator "Matthias Heinzel";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Unterscheiden wir hier zwischen fossilem Elfenbein und "frischem Elfenbein"?""";
+    o:hasTarget Co:AG55BC.
+Annot:anno27
+    a o:Annotation;
+    dct:created "2024-09-02T09:52:59.466Z";
+    dct:creator "Anonymus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "Infrarot Fotographie hier erg\u00e4nzen?";
+    o:hasTarget Co:CA7279 .
+Annot:anno28
+    a o:Annotation;
+    dct:created "2024-09-02T09:57:22.096Z";
+    dct:creator "Anonymus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """warum sind "Analyse der chemischen Zusammensetzung" und "chemische Zusammensetzung" zwei unterschiedliche Unterpunkte?""";
+    o:hasTarget Co:G17B8B.
+Annot:anno29
+    a o:Annotation;
+    dct:created "2024-09-03T13:45:45.455Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Kauramin CE 5549 wird als eigener Begriff aussortiert. Stattdessen bei Kauramin 800 als "altLabel" integriert und im der Description erl\u00e4utert""";
+    o:hasTarget Co:BFB162 .
+Annot:anno3
+    a o:Annotation;
+    dct:created "2024-10-28T09:47:22.117Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "jfhsdsdklfjskfjasdljdf";
+    o:hasTarget Co:C97B35 .
+Annot:anno30
+    a o:Annotation;
+    dct:created "2024-09-03T13:46:00.145Z";
+    dct:creator "Lasse";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Kristina hat diesen Begriff entfernt. Wir arbeiten noch an einem Umgang mit entfernten Begriffen, damit sie nicht zu Fehlern in der Kommentarumgebung f\u00fchren...";
+    o:hasTarget Co:BFB162 .
+Annot:anno31
+    a o:Annotation;
+    dct:created "2024-11-06T07:36:37.088Z";
+    dct:creator "hochgesand";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "M\u00fcsste hier dann nicht auch nach unterschiedlichen Tierh\u00e4uten unterschieden werden?";
+    o:hasTarget Co:D73F9B.
+Annot:anno32
+    a o:Annotation;
+    dct:created "2024-09-20T10:40:44.734Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """ mohssche H\u00e4rte... (Markus=Klugschei\u00dfer)
+""";
+    o:hasTarget Co:BGC9F3 .
+Annot:anno34
+    a o:Annotation;
+    dct:created "2024-11-06T08:52:01.003Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Erfassung der Form und aller sichtbaren Informationen der Oberfl\u00e4chen eines Gegenstandes";
+    o:hasTarget Co:DAG2A8 .
+Annot:anno35
+    a o:Annotation;
+    dct:created "2024-09-20T10:55:11.809Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "zu description: nat\u00fcrliches Material, nachwachsender Rohstoff; die Hauptbestandteile von Holz sind Cellulose, Hemicellulose und Lignin, w\u00e4hrend des Wachstums werden Extraktstoffe und Mineralien in den Zellen eingelagert.Holz ist aufgrund...";
+    o:hasTarget Co:A9A858 .
+Annot:anno36
+    a o:Annotation;
+    dct:created "2024-11-06T11:44:52.262Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Einteilige, offene Form mit nur einseitiger Abbildung des Objektes im Negativ";
+    o:hasTarget Co:G967G1 .
+Annot:anno37
+    a o:Annotation;
+    dct:created "2024-11-06T12:00:12.391Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Mehrteilige Form, bei der der Auftrag der Ausformungsmasse vor dem Zusammenbau der Form erfolgt. Ein \u00dcberschuss an den Kontaktfl\u00e4chen der Form sorgt f\u00fcr ein 'Zusammenquetschen' und Verbinden der nicht ausgeh\u00e4rtenden Ausformmasse beim Zusammenf\u00fcgen der Formteile.";
+    o:hasTarget Co:DC3F7A.
+Annot:anno38
+    a o:Annotation;
+    dct:created "2024-09-20T11:09:22.152Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """description: Holz, frisch geschlagen oder auch abgelagert, jedenfalls im Vergleich zu arch\u00e4ologischem Holz keinen Abbauprozessen ausgesetzt war
+
+""";
+    o:hasTarget Co:C47769 .
+Annot:anno39
+    a o:Annotation;
+    dct:created "2024-09-20T11:13:56.307Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "\nzu altLabel: Quercus: da es verschiedene Eichenspezies gibt, die sich (zumindest bei arch\u00e4ologischen Holzproben) nicht genauer bestimmen lassen, w\u00e4re quercus spec. (quercus species) korrekt, das schlie\u00dft alle Eichensorten ein.\n";
+    o:hasTarget Co:FG3BCD.
+Annot:anno4
+    a o:Annotation;
+    dct:created "2024-08-27T13:02:42.906Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "Alright, ist ge\u00e4ndert. Danke Ivan. ";
+    o:hasTarget Co:AF9A88 .
+Annot:anno40
+    a o:Annotation;
+    dct:created "2024-09-20T11:41:02.303Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "description:Nadelb\u00e4ume, sind evolution\u00e4r betrachtet \u00e4lter als Laubb\u00e4ume. Eine einzige Art von Zellen, die Tracheiden, \u00fcbernimmt sowohl die Stabilit\u00e4ts- als auch die Wassertransportfunktion, was dem Nadelholz einen relativ einfachen und regelm\u00e4\u00dfigen Zellaufbau verleiht.Dank ihrer Anpassung an kurze Vegetationsperioden k\u00f6nnen Nadelb\u00e4ume auch in Regionen mit langen, kalten Wintern oder in gro\u00dfen H\u00f6hen \u00fcberleben, wo Laubb\u00e4ume nicht mehr wachsen.";
+    o:hasTarget Co:FC3FD6 .
+Annot:anno41
+    a o:Annotation;
+    dct:created "2024-09-20T11:45:57.498Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """
+liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein?""";
+    o:hasTarget Co:G2944B.
+Annot:anno42
+    a o:Annotation;
+    dct:created "2024-11-06T12:02:16.446Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Form, in die die Ausformmasse in Verbindung mit Geweben aus Verst\u00e4rkungsfasern eingebracht (laminiert) wird";
+    o:hasTarget Co:ADCC8A.
+Annot:anno43
+    a o:Annotation;
+    dct:created "2024-11-06T12:02:50.588Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+    "Form, in die die fl\u00fcssige Ausformmasse gegossen werden kann";
+    o:hasTarget Co:B1DB9G.
+Annot:anno44
+    a o:Annotation;
+    dct:created "2024-11-06T12:08:01.631Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Mehrteilige, geschlossene Form, bei der der Auftrag der Ausformungsmasse vor dem Zusammenbau der Form erfolgt. Ein \u00dcberschuss an den Kontaktfl\u00e4chen der Form sorgt f\u00fcr ein 'Zusammenquetschen' und Verbinden der nicht ausgeh\u00e4rtenden Ausformmasse beim Zusammenf\u00fcgen der Formteile.";
+    o:hasTarget Co:DC3F7A.
+Annot:anno45
+    a o:Annotation;
+    dct:created "2024-09-20T12:13:36.393Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "description: Im Laubholz \u00fcbernehmen verschiedene spezialisierte Zelltypen die Aufgaben des Stofftransports, der Stabilit\u00e4t und des Stoffwechsels bzw. der Stoffspeicherung. Das Holzgewebe besteht aus mehr als 100  unterschiedlichen Elementen, darunter Tracheen f\u00fcr den Wassertransport, Tracheiden,die ebenfalls zur Wasserleitung und Stabilit\u00e4t beitragen, sowie Parenchymzellen, die f\u00fcr den Stoffwechsel und die Speicherung von N\u00e4hrstoffen zust\u00e4ndig sind";
+    o:hasTarget Co:B7DD6B.
+Annot:anno46
+    a o:Annotation;
+    dct:created "2024-09-20T12:17:54.610Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "auch hier, besser betula spec. die Unterarten lassen sich bei arch. Holz kaum/nicht unterscheiden";
+    o:hasTarget Co:BGG879 .
+Annot:anno47
+    a o:Annotation;
+    dct:created "2024-11-06T12:09:06.162Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Form mit Einf\u00fcll\u00f6ffnung, in die die fl\u00fcssige Ausformmasse gegossen werden kann";
+    o:hasTarget Co:B1DB9G.
+Annot:anno48
+    a o:Annotation;
+    dct:created "2024-11-06T12:15:25.744Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Form mit unterer Einf\u00fcll\u00f6ffnung, in die die fl\u00fcssige Ausformmasse \u00fcber eine seperate Steigleitung eingegossen werden kann";
+    o:hasTarget Co:C369CB.
+Annot:anno49
+    a o:Annotation;
+    dct:created "2024-09-20T12:21:18.625Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """09-20 11:47:01
+Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? 
+und auch hier besser tilia spec.""";
+    o:hasTarget Co:B44F39 .
+Annot:anno5
+    a o:Annotation;
+    dct:created "2024-08-27T14:21:09.315Z";
+    dct:creator "Ivan";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "der CT ist auch eine R\u00f6ntgenanlage :) Mir fehlt kein Begriff ein, der nur f\u00fcr konventionelle Radiographie als Ger\u00e4t benutzt wird. Vom Hardware gibt es kaum Unterschiede zwischen CT und konventionelle (digitale) Radiographie: nur der Drehteller eigentlich!";
+    o:hasTarget Co:G8D62A.
+Annot:anno50
+    a o:Annotation;
+    dct:created "2024-09-20T12:21:49.090Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """09-20 11:47:01
+Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? 
+und auch hier besser prunus spec.""";
+    o:hasTarget Co:ABBFB5 .
+Annot:anno51
+    a o:Annotation;
+    dct:created "2024-09-20T12:23:00.631Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """09-20 11:47:01
+Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? 
+und auch hier besser populus spec.""";
+    o:hasTarget Co:B5C86F.
+Annot:anno52
+    a o:Annotation;
+    dct:created "2024-09-20T12:23:59.784Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """09-20 11:47:01
+Kommentar: liebe Kristina, hier gibt es keine "description", f\u00fcgst du da noch was ein? 
+und auch hier besser salix spec.""";
+    o:hasTarget Co:GG1CG9 .
+Annot:anno53
+    a o:Annotation;
+    dct:created "2024-09-20T12:59:22.419Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Deionisiertes Wasser (mit einer Leitf\u00e4higkeit von \u2265 0,1\u20131 \u03bcS/cm) unterscheidet sich durch seinen Reinheitsgrad von destilliertem Wasser (mit einer Leitf\u00e4higkeit von \u2265 1\u201310 \u03bcS/cm), ist jedoch nicht keimfrei. In der Medizin werden beide Verfahren oft kombiniert, wenn f\u00fcr einen Arbeitsprozess vollentsalztes und gleichzeitig keimfreies Wasser erforderlich ist.";
+    o:hasTarget Co:BBF7BG.
+Annot:anno54
+    a o:Annotation;
+    dct:created "2024-09-20T13:18:52.132Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "ich vermisse die Polyurethanharze/kleber. Verwendet die niemand? Das sind z.B Montagekleber, die quellen immer etwas auf bei der Aush\u00e4rtung";
+    o:hasTarget Co:A1D125 .
+Annot:anno55
+    a o:Annotation;
+    dct:created "2024-09-20T13:27:08.642Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Ebacryl ist ein acrylharzmodifizierter Hartgips, 2 komponentig, Pulver und Emulsion. Ebacryl w\u00fcrde ich eher bei den Gipsen platzieren";
+    o:hasTarget Co:CG2863 .
+Annot:anno56
+    a o:Annotation;
+    dct:created "2024-09-20T13:35:32.960Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Palatal\u00ae P 4-01 ist ein unges\u00e4ttigtes Polyesterharz, gel\u00f6st in Stryol. Es wird durch die Zugabe eines Katalysator (Butanox) und Kobaltbeschleuniger vernetzt. In den 1980-1990er Jahren wurde es h\u00e4ufig zur Herstellung von Kopien, meist mit Zuschlagstoffen eingesetzt.";
+    o:hasTarget Co:D39264 .
+Annot:anno57
+    a o:Annotation;
+    dct:created "2024-09-20T13:44:12.326Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "scharriert,  Oberfl\u00e4chenbearbeitung/Gl\u00e4ttung eines Werksteinsteins. Ein Scharriereisen hat die Form eines \u00fcberbreiten Mei\u00dfels und erzeugt parallele Rillen";
+    o:hasTarget Co:AGG387 .
+Annot:anno58
+    a o:Annotation;
+    dct:created "2024-09-20T13:49:33.020Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "gebeilt: Bearbeitung von Holz oder auch Werkstein. In der Romanik oft verwendetes Werkzeug um als Finish eine Steinoberfl\u00e4che zu planieren/gl\u00e4tten. Wird beidh\u00e4ndig gef\u00fchrt und erzeugt parallele, sich meist \u00fcberkreuzende Rillen\t";
+    o:hasTarget Co:B437A9 .
+Annot:anno59
+    a o:Annotation;
+    dct:created "2024-09-20T13:55:12.308Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Gespitzt: Ein Spitzeisen (Spitzmei\u00dfel) dient zum groben Formen eines Werkst\u00fccks. Mit ihm lassen sich  gr\u00f6\u00dfere Steinbrocken abschlagen. Oft bleiben Spitzhiebe in einer planierten, eingeebneten Oberfl\u00e4che sichtbar, da sie zu tief ausgef\u00fchrt wurden.";
+    o:hasTarget Co:B1B854 .
+Annot:anno6
+    a o:Annotation;
+    dct:created "2024-10-30T08:32:50.781Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Braucht es hier die Unterpunkt "Klebungen entfernt", "Oberfl\u00e4chenbeschichtung entfernt", etc.? Oder w\u00e4ren stattdessen (oder zus\u00e4tzlich) Informationen wie die Materialien entfernt wurden sinnvoller? "mechanische Entfernung", "chemische Entfernung" und so weiter. Was geben wir bisher in unseren Berichten an?""";
+    o:hasTarget Co:C6C3CF.
+Annot:anno60
+    a o:Annotation;
+    dct:created "2024-09-20T13:57:47.820Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "gezahnt: Ein Zahneisen ist gestaltet wie ein Flachmei\u00dfel, mit Z\u00e4hnen. Durch diese Form l\u00e4\u00dft sich mehr Material abtragen als es mit einem Flachmei\u00dfel m\u00f6glich ist. Es entstehen kurze, tiefe Rillen in der Steinoberfl\u00e4che, auch auch oft noch nach einer Einebnung/Gl\u00e4ttung sichtbar sind.";
+    o:hasTarget Co:BAB7B3 .
+Annot:anno61
+    a o:Annotation;
+    dct:created "2024-09-20T14:03:50.221Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "gespalten: Trennvorgang an Materialen (z.B Holz,Stein) oft unter Nutzung nat\u00fcrlicher Schwachstellen/Wachstumslinien/Sedimentlagern. Bei Holz wird der Spaltvorgang radial ausgef\u00fchrt und folgt den Wachstumsstrukturen (Holzstrahlen). Daher werden die Holzstrahlen nicht verletzt/getrennt wie beim S\u00e4gen, das gewonnene Werkst\u00fcck ist besonders stabil und bruchfest.";
+    o:hasTarget Co:ADB89D.
+Annot:anno62
+    a o:Annotation;
+    dct:created "2024-09-20T14:09:46.336Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Inkrustiert: Die Verzierung/Oberfl\u00e4chegestaltung von mineralischen Werkstoffen (wie Keramik oder Stein) durch das Einlegen verschiedenfarbiger, kontrastreicher Materialien";
+    o:hasTarget Co:A6FA7G.
+Annot:anno63
+    a o:Annotation;
+    dct:created "2024-09-20T14:14:27.026Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "description:Rezentes Holz bezeichnet Holz, das frisch geschlagen oder abgelagert ist, jedoch im Vergleich zu arch\u00e4ologischem Holz noch keinen nennenswerten Abbauprozessen ausgesetzt war";
+    o:hasTarget Co:C47769 .
+Annot:anno64
+    a o:Annotation;
+    dct:created "2024-11-06T12:20:00.402Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "Form zur Herstellung galvanoplastischer Kopien. ";
+    o:hasTarget Co:A2GC16 .
+Annot:anno65
+    a o:Annotation;
+    dct:created "2024-09-20T14:25:27.850Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Ringporiges Laubholz bezeichnet Laubh\u00f6lzer, die gro\u00dfe Tracheen/Gef\u00e4\u00dfe im Fr\u00fchholz und deutlich kleinere im Sp\u00e4tholz ausbilden. Im Querschnitt sind deutlich ringf\u00f6rmige Strukturen sichtbar";
+    o:hasTarget Co:D39191 .
+Annot:anno66
+    a o:Annotation;
+    dct:created "2024-09-20T14:28:37.957Z";
+    dct:creator "Markus";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Zerstreutporiges Laubholz bezeichnet Laubh\u00f6lzern, bei denen die Gef\u00e4\u00dfe/Tracheen gleichm\u00e4\u00dfig und ohne klare Anordnung \u00fcber einen gesamten Jahrring verteilt im Holz vorkommen. Anders als bei ringporigen H\u00f6lzern, bei denen gro\u00dfe Gef\u00e4\u00dfe im Fr\u00fchholz und kleinere im Sp\u00e4tholz auftreten, gibt es bei zerstreutporigen H\u00f6lzern keinen gro\u00dfen Unterschied in der Gr\u00f6\u00dfe oder Verteilung der Gef\u00e4\u00dfe zwischen Fr\u00fch- und Sp\u00e4tholz.";
+    o:hasTarget Co:DAA3F9 .
+Annot:anno67
+    a o:Annotation;
+    dct:created "2024-11-06T13:33:22.987Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "Form, die aus einem Formbauteil besteht - siehe Spiegelform";
+    o:hasTarget Co:F7G7CB.
+Annot:anno68
+    a o:Annotation;
+    dct:created "2024-11-06T13:33:54.144Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "Form, die aus mehreren Formbauteilen besteht";
+    o:hasTarget Co:B2D9C9 .
+Annot:anno69
+    a o:Annotation;
+    dct:created "2024-11-06T14:40:26.734Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Ausgie\u00dfen, Auspinseln, Ausspachteln, Beschichten (Ausformen) der Negativform mit aush\u00e4rtenden Werkstoffen (Kunstharze, Gips, etc.) zur Herstellung eines Positives.";
+    o:hasTarget Co:D9F7AC.
+Annot:anno7
+    a o:Annotation;
+    dct:created "2024-10-30T08:41:21.027Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Der Begriff wurde als k\u00fcnstlicher \u00dcberbegriff erzeugt (darum auch in eckigen Klammern), da wir ja eine Reihe von Stoffen (vor allem Polymere) f\u00fcr eine Vielzahl von Anwendungen benutzen. Zum Beispiel Araldite 2020 f\u00fcr Klebungen, Erg\u00e4nzungen und Kopien. Dabei handelt es sich aber ja immer um genau das selbe Produkt, sodass ich es nicht sinnvoll fand f\u00fcr jede Verwendungsart ein eigenes Conzept im Thesaurus zu erstellen. Zumal wir dann in der Verwendung in der EasyDB jedes mal genau aufpassen m\u00fcssen das "richtige" Araldite auszuw\u00e4hlen. Durch den Umweg \u00fcber diesen \u00dcberbegriff k\u00f6nnen wir bei der Implementierung des Thesaurus in der EasyDB dem Computer sagen, er soll uns wenn wir die Methoden "Klebung", "Erg\u00e4nzung", "Festigung", etc. ausw\u00e4hlen direkt automatisch die Stoffe unter dem Oberbegriff "Adh\u00e4sivstoff" zur Auswahl anzeigen. Ich hoffe die Erkl\u00e4rung ist halbwegs nachvollziehbar, ansonsten jederzeit bei mir nachfragen. """;
+    o:hasTarget Co:B7B8B6 .
+Annot:anno70
+    a o:Annotation;
+    dct:created "2024-11-06T14:42:08.577Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Beschichten einer Neagtivform mit metallischen Werkstoffen in einem galvanischen Verfahren";
+    o:hasTarget Co:BAB7B1 .
+Annot:anno71
+    a o:Annotation;
+    dct:created "2024-11-06T14:43:52.601Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Herstellung einer Kopie aus photogrammetrischen Daten in einem 3D-Druckverfahren. ";
+    o:hasTarget Co:D772G6 .
+Annot:anno72
+    a o:Annotation;
+    dct:created "2024-11-06T15:14:41.698Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "...Durch Abformen...";
+    o:hasTarget Co:A7FC45 .
+Annot:anno73
+    a o:Annotation;
+    dct:created "2024-11-06T15:17:56.611Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Kopie, die aus polymeren Werkstoffen hergestellt wird (Epoxid-, Polyester-, Acryl-, Polyurethan-Harz) mit oder ohne Verst\u00e4rkungsfasern";
+    o:hasTarget Co:B689B6 .
+Annot:anno74
+    a o:Annotation;
+    dct:created "2024-11-06T15:18:17.256Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "Kopie, die aus Gips hergestellt wird";
+    o:hasTarget Co:D2GGAC.
+Annot:anno75
+    a o:Annotation;
+    dct:created "2024-11-06T15:19:26.937Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+    "Kopie, die aus Metall durch ein galvanisches Verfahren hergestellt wird";
+    o:hasTarget Co:D9CC3C.
+Annot:anno76
+    a o:Annotation;
+    dct:created "2024-11-06T15:44:10.395Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """farbloses, klares unpolares L\u00f6sungsmittelgemisch aus Iso-Aliphaten. Es ist nahezu aromatenfrei und geruchsarm. In der Restaurierung findet es Verwendung als Ersatz f\u00fcr Balsamterpentin\u00f6l, als L\u00f6semittel f\u00fcr \u00d6le, Wachse, \u00f6lbasierte Lacke und Farben
+
+source : Kremer Pigmente,""";
+    o:hasTarget Co:A7B4F9 .
+Annot:anno8
+    a o:Annotation;
+    dct:created "2024-11-05T08:11:07.807Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """...Konzentrationsgef\u00e4lle z(wi)schen...
+""";
+    o:hasTarget Co:DA9G57 .
+Co:A1D125 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:A28B4D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:A2G7B9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:A2GC16 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:A6FA7G a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:A7B4F9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:A7FC45 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:A9A858 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:ABBFB5 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:ADB89D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:ADCC8A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:AF9A88 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:AG55BC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:AGG387 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:B1B854 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:B1DB9G a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:B2D9C9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:B437A9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:B44F39 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:B5C86F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:B689B6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:B7B8B6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:B7DD6B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:BAB7B1 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:BAB7B3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:BBF7BG a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:BFB162 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:BGC9F3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:BGG879 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:C369CB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:C47769 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:C6C3CF a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:C6F794 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:C97B35 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:CA7279 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:CC67B2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:CG2863 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:D2GGAC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:D39191 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:D39264 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:D467F2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:D73F9B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:D772G6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:D9CC3C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:D9F7AC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:DA9G57 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:DAA3F9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:DAG2A8 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:DC3F7A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:F7G7CB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:FC2113 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:FC3FD6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:FF4767 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:FG3BCD a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:G17B8B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:G2944B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:G52378 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:G8D62A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:G967G1 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:GC14B8 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:GC7998 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:GD86C1 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:GG1CG9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Con:ConceptScheme3
+    a skos:ConceptScheme;
+    dct:source
+        <https://docs.google.com/spreadsheets/d/e/2PACX-1vSVJJyNHQ2yfCbpdixgNSdYxAHAtRLcMMVxYCa0UMidfnbf3erD1Nudnv2yYGIajuggwXobukPCINXM/pub?gid=0&single=true&output=csv>;
+    dct:title "Arch\u00e4ologische Textilien".
+Ann:anno1
+    a o:Annotation;
+    dct:created "2024-10-20T19:35:40.375Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme3;
+    o:bodyValue "Ordnen und Sortieren der Fasern";
+    o:hasTarget Conc:AAA30 .
+Ann:anno2
+    a o:Annotation;
+    dct:created "2024-10-20T19:40:42.107Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme3;
+    o:bodyValue "Ordnen und Sortieren der Fasern";
+    o:hasTarget Conc:AAA30 .
+Ann:anno3
+    a o:Annotation;
+    dct:created "2024-10-20T19:45:01.110Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme3;
+    o:bodyValue "Hier sollten wir die Quelle einheitlich angeben. APA Style?";
+    o:hasTarget Conc:AAA12 .
+Conc:AAA12 a skos:Concept; skos:inScheme Con:ConceptScheme3 .
+
+Conc:AAA30 a skos:Concept; skos:inScheme Con:ConceptScheme3 .
+
+Con:ConceptScheme4
+    a skos:ConceptScheme;
+    dct:source
+        <https://docs.google.com/spreadsheets/d/e/2PACX-1vTdBmgO6xCH3SpJ1w5A7O_rCsSmnU2wXzWyiws22cSiL71eP7dfMwIvsbiQGrOkagD32JUSJtthn5Cf/pub?output=csv>;
+    dct:title "DBM_Schadensbilder an Kunststoffen".
