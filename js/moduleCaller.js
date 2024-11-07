@@ -1,1 +1,1 @@
-import {fileTypeFromStream} from 'node_modules/file-type';
+import {fileTypeFromStream} from '/node_modules/file-type/index.js';
