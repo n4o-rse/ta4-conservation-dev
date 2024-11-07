@@ -1,5 +1,9 @@
-async function readData(data, inputType, inputURL) {
+async function checkTableFormat(data, inputType) {
+  // display loading popup until every following function is finished
+  document.getElementById("loadingDiv").style.display = "block";
   let Data
+
+
   if (inputType == "file") {
     const file = document.getElementById("fileInput").files[0];
     if (file.name.endsWith(".tsv")) {
@@ -28,6 +32,11 @@ async function readData(data, inputType, inputURL) {
       Data = d3.csvParse(data);
     }
   }
+  readData(Data);
+
+}
+
+function readData(Data) {
   let cleanedArray= cleanTableData(Data);
   let cleanedTableData = cleanedArray[0];
   let ignored = cleanedArray[1];

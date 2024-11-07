@@ -4,10 +4,12 @@ function thesaurusInputFile() {
     event.preventDefault();
     // reset former outputs, if there are any
     resetOutput();
-    // display loading popup until every following function is finished
-    document.getElementById("loadingDiv").style.display = "block";
+
     const inputFile = document.getElementById('fileInput');
     const file = inputFile.files[0];
+    checkTableFormat(file);
+
+    /*
     if (file.name.endsWith(".xlsx")) {
       var reader = new FileReader();
       reader.onload = function(e) {
@@ -18,30 +20,33 @@ function thesaurusInputFile() {
         var sheetName = workbook.SheetNames[0];
         var sheet = workbook.Sheets[sheetName];
         var csv = XLSX.utils.sheet_to_csv(sheet);
-        readData(csv, "file", "");
+        checkTableFormat(csv, "file");
       };
       reader.readAsBinaryString(file);
     } else {
       let reader = new FileReader();
       reader.onload = function(e) {
         result = e.target.result;
-        readData(result, "file", "");
+        checkTableFormat(result, "file", "");
       };
       reader.readAsText(file);
     }
+    */
 }
 
 async function thesaurusInputUrl(inputURL) {
     event.preventDefault();
     // reset former outputs, if there are any
     resetOutput();
-    // display loading popup until every following function is finished
-    document.getElementById("loadingDiv").style.display = "block";
-    const response = await fetch(inputURL, {
-        headers: { "content-type": "text/csv;charset=UTF-8" },
-    });
-    const text = await response.text();
-    readData(text, "url", inputURL);
+    const response = await fetch(inputURL
+    /*
+    , {
+    headers: { "content-type": "text/csv;charset=UTF-8" },
+    }
+    */
+    );
+    //const text = await response.text();
+    checkTableFormat(response);
 }
 
 function saveUserName() {
@@ -201,6 +206,14 @@ async function createConceptScheme() {
   // reload dropdown menu for conceptSchemes
   readConceptSchemeTitles();
 }
+
+// imports
+import {fileTypeFromFile} from 'node_modules/file-type';
+const url = 'https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg';
+const response = await fetch(url);
+const fileType = await fileTypeFromFile(response.body);
+console.log(fileType);
+
 
 // global variables and event listeners
 let commentURL = "https://restaurierungsvokabular.solidweb.org/annotations/annotations3.ttl";
