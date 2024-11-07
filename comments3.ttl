@@ -227,21 +227,13 @@ Annot:anno32
         """ mohssche H\u00e4rte... (Markus=Klugschei\u00dfer)
 """;
     o:hasTarget Co:BGC9F3 .
-Annot:anno33
-    a o:Annotation;
-    dct:created "2024-11-06T08:45:15.404Z";
-    dct:creator "walde";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        "Erfassung der Informationen zur Reproduktionn von Form und aller sichtbaren Oberfl\u00e4chen eines Gegenstandes";
-    o:hasTarget Co:DAG2A8 .
 Annot:anno34
     a o:Annotation;
     dct:created "2024-11-06T08:52:01.003Z";
     dct:creator "walde";
     skos:inScheme Con:ConceptScheme1;
     o:bodyValue
-        "Erfassung der Informationen von Form und aller sichtbaren Oberfl\u00e4chen eines Gegenstandes";
+        "Erfassung der Form und aller sichtbaren Informationen der Oberfl\u00e4chen eines Gegenstandes";
     o:hasTarget Co:DAG2A8 .
 Annot:anno35
     a o:Annotation;
@@ -627,15 +619,6 @@ Annot:anno8
         """...Konzentrationsgef\u00e4lle z(wi)schen...
 """;
     o:hasTarget Co:DA9G57 .
-Annot:anno9
-    a o:Annotation;
-    dct:created "2024-11-05T14:03:20.195Z";
-    dct:creator "walde";
-    skos:inScheme Con:ConceptScheme1;
-    o:bodyValue
-        """Herstellung einer Negativform durch Auftrag des Formmaterials am Original
-""";
-    o:hasTarget Co:DAG2A8 .
 Co:A1D125 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A28B4D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
