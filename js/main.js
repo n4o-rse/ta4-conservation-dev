@@ -1,5 +1,3 @@
-import {fileTypeFromStream} from 'node_modules/file-type';
-
 const url = 'https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg';
 const response = await fetch(url);
 const fileType = await fileTypeFromStream(response.body);

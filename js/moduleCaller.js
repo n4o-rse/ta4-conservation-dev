@@ -1,0 +1,1 @@
+import {fileTypeFromStream} from 'node_modules/file-type';
