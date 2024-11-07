@@ -546,6 +546,14 @@ Annot:anno68
     skos:inScheme Con:ConceptScheme1;
     o:bodyValue "Form, die aus mehreren Formbauteilen besteht";
     o:hasTarget Co:B2D9C9 .
+Annot:anno69
+    a o:Annotation;
+    dct:created "2024-11-06T14:40:26.734Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Ausgie\u00dfen, Auspinseln, Ausspachteln, Beschichten (Ausformen) der Negativform mit aush\u00e4rtenden Werkstoffen (Kunstharze, Gips, etc.) zur Herstellung eines Positives.";
+    o:hasTarget Co:D9F7AC.
 Annot:anno7
     a o:Annotation;
     dct:created "2024-10-30T08:41:21.027Z";
@@ -554,6 +562,62 @@ Annot:anno7
     o:bodyValue
         """Der Begriff wurde als k\u00fcnstlicher \u00dcberbegriff erzeugt (darum auch in eckigen Klammern), da wir ja eine Reihe von Stoffen (vor allem Polymere) f\u00fcr eine Vielzahl von Anwendungen benutzen. Zum Beispiel Araldite 2020 f\u00fcr Klebungen, Erg\u00e4nzungen und Kopien. Dabei handelt es sich aber ja immer um genau das selbe Produkt, sodass ich es nicht sinnvoll fand f\u00fcr jede Verwendungsart ein eigenes Conzept im Thesaurus zu erstellen. Zumal wir dann in der Verwendung in der EasyDB jedes mal genau aufpassen m\u00fcssen das "richtige" Araldite auszuw\u00e4hlen. Durch den Umweg \u00fcber diesen \u00dcberbegriff k\u00f6nnen wir bei der Implementierung des Thesaurus in der EasyDB dem Computer sagen, er soll uns wenn wir die Methoden "Klebung", "Erg\u00e4nzung", "Festigung", etc. ausw\u00e4hlen direkt automatisch die Stoffe unter dem Oberbegriff "Adh\u00e4sivstoff" zur Auswahl anzeigen. Ich hoffe die Erkl\u00e4rung ist halbwegs nachvollziehbar, ansonsten jederzeit bei mir nachfragen. """;
     o:hasTarget Co:B7B8B6 .
+Annot:anno70
+    a o:Annotation;
+    dct:created "2024-11-06T14:42:08.577Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Beschichten einer Neagtivform mit metallischen Werkstoffen in einem galvanischen Verfahren";
+    o:hasTarget Co:BAB7B1 .
+Annot:anno71
+    a o:Annotation;
+    dct:created "2024-11-06T14:43:52.601Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Herstellung einer Kopie aus photogrammetrischen Daten in einem 3D-Druckverfahren. ";
+    o:hasTarget Co:D772G6 .
+Annot:anno72
+    a o:Annotation;
+    dct:created "2024-11-06T15:14:41.698Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "...Durch Abformen...";
+    o:hasTarget Co:A7FC45 .
+Annot:anno73
+    a o:Annotation;
+    dct:created "2024-11-06T15:17:56.611Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Kopie, die aus polymeren Werkstoffen hergestellt wird (Epoxid-, Polyester-, Acryl-, Polyurethan-Harz) mit oder ohne Verst\u00e4rkungsfasern";
+    o:hasTarget Co:B689B6 .
+Annot:anno74
+    a o:Annotation;
+    dct:created "2024-11-06T15:18:17.256Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "Kopie, die aus Gips hergestellt wird";
+    o:hasTarget Co:D2GGAC.
+Annot:anno75
+    a o:Annotation;
+    dct:created "2024-11-06T15:19:26.937Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+    "Kopie, die aus Metall durch ein galvanisches Verfahren hergestellt wird";
+    o:hasTarget Co:D9CC3C.
+Annot:anno76
+    a o:Annotation;
+    dct:created "2024-11-06T15:44:10.395Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """farbloses, klares unpolares L\u00f6sungsmittelgemisch aus Iso-Aliphaten. Es ist nahezu aromatenfrei und geruchsarm. In der Restaurierung findet es Verwendung als Ersatz f\u00fcr Balsamterpentin\u00f6l, als L\u00f6semittel f\u00fcr \u00d6le, Wachse, \u00f6lbasierte Lacke und Farben
+
+source : Kremer Pigmente,""";
+    o:hasTarget Co:A7B4F9 .
 Annot:anno8
     a o:Annotation;
     dct:created "2024-11-05T08:11:07.807Z";
@@ -582,6 +646,10 @@ Co:A2GC16 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A6FA7G a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:A7B4F9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:A7FC45 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:A9A858 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:ABBFB5 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -608,9 +676,13 @@ Co:B44F39 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:B5C86F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:B689B6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:B7B8B6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:B7DD6B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:BAB7B1 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BAB7B3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -638,6 +710,8 @@ Co:CC67B2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:CG2863 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:D2GGAC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:D39191 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D39264 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -645,6 +719,12 @@ Co:D39264 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:D467F2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D73F9B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:D772G6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:D9CC3C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:D9F7AC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:DA9G57 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
