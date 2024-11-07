@@ -8,7 +8,7 @@ function thesaurusInputFile() {
     document.getElementById("loadingDiv").style.display = "block";
     const inputFile = document.getElementById('fileInput');
     const file = inputFile.files[0];
-    if (file.name.endswith(".xlsx")) {
+    if (file.name.endsWith(".xlsx")) {
       var reader = new FileReader();
       reader.onload = function(e) {
         var data = e.target.result;
