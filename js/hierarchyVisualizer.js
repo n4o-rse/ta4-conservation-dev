@@ -1,39 +1,31 @@
-async function checkTableFormat(data, inputType) {
+async function checkTableFormat(input) {
   // display loading popup until every following function is finished
   document.getElementById("loadingDiv").style.display = "block";
-  let Data
-
-
-  if (inputType == "file") {
-    const file = document.getElementById("fileInput").files[0];
-    if (file.name.endsWith(".tsv")) {
-      Data = d3.tsvParse(data);
-    }
-    else if (file.name.endsWith(".csv")) {  
-      Data = d3.csvParse(data);
-    }
-    else if (file.name.endsWith(".xlsx")) {
-      // use the xlsx library to parse the data
-      const workbook = XLSX.read(data, {type: 'binary'});
-      const sheetName = workbook.SheetNames[0];
-      const sheet = workbook.Sheets[sheetName];
-      Data = XLSX.utils.sheet_to_json(sheet, {header: 1});
-      // convert json to csv
-      Data = Papa.unparse(Data);
-    }
-    // wait to make sure the loadingDiv is displayed and user knows different data is loaded
-    await new Promise(r => setTimeout(r, 2000));
+  let csv;
+  if (input.name.endsWith(".xlsx")) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var data = e.target.result;
+      var workbook = XLSX.read(data, {
+        type: 'binary'
+      });
+      var sheetName = workbook.SheetNames[0];
+      var sheet = workbook.Sheets[sheetName];
+      csv = XLSX.utils.sheet_to_csv(sheet);
+    };
+    reader.readAsBinaryString(file);
+  } else {
+    let reader = new FileReader();
+    reader.onload = function(e) {
+      csv = e.target.result;
+    };
+    reader.readAsText(input);
   }
-  else if (inputType == "url") {
-    if (inputURL.endsWith("tsv")) {
-      Data = d3.tsvParse(data);
-    }
-    else if (inputURL.endsWith("csv")) {
-      Data = d3.csvParse(data);
-    }
-  }
+  let Data = d3.csvParse(csv);
+  
+  // wait to make sure the loadingDiv is displayed and user knows different data is loaded
+  await new Promise(r => setTimeout(r, 2000));
   readData(Data);
-
 }
 
 function readData(Data) {

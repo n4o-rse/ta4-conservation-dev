@@ -1,8 +1,3 @@
-const url = 'https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg';
-const response = await fetch(url);
-const fileType = await fileTypeFromStream(response.body);
-console.log(fileType);
-
 // event functions and button onclick functions
 function thesaurusInputFile() {
     event.preventDefault();
