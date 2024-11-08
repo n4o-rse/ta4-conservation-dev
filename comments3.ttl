@@ -745,6 +745,11 @@ Co:GD86C1 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:GG1CG9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Con:ConceptScheme2
+    a skos:ConceptScheme;
+    dct:source
+        <https://nx19681.your-storageshare.de/s/rdoc54QwMPXsQZ2/download/LEIZA%20Restaurierungs-%20und%20Konservierungsthesaurus%20-%20First%20Import%281%29.csv>;
+    dct:title "Testthesaurus".
 Con:ConceptScheme3
     a skos:ConceptScheme;
     dct:source
