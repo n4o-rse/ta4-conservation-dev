@@ -38,8 +38,8 @@ async function thesaurusInputUrl(inputURL) {
     document.getElementById("loadingDiv").style.display = "block";
     let text;
     if (inputURL.endsWith("csv")) {
-    const response = await fetch(inputURL, {headers: { "content-type": "text/csv;charset=UTF-8" },});
-    text = await response.text();
+      const response = await fetch(inputURL, {headers: { "content-type": "text/csv;charset=UTF-8" },});
+      text = await response.text();
     }
     else if (inputURL.endsWith("xlsx")) {
       const response = await fetch(inputURL, {headers: { "content-type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" },});
