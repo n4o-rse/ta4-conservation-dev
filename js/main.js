@@ -1,32 +1,56 @@
 // event functions and button onclick functions
-
-function thesaurusInputFile() {
+async function thesaurusInputFile() {
     event.preventDefault();
     // reset former outputs, if there are any
     resetOutput();
     // display loading popup until every following function is finished
     document.getElementById("loadingDiv").style.display = "block";
+    let csv
+    let reader = new FileReader();
     const inputFile = document.getElementById('fileInput');
     const file = inputFile.files[0];
-    let reader = new FileReader();
-    reader.onload = function(e) {
-      result = e.target.result;
-      readData(result, "file", "");
-    };
-    reader.readAsText(file);
+    await new Promise(r => setTimeout(r, 2000));
+    if (file.name.endsWith(".xlsx") || file.name.endsWith(".ods")) {
+      reader.onload = function(e) {
+        let data = e.target.result;
+        let workbook = XLSX.read(data, {
+          type: 'binary'
+        });
+        let sheetName = workbook.SheetNames[0];
+        let sheet = workbook.Sheets[sheetName];
+        csv = XLSX.utils.sheet_to_csv(sheet);
+        readData(csv);
+      };
+      reader.readAsBinaryString(file);
+    } else if (file.name.endsWith(".csv")) {
+      reader.onload = function(e) {
+        csv = e.target.result;
+        readData(csv);
+      };
+      reader.readAsText(file);
+    } 
 }
 
 async function thesaurusInputUrl(inputURL) {
     event.preventDefault();
     // reset former outputs, if there are any
     resetOutput();
-    // display loading popup until every following function is finished
     document.getElementById("loadingDiv").style.display = "block";
-    const response = await fetch(inputURL, {
-        headers: { "content-type": "text/csv;charset=UTF-8" },
-    });
-    const text = await response.text();
-    readData(text, "url", inputURL);
+    let text;
+    if (inputURL.endsWith("csv")) {
+      const response = await fetch(inputURL, {headers: { "content-type": "text/csv;charset=UTF-8" },});
+      text = await response.text();
+    }
+    else if (inputURL.endsWith("xlsx")) {
+      const response = await fetch(inputURL, {headers: { "content-type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" },});
+      const arrayBuffer = await response.arrayBuffer();
+      const data = new Uint8Array(arrayBuffer);
+      const workbook = XLSX.read(data, {type: 'array'});
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
+      text = XLSX.utils.sheet_to_csv(sheet);
+    }
+    readData(text);
 }
 
 function saveUserName() {

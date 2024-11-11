@@ -1,24 +1,5 @@
-async function readData(data, inputType, inputURL) {
-  let Data
-  if (inputType == "file") {
-    const file = document.getElementById("fileInput").files[0];
-    if (file.name.endsWith(".tsv")) {
-      Data = d3.tsvParse(data);
-    }
-    else if (file.name.endsWith(".csv")) {  
-      Data = d3.csvParse(data);
-    }
-    // wait to make sure the loadingDiv is displayed and user knows different data is loaded
-    await new Promise(r => setTimeout(r, 2000));
-  }
-  else if (inputType == "url") {
-    if (inputURL.endsWith("tsv")) {
-      Data = d3.tsvParse(data);
-    }
-    else {
-      Data = d3.csvParse(data);
-    }
-  }
+async function readData(csv) {
+  let Data = d3.csvParse(csv);
   let cleanedArray= cleanTableData(Data);
   let cleanedTableData = cleanedArray[0];
   let ignored = cleanedArray[1];
