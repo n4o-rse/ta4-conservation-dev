@@ -3,13 +3,14 @@ async function thesaurusInputFile() {
     event.preventDefault();
     // reset former outputs, if there are any
     resetOutput();
+    // display loading popup until every following function is finished
     document.getElementById("loadingDiv").style.display = "block";
     let csv
+    let reader = new FileReader();
     const inputFile = document.getElementById('fileInput');
     const file = inputFile.files[0];
     await new Promise(r => setTimeout(r, 2000));
     if (file.name.endsWith(".xlsx")) {
-      let reader = new FileReader();
       reader.onload = function(e) {
         let data = e.target.result;
         let workbook = XLSX.read(data, {
@@ -18,16 +19,16 @@ async function thesaurusInputFile() {
         let sheetName = workbook.SheetNames[0];
         let sheet = workbook.Sheets[sheetName];
         csv = XLSX.utils.sheet_to_csv(sheet);
+        readData(csv);
       };
       reader.readAsBinaryString(file);
     } else if (file.name.endsWith(".csv")) {
-      let reader = new FileReader();
-      reader.onload = function(e) {
-        csv = e.target.result;
-      };
-      reader.readAsText(file);
-    }
-    readCSV(csv);
+        reader.onload = function(e) {
+          csv = e.target.result;
+          readData(csv);
+        };
+        reader.readAsText(file);
+      }
 }
 
 async function thesaurusInputUrl(inputURL) {
@@ -49,7 +50,7 @@ async function thesaurusInputUrl(inputURL) {
       const sheet = workbook.Sheets[sheetName];
       text = XLSX.utils.sheet_to_csv(sheet);
     }
-    readCSV(text);
+    readData(text);
 }
 
 function saveUserName() {
