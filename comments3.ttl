@@ -761,6 +761,30 @@ Annot:anno90
     o:bodyValue
     "Au\u00dferdem: Kohlevlies und Einschwei\u00dffolie             ";
     o:hasTarget Co:D9G356 .
+Annot:anno91
+    a o:Annotation;
+    dct:created "2024-11-11T14:45:37.820Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Silikonkautschucke bestehen aus langkettigen Polysiloxanen und diversen F\u00fcllstoffen (z.B. pyrogene Kiesels\u00e4ure, Silkon\u00f6l, etc.), die durch H\u00e4rterzugabe zu elastischen Silikongummi vulkanisieren. In der Restaurierung kommen meist bei Raumtemperatur vernetzende, 2-komponentige Systeme (RTV-2) zur Anwendung, die nach Art der Polymerisation in kondensationsvernetzende oder additionsvernetzende Typen unterschieden werden. Hervorzuhebende Eigenschaften der Silikonkautschucke sind die hohe Abbildungsgenauigkeit und die selbsttrennende Wirkung gegen\u00fcber den meisten Werkstoffen.
+
+source :  https://www.wacker.com/h/medias/6415-DE-Silicone.pdf
+""";
+    o:hasTarget Co:A44BG6 .
+Annot:anno92
+    a o:Annotation;
+    dct:created "2024-11-11T16:19:34.822Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """2-Komponentiger Silikonkautschuck der durch Additionsreaktion zu einem elastischen Silikongummi polymerisiert.
+Vorteile : Nahezu schrumpffreie Aush\u00e4rtung, geeignet f\u00fcr galvanoplastische Nachbildungen
+Nachteile : Beim Auftragen mehrerer Schichten sollte "Nass in Nass" gearbeitet werden um einen Verbund zu gew\u00e4hrleisten
+
+source :  https://www.wacker.com/h/medias/6415-DE-Silicone.pdf
+""";
+    o:hasTarget Co:DA841D.
 Co:A1D125 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A28B4D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -768,6 +792,8 @@ Co:A28B4D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:A2G7B9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A2GC16 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:A44BG6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A6FA7G a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -865,6 +891,8 @@ Co:D9F7AC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D9G356 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:DA841D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:DA9G57 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:DAA3F9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -909,6 +937,10 @@ Co:GF9C49 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:GG1CG9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Con:ConceptScheme2
+    a skos:ConceptScheme;
+    dct:source <https://seafile.rlp.net/f/832e461fb04e4d94b392/?dl=1>;
+    dct:title "Testthesaurus".
 Con:ConceptScheme3
     a skos:ConceptScheme;
     dct:source
