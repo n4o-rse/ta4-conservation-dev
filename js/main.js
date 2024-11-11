@@ -37,11 +37,7 @@ async function thesaurusInputUrl(inputURL) {
     resetOutput();
     document.getElementById("loadingDiv").style.display = "block";
     let text;
-    if (inputURL.endsWith("csv")) {
-      const response = await fetch(inputURL, {headers: { "content-type": "text/csv;charset=UTF-8" },});
-      text = await response.text();
-    }
-    else if (inputURL.endsWith("xlsx")) {
+    if (inputURL.endsWith("xlsx")) {
       const response = await fetch(inputURL, {headers: { "content-type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" },});
       const arrayBuffer = await response.arrayBuffer();
       const data = new Uint8Array(arrayBuffer);
@@ -50,6 +46,11 @@ async function thesaurusInputUrl(inputURL) {
       const sheet = workbook.Sheets[sheetName];
       text = XLSX.utils.sheet_to_csv(sheet);
     }
+    // if no xlsx file is given, try to fetch csv file
+    else { // (inputURL.endsWith("csv"))
+      const response = await fetch(inputURL, {headers: { "content-type": "text/csv;charset=UTF-8" },});
+      text = await response.text();
+    };
     readData(text);
 }
 
