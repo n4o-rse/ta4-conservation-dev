@@ -1,30 +1,8 @@
-async function checkTableFormat(input) {
+async function readCSV(input) {
   // display loading popup until every following function is finished
-  document.getElementById("loadingDiv").style.display = "block";
-  let csv;
-  if (input.name.endsWith(".xlsx")) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-      var data = e.target.result;
-      var workbook = XLSX.read(data, {
-        type: 'binary'
-      });
-      var sheetName = workbook.SheetNames[0];
-      var sheet = workbook.Sheets[sheetName];
-      csv = XLSX.utils.sheet_to_csv(sheet);
-    };
-    reader.readAsBinaryString(file);
-  } else {
-    let reader = new FileReader();
-    reader.onload = function(e) {
-      csv = e.target.result;
-    };
-    reader.readAsText(input);
-  }
-  let Data = d3.csvParse(csv);
-  
+  console.log(input);
+  let Data = d3.csvParse(input);
   // wait to make sure the loadingDiv is displayed and user knows different data is loaded
-  await new Promise(r => setTimeout(r, 2000));
   readData(Data);
 }
 

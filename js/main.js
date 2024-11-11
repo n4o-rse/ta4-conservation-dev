@@ -1,51 +1,55 @@
 // event functions and button onclick functions
-function thesaurusInputFile() {
+async function thesaurusInputFile() {
     event.preventDefault();
     // reset former outputs, if there are any
     resetOutput();
-
+    document.getElementById("loadingDiv").style.display = "block";
+    let csv
     const inputFile = document.getElementById('fileInput');
     const file = inputFile.files[0];
-    checkTableFormat(file);
-
-    /*
+    await new Promise(r => setTimeout(r, 2000));
     if (file.name.endsWith(".xlsx")) {
-      var reader = new FileReader();
-      reader.onload = function(e) {
-        var data = e.target.result;
-        var workbook = XLSX.read(data, {
-          type: 'binary'
-        });
-        var sheetName = workbook.SheetNames[0];
-        var sheet = workbook.Sheets[sheetName];
-        var csv = XLSX.utils.sheet_to_csv(sheet);
-        checkTableFormat(csv, "file");
-      };
-      reader.readAsBinaryString(file);
-    } else {
       let reader = new FileReader();
       reader.onload = function(e) {
-        result = e.target.result;
-        checkTableFormat(result, "file", "");
+        let data = e.target.result;
+        let workbook = XLSX.read(data, {
+          type: 'binary'
+        });
+        let sheetName = workbook.SheetNames[0];
+        let sheet = workbook.Sheets[sheetName];
+        csv = XLSX.utils.sheet_to_csv(sheet);
+      };
+      reader.readAsBinaryString(file);
+    } else if (file.name.endsWith(".csv")) {
+      let reader = new FileReader();
+      reader.onload = function(e) {
+        csv = e.target.result;
       };
       reader.readAsText(file);
     }
-    */
+    readCSV(csv);
 }
 
 async function thesaurusInputUrl(inputURL) {
     event.preventDefault();
     // reset former outputs, if there are any
     resetOutput();
-    const response = await fetch(inputURL
-    /*
-    , {
-    headers: { "content-type": "text/csv;charset=UTF-8" },
+    document.getElementById("loadingDiv").style.display = "block";
+    let text;
+    if (inputURL.endsWith("csv")) {
+    const response = await fetch(inputURL, {headers: { "content-type": "text/csv;charset=UTF-8" },});
+    text = await response.text();
     }
-    */
-    );
-    //const text = await response.text();
-    checkTableFormat(response);
+    else if (inputURL.endsWith("xlsx")) {
+      const response = await fetch(inputURL, {headers: { "content-type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" },});
+      const arrayBuffer = await response.arrayBuffer();
+      const data = new Uint8Array(arrayBuffer);
+      const workbook = XLSX.read(data, {type: 'array'});
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
+      text = XLSX.utils.sheet_to_csv(sheet);
+    }
+    readCSV(text);
 }
 
 function saveUserName() {
