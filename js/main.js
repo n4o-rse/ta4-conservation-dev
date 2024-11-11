@@ -10,7 +10,7 @@ async function thesaurusInputFile() {
     const inputFile = document.getElementById('fileInput');
     const file = inputFile.files[0];
     await new Promise(r => setTimeout(r, 2000));
-    if (file.name.endsWith(".xlsx")) {
+    if (file.name.endsWith(".xlsx") || file.name.endsWith(".ods")) {
       reader.onload = function(e) {
         let data = e.target.result;
         let workbook = XLSX.read(data, {
@@ -23,25 +23,12 @@ async function thesaurusInputFile() {
       };
       reader.readAsBinaryString(file);
     } else if (file.name.endsWith(".csv")) {
-        reader.onload = function(e) {
-          csv = e.target.result;
-          readData(csv);
-        };
-        reader.readAsText(file);
-    } else if (file.name.endsWith(".ods")) {
       reader.onload = function(e) {
-        let data = e.target.result;
-        let workbook = XLSX.read(data, {
-          type: 'binary'
-        });
-        let sheetName = workbook.SheetNames[0];
-        let sheet = workbook.Sheets[sheetName];
-        csv = XLSX.utils.sheet_to_csv(sheet);
+        csv = e.target.result;
         readData(csv);
       };
-      reader.readAsBinaryString(file);
-    }
-    
+      reader.readAsText(file);
+    } 
 }
 
 async function thesaurusInputUrl(inputURL) {
