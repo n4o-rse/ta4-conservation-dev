@@ -28,7 +28,20 @@ async function thesaurusInputFile() {
           readData(csv);
         };
         reader.readAsText(file);
-      }
+    } else if (file.name.endsWith(".ods")) {
+      reader.onload = function(e) {
+        let data = e.target.result;
+        let workbook = XLSX.read(data, {
+          type: 'binary'
+        });
+        let sheetName = workbook.SheetNames[0];
+        let sheet = workbook.Sheets[sheetName];
+        csv = XLSX.utils.sheet_to_csv(sheet);
+        readData(csv);
+      };
+      reader.readAsBinaryString(file);
+    }
+    
 }
 
 async function thesaurusInputUrl(inputURL) {
