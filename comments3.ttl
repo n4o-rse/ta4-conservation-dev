@@ -11,7 +11,7 @@
 Con:ConceptScheme1
     a skos:ConceptScheme;
     dct:source
-        "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=tsv";
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCho2k88nLWrNSXj4Mgj_MwER5GQ9zbZ0OsO3X_QPa9s-3UkoeLLQHuNHoFMKqCFjWMMprKVHMZzOj/pub?gid=0&single=true&output=csv";
     dct:title "LEIZA Restaurierungs- und Konservierungsthesaurus".
 Annot:anno1
     a o:Annotation;
@@ -227,6 +227,17 @@ Annot:anno32
         """ mohssche H\u00e4rte... (Markus=Klugschei\u00dfer)
 """;
     o:hasTarget Co:BGC9F3 .
+Annot:anno33
+    a o:Annotation;
+    dct:created "2024-11-11T09:19:42.589Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Produktname eines ungef\u00fcllten, d\u00fcnnfl\u00fcssigen Epoxidharzes der Firma Ebalta, basierend auf dem Reaktionsprodukt Bisphenol-A-Epichlorhydrin. AH steht f\u00fcr Allzweckharz und ist somit f\u00fcr Laminier-, Gie\u00df- oder Klebe-Anwendungen geeignet.
+
+source : https://ebalta.com/downloads/de/datenblatt/ah-100-tg.pdf
+(Datenblatt des Herstellers)""";
+    o:hasTarget Co:F5G8DB.
 Annot:anno34
     a o:Annotation;
     dct:created "2024-11-06T08:52:01.003Z";
@@ -610,6 +621,33 @@ Annot:anno76
 
 source : Kremer Pigmente,""";
     o:hasTarget Co:A7B4F9 .
+Annot:anno77
+    a o:Annotation;
+    dct:created "2024-11-11T10:19:15.003Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Produktname einer l\u00f6sungsmittelfreien Gie\u00df- und Laminiermasse auf Basis von w\u00e4ssrigen Acrylharzen und nat\u00fcrlichen Mineralkristallen (Calciumsulfat - Gips) der Firma Acrystal. Das System ist f\u00fcr Ausformungen oder den St\u00fctzkapselbau beim Abformen eine geeignete Alternative zu Reaktionsharzen (Epoxid-, Polyester-,Polyurethan, etc.) 
+
+source : https://www.acrystal.fr/Produits.de.htm
+(Datenbl\u00e4tter des Herstellers)""";
+    o:hasTarget Co:C77887 .
+Annot:anno78
+    a o:Annotation;
+    dct:created "2024-11-11T10:26:05.234Z";
+    dct:creator "hochgesand";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "Zu techn. Ger\u00e4t vielleicht auch Schmelz-/ Emailleofen ?";
+    o:hasTarget Co:GF9C49 .
+Annot:anno79
+    a o:Annotation;
+    dct:created "2024-11-11T10:34:19.029Z";
+    dct:creator "hochgesand";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """K\u00f6nnte man unterscheiden nach: - R\u00fcckformung nach Formausguss in Kunstharz und 
+                               - R\u00fcckformung einer galvanopl. Kopie bzw. auch einer Kombination von beidem.""";
+    o:hasTarget Co:G6282F.
 Annot:anno8
     a o:Annotation;
     dct:created "2024-11-05T08:11:07.807Z";
@@ -619,6 +657,110 @@ Annot:anno8
         """...Konzentrationsgef\u00e4lle z(wi)schen...
 """;
     o:hasTarget Co:DA9G57 .
+Annot:anno80
+    a o:Annotation;
+    dct:created "2024-11-11T10:41:00.737Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Produktname einer l\u00f6sungsmittelfreien Gie\u00df- und Laminiermasse auf Basis von w\u00e4ssrigen Acrylharzen und nat\u00fcrlichen Mineralkristallen (Calciumsulfat - Gips) der Firma Acrylic One. Das System ist f\u00fcr Ausformungen oder den St\u00fctzkapselbau beim Abformen eine geeignete Alternative zu Reaktionsharzen (Epoxid-, Polyester-,Polyurethan, etc.) 
+
+source : https://acrylicone.shop/
+(Datenbl\u00e4tter des Herstellers)""";
+    o:hasTarget Co:B69C57 .
+Annot:anno81
+    a o:Annotation;
+    dct:created "2024-11-11T10:42:01.010Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Produktname einer l\u00f6sungsmittelfreien Gie\u00df- und Laminiermasse auf Basis von w\u00e4ssrigen Acrylharzen und nat\u00fcrlichen Mineralkristallen (Calciumsulfat - Gips) der Firma Ebalta. Das System ist f\u00fcr Ausformungen oder den St\u00fctzkapselbau beim Abformen eine geeignete Alternative zu Reaktionsharzen (Epoxid-, Polyester-,Polyurethan, etc.) 
+
+source : https://ebalta.com/ebacryl-das-feuerfeste-und-massgenaue-laminatsystem/
+(Datenbl\u00e4tter des Herstellers)""";
+    o:hasTarget Co:CG2863 .
+Annot:anno82
+    a o:Annotation;
+    dct:created "2024-11-11T10:42:02.837Z";
+    dct:creator "hochgesand";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "In puncto Kettenherstellung auch: Gestrickt / geh\u00e4ckelt  und ineinander versteckt \"LOOP IN LOOP\"";
+    o:hasTarget Co:AGG387 .
+Annot:anno83
+    a o:Annotation;
+    dct:created "2024-11-11T10:51:40.438Z";
+    dct:creator "hochgesand";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "In puncto Kettenherstellung auch: Gestrickt / geh\u00e4ckelt  und ineinander versteckt \"LOOP IN LOOP\" und das ineinander Verstecken von einzelnen \"K\u00f6rbchen\"";
+    o:hasTarget Co:AGG387 .
+Annot:anno84
+    a o:Annotation;
+    dct:created "2024-11-11T10:58:39.776Z";
+    dct:creator "hochgesand";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Zus\u00e4tzlich aufgezogen und aufgetieft.
+Man k\u00f6nnte \u00fcberlegen ob man mehrere Begriffe wie z.B. getrieben, aufgezogen und aufgetieft dem Begriff "geschmiedet" unterordnet. """;
+    o:hasTarget Co:AGG387 .
+Annot:anno85
+    a o:Annotation;
+    dct:created "2024-11-11T11:03:21.706Z";
+    dct:creator "hochgesand";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """In Bezug auf Drahtherstellung: - Gerollt
+                               - Strip-twisting
+                               - Block-twisting """;
+    o:hasTarget Co:AGG387 .
+Annot:anno86
+    a o:Annotation;
+    dct:created "2024-11-11T11:14:48.556Z";
+    dct:creator "hochgesand";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Wenn man Kerbschnittdekor bei Wikipedia eingibt wird einem sowohl eine Ziertechnik bei Keramik , als auch bei Metall angezeigt (vielleicht auch bei Holz?).
+Mir selbst ist die Bezeichnung vor allem bei Metall gel\u00e4ufig. Die Zuordnung zu "geritzt" finde ich allerdings unpassend.""";
+    o:hasTarget Co:C61955 .
+Annot:anno87
+    a o:Annotation;
+    dct:created "2024-11-11T11:27:43.203Z";
+    dct:creator "hochgesand";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "Evtl. auch hier als Unterbegriff plattiert bzw. Plattierung?";
+    o:hasTarget Co:GC2F6A.
+Annot:anno88
+    a o:Annotation;
+    dct:created "2024-11-11T11:45:37.932Z";
+    dct:creator "hochgesand";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """In Anlehnung an die vorherige Unterteilung von "vergoldet" sollte man vielleicht besser dann auch hier versilbert aufzeigen und diesen Begriff weiter unterteilen in: Feuerversilberung; Abreicherungsversilberung im Sinne von Wei\u00dfsieden; Diffusionsversilberung (gibt es daf\u00fcr Beispiele?); Blattversilberung; Plattierung.
+                                                                                                                                                                           """;
+    o:hasTarget Co:B47572 .
+Annot:anno89
+    a o:Annotation;
+    dct:created "2024-11-11T11:51:14.236Z";
+    dct:creator "hochgesand";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue " Zus\u00e4tzlich auch Kunststoff- Strahlgut              ";
+    o:hasTarget Co:ADD53A.
+Annot:anno9
+    a o:Annotation;
+    dct:created "2024-11-11T08:55:47.199Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "... Es wird, anders ALS die meisten Epoxidharze,...";
+    o:hasTarget Co:D38147 .
+Annot:anno90
+    a o:Annotation;
+    dct:created "2024-11-11T12:38:58.647Z";
+    dct:creator "hochgesand";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+    "Au\u00dferdem: Kohlevlies und Einschwei\u00dffolie             ";
+    o:hasTarget Co:D9G356 .
 Co:A1D125 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A28B4D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -641,6 +783,8 @@ Co:ADB89D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:ADCC8A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:ADD53A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:AF9A88 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:AG55BC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -657,9 +801,13 @@ Co:B437A9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:B44F39 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:B47572 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:B5C86F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:B689B6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:B69C57 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:B7B8B6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -681,9 +829,13 @@ Co:C369CB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C47769 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:C61955 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:C6C3CF a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C6F794 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:C77887 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C97B35 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -694,6 +846,8 @@ Co:CC67B2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:CG2863 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D2GGAC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:D38147 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D39191 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -709,6 +863,8 @@ Co:D9CC3C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D9F7AC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:D9G356 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:DA9G57 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:DAA3F9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -716,6 +872,8 @@ Co:DAA3F9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:DAG2A8 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:DC3F7A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:F5G8DB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:F7G7CB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -733,15 +891,21 @@ Co:G2944B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:G52378 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:G6282F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:G8D62A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:G967G1 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:GC14B8 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:GC2F6A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:GC7998 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:GD86C1 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:GF9C49 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:GG1CG9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
