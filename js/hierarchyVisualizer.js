@@ -1,9 +1,3 @@
-async function readCSV(input) {
-  let Data = d3.csvParse(input);
-  // wait to make sure the loadingDiv is displayed and user knows different data is loaded
-  readData(Data);
-}
-
 async function readData(csv) {
   let Data = d3.csvParse(csv);
   let cleanedArray= cleanTableData(Data);
