@@ -40,6 +40,36 @@ Annot:anno100
     o:bodyValue
         """Gie\u00dfbarer, bei Raumtemperatur vulkanisierender, additionsvernetzender Zweikomponenten- Siliconkautschuk der Firma Nedform (siliconesandmore). Der Silikon wird von Nedform vertrieben, ist aber das Produkt "Elastosil Vario" der Firma Wacker. Das Elastosil Vario System bietet zwei Stammkomponenten mit Shoreh\u00e4rten von 15 und 40 an, die zur Einstellung der gew\u00fcnschten Shoreh\u00e4rte vermischt werden k\u00f6nnen. """;
     o:hasTarget Co:GCDG5D.
+Annot:anno101
+    a o:Annotation;
+    dct:created "2024-11-12T14:44:30.270Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Begriff aus dem Dentalbereich f\u00fcr 2-komponentige, additionsvernetzende Silikonkautschucke auf Basis von Vinylpolysiloxanen. In der Glas-Restaurierung finden die meist in Spritz-Kartuschen gelieferten Kautschucke Anwendung bei der Herstellung von Manschettenerg\u00e4nzungen
+
+source : Walde""";
+    o:hasTarget Co:C5G53A.
+Annot:anno102
+    a o:Annotation;
+    dct:created "2024-11-12T15:15:32.032Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """2-komponentiger, additionsvernetzender Silikonkautschuck, der nach dem Anmischen selbstverdickend ist und an vertikalen Fl\u00e4chen nicht abflie\u00dft. Hersteller ist die Firma Smooth-on, Vertreiber in Deutschland die Firma Kaupo
+
+""";
+    o:hasTarget Co:C76568 .
+Annot:anno103
+    a o:Annotation;
+    dct:created "2024-11-12T15:18:04.184Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Gie\u00dfbarer, bei Raumtemperatur vulkanisierender, additionsvernetzender Zweikomponenten- Siliconkautschuk der Firma Smooth-on (Vertreiber in Deutschland Kaupo)
+
+""";
+    o:hasTarget Co:AF6D7D.
 Annot:anno11
     a o:Annotation;
     dct:created "2024-09-02T14:21:25.465Z";
@@ -887,6 +917,8 @@ Co:ADCC8A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:ADD53A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:AF6D7D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:AF9A88 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:AG55BC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -931,11 +963,15 @@ Co:C369CB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C47769 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:C5G53A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:C61955 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C6C3CF a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C6F794 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:C76568 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C77887 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
