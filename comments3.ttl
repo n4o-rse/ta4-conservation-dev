@@ -32,6 +32,14 @@ Annot:anno10
         """Confokalmikroskop ist auch ein wichtiges Lichtmikroskop aber ich m\u00fcsste die genaue Definition suchen. 
 Vielleicht ISO 25178-6 (https://www.iso.org/obp/ui/en/#iso:std:iso:25178:-6:ed-1:v1:en)? Nicht sehr klar f\u00fcr mich allerdings... XD""";
     o:hasTarget Co:FC2113 .
+Annot:anno100
+    a o:Annotation;
+    dct:created "2024-11-12T13:21:08.097Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Gie\u00dfbarer, bei Raumtemperatur vulkanisierender, additionsvernetzender Zweikomponenten- Siliconkautschuk der Firma Nedform (siliconesandmore). Der Silikon wird von Nedform vertrieben, ist aber das Produkt "Elastosil Vario" der Firma Wacker. Das Elastosil Vario System bietet zwei Stammkomponenten mit Shoreh\u00e4rten von 15 und 40 an, die zur Einstellung der gew\u00fcnschten Shoreh\u00e4rte vermischt werden k\u00f6nnen. """;
+    o:hasTarget Co:GCDG5D.
 Annot:anno11
     a o:Annotation;
     dct:created "2024-09-02T14:21:25.465Z";
@@ -785,6 +793,68 @@ Nachteile : Beim Auftragen mehrerer Schichten sollte "Nass in Nass" gearbeitet w
 source :  https://www.wacker.com/h/medias/6415-DE-Silicone.pdf
 """;
     o:hasTarget Co:DA841D.
+Annot:anno93
+    a o:Annotation;
+    dct:created "2024-11-12T08:44:05.747Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "2-Komponentiger Silikonkautschuck der durch Kondensationsreaktion zu einem elastischen Silikongummi polymerisiert. Bei der Reaktion kommt es zum Abspalten und Freiwerden niederer Alkohole, die einen Volumenschwund des Gummis verursachen. Empfohlen ist daher eine zeitnahe Weiterverarbeitung. Vorteile : Auftrag mehrer Schichten auch nach Polymerisation der Vorherigen m\u00f6glich / Nachteil : Volumenschwund ( Herstellerangaben variieren zwischen 0,3-0,8%)";
+    o:hasTarget Co:GD9CA3 .
+Annot:anno94
+    a o:Annotation;
+    dct:created "2024-11-12T08:50:03.850Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """ 2-Komponentiger Silikonkautschuck der durch Additionsreaktion zu einem elastischen Silikongummi polymerisiert. Vorteile : Nahezu schrumpffreie Aush\u00e4rtung, geeignet f\u00fcr galvanoplastische Nachbildungen / Nachteile : Beim Auftragen mehrerer Schichten sollte "Nass in Nass" gearbeitet werden um einen sicheren Verbund zu gew\u00e4hrleisten, Inhibierung der Polymersiation bei Kontakt zu Schwefel-, Amin- oder Organozinn-haltigen Stoffen m\u00f6glich - Vorversuche empfohlen
+source : https://www.wacker.com/h/medias/6415-DE-Silicone.pdf """;
+    o:hasTarget Co:DA841D.
+Annot:anno95
+    a o:Annotation;
+    dct:created "2024-11-12T08:57:05.183Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """ Gie\u00dfbarer, bei Raumtemperatur vulkanisierender, kondensationsvernetzender Zweikomponenten- Siliconkautschuk der Firma Wacker
+
+source : https://www.wacker.com/h/de-de/c/elastosil-m-4503/p/000005335""";
+    o:hasTarget Co:A6CA1C.
+Annot:anno96
+    a o:Annotation;
+    dct:created "2024-11-12T08:58:14.775Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """ Gie\u00dfbarer, bei Raumtemperatur vulkanisierender, kondensationsvernetzender Zweikomponenten- Siliconkautschuk der Firma Wacker
+
+source : https://www.wacker.com/h/de-de/c/elastosil-m-4514/p/000005338""";
+    o:hasTarget Co:DB5G7D.
+Annot:anno97
+    a o:Annotation;
+    dct:created "2024-11-12T09:10:27.622Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Standfester, bei Raumtemperatur vulkanisierender, kondensationsvernetzender Zweikomponenten- Siliconkautschuk der Firma Wacker. Korrekte Bezeichnung M3500
+... leider nicht mehr lieferbar/verf\u00fcgbar""";
+    o:hasTarget Co:C9C7C7 .
+Annot:anno98
+    a o:Annotation;
+    dct:created "2024-11-12T10:31:17.987Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Gie\u00dfbarer, bei Raumtemperatur vulkanisierender, kondensationsvernetzender Zweikomponenten- Siliconkautschuk der Firma Elkem (fr\u00fcher Bluestar silicones mit der Bezeichnung Rhodorsil RTV 3325)";
+    o:hasTarget Co:A8GFCC.
+Annot:anno99
+    a o:Annotation;
+    dct:created "2024-11-12T13:12:16.665Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Gie\u00dfbarer, bei Raumtemperatur vulkanisierender, kondensationsvernetzender Zweikomponenten- Siliconkautschuk der Firma Nedform (bei Siliconesandmore "Silikon Kondensation 20")""";
+    o:hasTarget Co:AC1C85 .
 Co:A1D125 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A28B4D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -795,15 +865,21 @@ Co:A2GC16 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A44BG6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:A6CA1C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:A6FA7G a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A7B4F9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A7FC45 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:A8GFCC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:A9A858 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:ABBFB5 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:AC1C85 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:ADB89D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -865,6 +941,8 @@ Co:C77887 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C97B35 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:C9C7C7 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:CA7279 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:CC67B2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -899,6 +977,8 @@ Co:DAA3F9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:DAG2A8 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:DB5G7D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:DC3F7A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:F5G8DB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -931,7 +1011,11 @@ Co:GC2F6A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:GC7998 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:GCDG5D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:GD86C1 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:GD9CA3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:GF9C49 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
