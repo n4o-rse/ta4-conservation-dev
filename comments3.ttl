@@ -70,6 +70,14 @@ Annot:anno103
 
 """;
     o:hasTarget Co:AF6D7D.
+Annot:anno104
+    a o:Annotation;
+    dct:created "2024-11-18T08:44:50.617Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Woher hast du die Information, dass es sich bei dem Produkt eigentlich um Elastosil Vario handelt? Ich finde auf der Seite von Nedform/Siliconsandmore eine Reihe eigener Produkte mit dem Namen "Silikon Addition Transparten/Farblos". Ich wei\u00df allerdings nicht genau welches Produkt aus der Reihe hier gemeint ist. """;
+    o:hasTarget Co:GCDG5D.
 Annot:anno11
     a o:Annotation;
     dct:created "2024-09-02T14:21:25.465Z";
