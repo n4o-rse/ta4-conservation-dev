@@ -78,6 +78,22 @@ Annot:anno104
     o:bodyValue
         """Woher hast du die Information, dass es sich bei dem Produkt eigentlich um Elastosil Vario handelt? Ich finde auf der Seite von Nedform/Siliconsandmore eine Reihe eigener Produkte mit dem Namen "Silikon Addition Transparten/Farblos". Ich wei\u00df allerdings nicht genau welches Produkt aus der Reihe hier gemeint ist. """;
     o:hasTarget Co:GCDG5D.
+Annot:anno105
+    a o:Annotation;
+    dct:created "2024-11-21T08:05:34.577Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Der Begriff "Defekt" stammt aus der DIN und wird dort recht allgemein als "Beeintr\u00e4chtigun eines Objektes infolge der Konzeption, des Herstellungsverfahrens oder der Beschaffenheit der verwendeten Materialien" definiert. Ich pers\u00f6nlich kann mich mit dem Begriff "Defekt" nicht so ganz anfreunden und w\u00fcrde dazu eher "antike Besch\u00e4digung" sagen. Daher m\u00f6chte ich gerne zu Diskussion stellen, ob wir uns hier nach der DIN richten wollen?""";
+    o:hasTarget Co:CC2F9C.
+Annot:anno106
+    a o:Annotation;
+    dct:created "2024-11-21T08:10:10.630Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Auch dieser Begriff ist angelehnt an die DIN. Ich habe mich hier gefragt ob wir den \u00fcberhaupt brauchen, da wir ja eigentlich fast nur mit gealterten Objekten zu tun haben. Dann dachte ich aber wiederum, dass wir den Begriff unter Umst\u00e4nden f\u00fcr Altrestaurierungen (also gealterte Restaurierungsmaterialien) oder gealterte Kopien brauchen k\u00f6nnten. Was sind eure Meinungen dazu?";
+    o:hasTarget Co:C77G9C.
 Annot:anno11
     a o:Annotation;
     dct:created "2024-09-02T14:21:25.465Z";
@@ -983,11 +999,15 @@ Co:C76568 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C77887 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:C77G9C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:C97B35 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C9C7C7 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:CA7279 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:CC2F9C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:CC67B2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
