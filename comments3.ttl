@@ -94,6 +94,32 @@ Annot:anno106
     o:bodyValue
         "Auch dieser Begriff ist angelehnt an die DIN. Ich habe mich hier gefragt ob wir den \u00fcberhaupt brauchen, da wir ja eigentlich fast nur mit gealterten Objekten zu tun haben. Dann dachte ich aber wiederum, dass wir den Begriff unter Umst\u00e4nden f\u00fcr Altrestaurierungen (also gealterte Restaurierungsmaterialien) oder gealterte Kopien brauchen k\u00f6nnten. Was sind eure Meinungen dazu?";
     o:hasTarget Co:C77G9C.
+Annot:anno107
+    a o:Annotation;
+    dct:created "2024-11-26T17:22:31.566Z";
+    dct:creator "Marlene";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Und/ Oder Hitzeeinwirkung bzw. Feuer? Sind Brennprobe (Vorprobe) und Pyrolyse ebenfalls interessante Untersuchungsmethoden?";
+    o:hasTarget Co:A946B5 .
+Annot:anno108
+    a o:Annotation;
+    dct:created "2024-11-26T18:03:58.642Z";
+    dct:creator "Marlene";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Ein Quellversuch nach McCrone erm\u00f6glicht eine schnelle und objektschonende Bestimmung der L\u00f6slichkeit unbekannter Stoffe bei minimalem Probenverbrauch.
+
+L\u00f6slichkleitstest nach Zumb\u00fchl?""";
+    o:hasTarget Co:DCD522 .
+Annot:anno109
+    a o:Annotation;
+    dct:created "2024-11-26T18:19:29.953Z";
+    dct:creator "Marlene";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Ein Glas-Abdeckpl\u00e4ttchen dient als Probenhalter, wobei Mikroproben eines oder mehrerer unbekannten Stoffe durch Adh\u00e4sionskr\u00e4fte daran haften. Zwei Tropfen L\u00f6semittel werden mittels Pipette in die Mitte eines Glasrings gegeben, der auf einem Objekttr\u00e4ger liegt. Das Abdeckpl\u00e4ttchen mit der darauf haftenden Probe wird umgedreht auf den Glasring platziert. Dies erzeugt einen geschlossenen Dampfraum, der rasch mit L\u00f6sungsmittel ges\u00e4ttigt wird. Wenn der Stoff im L\u00f6semittel l\u00f6slich ist, absorbiert er die D\u00e4mpfe und bildet einen L\u00f6sungstropfen. Ist er unl\u00f6slich, bleibt er unver\u00e4ndert, selbst wenn L\u00f6sungsmitteltropfen um ihn herum kondensieren k\u00f6nnen. Um auch eine leichte L\u00f6sungsmittelwirkung zu bemerken, wird das Quellverhalten der Mikroproben in den L\u00f6semitteld\u00e4mpfen zwei Minuten lang unter dem Stereomikroskop beobachtet und dokumentiert. Durch Abheben des Deckglases verdampft das L\u00f6sungsmittel, die Probe kann trocknen, und die Testreihe fortgesetzt werden. Dies erm\u00f6glicht die schnelle Pr\u00fcfung verschiedener L\u00f6sungsmittel an demselben Partikelpr\u00e4parat.";
+    o:hasTarget Co:DCD522 .
 Annot:anno11
     a o:Annotation;
     dct:created "2024-09-02T14:21:25.465Z";
@@ -102,6 +128,27 @@ Annot:anno11
     o:bodyValue
         """...einer "Holzmaserung" \u00e4hnelt die Struktur von Elfenbein eigentlich nicht. Charakteristisch sind die sogenannten Schreger'schen Linien, die im Querschnitt eine netzartiges Struktur bilden (und sich dadurch von elfenbein\u00e4hnlichen Materialien unterscheiden). """;
     o:hasTarget Co:AG55BC.
+Annot:anno110
+    a o:Annotation;
+    dct:created "2024-11-26T19:00:42.912Z";
+    dct:creator "Marlene";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Die Farbe und Intensit\u00e4t der Fluoreszenz kann au\u00dferdem aufgrund verschiedener Zusatzstoffe/ Werkstoffzusammensetzungen oder altersbedingter Umwandlungsprozesse variieren.
+
+Das Objekt wird daf\u00fcr in einem abgedunkelten Raum unter einer UV-Lampe mit einer Wellenl\u00e4nge von 365nm begutachtet. Unter Einsatz von UV-Filtern k\u00f6nnen die Fluoreszenzunterschiede fotografisch dokumentiert werden.
+""";
+    o:hasTarget Co:B53C8F.
+Annot:anno111
+    a o:Annotation;
+    dct:created "2024-11-26T19:37:16.416Z";
+    dct:creator "Marlene";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Kalksinter sind S\u00fc\u00dfwasserkalke, die als chemische Sedimente aus mineralreichen Wassern ausf\u00e4llen. Die Kalkausf\u00e4llung verl\u00e4uft vorwiegend anorganisch, also ohne Beteiligung von Lebewesen.  Dadurch entsteht ein heller, geb\u00e4nderter und durchscheinender Stein, der h\u00e4ufig f\u00fcr die Herstellung von Alabastra verwendet wurde. Stellenweise wird Kalksinter auch als Onyx-Mamor oder f\u00e4lschlicherweise als Variet\u00e4t von Travertin bezeichnet.
+
+Sollte Travertin auch unter den Sedimentgesteinen auftauchen?""";
+    o:hasTarget Co:CB4C3C.
 Annot:anno12
     a o:Annotation;
     dct:created "2024-11-05T14:08:26.134Z";
@@ -929,6 +976,8 @@ Co:A7FC45 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A8GFCC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:A946B5 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:A9A858 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:ABBFB5 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -960,6 +1009,8 @@ Co:B437A9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:B44F39 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:B47572 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:B53C8F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:B5C86F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -1007,6 +1058,8 @@ Co:C9C7C7 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:CA7279 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:CB4C3C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:CC2F9C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:CC67B2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -1044,6 +1097,8 @@ Co:DAG2A8 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:DB5G7D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:DC3F7A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:DCD522 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:F5G8DB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
