@@ -177,6 +177,48 @@ Annot:anno115
     skos:inScheme Con:ConceptScheme1;
     o:bodyValue "- Begriff aussortieren";
     o:hasTarget Co:C6F794 .
+Annot:anno116
+    a o:Annotation;
+    dct:created "2024-11-27T18:53:21.282Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Cieta: 
+1. Pflanze der Familie Urticaceae (Art: Cannabis), aus
+der nach dem gleichen Prinzip wie bei Flachs eine
+gr\u00f6bere Stengelfaser gewonnen wird.
+2. Bezeichnung f\u00fcr diese Faser.""";
+    o:hasTarget Co:C3AF5A.
+Annot:anno117
+    a o:Annotation;
+    dct:created "2024-11-27T18:55:37.197Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Cieta: 
+Aus der Leinpflanze (Linum usitatissimum) wird die Stengelfaser Flachs gewonnen. Die Aufbereitung geschieht 1. durch das R\u00f6sten oder Rotten (G\u00e4rungsprozess), 2. durch das Brechen (L\u00f6sen der Holzteile), 3. durch das Schwingen (Reinigen der Faser durch Schlagen und Streifen mit Hilfe des Schwingstockes und des Schwingmessers), 4. durch das Hecheln (K\u00e4mmen der Fasern als Vorbereitung
+zum Spinnen). Garn- und Stoffprodukt des Flachses werden Leinen genannt. Ein Abfallprodukt der Flachsund Hanfgewinnung ist Werg oder Hede.""";
+    o:hasTarget Co:BC685F.
+Annot:anno118
+    a o:Annotation;
+    dct:created "2024-11-27T18:57:42.313Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Cieta: 
+1. Die Samenhaare verschiedener Gossypiumarten, Stapelfaser.
+2. Baumwollgarn, durch Verspinnen erzeugter Faden aus den Samenhaaren von Gossypiumarten.
+3. Aus Baumwolle gewebte Stoffe (Baumwollgewebe).""";
+    o:hasTarget Co:A5G856 .
+Annot:anno119
+    a o:Annotation;
+    dct:created "2024-11-27T18:59:42.425Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Cieta: 
+Stengelfasern von Pflanzen der Corchorusarten (Familie der Tiliaceen)""";
+    o:hasTarget Co:AG4634 .
 Annot:anno12
     a o:Annotation;
     dct:created "2024-11-05T14:08:26.134Z";
@@ -186,6 +228,40 @@ Annot:anno12
         """Formbau mit Materialien, die das zu kopierende Objekt im Negativ abbilden
 """;
     o:hasTarget Co:G52378 .
+Annot:anno120
+    a o:Annotation;
+    dct:created "2024-11-27T19:33:00.743Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Wir k\u00f6nnten auch anders gliedern und organische Materialien weglassen; etwa: Pflanzliche Materialien, St\u00e4ngel/Wurzeln/Rhizome, Monocots (einkeimbl\u00e4ttrige Pflanzen), Sekund\u00e4res Phloemgewebe, Rindengewebe, Holz... ";
+    o:hasTarget Co:A9A858 .
+Annot:anno121
+    a o:Annotation;
+    dct:created "2024-11-27T19:37:04.541Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Ich w\u00fcrde zun\u00e4chst tierische Haut und dann zwischen Leder, Pergament unterscheiden. ";
+    o:hasTarget Co:D73F9B.
+Annot:anno122
+    a o:Annotation;
+    dct:created "2024-11-27T19:42:21.078Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Ich w\u00fcrde die gesamte Cieta Definition eintragen. 
+Und ich w\u00fcrde unterscheiden zwischen Tussahseide, hergestellt aus den Kokons des Tussahspinners (Antheraea mit diversen Unterarten). 
+Muschelseide Sekret bestimmter Muscheln (Steckmuschel \u2013 Pinna nobilis).""";
+    o:hasTarget Co:F6F797 .
+Annot:anno123
+    a o:Annotation;
+    dct:created "2024-11-27T19:46:21.170Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Ich w\u00fcrde hier zun\u00e4chst noch Materialien tierischen Ursprungs einf\u00fcgen und dann weiter untergliedern";
+    o:hasTarget Co:AB4988 .
 Annot:anno13
     a o:Annotation;
     dct:created "2024-11-05T14:22:11.838Z";
@@ -996,6 +1072,8 @@ Co:A2GC16 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A44BG6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:A5G856 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:A6CA1C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A6FA7G a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -1010,6 +1088,8 @@ Co:A946B5 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A9A858 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:AB4988 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:ABBFB5 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:AC1C85 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -1023,6 +1103,8 @@ Co:ADD53A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:AF6D7D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:AF9A88 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:AG4634 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:AG55BC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -1058,6 +1140,8 @@ Co:BAB7B3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BBF7BG a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:BC685F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:BF7D14 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BFB162 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -1067,6 +1151,8 @@ Co:BGC9F3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:BGG879 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C369CB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:C3AF5A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C47769 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -1133,6 +1219,8 @@ Co:DC3F7A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:DCD522 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:F5G8DB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:F6F797 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:F7G7CB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
