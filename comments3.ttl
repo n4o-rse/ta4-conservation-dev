@@ -149,6 +149,34 @@ Annot:anno111
 
 Sollte Travertin auch unter den Sedimentgesteinen auftauchen?""";
     o:hasTarget Co:CB4C3C.
+Annot:anno112
+    a o:Annotation;
+    dct:created "2024-11-27T09:55:16.107Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "- Arsenbronze erg\u00e4nzen ";
+    o:hasTarget Co:BF7D14 .
+Annot:anno113
+    a o:Annotation;
+    dct:created "2024-11-27T10:01:15.763Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "- Weiter Untergliedern";
+    o:hasTarget Co:A2159C.
+Annot:anno114
+    a o:Annotation;
+    dct:created "2024-11-27T10:02:29.412Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "- Zu Matthias: JA!";
+    o:hasTarget Co:AG55BC.
+Annot:anno115
+    a o:Annotation;
+    dct:created "2024-11-27T10:05:28.147Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "- Begriff aussortieren";
+    o:hasTarget Co:C6F794 .
 Annot:anno12
     a o:Annotation;
     dct:created "2024-11-05T14:08:26.134Z";
@@ -958,6 +986,8 @@ Annot:anno99
     o:hasTarget Co:AC1C85 .
 Co:A1D125 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:A2159C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:A28B4D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A2G7B9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -1027,6 +1057,8 @@ Co:BAB7B1 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:BAB7B3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BBF7BG a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:BF7D14 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BFB162 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
