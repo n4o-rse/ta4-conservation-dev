@@ -262,6 +262,13 @@ Annot:anno123
     o:bodyValue
         "Ich w\u00fcrde hier zun\u00e4chst noch Materialien tierischen Ursprungs einf\u00fcgen und dann weiter untergliedern";
     o:hasTarget Co:AB4988 .
+Annot:anno124
+    a o:Annotation;
+    dct:created "2024-11-28T12:16:12.782Z";
+    dct:creator "ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "organ. Materialien w\u00fcrde ich nicht weglassen. sorry. ";
+    o:hasTarget Co:CD3341 .
 Annot:anno13
     a o:Annotation;
     dct:created "2024-11-05T14:22:11.838Z";
@@ -1181,6 +1188,8 @@ Co:CB4C3C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:CC2F9C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:CC67B2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:CD3341 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:CG2863 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
