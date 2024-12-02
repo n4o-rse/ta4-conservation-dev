@@ -1269,10 +1269,6 @@ Co:GF9C49 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:GG1CG9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
-Con:ConceptScheme2
-    a skos:ConceptScheme;
-    dct:source <https://seafile.rlp.net/f/832e461fb04e4d94b392/?dl=1>;
-    dct:title "Testthesaurus".
 Con:ConceptScheme3
     a skos:ConceptScheme;
     dct:source
