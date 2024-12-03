@@ -13,7 +13,7 @@ async function openDetails(id, idObject) {
     header.innerHTML = idObject[id]["prefLabel"];
     idObject[id]["identifier"] = id.toString();
 
-    const details = ["identifier","description", "altLabel", "related", "source", "creator", "closeMatch", "relatedMatch", "seeAlso", "example"];
+    const details = ["identifier","description", "altLabel", "translation", "related", "source", "creator", "closeMatch", "relatedMatch", "seeAlso", "example"];
 
     // iterate over all detail contents and create a paragraph for each
     for (let i = 0; i < details.length; i++) {
