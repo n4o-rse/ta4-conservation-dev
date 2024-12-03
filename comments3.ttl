@@ -32,6 +32,94 @@ Annot:anno10
         """Confokalmikroskop ist auch ein wichtiges Lichtmikroskop aber ich m\u00fcsste die genaue Definition suchen. 
 Vielleicht ISO 25178-6 (https://www.iso.org/obp/ui/en/#iso:std:iso:25178:-6:ed-1:v1:en)? Nicht sehr klar f\u00fcr mich allerdings... XD""";
     o:hasTarget Co:FC2113 .
+Annot:anno100
+    a o:Annotation;
+    dct:created "2024-11-12T13:21:08.097Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Gie\u00dfbarer, bei Raumtemperatur vulkanisierender, additionsvernetzender Zweikomponenten- Siliconkautschuk der Firma Nedform (siliconesandmore). Der Silikon wird von Nedform vertrieben, ist aber das Produkt "Elastosil Vario" der Firma Wacker. Das Elastosil Vario System bietet zwei Stammkomponenten mit Shoreh\u00e4rten von 15 und 40 an, die zur Einstellung der gew\u00fcnschten Shoreh\u00e4rte vermischt werden k\u00f6nnen. """;
+    o:hasTarget Co:GCDG5D.
+Annot:anno101
+    a o:Annotation;
+    dct:created "2024-11-12T14:44:30.270Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Begriff aus dem Dentalbereich f\u00fcr 2-komponentige, additionsvernetzende Silikonkautschucke auf Basis von Vinylpolysiloxanen. In der Glas-Restaurierung finden die meist in Spritz-Kartuschen gelieferten Kautschucke Anwendung bei der Herstellung von Manschettenerg\u00e4nzungen
+
+source : Walde""";
+    o:hasTarget Co:C5G53A.
+Annot:anno102
+    a o:Annotation;
+    dct:created "2024-11-12T15:15:32.032Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """2-komponentiger, additionsvernetzender Silikonkautschuck, der nach dem Anmischen selbstverdickend ist und an vertikalen Fl\u00e4chen nicht abflie\u00dft. Hersteller ist die Firma Smooth-on, Vertreiber in Deutschland die Firma Kaupo
+
+""";
+    o:hasTarget Co:C76568 .
+Annot:anno103
+    a o:Annotation;
+    dct:created "2024-11-12T15:18:04.184Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Gie\u00dfbarer, bei Raumtemperatur vulkanisierender, additionsvernetzender Zweikomponenten- Siliconkautschuk der Firma Smooth-on (Vertreiber in Deutschland Kaupo)
+
+""";
+    o:hasTarget Co:AF6D7D.
+Annot:anno104
+    a o:Annotation;
+    dct:created "2024-11-18T08:44:50.617Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Woher hast du die Information, dass es sich bei dem Produkt eigentlich um Elastosil Vario handelt? Ich finde auf der Seite von Nedform/Siliconsandmore eine Reihe eigener Produkte mit dem Namen "Silikon Addition Transparten/Farblos". Ich wei\u00df allerdings nicht genau welches Produkt aus der Reihe hier gemeint ist. """;
+    o:hasTarget Co:GCDG5D.
+Annot:anno105
+    a o:Annotation;
+    dct:created "2024-11-21T08:05:34.577Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Der Begriff "Defekt" stammt aus der DIN und wird dort recht allgemein als "Beeintr\u00e4chtigun eines Objektes infolge der Konzeption, des Herstellungsverfahrens oder der Beschaffenheit der verwendeten Materialien" definiert. Ich pers\u00f6nlich kann mich mit dem Begriff "Defekt" nicht so ganz anfreunden und w\u00fcrde dazu eher "antike Besch\u00e4digung" sagen. Daher m\u00f6chte ich gerne zu Diskussion stellen, ob wir uns hier nach der DIN richten wollen?""";
+    o:hasTarget Co:CC2F9C.
+Annot:anno106
+    a o:Annotation;
+    dct:created "2024-11-21T08:10:10.630Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Auch dieser Begriff ist angelehnt an die DIN. Ich habe mich hier gefragt ob wir den \u00fcberhaupt brauchen, da wir ja eigentlich fast nur mit gealterten Objekten zu tun haben. Dann dachte ich aber wiederum, dass wir den Begriff unter Umst\u00e4nden f\u00fcr Altrestaurierungen (also gealterte Restaurierungsmaterialien) oder gealterte Kopien brauchen k\u00f6nnten. Was sind eure Meinungen dazu?";
+    o:hasTarget Co:C77G9C.
+Annot:anno107
+    a o:Annotation;
+    dct:created "2024-11-26T17:22:31.566Z";
+    dct:creator "Marlene";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Und/ Oder Hitzeeinwirkung bzw. Feuer? Sind Brennprobe (Vorprobe) und Pyrolyse ebenfalls interessante Untersuchungsmethoden?";
+    o:hasTarget Co:A946B5 .
+Annot:anno108
+    a o:Annotation;
+    dct:created "2024-11-26T18:03:58.642Z";
+    dct:creator "Marlene";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Ein Quellversuch nach McCrone erm\u00f6glicht eine schnelle und objektschonende Bestimmung der L\u00f6slichkeit unbekannter Stoffe bei minimalem Probenverbrauch.
+
+L\u00f6slichkleitstest nach Zumb\u00fchl?""";
+    o:hasTarget Co:DCD522 .
+Annot:anno109
+    a o:Annotation;
+    dct:created "2024-11-26T18:19:29.953Z";
+    dct:creator "Marlene";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Ein Glas-Abdeckpl\u00e4ttchen dient als Probenhalter, wobei Mikroproben eines oder mehrerer unbekannten Stoffe durch Adh\u00e4sionskr\u00e4fte daran haften. Zwei Tropfen L\u00f6semittel werden mittels Pipette in die Mitte eines Glasrings gegeben, der auf einem Objekttr\u00e4ger liegt. Das Abdeckpl\u00e4ttchen mit der darauf haftenden Probe wird umgedreht auf den Glasring platziert. Dies erzeugt einen geschlossenen Dampfraum, der rasch mit L\u00f6sungsmittel ges\u00e4ttigt wird. Wenn der Stoff im L\u00f6semittel l\u00f6slich ist, absorbiert er die D\u00e4mpfe und bildet einen L\u00f6sungstropfen. Ist er unl\u00f6slich, bleibt er unver\u00e4ndert, selbst wenn L\u00f6sungsmitteltropfen um ihn herum kondensieren k\u00f6nnen. Um auch eine leichte L\u00f6sungsmittelwirkung zu bemerken, wird das Quellverhalten der Mikroproben in den L\u00f6semitteld\u00e4mpfen zwei Minuten lang unter dem Stereomikroskop beobachtet und dokumentiert. Durch Abheben des Deckglases verdampft das L\u00f6sungsmittel, die Probe kann trocknen, und die Testreihe fortgesetzt werden. Dies erm\u00f6glicht die schnelle Pr\u00fcfung verschiedener L\u00f6sungsmittel an demselben Partikelpr\u00e4parat.";
+    o:hasTarget Co:DCD522 .
 Annot:anno11
     a o:Annotation;
     dct:created "2024-09-02T14:21:25.465Z";
@@ -40,6 +128,97 @@ Annot:anno11
     o:bodyValue
         """...einer "Holzmaserung" \u00e4hnelt die Struktur von Elfenbein eigentlich nicht. Charakteristisch sind die sogenannten Schreger'schen Linien, die im Querschnitt eine netzartiges Struktur bilden (und sich dadurch von elfenbein\u00e4hnlichen Materialien unterscheiden). """;
     o:hasTarget Co:AG55BC.
+Annot:anno110
+    a o:Annotation;
+    dct:created "2024-11-26T19:00:42.912Z";
+    dct:creator "Marlene";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Die Farbe und Intensit\u00e4t der Fluoreszenz kann au\u00dferdem aufgrund verschiedener Zusatzstoffe/ Werkstoffzusammensetzungen oder altersbedingter Umwandlungsprozesse variieren.
+
+Das Objekt wird daf\u00fcr in einem abgedunkelten Raum unter einer UV-Lampe mit einer Wellenl\u00e4nge von 365nm begutachtet. Unter Einsatz von UV-Filtern k\u00f6nnen die Fluoreszenzunterschiede fotografisch dokumentiert werden.
+""";
+    o:hasTarget Co:B53C8F.
+Annot:anno111
+    a o:Annotation;
+    dct:created "2024-11-26T19:37:16.416Z";
+    dct:creator "Marlene";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Kalksinter sind S\u00fc\u00dfwasserkalke, die als chemische Sedimente aus mineralreichen Wassern ausf\u00e4llen. Die Kalkausf\u00e4llung verl\u00e4uft vorwiegend anorganisch, also ohne Beteiligung von Lebewesen.  Dadurch entsteht ein heller, geb\u00e4nderter und durchscheinender Stein, der h\u00e4ufig f\u00fcr die Herstellung von Alabastra verwendet wurde. Stellenweise wird Kalksinter auch als Onyx-Mamor oder f\u00e4lschlicherweise als Variet\u00e4t von Travertin bezeichnet.
+
+Sollte Travertin auch unter den Sedimentgesteinen auftauchen?""";
+    o:hasTarget Co:CB4C3C.
+Annot:anno112
+    a o:Annotation;
+    dct:created "2024-11-27T09:55:16.107Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "- Arsenbronze erg\u00e4nzen ";
+    o:hasTarget Co:BF7D14 .
+Annot:anno113
+    a o:Annotation;
+    dct:created "2024-11-27T10:01:15.763Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "- Weiter Untergliedern";
+    o:hasTarget Co:A2159C.
+Annot:anno114
+    a o:Annotation;
+    dct:created "2024-11-27T10:02:29.412Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "- Zu Matthias: JA!";
+    o:hasTarget Co:AG55BC.
+Annot:anno115
+    a o:Annotation;
+    dct:created "2024-11-27T10:05:28.147Z";
+    dct:creator "Kristina";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "- Begriff aussortieren";
+    o:hasTarget Co:C6F794 .
+Annot:anno116
+    a o:Annotation;
+    dct:created "2024-11-27T18:53:21.282Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Cieta: 
+1. Pflanze der Familie Urticaceae (Art: Cannabis), aus
+der nach dem gleichen Prinzip wie bei Flachs eine
+gr\u00f6bere Stengelfaser gewonnen wird.
+2. Bezeichnung f\u00fcr diese Faser.""";
+    o:hasTarget Co:C3AF5A.
+Annot:anno117
+    a o:Annotation;
+    dct:created "2024-11-27T18:55:37.197Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Cieta: 
+Aus der Leinpflanze (Linum usitatissimum) wird die Stengelfaser Flachs gewonnen. Die Aufbereitung geschieht 1. durch das R\u00f6sten oder Rotten (G\u00e4rungsprozess), 2. durch das Brechen (L\u00f6sen der Holzteile), 3. durch das Schwingen (Reinigen der Faser durch Schlagen und Streifen mit Hilfe des Schwingstockes und des Schwingmessers), 4. durch das Hecheln (K\u00e4mmen der Fasern als Vorbereitung
+zum Spinnen). Garn- und Stoffprodukt des Flachses werden Leinen genannt. Ein Abfallprodukt der Flachsund Hanfgewinnung ist Werg oder Hede.""";
+    o:hasTarget Co:BC685F.
+Annot:anno118
+    a o:Annotation;
+    dct:created "2024-11-27T18:57:42.313Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Cieta: 
+1. Die Samenhaare verschiedener Gossypiumarten, Stapelfaser.
+2. Baumwollgarn, durch Verspinnen erzeugter Faden aus den Samenhaaren von Gossypiumarten.
+3. Aus Baumwolle gewebte Stoffe (Baumwollgewebe).""";
+    o:hasTarget Co:A5G856 .
+Annot:anno119
+    a o:Annotation;
+    dct:created "2024-11-27T18:59:42.425Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Cieta: 
+Stengelfasern von Pflanzen der Corchorusarten (Familie der Tiliaceen)""";
+    o:hasTarget Co:AG4634 .
 Annot:anno12
     a o:Annotation;
     dct:created "2024-11-05T14:08:26.134Z";
@@ -49,6 +228,47 @@ Annot:anno12
         """Formbau mit Materialien, die das zu kopierende Objekt im Negativ abbilden
 """;
     o:hasTarget Co:G52378 .
+Annot:anno120
+    a o:Annotation;
+    dct:created "2024-11-27T19:33:00.743Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Wir k\u00f6nnten auch anders gliedern und organische Materialien weglassen; etwa: Pflanzliche Materialien, St\u00e4ngel/Wurzeln/Rhizome, Monocots (einkeimbl\u00e4ttrige Pflanzen), Sekund\u00e4res Phloemgewebe, Rindengewebe, Holz... ";
+    o:hasTarget Co:A9A858 .
+Annot:anno121
+    a o:Annotation;
+    dct:created "2024-11-27T19:37:04.541Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Ich w\u00fcrde zun\u00e4chst tierische Haut und dann zwischen Leder, Pergament unterscheiden. ";
+    o:hasTarget Co:D73F9B.
+Annot:anno122
+    a o:Annotation;
+    dct:created "2024-11-27T19:42:21.078Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Ich w\u00fcrde die gesamte Cieta Definition eintragen. 
+Und ich w\u00fcrde unterscheiden zwischen Tussahseide, hergestellt aus den Kokons des Tussahspinners (Antheraea mit diversen Unterarten). 
+Muschelseide Sekret bestimmter Muscheln (Steckmuschel \u2013 Pinna nobilis).""";
+    o:hasTarget Co:F6F797 .
+Annot:anno123
+    a o:Annotation;
+    dct:created "2024-11-27T19:46:21.170Z";
+    dct:creator "Ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Ich w\u00fcrde hier zun\u00e4chst noch Materialien tierischen Ursprungs einf\u00fcgen und dann weiter untergliedern";
+    o:hasTarget Co:AB4988 .
+Annot:anno124
+    a o:Annotation;
+    dct:created "2024-11-28T12:16:12.782Z";
+    dct:creator "ingrid";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "organ. Materialien w\u00fcrde ich nicht weglassen. sorry. ";
+    o:hasTarget Co:CD3341 .
 Annot:anno13
     a o:Annotation;
     dct:created "2024-11-05T14:22:11.838Z";
@@ -761,7 +981,95 @@ Annot:anno90
     o:bodyValue
     "Au\u00dferdem: Kohlevlies und Einschwei\u00dffolie             ";
     o:hasTarget Co:D9G356 .
+Annot:anno91
+    a o:Annotation;
+    dct:created "2024-11-11T14:45:37.820Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Silikonkautschucke bestehen aus langkettigen Polysiloxanen und diversen F\u00fcllstoffen (z.B. pyrogene Kiesels\u00e4ure, Silkon\u00f6l, etc.), die durch H\u00e4rterzugabe zu elastischen Silikongummi vulkanisieren. In der Restaurierung kommen meist bei Raumtemperatur vernetzende, 2-komponentige Systeme (RTV-2) zur Anwendung, die nach Art der Polymerisation in kondensationsvernetzende oder additionsvernetzende Typen unterschieden werden. Hervorzuhebende Eigenschaften der Silikonkautschucke sind die hohe Abbildungsgenauigkeit und die selbsttrennende Wirkung gegen\u00fcber den meisten Werkstoffen.
+
+source :  https://www.wacker.com/h/medias/6415-DE-Silicone.pdf
+""";
+    o:hasTarget Co:A44BG6 .
+Annot:anno92
+    a o:Annotation;
+    dct:created "2024-11-11T16:19:34.822Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """2-Komponentiger Silikonkautschuck der durch Additionsreaktion zu einem elastischen Silikongummi polymerisiert.
+Vorteile : Nahezu schrumpffreie Aush\u00e4rtung, geeignet f\u00fcr galvanoplastische Nachbildungen
+Nachteile : Beim Auftragen mehrerer Schichten sollte "Nass in Nass" gearbeitet werden um einen Verbund zu gew\u00e4hrleisten
+
+source :  https://www.wacker.com/h/medias/6415-DE-Silicone.pdf
+""";
+    o:hasTarget Co:DA841D.
+Annot:anno93
+    a o:Annotation;
+    dct:created "2024-11-12T08:44:05.747Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "2-Komponentiger Silikonkautschuck der durch Kondensationsreaktion zu einem elastischen Silikongummi polymerisiert. Bei der Reaktion kommt es zum Abspalten und Freiwerden niederer Alkohole, die einen Volumenschwund des Gummis verursachen. Empfohlen ist daher eine zeitnahe Weiterverarbeitung. Vorteile : Auftrag mehrer Schichten auch nach Polymerisation der Vorherigen m\u00f6glich / Nachteil : Volumenschwund ( Herstellerangaben variieren zwischen 0,3-0,8%)";
+    o:hasTarget Co:GD9CA3 .
+Annot:anno94
+    a o:Annotation;
+    dct:created "2024-11-12T08:50:03.850Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """ 2-Komponentiger Silikonkautschuck der durch Additionsreaktion zu einem elastischen Silikongummi polymerisiert. Vorteile : Nahezu schrumpffreie Aush\u00e4rtung, geeignet f\u00fcr galvanoplastische Nachbildungen / Nachteile : Beim Auftragen mehrerer Schichten sollte "Nass in Nass" gearbeitet werden um einen sicheren Verbund zu gew\u00e4hrleisten, Inhibierung der Polymersiation bei Kontakt zu Schwefel-, Amin- oder Organozinn-haltigen Stoffen m\u00f6glich - Vorversuche empfohlen
+source : https://www.wacker.com/h/medias/6415-DE-Silicone.pdf """;
+    o:hasTarget Co:DA841D.
+Annot:anno95
+    a o:Annotation;
+    dct:created "2024-11-12T08:57:05.183Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """ Gie\u00dfbarer, bei Raumtemperatur vulkanisierender, kondensationsvernetzender Zweikomponenten- Siliconkautschuk der Firma Wacker
+
+source : https://www.wacker.com/h/de-de/c/elastosil-m-4503/p/000005335""";
+    o:hasTarget Co:A6CA1C.
+Annot:anno96
+    a o:Annotation;
+    dct:created "2024-11-12T08:58:14.775Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """ Gie\u00dfbarer, bei Raumtemperatur vulkanisierender, kondensationsvernetzender Zweikomponenten- Siliconkautschuk der Firma Wacker
+
+source : https://www.wacker.com/h/de-de/c/elastosil-m-4514/p/000005338""";
+    o:hasTarget Co:DB5G7D.
+Annot:anno97
+    a o:Annotation;
+    dct:created "2024-11-12T09:10:27.622Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Standfester, bei Raumtemperatur vulkanisierender, kondensationsvernetzender Zweikomponenten- Siliconkautschuk der Firma Wacker. Korrekte Bezeichnung M3500
+... leider nicht mehr lieferbar/verf\u00fcgbar""";
+    o:hasTarget Co:C9C7C7 .
+Annot:anno98
+    a o:Annotation;
+    dct:created "2024-11-12T10:31:17.987Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Gie\u00dfbarer, bei Raumtemperatur vulkanisierender, kondensationsvernetzender Zweikomponenten- Siliconkautschuk der Firma Elkem (fr\u00fcher Bluestar silicones mit der Bezeichnung Rhodorsil RTV 3325)";
+    o:hasTarget Co:A8GFCC.
+Annot:anno99
+    a o:Annotation;
+    dct:created "2024-11-12T13:12:16.665Z";
+    dct:creator "walde";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Gie\u00dfbarer, bei Raumtemperatur vulkanisierender, kondensationsvernetzender Zweikomponenten- Siliconkautschuk der Firma Nedform (bei Siliconesandmore "Silikon Kondensation 20")""";
+    o:hasTarget Co:AC1C85 .
 Co:A1D125 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:A2159C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A28B4D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -769,15 +1077,29 @@ Co:A2G7B9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A2GC16 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:A44BG6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:A5G856 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:A6CA1C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:A6FA7G a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A7B4F9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A7FC45 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:A8GFCC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:A946B5 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:A9A858 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:AB4988 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:ABBFB5 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:AC1C85 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:ADB89D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -785,7 +1107,11 @@ Co:ADCC8A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:ADD53A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:AF6D7D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:AF9A88 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:AG4634 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:AG55BC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -803,6 +1129,8 @@ Co:B44F39 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:B47572 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:B53C8F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:B5C86F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:B689B6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -819,6 +1147,10 @@ Co:BAB7B3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BBF7BG a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:BC685F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:BF7D14 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:BFB162 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BGC9F3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -827,7 +1159,11 @@ Co:BGG879 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C369CB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:C3AF5A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:C47769 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:C5G53A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C61955 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -835,13 +1171,25 @@ Co:C6C3CF a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C6F794 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:C76568 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:C77887 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:C77G9C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C97B35 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:C9C7C7 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:CA7279 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:CB4C3C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:CC2F9C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:CC67B2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:CD3341 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:CG2863 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -865,15 +1213,23 @@ Co:D9F7AC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D9G356 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:DA841D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:DA9G57 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:DAA3F9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:DAG2A8 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:DB5G7D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:DC3F7A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:DCD522 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:F5G8DB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:F6F797 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:F7G7CB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -903,7 +1259,11 @@ Co:GC2F6A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:GC7998 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:GCDG5D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:GD86C1 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:GD9CA3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:GF9C49 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
