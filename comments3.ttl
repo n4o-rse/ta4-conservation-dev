@@ -269,6 +269,50 @@ Annot:anno124
     skos:inScheme Con:ConceptScheme1;
     o:bodyValue "organ. Materialien w\u00fcrde ich nicht weglassen. sorry. ";
     o:hasTarget Co:CD3341 .
+Annot:anno125
+    a o:Annotation;
+    dct:created "2024-12-04T11:17:53.374Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Reaktionsl\u00f6ten ist eine Variante des Hartl\u00f6tens (statt eines metallischen Lotes wird eine chemische Verbindung (Kupferverbindung) aufgetragen (zusammen mit einem Reduktionsmittel oder aber die Ofenatmoshp\u00e4re ist reduzierend oder beides), die beim Erw\u00e4rmen zu Metall reduziert wird, welches mit dem Grundmetall eine Legierung bildet, die wiederum als Lot fungiert). Die Begriffe w\u00e4ren also wiefolgt zu sortieren: Hartl\u00f6tung - Weichl\u00f6tung. Und unter Hartl\u00f6tung: L\u00f6tung mit metallischem Lot - Reaktionsl\u00f6tung. Das d\u00fcrfte sich in der Praxis eher in Ausnahmef\u00e4llen eindeutig unterscheiden lassen (zumindest optisch).  ";
+    o:hasTarget Co:D67657 .
+Annot:anno126
+    a o:Annotation;
+    dct:created "2024-12-04T11:42:16.681Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Erhard Brepohl (1994, 319): "Beim L\u00f6ten werden metallische Werkst\u00fccke durch geschmolzene metallische Bindemittel unl\u00f6sbar stoffschl\u00fcssig verbunden. Das Lot - meist eine Legierung, selten (mit Blick auf Kupfer als Lot f\u00fcr Eisen besser: "seltener" - SP) ein reines Metall - schmilzt, flie\u00dft wegen der Kapilarwirkung in die L\u00f6tfuge zwischen die Verbundteile, f\u00fcllt diesen Zwischenraum aus und vereint sich durch Diffusion mit den zu l\u00f6tenden Metallen. Zur Unterst\u00fctzung des L\u00f6tvorgangs werden L\u00f6tmittel (auch "Flussmittel" genannt) eingesetzt (die eine Oxidation der L\u00f6tstelle beim Erw\u00e4rmen verhindern sollen - SP). Die L\u00f6tstelle muss bis zur Arbeitstemperatur des Lotes erhitzt werden, also bis zu der Temperatur, bei der das schmelzende Lot die Fuge ausf\u00fcllt. Die Arbeitstemperatur muss unter der Solidustemperatur der Verbundmetalle liegen, so dass sie im festen Zustand bleiben; dagegen werden beim Schwei\u00dfen die Verbundmetalle an der Nahtstelle schmelzfl\u00fcssig (diese Definition bezieht sich auf das "Schwei\u00dfen" im Goldschmiedehandwerk - SP). Die Wirkungstemperatur des Flussmittels muss niedriger als die Arbeitstemperatur des Lotes sein, damit das Flussmittel seine Funktion erf\u00fcllen kann. Die Arbeitstemperatur der "Weichlote" liegt unter 450\u00b0C, bei den "Hartloten" betr\u00e4gt sie mehr als 650\u00b0C.""";
+    o:hasTarget Co:G6GG4C.
+Annot:anno127
+    a o:Annotation;
+    dct:created "2024-12-04T11:57:15.466Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Erhard Brepohl (1994, 319): "Beim L\u00f6ten werden metallische Werkst\u00fccke durch geschmolzene metallische Bindemittel unl\u00f6sbar stoffschl\u00fcssig verbunden. Das Lot - meist eine Legierung, selten (mit Blick auf Kupfer als Lot f\u00fcr Eisen besser: "seltener" - SP) ein reines Metall - schmilzt, flie\u00dft wegen der Kapilarwirkung in die L\u00f6tfuge zwischen die Verbundteile, f\u00fcllt diesen Zwischenraum aus und vereint sich durch Diffusion mit den zu l\u00f6tenden Metallen. Zur Unterst\u00fctzung des L\u00f6tvorgangs werden L\u00f6tmittel (auch "Flussmittel" genannt) eingesetzt (die eine Oxidation der L\u00f6tstelle beim Erw\u00e4rmen verhindern sollen - SP). Die L\u00f6tstelle muss bis zur Arbeitstemperatur des Lotes erhitzt werden, also bis zu der Temperatur, bei der das schmelzende Lot die Fuge ausf\u00fcllt. Die Arbeitstemperatur muss unter der Solidustemperatur der Verbundmetalle liegen, so dass sie im festen Zustand bleiben; dagegen werden beim Schwei\u00dfen die Verbundmetalle an der Nahtstelle schmelzfl\u00fcssig (diese Definition bezieht sich auf das "Schwei\u00dfen" im Goldschmiedehandwerk - SP). Die Wirkungstemperatur des Flussmittels muss niedriger als die Arbeitstemperatur des Lotes sein, damit das Flussmittel seine Funktion erf\u00fcllen kann. Die Arbeitstemperatur der "Weichlote" liegt unter 450\u00b0C, bei den "Hartloten" betr\u00e4gt sie mehr als 650\u00b0C."
+Technisch-wissenschaftliche Grundlagen des Goldschmiedens, Teil 1, Grundtechniken der Herstellung von Schmuck und Ger\u00e4t (Wiesbaden 2016), 133: "L\u00f6ten stellt ein Verfahren dar, das die stoffschl\u00fcssige Verbindung oder in manchen F\u00e4llen die Beschichtung von metallischen Werkst\u00fccken zum Ziel hat. Man bedient sich dazu der Hilfe eines ebenfalls metallischen Zusatzwerkstoffs, dem Lot, das geschmolzen wird und durch Diffusion an den Ber\u00fchrungsfl\u00e4chen mit den Grundwerkstoffen die Bindung erzeugt. Die Schmelztemperatur der Lote liegt niedriger als die der zu f\u00fcgenden Werkstoffe (siehe DIN 8505), daher bleiben diese fest."
+SP: Die knappste Definition w\u00e4re die bei Brepohl Satz 1. Da ist im Prinzip "alles drin". In den "Grundlagen" ist z.B. die Reaktionsl\u00f6tung unber\u00fccksichtigt und dass man eine metallische Beschichtung "L\u00f6ten" nennen kann, ist mir v\u00f6llig neu. """;
+    o:hasTarget Co:G6GG4C.
+Annot:anno128
+    a o:Annotation;
+    dct:created "2024-12-04T12:08:43.275Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Technisch-wissenschaftliche Grundlagen des Goldschmiedens, Teil 1, Grundtechniken der Herstellung von Schmuck und Ger\u00e4t (Wiesbaden 2016), 148: "Schwei\u00dfen ist stoffschl\u00fcssiges F\u00fcgen von Werkst\u00fccken im fl\u00fcssigen oder plastischen Zustand unter Anwendung von W\u00e4rme und / oder Druck. Je nach Werkstoffen oder Einsatzzweck kann es mit oder ohne Zusatzwerkstoff, mit oder ohne Flussmittel erfolgen."
+Brepohl 1994, 351: "Metallschwei\u00dfen ist ein Vereinigen metallischer Werkstoffe unter Anwendung von W\u00e4rme oder von Druck oder von beidem, und zwar mit oder ohne Zus\u00e4tze von artgleichem Werkstoff (Zusatzwerkstoff) mit gleichem oder nahezu gleichem Schmelzbereich." SP: Bei Brepohl steht die Definition selbst in Anf\u00fchrungszeichen. """;
+    o:hasTarget Co:BABA94 .
+Annot:anno129
+    a o:Annotation;
+    dct:created "2024-12-04T12:12:03.335Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Brepohl 1994, 319: "Die Arbeitstemperatur der "Weichlote" liegt unter 450\u00b0C, bei den "Hartloten" betr\u00e4gt sie mehr als 650\u00b0C."
+""";
+    o:hasTarget Co:G3GB79 .
 Annot:anno13
     a o:Annotation;
     dct:created "2024-11-05T14:22:11.838Z";
@@ -278,6 +322,34 @@ Annot:anno13
         """Durch photogrammetrische Verfahren (z.B. Streifenlichtprojektion, Laserscanning) erzeugte digitale, dreidimensionale Bildkopie
 """;
     o:hasTarget Co:GC14B8 .
+Annot:anno130
+    a o:Annotation;
+    dct:created "2024-12-04T12:13:37.103Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Brepohl 1994, 319: "Die Arbeitstemperatur der "Weichlote" liegt unter 450\u00b0C, bei den "Hartloten" betr\u00e4gt sie mehr als 650\u00b0C."
+Brepohl 1994, 320: "Fast alle technisch wichtigen Weichlote sind auf der Blei-Zinn-Basis legierte "Zinnlote"."
+""";
+    o:hasTarget Co:B7A13A.
+Annot:anno131
+    a o:Annotation;
+    dct:created "2024-12-04T12:52:41.259Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Der \u00dcberfangguss w\u00e4re eine Variante davon.
+""";
+    o:hasTarget Co:DA7G45 .
+Annot:anno132
+    a o:Annotation;
+    dct:created "2024-12-04T13:00:41.176Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Im Unterschied zum Vernieten bezieht sich das Verstiften auf das Einf\u00fchren und vor allem Fixieren eines Scharnierstiftes in ein Scharnier oder eine \u00e4hnliche Bewegung. Um den Scharnierstift zu fixieren, werden seine Enden wie bei einem Niet breitgeschmiedet (eines der Enden kann bereits vor dem Einf\u00fchren des Stiftes verbreitert worden sein, etwa durch Anschmelzen eines K\u00fcgelchens o.\u00e4.), vgl. Brepohl 1994, 357.
+""";
+    o:hasTarget Co:C5FAFF.
 Annot:anno14
     a o:Annotation;
     dct:created "2024-11-05T15:36:11.473Z";
@@ -1137,6 +1209,8 @@ Co:B689B6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:B69C57 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:B7A13A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:B7B8B6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:B7DD6B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -1144,6 +1218,8 @@ Co:B7DD6B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:BAB7B1 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BAB7B3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:BABA94 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BBF7BG a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -1162,6 +1238,8 @@ Co:C369CB a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:C3AF5A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C47769 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:C5FAFF a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C5G53A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -1203,6 +1281,8 @@ Co:D39264 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D467F2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:D67657 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:D73F9B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D772G6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -1212,6 +1292,8 @@ Co:D9CC3C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:D9F7AC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D9G356 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:DA7G45 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:DA841D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -1245,9 +1327,13 @@ Co:G17B8B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:G2944B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:G3GB79 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:G52378 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:G6282F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:G6GG4C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:G8D62A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
