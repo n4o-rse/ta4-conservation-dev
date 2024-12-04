@@ -350,6 +350,62 @@ Annot:anno132
         """Im Unterschied zum Vernieten bezieht sich das Verstiften auf das Einf\u00fchren und vor allem Fixieren eines Scharnierstiftes in ein Scharnier oder eine \u00e4hnliche Bewegung. Um den Scharnierstift zu fixieren, werden seine Enden wie bei einem Niet breitgeschmiedet (eines der Enden kann bereits vor dem Einf\u00fchren des Stiftes verbreitert worden sein, etwa durch Anschmelzen eines K\u00fcgelchens o.\u00e4.), vgl. Brepohl 1994, 357.
 """;
     o:hasTarget Co:C5FAFF.
+Annot:anno133
+    a o:Annotation;
+    dct:created "2024-12-04T15:37:35.805Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Im Unterschied zum Verstiften werden beim Vernieten die Verbundteile durch Nietstifte fest aneinander fixiert, so dass sie sich nicht bewegen k\u00f6nnen. Der Nietstift selbst wird \u00f6fters von vorn herein mit Setzkopf (Nietkopf) gestaltet. Im Goldschmiedehandwerk kann dies etwa geschehen, indem einer der Nietenden etwa durch Anschmelzen eines K\u00fcgelchens o.\u00e4. verbreitert wird. Das K\u00fcgelchen kann dann weiter ausgestaltet werden, vgl. Brepohl 1994, 357.
+""";
+    o:hasTarget Co:G887B8 .
+Annot:anno134
+    a o:Annotation;
+    dct:created "2024-12-04T15:56:19.213Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Man k\u00f6nnte noch "geschnitten" hinzuf\u00fcgen. Ich denke hier an Schneid- oder Trennmei\u00dfel, die vor der Entwicklung der Laubs\u00e4ge z.B. im Goldschmiedehandwerk Verwendung fanden, siehe etwa Kap. XIV in Buch III der Schedula diversarum artium ("Theophilus"), "De ferris incisoribus" ("Von den Trennmei\u00dfeln"), vg. Brepohl 1987, 75.""";
+    o:hasTarget Co:AGG387 .
+Annot:anno135
+    a o:Annotation;
+    dct:created "2024-12-04T16:11:32.057Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Habe gerade gesehen, dass "geschnitten" bereits angelegt ist.""";
+    o:hasTarget Co:AGG387 .
+Annot:anno136
+    a o:Annotation;
+    dct:created "2024-12-04T16:31:32.965Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Brepohl 1994, 268: \"Treiben ist der Oberbegriff, unter dem alle handwerklichen Fertigungsverfahren zur Herstellung von Gef\u00e4\u00dfen und Hohlk\u00f6rpern sowie zur Reliefgestaltung aus Blech zusammengefasst werden. Das Blech wird mit Stahl- und Holzh\u00e4mmern unterschiedlicher Form oder mit verschiedenartigen Stahlpunzen auf weichen, bzw. nachgiebigen Unterlagen (Holz, Filz, Leder, Blei, Kitt) oder auf unterschiedlichen Stahlambossen geformt. Alle Metalle mit ausreichender Dehnung k\u00f6nnen so verarbneitet werden: Edelmetalle und deren Legierungen, Kupfer und Knetmessing, Aluminium, Stahl. Industrietechnisch werden entsprechend geformte Gef\u00e4\u00dfe durch Metalldr\u00fccken und Tiefziehen, Reliefs mit Pressen im Formstanzverfahren hergestellt.\"";
+    o:hasTarget Co:D18BBG.
+Annot:anno137
+    a o:Annotation;
+    dct:created "2024-12-04T16:33:12.502Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue "Die Verformung erfolgt spanlos.";
+    o:hasTarget Co:D18BBG.
+Annot:anno138
+    a o:Annotation;
+    dct:created "2024-12-04T16:46:57.158Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Technisch-wissenschaftliche Grundlagen des Goldschmiedens 1, Grundtechniken der Herstellung von Schmuck und Ger\u00e4t (Wiesbaden 2016): \"Nach dieser Methode werden vom Silberschmied gr\u00f6\u00dfere Hohlk\u00f6rper aller Art hergestellt, z.B. Schalen, Dosen, Kannen, Becher, Pokale. Das zugrunde liegende Prinzip ist die Verk\u00fcrzung des Au\u00dfendurchmessers durch Stauchen. Der Rand des Bleches muss sich zwangsweise dadurch nach oben und nach innen w\u00f6lben. Das Blech wird mit unz\u00e4hligen, genau gesetzten und dosierten Hammerschl\u00e4gen auf weichen (Holz) und harten Unterlagen (Stahl) so bearbeitet, dass sich durch st\u00e4ndig wiederholtes Stauchen und Strecken langsam ein Hohlk\u00f6rper bildet, dessen Gestalt w\u00e4hrend der einzelnen Bearbeitungsphasen vom Silberschmied (dessen Hauptarbeitsgebiet ist dies n\u00e4mlich) \"frei Hand\" geschaffen wird. Es gibt also keine Gegenform, die die endg\u00fcltige Form des Hohlk\u00f6rpers schon vorgibt. Der Gegenstand w\u00e4chst langsam mit fortschreitender Bearbeitung, die Form muss st\u00e4nding kontrolliert und unter Umst\u00e4nden korrigiert werden.\"";
+    o:hasTarget Co:D74CG7 .
+Annot:anno139
+    a o:Annotation;
+    dct:created "2024-12-04T16:49:42.395Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Technisch-wissenschaftliche Grundlagen des Goldschmiedens 1, Grundtechniken der Herstellung von Schmuck und Ger\u00e4t (Wiesbaden 2016): \"Auftiefen hei\u00dft das Einh\u00e4mmern des Blechs in eine mehr oder weniger passende Gegenform, die aus Stahl bestehen kann (z.B. Anke, dazu kommen Kugelpunzen) oder aus Holz, Blei und Kitt (die gew\u00fcnschten Formen muss man selbst einarbeiten).\"";
+    o:hasTarget Co:A26FD8 .
 Annot:anno14
     a o:Annotation;
     dct:created "2024-11-05T15:36:11.473Z";
@@ -359,6 +415,54 @@ Annot:anno14
         """ Formbau mit Materialien, die auf das Orignal aufgetragen werden und das zu kopierende Objekt im Negativ abbilden 
 """;
     o:hasTarget Co:G52378 .
+Annot:anno140
+    a o:Annotation;
+    dct:created "2024-12-04T17:15:53.469Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Im klassischen Wachsausschmelzverfahren wurde ein aus Wachs geformtes Modell des Werkst\u00fccks mit Keramik ummantelt und das Wachs nach dem Trocknen der Keramik daraus ausgeschmolzen. Der entstandene Hohlraum dient als Gussform. Um das gegossene Werkst\u00fcck entnehmen zu k\u00f6nnen, musste die Form zerst\u00f6rt werden (deswegen auch "Guss mit verlorener Form"). Das Wachsausschlezverfahren wird in der Schedula diversarum artium ("Theophilus"), Buch III, Kapitel LXI beschrieben, vgl. Brepohl 1987, 181-190. Siehe weiter Technisch-wissenschaftliche Grundlagen des Goldschmiedens 1. Grundtechniken der Herstellung von Schmuck und Ger\u00e4t (Wiesbaden 2016), 120-126 (modern).""";
+    o:hasTarget Co:BGC8F3 .
+Annot:anno141
+    a o:Annotation;
+    dct:created "2024-12-04T17:17:57.995Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Im klassischen Wachsausschmelzverfahren wurde ein aus Wachs geformtes Modell des Werkst\u00fccks mit Keramik ummantelt und das Wachs nach dem Trocknen der Keramik daraus ausgeschmolzen. Der entstandene Hohlraum dient als Gussform. Um das gegossene Werkst\u00fcck entnehmen zu k\u00f6nnen, musste die Form zerst\u00f6rt werden (deswegen auch "Guss mit verlorener Form"). Das Wachsausschmelzverfahren wird in der Schedula diversarum artium ("Theophilus"), Buch III, Kapitel LXI beschrieben, vgl. Brepohl 1987, 181-190. Siehe weiter Technisch-wissenschaftliche Grundlagen des Goldschmiedens 1. Grundtechniken der Herstellung von Schmuck und Ger\u00e4t (Wiesbaden 2016), 120-126 (modern).""";
+    o:hasTarget Co:CA4B11 .
+Annot:anno142
+    a o:Annotation;
+    dct:created "2024-12-04T17:21:49.992Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Mit "Guss in verlorener Form" sind Gusstechniken gemeint, bei denen die Gussform zerst\u00f6rt werden muss, um das Werkst\u00fcck entnehmen zu k\u00f6nnen (Wachsausschmelzverfahren, Sandguss), bzw. die Form kein zweites mal verwendet werden kann (Sepiaguss).""";
+    o:hasTarget Co:BGC8F3 .
+Annot:anno143
+    a o:Annotation;
+    dct:created "2024-12-04T17:43:11.735Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "Beim Sepiaguss dient der R\u00fcckenbschulp des gemeinen Tintenfischs als Formmaterial. Auf der einen Seite hat die Sepia eine d\u00fcnne harte Kruste, auf der anderen Seite ist sie weich. Hier kann man ein Modell aus Metall o. \u00e4. hineindr\u00fccken. Planiert man die weiche Seite und schneidet die Sepiaschale quer durch, so bekommt man die Grundlage f\u00fcr eine zweiteilige Form. Das Modell so in die beiden Formh\u00e4lften gedr\u00fcckt, dass es in jeder H\u00e4lfte etwa bis zur Mitte eingedr\u00fcckt ist. Nach der Entnahme des Modells und dem Einschneiden des Eingusses ist die Form im Prinzip fertig. Verschlossen wird sie mit einer Klammer oder Draht. Die Form kann nicht wiederverwendet werden, vgl. Brepohl 1994, 155-157.";
+    o:hasTarget Co:D51358 .
+Annot:anno144
+    a o:Annotation;
+    dct:created "2024-12-04T17:44:58.136Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        "...R\u00fcckenschulp (R\u00fcckenschale) des gemeinen Tintenfischs (Sepia officinalis)...";
+    o:hasTarget Co:D51358 .
+Annot:anno145
+    a o:Annotation;
+    dct:created "2024-12-04T18:03:41.295Z";
+    dct:creator "Stephan Patscher";
+    skos:inScheme Con:ConceptScheme1;
+    o:bodyValue
+        """Der Sandguss wird mit Hilfe eines speziellen Sandes, des sogen. "Formsandes" als Formmaterial ausgef\u00fchrt. Als Hilfsmittel dient ein zweiteiliger Formrahmen. Seine beiden H\u00e4lften werden so nacheinander mit Formsand bef\u00fcllt, dass ein Modell des Werkst\u00fccks am Ende zwischen den beiden Formrahmenh\u00e4lften im Sand eingebettet ist. Damit sich der Sand entlang der Fuge zwischen den beiden Formrahmenh\u00e4lften trennt und sich auch das Modell ohne Probleme entnehmen l\u00e4\u00dft, bedarf es eines Trennmittels, des sogen. "Formpuders", der aus dem Sporenstaub des Keulenb\u00e4rlapps (Lycopodium) besteht, vgl. Brepohl 1994, 157-158. """;
+    o:hasTarget Co:BBA1C7 .
 Annot:anno15
     a o:Annotation;
     dct:created "2024-08-28T11:58:55.324Z";
@@ -1143,6 +1247,8 @@ Co:A1D125 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A2159C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:A26FD8 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:A28B4D a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:A2G7B9 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -1221,6 +1327,8 @@ Co:BAB7B3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BABA94 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:BBA1C7 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:BBF7BG a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BC685F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -1228,6 +1336,8 @@ Co:BC685F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:BF7D14 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BFB162 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:BGC8F3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:BGC9F3 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -1259,6 +1369,8 @@ Co:C97B35 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:C9C7C7 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:CA4B11 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:CA7279 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:CB4C3C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -1271,6 +1383,8 @@ Co:CD3341 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:CG2863 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:D18BBG a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:D2GGAC a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D38147 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
@@ -1281,9 +1395,13 @@ Co:D39264 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D467F2 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
+Co:D51358 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
 Co:D67657 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D73F9B a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:D74CG7 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:D772G6 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
@@ -1334,6 +1452,8 @@ Co:G52378 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 Co:G6282F a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:G6GG4C a skos:Concept; skos:inScheme Con:ConceptScheme1 .
+
+Co:G887B8 a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
 Co:G8D62A a skos:Concept; skos:inScheme Con:ConceptScheme1 .
 
