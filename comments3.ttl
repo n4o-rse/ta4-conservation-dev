@@ -7,6 +7,8 @@
 @prefix Co: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/>.
 @prefix Ann: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme3/Annotations/>.
 @prefix Conc: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme3/Concepts/>.
+@prefix n0: <https://seafile.rlp.net/f/14e9d5455c9141ff84e2/>.
+@prefix n1: <https://seafile.rlp.net/f/4500ca12ac2348a69783/>.
 
 Con:ConceptScheme1
     a skos:ConceptScheme;
@@ -1515,3 +1517,9 @@ Con:ConceptScheme4
     dct:source
         <https://docs.google.com/spreadsheets/d/e/2PACX-1vTdBmgO6xCH3SpJ1w5A7O_rCsSmnU2wXzWyiws22cSiL71eP7dfMwIvsbiQGrOkagD32JUSJtthn5Cf/pub?output=csv>;
     dct:title "DBM_Schadensbilder an Kunststoffen".
+Con:ConceptScheme5 a skos:ConceptScheme; dct:source n0:; dct:title "mal schauen".
+
+Con:ConceptScheme6 a skos:ConceptScheme; dct:source n1:; dct:title "gg".
+
+Con:ConceptScheme7 a skos:ConceptScheme; dct:source n1:; dct:title "ggg".
+
