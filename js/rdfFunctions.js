@@ -465,14 +465,15 @@ async function generateThesaurus(idObject, topPosition) {
         store.add(concept, seeAlso, seeAlsos[i]);
       }
     }
-
+    // example was removed?
+    /*
     if (idObject[key]["example"] != "") {
       let examples = idObject[key]["example"].split("|");
       for (let i = 0; i < examples.length; i++) {
         store.add(concept, example, examples[i]);
       }
     }
-
+    */
     if (idObject[key]["parent"] != "top") {
       store.add(concept, broader, $rdf.sym(conceptSchemeNamespace+"/concepts/"+ idObject[key]["parent"]));
     }
