@@ -316,6 +316,7 @@ async function generateCommentedIdList() {
 }
 
 async function generateThesaurus(idObject, topPosition) {
+  console.log(idObject)
   event.preventDefault();
   //read all form data from conceptSchemeForm
   let conceptSchemeNamespace = document.getElementById("nameSpaceInput").value;
