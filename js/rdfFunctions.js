@@ -486,24 +486,20 @@ async function generateThesaurus(idObject, topPosition) {
     }
   }
 
-  try {
-    let serializedThesaurus = $rdf.serialize(null, store, conceptSchemeNamespace, conceptSchemeFormat);
-    // download file thesaurus.ttl if format is turtle or thesaurus.json if format is jsonld with the serialized thesaurus
-    a = document.createElement("a");
-    if (conceptSchemeFormat == 'text/turtle') {
-      a.href = URL.createObjectURL(new Blob([serializedThesaurus], {type: 'text/turtle'}));
-      a.download = 'thesaurus.ttl';
-    } else if (conceptSchemeFormat == 'application/ld+json') {
-      a.href = URL.createObjectURL(new Blob([serializedThesaurus], {type: 'application/ld+json'}));
-      a.download = 'thesaurus.json';
-    }
-    a.click();
-    // remove the created a element after download
-    a.remove();
-    alert("Thesaurus heruntergeladen!");
-  } catch (error) {
-    alert("Fehler: " + error);
+  let serializedThesaurus = $rdf.serialize(null, store, conceptSchemeNamespace, conceptSchemeFormat);
+  // download file thesaurus.ttl if format is turtle or thesaurus.json if format is jsonld with the serialized thesaurus
+  a = document.createElement("a");
+  if (conceptSchemeFormat == 'text/turtle') {
+    a.href = URL.createObjectURL(new Blob([serializedThesaurus], {type: 'text/turtle'}));
+    a.download = 'thesaurus.ttl';
+  } else if (conceptSchemeFormat == 'application/ld+json') {
+    a.href = URL.createObjectURL(new Blob([serializedThesaurus], {type: 'application/ld+json'}));
+    a.download = 'thesaurus.json';
   }
+  a.click();
+  // remove the created a element after download
+  a.remove();
+  alert("Thesaurus heruntergeladen!");
 }
 
 async function readStore(commentURL) {
