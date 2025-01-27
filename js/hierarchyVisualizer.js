@@ -122,6 +122,9 @@ async function visualizeData([stratifiedData, idObject]) {
       button.onclick = function() {downloadSvg(svg, visualizationType)};
       document.getElementById("chartDiv").after(button);
     }
+    else {
+      document.getElementById("downloadButton").onclick = function() {downloadSvg(svg, visualizationType)};
+    }
   } 
   catch (error) {
     document.getElementById("errorText").innerHTML = error;
