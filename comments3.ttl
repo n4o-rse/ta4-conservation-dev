@@ -7,8 +7,8 @@
 @prefix Co: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme1/Concepts/>.
 @prefix Ann: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme3/Annotations/>.
 @prefix Conc: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme3/Concepts/>.
-@prefix n0: <https://seafile.rlp.net/f/14e9d5455c9141ff84e2/>.
-@prefix n1: <https://seafile.rlp.net/f/4500ca12ac2348a69783/>.
+@prefix An: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme4/Annotations/>.
+@prefix C: <https://www.restaurierungsvokabular.solidweb.org/annotations/ConceptSchemes/ConceptScheme4/Concepts/>.
 
 Con:ConceptScheme1
     a skos:ConceptScheme;
@@ -1517,4 +1517,22 @@ Con:ConceptScheme4
     dct:source
         <https://docs.google.com/spreadsheets/d/e/2PACX-1vTdBmgO6xCH3SpJ1w5A7O_rCsSmnU2wXzWyiws22cSiL71eP7dfMwIvsbiQGrOkagD32JUSJtthn5Cf/pub?output=csv>;
     dct:title "DBM_Schadensbilder an Kunststoffen".
-
+An:anno1
+    a o:Annotation;
+    dct:created "2026-05-05T11:13:36.372Z";
+    dct:creator "EGS";
+    skos:inScheme Con:ConceptScheme4;
+    o:bodyValue "Finde die Beschreibung des Begriffs passend.";
+    o:hasTarget C:282fc04d-c90d-45cf-80cc-f5d977075b36 .
+C:282fc04d-c90d-45cf-80cc-f5d977075b36
+a skos:Concept; skos:inScheme Con:ConceptScheme4 .
+Con:ConceptScheme5
+    a skos:ConceptScheme;
+    dct:source
+        <https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0HOfcu7jdAoo3Ouxl_xYI-AK4dfZ0fBHfzsa0bKLL3zh4KsHXFcg_QQX4PWKsc09xBiNsUK9jgzSp/pub?gid=0&single=true&output=csv>;
+    dct:title "Metadaten-Vokabular".
+Con:ConceptScheme6
+    a skos:ConceptScheme;
+    dct:source
+        <https://docs.google.com/spreadsheets/d/e/2PACX-1vSgmR1jhYlvz0hpAKIcD_lB5rsoL8U_QYYAPUpZkVkGASfJjsY-noXK2dyYaGlAy513uIlE0WLGFh08/pub?gid=829469048&single=true&output=csv>;
+    dct:title "LEIZA arch\u00e4ologische Objekttypen".
