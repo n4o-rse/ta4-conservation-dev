@@ -221,8 +221,8 @@ function topData(data) {
     "closeMatch":"",
     "relatedMatch":"",
     "seeAlso":"",
-    "example":""
-     "photo":""
+    "example":"",
+    "photo":""
   })
   }
 
@@ -240,7 +240,7 @@ function topData(data) {
     "closeMatch":"",
     "relatedMatch":"",
     "seeAlso":"",
-     "photo":""
+    "photo":"",
     "example":""
   })
   }
