@@ -36,17 +36,51 @@ async function openDetails(id, idObject) {
           else if (details[i] == "photo") {
             mappedDetails = splittedDetails;
             // generate HTML element for photo(s)
-            detailDiv.innerHTML += "<b>" + details[i] + ":</b>";
+            let labelDiv = document.createElement("div");
+            labelDiv.innerHTML = "<b>" + details[i] + ":</b>";
+            detailDiv.appendChild(labelDiv);
+            
+            let photoContainer = document.createElement("div");
+            photoContainer.style.display = "flex";
+            photoContainer.style.flexWrap = "wrap";
+            photoContainer.style.gap = "10px";
+            photoContainer.style.marginTop = "5px";
+            
             for (let j = 0; j < mappedDetails.length; j++) {
-              let img = document.createElement("img");
-              img.src = mappedDetails[j];
-              img.alt = "Concept image";
-              img.style.maxWidth = "300px";
-              img.style.maxHeight = "300px";
-              img.style.margin = "10px";
-              img.style.border = "1px solid #ccc";
-              detailDiv.appendChild(img);
+              let photoUrl = mappedDetails[j].trim();
+              
+              // check if URL is valid
+              if (photoUrl.startsWith("http://") || photoUrl.startsWith("https://")) {
+                let img = document.createElement("img");
+                img.src = photoUrl;
+                img.alt = "Concept image";
+                img.crossOrigin = "anonymous";
+                img.referrerPolicy = "no-referrer";
+                img.style.maxWidth = "300px";
+                img.style.maxHeight = "300px";
+                img.style.border = "1px solid #ccc";
+                // add error handling to show URL if image fails to load
+                img.onerror = function() {
+                  this.style.display = "none";
+                  let link = document.createElement("a");
+                  link.href = photoUrl;
+                  link.target = "_blank";
+                  link.textContent = "Bild nicht geladen. Klicken Sie hier zum Öffnen.";
+                  link.style.display = "block";
+                  link.style.margin = "10px";
+                  link.style.color = "blue";
+                  photoContainer.appendChild(link);
+                };
+                photoContainer.appendChild(img);
+              } else {
+                // if not a valid URL, show as text
+                let invalidUrl = document.createElement("p");
+                invalidUrl.textContent = "Ungültige URL: " + photoUrl;
+                invalidUrl.style.color = "red";
+                photoContainer.appendChild(invalidUrl);
+              }
             }
+            detailDiv.appendChild(photoContainer);
             body[0].appendChild(detailDiv);
             continue;
           }
