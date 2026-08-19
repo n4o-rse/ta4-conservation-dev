@@ -32,6 +32,24 @@ async function openDetails(id, idObject) {
               mappedDetails.push(idObject[splittedDetails[j]]["prefLabel"]);
             }
           } 
+          // case for photo, to display as image
+          else if (details[i] == "photo") {
+            mappedDetails = splittedDetails;
+            // generate HTML element for photo(s)
+            detailDiv.innerHTML += "<b>" + details[i] + ":</b>";
+            for (let j = 0; j < mappedDetails.length; j++) {
+              let img = document.createElement("img");
+              img.src = mappedDetails[j];
+              img.alt = "Concept image";
+              img.style.maxWidth = "300px";
+              img.style.maxHeight = "300px";
+              img.style.margin = "10px";
+              img.style.border = "1px solid #ccc";
+              detailDiv.appendChild(img);
+            }
+            body[0].appendChild(detailDiv);
+            continue;
+          }
 
           // case for all other properties, where splitted strings don't have to be converted
           else {
@@ -351,6 +369,7 @@ async function generateThesaurus(idObject, topPosition) {
   let DC = $rdf.Namespace("http://purl.org/dc/terms/");
   let RDFS = $rdf.Namespace("http://www.w3.org/2000/01/rdf-schema#");
   let RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+  let FOAF = $rdf.Namespace("http://xmlns.com/foaf/0.1/");
 
   // declare relevant entities for skos properties like prefLabel, altLabel, description, broader, related, closeMatch, relatedMatch, example, inScheme, topConceptOf
   let prefLabel = SK('prefLabel');
@@ -370,6 +389,7 @@ async function generateThesaurus(idObject, topPosition) {
 
   // declare relevant non skos properties like seeAlso, title, creator, source, publisher, contributor, subject, created, description
   let seeAlso = RDFS('seeAlso');
+  let depiction = FOAF('depiction');
   let title = DC('title');
   let creator = DC('creator');
   let source = DC('source');
@@ -444,25 +464,32 @@ async function generateThesaurus(idObject, topPosition) {
     if (idObject[key]["source"] != "") {
       let sources = idObject[key]["source"].split("|");
       for (let i = 0; i < sources.length; i++) {
-        store.add(concept, source, sources[i]);
+        store.add(concept, source, sources[i].trim());
       }
     }
     if (idObject[key]["closeMatch"] != "") {
       let closeMatches = idObject[key]["closeMatch"].split("|");
       for (let i = 0; i < closeMatches.length; i++) {
-        store.add(concept, closeMatch, closeMatches[i]);
+        store.add(concept, closeMatch, closeMatches[i].trim());
       }
     }
     if (idObject[key]["relatedMatch"] != "") {
       let relatedMatches = idObject[key]["relatedMatch"].split("|");
       for (let i = 0; i < relatedMatches.length; i++) {
-        store.add(concept, relatedMatch, relatedMatches[i]);
+        store.add(concept, relatedMatch, relatedMatches[i].trim());
       }
     }
     if (idObject[key]["seeAlso"] != "") {
       let seeAlsos = idObject[key]["seeAlso"].split("|");
       for (let i = 0; i < seeAlsos.length; i++) {
-        store.add(concept, seeAlso, seeAlsos[i]);
+        store.add(concept, seeAlso, seeAlsos[i].trim());
+      }
+    }
+    // add photo as foaf:depiction
+    if (idObject[key]["photo"] != "") {
+      let photos = idObject[key]["photo"].split("|");
+      for (let i = 0; i < photos.length; i++) {
+        store.add(concept, depiction, photos[i].trim());
       }
     }
     // example was removed?

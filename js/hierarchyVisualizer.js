@@ -274,7 +274,7 @@ function idToName(data) {
     transformationObject[row.identifier]["creator"] = row.creator;
     transformationObject[row.identifier]["closeMatch"] = row.closeMatch;
     transformationObject[row.identifier]["relatedMatch"] = row.relatedMatch;
-     transformationObject[row.identifier]["photo"] = row.photo;
+    transformationObject[row.identifier]["photo"] = row.photo;
     transformationObject[row.identifier]["seeAlso"] = row.seeAlso;
     transformationObject[row.identifier]["example"] = row.example;
   }
